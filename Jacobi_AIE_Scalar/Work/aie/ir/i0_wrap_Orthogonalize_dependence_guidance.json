@@ -1,0 +1,235 @@
+{
+    "DependenceAnalysisHints": [
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "i",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i3",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx8",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i3",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx9",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i3",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx10",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i3",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx11",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "tmp1",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "tmp1",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i3",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx13",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i3",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx14",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "tmp2",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "tmp2",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i3",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "i3",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i29",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx34",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i29",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx36",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i29",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx38",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i29",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "arrayidx40",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "void orthogonalize<8>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "Var1": "i29",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "i29",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "int stream_utils::aie_stream_get_ss<float, float>(input_stream<float>*)",
+            "Var1": "ss.addr",
+            "ArgIndex1": "0",
+            "Var2": "channel",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "get_ss(int)",
+            "Var1": "custom_type.tmp",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "get_ss(int)",
+            "Var1": "custom_type.tmp6",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp5",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "get_ss(int)",
+            "Var1": "custom_type.tmp12",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp11",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "uint1_t::uint1_t(int)",
+            "Var1": "this.addr",
+            "ArgIndex1": "0",
+            "Var2": "this1",
+            "ArgIndex2": "0"
+        },
+        {
+            "FunctionName": "void stream_utils::aie_stream_put_ms<float, float>(output_stream<float>*, int, bool)",
+            "Var1": "ss.addr",
+            "ArgIndex1": "0",
+            "Var2": "channel",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp2",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "custom_type.tmp",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp2",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "custom_type.tmp",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp2",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp1",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp6",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp5",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp8",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "custom_type.tmp6",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp8",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "custom_type.tmp6",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp8",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp7",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp11",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp10",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp13",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "custom_type.tmp11",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp13",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "custom_type.tmp11",
+            "ArgIndex2": "NotArgIndex"
+        },
+        {
+            "FunctionName": "put_ms(int, int, int)",
+            "Var1": "custom_type.tmp13",
+            "ArgIndex1": "NotArgIndex",
+            "Var2": "agg.tmp12",
+            "ArgIndex2": "NotArgIndex"
+        }
+    ]
+}

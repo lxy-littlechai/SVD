@@ -1,0 +1,11 @@
+{
+  "GlobalConstraints": {
+    "areaGroup": {
+      "name": "root_area_group",
+      "contain_routing": true,
+      "nodeGroup": ["g1.pu.k", "g1_in0", "g1_in1", "g1_out0", "g1_out1"],
+      "tileGroup": ["(0,0):(49,7)"],
+      "shimGroup": ["0:49"]
+    }
+  }
+}

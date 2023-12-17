@@ -1,0 +1,392 @@
+{
+    "ModuleName": "i0_wrap_Orthogonalize",
+    "SourceFileName": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/aie/ir/i0_wrap_Orthogonalize.cpp",
+    "StructTypes": [
+        {
+            "Name": "struct.aie::detail::utils::unroll_context",
+            "Size": 1
+        },
+        {
+            "Name": "struct.input_stream",
+            "Size": 4
+        },
+        {
+            "Name": "union.anon",
+            "Size": 4
+        },
+        {
+            "Name": "struct.output_stream",
+            "Size": 4
+        },
+        {
+            "Name": "union.anon.0",
+            "Size": 4
+        },
+        {
+            "Name": "class.aie::vector",
+            "Size": 16
+        },
+        {
+            "Name": "class.aie::detail::vector_base",
+            "Size": 16
+        },
+        {
+            "Name": "struct.v4float",
+            "Size": 16
+        },
+        {
+            "Name": "struct.ipd.custom_type.v16int8.v16int8",
+            "Size": 16
+        },
+        {
+            "Name": "class.anon",
+            "Size": 8
+        },
+        {
+            "Name": "class.anon.1",
+            "Size": 1
+        },
+        {
+            "Name": "struct.v8int16",
+            "Size": 16
+        },
+        {
+            "Name": "struct.input_stream.2",
+            "Size": 4
+        },
+        {
+            "Name": "union.anon.3",
+            "Size": 4
+        },
+        {
+            "Name": "struct.v4int32",
+            "Size": 16
+        },
+        {
+            "Name": "struct.ipd.custom_type.uint1_t.uint1_t",
+            "Size": 1
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v4int32_stream_read128___PWSS_rsrc1__sint_uint1_t___sint",
+            "Size": 20
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v4int32_stream_read128___PWSS_rsrc2__sint_uint1_t___sint",
+            "Size": 20
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v4int32_stream_read128___PWSSMEM__sint_uint1_t___sint",
+            "Size": 20
+        },
+        {
+            "Name": "struct.output_stream.4",
+            "Size": 4
+        },
+        {
+            "Name": "union.anon.5",
+            "Size": 4
+        },
+        {
+            "Name": "vector_base<float, 4U>",
+            "Size": 16
+        },
+        {
+            "Name": "vector<float, 4U>",
+            "Size": 16
+        }
+    ],
+    "Globals": [
+        {
+            "Name": "__const._ZN3aie6detail5utils17unroll_for_helperIjLj0ELj1ELj0ELj1EE7executeIZNS0_3adf16stream_in_helperILj4EfL22aie_stream_resource_in0EE8readincrEP12input_streamIfEEUlT_E_EEvOSC_.ctx",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ss0",
+            "MangledName": "_ZN12me_primitive3ss0E",
+            "Size": 4,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ss1",
+            "MangledName": "_ZN12me_primitive3ss1E",
+            "Size": 4,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ms0",
+            "MangledName": "_ZN12me_primitive3ms0E",
+            "Size": 4,
+            "SoftFloat": false
+        },
+        {
+            "Name": "me_primitive::ms1",
+            "MangledName": "_ZN12me_primitive3ms1E",
+            "Size": 4,
+            "SoftFloat": false
+        }
+    ],
+    "UsesCmathStaticVars": false,
+    "Functions": [
+        {
+            "FunctionName": "sign(double)",
+            "StackSize": 12,
+            "SoftFloat": true
+        },
+        {
+            "FunctionName": "void orthogonalize<4>(input_stream<float>*, input_stream<float>*, output_stream<float>*, output_stream<float>*)",
+            "StackSize": 408,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u> readincr_v<4u, (aie_stream_resource_in)0, float>(input_stream<float>*)",
+            "StackSize": 356,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void writeincr<(aie_stream_resource_out)0, float, 4u>(output_stream<float>*, aie::vector<float, 4u> const&)",
+            "StackSize": 244,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)",
+            "StackSize": 336,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::adf::stream_out_helper<4u, float, (aie_stream_resource_out)0>::writeincr(output_stream<float>*, aie::vector<float, 4u>)",
+            "StackSize": 236,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v4float(v8int16)",
+            "StackSize": 56,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u>::vector()",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_times<1u, aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 292,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<float, 4u>::vector_base()",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for<unsigned int, 0u, 1u, 1u, aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 288,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<float, 4u>::undef()",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v4float()",
+            "StackSize": 16,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 1u, 0u, 1u>::execute<aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 284,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v8int16(v4int32)",
+            "StackSize": 56,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}::operator()<aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u> >(aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u>) const",
+            "StackSize": 274,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 1u, 1u, 1u>::execute<aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}>(aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::readincr(input_stream<float>*)::{lambda(auto:1)#1}&&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::adf::stream_in_helper<4u, float, (aie_stream_resource_in)0>::get_op()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u>::vector(v4float)",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u>& aie::vector<float, 4u>::insert<4u>(unsigned int, aie::vector<float, 4u> const&)",
+            "StackSize": 28,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u>::operator unsigned int() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v4float readincr_v4<(aie_stream_resource_in)0>(input_stream<float>*)",
+            "StackSize": 179,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void writeincr<(aie_stream_resource_out)0>(output_stream<float>*, v4float, bool)",
+            "StackSize": 180,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8int16 readincr_v8<(aie_stream_resource_in)0>(input_stream<short>*)",
+            "StackSize": 143,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v4float::v4float(chessllvmInternal, v16int8)",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8int16 stream_utils::aie_stream_get_wss<short>(input_stream<short>*)",
+            "StackSize": 123,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::stream_write128(int __protect_access AS30*, v4int32, uint1_t, v4int32)",
+            "StackSize": 22,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_wss(int)",
+            "StackSize": 103,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void stream_utils::aie_stream_put_wms<short>(output_stream<short>*, v8int16, bool&)",
+            "StackSize": 122,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "getl_wss(int)",
+            "StackSize": 67,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<int>::type, int>::value, v4int32>::type me_primitive::stream_read128<int>(int __protect_access AS25*, uint1_t, int&)",
+            "StackSize": 29,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8int16::v8int16(chessllvmInternal, v16int8)",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "uint1_t::uint1_t(int)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<int>::type, int>::value, v4int32>::type me_primitive::stream_read128<int>(int __protect_access AS26*, uint1_t, int&)",
+            "StackSize": 29,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "chessEnableIf<chessIsCompatible<chessRemoveQual<int>::type, int>::value, v4int32>::type me_primitive::stream_read128<int>(int __protect_access AS17*, uint1_t, int&)",
+            "StackSize": 29,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<float, 4u>::vector_base(v4float)",
+            "StackSize": 20,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<float, 4u>& aie::detail::vector_base<float, 4u>::insert<4u>(unsigned int, aie::detail::vector_base<float, 4u> const&)",
+            "StackSize": 16,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 1u, 0u>::current() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u> aie::vector<float, 4u>::extract<4u>(unsigned int) const",
+            "StackSize": 52,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u>::operator v4float() const",
+            "StackSize": 44,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void writeincr<(aie_stream_resource_out)0>(output_stream<short>*, v8int16, bool)",
+            "StackSize": 143,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v8int16(v4float)",
+            "StackSize": 56,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "put_wms(int, v8int16, int)",
+            "StackSize": 98,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "put_wms(int, v4int32, int)",
+            "StackSize": 58,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v4int32(v8int16)",
+            "StackSize": 56,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::stream_write128(int __protect_access AS29*, v4int32, uint1_t, v4int32)",
+            "StackSize": 22,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::stream_write128(int __protect_access AS18*, v4int32, uint1_t, v4int32)",
+            "StackSize": 22,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v4int32::v4int32(chessllvmInternal, v16int8)",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<float, 4u> aie::detail::vector_base<float, 4u>::extract<4u>(unsigned int) const",
+            "StackSize": 12,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u>::vector(aie::detail::vector_base<float, 4u> const&)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::vector<float, 4u>::to_native() const",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_base<float, 4u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        }
+    ]
+}

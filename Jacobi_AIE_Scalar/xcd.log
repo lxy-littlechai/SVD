@@ -1,0 +1,165 @@
+Sun Dec 17 21:15:40 2023: Running xcd server. This server was built by gradle.
+Sun Dec 17 21:15:40 2023: Server was asked to start on port: '46549'
+Sun Dec 17 21:15:40 2023: Server is using token UUID: 'a3952e40-b030-4e90-9b88-607ee5a00209'
+Sun Dec 17 21:15:40 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 17 21:15:40 2023: Attempting to start server on port '46549'
+Sun Dec 17 21:15:40 2023: XCD main fifo: created main fifo '/tmp/xcdmaina3952e40-b030-4e90-9b88-607ee5a00209', fd read = 12
+Sun Dec 17 21:15:40 2023: Running Dispatch Server
+Sun Dec 17 21:15:40 2023: Version 2.2.0
+Sun Dec 17 21:15:41 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 21:15:41 2023: Starting Socket connection
+Sun Dec 17 21:15:41 2023: EXCHANGE_TOKEN received, server token: a3952e40-b030-4e90-9b88-607ee5a00209, passed token: a3952e40-b030-4e90-9b88-607ee5a00209
+Sun Dec 17 21:15:41 2023: SESSION_MGR: creating session with session uuid: '528eed55-b64b-4283-9027-afc136a8daba' and name 'AIE Compilation'
+Sun Dec 17 21:15:41 2023: KERNEL_SVC: creating session with uuid: '528eed55-b64b-4283-9027-afc136a8daba' and name 'AIE Compilation'
+Sun Dec 17 21:15:41 2023: GUIDANCE_SMGR: creating guidance session with uuid: '528eed55-b64b-4283-9027-afc136a8daba' and name 'AIE Compilation'
+Sun Dec 17 21:15:46 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 21:15:46 2023: Starting Socket connection
+Sun Dec 17 21:16:30 2023: SESSION_MGR: closing session for UUID '528eed55-b64b-4283-9027-afc136a8daba' with name ''
+Sun Dec 17 21:16:30 2023: KERNEL_SVC: closing session for UUID '528eed55-b64b-4283-9027-afc136a8daba' with name ''
+Sun Dec 17 21:16:30 2023: GUIDANCE_SMGR: closing session for UUID '528eed55-b64b-4283-9027-afc136a8daba' with name ''
+Sun Dec 17 21:16:30 2023: STOP_SERVER received, server token: a3952e40-b030-4e90-9b88-607ee5a00209, passed token: a3952e40-b030-4e90-9b88-607ee5a00209
+Sun Dec 17 21:16:30 2023: Socket received request to stop server.
+Sun Dec 17 21:16:30 2023: Dispatch Server: do_await_stop
+Sun Dec 17 21:16:30 2023: Dispatch Server: stopping mainFifo_
+Sun Dec 17 21:16:30 2023: XCD main fifo: Stopping
+Sun Dec 17 21:16:30 2023: XCD main fifo: do_read error code: Operation canceled
+Sun Dec 17 21:16:30 2023: XCD main fifo: bytes_transferred: 0
+Sun Dec 17 21:16:30 2023: SERVER: destructor for server bound to port 46549
+Sun Dec 17 21:16:30 2023: XCD main fifo: Good unlink of /tmp/xcdmaina3952e40-b030-4e90-9b88-607ee5a00209
+Sun Dec 17 21:16:30 2023: Server exiting with status 0.
+Sun Dec 17 21:16:30 2023: Closing log file.
+Sun Dec 17 21:17:21 2023: Running xcd server. This server was built by gradle.
+Sun Dec 17 21:17:21 2023: Server was asked to start on port: '42809'
+Sun Dec 17 21:17:21 2023: Server is using token UUID: 'bbf82da9-6f11-4605-8442-9e6db6f7e2ac'
+Sun Dec 17 21:17:21 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 17 21:17:21 2023: Attempting to start server on port '42809'
+Sun Dec 17 21:17:21 2023: XCD main fifo: created main fifo '/tmp/xcdmainbbf82da9-6f11-4605-8442-9e6db6f7e2ac', fd read = 15
+Sun Dec 17 21:17:21 2023: Running Dispatch Server
+Sun Dec 17 21:17:21 2023: Version 2.2.0
+Sun Dec 17 21:17:22 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 21:17:22 2023: Starting Socket connection
+Sun Dec 17 21:17:22 2023: EXCHANGE_TOKEN received, server token: bbf82da9-6f11-4605-8442-9e6db6f7e2ac, passed token: bbf82da9-6f11-4605-8442-9e6db6f7e2ac
+Sun Dec 17 21:17:22 2023: SESSION_MGR: creating session with session uuid: '55f3ce79-7afc-4e81-9da8-283b8a7406bf' and name 'AIE Simulation'
+Sun Dec 17 21:17:22 2023: KERNEL_SVC: creating session with uuid: '55f3ce79-7afc-4e81-9da8-283b8a7406bf' and name 'AIE Simulation'
+Sun Dec 17 21:17:22 2023: GUIDANCE_SMGR: creating guidance session with uuid: '55f3ce79-7afc-4e81-9da8-283b8a7406bf' and name 'AIE Simulation'
+Sun Dec 17 21:17:44 2023: Dispatch Server: do_await_stop
+Sun Dec 17 21:17:44 2023: Dispatch Server: stopping mainFifo_
+Sun Dec 17 21:17:44 2023: XCD main fifo: Stopping
+Sun Dec 17 21:17:44 2023: XCD main fifo: do_read error code: Operation canceled
+Sun Dec 17 21:17:44 2023: XCD main fifo: bytes_transferred: 0
+Sun Dec 17 21:18:39 2023: Running xcd server. This server was built by gradle.
+Sun Dec 17 21:18:39 2023: Server was asked to start on port: '46253'
+Sun Dec 17 21:18:39 2023: Server is using token UUID: 'f8d6241f-4aae-485c-b9af-1e6b8f32c0c9'
+Sun Dec 17 21:18:39 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 17 21:18:39 2023: Attempting to start server on port '46253'
+Sun Dec 17 21:18:39 2023: XCD main fifo: created main fifo '/tmp/xcdmainf8d6241f-4aae-485c-b9af-1e6b8f32c0c9', fd read = 12
+Sun Dec 17 21:18:39 2023: Running Dispatch Server
+Sun Dec 17 21:18:39 2023: Version 2.2.0
+Sun Dec 17 21:18:40 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 21:18:40 2023: Starting Socket connection
+Sun Dec 17 21:18:40 2023: EXCHANGE_TOKEN received, server token: f8d6241f-4aae-485c-b9af-1e6b8f32c0c9, passed token: f8d6241f-4aae-485c-b9af-1e6b8f32c0c9
+Sun Dec 17 21:18:40 2023: SESSION_MGR: creating session with session uuid: '33719fc9-616a-45b8-9bf7-b4e8e1db6ef7' and name 'AIE Compilation'
+Sun Dec 17 21:18:40 2023: KERNEL_SVC: creating session with uuid: '33719fc9-616a-45b8-9bf7-b4e8e1db6ef7' and name 'AIE Compilation'
+Sun Dec 17 21:18:40 2023: GUIDANCE_SMGR: creating guidance session with uuid: '33719fc9-616a-45b8-9bf7-b4e8e1db6ef7' and name 'AIE Compilation'
+Sun Dec 17 21:18:45 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 21:18:45 2023: Starting Socket connection
+Sun Dec 17 21:20:12 2023: SESSION_MGR: closing session for UUID '33719fc9-616a-45b8-9bf7-b4e8e1db6ef7' with name ''
+Sun Dec 17 21:20:12 2023: KERNEL_SVC: closing session for UUID '33719fc9-616a-45b8-9bf7-b4e8e1db6ef7' with name ''
+Sun Dec 17 21:20:12 2023: GUIDANCE_SMGR: closing session for UUID '33719fc9-616a-45b8-9bf7-b4e8e1db6ef7' with name ''
+Sun Dec 17 21:20:12 2023: STOP_SERVER received, server token: f8d6241f-4aae-485c-b9af-1e6b8f32c0c9, passed token: f8d6241f-4aae-485c-b9af-1e6b8f32c0c9
+Sun Dec 17 21:20:12 2023: Socket received request to stop server.
+Sun Dec 17 21:20:12 2023: Dispatch Server: do_await_stop
+Sun Dec 17 21:20:12 2023: Dispatch Server: stopping mainFifo_
+Sun Dec 17 21:20:12 2023: XCD main fifo: Stopping
+Sun Dec 17 21:20:12 2023: XCD main fifo: do_read error code: Operation canceled
+Sun Dec 17 21:20:12 2023: XCD main fifo: bytes_transferred: 0
+Sun Dec 17 21:20:12 2023: SERVER: destructor for server bound to port 46253
+Sun Dec 17 21:20:12 2023: XCD main fifo: Good unlink of /tmp/xcdmainf8d6241f-4aae-485c-b9af-1e6b8f32c0c9
+Sun Dec 17 21:20:12 2023: Server exiting with status 0.
+Sun Dec 17 21:20:12 2023: Closing log file.
+Sun Dec 17 21:20:40 2023: Running xcd server. This server was built by gradle.
+Sun Dec 17 21:20:40 2023: Server was asked to start on port: '45303'
+Sun Dec 17 21:20:40 2023: Server is using token UUID: 'f15881e1-1871-4fbf-adc5-9acc9c9dff4e'
+Sun Dec 17 21:20:40 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 17 21:20:40 2023: Attempting to start server on port '45303'
+Sun Dec 17 21:20:40 2023: XCD main fifo: created main fifo '/tmp/xcdmainf15881e1-1871-4fbf-adc5-9acc9c9dff4e', fd read = 15
+Sun Dec 17 21:20:40 2023: Running Dispatch Server
+Sun Dec 17 21:20:40 2023: Version 2.2.0
+Sun Dec 17 21:20:42 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 21:20:42 2023: Starting Socket connection
+Sun Dec 17 21:20:42 2023: EXCHANGE_TOKEN received, server token: f15881e1-1871-4fbf-adc5-9acc9c9dff4e, passed token: f15881e1-1871-4fbf-adc5-9acc9c9dff4e
+Sun Dec 17 21:20:42 2023: SESSION_MGR: creating session with session uuid: '048d9e00-2852-4342-a5c2-edd1045d6694' and name 'AIE Simulation'
+Sun Dec 17 21:20:42 2023: KERNEL_SVC: creating session with uuid: '048d9e00-2852-4342-a5c2-edd1045d6694' and name 'AIE Simulation'
+Sun Dec 17 21:20:42 2023: GUIDANCE_SMGR: creating guidance session with uuid: '048d9e00-2852-4342-a5c2-edd1045d6694' and name 'AIE Simulation'
+Sun Dec 17 21:21:13 2023: SESSION_MGR: closing session for UUID '048d9e00-2852-4342-a5c2-edd1045d6694' with name ''
+Sun Dec 17 21:21:13 2023: KERNEL_SVC: closing session for UUID '048d9e00-2852-4342-a5c2-edd1045d6694' with name ''
+Sun Dec 17 21:21:13 2023: GUIDANCE_SMGR: closing session for UUID '048d9e00-2852-4342-a5c2-edd1045d6694' with name ''
+Sun Dec 17 21:21:13 2023: STOP_SERVER received, server token: f15881e1-1871-4fbf-adc5-9acc9c9dff4e, passed token: f15881e1-1871-4fbf-adc5-9acc9c9dff4e
+Sun Dec 17 21:21:13 2023: Socket received request to stop server.
+Sun Dec 17 21:21:13 2023: Dispatch Server: do_await_stop
+Sun Dec 17 21:21:13 2023: Dispatch Server: stopping mainFifo_
+Sun Dec 17 21:21:13 2023: XCD main fifo: Stopping
+Sun Dec 17 21:21:13 2023: XCD main fifo: do_read error code: Operation canceled
+Sun Dec 17 21:21:13 2023: XCD main fifo: bytes_transferred: 0
+Sun Dec 17 21:21:13 2023: SERVER: destructor for server bound to port 45303
+Sun Dec 17 21:21:13 2023: XCD main fifo: Good unlink of /tmp/xcdmainf15881e1-1871-4fbf-adc5-9acc9c9dff4e
+Sun Dec 17 21:21:13 2023: Server exiting with status 0.
+Sun Dec 17 21:21:13 2023: Closing log file.
+Sun Dec 17 22:30:09 2023: Running xcd server. This server was built by gradle.
+Sun Dec 17 22:30:09 2023: Server was asked to start on port: '35845'
+Sun Dec 17 22:30:09 2023: Server is using token UUID: '01f1d89e-508c-44e5-a312-aed1190a5858'
+Sun Dec 17 22:30:09 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 17 22:30:09 2023: Attempting to start server on port '35845'
+Sun Dec 17 22:30:09 2023: XCD main fifo: created main fifo '/tmp/xcdmain01f1d89e-508c-44e5-a312-aed1190a5858', fd read = 12
+Sun Dec 17 22:30:09 2023: Running Dispatch Server
+Sun Dec 17 22:30:09 2023: Version 2.2.0
+Sun Dec 17 22:30:10 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 22:30:10 2023: Starting Socket connection
+Sun Dec 17 22:30:10 2023: EXCHANGE_TOKEN received, server token: 01f1d89e-508c-44e5-a312-aed1190a5858, passed token: 01f1d89e-508c-44e5-a312-aed1190a5858
+Sun Dec 17 22:30:10 2023: SESSION_MGR: creating session with session uuid: '033a9018-3c1a-46bd-9021-fc0485c7cb9c' and name 'AIE Compilation'
+Sun Dec 17 22:30:10 2023: KERNEL_SVC: creating session with uuid: '033a9018-3c1a-46bd-9021-fc0485c7cb9c' and name 'AIE Compilation'
+Sun Dec 17 22:30:10 2023: GUIDANCE_SMGR: creating guidance session with uuid: '033a9018-3c1a-46bd-9021-fc0485c7cb9c' and name 'AIE Compilation'
+Sun Dec 17 22:30:14 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 22:30:14 2023: Starting Socket connection
+Sun Dec 17 22:31:47 2023: SESSION_MGR: closing session for UUID '033a9018-3c1a-46bd-9021-fc0485c7cb9c' with name ''
+Sun Dec 17 22:31:47 2023: KERNEL_SVC: closing session for UUID '033a9018-3c1a-46bd-9021-fc0485c7cb9c' with name ''
+Sun Dec 17 22:31:47 2023: GUIDANCE_SMGR: closing session for UUID '033a9018-3c1a-46bd-9021-fc0485c7cb9c' with name ''
+Sun Dec 17 22:31:47 2023: STOP_SERVER received, server token: 01f1d89e-508c-44e5-a312-aed1190a5858, passed token: 01f1d89e-508c-44e5-a312-aed1190a5858
+Sun Dec 17 22:31:47 2023: Socket received request to stop server.
+Sun Dec 17 22:31:47 2023: Dispatch Server: do_await_stop
+Sun Dec 17 22:31:47 2023: Dispatch Server: stopping mainFifo_
+Sun Dec 17 22:31:47 2023: XCD main fifo: Stopping
+Sun Dec 17 22:31:47 2023: XCD main fifo: do_read error code: Operation canceled
+Sun Dec 17 22:31:47 2023: XCD main fifo: bytes_transferred: 0
+Sun Dec 17 22:31:47 2023: SERVER: destructor for server bound to port 35845
+Sun Dec 17 22:31:47 2023: XCD main fifo: Good unlink of /tmp/xcdmain01f1d89e-508c-44e5-a312-aed1190a5858
+Sun Dec 17 22:31:47 2023: Server exiting with status 0.
+Sun Dec 17 22:31:47 2023: Closing log file.
+Sun Dec 17 22:32:26 2023: Running xcd server. This server was built by gradle.
+Sun Dec 17 22:32:26 2023: Server was asked to start on port: '41659'
+Sun Dec 17 22:32:26 2023: Server is using token UUID: '4a407bbc-f453-4c1a-8718-c15536c0c3f9'
+Sun Dec 17 22:32:26 2023: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 17 22:32:26 2023: Attempting to start server on port '41659'
+Sun Dec 17 22:32:26 2023: XCD main fifo: created main fifo '/tmp/xcdmain4a407bbc-f453-4c1a-8718-c15536c0c3f9', fd read = 15
+Sun Dec 17 22:32:26 2023: Running Dispatch Server
+Sun Dec 17 22:32:26 2023: Version 2.2.0
+Sun Dec 17 22:32:27 2023: Dispatch Server: Accepted socket connection from client
+Sun Dec 17 22:32:27 2023: Starting Socket connection
+Sun Dec 17 22:32:27 2023: EXCHANGE_TOKEN received, server token: 4a407bbc-f453-4c1a-8718-c15536c0c3f9, passed token: 4a407bbc-f453-4c1a-8718-c15536c0c3f9
+Sun Dec 17 22:32:27 2023: SESSION_MGR: creating session with session uuid: 'e0d2d744-9889-481d-984a-86f4b68ec1c6' and name 'AIE Simulation'
+Sun Dec 17 22:32:27 2023: KERNEL_SVC: creating session with uuid: 'e0d2d744-9889-481d-984a-86f4b68ec1c6' and name 'AIE Simulation'
+Sun Dec 17 22:32:27 2023: GUIDANCE_SMGR: creating guidance session with uuid: 'e0d2d744-9889-481d-984a-86f4b68ec1c6' and name 'AIE Simulation'
+Sun Dec 17 22:32:59 2023: SESSION_MGR: closing session for UUID 'e0d2d744-9889-481d-984a-86f4b68ec1c6' with name ''
+Sun Dec 17 22:32:59 2023: KERNEL_SVC: closing session for UUID 'e0d2d744-9889-481d-984a-86f4b68ec1c6' with name ''
+Sun Dec 17 22:32:59 2023: GUIDANCE_SMGR: closing session for UUID 'e0d2d744-9889-481d-984a-86f4b68ec1c6' with name ''
+Sun Dec 17 22:32:59 2023: STOP_SERVER received, server token: 4a407bbc-f453-4c1a-8718-c15536c0c3f9, passed token: 4a407bbc-f453-4c1a-8718-c15536c0c3f9
+Sun Dec 17 22:32:59 2023: Socket received request to stop server.
+Sun Dec 17 22:32:59 2023: Dispatch Server: do_await_stop
+Sun Dec 17 22:32:59 2023: Dispatch Server: stopping mainFifo_
+Sun Dec 17 22:32:59 2023: XCD main fifo: Stopping
+Sun Dec 17 22:32:59 2023: XCD main fifo: do_read error code: Operation canceled
+Sun Dec 17 22:32:59 2023: XCD main fifo: bytes_transferred: 0
+Sun Dec 17 22:32:59 2023: SERVER: destructor for server bound to port 41659
+Sun Dec 17 22:32:59 2023: XCD main fifo: Good unlink of /tmp/xcdmain4a407bbc-f453-4c1a-8718-c15536c0c3f9
+Sun Dec 17 22:32:59 2023: Server exiting with status 0.
+Sun Dec 17 22:32:59 2023: Closing log file.

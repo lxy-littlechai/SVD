@@ -1,0 +1,200 @@
+<ENTRY>
+{
+ "thisFile": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/default.aierun_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:27 2023",
+ "timestampMillis": "1702823547871",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Dec 17 22:32:27 2023",
+ "timestampMillis": "1702823547872",
+ "buildStep": {
+  "cmdId": "b9480316-ca73-4aa4-88bd-edaaaceeb3d3",
+  "name": "aiesim",
+  "logFile": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/AIESimulator.log",
+  "commandLine": "aiesimulator --pkg-dir ./Work --aiearch-version aie --dump-vcd foo --profile ",
+  "args": [
+   "aiesimulator",
+   "--pkg-dir ./Work",
+   "--aiearch-version aie",
+   "--dump-vcd foo",
+   "--profile"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Dec 17 22:32:27 2023",
+ "timestampMillis": "1702823547873",
+ "status": {
+  "cmdId": "b9480316-ca73-4aa4-88bd-edaaaceeb3d3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Dec 17 22:32:27 2023",
+ "timestampMillis": "1702823547874",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_AIESIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/temp/TopGraph.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src/TopGraph.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:27 2023",
+ "timestampMillis": "1702823547875",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/AIESim_FIFO_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_FIFO_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:27 2023",
+ "timestampMillis": "1702823547876",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/AIESim_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_MEMORY_ACCESS_VIOLATION_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:28 2023",
+ "timestampMillis": "1702823548043",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/foo.vcd",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VARIABLE_CHANGE_DUMP",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:59 2023",
+ "timestampMillis": "1702823579408",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_24_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:59 2023",
+ "timestampMillis": "1702823579409",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_24_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:59 2023",
+ "timestampMillis": "1702823579409",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_24_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 22:32:59 2023",
+ "timestampMillis": "1702823579410",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_24_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Dec 17 22:32:59 2023",
+ "timestampMillis": "1702823579410",
+ "status": {
+  "cmdId": "b9480316-ca73-4aa4-88bd-edaaaceeb3d3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

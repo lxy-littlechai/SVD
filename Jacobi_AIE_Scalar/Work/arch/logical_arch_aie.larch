@@ -1,0 +1,112 @@
+{
+  "appId": "root",
+  "device": "xcvc1902",
+  "AIE": {
+    "ai_engine_0": {
+      "annotation": "AIE IP",
+      "logical_device": "${XILINX_VITIS_AIETOOLS}/data/devices/VC1902.json",
+      "aieshimPorts": {
+        "S00_AXIS": {
+          "type": "stream",
+          "direction": "slave",
+          "dataWidth": 32,
+          "busWidth": 32,
+          "parameterIndex": 0,
+          "clkFreq": 312.5,
+          "registeredInterface": true,
+          "traceFile": "aie/data/in0.txt",
+          "annotation": [
+            "g1_in0"
+          ],
+          "sdfioName": [
+            "i1_po0"
+          ]
+        },
+        "S01_AXIS": {
+          "type": "stream",
+          "direction": "slave",
+          "dataWidth": 32,
+          "busWidth": 32,
+          "parameterIndex": 0,
+          "clkFreq": 312.5,
+          "registeredInterface": true,
+          "traceFile": "aie/data/in1.txt",
+          "annotation": [
+            "g1_in1"
+          ],
+          "sdfioName": [
+            "i2_po0"
+          ]
+        },
+        "M00_AXIS": {
+          "type": "stream",
+          "direction": "master",
+          "dataWidth": 32,
+          "busWidth": 32,
+          "parameterIndex": 0,
+          "clkFreq": 312.5,
+          "registeredInterface": true,
+          "traceFile": "aie/data/outBp.txt",
+          "annotation": [
+            "g1_out0"
+          ],
+          "sdfioName": [
+            "i3_pi0"
+          ]
+        },
+        "M01_AXIS": {
+          "type": "stream",
+          "direction": "master",
+          "dataWidth": 32,
+          "busWidth": 32,
+          "parameterIndex": 0,
+          "clkFreq": 312.5,
+          "registeredInterface": true,
+          "traceFile": "aie/data/outBq.txt",
+          "annotation": [
+            "g1_out1"
+          ],
+          "sdfioName": [
+            "i4_pi0"
+          ]
+        }
+      }
+    }
+  },
+  "connections": {
+    "net0": {
+      "dstPorts": [
+        {
+          "instName": "ai_engine_0",
+          "portName": "S00_AXIS"
+        }
+      ],
+      "direction": "pl_to_aie"
+    },
+    "net1": {
+      "dstPorts": [
+        {
+          "instName": "ai_engine_0",
+          "portName": "S01_AXIS"
+        }
+      ],
+      "direction": "pl_to_aie"
+    },
+    "net2": {
+      "type": "stream",
+      "srcPort": {
+        "instName": "ai_engine_0",
+        "portName": "M00_AXIS"
+      },
+      "direction": "aie_to_pl"
+    },
+    "net3": {
+      "type": "stream",
+      "srcPort": {
+        "instName": "ai_engine_0",
+        "portName": "M01_AXIS"
+      },
+      "direction": "aie_to_pl"
+    }
+  }
+}

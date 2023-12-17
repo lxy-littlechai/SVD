@@ -1,5 +1,6 @@
 #include "ProcessUnit.h"
 #include <iostream>
+using namespace std;
 
 ProcessUnit::ProcessUnit(int row, std::vector<double> Ap) {
   this->Bp = Ap;
@@ -34,16 +35,20 @@ double sign(double x) {
   else return -1.0;
 }
 void ProcessUnit::orthogonalize() {
+  
+  const int size = Ap.size();
   if (Ap.size() != Aq.size()) {
     std::cout << "Error unmatched size\n";
     return;
   }
-  const int size = Ap.size();
+  
+  
   double tmp1 = 0, tmp2 = 0;
   for (int i = 0; i < size; i++) {
     tmp1 += Ap[i] * Ap[i] - Aq[i] * Aq[i];
     tmp2 += 2 * Ap[i] * Aq[i];
   }
+  
   tau = tmp1 / tmp2;
   t = sign(tau) / (abs(tau) + sqrt(1 + tau * tau));
   c = 1 / (sqrt(1 + t * t));
@@ -51,8 +56,26 @@ void ProcessUnit::orthogonalize() {
   for (int i = 0; i < size; i++) {
     Bp[i] = Ap[i] * c + Aq[i] * s;
     Bq[i] = -Ap[i] * s + Aq[i] * c;
+    //std::cout << "test " << Bp[i] << " ";
     //Vp[i] = Vp[i] * c + Vq[i] * s;
     //Vq[i] = -Vp[i] * c + Vq[i] * s;
+  }
+  std::cout << "-------------------\n";
+  for(int i = 0;i < size;i ++) {
+    std::cout << Ap[i] << " ";
+  }
+  std::cout << "\n";
+  for(int i = 0;i < size;i ++) {
+    std::cout << Aq[i] << " ";
+  }
+  std::cout << "\n";
+  cout << "t: " << t << " c:" << c << " s:" << s << endl;
+  for(int i = 0;i < size;i ++) {
+    std::cout << Bp[i] << " ";
+  }
+  std::cout << "\n";
+  for(int i = 0;i < size;i ++) {
+    std::cout << Bq[i] << " ";
   }
 }
 

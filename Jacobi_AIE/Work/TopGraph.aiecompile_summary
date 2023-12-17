@@ -1,0 +1,682 @@
+<ENTRY>
+{
+ "thisFile": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/TopGraph.aiecompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Dec 17 17:12:51 2023",
+ "timestampMillis": "1702804371757",
+ "buildStep": {
+  "cmdId": "28eaf25f-3601-4d3b-b25c-05c7a183389e",
+  "name": "aiecompiler",
+  "logFile": "/home/lxy/Projects/SVD/Jacobi_AIE/AIECompiler.log",
+  "commandLine": "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler -platform=/home/lxy/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --target=hw --stacksize=4096 -include=./aie/src -workdir=./Work aie/src/TopGraph.cpp ",
+  "args": [
+   "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler",
+   "-platform=/home/lxy/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm",
+   "--target=hw",
+   "--stacksize=4096",
+   "-include=./aie/src",
+   "-workdir=./Work",
+   "aie/src/TopGraph.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/lxy/Projects/SVD/Jacobi_AIE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Dec 17 17:12:51 2023",
+ "timestampMillis": "1702804371758",
+ "status": {
+  "cmdId": "28eaf25f-3601-4d3b-b25c-05c7a183389e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Dec 17 17:12:51 2023",
+ "timestampMillis": "1702804371758",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_UNKNOWN",
+  "target": "TT_UNKNOWN",
+  "kernels": [],
+  "toolVersion": "Vitis AI Engine Compiler Release 2023.2. SW Build 4023990 on 2023-10-12-17:44:32"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:12:51 2023",
+ "timestampMillis": "1702804371760",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:12:51 2023",
+ "timestampMillis": "1702804371761",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:12:51 2023",
+ "timestampMillis": "1702804371761",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Dec 17 17:12:56 2023",
+ "timestampMillis": "1702804376514",
+ "buildStep": {
+  "cmdId": "57e81461-6c69-4faf-aebd-d0a5bf599582",
+  "name": "aieir_be",
+  "logFile": "",
+  "commandLine": "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be --time-passes=0 --disable-om-fifo-insertion=false --logcfg-file= --trace-plio-width=64 --aie2ipu-base-addr=1073741824 --pl-freq=0 --enable-light-cdo=false --show-loggers=false --fast-nonlinearfloats=false --broadcast-enable-core=true --high-performance=false --multi-layer-opt=0 --kernel-address-location=false --target=hw --swfifo-threshold=40 --single-mm2s-channel=false --workdir=./Work --multi-layer-enable-shared-channel-opt=true --exit-after=complete --event-trace-config= --test-iterations=-1 --stacksize=4096 --known-tripcount=false --enable-core-processor-bus=false --platform=/home/lxy/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --large-program-memory=false --event-trace-custom-config= --disable-dma-cmd-alignment=false --enable-ecc-scrubbing=true --float-accuracy=fast --output-archive=libadf.a --write-partitioned-file=true --print-timer-multi-layer-ctrl=false --schemafile=AIEGraphSchema.json --disable-multirate=false --multi-layer-controller-parallel=false --include=./aie/src --verify-switchconfig=true --enable-peano-flow=false --partition-isolation=true --disable-multirate-analysis=false --fastmath=false --multi-layer-ctrl-pkt=false --cpp-std=-std=c++17 --max-layer-ctrl-param-size=256 --enable-mapper-hints-constraints=false --multi-layer-auto-phase=false --event-trace-advanced-mapping=0 --multi-layer-plc-constraints= --lock-fence-mode=1 --enable-reconfig=false --compute-heapsize=true --log-level=1 --aiesim-xrt-api=false --evaluate-fifo-depth=false --gen-graph-cleanup=false --use-canonical-net-names=false --event-trace-port=gmio --use-phy-shim=true --print-timer-multi-layer-core=false --xlopt=1 --graph-iterator-event=false --pre-compile-kernels=false --gen-elf-ctrl-pkts=false --trace-aiesim-option=0 --mapped-soln-udm= --optimize-pktids=false --no-init=false --adf-api-log-level=2 --num-trace-streams=16 --aie-heat-map=false --enable-partition=false --multi-layer-enable-tct=false --fast-floats=true --quiet=false --enable-multi-layer=false --multi-layer-pipelining=false --llvmRelease=15 --exec-timed=0 --pl-auto-restart=false --routed-soln-udm= --large-kernel-program=false --read-mem-multi-layer=false --enable-profiling=false --runtime-opt=false --part= --disable-transform-merge-broadcast=false --multi-layer-ext-buf-file= --verbose=false --use-async-rtp-locks=true --repo-path= --genArchive=false --kernel-compile-replacement= --pl-axi-lite=false --event-trace-bounding-box= --multi-layer-shim-dma-bandwidth=0 --heapsize=1024 --logical-arch= --enable-reconfig-dma-autostart=false --nodot-graph=false --use-core-control-api=false --enable-txn-bin=false --debug-runtime-opt=false --disable-dma-autostart=false --include-mem-tile= --disable-transform-broadcast-split=true --json=./Work/temp/TopGraph.json --aiearch aie --frontend-warning=0 --frontend-critical-warning=0 --frontend-summary-name=./Work/TopGraph.aiecompile_summary --frontend-files-to-report=Guidance:./Work/reports/guidance.html --sdf-graph=aie/src/TopGraph.cpp ",
+  "args": [
+   "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be",
+   "--time-passes=0",
+   "--disable-om-fifo-insertion=false",
+   "--logcfg-file=",
+   "--trace-plio-width=64",
+   "--aie2ipu-base-addr=1073741824",
+   "--pl-freq=0",
+   "--enable-light-cdo=false",
+   "--show-loggers=false",
+   "--fast-nonlinearfloats=false",
+   "--broadcast-enable-core=true",
+   "--high-performance=false",
+   "--multi-layer-opt=0",
+   "--kernel-address-location=false",
+   "--target=hw",
+   "--swfifo-threshold=40",
+   "--single-mm2s-channel=false",
+   "--workdir=./Work",
+   "--multi-layer-enable-shared-channel-opt=true",
+   "--exit-after=complete",
+   "--event-trace-config=",
+   "--test-iterations=-1",
+   "--stacksize=4096",
+   "--known-tripcount=false",
+   "--enable-core-processor-bus=false",
+   "--platform=/home/lxy/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm",
+   "--large-program-memory=false",
+   "--event-trace-custom-config=",
+   "--disable-dma-cmd-alignment=false",
+   "--enable-ecc-scrubbing=true",
+   "--float-accuracy=fast",
+   "--output-archive=libadf.a",
+   "--write-partitioned-file=true",
+   "--print-timer-multi-layer-ctrl=false",
+   "--schemafile=AIEGraphSchema.json",
+   "--disable-multirate=false",
+   "--multi-layer-controller-parallel=false",
+   "--include=./aie/src",
+   "--verify-switchconfig=true",
+   "--enable-peano-flow=false",
+   "--partition-isolation=true",
+   "--disable-multirate-analysis=false",
+   "--fastmath=false",
+   "--multi-layer-ctrl-pkt=false",
+   "--cpp-std=-std=c++17",
+   "--max-layer-ctrl-param-size=256",
+   "--enable-mapper-hints-constraints=false",
+   "--multi-layer-auto-phase=false",
+   "--event-trace-advanced-mapping=0",
+   "--multi-layer-plc-constraints=",
+   "--lock-fence-mode=1",
+   "--enable-reconfig=false",
+   "--compute-heapsize=true",
+   "--log-level=1",
+   "--aiesim-xrt-api=false",
+   "--evaluate-fifo-depth=false",
+   "--gen-graph-cleanup=false",
+   "--use-canonical-net-names=false",
+   "--event-trace-port=gmio",
+   "--use-phy-shim=true",
+   "--print-timer-multi-layer-core=false",
+   "--xlopt=1",
+   "--graph-iterator-event=false",
+   "--pre-compile-kernels=false",
+   "--gen-elf-ctrl-pkts=false",
+   "--trace-aiesim-option=0",
+   "--mapped-soln-udm=",
+   "--optimize-pktids=false",
+   "--no-init=false",
+   "--adf-api-log-level=2",
+   "--num-trace-streams=16",
+   "--aie-heat-map=false",
+   "--enable-partition=false",
+   "--multi-layer-enable-tct=false",
+   "--fast-floats=true",
+   "--quiet=false",
+   "--enable-multi-layer=false",
+   "--multi-layer-pipelining=false",
+   "--llvmRelease=15",
+   "--exec-timed=0",
+   "--pl-auto-restart=false",
+   "--routed-soln-udm=",
+   "--large-kernel-program=false",
+   "--read-mem-multi-layer=false",
+   "--enable-profiling=false",
+   "--runtime-opt=false",
+   "--part=",
+   "--disable-transform-merge-broadcast=false",
+   "--multi-layer-ext-buf-file=",
+   "--verbose=false",
+   "--use-async-rtp-locks=true",
+   "--repo-path=",
+   "--genArchive=false",
+   "--kernel-compile-replacement=",
+   "--pl-axi-lite=false",
+   "--event-trace-bounding-box=",
+   "--multi-layer-shim-dma-bandwidth=0",
+   "--heapsize=1024",
+   "--logical-arch=",
+   "--enable-reconfig-dma-autostart=false",
+   "--nodot-graph=false",
+   "--use-core-control-api=false",
+   "--enable-txn-bin=false",
+   "--debug-runtime-opt=false",
+   "--disable-dma-autostart=false",
+   "--include-mem-tile=",
+   "--disable-transform-broadcast-split=true",
+   "--json=./Work/temp/TopGraph.json",
+   "--aiearch",
+   "aie",
+   "--frontend-warning=0",
+   "--frontend-critical-warning=0",
+   "--frontend-summary-name=./Work/TopGraph.aiecompile_summary",
+   "--frontend-files-to-report=Guidance:./Work/reports/guidance.html",
+   "--sdf-graph=aie/src/TopGraph.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/lxy/Projects/SVD/Jacobi_AIE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Dec 17 17:12:56 2023",
+ "timestampMillis": "1702804376515",
+ "status": {
+  "cmdId": "57e81461-6c69-4faf-aebd-d0a5bf599582",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:13 2023",
+ "timestampMillis": "1702804393395",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:13 2023",
+ "timestampMillis": "1702804393479",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/debug_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DEBUG_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Dec 17 17:13:13 2023",
+ "timestampMillis": "1702804393480",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/TopGraph.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/lxy/Projects/SVD/Jacobi_AIE/aie/src/TopGraph.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:13 2023",
+ "timestampMillis": "1702804393485",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/TopGraph.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:22 2023",
+ "timestampMillis": "1702804402341",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/TopGraph.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_LOGICAL_VIEW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:22 2023",
+ "timestampMillis": "1702804402454",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/TopGraph_partition.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_PARTITION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:25 2023",
+ "timestampMillis": "1702804405915",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/TopGraph_aie_constraints_for_placer.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_PLACER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406697",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/TopGraph_aie_mapped.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406698",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/TopGraph_mapped.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406831",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/TopGraph_mapping_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406832",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/sync_buffer_address.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SYNC_BUFFER_ADDRESS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406852",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/Interposer_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INTERPOSER_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406853",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/Lock_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406854",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/Stream_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_STREAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406854",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/DMA_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:26 2023",
+ "timestampMillis": "1702804406855",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/dma_lock_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417451",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/DMA_FIFO_info_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_FIFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417560",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/router_soln.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417605",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/router_soln.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417759",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/TopGraph_mapped_post.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417804",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/TopGraph.xpe",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_POWER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417815",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/aie/24_0/scripts/24_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417816",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/aie/24_0/src/24_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:37 2023",
+ "timestampMillis": "1702804417824",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/aie/24_0/24_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:13:58 2023",
+ "timestampMillis": "1702804438009",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/ps/c_rts/aie_control.cpp",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CONTROL_SOURCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:14:16 2023",
+ "timestampMillis": "1702804456105",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/ps/c_rts/aie_control_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONTROL_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:14:16 2023",
+ "timestampMillis": "1702804456107",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/reports/compiler_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_COMPILER_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Dec 17 17:14:16 2023",
+ "timestampMillis": "1702804456119",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE/Work/temp/TopGraph_aie_constraints.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Dec 17 17:14:16 2023",
+ "timestampMillis": "1702804456648",
+ "status": {
+  "cmdId": "57e81461-6c69-4faf-aebd-d0a5bf599582",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Dec 17 17:14:18 2023",
+ "timestampMillis": "1702804458156",
+ "status": {
+  "cmdId": "28eaf25f-3601-4d3b-b25c-05c7a183389e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

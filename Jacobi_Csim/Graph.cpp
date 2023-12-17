@@ -15,9 +15,6 @@ Graph::Graph(int col, int row, Matrix A) {
 }
 
 void Graph::start() {
-  if (col & 1)
-    oddGraph();
-  else
     evenGraph();
 }
 
@@ -27,6 +24,7 @@ void Graph::oddGraph() {
 
 void Graph::evenGraph() {
   int AIEcol = 0;
+  
   for (int j = 0; j < col; j += 2) {
     auto Ap = A.get(j);
     auto Aq = A.get(j+1);
@@ -34,9 +32,11 @@ void Graph::evenGraph() {
     //auto Eq = E.get(j+1);
     processArray[0][AIEcol] = ProcessUnit(row, Ap, Aq);
     processArray[0][AIEcol].orthogonalize();
+    
     AIEcol ++;
   }
-  for(int i = 1;i <= row;i ++) {
+  
+  for(int i = 1;i < AIEcol;i ++) {
     if(i&1) {
       for(int j = 0;j < AIEcol-1;j ++) {
         processArray[i][j] = ProcessUnit(row, processArray[i-1][j].outBp(), processArray[i-1][j+1].outBq());
@@ -57,13 +57,15 @@ void Graph::evenGraph() {
   int idx = -1;
   for(int j = AIEcol-1;j >= 0;j --) {
     idx ++;
-    A.insert(idx, processArray[row][j].outBq());
+    A.insert(idx, processArray[AIEcol-1][j].outBq());
     idx ++;
-    A.insert(idx, processArray[row][j].outBp());
+    A.insert(idx, processArray[AIEcol-1][j].outBp());
   }
+  A.print();
 }
 
 void Graph::normalize() {
+  
   for(int j = 0;j < col;j ++) {
     auto vec = A.get(j);
     double tmp = 0;

@@ -1,0 +1,3 @@
+AIE_PKG_DIR=/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/./Work
+AIE_PROFILE=All
+AIE_DUMP_VCD=foo

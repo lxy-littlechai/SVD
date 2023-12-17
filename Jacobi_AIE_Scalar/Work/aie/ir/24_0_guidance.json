@@ -1,0 +1,10 @@
+{
+    "Alignment Hints": [],
+    "Size Hints": [],
+    "Name Mangling Hints": [],
+    "Global Var Read-Before-Write Hints": [],
+    "Global Var Conflict Hints": [],
+    "Operator Hints": [],
+    "Bank Conflict Hints": [],
+    "RestrictAliasAnalysisHints": []
+}

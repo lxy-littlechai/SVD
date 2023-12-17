@@ -1,0 +1,520 @@
+{
+    "schema": "MEGraphSchema-0.4",
+    "id": "root",
+    "blockTypes": {
+        "b1": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "out",
+                    "portName": "in0.out[0]"
+                }
+            }
+        },
+        "b2": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "out",
+                    "portName": "in1.out[0]"
+                }
+            }
+        },
+        "b3": {
+            "type": "plio",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "in",
+                    "portName": "out0.in[0]"
+                }
+            }
+        },
+        "b4": {
+            "type": "plio",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "in",
+                    "portName": "out1.in[0]"
+                }
+            }
+        },
+        "b0": {
+            "type": "function",
+            "function": "orthogonalize<8>",
+            "template": "template<int ROW> void orthogonalize(input_stream<float> *__restrict Ap, input_stream<float> *__restrict Aq, output_stream<float> *__restrict Bp, output_stream<float> *__restrict Bq)",
+            "srcFile": "aie/src/ProcessUnit/Orthogonalize.cpp",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "in",
+                    "parameterIndex": 0,
+                    "portName": "in[0]",
+                    "varName": "Ap",
+                    "cppDataType": "input_stream<float> *__restrict"
+                },
+                "pi1": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "in",
+                    "parameterIndex": 1,
+                    "portName": "in[1]",
+                    "varName": "Aq",
+                    "cppDataType": "input_stream<float> *__restrict"
+                },
+                "po0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "out",
+                    "parameterIndex": 2,
+                    "portName": "out[0]",
+                    "varName": "Bp",
+                    "cppDataType": "output_stream<float> *__restrict"
+                },
+                "po1": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "out",
+                    "parameterIndex": 3,
+                    "portName": "out[1]",
+                    "varName": "Bq",
+                    "cppDataType": "output_stream<float> *__restrict"
+                }
+            }
+        },
+        "ps_b5": {
+            "type": "function",
+            "function": "ps_main",
+            "srcFile": "aie/src/TopGraph.cpp",
+            "implType": "unknown"
+        }
+    },
+    "blockInstances": {
+        "i0": {
+            "blockType": "b0",
+            "graphIds": [
+                1,
+                0
+            ],
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "qualifiedGraphName": "g1.pu",
+            "qualifiedName": "g1.pu.k",
+            "runTime": 1.0,
+            "fabric": "me",
+            "instanceId": 0,
+            "loc": "aie/src/ProcessUnit/OrthogonalizeUnit.h:14:13"
+        },
+        "i1": {
+            "blockType": "b1",
+            "graphIds": [
+                0
+            ],
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "qualifiedGraphName": "g1",
+            "qualifiedName": "g1.in0",
+            "dataWidth": 32,
+            "dataFile": "aie/data/in0.txt",
+            "logicalName": "g1_in0",
+            "plFreq": 312.5,
+            "instanceId": 0,
+            "loc": "aie/src/TopGraph.h:10:5"
+        },
+        "i2": {
+            "blockType": "b2",
+            "graphIds": [
+                0
+            ],
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "qualifiedGraphName": "g1",
+            "qualifiedName": "g1.in1",
+            "dataWidth": 32,
+            "dataFile": "aie/data/in1.txt",
+            "logicalName": "g1_in1",
+            "plFreq": 312.5,
+            "instanceId": 1,
+            "loc": "aie/src/TopGraph.h:11:5"
+        },
+        "i3": {
+            "blockType": "b3",
+            "graphIds": [
+                0
+            ],
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "qualifiedGraphName": "g1",
+            "qualifiedName": "g1.out0",
+            "dataWidth": 32,
+            "dataFile": "aie/data/outBp.txt",
+            "logicalName": "g1_out0",
+            "plFreq": 312.5,
+            "instanceId": 2,
+            "loc": "aie/src/TopGraph.h:12:5"
+        },
+        "i4": {
+            "blockType": "b4",
+            "graphIds": [
+                0
+            ],
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "qualifiedGraphName": "g1",
+            "qualifiedName": "g1.out1",
+            "dataWidth": 32,
+            "dataFile": "aie/data/outBq.txt",
+            "logicalName": "g1_out1",
+            "plFreq": 312.5,
+            "instanceId": 3,
+            "loc": "aie/src/TopGraph.h:13:5"
+        },
+        "ps_i5": {
+            "blockType": "ps_b5",
+            "graphIds": [
+                -1
+            ],
+            "fabric": "fpga",
+            "plAxiLite": "useDefault",
+            "plFreq": 312.5
+        }
+    },
+    "portInstances": {
+        "i0_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "k.in[0]",
+            "qualifiedName": "g1.pu.k.in[0]",
+            "instanceId": 4,
+            "blockInstance": "i0"
+        },
+        "i0_pi1": {
+            "margin": 0,
+            "port": "pi1",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "k.in[1]",
+            "qualifiedName": "g1.pu.k.in[1]",
+            "instanceId": 5,
+            "blockInstance": "i0"
+        },
+        "i0_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "k.out[0]",
+            "qualifiedName": "g1.pu.k.out[0]",
+            "instanceId": 6,
+            "blockInstance": "i0"
+        },
+        "i0_po1": {
+            "margin": 0,
+            "port": "po1",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "k.out[1]",
+            "qualifiedName": "g1.pu.k.out[1]",
+            "instanceId": 7,
+            "blockInstance": "i0"
+        },
+        "i1_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "in0.out[0]",
+            "qualifiedName": "g1.in0.out[0]",
+            "qualifiedGraphPortAliasNames": [
+                "g1.pu.in[0]"
+            ],
+            "blockInstance": "i1"
+        },
+        "i2_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "in1.out[0]",
+            "qualifiedName": "g1.in1.out[0]",
+            "qualifiedGraphPortAliasNames": [
+                "g1.pu.in[1]"
+            ],
+            "blockInstance": "i2"
+        },
+        "i3_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "out0.in[0]",
+            "qualifiedName": "g1.out0.in[0]",
+            "qualifiedGraphPortAliasNames": [
+                "g1.pu.out[0]"
+            ],
+            "blockInstance": "i3"
+        },
+        "i4_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "g1",
+            "graphType": "TopGraph",
+            "portName": "out1.in[0]",
+            "qualifiedName": "g1.out1.in[0]",
+            "qualifiedGraphPortAliasNames": [
+                "g1.pu.out[1]"
+            ],
+            "blockInstance": "i4"
+        }
+    },
+    "nets": {
+        "net0": {
+            "srcInstance": "i1",
+            "srcPort": "i1_po0",
+            "dstInstance": "i0",
+            "dstPort": "i0_pi0",
+            "varNames": [
+                "net0",
+                ""
+            ],
+            "locs": [
+                "aie/src/TopGraph.h:21:9",
+                "aie/src/ProcessUnit/OrthogonalizeUnit.h:17:9"
+            ]
+        },
+        "net1": {
+            "srcInstance": "i2",
+            "srcPort": "i2_po0",
+            "dstInstance": "i0",
+            "dstPort": "i0_pi1",
+            "varNames": [
+                "net1",
+                ""
+            ],
+            "locs": [
+                "aie/src/TopGraph.h:22:9",
+                "aie/src/ProcessUnit/OrthogonalizeUnit.h:18:9"
+            ]
+        },
+        "net2": {
+            "srcInstance": "i0",
+            "srcPort": "i0_po0",
+            "dstInstance": "i3",
+            "dstPort": "i3_pi0",
+            "varNames": [
+                "",
+                "net2"
+            ],
+            "locs": [
+                "aie/src/ProcessUnit/OrthogonalizeUnit.h:19:9",
+                "aie/src/TopGraph.h:23:9"
+            ]
+        },
+        "net3": {
+            "srcInstance": "i0",
+            "srcPort": "i0_po1",
+            "dstInstance": "i4",
+            "dstPort": "i4_pi0",
+            "varNames": [
+                "",
+                "net3"
+            ],
+            "locs": [
+                "aie/src/ProcessUnit/OrthogonalizeUnit.h:20:9",
+                "aie/src/TopGraph.h:24:9"
+            ]
+        }
+    },
+    "debugInfo": {
+        "i0": {
+            "varName": "k"
+        },
+        "i1": {
+            "varName": "in0"
+        },
+        "i2": {
+            "varName": "in1"
+        },
+        "i3": {
+            "varName": "out0"
+        },
+        "i4": {
+            "varName": "out1"
+        },
+        "ps_i5": {
+            "varName": ""
+        },
+        "i0_pi0": {
+            "varName": "k.in[0]"
+        },
+        "i0_pi1": {
+            "varName": "k.in[1]"
+        },
+        "i0_po0": {
+            "varName": "k.out[0]"
+        },
+        "i0_po1": {
+            "varName": "k.out[1]"
+        },
+        "i1_po0": {
+            "varName": "in0.out[0]"
+        },
+        "i2_po0": {
+            "varName": "in1.out[0]"
+        },
+        "i3_pi0": {
+            "varName": "out0.in[0]"
+        },
+        "i4_pi0": {
+            "varName": "out1.in[0]"
+        }
+    },
+    "graphFilesInfo": {
+        "headerFiles": [
+            "aie/src/ProcessUnit/OrthogonalizeUnit.h",
+            "aie/src/TopGraph.h"
+        ]
+    },
+    "mapping": {
+        "blockInstanceMapping": {
+            "i0": {
+                "coreInfo": {
+                    "tile": "aie",
+                    "column": 24,
+                    "row": 0,
+                    "schedule": 0
+                }
+            },
+            "i1": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "pl2aie",
+                    "channel": 4
+                }
+            },
+            "i2": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "pl2aie",
+                    "channel": 2
+                }
+            },
+            "i3": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "aie2pl",
+                    "channel": 0
+                }
+            },
+            "i4": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "aie2pl",
+                    "channel": 1
+                }
+            }
+        },
+        "portInstanceMapping": {
+            "i0_pi0": {
+                "streamInfo": {
+                    "direction": "slave",
+                    "channel": 0
+                }
+            },
+            "i0_pi1": {
+                "streamInfo": {
+                    "direction": "slave",
+                    "channel": 1
+                }
+            },
+            "i0_po0": {
+                "streamInfo": {
+                    "direction": "master",
+                    "channel": 0
+                }
+            },
+            "i0_po1": {
+                "streamInfo": {
+                    "direction": "master",
+                    "channel": 1
+                }
+            },
+            "i1_po0": {},
+            "i2_po0": {},
+            "i3_pi0": {},
+            "i4_pi0": {}
+        },
+        "graphInstanceMapping": {
+            "g1": {
+                "graphInfo": {
+                    "core_columns": [
+                        24
+                    ],
+                    "core_rows": [
+                        0
+                    ],
+                    "iteration_memory_columns": [
+                        24
+                    ],
+                    "iteration_memory_rows": [
+                        0
+                    ],
+                    "iteration_memory_addresses": [
+                        4
+                    ],
+                    "multirate_triggers": [
+                        0
+                    ]
+                }
+            }
+        },
+        "DMAFIFO": {},
+        "systemMemory": [
+            {
+                "tile": "aie",
+                "column": 24,
+                "row": 0,
+                "offset": 0,
+                "size": 4500
+            }
+        ]
+    },
+    "scheduling": {
+        "i0": {
+            "repetition_count": 1
+        }
+    },
+    "event_trace_graph": {
+        "trace_ports": {}
+    },
+    "aie_driver_config": {
+        "hw_gen": 1,
+        "base_address": 2199023255552,
+        "npi_address": 4144627712,
+        "column_shift": 23,
+        "row_shift": 18,
+        "num_rows": 9,
+        "num_columns": 50,
+        "shim_row": 0,
+        "mem_row_start": 0,
+        "mem_num_rows": 0,
+        "aie_tile_row_start": 1,
+        "aie_tile_num_rows": 8
+    },
+    "part": "xcvc1902-vsva2197-2MP-e-S",
+    "platform": "/home/lxy/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm"
+}

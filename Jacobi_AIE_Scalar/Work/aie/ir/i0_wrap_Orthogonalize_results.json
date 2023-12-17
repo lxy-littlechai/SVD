@@ -1,0 +1,39 @@
+{
+    "ModulePath": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/aie/ir/i0_wrap_Orthogonalize.cpp",
+    "KernelSourcePath": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src/ProcessUnit/Orthogonalize.cpp",
+    "UseCases": [
+        {
+            "Index": 0,
+            "KernelFunction": "orthogonalize<8>",
+            "InitializationFunction": "",
+            "KernelClassCtor": "",
+            "Instances": [
+                "i0"
+            ]
+        }
+    ],
+    "AccessRecords": [],
+    "ControlRegsUsage": {
+        "RndRecords": {
+            "orthogonalize<8>": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 0
+            }
+        },
+        "SatRecords": {
+            "orthogonalize<8>": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 0
+            }
+        },
+        "SymSatRecords": {
+            "orthogonalize<8>": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 0
+            }
+        }
+    }
+}

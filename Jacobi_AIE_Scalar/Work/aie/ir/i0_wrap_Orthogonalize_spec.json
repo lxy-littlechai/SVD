@@ -1,0 +1,19 @@
+{
+    "KernelAnalysisSpec": {
+        "ModulePath": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/aie/ir/i0_wrap_Orthogonalize.cpp",
+        "KernelSourcePath": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src/ProcessUnit/Orthogonalize.cpp",
+        "SpecFile": "i0_wrap_Orthogonalize_spec.json",
+        "ResultFile": "i0_wrap_Orthogonalize_results.json",
+        "UseCases": [
+            {
+                "Index": 0,
+                "KernelFunction": "orthogonalize<8>",
+                "InitializationFunction": "",
+                "KernelClassCtor": "",
+                "Instances": [
+                    "i0"
+                ]
+            }
+        ]
+    }
+}

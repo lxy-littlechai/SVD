@@ -1,0 +1,41 @@
+{
+  "NodeConstraints": {
+    "g1.pu.k": {
+      "tile": {
+        "column": 24,
+        "row": 0,
+        "tile_type": "core"
+      },
+      "reserved_memory": {
+        "column": 24,
+        "row": 0,
+        "bankId": 0,
+        "offset": 0
+      }
+    },
+    "g1_in0": {
+      "shim": {
+        "column": 24,
+        "channel": 4
+      }
+    },
+    "g1_in1": {
+      "shim": {
+        "column": 24,
+        "channel": 2
+      }
+    },
+    "g1_out0": {
+      "shim": {
+        "column": 24,
+        "channel": 0
+      }
+    },
+    "g1_out1": {
+      "shim": {
+        "column": 24,
+        "channel": 1
+      }
+    }
+  }
+}

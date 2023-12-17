@@ -1,0 +1,75 @@
+Module {
+   def subgraph root {
+      node definitions {
+         def plio b1 iotype:stream to stream {
+             ports {
+               port po0 dir:out porttype:stream elttype:strm<float>
+            }
+         }
+         def plio b2 iotype:stream to stream {
+             ports {
+               port po0 dir:out porttype:stream elttype:strm<float>
+            }
+         }
+         def plio b3 iotype:stream to stream {
+             ports {
+               port pi0 dir:in porttype:stream elttype:strm<float>
+            }
+         }
+         def plio b4 iotype:stream to stream {
+             ports {
+               port pi0 dir:in porttype:stream elttype:strm<float>
+            }
+         }
+         def aiekernel b0 {
+            ports {
+               port pi0 dir:in porttype:streamvariable name: Ap elttype:strm<float>
+               port pi1 dir:in porttype:streamvariable name: Aq elttype:strm<float>
+               port po0 dir:out porttype:streamvariable name: Bp elttype:strm<float>
+               port po1 dir:out porttype:streamvariable name: Bq elttype:strm<float>
+            }
+            kernel: orthogonalize<4>
+            srcs:{
+               aie/src/ProcessUnit/Orthogonalize.cpp
+            }
+         }
+         def plkernel ps_b5 {
+            ports {
+            }
+            impl_type: unknown
+            shared_lib: 
+            systemc_lib: 
+         }
+      }
+      nodes: {
+         me  i0:b0 runtime:1 {
+            portinst: i0_pi0 idx[0] datatype:strm<float> stream in bw_utlization = 1 (variable name:  k.in[0])
+            portinst: i0_pi1 idx[1] datatype:strm<float> stream in bw_utlization = 1 (variable name:  k.in[1])
+            portinst: i0_po0 idx[2] datatype:strm<float> stream out bw_utlization = 1 (variable name:  k.out[0])
+            portinst: i0_po1 idx[3] datatype:strm<float> stream out bw_utlization = 1 (variable name:  k.out[1])
+         }
+         plio  nodeinst:i1:b1 {
+            portinst: i1_po0 idx[-1] datatype:strm<float> stream out bw_utlization = 1 (variable name:  in0.out[0])
+         }
+         plio  nodeinst:i2:b2 {
+            portinst: i2_po0 idx[-1] datatype:strm<float> stream out bw_utlization = 1 (variable name:  in1.out[0])
+         }
+         plio  nodeinst:i3:b3 {
+            portinst: i3_pi0 idx[-1] datatype:strm<float> stream in bw_utlization = 1 (variable name:  out0.in[0])
+         }
+         plio  nodeinst:i4:b4 {
+            portinst: i4_pi0 idx[-1] datatype:strm<float> stream in bw_utlization = 1 (variable name:  out1.in[0])
+         }
+         pl  nodeinst:ps_i5:ps_b5 {
+         }
+      }
+      connections:{
+         Channel net0: Single :src:i1_po0 dst:i0_pi0
+         Channel net1: Single :src:i2_po0 dst:i0_pi1
+         Channel net2: Single :src:i0_po0 dst:i3_pi0
+         Channel net3: Single :src:i0_po1 dst:i4_pi0
+      }
+      constraints {
+      }
+   }
+}

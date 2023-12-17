@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<POWERDATA data="AI-Engine Compiler" dataVersion="" design="TopGraph" date="Sun Dec 17 17:13:37 2023
+">
+ <DEVICE part="xcvc1902" grade="extended" package="vsva2197" speed="-2MP" process="typical" vid="No"></DEVICE>
+  <AIE status="COMPILER_OUTPUT">
+    <AIE_MODULE name="TopGraph" num_tiles="1" clk_freq="1250">
+      <TILE name="CR(24,0)" type="int16" int_core_load="0.6" fp_core_load="0" mem_banks="2" mem_rw_rate="0.2" stream_util="0.15" coordinates="24,1">
+        <KERNEL name="i0"  int_core_load="1" fp_core_load="0"></KERNEL>
+      </TILE>
+      <SHIM name="SHIM(24, 0)" type="AIE_PL_SHIM" stream_util="0.17" num_pl_streams="4" num_aximm_connections="0" coordinates="24,0"></SHIM>
+    </AIE_MODULE>
+  </AIE>
+</POWERDATA>

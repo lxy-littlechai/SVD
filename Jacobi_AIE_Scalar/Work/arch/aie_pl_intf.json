@@ -1,0 +1,92 @@
+{
+  "partition": {
+    "startColumn": 0,
+    "numColumns": 50,
+    "aieshimPorts": {
+      "AIE_PL_X23Y0_AIE_PL_S_AXIS_4": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X23Y0_AIE_PL_S_AXIS_4",
+            "column": 24,
+            "channel": 4
+          }
+        ],
+        "type": "stream",
+        "direction": "slave",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/in0.txt",
+        "annotation": [
+          "g1_in0"
+        ],
+        "sdfioName": [
+          "i1_po0"
+        ]
+      },
+      "AIE_PL_X23Y0_AIE_PL_S_AXIS_2": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X23Y0_AIE_PL_S_AXIS_2",
+            "column": 24,
+            "channel": 2
+          }
+        ],
+        "type": "stream",
+        "direction": "slave",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/in1.txt",
+        "annotation": [
+          "g1_in1"
+        ],
+        "sdfioName": [
+          "i2_po0"
+        ]
+      },
+      "AIE_PL_X23Y0_AIE_PL_M_AXIS_0": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X23Y0_AIE_PL_M_AXIS_0",
+            "column": 24,
+            "channel": 0
+          }
+        ],
+        "type": "stream",
+        "direction": "master",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/outBp.txt",
+        "annotation": [
+          "g1_out0"
+        ],
+        "sdfioName": [
+          "i3_pi0"
+        ]
+      },
+      "AIE_PL_X23Y0_AIE_PL_M_AXIS_1": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X23Y0_AIE_PL_M_AXIS_1",
+            "column": 24,
+            "channel": 1
+          }
+        ],
+        "type": "stream",
+        "direction": "master",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/outBq.txt",
+        "annotation": [
+          "g1_out1"
+        ],
+        "sdfioName": [
+          "i4_pi0"
+        ]
+      }
+    }
+  }
+}

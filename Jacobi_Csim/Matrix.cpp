@@ -17,10 +17,11 @@ Matrix::Matrix(int col, int row, std::vector<double> vec) {
   this->col = col;
   this->row = row;
   mat.resize(col);
+  
   for (int j = 0; j < col; j++) {
     mat[j].resize(row);
     for(int i = 0;i < row;i ++) {
-      mat[j][i] = vec[i + col*j];
+      mat[j][i] = vec[i + row*j];
     }
   }
 }
@@ -42,8 +43,8 @@ std::vector<double> Matrix::get(int j) {
 }
 
 void Matrix::initE() {
-  for (int i = 0; i < col; i++) {
-    for (int j = 0; j < row; j++) {
+  for (int j = 0; j < col; j++) {
+    for (int i = 0; i < row; i++) {
       mat[j][i] = 0;
       if (i == j)
         mat[j][i] = 1;

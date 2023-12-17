@@ -1,0 +1,142 @@
+{
+    "schema_version": {
+        "major": "1",
+        "minor": "0",
+        "patch": "0"
+    },
+    "aie_metadata": {
+        "driver_config": {
+            "hw_gen": 1,
+            "base_address": 2199023255552,
+            "npi_address": 4144627712,
+            "column_shift": 23,
+            "row_shift": 18,
+            "num_rows": 9,
+            "num_columns": 50,
+            "shim_row": 0,
+            "mem_tile_row_start": 0,
+            "mem_tile_num_rows": 0,
+            "aie_tile_row_start": 1,
+            "aie_tile_num_rows": 8
+        },
+        "aiecompiler_options": {
+            "broadcast_enable_core": true,
+            "graph_iterator_event": false
+        },
+        "graphs": {
+            "graph0": {
+                "id": 0,
+                "name": "g1",
+                "core_columns": [
+                    24
+                ],
+                "core_rows": [
+                    0
+                ],
+                "iteration_memory_columns": [
+                    24
+                ],
+                "iteration_memory_rows": [
+                    0
+                ],
+                "iteration_memory_addresses": [
+                    4
+                ],
+                "multirate_triggers": [
+                    false
+                ],
+                "pl_kernel_instance_names": [],
+                "pl_axi_lite_modes": []
+            }
+        },
+        "TileMapping": {
+            "AIEKernelToTileMapping": [
+                {
+                    "graph": "g1.pu",
+                    "tile": "aie",
+                    "column": 24,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "orthogonalize<4>.k"
+                }
+            ],
+            "SharedBufferToTileMapping": []
+        },
+        "RTPs": {},
+        "GMIOs": {},
+        "PLIOs": {
+            "plio0": {
+                "id": 0,
+                "name": "g1.in0",
+                "logical_name": "g1_in0",
+                "shim_column": 24,
+                "slaveOrMaster": 0,
+                "stream_id": 4
+            },
+            "plio1": {
+                "id": 1,
+                "name": "g1.in1",
+                "logical_name": "g1_in1",
+                "shim_column": 24,
+                "slaveOrMaster": 0,
+                "stream_id": 2
+            },
+            "plio2": {
+                "id": 2,
+                "name": "g1.out0",
+                "logical_name": "g1_out0",
+                "shim_column": 24,
+                "slaveOrMaster": 1,
+                "stream_id": 0
+            },
+            "plio3": {
+                "id": 3,
+                "name": "g1.out1",
+                "logical_name": "g1_out1",
+                "shim_column": 24,
+                "slaveOrMaster": 1,
+                "stream_id": 1
+            }
+        },
+        "EventGraphs": {
+            "graph0": {
+                "id": 0,
+                "name": "g1",
+                "core_columns": [
+                    24
+                ],
+                "core_rows": [
+                    0
+                ],
+                "dma_columns": [],
+                "dma_rows": []
+            }
+        },
+        "DeviceData": {
+            "AIEBaseAddress": "0x20000000000",
+            "AIEFrequency": 1250
+        },
+        "TraceGMIOs": {},
+        "AIEConfigsForTraceAndProfile": {
+            "GMIOs": {},
+            "PLIOs": {
+                "plio0": {
+                    "logical_name": "g1_in0",
+                    "data_width": 32
+                },
+                "plio1": {
+                    "logical_name": "g1_in1",
+                    "data_width": 32
+                },
+                "plio2": {
+                    "logical_name": "g1_out0",
+                    "data_width": 32
+                },
+                "plio3": {
+                    "logical_name": "g1_out1",
+                    "data_width": 32
+                }
+            }
+        }
+    }
+}

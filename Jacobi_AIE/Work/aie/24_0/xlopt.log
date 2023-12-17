@@ -1,0 +1,66 @@
+Add module pass {anonymous}::GuidancePass
+Add module pass {anonymous}::ChessOptionsPass
+Add module pass {anonymous}::DisableInliningInMainPass
+Add module pass {anonymous}::XLModuleAdaptor<llvm::PromotePass>
+Add module pass {anonymous}::IpConstPropPass
+Add module pass {anonymous}::XLModuleAdaptor<llvm::SimplifyCFGPass>
+Add module pass {anonymous}::XLModuleAdaptor<llvm::LoopSimplifyPass>
+Add module pass {anonymous}::XLModuleAdaptor<llvm::FunctionToLoopPassAdaptor>
+Add module pass {anonymous}::XLModuleAdaptor<{anonymous}::AIELoopInfoPass>
+Add module pass cdno::xlopt::AIEAnnotatePragmaPass
+Add module pass {anonymous}::XLModuleAdaptor<{anonymous}::AIELoopPeelPass>
+Add module pass {anonymous}::AIEAliasAnalysisPass
+
+
+--------------- FILTER ANALYSIS INFO LOG ---------------
+
+Reading Header IR from ir/_header.ll 
+
+--------------------------------------------------------
+
+
+
+--------------- DISABLE FUNCTION INLINING IN MAIN LOG ---------------
+
+Marking function _Z13orthogonalizeILi4EEvP12input_streamIfES2_P13output_streamIfES5_ noinline
+
+---------------------------------------------------------------------
+
+
+
+--------------- LOOP STATISTICS : main ---------------
+
+Total loops = 2
+Loops with prepare for pipelining pragma = 0
+Loops with unroll pragma = 0
+Loops with flatten pragma = 0
+Loops with min range pragma = 0
+Loops with max range pragma = 0
+Loops with known trip count = 0
+
+------------------------------------------------------
+
+
+
+--------------- LOOP STATISTICS : _ZN3aie6detail3adf17stream_out_helperILj4EfL23aie_stream_resource_out0EE9writeincrEP13output_streamIfENS_6vectorIfLj4EEE ---------------
+
+Total loops = 1
+Loops with prepare for pipelining pragma = 0
+Loops with unroll pragma = 0
+Loops with flatten pragma = 0
+Loops with min range pragma = 0
+Loops with max range pragma = 0
+Loops with known trip count = 1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------- PRAGMA INSERTION LOG (unroll threshold = 3000, max unroll factor = 8) ---------------
+
+Adding pragma to function _ZN3aie6detail3adf17stream_out_helperILj4EfL23aie_stream_resource_out0EE9writeincrEP13output_streamIfENS_6vectorIfLj4EEE :
+	Pragma added to loop at line 151 in file tools/Xilinx/Vitis/2023.2/aietools/include/aie_api/adf/stream.hpp : chess_loop_range(1,1)
+	Pragma added to loop at line 151 in file tools/Xilinx/Vitis/2023.2/aietools/include/aie_api/adf/stream.hpp : chess_flatten_loop
+
+-----------------------------------------------------------------------------------------------------
+

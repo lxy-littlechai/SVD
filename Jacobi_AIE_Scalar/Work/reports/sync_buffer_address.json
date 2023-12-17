@@ -1,0 +1,15 @@
+{
+    "SyncBufferAddress": [
+        {
+            "QualifiedGraphName": "g1.pu",
+            "Column": 24,
+            "Row": 0,
+            "LocalAddress": "0x38000",
+            "GlobalAddress": {
+                "Column": 24,
+                "Row": 0,
+                "Address": "0x0"
+            }
+        }
+    ]
+}

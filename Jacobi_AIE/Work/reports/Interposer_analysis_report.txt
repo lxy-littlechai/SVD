@@ -1,0 +1,10 @@
+InterposerAnalysis Report 
+Port Name : i0_pi0(Variable Name : k.in[0]) straightthru <stream> : Chnl 
+Port Name : i0_pi1(Variable Name : k.in[1]) straightthru <stream> : Chnl 
+Port Name : i0_po0(Variable Name : k.out[0]) straightthru <stream> : Chnl 
+Port Name : i0_po1(Variable Name : k.out[1]) straightthru <stream> : Chnl 
+Port Name : i1_po0(Variable Name : in0.out[0]) straightthru <stream> : Chnl 
+Port Name : i2_po0(Variable Name : in1.out[0]) straightthru <stream> : Chnl 
+Port Name : i3_pi0(Variable Name : out0.in[0]) straightthru <stream> : Chnl 
+Port Name : i4_pi0(Variable Name : out1.in[0]) straightthru <stream> : Chnl 
+
