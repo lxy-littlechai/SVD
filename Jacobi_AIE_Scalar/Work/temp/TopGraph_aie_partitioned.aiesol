@@ -2,11 +2,29 @@
     "Version": 0.0,
     "Non-Netlist Instances": [
         "sysmem0",
+        "sysmem1",
+        "sysmem2",
+        "sysmem3",
         "PT0",
+        "PT1",
+        "PT2",
+        "PT3",
         "net0",
         "net1",
         "net2",
-        "net3"
+        "net3",
+        "net4",
+        "net5",
+        "net6",
+        "net7",
+        "net8",
+        "net9",
+        "net10",
+        "net11",
+        "net12",
+        "net13",
+        "net14",
+        "net15"
     ],
     "Non-Netlist Instance Placement": [],
     "Instance Placement": [],
@@ -15,7 +33,22 @@
     "Non-Netlist Instance Links": [
         {
             "PT0": [
-                "g1.pu.k"
+                "g1.pl.orthUnit[0].k"
+            ]
+        },
+        {
+            "PT1": [
+                "g1.pl.orthUnit[1].k"
+            ]
+        },
+        {
+            "PT2": [
+                "g1.pl.orthUnit[2].k"
+            ]
+        },
+        {
+            "PT3": [
+                "g1.pl.orthUnit[3].k"
             ]
         }
     ],
@@ -58,6 +91,117 @@
             ]
         },
         {
+            "Name": "sysmem1",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 4096"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 372"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem1"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 4500"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem2",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 4096"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 372"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem2"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 4500"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem3",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 4096"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 372"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem3"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 4500"
+                }
+            ]
+        },
+        {
             "Name": "PT0",
             "attrs": [
                 {
@@ -79,6 +223,69 @@
             ]
         },
         {
+            "Name": "PT1",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING coral"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem1"
+                }
+            ]
+        },
+        {
+            "Name": "PT2",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING cadetblue1"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem2"
+                }
+            ]
+        },
+        {
+            "Name": "PT3",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING antiquewhite"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem3"
+                }
+            ]
+        },
+        {
             "Name": "net0",
             "attrs": [
                 {
@@ -87,7 +294,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1_in0"
+                    "Val": "STRING g1_in_0_"
                 },
                 {
                     "Key": "srcPort",
@@ -95,7 +302,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "dstPort",
@@ -124,7 +331,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1_in1"
+                    "Val": "STRING g1_in_1_"
                 },
                 {
                     "Key": "srcPort",
@@ -132,7 +339,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "dstPort",
@@ -161,7 +368,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "srcPort",
@@ -169,7 +376,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1_out0"
+                    "Val": "STRING g1_out_0_"
                 },
                 {
                     "Key": "dstPort",
@@ -198,7 +405,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "srcPort",
@@ -206,7 +413,451 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1_out1"
+                    "Val": "STRING g1_out_1_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net4",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_2_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net5",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_3_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net6",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_2_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net7",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_3_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net8",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_4_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net9",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_5_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net10",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_4_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net11",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_5_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net12",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_6_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net13",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_7_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net14",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_6_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net15",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_7_"
                 },
                 {
                     "Key": "dstPort",

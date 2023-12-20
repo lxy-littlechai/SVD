@@ -9,8 +9,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:27 2023",
- "timestampMillis": "1702823547871",
+ "dateTimestamp": "Wed Dec 20 23:11:07 2023",
+ "timestampMillis": "1703085067632",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work",
   "name": "",
@@ -23,19 +23,19 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sun Dec 17 22:32:27 2023",
- "timestampMillis": "1702823547872",
+ "dateTimestamp": "Wed Dec 20 23:11:07 2023",
+ "timestampMillis": "1703085067633",
  "buildStep": {
-  "cmdId": "b9480316-ca73-4aa4-88bd-edaaaceeb3d3",
+  "cmdId": "dad4cb76-a7ac-4fe4-8b43-c626ca3076e4",
   "name": "aiesim",
   "logFile": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/AIESimulator.log",
-  "commandLine": "aiesimulator --pkg-dir ./Work --aiearch-version aie --dump-vcd foo --profile ",
+  "commandLine": "aiesimulator --pkg-dir ./Work --aiearch-version aie --profile --online -wdb -ctf ",
   "args": [
    "aiesimulator",
    "--pkg-dir ./Work",
    "--aiearch-version aie",
-   "--dump-vcd foo",
-   "--profile"
+   "--profile",
+   "--online -wdb -ctf"
   ],
   "iniFiles": [],
   "cwd": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar"
@@ -45,10 +45,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun Dec 17 22:32:27 2023",
- "timestampMillis": "1702823547873",
+ "dateTimestamp": "Wed Dec 20 23:11:07 2023",
+ "timestampMillis": "1703085067633",
  "status": {
-  "cmdId": "b9480316-ca73-4aa4-88bd-edaaaceeb3d3",
+  "cmdId": "dad4cb76-a7ac-4fe4-8b43-c626ca3076e4",
   "state": "CS_RUNNING"
  }
 }
@@ -56,8 +56,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sun Dec 17 22:32:27 2023",
- "timestampMillis": "1702823547874",
+ "dateTimestamp": "Wed Dec 20 23:11:07 2023",
+ "timestampMillis": "1703085067634",
  "buildSummary": {
   "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
   "hardwareDsa": "VC1902",
@@ -92,8 +92,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:27 2023",
- "timestampMillis": "1702823547875",
+ "dateTimestamp": "Wed Dec 20 23:11:07 2023",
+ "timestampMillis": "1703085067635",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/AIESim_FIFO_Guidance.json",
   "name": "",
@@ -106,8 +106,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:27 2023",
- "timestampMillis": "1702823547876",
+ "dateTimestamp": "Wed Dec 20 23:11:07 2023",
+ "timestampMillis": "1703085067636",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/AIESim_Guidance.json",
   "name": "",
@@ -120,13 +120,13 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:28 2023",
- "timestampMillis": "1702823548043",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103269",
  "report": {
-  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/foo.vcd",
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_25_0.xml",
   "name": "",
-  "fileType": "TEXT",
-  "reportType": "VARIABLE_CHANGE_DUMP",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
   "cmdId": ""
  }
 }
@@ -134,8 +134,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:59 2023",
- "timestampMillis": "1702823579408",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103270",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_24_0.xml",
   "name": "",
@@ -148,8 +148,22 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:59 2023",
- "timestampMillis": "1702823579409",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103270",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_23_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103270",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_24_0.xml",
   "name": "",
@@ -162,8 +176,36 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:59 2023",
- "timestampMillis": "1702823579409",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103271",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_25_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103271",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_25_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103271",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_24_0.txt",
   "name": "",
@@ -176,8 +218,50 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Dec 17 22:32:59 2023",
- "timestampMillis": "1702823579410",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103271",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_25_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103272",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_instr_23_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103272",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_23_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103272",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_24_0.txt",
   "name": "",
@@ -189,11 +273,67 @@
 </ENTRY>
 <ENTRY>
 {
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103272",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aiesimulator_output/profile_funct_23_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103272",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/system.wdb",
+  "name": "",
+  "fileType": "BINARY",
+  "reportType": "WAVEFORM_DATABASE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103272",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/system.wcfg",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "WAVEFORM_CONFIGURATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103273",
+ "report": {
+  "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/trdata.aiesim/events.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_EVENT_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
  "type": "ET_Status",
- "dateTimestamp": "Sun Dec 17 22:32:59 2023",
- "timestampMillis": "1702823579410",
+ "dateTimestamp": "Wed Dec 20 23:11:43 2023",
+ "timestampMillis": "1703085103273",
  "status": {
-  "cmdId": "b9480316-ca73-4aa4-88bd-edaaaceeb3d3",
+  "cmdId": "dad4cb76-a7ac-4fe4-8b43-c626ca3076e4",
   "state": "CS_PASSED"
  }
 }

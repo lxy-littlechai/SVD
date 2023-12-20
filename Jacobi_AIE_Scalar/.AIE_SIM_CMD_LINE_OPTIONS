@@ -1,5 +1,7 @@
 aiesimulator
 --pkg-dir ./Work
 --aiearch-version aie
---dump-vcd foo
+--vcd-pipe /tmp/vcd_fifo_b4256d75-485b-4b65-a214-156cda4d4c77
+--wdb
+--text
 --profile

@@ -11,7 +11,10 @@
                 "InitializationFunction": "",
                 "KernelClassCtor": "",
                 "Instances": [
-                    "i0"
+                    "i0",
+                    "i1",
+                    "i2",
+                    "i3"
                 ]
             }
         ]

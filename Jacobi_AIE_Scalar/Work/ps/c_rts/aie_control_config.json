@@ -28,21 +28,39 @@
                 "id": 0,
                 "name": "g1",
                 "core_columns": [
-                    24
+                    22,
+                    23,
+                    25,
+                    27
                 ],
                 "core_rows": [
+                    0,
+                    0,
+                    0,
                     0
                 ],
                 "iteration_memory_columns": [
-                    24
+                    21,
+                    23,
+                    25,
+                    27
                 ],
                 "iteration_memory_rows": [
+                    0,
+                    0,
+                    0,
                     0
                 ],
                 "iteration_memory_addresses": [
+                    4,
+                    4,
+                    4,
                     4
                 ],
                 "multirate_triggers": [
+                    false,
+                    false,
+                    false,
                     false
                 ],
                 "pl_kernel_instance_names": [],
@@ -52,9 +70,33 @@
         "TileMapping": {
             "AIEKernelToTileMapping": [
                 {
-                    "graph": "g1.pu",
+                    "graph": "g1.pl.orthUnit[0]",
                     "tile": "aie",
-                    "column": 24,
+                    "column": 22,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "orthogonalize<8>.k"
+                },
+                {
+                    "graph": "g1.pl.orthUnit[1]",
+                    "tile": "aie",
+                    "column": 25,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "orthogonalize<8>.k"
+                },
+                {
+                    "graph": "g1.pl.orthUnit[2]",
+                    "tile": "aie",
+                    "column": 27,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "orthogonalize<8>.k"
+                },
+                {
+                    "graph": "g1.pl.orthUnit[3]",
+                    "tile": "aie",
+                    "column": 23,
                     "row": 0,
                     "schedule": 0,
                     "function": "orthogonalize<8>.k"
@@ -67,35 +109,131 @@
         "PLIOs": {
             "plio0": {
                 "id": 0,
-                "name": "g1.in0",
-                "logical_name": "g1_in0",
-                "shim_column": 24,
+                "name": "g1.in[0]",
+                "logical_name": "g1_in_0_",
+                "shim_column": 22,
                 "slaveOrMaster": 0,
-                "stream_id": 4
+                "stream_id": 6
             },
             "plio1": {
                 "id": 1,
-                "name": "g1.in1",
-                "logical_name": "g1_in1",
-                "shim_column": 24,
-                "slaveOrMaster": 0,
-                "stream_id": 2
-            },
-            "plio2": {
-                "id": 2,
-                "name": "g1.out0",
-                "logical_name": "g1_out0",
-                "shim_column": 24,
+                "name": "g1.out[0]",
+                "logical_name": "g1_out_0_",
+                "shim_column": 22,
                 "slaveOrMaster": 1,
                 "stream_id": 0
             },
+            "plio2": {
+                "id": 2,
+                "name": "g1.in[1]",
+                "logical_name": "g1_in_1_",
+                "shim_column": 22,
+                "slaveOrMaster": 0,
+                "stream_id": 1
+            },
             "plio3": {
                 "id": 3,
-                "name": "g1.out1",
-                "logical_name": "g1_out1",
-                "shim_column": 24,
+                "name": "g1.out[1]",
+                "logical_name": "g1_out_1_",
+                "shim_column": 22,
                 "slaveOrMaster": 1,
+                "stream_id": 5
+            },
+            "plio4": {
+                "id": 4,
+                "name": "g1.in[2]",
+                "logical_name": "g1_in_2_",
+                "shim_column": 25,
+                "slaveOrMaster": 0,
+                "stream_id": 5
+            },
+            "plio5": {
+                "id": 5,
+                "name": "g1.out[2]",
+                "logical_name": "g1_out_2_",
+                "shim_column": 25,
+                "slaveOrMaster": 1,
+                "stream_id": 2
+            },
+            "plio6": {
+                "id": 6,
+                "name": "g1.in[3]",
+                "logical_name": "g1_in_3_",
+                "shim_column": 25,
+                "slaveOrMaster": 0,
                 "stream_id": 1
+            },
+            "plio7": {
+                "id": 7,
+                "name": "g1.out[3]",
+                "logical_name": "g1_out_3_",
+                "shim_column": 25,
+                "slaveOrMaster": 1,
+                "stream_id": 0
+            },
+            "plio8": {
+                "id": 8,
+                "name": "g1.in[4]",
+                "logical_name": "g1_in_4_",
+                "shim_column": 27,
+                "slaveOrMaster": 0,
+                "stream_id": 5
+            },
+            "plio9": {
+                "id": 9,
+                "name": "g1.out[4]",
+                "logical_name": "g1_out_4_",
+                "shim_column": 27,
+                "slaveOrMaster": 1,
+                "stream_id": 0
+            },
+            "plio10": {
+                "id": 10,
+                "name": "g1.in[5]",
+                "logical_name": "g1_in_5_",
+                "shim_column": 27,
+                "slaveOrMaster": 0,
+                "stream_id": 1
+            },
+            "plio11": {
+                "id": 11,
+                "name": "g1.out[5]",
+                "logical_name": "g1_out_5_",
+                "shim_column": 27,
+                "slaveOrMaster": 1,
+                "stream_id": 4
+            },
+            "plio12": {
+                "id": 12,
+                "name": "g1.in[6]",
+                "logical_name": "g1_in_6_",
+                "shim_column": 23,
+                "slaveOrMaster": 0,
+                "stream_id": 6
+            },
+            "plio13": {
+                "id": 13,
+                "name": "g1.out[6]",
+                "logical_name": "g1_out_6_",
+                "shim_column": 23,
+                "slaveOrMaster": 1,
+                "stream_id": 5
+            },
+            "plio14": {
+                "id": 14,
+                "name": "g1.in[7]",
+                "logical_name": "g1_in_7_",
+                "shim_column": 23,
+                "slaveOrMaster": 0,
+                "stream_id": 4
+            },
+            "plio15": {
+                "id": 15,
+                "name": "g1.out[7]",
+                "logical_name": "g1_out_7_",
+                "shim_column": 23,
+                "slaveOrMaster": 1,
+                "stream_id": 4
             }
         },
         "EventGraphs": {
@@ -103,9 +241,15 @@
                 "id": 0,
                 "name": "g1",
                 "core_columns": [
-                    24
+                    22,
+                    23,
+                    25,
+                    27
                 ],
                 "core_rows": [
+                    0,
+                    0,
+                    0,
                     0
                 ],
                 "dma_columns": [],
@@ -121,19 +265,67 @@
             "GMIOs": {},
             "PLIOs": {
                 "plio0": {
-                    "logical_name": "g1_in0",
+                    "logical_name": "g1_in_0_",
                     "data_width": 32
                 },
                 "plio1": {
-                    "logical_name": "g1_in1",
+                    "logical_name": "g1_out_0_",
                     "data_width": 32
                 },
                 "plio2": {
-                    "logical_name": "g1_out0",
+                    "logical_name": "g1_in_1_",
                     "data_width": 32
                 },
                 "plio3": {
-                    "logical_name": "g1_out1",
+                    "logical_name": "g1_out_1_",
+                    "data_width": 32
+                },
+                "plio4": {
+                    "logical_name": "g1_in_2_",
+                    "data_width": 32
+                },
+                "plio5": {
+                    "logical_name": "g1_out_2_",
+                    "data_width": 32
+                },
+                "plio6": {
+                    "logical_name": "g1_in_3_",
+                    "data_width": 32
+                },
+                "plio7": {
+                    "logical_name": "g1_out_3_",
+                    "data_width": 32
+                },
+                "plio8": {
+                    "logical_name": "g1_in_4_",
+                    "data_width": 32
+                },
+                "plio9": {
+                    "logical_name": "g1_out_4_",
+                    "data_width": 32
+                },
+                "plio10": {
+                    "logical_name": "g1_in_5_",
+                    "data_width": 32
+                },
+                "plio11": {
+                    "logical_name": "g1_out_5_",
+                    "data_width": 32
+                },
+                "plio12": {
+                    "logical_name": "g1_in_6_",
+                    "data_width": 32
+                },
+                "plio13": {
+                    "logical_name": "g1_out_6_",
+                    "data_width": 32
+                },
+                "plio14": {
+                    "logical_name": "g1_in_7_",
+                    "data_width": 32
+                },
+                "plio15": {
+                    "logical_name": "g1_out_7_",
                     "data_width": 32
                 }
             }

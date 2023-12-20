@@ -1,4 +1,14 @@
 build
+/*/function_*
+/*/trdata*
+/*/aiesimulator_output
+/*/*.log
+/*/*.db
+/*/*.vcd
+/*/Work
+/*/.Xil
+/*/.theia
+/*/.a
 .vscode
 *.log
 *.Xil

@@ -1,12 +1,12 @@
 #include "adf.h"
 #include "aie/src/ProcessUnit/ProcessUnit.h"
 
-template<int COLin[COL*2], int ROW>
-class EventLevel: public adf::graph {
+template<int COL, int ROW>
+class EvenLevel: public adf::graph {
 public:
   adf::port<input> in[COL*2];
   adf::port<output> out[COL*2];
-}
+};
 
 template<int COL, int ROW> 
 class EvenLevel0: public EvenLevel<COL, ROW> {
@@ -22,7 +22,7 @@ public:
       adf::connect<> (orthUnit[j].out[1], this->out[i+1]);
     }
   }
-}
+};
 
 template<int COL, int ROW> 
 class EvenLevel1: public EvenLevel<COL, ROW> {
@@ -32,7 +32,7 @@ private:
 
 public:
   EvenLevel1() {
-    adf::connect<> (this->in[0], transUnit[j].in[0]);
+    adf::connect<> (this->in[0], transUnit[0].in[0]);
     adf::connect<> (transUnit[0].out[0], this->out[0]);
     adf::connect<> (this->in[COL*2-1], transUnit[1].in[0]);
     adf::connect<> (transUnit[1].out[0], this->out[COL*2-1]);
@@ -43,4 +43,4 @@ public:
       adf::connect<> (orthUnit[j].out[1], this->out[i+1]);
     }
   }
-}
+};

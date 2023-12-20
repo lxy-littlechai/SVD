@@ -1,30 +1,114 @@
 {
     "Placement": [
         {
-            "LogicalInstance": "g1_in0",
+            "LogicalInstance": "g1_in_3_",
             "PhysicalInstance": [
-                "AIE_PL_X23Y0_AIE_PL_S_AXIS_4"
+                "AIE_PL_X24Y0_AIE_PL_S_AXIS_1"
             ],
             "IsSoft": false
         },
         {
-            "LogicalInstance": "g1_in1",
+            "LogicalInstance": "g1_out_3_",
             "PhysicalInstance": [
-                "AIE_PL_X23Y0_AIE_PL_S_AXIS_2"
+                "AIE_PL_X24Y0_AIE_PL_M_AXIS_0"
             ],
             "IsSoft": false
         },
         {
-            "LogicalInstance": "g1_out0",
+            "LogicalInstance": "g1_in_4_",
             "PhysicalInstance": [
-                "AIE_PL_X23Y0_AIE_PL_M_AXIS_0"
+                "AIE_PL_X26Y0_AIE_PL_S_AXIS_5"
             ],
             "IsSoft": false
         },
         {
-            "LogicalInstance": "g1_out1",
+            "LogicalInstance": "g1_out_4_",
             "PhysicalInstance": [
-                "AIE_PL_X23Y0_AIE_PL_M_AXIS_1"
+                "AIE_PL_X26Y0_AIE_PL_M_AXIS_0"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_in_5_",
+            "PhysicalInstance": [
+                "AIE_PL_X26Y0_AIE_PL_S_AXIS_1"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_out_5_",
+            "PhysicalInstance": [
+                "AIE_PL_X26Y0_AIE_PL_M_AXIS_4"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_in_6_",
+            "PhysicalInstance": [
+                "AIE_PL_X22Y0_AIE_PL_S_AXIS_6"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_out_6_",
+            "PhysicalInstance": [
+                "AIE_PL_X22Y0_AIE_PL_M_AXIS_5"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_in_7_",
+            "PhysicalInstance": [
+                "AIE_PL_X22Y0_AIE_PL_S_AXIS_4"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_out_7_",
+            "PhysicalInstance": [
+                "AIE_PL_X22Y0_AIE_PL_M_AXIS_4"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_in_0_",
+            "PhysicalInstance": [
+                "AIE_PL_X21Y0_AIE_PL_S_AXIS_6"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_out_0_",
+            "PhysicalInstance": [
+                "AIE_PL_X21Y0_AIE_PL_M_AXIS_0"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_in_1_",
+            "PhysicalInstance": [
+                "AIE_PL_X21Y0_AIE_PL_S_AXIS_1"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_out_1_",
+            "PhysicalInstance": [
+                "AIE_PL_X21Y0_AIE_PL_M_AXIS_5"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_in_2_",
+            "PhysicalInstance": [
+                "AIE_PL_X24Y0_AIE_PL_S_AXIS_5"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "g1_out_2_",
+            "PhysicalInstance": [
+                "AIE_PL_X24Y0_AIE_PL_M_AXIS_2"
             ],
             "IsSoft": false
         }

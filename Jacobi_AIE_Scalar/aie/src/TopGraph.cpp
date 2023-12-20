@@ -1,5 +1,5 @@
 #include "TopGraph.h"
-TopGraph g1;
+EvenArray<1,8> g1;
 int main() {
     
     g1.init();

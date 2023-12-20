@@ -63175,9 +63175,13 @@ namespace adf {
 # 863 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/new_frontend/adf.h" 2
 # 17 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf.h" 2
 # 2 "aie/src/TopGraph.h" 2
-# 1 "aie/src/ProcessUnit/OrthogonalizeUnit.h" 1
+# 1 "aie/src/ProcessArray/EvenArray.h" 1
 
-# 1 "aie/src/ProcessUnit/Orthogonalize.h" 1
+# 1 "./aie/src/ProcessLevel/EvenLevel.h" 1
+
+# 1 "./aie/src/ProcessUnit/ProcessUnit.h" 1
+
+# 1 "./aie/src/ProcessUnit/Orthogonalize.h" 1
 
 
 template<int ROW>
@@ -63185,7 +63189,14 @@ void orthogonalize(input_stream<float> * __restrict Ap,
                    input_stream<float> * __restrict Aq,
                    output_stream<float> * __restrict Bp,
                    output_stream<float> * __restrict Bq);
-# 3 "aie/src/ProcessUnit/OrthogonalizeUnit.h" 2
+# 3 "./aie/src/ProcessUnit/ProcessUnit.h" 2
+# 1 "./aie/src/ProcessUnit/Transfer.h" 1
+
+
+template<int ROW>
+void transfer(input_stream<float> * __restrict in,
+                   output_stream<float> * __restrict out);
+# 4 "./aie/src/ProcessUnit/ProcessUnit.h" 2
 
 template <int ROW>
 class OrthogonalizeUnit: public adf::graph {
@@ -63206,35 +63217,151 @@ public:
         adf::connect<> (k.out[1], out[1]);
     }
 };
-# 3 "aie/src/TopGraph.h" 2
 
+template <int ROW>
+class TransferUnit: public adf::graph {
+private:
+    adf::kernel k;
+
+public:
+    adf::port<input> in[1];
+    adf::port<output> out[1];
+
+    TransferUnit() {
+        k = adf::kernel::create(transfer<ROW>);
+        adf::source(k) = "aie/src/ProcessUnit/Transfer.cpp";
+        adf::runtime<ratio>(k) = 1;
+        adf::connect<> (in[0], k.in[0]);
+        adf::connect<> (k.out[0], out[0]);
+    }
+};
+# 3 "./aie/src/ProcessLevel/EvenLevel.h" 2
+
+template<int COL, int ROW>
+class EvenLevel: public adf::graph {
+public:
+  adf::port<input> in[COL*2];
+  adf::port<inout> out[COL*2];
+};
+
+template<int COL, int ROW>
+class EvenLevel0: public EvenLevel<COL, ROW> {
+private:
+  OrthogonalizeUnit<ROW> orthUnit[COL];
+
+public:
+  EvenLevel0() {
+    for(int i = 0, j = 0;i < COL*2; i += 2, j ++) {
+      adf::connect<> (this->in[i], orthUnit[j].in[0]);
+      adf::connect<> (this->in[i+1], orthUnit[j].in[1]);
+      adf::connect<> (orthUnit[j].out[0], this->out[i]);
+      adf::connect<> (orthUnit[j].out[1], this->out[i+1]);
+    }
+  }
+};
+
+template<int COL, int ROW>
+class EvenLevel1: public EvenLevel<COL, ROW> {
+private:
+  TransferUnit<ROW> transUnit[2];
+  OrthogonalizeUnit<ROW> orthUnit[COL];
+
+public:
+  EvenLevel1() {
+    adf::connect<> (this->in[0], transUnit[0].in[0]);
+    adf::connect<> (transUnit[0].out[0], this->out[0]);
+    adf::connect<> (this->in[COL*2-1], transUnit[1].in[0]);
+    adf::connect<> (transUnit[1].out[0], this->out[COL*2-1]);
+    for(int i = 1, j = 0;i < COL*2-1; i += 2, j ++) {
+      adf::connect<> (this->in[i], orthUnit[j].in[0]);
+      adf::connect<> (this->in[i+1], orthUnit[j].in[1]);
+      adf::connect<> (orthUnit[j].out[0], this->out[i]);
+      adf::connect<> (orthUnit[j].out[1], this->out[i+1]);
+    }
+  }
+};
+# 3 "aie/src/ProcessArray/EvenArray.h" 2
+
+template<int COL, int ROW>
+class EvenArray: public adf::graph {
+private:
+  EvenLevel<COL, ROW> evenLevel[COL];
+
+public:
+  adf::port<input> in[COL*2];
+  adf::port<inout> out[COL*2];
+
+  EvenArray() {
+    if(COL == 1) {
+      evenLevel[0] = EvenLevel0<COL, ROW>();
+      adf::connect<> (in[0], evenLevel[0].in[0]);
+      adf::connect<> (in[1], evenLevel[0].in[1]);
+      adf::connect<> (evenLevel[COL-1].out[0], out[0]);
+      adf::connect<> (evenLevel[COL-1].out[1], out[1]);
+      return ;
+
+    }
+    else {
+        for(int i = 0;i < COL;i += 2) {
+          evenLevel[i] = EvenLevel0<COL, ROW>();
+          evenLevel[i+1] = EvenLevel1<COL, ROW>();
+
+        }
+    }
+
+
+
+    for(int i = 0;i < COL*2;i ++) {
+      adf::connect<> (in[i], evenLevel[0].in[i]);
+      adf::connect<> (evenLevel[COL-1].out[i], out[i]);
+    }
+
+    for(int i = 0;i < COL-1;i ++) {
+      for(int j = 0;j < COL*2;j ++) {
+        adf::connect<> (evenLevel[i].out[j], evenLevel[i+1].in[j]);
+      }
+# 62 "aie/src/ProcessArray/EvenArray.h"
+    }
+
+  }
+};
+# 3 "aie/src/TopGraph.h" 2
+# 1 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/tps/lnx64/gcc/include/c++/8.3.0/cstring" 1 3
+# 39 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/tps/lnx64/gcc/include/c++/8.3.0/cstring" 3
+       
+# 40 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/tps/lnx64/gcc/include/c++/8.3.0/cstring" 3
+# 4 "aie/src/TopGraph.h" 2
+
+const int ROW = 8;
+const int COL = 4;
 
 class TopGraph: public adf::graph {
 private:
-    OrthogonalizeUnit<8> pu;
+    EvenArray<COL,ROW> pl;
 
 public:
-    adf::input_plio in0;
-    adf::input_plio in1;
-    adf::output_plio out0;
-    adf::output_plio out1;
+    adf::input_plio in[COL*2];
+    adf::output_plio out[COL*2];
 
     TopGraph() {
-        in0 = adf::input_plio::create(adf::plio_32_bits, "aie/data/in0.txt");
-        in1 = adf::input_plio::create(adf::plio_32_bits, "aie/data/in1.txt");
-        out0 = adf::output_plio::create(adf::plio_32_bits, "aie/data/outBp.txt");
-        out1 = adf::output_plio::create(adf::plio_32_bits, "aie/data/outBq.txt");
+        for(int i = 0;i < COL*2;i ++) {
+            std::string fileIn = "aie/data/in" + std::to_string(i) + ".txt";
+            std::string fileOut = "aie/data/out" + std::to_string(i) + ".txt";
+            in[i] = adf::input_plio::create(adf::plio_32_bits, fileIn);
+            out[i] = adf::output_plio::create(adf::plio_32_bits, fileOut);
+        }
 
-        adf::connect<> net0(in0.out[0], pu.in[0]);
-        adf::connect<> net1(in1.out[0], pu.in[1]);
-        adf::connect<> net2(pu.out[0], out0.in[0]);
-        adf::connect<> net3(pu.out[1], out1.in[0]);
+
+        for(int i = 0;i < COL*2; i ++) {
+            adf::connect<> (in[i].out[0], pl.in[i]);
+            adf::connect<> (pl.out[i], out[i].in[0]);
+        }
 
     }
 
 };
 # 2 "aie/src/TopGraph.cpp" 2
-TopGraph g1;
+EvenArray<1,8> g1;
 int main() {
 
     g1.init();

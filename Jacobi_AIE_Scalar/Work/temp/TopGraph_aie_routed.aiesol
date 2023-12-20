@@ -2,110 +2,413 @@
     "Version": 0.0,
     "Non-Netlist Instances": [
         "sysmem0",
+        "sysmem1",
+        "sysmem2",
+        "sysmem3",
         "PT0",
+        "PT1",
+        "PT2",
+        "PT3",
         "net0",
         "net1",
         "net2",
         "net3",
+        "net4",
+        "net5",
+        "net6",
+        "net7",
+        "net8",
+        "net9",
+        "net10",
+        "net11",
+        "net12",
+        "net13",
+        "net14",
+        "net15",
         "unconstraint_fifo0",
         "unconstraint_fifo1",
         "unconstraint_fifo2",
-        "unconstraint_fifo3"
+        "unconstraint_fifo3",
+        "unconstraint_fifo4",
+        "unconstraint_fifo5",
+        "unconstraint_fifo6",
+        "unconstraint_fifo7",
+        "unconstraint_fifo8",
+        "unconstraint_fifo9",
+        "unconstraint_fifo10",
+        "unconstraint_fifo11",
+        "unconstraint_fifo12",
+        "unconstraint_fifo13",
+        "unconstraint_fifo14",
+        "unconstraint_fifo15"
     ],
     "Non-Netlist Instance Placement": [
         {
             "Name": "sysmem0",
-            "Site": "AIE_MEMGRP_X24Y0",
+            "Site": "AIE_MEMGRP_X21Y0",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "sysmem1",
+            "Site": "AIE_MEMGRP_X25Y0",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "sysmem2",
+            "Site": "AIE_MEMGRP_X27Y0",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "sysmem3",
+            "Site": "AIE_MEMGRP_X23Y0",
             "Bel": "BANK0"
         },
         {
             "Name": "PT0",
-            "Site": "AIE_CORE_X24Y0",
+            "Site": "AIE_CORE_X22Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "PT1",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "PT2",
+            "Site": "AIE_CORE_X27Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "PT3",
+            "Site": "AIE_CORE_X23Y0",
             "Bel": "CORE"
         }
     ],
     "Instance Placement": [
         {
-            "Name": "g1.pu.k",
-            "Site": "AIE_CORE_X24Y0",
+            "Name": "g1.pl.orthUnit[0].k",
+            "Site": "AIE_CORE_X22Y0",
             "Bel": "CORE"
         },
         {
-            "Name": "g1_in0",
-            "Site": "AIE_PL_X23Y0",
+            "Name": "g1.pl.orthUnit[1].k",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "g1.pl.orthUnit[2].k",
+            "Site": "AIE_CORE_X27Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "g1.pl.orthUnit[3].k",
+            "Site": "AIE_CORE_X23Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "g1_in_0_",
+            "Site": "AIE_PL_X21Y0",
+            "Bel": "AIE_PL_S_AXIS_6"
+        },
+        {
+            "Name": "g1_in_1_",
+            "Site": "AIE_PL_X21Y0",
+            "Bel": "AIE_PL_S_AXIS_1"
+        },
+        {
+            "Name": "g1_in_2_",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_S_AXIS_5"
+        },
+        {
+            "Name": "g1_in_3_",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_S_AXIS_1"
+        },
+        {
+            "Name": "g1_in_4_",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_S_AXIS_5"
+        },
+        {
+            "Name": "g1_in_5_",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_S_AXIS_1"
+        },
+        {
+            "Name": "g1_in_6_",
+            "Site": "AIE_PL_X22Y0",
+            "Bel": "AIE_PL_S_AXIS_6"
+        },
+        {
+            "Name": "g1_in_7_",
+            "Site": "AIE_PL_X22Y0",
             "Bel": "AIE_PL_S_AXIS_4"
         },
         {
-            "Name": "g1_in1",
-            "Site": "AIE_PL_X23Y0",
-            "Bel": "AIE_PL_S_AXIS_2"
-        },
-        {
-            "Name": "g1_out0",
-            "Site": "AIE_PL_X23Y0",
+            "Name": "g1_out_0_",
+            "Site": "AIE_PL_X21Y0",
             "Bel": "AIE_PL_M_AXIS_0"
         },
         {
-            "Name": "g1_out1",
-            "Site": "AIE_PL_X23Y0",
-            "Bel": "AIE_PL_M_AXIS_1"
+            "Name": "g1_out_1_",
+            "Site": "AIE_PL_X21Y0",
+            "Bel": "AIE_PL_M_AXIS_5"
+        },
+        {
+            "Name": "g1_out_2_",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_M_AXIS_2"
+        },
+        {
+            "Name": "g1_out_3_",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_M_AXIS_0"
+        },
+        {
+            "Name": "g1_out_4_",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_M_AXIS_0"
+        },
+        {
+            "Name": "g1_out_5_",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_M_AXIS_4"
+        },
+        {
+            "Name": "g1_out_6_",
+            "Site": "AIE_PL_X22Y0",
+            "Bel": "AIE_PL_M_AXIS_5"
+        },
+        {
+            "Name": "g1_out_7_",
+            "Site": "AIE_PL_X22Y0",
+            "Bel": "AIE_PL_M_AXIS_4"
         }
     ],
     "InstTerm Placement": [
         {
-            "InstName": "g1.pu.k",
+            "InstName": "g1.pl.orthUnit[0].k",
             "InstTermName": "pi0",
-            "Site": "AIE_CORE_X24Y0",
+            "Site": "AIE_CORE_X22Y0",
             "Bel": "CORE",
             "BelPin": "S_CORE_CH0"
         },
         {
-            "InstName": "g1.pu.k",
+            "InstName": "g1.pl.orthUnit[0].k",
             "InstTermName": "pi1",
-            "Site": "AIE_CORE_X24Y0",
+            "Site": "AIE_CORE_X22Y0",
             "Bel": "CORE",
             "BelPin": "S_CORE_CH1"
         },
         {
-            "InstName": "g1.pu.k",
+            "InstName": "g1.pl.orthUnit[0].k",
             "InstTermName": "po0",
-            "Site": "AIE_CORE_X24Y0",
+            "Site": "AIE_CORE_X22Y0",
             "Bel": "CORE",
             "BelPin": "M_CORE_CH0"
         },
         {
-            "InstName": "g1.pu.k",
+            "InstName": "g1.pl.orthUnit[0].k",
             "InstTermName": "po1",
-            "Site": "AIE_CORE_X24Y0",
+            "Site": "AIE_CORE_X22Y0",
             "Bel": "CORE",
             "BelPin": "M_CORE_CH1"
         },
         {
-            "InstName": "g1_in0",
+            "InstName": "g1.pl.orthUnit[1].k",
+            "InstTermName": "pi0",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH0"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[1].k",
+            "InstTermName": "pi1",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH1"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[1].k",
             "InstTermName": "po0",
-            "Site": "AIE_PL_X23Y0",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH0"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[1].k",
+            "InstTermName": "po1",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH1"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[2].k",
+            "InstTermName": "pi0",
+            "Site": "AIE_CORE_X27Y0",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH0"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[2].k",
+            "InstTermName": "pi1",
+            "Site": "AIE_CORE_X27Y0",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH1"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[2].k",
+            "InstTermName": "po0",
+            "Site": "AIE_CORE_X27Y0",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH0"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[2].k",
+            "InstTermName": "po1",
+            "Site": "AIE_CORE_X27Y0",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH1"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[3].k",
+            "InstTermName": "pi0",
+            "Site": "AIE_CORE_X23Y0",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH0"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[3].k",
+            "InstTermName": "pi1",
+            "Site": "AIE_CORE_X23Y0",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH1"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[3].k",
+            "InstTermName": "po0",
+            "Site": "AIE_CORE_X23Y0",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH0"
+        },
+        {
+            "InstName": "g1.pl.orthUnit[3].k",
+            "InstTermName": "po1",
+            "Site": "AIE_CORE_X23Y0",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH1"
+        },
+        {
+            "InstName": "g1_in_0_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X21Y0",
+            "Bel": "AIE_PL_S_AXIS_6",
+            "BelPin": "TO_AIE"
+        },
+        {
+            "InstName": "g1_in_1_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X21Y0",
+            "Bel": "AIE_PL_S_AXIS_1",
+            "BelPin": "TO_AIE"
+        },
+        {
+            "InstName": "g1_in_2_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_S_AXIS_5",
+            "BelPin": "TO_AIE"
+        },
+        {
+            "InstName": "g1_in_3_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_S_AXIS_1",
+            "BelPin": "TO_AIE"
+        },
+        {
+            "InstName": "g1_in_4_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_S_AXIS_5",
+            "BelPin": "TO_AIE"
+        },
+        {
+            "InstName": "g1_in_5_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_S_AXIS_1",
+            "BelPin": "TO_AIE"
+        },
+        {
+            "InstName": "g1_in_6_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X22Y0",
+            "Bel": "AIE_PL_S_AXIS_6",
+            "BelPin": "TO_AIE"
+        },
+        {
+            "InstName": "g1_in_7_",
+            "InstTermName": "po0",
+            "Site": "AIE_PL_X22Y0",
             "Bel": "AIE_PL_S_AXIS_4",
             "BelPin": "TO_AIE"
         },
         {
-            "InstName": "g1_in1",
-            "InstTermName": "po0",
-            "Site": "AIE_PL_X23Y0",
-            "Bel": "AIE_PL_S_AXIS_2",
-            "BelPin": "TO_AIE"
-        },
-        {
-            "InstName": "g1_out0",
+            "InstName": "g1_out_0_",
             "InstTermName": "pi0",
-            "Site": "AIE_PL_X23Y0",
+            "Site": "AIE_PL_X21Y0",
             "Bel": "AIE_PL_M_AXIS_0",
             "BelPin": "FROM_AIE"
         },
         {
-            "InstName": "g1_out1",
+            "InstName": "g1_out_1_",
             "InstTermName": "pi0",
-            "Site": "AIE_PL_X23Y0",
-            "Bel": "AIE_PL_M_AXIS_1",
+            "Site": "AIE_PL_X21Y0",
+            "Bel": "AIE_PL_M_AXIS_5",
+            "BelPin": "FROM_AIE"
+        },
+        {
+            "InstName": "g1_out_2_",
+            "InstTermName": "pi0",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_M_AXIS_2",
+            "BelPin": "FROM_AIE"
+        },
+        {
+            "InstName": "g1_out_3_",
+            "InstTermName": "pi0",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_M_AXIS_0",
+            "BelPin": "FROM_AIE"
+        },
+        {
+            "InstName": "g1_out_4_",
+            "InstTermName": "pi0",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_M_AXIS_0",
+            "BelPin": "FROM_AIE"
+        },
+        {
+            "InstName": "g1_out_5_",
+            "InstTermName": "pi0",
+            "Site": "AIE_PL_X26Y0",
+            "Bel": "AIE_PL_M_AXIS_4",
+            "BelPin": "FROM_AIE"
+        },
+        {
+            "InstName": "g1_out_6_",
+            "InstTermName": "pi0",
+            "Site": "AIE_PL_X22Y0",
+            "Bel": "AIE_PL_M_AXIS_5",
+            "BelPin": "FROM_AIE"
+        },
+        {
+            "InstName": "g1_out_7_",
+            "InstTermName": "pi0",
+            "Site": "AIE_PL_X22Y0",
+            "Bel": "AIE_PL_M_AXIS_4",
             "BelPin": "FROM_AIE"
         }
     ],
@@ -113,27 +416,102 @@
     "Non-Netlist Instance Links": [
         {
             "PT0": [
-                "g1.pu.k"
+                "g1.pl.orthUnit[0].k"
+            ]
+        },
+        {
+            "PT1": [
+                "g1.pl.orthUnit[1].k"
+            ]
+        },
+        {
+            "PT2": [
+                "g1.pl.orthUnit[2].k"
+            ]
+        },
+        {
+            "PT3": [
+                "g1.pl.orthUnit[3].k"
             ]
         },
         {
             "unconstraint_fifo0": [
-                "g1.pu.k/pi0"
+                "g1.pl.orthUnit[0].k/pi0"
             ]
         },
         {
             "unconstraint_fifo1": [
-                "g1.pu.k/pi1"
+                "g1.pl.orthUnit[0].k/pi1"
             ]
         },
         {
             "unconstraint_fifo2": [
-                "g1_out0/pi0"
+                "g1_out_0_/pi0"
             ]
         },
         {
             "unconstraint_fifo3": [
-                "g1_out1/pi0"
+                "g1_out_1_/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo4": [
+                "g1.pl.orthUnit[1].k/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo5": [
+                "g1.pl.orthUnit[1].k/pi1"
+            ]
+        },
+        {
+            "unconstraint_fifo6": [
+                "g1_out_2_/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo7": [
+                "g1_out_3_/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo8": [
+                "g1.pl.orthUnit[2].k/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo9": [
+                "g1.pl.orthUnit[2].k/pi1"
+            ]
+        },
+        {
+            "unconstraint_fifo10": [
+                "g1_out_4_/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo11": [
+                "g1_out_5_/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo12": [
+                "g1.pl.orthUnit[3].k/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo13": [
+                "g1.pl.orthUnit[3].k/pi1"
+            ]
+        },
+        {
+            "unconstraint_fifo14": [
+                "g1_out_6_/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo15": [
+                "g1_out_7_/pi0"
             ]
         }
     ],
@@ -183,7 +561,7 @@
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 24"
+                    "Val": "INT 21"
                 },
                 {
                     "Key": "accessRow",
@@ -191,7 +569,178 @@
                 },
                 {
                     "Key": "accessCol",
-                    "Val": "INT 24"
+                    "Val": "INT 22"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem1",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 4096"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 372"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem1"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 25"
+                },
+                {
+                    "Key": "accessRow",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "accessCol",
+                    "Val": "INT 25"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem2",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 4096"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 372"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem2"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 27"
+                },
+                {
+                    "Key": "accessRow",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "accessCol",
+                    "Val": "INT 27"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem3",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 4096"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 372"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem3"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 23"
+                },
+                {
+                    "Key": "accessRow",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "accessCol",
+                    "Val": "INT 23"
                 }
             ]
         },
@@ -217,6 +766,69 @@
             ]
         },
         {
+            "Name": "PT1",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING coral"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem1"
+                }
+            ]
+        },
+        {
+            "Name": "PT2",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING cadetblue1"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem2"
+                }
+            ]
+        },
+        {
+            "Name": "PT3",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING antiquewhite"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem3"
+                }
+            ]
+        },
+        {
             "Name": "net0",
             "attrs": [
                 {
@@ -225,7 +837,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1_in0"
+                    "Val": "STRING g1_in_0_"
                 },
                 {
                     "Key": "srcPort",
@@ -233,7 +845,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "dstPort",
@@ -262,7 +874,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1_in1"
+                    "Val": "STRING g1_in_1_"
                 },
                 {
                     "Key": "srcPort",
@@ -270,7 +882,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "dstPort",
@@ -299,7 +911,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "srcPort",
@@ -307,7 +919,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1_out0"
+                    "Val": "STRING g1_out_0_"
                 },
                 {
                     "Key": "dstPort",
@@ -336,7 +948,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.orthUnit[0].k"
                 },
                 {
                     "Key": "srcPort",
@@ -344,7 +956,451 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1_out1"
+                    "Val": "STRING g1_out_1_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net4",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_2_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net5",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_3_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net6",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_2_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net7",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[1].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_3_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net8",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_4_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net9",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_5_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net10",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_4_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net11",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[2].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_5_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net12",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_6_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net13",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1_in_7_"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net14",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_6_"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net15",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING g1.pl.orthUnit[3].k"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING g1_out_7_"
                 },
                 {
                     "Key": "dstPort",
@@ -415,11 +1471,167 @@
                     "Val": "STRING unspecified_fifo"
                 }
             ]
+        },
+        {
+            "Name": "unconstraint_fifo4",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo5",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo6",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo7",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo8",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo9",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo10",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo11",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo12",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo13",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo14",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo15",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
         }
     ],
     "Netlist Element Attrs": [
         {
-            "Name": "g1.pu.k",
+            "Name": "g1.pl.orthUnit[0].k",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -432,7 +1644,20 @@
             ]
         },
         {
-            "Name": "g1_in0",
+            "Name": "g1.pl.orthUnit[1].k",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "schedule",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_3_",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -445,7 +1670,7 @@
             ]
         },
         {
-            "Name": "g1_in1",
+            "Name": "g1_out_3_",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -458,7 +1683,7 @@
             ]
         },
         {
-            "Name": "g1_out0",
+            "Name": "g1_in_4_",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -471,7 +1696,189 @@
             ]
         },
         {
-            "Name": "g1_out1",
+            "Name": "g1_out_4_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_5_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_out_5_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_6_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_out_6_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_7_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_out_7_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1.pl.orthUnit[2].k",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "schedule",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "g1.pl.orthUnit[3].k",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "schedule",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_0_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_out_0_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_1_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_out_1_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_2_",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "g1_out_2_",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -494,47 +1901,62 @@
                     "Wire": "NULL"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
                     "Arc": "NULL",
-                    "Wire": "AIE_PL_TO_AIE_4_PIN"
+                    "Wire": "AIE_PL_TO_AIE_6_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_PL_TO_AIE_4_PIN->>AIE_PL_TO_AIE_4",
-                    "Wire": "AIE_PL_TO_AIE_4"
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_PL_TO_AIE_6_PIN->>AIE_PL_TO_AIE_6",
+                    "Wire": "AIE_PL_TO_AIE_6"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_PL_TO_AIE_4->>AIE_SWITCH_S_SOUTH_CH4_PIN",
-                    "Wire": "AIE_SWITCH_S_SOUTH_CH4_PIN"
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_PL_TO_AIE_6->>AIE_NOC_FROM_PL_6_PIN",
+                    "Wire": "AIE_NOC_FROM_PL_6_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_S_SOUTH_CH4_PIN->>AIE_SWITCH_M_NORTH_CH4_PIN",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_NOC_FROM_PL_6_PIN->>AIE_NOC_TO_AIE_6_PIN",
+                    "Wire": "AIE_NOC_TO_AIE_6_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_NOC_TO_AIE_6_PIN->>AIE_NOC_TO_AIE_6",
+                    "Wire": "AIE_NOC_TO_AIE_6"
+                },
+                {
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_NOC_TO_AIE_6->>AIE_SWITCH_S_SOUTH_CH6_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH6_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_S_SOUTH_CH6_PIN->>AIE_SWITCH_M_NORTH_CH4_PIN",
                     "Wire": "AIE_SWITCH_M_NORTH_CH4_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_M_NORTH_CH4_PIN->>AIE_SWITCH_M_NORTH_CH4",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_M_NORTH_CH4_PIN->>AIE_SWITCH_M_NORTH_CH4",
                     "Wire": "AIE_SWITCH_M_NORTH_CH4"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4->>AIE_SWITCH_S_SOUTH_CH4_PIN",
                     "Wire": "AIE_SWITCH_S_SOUTH_CH4_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4_PIN->>AIE_SWITCH_M_CORE_IN_CH0_PIN",
                     "Wire": "AIE_SWITCH_M_CORE_IN_CH0_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0_PIN->>AIE_SWITCH_M_CORE_IN_CH0",
                     "Wire": "AIE_SWITCH_M_CORE_IN_CH0"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0->>AIE_CORE_S_CORE_CH0_PIN",
                     "Wire": "AIE_CORE_S_CORE_CH0_PIN"
                 }
@@ -549,49 +1971,439 @@
                     "Wire": "NULL"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
                     "Arc": "NULL",
-                    "Wire": "AIE_PL_TO_AIE_2_PIN"
+                    "Wire": "AIE_PL_TO_AIE_1_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_PL_TO_AIE_2_PIN->>AIE_PL_TO_AIE_2",
-                    "Wire": "AIE_PL_TO_AIE_2"
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_PL_TO_AIE_1_PIN->>AIE_PL_TO_AIE_1",
+                    "Wire": "AIE_PL_TO_AIE_1"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_PL_TO_AIE_2->>AIE_SWITCH_S_SOUTH_CH2_PIN",
-                    "Wire": "AIE_SWITCH_S_SOUTH_CH2_PIN"
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_PL_TO_AIE_1->>AIE_SWITCH_S_SOUTH_CH1_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH1_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_S_SOUTH_CH2_PIN->>AIE_SWITCH_M_NORTH_CH5_PIN",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_S_SOUTH_CH1_PIN->>AIE_SWITCH_M_NORTH_CH5_PIN",
                     "Wire": "AIE_SWITCH_M_NORTH_CH5_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_M_NORTH_CH5_PIN->>AIE_SWITCH_M_NORTH_CH5",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_M_NORTH_CH5_PIN->>AIE_SWITCH_M_NORTH_CH5",
                     "Wire": "AIE_SWITCH_M_NORTH_CH5"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5->>AIE_SWITCH_S_SOUTH_CH5_PIN",
                     "Wire": "AIE_SWITCH_S_SOUTH_CH5_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5_PIN->>AIE_SWITCH_M_CORE_IN_CH1_PIN",
                     "Wire": "AIE_SWITCH_M_CORE_IN_CH1_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1_PIN->>AIE_SWITCH_M_CORE_IN_CH1",
                     "Wire": "AIE_SWITCH_M_CORE_IN_CH1"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1->>AIE_CORE_S_CORE_CH1_PIN",
                     "Wire": "AIE_CORE_S_CORE_CH1_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net10",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "NULL",
+                    "Wire": "AIE_CORE_M_CORE_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0_PIN->>AIE_CORE_M_CORE_CH0",
+                    "Wire": "AIE_CORE_M_CORE_CH0"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0->>AIE_SWITCH_S_CORE_OUT_CH0_PIN",
+                    "Wire": "AIE_SWITCH_S_CORE_OUT_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH2_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH2",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH2->>AIE_SWITCH_S_NORTH_CH2_PIN",
+                    "Wire": "AIE_SWITCH_S_NORTH_CH2_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH0_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH0",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH0"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH0->>AIE_PL_FROM_AIE_0_PIN",
+                    "Wire": "AIE_PL_FROM_AIE_0_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net11",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "NULL",
+                    "Wire": "AIE_CORE_M_CORE_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1_PIN->>AIE_CORE_M_CORE_CH1",
+                    "Wire": "AIE_CORE_M_CORE_CH1"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1->>AIE_SWITCH_S_CORE_OUT_CH1_PIN",
+                    "Wire": "AIE_SWITCH_S_CORE_OUT_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH1_PIN->>AIE_SWITCH_M_SOUTH_CH3_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH3_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH3",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH3"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH3->>AIE_SWITCH_S_NORTH_CH3_PIN",
+                    "Wire": "AIE_SWITCH_S_NORTH_CH3_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH4_PIN->>AIE_SWITCH_M_SOUTH_CH4",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH4"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH4->>AIE_NOC_FROM_AIE_4_PIN",
+                    "Wire": "AIE_NOC_FROM_AIE_4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_FROM_AIE_4_PIN->>AIE_NOC_TO_PL_4_PIN",
+                    "Wire": "AIE_NOC_TO_PL_4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_PL_4_PIN->>AIE_NOC_TO_PL_4",
+                    "Wire": "AIE_NOC_TO_PL_4"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_PL_4->>AIE_PL_FROM_AIE_4_PIN",
+                    "Wire": "AIE_PL_FROM_AIE_4_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net12",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "NULL",
+                    "Wire": "AIE_PL_TO_AIE_6_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_6_PIN->>AIE_PL_TO_AIE_6",
+                    "Wire": "AIE_PL_TO_AIE_6"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_6->>AIE_NOC_FROM_PL_6_PIN",
+                    "Wire": "AIE_NOC_FROM_PL_6_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_FROM_PL_6_PIN->>AIE_NOC_TO_AIE_6_PIN",
+                    "Wire": "AIE_NOC_TO_AIE_6_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_AIE_6_PIN->>AIE_NOC_TO_AIE_6",
+                    "Wire": "AIE_NOC_TO_AIE_6"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_AIE_6->>AIE_SWITCH_S_SOUTH_CH6_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH6_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_SOUTH_CH6_PIN->>AIE_SWITCH_M_NORTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_NORTH_CH4_PIN->>AIE_SWITCH_M_NORTH_CH4",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH4"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4->>AIE_SWITCH_S_SOUTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4_PIN->>AIE_SWITCH_M_CORE_IN_CH0_PIN",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0_PIN->>AIE_SWITCH_M_CORE_IN_CH0",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH0"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0->>AIE_CORE_S_CORE_CH0_PIN",
+                    "Wire": "AIE_CORE_S_CORE_CH0_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net13",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "NULL",
+                    "Wire": "AIE_PL_TO_AIE_4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_4_PIN->>AIE_PL_TO_AIE_4",
+                    "Wire": "AIE_PL_TO_AIE_4"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_4->>AIE_SWITCH_S_SOUTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_SOUTH_CH4_PIN->>AIE_SWITCH_M_NORTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_NORTH_CH5_PIN->>AIE_SWITCH_M_NORTH_CH5",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH5"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5->>AIE_SWITCH_S_SOUTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5_PIN->>AIE_SWITCH_M_CORE_IN_CH1_PIN",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1_PIN->>AIE_SWITCH_M_CORE_IN_CH1",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH1"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1->>AIE_CORE_S_CORE_CH1_PIN",
+                    "Wire": "AIE_CORE_S_CORE_CH1_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net14",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "NULL",
+                    "Wire": "AIE_CORE_M_CORE_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0_PIN->>AIE_CORE_M_CORE_CH0",
+                    "Wire": "AIE_CORE_M_CORE_CH0"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0->>AIE_SWITCH_S_CORE_OUT_CH0_PIN",
+                    "Wire": "AIE_SWITCH_S_CORE_OUT_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH2_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH2",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH2->>AIE_SWITCH_S_NORTH_CH2_PIN",
+                    "Wire": "AIE_SWITCH_S_NORTH_CH2_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH5_PIN->>AIE_SWITCH_M_SOUTH_CH5",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH5"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH5->>AIE_NOC_FROM_AIE_5_PIN",
+                    "Wire": "AIE_NOC_FROM_AIE_5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_FROM_AIE_5_PIN->>AIE_NOC_TO_PL_5_PIN",
+                    "Wire": "AIE_NOC_TO_PL_5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_PL_5_PIN->>AIE_NOC_TO_PL_5",
+                    "Wire": "AIE_NOC_TO_PL_5"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_PL_5->>AIE_PL_FROM_AIE_5_PIN",
+                    "Wire": "AIE_PL_FROM_AIE_5_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net15",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "NULL",
+                    "Wire": "AIE_CORE_M_CORE_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1_PIN->>AIE_CORE_M_CORE_CH1",
+                    "Wire": "AIE_CORE_M_CORE_CH1"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1->>AIE_SWITCH_S_CORE_OUT_CH1_PIN",
+                    "Wire": "AIE_SWITCH_S_CORE_OUT_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH1_PIN->>AIE_SWITCH_M_SOUTH_CH3_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH3_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X23Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH3",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH3"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH3->>AIE_SWITCH_S_NORTH_CH3_PIN",
+                    "Wire": "AIE_SWITCH_S_NORTH_CH3_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_NORTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH4_PIN->>AIE_SWITCH_M_SOUTH_CH4",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH4"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_SOUTH_CH4->>AIE_NOC_FROM_AIE_4_PIN",
+                    "Wire": "AIE_NOC_FROM_AIE_4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_FROM_AIE_4_PIN->>AIE_NOC_TO_PL_4_PIN",
+                    "Wire": "AIE_NOC_TO_PL_4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_PL_4_PIN->>AIE_NOC_TO_PL_4",
+                    "Wire": "AIE_NOC_TO_PL_4"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X23Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_NOC_TO_PL_4->>AIE_PL_FROM_AIE_4_PIN",
+                    "Wire": "AIE_PL_FROM_AIE_4_PIN"
                 }
             ]
         },
@@ -604,48 +2416,48 @@
                     "Wire": "NULL"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "NULL",
                     "Wire": "AIE_CORE_M_CORE_CH0_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0_PIN->>AIE_CORE_M_CORE_CH0",
                     "Wire": "AIE_CORE_M_CORE_CH0"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0->>AIE_SWITCH_S_CORE_OUT_CH0_PIN",
                     "Wire": "AIE_SWITCH_S_CORE_OUT_CH0_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH2_PIN",
                     "Wire": "AIE_SWITCH_M_SOUTH_CH2_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH2",
                     "Wire": "AIE_SWITCH_M_SOUTH_CH2"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_S_NORTH_CH2->>AIE_SWITCH_S_NORTH_CH2_PIN",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_S_NORTH_CH2->>AIE_SWITCH_S_NORTH_CH2_PIN",
                     "Wire": "AIE_SWITCH_S_NORTH_CH2_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_S_NORTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH0_PIN",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_S_NORTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH0_PIN",
                     "Wire": "AIE_SWITCH_M_SOUTH_CH0_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_M_SOUTH_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH0",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_M_SOUTH_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH0",
                     "Wire": "AIE_SWITCH_M_SOUTH_CH0"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_M_SOUTH_CH0->>AIE_PL_FROM_AIE_0_PIN",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_M_SOUTH_CH0->>AIE_PL_FROM_AIE_0_PIN",
                     "Wire": "AIE_PL_FROM_AIE_0_PIN"
                 }
             ]
@@ -659,49 +2471,394 @@
                     "Wire": "NULL"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "NULL",
                     "Wire": "AIE_CORE_M_CORE_CH1_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1_PIN->>AIE_CORE_M_CORE_CH1",
                     "Wire": "AIE_CORE_M_CORE_CH1"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1->>AIE_SWITCH_S_CORE_OUT_CH1_PIN",
                     "Wire": "AIE_SWITCH_S_CORE_OUT_CH1_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH1_PIN->>AIE_SWITCH_M_SOUTH_CH3_PIN",
                     "Wire": "AIE_SWITCH_M_SOUTH_CH3_PIN"
                 },
                 {
-                    "Tile": "AIE_TILE_X24Y1",
+                    "Tile": "AIE_TILE_X22Y1",
                     "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH3",
                     "Wire": "AIE_SWITCH_M_SOUTH_CH3"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_S_NORTH_CH3->>AIE_SWITCH_S_NORTH_CH3_PIN",
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_S_NORTH_CH3->>AIE_SWITCH_S_NORTH_CH3_PIN",
                     "Wire": "AIE_SWITCH_S_NORTH_CH3_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_S_NORTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH1_PIN",
-                    "Wire": "AIE_SWITCH_M_SOUTH_CH1_PIN"
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_S_NORTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH5_PIN"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_M_SOUTH_CH1_PIN->>AIE_SWITCH_M_SOUTH_CH1",
-                    "Wire": "AIE_SWITCH_M_SOUTH_CH1"
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_M_SOUTH_CH5_PIN->>AIE_SWITCH_M_SOUTH_CH5",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH5"
                 },
                 {
-                    "Tile": "AIE_INTF_B3_CORE_X24Y0",
-                    "Arc": "AIE_INTF_B3_CORE.AIE_SWITCH_M_SOUTH_CH1->>AIE_PL_FROM_AIE_1_PIN",
-                    "Wire": "AIE_PL_FROM_AIE_1_PIN"
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_SWITCH_M_SOUTH_CH5->>AIE_NOC_FROM_AIE_5_PIN",
+                    "Wire": "AIE_NOC_FROM_AIE_5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_NOC_FROM_AIE_5_PIN->>AIE_NOC_TO_PL_5_PIN",
+                    "Wire": "AIE_NOC_TO_PL_5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_NOC_TO_PL_5_PIN->>AIE_NOC_TO_PL_5",
+                    "Wire": "AIE_NOC_TO_PL_5"
+                },
+                {
+                    "Tile": "AIE_INTF_B1_CORE_X22Y0",
+                    "Arc": "AIE_INTF_B1_CORE.AIE_NOC_TO_PL_5->>AIE_PL_FROM_AIE_5_PIN",
+                    "Wire": "AIE_PL_FROM_AIE_5_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net4",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "NULL",
+                    "Wire": "AIE_PL_TO_AIE_5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_PL_TO_AIE_5_PIN->>AIE_PL_TO_AIE_5",
+                    "Wire": "AIE_PL_TO_AIE_5"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_PL_TO_AIE_5->>AIE_SWITCH_S_SOUTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_S_SOUTH_CH5_PIN->>AIE_SWITCH_M_NORTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_M_NORTH_CH4_PIN->>AIE_SWITCH_M_NORTH_CH4",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH4"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4->>AIE_SWITCH_S_SOUTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4_PIN->>AIE_SWITCH_M_CORE_IN_CH0_PIN",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0_PIN->>AIE_SWITCH_M_CORE_IN_CH0",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH0"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0->>AIE_CORE_S_CORE_CH0_PIN",
+                    "Wire": "AIE_CORE_S_CORE_CH0_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net5",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "NULL",
+                    "Wire": "AIE_PL_TO_AIE_1_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_PL_TO_AIE_1_PIN->>AIE_PL_TO_AIE_1",
+                    "Wire": "AIE_PL_TO_AIE_1"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_PL_TO_AIE_1->>AIE_SWITCH_S_SOUTH_CH1_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_S_SOUTH_CH1_PIN->>AIE_SWITCH_M_NORTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_M_NORTH_CH5_PIN->>AIE_SWITCH_M_NORTH_CH5",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH5"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5->>AIE_SWITCH_S_SOUTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5_PIN->>AIE_SWITCH_M_CORE_IN_CH1_PIN",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1_PIN->>AIE_SWITCH_M_CORE_IN_CH1",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH1"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1->>AIE_CORE_S_CORE_CH1_PIN",
+                    "Wire": "AIE_CORE_S_CORE_CH1_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net6",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "NULL",
+                    "Wire": "AIE_CORE_M_CORE_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0_PIN->>AIE_CORE_M_CORE_CH0",
+                    "Wire": "AIE_CORE_M_CORE_CH0"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH0->>AIE_SWITCH_S_CORE_OUT_CH0_PIN",
+                    "Wire": "AIE_SWITCH_S_CORE_OUT_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH2_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH2",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_S_NORTH_CH2->>AIE_SWITCH_S_NORTH_CH2_PIN",
+                    "Wire": "AIE_SWITCH_S_NORTH_CH2_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_S_NORTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH2_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_M_SOUTH_CH2_PIN->>AIE_SWITCH_M_SOUTH_CH2",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH2"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_M_SOUTH_CH2->>AIE_PL_FROM_AIE_2_PIN",
+                    "Wire": "AIE_PL_FROM_AIE_2_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net7",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "NULL",
+                    "Wire": "AIE_CORE_M_CORE_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1_PIN->>AIE_CORE_M_CORE_CH1",
+                    "Wire": "AIE_CORE_M_CORE_CH1"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_CORE_M_CORE_CH1->>AIE_SWITCH_S_CORE_OUT_CH1_PIN",
+                    "Wire": "AIE_SWITCH_S_CORE_OUT_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_CORE_OUT_CH1_PIN->>AIE_SWITCH_M_SOUTH_CH3_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH3_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X25Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_SOUTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH3",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH3"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_S_NORTH_CH3->>AIE_SWITCH_S_NORTH_CH3_PIN",
+                    "Wire": "AIE_SWITCH_S_NORTH_CH3_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_S_NORTH_CH3_PIN->>AIE_SWITCH_M_SOUTH_CH0_PIN",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_M_SOUTH_CH0_PIN->>AIE_SWITCH_M_SOUTH_CH0",
+                    "Wire": "AIE_SWITCH_M_SOUTH_CH0"
+                },
+                {
+                    "Tile": "AIE_INTF_B0_CORE_X25Y0",
+                    "Arc": "AIE_INTF_B0_CORE.AIE_SWITCH_M_SOUTH_CH0->>AIE_PL_FROM_AIE_0_PIN",
+                    "Wire": "AIE_PL_FROM_AIE_0_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net8",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "NULL",
+                    "Wire": "AIE_PL_TO_AIE_5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_5_PIN->>AIE_PL_TO_AIE_5",
+                    "Wire": "AIE_PL_TO_AIE_5"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_5->>AIE_SWITCH_S_SOUTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_SOUTH_CH5_PIN->>AIE_SWITCH_M_NORTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_NORTH_CH4_PIN->>AIE_SWITCH_M_NORTH_CH4",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH4"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4->>AIE_SWITCH_S_SOUTH_CH4_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH4_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH4_PIN->>AIE_SWITCH_M_CORE_IN_CH0_PIN",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH0_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0_PIN->>AIE_SWITCH_M_CORE_IN_CH0",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH0"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH0->>AIE_CORE_S_CORE_CH0_PIN",
+                    "Wire": "AIE_CORE_S_CORE_CH0_PIN"
+                }
+            ]
+        },
+        {
+            "Name": "net9",
+            "Route ArcNodes": [
+                {
+                    "Tile": "__BEGIN_ROOT__",
+                    "Arc": "NULL",
+                    "Wire": "NULL"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "NULL",
+                    "Wire": "AIE_PL_TO_AIE_1_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_1_PIN->>AIE_PL_TO_AIE_1",
+                    "Wire": "AIE_PL_TO_AIE_1"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_PL_TO_AIE_1->>AIE_SWITCH_S_SOUTH_CH1_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_S_SOUTH_CH1_PIN->>AIE_SWITCH_M_NORTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_INTF_B2_CORE_X27Y0",
+                    "Arc": "AIE_INTF_B2_CORE.AIE_SWITCH_M_NORTH_CH5_PIN->>AIE_SWITCH_M_NORTH_CH5",
+                    "Wire": "AIE_SWITCH_M_NORTH_CH5"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5->>AIE_SWITCH_S_SOUTH_CH5_PIN",
+                    "Wire": "AIE_SWITCH_S_SOUTH_CH5_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_S_SOUTH_CH5_PIN->>AIE_SWITCH_M_CORE_IN_CH1_PIN",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH1_PIN"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1_PIN->>AIE_SWITCH_M_CORE_IN_CH1",
+                    "Wire": "AIE_SWITCH_M_CORE_IN_CH1"
+                },
+                {
+                    "Tile": "AIE_TILE_X27Y1",
+                    "Arc": "AIE_TILE.AIE_SWITCH_M_CORE_IN_CH1->>AIE_CORE_S_CORE_CH1_PIN",
+                    "Wire": "AIE_CORE_S_CORE_CH1_PIN"
                 }
             ]
         }

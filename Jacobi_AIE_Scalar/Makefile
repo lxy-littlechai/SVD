@@ -38,8 +38,8 @@ BUILD_DIR := ./build_dir.$(TARGET).xilinx_vck190_base_202110_1
 KERNEL_XO := $(TEMP_DIR)/dma.xo
 GRAPH    = aie/src/TopGraph.cpp
 LIBADF  = libadf.a
-AIE_CMPL_CMD = aiecompiler -platform=${PLATFORM} --target=hw --stacksize=4096 -include="./aie/src" -workdir=./Work ${GRAPH} #-v
-AIE_SIM_CMD = aiesimulator --pkg-dir=./Work --dump-vcd foo --profile
+AIE_CMPL_CMD = aiecompiler -platform=${PLATFORM} --target=hw --stacksize=4096 -include="./aie/src" --adf-api-log-level=3 --verbose -workdir=./Work ${GRAPH} #-v
+AIE_SIM_CMD = aiesimulator --pkg-dir=./Work --online -wdb -ctf --profile
 AIE_HOSTEXE = aie_control_xrt.o
 ifeq ($(PRE_BUILT),1)
 	AIE_HOSTEXE := pre_built/aie_control_xrt.o
