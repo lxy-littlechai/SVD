@@ -1,5 +1,6 @@
 #include "adf.h"
 #include "Orthogonalize.h"
+#include "Transfer.h"
 
 template <int ROW>
 class OrthogonalizeUnit: public adf::graph {
@@ -18,5 +19,23 @@ public:
         adf::connect<> (in[1], k.in[1]);        
         adf::connect<> (k.out[0], out[0]);
         adf::connect<> (k.out[1], out[1]);
+    }
+};
+
+template <int ROW>
+class TransferUnit: public adf::graph {
+private:
+    adf::kernel k;
+
+public:
+    adf::port<input> in[1];
+    adf::port<output> out[1]; 
+
+    TransferUnit() {
+        k = adf::kernel::create(transfer<ROW>);
+        adf::source(k) = "aie/src/ProcessUnit/Transfer.cpp";
+        adf::runtime<ratio>(k) = 1;
+        adf::connect<> (in[0], k.in[0]);       
+        adf::connect<> (k.out[0], out[0]);
     }
 };

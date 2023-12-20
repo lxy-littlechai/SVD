@@ -1,2 +1,11 @@
 build
 .vscode
+*.log
+*.Xil
+/aiesimulator_output
+*.vcd
+*.a
+*.csv
+*.db
+pl_*
+/Work
