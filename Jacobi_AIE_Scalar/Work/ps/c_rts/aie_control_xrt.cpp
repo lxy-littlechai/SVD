@@ -10,7 +10,7 @@
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {0, "g1", nullptr, nullptr, nullptr, {24}, {0}, {24}, {0}, {0x4}, {0}, {}, {}, {}, {},  }, 
+    {0, "g1", nullptr, nullptr, nullptr, {24, 25}, {0, 0}, {24, 24}, {0, 0}, {0x4, 0x2e64}, {0, 0}, {}, {}, {}, {},  }, 
   };
   const int NUM_GRAPH = 1;
 
@@ -18,8 +18,8 @@
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "g1.in[0]", "g1_in_0_", 24, 0, 4},
-    {1, "g1.out[0]", "g1_out_0_", 24, 1, 0},
+    {0, "g1.in[0]", "g1_in_0_", 25, 0, 6},
+    {1, "g1.out[0]", "g1_out_0_", 25, 1, 4},
     {2, "g1.in[1]", "g1_in_1_", 24, 0, 2},
     {3, "g1.out[1]", "g1_out_1_", 24, 1, 1},
   };
@@ -62,6 +62,6 @@
 #if !defined(__CDO__) && !defined(__AIECONTROLCODE__)
 
 // Kernel Stub Definition
-  template<int ROW> void orthogonalize(input_stream<float> *__restrict Ap, input_stream<float> *__restrict Aq, output_stream<float> *__restrict Bp, output_stream<float> *__restrict Bq) { /* Stub */ } 
-  template void orthogonalize<8>(input_stream<float> *__restrict,input_stream<float> *__restrict,output_stream<float> *__restrict,output_stream<float> *__restrict); /* explicit template instantiation */ 
+  template<int ROW> void transfer(input_stream<float> *__restrict in, output_stream<float> *__restrict out) { /* Stub */ } 
+  template void transfer<8>(input_stream<float> *__restrict,output_stream<float> *__restrict); /* explicit template instantiation */ 
 #endif

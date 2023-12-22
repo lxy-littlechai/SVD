@@ -22,7 +22,7 @@ Reading Header IR from ir/_header.ll
 
 --------------- DISABLE FUNCTION INLINING IN MAIN LOG ---------------
 
-Marking function _Z13orthogonalizeILi8EEvP12input_streamIfES2_P13output_streamIfES5_ noinline
+Marking function _Z8transferILi8EEvP12input_streamIfEP13output_streamIfE noinline
 
 ---------------------------------------------------------------------
 
@@ -42,26 +42,24 @@ Loops with known trip count = 0
 
 
 
---------------- LOOP STATISTICS : _Z13orthogonalizeILi8EEvP12input_streamIfES2_P13output_streamIfES5_ ---------------
+--------------- LOOP STATISTICS : _Z8transferILi8EEvP12input_streamIfEP13output_streamIfE ---------------
 
-Total loops = 3
+Total loops = 1
 Loops with prepare for pipelining pragma = 0
 Loops with unroll pragma = 0
 Loops with flatten pragma = 0
 Loops with min range pragma = 0
 Loops with max range pragma = 0
-Loops with known trip count = 3
+Loops with known trip count = 1
 
----------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
 
 
 --------------- PRAGMA INSERTION LOG (unroll threshold = 3000, max unroll factor = 8) ---------------
 
-Adding pragma to function _Z13orthogonalizeILi8EEvP12input_streamIfES2_P13output_streamIfES5_ :
-	Pragma added to loop at line 41 in file aie/src/ProcessUnit/Orthogonalize.cpp : chess_loop_range(8,8)
-	Pragma added to loop at line 29 in file aie/src/ProcessUnit/Orthogonalize.cpp : chess_loop_range(8,8)
-	Pragma added to loop at line 22 in file aie/src/ProcessUnit/Orthogonalize.cpp : chess_loop_range(8,8)
+Adding pragma to function _Z8transferILi8EEvP12input_streamIfEP13output_streamIfE :
+	Pragma added to loop at line 13 in file aie/src/ProcessUnit/Transfer.cpp : chess_loop_range(8,8)
 
 -----------------------------------------------------------------------------------------------------
 

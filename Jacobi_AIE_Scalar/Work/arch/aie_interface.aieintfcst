@@ -3,14 +3,14 @@
         {
             "LogicalInstance": "g1_in_0_",
             "PhysicalInstance": [
-                "AIE_PL_X23Y0_AIE_PL_S_AXIS_4"
+                "AIE_PL_X24Y0_AIE_PL_S_AXIS_6"
             ],
             "IsSoft": false
         },
         {
             "LogicalInstance": "g1_out_0_",
             "PhysicalInstance": [
-                "AIE_PL_X23Y0_AIE_PL_M_AXIS_0"
+                "AIE_PL_X24Y0_AIE_PL_M_AXIS_4"
             ],
             "IsSoft": false
         },

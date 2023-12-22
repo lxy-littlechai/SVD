@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Fri Dec 22 10:32:51 2023",
- "timestampMillis": "1703212371551",
+ "dateTimestamp": "Fri Dec 22 13:27:37 2023",
+ "timestampMillis": "1703222857025",
  "buildStep": {
-  "cmdId": "d4992d5e-53d9-46fc-88d5-9ea33a41ffcd",
+  "cmdId": "38d29cba-a3d8-4ccf-a7ec-b2deecf57449",
   "name": "aiecompiler",
   "logFile": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/AIECompiler.log",
   "commandLine": "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler -platform=/home/lxy/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --target=hw --stacksize=4096 -include=./aie/src -workdir=./Work aie/src/TopGraph.cpp ",
@@ -33,10 +33,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Dec 22 10:32:51 2023",
- "timestampMillis": "1703212371552",
+ "dateTimestamp": "Fri Dec 22 13:27:37 2023",
+ "timestampMillis": "1703222857027",
  "status": {
-  "cmdId": "d4992d5e-53d9-46fc-88d5-9ea33a41ffcd",
+  "cmdId": "38d29cba-a3d8-4ccf-a7ec-b2deecf57449",
   "state": "CS_RUNNING"
  }
 }
@@ -44,8 +44,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Fri Dec 22 10:32:51 2023",
- "timestampMillis": "1703212371553",
+ "dateTimestamp": "Fri Dec 22 13:27:37 2023",
+ "timestampMillis": "1703222857027",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -62,8 +62,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:32:51 2023",
- "timestampMillis": "1703212371555",
+ "dateTimestamp": "Fri Dec 22 13:27:37 2023",
+ "timestampMillis": "1703222857029",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work",
   "name": "",
@@ -76,8 +76,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:32:51 2023",
- "timestampMillis": "1703212371556",
+ "dateTimestamp": "Fri Dec 22 13:27:37 2023",
+ "timestampMillis": "1703222857030",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/reports/guidance.html",
   "name": "",
@@ -90,8 +90,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:32:51 2023",
- "timestampMillis": "1703212371557",
+ "dateTimestamp": "Fri Dec 22 13:27:37 2023",
+ "timestampMillis": "1703222857031",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/reports/guidance.pb3",
   "name": "",
@@ -104,10 +104,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Fri Dec 22 10:33:03 2023",
- "timestampMillis": "1703212383860",
+ "dateTimestamp": "Fri Dec 22 13:27:43 2023",
+ "timestampMillis": "1703222863700",
  "buildStep": {
-  "cmdId": "f00cb187-5dc4-476b-8b23-dd039a3b241a",
+  "cmdId": "6c381bcc-54a2-43f2-a47d-b68538b99ac4",
   "name": "aieir_be",
   "logFile": "",
   "commandLine": "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be --time-passes=0 --disable-om-fifo-insertion=false --logcfg-file= --trace-plio-width=64 --aie2ipu-base-addr=1073741824 --pl-freq=0 --enable-light-cdo=false --show-loggers=false --fast-nonlinearfloats=false --broadcast-enable-core=true --high-performance=false --multi-layer-opt=0 --kernel-address-location=false --target=hw --swfifo-threshold=40 --single-mm2s-channel=false --workdir=./Work --multi-layer-enable-shared-channel-opt=true --exit-after=complete --event-trace-config= --test-iterations=-1 --stacksize=4096 --known-tripcount=false --enable-core-processor-bus=false --platform=/home/lxy/tools/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --large-program-memory=false --event-trace-custom-config= --disable-dma-cmd-alignment=false --enable-ecc-scrubbing=true --float-accuracy=fast --output-archive=libadf.a --write-partitioned-file=true --print-timer-multi-layer-ctrl=false --schemafile=AIEGraphSchema.json --disable-multirate=false --multi-layer-controller-parallel=false --include=./aie/src --verify-switchconfig=true --enable-peano-flow=false --partition-isolation=true --disable-multirate-analysis=false --fastmath=false --multi-layer-ctrl-pkt=false --cpp-std=-std=c++17 --max-layer-ctrl-param-size=256 --enable-mapper-hints-constraints=false --multi-layer-auto-phase=false --event-trace-advanced-mapping=0 --multi-layer-plc-constraints= --lock-fence-mode=1 --enable-reconfig=false --compute-heapsize=true --log-level=1 --aiesim-xrt-api=false --evaluate-fifo-depth=false --gen-graph-cleanup=false --use-canonical-net-names=false --event-trace-port=gmio --use-phy-shim=true --print-timer-multi-layer-core=false --xlopt=1 --graph-iterator-event=false --pre-compile-kernels=false --gen-elf-ctrl-pkts=false --trace-aiesim-option=0 --mapped-soln-udm= --optimize-pktids=false --no-init=false --adf-api-log-level=2 --num-trace-streams=16 --aie-heat-map=false --enable-partition=false --multi-layer-enable-tct=false --fast-floats=true --quiet=false --enable-multi-layer=false --multi-layer-pipelining=false --llvmRelease=15 --exec-timed=0 --pl-auto-restart=false --routed-soln-udm= --large-kernel-program=false --read-mem-multi-layer=false --enable-profiling=false --runtime-opt=false --part= --disable-transform-merge-broadcast=false --multi-layer-ext-buf-file= --verbose=false --use-async-rtp-locks=true --repo-path= --genArchive=false --kernel-compile-replacement= --pl-axi-lite=false --event-trace-bounding-box= --multi-layer-shim-dma-bandwidth=0 --heapsize=1024 --logical-arch= --enable-reconfig-dma-autostart=false --nodot-graph=false --use-core-control-api=false --enable-txn-bin=false --debug-runtime-opt=false --disable-dma-autostart=false --include-mem-tile= --disable-transform-broadcast-split=true --json=./Work/temp/TopGraph.json --aiearch aie --frontend-warning=0 --frontend-critical-warning=0 --frontend-summary-name=./Work/TopGraph.aiecompile_summary --frontend-files-to-report=Guidance:./Work/reports/guidance.html --sdf-graph=aie/src/TopGraph.cpp ",
@@ -236,10 +236,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Dec 22 10:33:03 2023",
- "timestampMillis": "1703212383862",
+ "dateTimestamp": "Fri Dec 22 13:27:43 2023",
+ "timestampMillis": "1703222863702",
  "status": {
-  "cmdId": "f00cb187-5dc4-476b-8b23-dd039a3b241a",
+  "cmdId": "6c381bcc-54a2-43f2-a47d-b68538b99ac4",
   "state": "CS_RUNNING"
  }
 }
@@ -247,8 +247,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:33:23 2023",
- "timestampMillis": "1703212403490",
+ "dateTimestamp": "Fri Dec 22 13:28:00 2023",
+ "timestampMillis": "1703222880324",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work",
   "name": "",
@@ -261,8 +261,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:33:23 2023",
- "timestampMillis": "1703212403772",
+ "dateTimestamp": "Fri Dec 22 13:28:00 2023",
+ "timestampMillis": "1703222880540",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/temp/debug_config.json",
   "name": "",
@@ -275,8 +275,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Fri Dec 22 10:33:23 2023",
- "timestampMillis": "1703212403773",
+ "dateTimestamp": "Fri Dec 22 13:28:00 2023",
+ "timestampMillis": "1703222880541",
  "buildSummary": {
   "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
   "hardwareDsa": "VC1902",
@@ -311,8 +311,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:33:23 2023",
- "timestampMillis": "1703212403820",
+ "dateTimestamp": "Fri Dec 22 13:28:00 2023",
+ "timestampMillis": "1703222880549",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/temp/TopGraph.json",
   "name": "",
@@ -325,8 +325,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:33:41 2023",
- "timestampMillis": "1703212421383",
+ "dateTimestamp": "Fri Dec 22 13:28:07 2023",
+ "timestampMillis": "1703222887562",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/reports/TopGraph.png",
   "name": "",
@@ -339,8 +339,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:33:41 2023",
- "timestampMillis": "1703212421440",
+ "dateTimestamp": "Fri Dec 22 13:28:07 2023",
+ "timestampMillis": "1703222887640",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/temp/TopGraph_partition.json",
   "name": "",
@@ -353,8 +353,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Dec 22 10:33:43 2023",
- "timestampMillis": "1703212423949",
+ "dateTimestamp": "Fri Dec 22 13:28:08 2023",
+ "timestampMillis": "1703222888742",
  "report": {
   "path": "/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/temp/TopGraph_aie_constraints_for_placer.aiecst",
   "name": "",

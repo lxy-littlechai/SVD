@@ -19,7 +19,7 @@
             "g1_in_0_"
           ],
           "sdfioName": [
-            "i1_po0"
+            "i2_po0"
           ]
         },
         "M00_AXIS": {
@@ -35,7 +35,7 @@
             "g1_out_0_"
           ],
           "sdfioName": [
-            "i2_pi0"
+            "i3_pi0"
           ]
         },
         "S01_AXIS": {
@@ -51,7 +51,7 @@
             "g1_in_1_"
           ],
           "sdfioName": [
-            "i3_po0"
+            "i4_po0"
           ]
         },
         "M01_AXIS": {
@@ -67,7 +67,7 @@
             "g1_out_1_"
           ],
           "sdfioName": [
-            "i4_pi0"
+            "i5_pi0"
           ]
         }
       }
@@ -83,7 +83,7 @@
       ],
       "direction": "pl_to_aie"
     },
-    "net2": {
+    "net1": {
       "type": "stream",
       "srcPort": {
         "instName": "ai_engine_0",
@@ -91,7 +91,7 @@
       },
       "direction": "aie_to_pl"
     },
-    "net1": {
+    "net2": {
       "dstPorts": [
         {
           "instName": "ai_engine_0",

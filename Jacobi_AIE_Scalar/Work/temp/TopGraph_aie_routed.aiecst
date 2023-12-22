@@ -1,6 +1,19 @@
 {
   "NodeConstraints": {
-    "g1.pl.evenLevel[0].orthUnit[0].k": {
+    "g1.pl.normUnit[0].k": {
+      "tile": {
+        "column": 25,
+        "row": 0,
+        "tile_type": "core"
+      },
+      "reserved_memory": {
+        "column": 24,
+        "row": 0,
+        "bankId": 1,
+        "offset": 3680
+      }
+    },
+    "g1.pl.normUnit[1].k": {
       "tile": {
         "column": 24,
         "row": 0,
@@ -15,14 +28,14 @@
     },
     "g1_in_0_": {
       "shim": {
-        "column": 24,
-        "channel": 4
+        "column": 25,
+        "channel": 6
       }
     },
     "g1_out_0_": {
       "shim": {
-        "column": 24,
-        "channel": 0
+        "column": 25,
+        "channel": 4
       }
     },
     "g1_in_1_": {

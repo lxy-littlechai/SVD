@@ -28,8 +28,8 @@
                 "axi_stream": [
                     {
                         "port_name": "do",
-                        "column": 24,
-                        "stream_id": 4,
+                        "column": 25,
+                        "stream_id": 6,
                         "direction": "pl_to_me",
                         "bus_width": 32
                     }
@@ -52,8 +52,8 @@
                 "axi_stream": [
                     {
                         "port_name": "di",
-                        "column": 24,
-                        "stream_id": 0,
+                        "column": 25,
+                        "stream_id": 4,
                         "direction": "me_to_pl",
                         "bus_width": 32
                     }
@@ -109,9 +109,9 @@
                 "event_bus": []
             },
             {
-                "name": "ps_i5_ps_main",
+                "name": "ps_i6_ps_main",
                 "ip": "ps",
-                "lib_path": "ps/c_rts/systemC/generated-objects/ps_i5.so",
+                "lib_path": "ps/c_rts/systemC/generated-objects/ps_i6.so",
                 "pl_freq": 312500000.0,
                 "axi_mm": [
                     {

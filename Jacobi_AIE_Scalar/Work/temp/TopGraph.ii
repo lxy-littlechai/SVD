@@ -63180,6 +63180,8 @@ namespace adf {
 # 1 "./aie/src/ProcessLevel/EvenLevel.h" 1
 
 # 1 "./aie/src/ProcessUnit/ProcessUnit.h" 1
+       
+
 
 # 1 "./aie/src/ProcessUnit/Orthogonalize.h" 1
 
@@ -63189,14 +63191,21 @@ void orthogonalize(input_stream<float> * __restrict Ap,
                    input_stream<float> * __restrict Aq,
                    output_stream<float> * __restrict Bp,
                    output_stream<float> * __restrict Bq);
-# 3 "./aie/src/ProcessUnit/ProcessUnit.h" 2
+# 5 "./aie/src/ProcessUnit/ProcessUnit.h" 2
 # 1 "./aie/src/ProcessUnit/Transfer.h" 1
 
 
 template<int ROW>
 void transfer(input_stream<float> * __restrict in,
                    output_stream<float> * __restrict out);
-# 4 "./aie/src/ProcessUnit/ProcessUnit.h" 2
+# 6 "./aie/src/ProcessUnit/ProcessUnit.h" 2
+# 1 "./aie/src/ProcessUnit/Normalize.h" 1
+
+
+template<int ROW>
+void normalize(input_stream<float>* __restrict in,
+                output_stream<float>* __restrict out);
+# 7 "./aie/src/ProcessUnit/ProcessUnit.h" 2
 
 template <int ROW>
 class OrthogonalizeUnit: public adf::graph {
@@ -63230,6 +63239,24 @@ public:
     TransferUnit() {
         k = adf::kernel::create(transfer<ROW>);
         adf::source(k) = "aie/src/ProcessUnit/Transfer.cpp";
+        adf::runtime<ratio>(k) = 1;
+        adf::connect<> (in[0], k.in[0]);
+        adf::connect<> (k.out[0], out[0]);
+    }
+};
+
+template <int ROW>
+class NormalizeUnit: public adf::graph {
+private:
+    adf::kernel k;
+
+public:
+    adf::port<input> in[1];
+    adf::port<output> out[1];
+
+    NormalizeUnit() {
+        k = adf::kernel::create(normalize<ROW>);
+        adf::source(k) = "aie/src/ProcessUnit/Normalize.cpp";
         adf::runtime<ratio>(k) = 1;
         adf::connect<> (in[0], k.in[0]);
         adf::connect<> (k.out[0], out[0]);
@@ -63329,25 +63356,48 @@ public:
   }
 };
 # 3 "aie/src/TopGraph.h" 2
+# 1 "aie/src/ProcessLevel/NormalizeLevel.h" 1
+
+
+
+template<int COL, int ROW>
+class NormalizeLevel:public adf::graph {
+private:
+    TransferUnit<ROW> normUnit[COL];
+
+public:
+    adf::port<input> in[COL];
+    adf::port<output> out[COL];
+
+    NormalizeLevel() {
+        for(int i = 0;i < COL;i ++) {
+            adf::connect<> (in[i], normUnit[i].in[0]);
+            adf::connect<> (normUnit[i].out[0], out[i]);
+        }
+    }
+};
+# 4 "aie/src/TopGraph.h" 2
 # 1 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/tps/lnx64/gcc/include/c++/8.3.0/cstring" 1 3
 # 39 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/tps/lnx64/gcc/include/c++/8.3.0/cstring" 3
        
 # 40 "/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/tps/lnx64/gcc/include/c++/8.3.0/cstring" 3
-# 4 "aie/src/TopGraph.h" 2
+# 5 "aie/src/TopGraph.h" 2
 
 const int ROW = 8;
-const int COL = 4;
+const int MATRIX_COL = 8;
+const int COL = (MATRIX_COL+1)/2;
 
 class TopGraph: public adf::graph {
 private:
-    EvenArray<COL, ROW> pl;
+    NormalizeLevel<MATRIX_COL, ROW> normLevel;
+    EvenArray<COL, ROW> evenArray;
 
 public:
-    adf::input_plio in[COL*2];
-    adf::output_plio out[COL*2];
+    adf::input_plio in[MATRIX_COL];
+    adf::output_plio out[MATRIX_COL];
 
     TopGraph() {
-        for(int i = 0;i < COL*2;i ++) {
+        for(int i = 0;i < MATRIX_COL;i ++) {
             std::string fileIn = "aie/data/in" + std::to_string(i) + ".txt";
             std::string fileOut = "aie/data/out" + std::to_string(i) + ".txt";
             in[i] = adf::input_plio::create(adf::plio_32_bits, fileIn);
@@ -63355,9 +63405,10 @@ public:
         }
 
 
-        for(int i = 0;i < COL*2; i ++) {
-            adf::connect<> (in[i].out[0], pl.in[i]);
-            adf::connect<> (pl.out[i], out[i].in[0]);
+        for(int i = 0;i < MATRIX_COL; i ++) {
+            adf::connect<> (in[i].out[0], evenArray.in[i]);
+            adf::connect<> (evenArray.out[i], normLevel.in[i]);
+            adf::connect<> (normLevel.out[i], out[i].in[0]);
         }
 
     }

@@ -3,12 +3,12 @@
     "startColumn": 0,
     "numColumns": 50,
     "aieshimPorts": {
-      "AIE_PL_X23Y0_AIE_PL_S_AXIS_4": {
+      "AIE_PL_X24Y0_AIE_PL_S_AXIS_6": {
         "PhysicalInstance": [
           {
-            "name": "AIE_PL_X23Y0_AIE_PL_S_AXIS_4",
-            "column": 24,
-            "channel": 4
+            "name": "AIE_PL_X24Y0_AIE_PL_S_AXIS_6",
+            "column": 25,
+            "channel": 6
           }
         ],
         "type": "stream",
@@ -21,15 +21,15 @@
           "g1_in_0_"
         ],
         "sdfioName": [
-          "i1_po0"
+          "i2_po0"
         ]
       },
-      "AIE_PL_X23Y0_AIE_PL_M_AXIS_0": {
+      "AIE_PL_X24Y0_AIE_PL_M_AXIS_4": {
         "PhysicalInstance": [
           {
-            "name": "AIE_PL_X23Y0_AIE_PL_M_AXIS_0",
-            "column": 24,
-            "channel": 0
+            "name": "AIE_PL_X24Y0_AIE_PL_M_AXIS_4",
+            "column": 25,
+            "channel": 4
           }
         ],
         "type": "stream",
@@ -42,7 +42,7 @@
           "g1_out_0_"
         ],
         "sdfioName": [
-          "i2_pi0"
+          "i3_pi0"
         ]
       },
       "AIE_PL_X23Y0_AIE_PL_S_AXIS_2": {
@@ -63,7 +63,7 @@
           "g1_in_1_"
         ],
         "sdfioName": [
-          "i3_po0"
+          "i4_po0"
         ]
       },
       "AIE_PL_X23Y0_AIE_PL_M_AXIS_1": {
@@ -84,7 +84,7 @@
           "g1_out_1_"
         ],
         "sdfioName": [
-          "i4_pi0"
+          "i5_pi0"
         ]
       }
     }

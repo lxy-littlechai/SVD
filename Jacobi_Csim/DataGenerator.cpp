@@ -5,8 +5,6 @@
 #include <random>
 using namespace std;
 
-
-
 void writeArrayToFile(const std::string& filename, float* arr, int col) {
     std::ofstream file(filename);
     if (file.is_open()) {
@@ -19,9 +17,8 @@ void writeArrayToFile(const std::string& filename, float* arr, int col) {
     }
 }
 
-void generate2Col(string ApFilename, string AqFilename, int col) {
-    float arr1[col];
-    float arr2[col];
+void generate2Col(string filename, int col) {
+    float arr[col];
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<float> dis(-5.0, 5.0);
@@ -29,13 +26,17 @@ void generate2Col(string ApFilename, string AqFilename, int col) {
     // 生成随机数
     float random_number = dis(gen);
     for(int i = 0;i < col;i ++) {
-        arr1[i] = dis(gen);
-        arr2[i] = dis(gen);
+        arr[i] = dis(gen);
     }
-    writeArrayToFile(ApFilename, arr1, col);
-    writeArrayToFile(AqFilename, arr2, col);
+    writeArrayToFile(filename, arr, col);
 }
 
 int main() {
-    generate2Col("inAq.txt", "inAp.txt", 8);
+    const int COL = 4;
+    const int ROW = 8;
+    for(int i = 0;i < COL;i ++) {
+        string filename = "in" + to_string(i) + "txt";
+        generate2Col(filename, ROW);
+    }
+    
 }
