@@ -1,4 +1,4 @@
-.PHONY: all  i0_wrap_Orthogonalize.rule clean
+.PHONY: all  i0_wrap_Orthogonalize.rule i16_wrap_Transfer.rule clean
 
 ifeq ($(XILINX_VITIS_AIETOOLS),)
 XILINX_VITIS_AIETOOLS:=${XILINX_VITIS}/aietools
@@ -10,10 +10,13 @@ XCHESSCC := xchesscc
 
 INCLUDE_PATH := -I "../../.." -I ${XILINX_VITIS_AIETOOLS}/include -I /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src -I ${CARDANO_AIE_ARCH_MODEL_DIR}/runtime_cxx/libcxx-lite/include -I ${CARDANO_AIE_ARCH_MODEL_DIR}/runtime_cxx/libs/libcxx-9.0.0/include-lite -I ${CARDANO_AIE_ARCH_MODEL_DIR}/runtime/include
 
-all:  i0_wrap_Orthogonalize.rule
+all:  i0_wrap_Orthogonalize.rule i16_wrap_Transfer.rule
 
 i0_wrap_Orthogonalize.rule:
 	${XCHESSCC} +f +s -p me -P ${CARDANO_AIE_ARCH_MODEL_DIR} +Wllvm,-O2,-fno-jump-tables,-fno-discard-value-names,-mllvm,-chess-collapse-struct-types-during-linking=0,-Xclang,-chess-only-info-critical-passes,-g -D__AIENGINE__ -D__AIE_ARCH__=10 -D__LOCK_FENCE_MODE__=0 -DAIE_OPTION_SCALAR_FLOAT_ON_VECTOR  -I /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src/ProcessUnit ${INCLUDE_PATH} /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/aie/ir/i0_wrap_Orthogonalize.cpp -o i0_wrap_Orthogonalize.ll;
 
+i16_wrap_Transfer.rule:
+	${XCHESSCC} +f +s -p me -P ${CARDANO_AIE_ARCH_MODEL_DIR} +Wllvm,-O2,-fno-jump-tables,-fno-discard-value-names,-mllvm,-chess-collapse-struct-types-during-linking=0,-Xclang,-chess-only-info-critical-passes,-g -D__AIENGINE__ -D__AIE_ARCH__=10 -D__LOCK_FENCE_MODE__=0 -DAIE_OPTION_SCALAR_FLOAT_ON_VECTOR  -I /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src/ProcessUnit ${INCLUDE_PATH} /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/Work/aie/ir/i16_wrap_Transfer.cpp -o i16_wrap_Transfer.ll;
+
 clean:
-	rm -rf  i0_wrap_Orthogonalize.ll
+	rm -rf  i0_wrap_Orthogonalize.ll i16_wrap_Transfer.ll

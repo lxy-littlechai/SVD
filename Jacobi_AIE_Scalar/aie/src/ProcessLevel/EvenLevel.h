@@ -28,7 +28,7 @@ template<int COL, int ROW>
 class EvenLevel1: public EvenLevel<COL, ROW> {
 private:
   TransferUnit<ROW> transUnit[2];
-  OrthogonalizeUnit<ROW> orthUnit[COL];
+  OrthogonalizeUnit<ROW> orthUnit[COL-1];
 
 public:
   EvenLevel1() {

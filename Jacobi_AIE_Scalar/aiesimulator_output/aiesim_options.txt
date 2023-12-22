@@ -1,3 +1,0 @@
-AIE_PKG_DIR=/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/./Work
-AIE_PROFILE=All
-AIE_DUMP_VCD_PIPE=/tmp/vcd_fifo_b4256d75-485b-4b65-a214-156cda4d4c77

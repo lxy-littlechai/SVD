@@ -2,188 +2,53 @@
     "Version": 0.0,
     "Non-Netlist Instances": [
         "sysmem0",
-        "sysmem1",
-        "sysmem2",
-        "sysmem3",
         "PT0",
-        "PT1",
-        "PT2",
-        "PT3",
         "net0",
         "net1",
         "net2",
         "net3",
-        "net4",
-        "net5",
-        "net6",
-        "net7",
-        "net8",
-        "net9",
-        "net10",
-        "net11",
-        "net12",
-        "net13",
-        "net14",
-        "net15",
         "unconstraint_fifo0",
         "unconstraint_fifo1",
         "unconstraint_fifo2",
-        "unconstraint_fifo3",
-        "unconstraint_fifo4",
-        "unconstraint_fifo5",
-        "unconstraint_fifo6",
-        "unconstraint_fifo7",
-        "unconstraint_fifo8",
-        "unconstraint_fifo9",
-        "unconstraint_fifo10",
-        "unconstraint_fifo11",
-        "unconstraint_fifo12",
-        "unconstraint_fifo13",
-        "unconstraint_fifo14",
-        "unconstraint_fifo15"
+        "unconstraint_fifo3"
     ],
     "Non-Netlist Instance Placement": [
         {
             "Name": "sysmem0",
-            "Site": "AIE_MEMGRP_X21Y0",
-            "Bel": "BANK0"
-        },
-        {
-            "Name": "sysmem1",
-            "Site": "AIE_MEMGRP_X25Y0",
-            "Bel": "BANK0"
-        },
-        {
-            "Name": "sysmem2",
-            "Site": "AIE_MEMGRP_X27Y0",
-            "Bel": "BANK0"
-        },
-        {
-            "Name": "sysmem3",
-            "Site": "AIE_MEMGRP_X23Y0",
+            "Site": "AIE_MEMGRP_X24Y0",
             "Bel": "BANK0"
         },
         {
             "Name": "PT0",
-            "Site": "AIE_CORE_X22Y0",
-            "Bel": "CORE"
-        },
-        {
-            "Name": "PT1",
-            "Site": "AIE_CORE_X25Y0",
-            "Bel": "CORE"
-        },
-        {
-            "Name": "PT2",
-            "Site": "AIE_CORE_X27Y0",
-            "Bel": "CORE"
-        },
-        {
-            "Name": "PT3",
-            "Site": "AIE_CORE_X23Y0",
+            "Site": "AIE_CORE_X24Y0",
             "Bel": "CORE"
         }
     ],
     "Instance Placement": [
         {
-            "Name": "g1.pl.orthUnit[0].k",
-            "Site": "AIE_CORE_X22Y0",
-            "Bel": "CORE"
-        },
-        {
-            "Name": "g1.pl.orthUnit[1].k",
-            "Site": "AIE_CORE_X25Y0",
-            "Bel": "CORE"
-        },
-        {
-            "Name": "g1.pl.orthUnit[2].k",
-            "Site": "AIE_CORE_X27Y0",
-            "Bel": "CORE"
-        },
-        {
-            "Name": "g1.pl.orthUnit[3].k",
-            "Site": "AIE_CORE_X23Y0",
+            "Name": "g1.pl.evenLevel[0].orthUnit[0].k",
+            "Site": "AIE_CORE_X24Y0",
             "Bel": "CORE"
         },
         {
             "Name": "g1_in_0_",
-            "Site": "AIE_PL_X21Y0",
-            "Bel": "AIE_PL_S_AXIS_6"
-        },
-        {
-            "Name": "g1_in_1_",
-            "Site": "AIE_PL_X21Y0",
-            "Bel": "AIE_PL_S_AXIS_1"
-        },
-        {
-            "Name": "g1_in_2_",
-            "Site": "AIE_PL_X24Y0",
-            "Bel": "AIE_PL_S_AXIS_5"
-        },
-        {
-            "Name": "g1_in_3_",
-            "Site": "AIE_PL_X24Y0",
-            "Bel": "AIE_PL_S_AXIS_1"
-        },
-        {
-            "Name": "g1_in_4_",
-            "Site": "AIE_PL_X26Y0",
-            "Bel": "AIE_PL_S_AXIS_5"
-        },
-        {
-            "Name": "g1_in_5_",
-            "Site": "AIE_PL_X26Y0",
-            "Bel": "AIE_PL_S_AXIS_1"
-        },
-        {
-            "Name": "g1_in_6_",
-            "Site": "AIE_PL_X22Y0",
-            "Bel": "AIE_PL_S_AXIS_6"
-        },
-        {
-            "Name": "g1_in_7_",
-            "Site": "AIE_PL_X22Y0",
+            "Site": "AIE_PL_X23Y0",
             "Bel": "AIE_PL_S_AXIS_4"
         },
         {
+            "Name": "g1_in_1_",
+            "Site": "AIE_PL_X23Y0",
+            "Bel": "AIE_PL_S_AXIS_2"
+        },
+        {
             "Name": "g1_out_0_",
-            "Site": "AIE_PL_X21Y0",
+            "Site": "AIE_PL_X23Y0",
             "Bel": "AIE_PL_M_AXIS_0"
         },
         {
             "Name": "g1_out_1_",
-            "Site": "AIE_PL_X21Y0",
-            "Bel": "AIE_PL_M_AXIS_5"
-        },
-        {
-            "Name": "g1_out_2_",
-            "Site": "AIE_PL_X24Y0",
-            "Bel": "AIE_PL_M_AXIS_2"
-        },
-        {
-            "Name": "g1_out_3_",
-            "Site": "AIE_PL_X24Y0",
-            "Bel": "AIE_PL_M_AXIS_0"
-        },
-        {
-            "Name": "g1_out_4_",
-            "Site": "AIE_PL_X26Y0",
-            "Bel": "AIE_PL_M_AXIS_0"
-        },
-        {
-            "Name": "g1_out_5_",
-            "Site": "AIE_PL_X26Y0",
-            "Bel": "AIE_PL_M_AXIS_4"
-        },
-        {
-            "Name": "g1_out_6_",
-            "Site": "AIE_PL_X22Y0",
-            "Bel": "AIE_PL_M_AXIS_5"
-        },
-        {
-            "Name": "g1_out_7_",
-            "Site": "AIE_PL_X22Y0",
-            "Bel": "AIE_PL_M_AXIS_4"
+            "Site": "AIE_PL_X23Y0",
+            "Bel": "AIE_PL_M_AXIS_1"
         }
     ],
     "InstTerm Placement": [],
@@ -191,32 +56,17 @@
     "Non-Netlist Instance Links": [
         {
             "PT0": [
-                "g1.pl.orthUnit[0].k"
-            ]
-        },
-        {
-            "PT1": [
-                "g1.pl.orthUnit[1].k"
-            ]
-        },
-        {
-            "PT2": [
-                "g1.pl.orthUnit[2].k"
-            ]
-        },
-        {
-            "PT3": [
-                "g1.pl.orthUnit[3].k"
+                "g1.pl.evenLevel[0].orthUnit[0].k"
             ]
         },
         {
             "unconstraint_fifo0": [
-                "g1.pl.orthUnit[0].k/pi0"
+                "g1.pl.evenLevel[0].orthUnit[0].k/pi0"
             ]
         },
         {
             "unconstraint_fifo1": [
-                "g1.pl.orthUnit[0].k/pi1"
+                "g1.pl.evenLevel[0].orthUnit[0].k/pi1"
             ]
         },
         {
@@ -227,66 +77,6 @@
         {
             "unconstraint_fifo3": [
                 "g1_out_1_/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo4": [
-                "g1.pl.orthUnit[1].k/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo5": [
-                "g1.pl.orthUnit[1].k/pi1"
-            ]
-        },
-        {
-            "unconstraint_fifo6": [
-                "g1_out_2_/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo7": [
-                "g1_out_3_/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo8": [
-                "g1.pl.orthUnit[2].k/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo9": [
-                "g1.pl.orthUnit[2].k/pi1"
-            ]
-        },
-        {
-            "unconstraint_fifo10": [
-                "g1_out_4_/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo11": [
-                "g1_out_5_/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo12": [
-                "g1.pl.orthUnit[3].k/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo13": [
-                "g1.pl.orthUnit[3].k/pi1"
-            ]
-        },
-        {
-            "unconstraint_fifo14": [
-                "g1_out_6_/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo15": [
-                "g1_out_7_/pi0"
             ]
         }
     ],
@@ -336,7 +126,7 @@
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 21"
+                    "Val": "INT 24"
                 },
                 {
                     "Key": "accessRow",
@@ -344,178 +134,7 @@
                 },
                 {
                     "Key": "accessCol",
-                    "Val": "INT 22"
-                }
-            ]
-        },
-        {
-            "Name": "sysmem1",
-            "attrs": [
-                {
-                    "Key": "is_memory_buffer",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "is_partition_reserved_memory",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "stackSize",
-                    "Val": "INT 4096"
-                },
-                {
-                    "Key": "heapSize",
-                    "Val": "INT 372"
-                },
-                {
-                    "Key": "name",
-                    "Val": "STRING sysmem1"
-                },
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "fullSize",
-                    "Val": "INT 4500"
-                },
-                {
-                    "Key": "size",
-                    "Val": "INT 4500"
-                },
-                {
-                    "Key": "offset",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "row",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "column",
-                    "Val": "INT 25"
-                },
-                {
-                    "Key": "accessRow",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "accessCol",
-                    "Val": "INT 25"
-                }
-            ]
-        },
-        {
-            "Name": "sysmem2",
-            "attrs": [
-                {
-                    "Key": "is_memory_buffer",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "is_partition_reserved_memory",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "stackSize",
-                    "Val": "INT 4096"
-                },
-                {
-                    "Key": "heapSize",
-                    "Val": "INT 372"
-                },
-                {
-                    "Key": "name",
-                    "Val": "STRING sysmem2"
-                },
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "fullSize",
-                    "Val": "INT 4500"
-                },
-                {
-                    "Key": "size",
-                    "Val": "INT 4500"
-                },
-                {
-                    "Key": "offset",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "row",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "column",
-                    "Val": "INT 27"
-                },
-                {
-                    "Key": "accessRow",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "accessCol",
-                    "Val": "INT 27"
-                }
-            ]
-        },
-        {
-            "Name": "sysmem3",
-            "attrs": [
-                {
-                    "Key": "is_memory_buffer",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "is_partition_reserved_memory",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "stackSize",
-                    "Val": "INT 4096"
-                },
-                {
-                    "Key": "heapSize",
-                    "Val": "INT 372"
-                },
-                {
-                    "Key": "name",
-                    "Val": "STRING sysmem3"
-                },
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "fullSize",
-                    "Val": "INT 4500"
-                },
-                {
-                    "Key": "size",
-                    "Val": "INT 4500"
-                },
-                {
-                    "Key": "offset",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "row",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "column",
-                    "Val": "INT 23"
-                },
-                {
-                    "Key": "accessRow",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "accessCol",
-                    "Val": "INT 23"
+                    "Val": "INT 24"
                 }
             ]
         },
@@ -541,69 +160,6 @@
             ]
         },
         {
-            "Name": "PT1",
-            "attrs": [
-                {
-                    "Key": "is_partition",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "color",
-                    "Val": "STRING coral"
-                },
-                {
-                    "Key": "weight",
-                    "Val": "DOUBLE 1.000000"
-                },
-                {
-                    "Key": "reservedMem",
-                    "Val": "STRING sysmem1"
-                }
-            ]
-        },
-        {
-            "Name": "PT2",
-            "attrs": [
-                {
-                    "Key": "is_partition",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "color",
-                    "Val": "STRING cadetblue1"
-                },
-                {
-                    "Key": "weight",
-                    "Val": "DOUBLE 1.000000"
-                },
-                {
-                    "Key": "reservedMem",
-                    "Val": "STRING sysmem2"
-                }
-            ]
-        },
-        {
-            "Name": "PT3",
-            "attrs": [
-                {
-                    "Key": "is_partition",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "color",
-                    "Val": "STRING antiquewhite"
-                },
-                {
-                    "Key": "weight",
-                    "Val": "DOUBLE 1.000000"
-                },
-                {
-                    "Key": "reservedMem",
-                    "Val": "STRING sysmem3"
-                }
-            ]
-        },
-        {
             "Name": "net0",
             "attrs": [
                 {
@@ -620,7 +176,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[0].k"
+                    "Val": "STRING g1.pl.evenLevel[0].orthUnit[0].k"
                 },
                 {
                     "Key": "dstPort",
@@ -657,7 +213,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[0].k"
+                    "Val": "STRING g1.pl.evenLevel[0].orthUnit[0].k"
                 },
                 {
                     "Key": "dstPort",
@@ -686,7 +242,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[0].k"
+                    "Val": "STRING g1.pl.evenLevel[0].orthUnit[0].k"
                 },
                 {
                     "Key": "srcPort",
@@ -723,7 +279,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[0].k"
+                    "Val": "STRING g1.pl.evenLevel[0].orthUnit[0].k"
                 },
                 {
                     "Key": "srcPort",
@@ -732,450 +288,6 @@
                 {
                     "Key": "dstInstance",
                     "Val": "STRING g1_out_1_"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net4",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1_in_2_"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[1].k"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net5",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1_in_3_"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[1].k"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi1"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net6",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[1].k"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1_out_2_"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net7",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[1].k"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po1"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1_out_3_"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net8",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1_in_4_"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[2].k"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net9",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1_in_5_"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[2].k"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi1"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net10",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[2].k"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1_out_4_"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net11",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[2].k"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po1"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1_out_5_"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net12",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1_in_6_"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[3].k"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net13",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1_in_7_"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1.pl.orthUnit[3].k"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi1"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net14",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[3].k"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1_out_6_"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING stream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net15",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING g1.pl.orthUnit[3].k"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po1"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING g1_out_7_"
                 },
                 {
                     "Key": "dstPort",
@@ -1246,336 +358,11 @@
                     "Val": "STRING unspecified_fifo"
                 }
             ]
-        },
-        {
-            "Name": "unconstraint_fifo4",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo5",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo6",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo7",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo8",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo9",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo10",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo11",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo12",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo13",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo14",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo15",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
         }
     ],
     "Netlist Element Attrs": [
         {
-            "Name": "g1.pl.orthUnit[0].k",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "schedule",
-                    "Val": "INT 0"
-                }
-            ]
-        },
-        {
-            "Name": "g1.pl.orthUnit[1].k",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "schedule",
-                    "Val": "INT 0"
-                }
-            ]
-        },
-        {
-            "Name": "g1_in_3_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_out_3_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_in_4_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_out_4_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_in_5_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_out_5_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_in_6_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_out_6_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_in_7_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_out_7_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1.pl.orthUnit[2].k",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "schedule",
-                    "Val": "INT 0"
-                }
-            ]
-        },
-        {
-            "Name": "g1.pl.orthUnit[3].k",
+            "Name": "g1.pl.evenLevel[0].orthUnit[0].k",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -1628,32 +415,6 @@
         },
         {
             "Name": "g1_out_1_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_in_2_",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "g1_out_2_",
             "attrs": [
                 {
                     "Key": "fabric",

@@ -79,9 +79,9 @@
             "SoftFloat": true
         },
         {
-            "FunctionName": "int stream_utils::aie_stream_get_ss<float, float>(input_stream<float>*)",
-            "StackSize": 59,
-            "SoftFloat": false
+            "FunctionName": "std::__2::abs(float)",
+            "StackSize": 4,
+            "SoftFloat": true
         },
         {
             "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<float>::type>::type aie::abs<float>(float const&)",
@@ -94,9 +94,9 @@
             "SoftFloat": false
         },
         {
-            "FunctionName": "std::__2::abs(float)",
-            "StackSize": 4,
-            "SoftFloat": true
+            "FunctionName": "int stream_utils::aie_stream_get_ss<float, float>(input_stream<float>*)",
+            "StackSize": 59,
+            "SoftFloat": false
         },
         {
             "FunctionName": "auto aie::sqrt<float>(float)",

@@ -1,45 +1,12 @@
 {
     "SyncBufferAddress": [
         {
-            "QualifiedGraphName": "g1.pl.orthUnit[0]",
-            "Column": 22,
-            "Row": 0,
-            "LocalAddress": "0x28000",
-            "GlobalAddress": {
-                "Column": 21,
-                "Row": 0,
-                "Address": "0x0"
-            }
-        },
-        {
-            "QualifiedGraphName": "g1.pl.orthUnit[3]",
-            "Column": 23,
+            "QualifiedGraphName": "g1.pl.evenLevel[0].orthUnit[0]",
+            "Column": 24,
             "Row": 0,
             "LocalAddress": "0x38000",
             "GlobalAddress": {
-                "Column": 23,
-                "Row": 0,
-                "Address": "0x0"
-            }
-        },
-        {
-            "QualifiedGraphName": "g1.pl.orthUnit[1]",
-            "Column": 25,
-            "Row": 0,
-            "LocalAddress": "0x38000",
-            "GlobalAddress": {
-                "Column": 25,
-                "Row": 0,
-                "Address": "0x0"
-            }
-        },
-        {
-            "QualifiedGraphName": "g1.pl.orthUnit[2]",
-            "Column": 27,
-            "Row": 0,
-            "LocalAddress": "0x38000",
-            "GlobalAddress": {
-                "Column": 27,
+                "Column": 24,
                 "Row": 0,
                 "Address": "0x0"
             }

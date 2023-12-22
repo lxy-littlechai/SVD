@@ -1,40 +1,16 @@
 <cf:model  cf:cpu="cortex_a72" cf:name="root" cf:partition="0" cf:prefix="_p0_" xd:type="design" xmlns:cf="http_//www_xilinx_com/connections" xmlns:xd="http_//www_xilinx_com/xd" >
   <cf:block  cf:name="aieip" >
-    <cf:port  cf:direction="in" cf:name="g1_in_3_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="out" cf:name="g1_out_3_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="in" cf:name="g1_in_4_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="out" cf:name="g1_out_4_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="in" cf:name="g1_in_5_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="out" cf:name="g1_out_5_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="in" cf:name="g1_in_6_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="out" cf:name="g1_out_6_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="in" cf:name="g1_in_7_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="out" cf:name="g1_out_7_" cf:portType="stream" >    </cf:port>
     <cf:port  cf:direction="in" cf:name="g1_in_0_" cf:portType="stream" >    </cf:port>
     <cf:port  cf:direction="out" cf:name="g1_out_0_" cf:portType="stream" >    </cf:port>
     <cf:port  cf:direction="in" cf:name="g1_in_1_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="out" cf:name="g1_out_1_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="in" cf:name="g1_in_2_" cf:portType="stream" >    </cf:port>
-    <cf:port  cf:direction="out" cf:name="g1_out_2_" cf:portType="stream" >    </cf:port>  
+    <cf:port  cf:direction="out" cf:name="g1_out_1_" cf:portType="stream" >    </cf:port>  
   </cf:block>
   <cf:comp  cf:name="ai_engine_0" xd:componentRef="ai_engine" >  
   </cf:comp>
   <cf:instance  cf:blockName="aieip" cf:compName="ai_engine_0" cf:name="ai_engine_0" >
-    <cf:portMap cf:blockPort="g1_in_3_" cf:compPort="S03_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_out_3_" cf:compPort="M03_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_in_4_" cf:compPort="S04_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_out_4_" cf:compPort="M04_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_in_5_" cf:compPort="S05_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_out_5_" cf:compPort="M05_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_in_6_" cf:compPort="S06_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_out_6_" cf:compPort="M06_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_in_7_" cf:compPort="S07_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_out_7_" cf:compPort="M07_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
     <cf:portMap cf:blockPort="g1_in_0_" cf:compPort="S00_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
     <cf:portMap cf:blockPort="g1_out_0_" cf:compPort="M00_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
     <cf:portMap cf:blockPort="g1_in_1_" cf:compPort="S01_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_out_1_" cf:compPort="M01_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_in_2_" cf:compPort="S02_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>
-    <cf:portMap cf:blockPort="g1_out_2_" cf:compPort="M02_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>  
+    <cf:portMap cf:blockPort="g1_out_1_" cf:compPort="M01_AXIS" cf:paddedWidth="32" xd:isRegistered="true" >    </cf:portMap>  
   </cf:instance>
 </cf:model>

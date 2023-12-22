@@ -28,8 +28,8 @@
                 "axi_stream": [
                     {
                         "port_name": "do",
-                        "column": 22,
-                        "stream_id": 6,
+                        "column": 24,
+                        "stream_id": 4,
                         "direction": "pl_to_me",
                         "bus_width": 32
                     }
@@ -52,7 +52,7 @@
                 "axi_stream": [
                     {
                         "port_name": "di",
-                        "column": 22,
+                        "column": 24,
                         "stream_id": 0,
                         "direction": "me_to_pl",
                         "bus_width": 32
@@ -76,8 +76,8 @@
                 "axi_stream": [
                     {
                         "port_name": "do",
-                        "column": 22,
-                        "stream_id": 1,
+                        "column": 24,
+                        "stream_id": 2,
                         "direction": "pl_to_me",
                         "bus_width": 32
                     }
@@ -100,104 +100,8 @@
                 "axi_stream": [
                     {
                         "port_name": "di",
-                        "column": 22,
-                        "stream_id": 5,
-                        "direction": "me_to_pl",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_in_2_",
-                "arguments": [
-                    "aie/data/in2.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_sender.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "do",
-                        "column": 25,
-                        "stream_id": 5,
-                        "direction": "pl_to_me",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_out_2_",
-                "arguments": [
-                    "aie/data/out2.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_receiver.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "di",
-                        "column": 25,
-                        "stream_id": 2,
-                        "direction": "me_to_pl",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_in_3_",
-                "arguments": [
-                    "aie/data/in3.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_sender.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "do",
-                        "column": 25,
+                        "column": 24,
                         "stream_id": 1,
-                        "direction": "pl_to_me",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_out_3_",
-                "arguments": [
-                    "aie/data/out3.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_receiver.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "di",
-                        "column": 25,
-                        "stream_id": 0,
                         "direction": "me_to_pl",
                         "bus_width": 32
                     }
@@ -205,201 +109,9 @@
                 "event_bus": []
             },
             {
-                "name": "g1_in_4_",
-                "arguments": [
-                    "aie/data/in4.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_sender.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "do",
-                        "column": 27,
-                        "stream_id": 5,
-                        "direction": "pl_to_me",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_out_4_",
-                "arguments": [
-                    "aie/data/out4.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_receiver.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "di",
-                        "column": 27,
-                        "stream_id": 0,
-                        "direction": "me_to_pl",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_in_5_",
-                "arguments": [
-                    "aie/data/in5.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_sender.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "do",
-                        "column": 27,
-                        "stream_id": 1,
-                        "direction": "pl_to_me",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_out_5_",
-                "arguments": [
-                    "aie/data/out5.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_receiver.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "di",
-                        "column": 27,
-                        "stream_id": 4,
-                        "direction": "me_to_pl",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_in_6_",
-                "arguments": [
-                    "aie/data/in6.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_sender.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "do",
-                        "column": 23,
-                        "stream_id": 6,
-                        "direction": "pl_to_me",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_out_6_",
-                "arguments": [
-                    "aie/data/out6.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_receiver.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "di",
-                        "column": 23,
-                        "stream_id": 5,
-                        "direction": "me_to_pl",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_in_7_",
-                "arguments": [
-                    "aie/data/in7.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_sender.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "do",
-                        "column": 23,
-                        "stream_id": 4,
-                        "direction": "pl_to_me",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "g1_out_7_",
-                "arguments": [
-                    "aie/data/out7.txt",
-                    "32",
-                    "32",
-                    "1",
-                    "1",
-                    "0"
-                ],
-                "ip": "release",
-                "lib_path": "data/pl_fileio/libpl_receiver.so",
-                "pl_freq": 312500000.0,
-                "axi_stream": [
-                    {
-                        "port_name": "di",
-                        "column": 23,
-                        "stream_id": 4,
-                        "direction": "me_to_pl",
-                        "bus_width": 32
-                    }
-                ],
-                "event_bus": []
-            },
-            {
-                "name": "ps_i20_ps_main",
+                "name": "ps_i5_ps_main",
                 "ip": "ps",
-                "lib_path": "ps/c_rts/systemC/generated-objects/ps_i20.so",
+                "lib_path": "ps/c_rts/systemC/generated-objects/ps_i5.so",
                 "pl_freq": 312500000.0,
                 "axi_mm": [
                     {

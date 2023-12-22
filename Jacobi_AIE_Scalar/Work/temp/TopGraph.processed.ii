@@ -63208,7 +63208,7 @@ public:
     adf::port<output> out[2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci3__ = adf::frontend::instrument< decltype(out) > ( out, "out", "./aie/src/ProcessUnit/ProcessUnit.h:12:5", adf::frontend::getParentGraphImpl(*this));
 
     OrthogonalizeUnit() {
-        k = adf::kernel::create(orthogonalize<ROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci82__{"./aie/src/ProcessUnit/ProcessUnit.h:15:13", "template<int ROW> void orthogonalize(input_stream<float> *__restrict Ap, input_stream<float> *__restrict Aq, output_stream<float> *__restrict Bp, output_stream<float> *__restrict Bq)", {{"OrthogonalizeUnit<8>", "orthogonalize<8>", false, {"input_stream<float> *__restrict", "input_stream<float> *__restrict", "output_stream<float> *__restrict", "output_stream<float> *__restrict"}, {"Ap", "Aq", "Bp", "Bq"}, "void"}}};
+        k = adf::kernel::create(orthogonalize<ROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci65__{"./aie/src/ProcessUnit/ProcessUnit.h:15:13", "template<int ROW> void orthogonalize(input_stream<float> *__restrict Ap, input_stream<float> *__restrict Aq, output_stream<float> *__restrict Bp, output_stream<float> *__restrict Bq)", {{"OrthogonalizeUnit<8>", "orthogonalize<8>", false, {"input_stream<float> *__restrict", "input_stream<float> *__restrict", "output_stream<float> *__restrict", "output_stream<float> *__restrict"}, {"Ap", "Aq", "Bp", "Bq"}, "void"}}};
         adf::source(k) = "aie/src/ProcessUnit/Orthogonalize.cpp"; adf::frontend::CallExprConstraintFunction __ci4__{"adf::source", "./aie/src/ProcessUnit/ProcessUnit.h:16:9"};
         adf::runtime<ratio>(k) = 1; adf::frontend::CallExprConstraintFunction __ci5__{"adf::runtime<adf::ratio>", "./aie/src/ProcessUnit/ProcessUnit.h:17:9"};
         adf::connect<> (in[0], k.in[0]); adf::frontend::DeclConnect __ci6__{"./aie/src/ProcessUnit/ProcessUnit.h:18:9", ""};
@@ -63228,7 +63228,7 @@ public:
     adf::port<output> out[1]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci12__ = adf::frontend::instrument< decltype(out) > ( out, "out", "./aie/src/ProcessUnit/ProcessUnit.h:32:5", adf::frontend::getParentGraphImpl(*this));
 
     TransferUnit() {
-        k = adf::kernel::create(transfer<ROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci83__{"./aie/src/ProcessUnit/ProcessUnit.h:35:13", "template<int ROW> void transfer(input_stream<float> *__restrict in, output_stream<float> *__restrict out)", {{"TransferUnit<8>", "transfer<8>", false, {"input_stream<float> *__restrict", "output_stream<float> *__restrict"}, {"in", "out"}, "void"}}};
+        k = adf::kernel::create(transfer<ROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci66__{"./aie/src/ProcessUnit/ProcessUnit.h:35:13", "template<int ROW> void transfer(input_stream<float> *__restrict in, output_stream<float> *__restrict out)", {{"TransferUnit<8>", "transfer<8>", false, {"input_stream<float> *__restrict", "output_stream<float> *__restrict"}, {"in", "out"}, "void"}}};
         adf::source(k) = "aie/src/ProcessUnit/Transfer.cpp"; adf::frontend::CallExprConstraintFunction __ci13__{"adf::source", "./aie/src/ProcessUnit/ProcessUnit.h:36:9"};
         adf::runtime<ratio>(k) = 1; adf::frontend::CallExprConstraintFunction __ci14__{"adf::runtime<adf::ratio>", "./aie/src/ProcessUnit/ProcessUnit.h:37:9"};
         adf::connect<> (in[0], k.in[0]); adf::frontend::DeclConnect __ci15__{"./aie/src/ProcessUnit/ProcessUnit.h:38:9", ""};
@@ -63241,7 +63241,7 @@ template<int COL, int ROW>
 class EvenLevel: public adf::graph {
 public:
   adf::port<input> in[COL*2]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci17__ = adf::frontend::instrument< decltype(in) > ( in, "in", "./aie/src/ProcessLevel/EvenLevel.h:7:3", adf::frontend::getParentGraphImpl(*this));
-  adf::port<inout> out[COL*2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci18__ = adf::frontend::instrument< decltype(out) > ( out, "out", "./aie/src/ProcessLevel/EvenLevel.h:8:3", adf::frontend::getParentGraphImpl(*this));
+  adf::port<output> out[COL*2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci18__ = adf::frontend::instrument< decltype(out) > ( out, "out", "./aie/src/ProcessLevel/EvenLevel.h:8:3", adf::frontend::getParentGraphImpl(*this));
 };
 
 template<int COL, int ROW>
@@ -63252,10 +63252,10 @@ private:
 public:
   EvenLevel0() {
     for(int i = 0, j = 0;i < COL*2; i += 2, j ++) {
-      adf::connect<> (this->in[i], orthUnit[j].in[0]); adf::frontend::DeclConnect __ci41__{"./aie/src/ProcessLevel/EvenLevel.h:19:7", ""};
-      adf::connect<> (this->in[i+1], orthUnit[j].in[1]); adf::frontend::DeclConnect __ci42__{"./aie/src/ProcessLevel/EvenLevel.h:20:7", ""};
-      adf::connect<> (orthUnit[j].out[0], this->out[i]); adf::frontend::DeclConnect __ci43__{"./aie/src/ProcessLevel/EvenLevel.h:21:7", ""};
-      adf::connect<> (orthUnit[j].out[1], this->out[i+1]); adf::frontend::DeclConnect __ci44__{"./aie/src/ProcessLevel/EvenLevel.h:22:7", ""};
+      adf::connect<> (this->in[i], orthUnit[j].in[0]); adf::frontend::DeclConnect __ci43__{"./aie/src/ProcessLevel/EvenLevel.h:19:7", ""};
+      adf::connect<> (this->in[i+1], orthUnit[j].in[1]); adf::frontend::DeclConnect __ci44__{"./aie/src/ProcessLevel/EvenLevel.h:20:7", ""};
+      adf::connect<> (orthUnit[j].out[0], this->out[i]); adf::frontend::DeclConnect __ci45__{"./aie/src/ProcessLevel/EvenLevel.h:21:7", ""};
+      adf::connect<> (orthUnit[j].out[1], this->out[i+1]); adf::frontend::DeclConnect __ci46__{"./aie/src/ProcessLevel/EvenLevel.h:22:7", ""};
     }
   }
 };
@@ -63264,63 +63264,66 @@ template<int COL, int ROW>
 class EvenLevel1: public EvenLevel<COL, ROW> {
 private:
   TransferUnit<ROW> transUnit[2]; decltype(adf::frontend::instrument< decltype(transUnit) > (transUnit)) __ci20__ = adf::frontend::instrument< decltype(transUnit) > ( transUnit, "transUnit", "./aie/src/ProcessLevel/EvenLevel.h:30:3", adf::frontend::getParentGraphImpl(*this));
-  OrthogonalizeUnit<ROW> orthUnit[COL]; decltype(adf::frontend::instrument< decltype(orthUnit) > (orthUnit)) __ci21__ = adf::frontend::instrument< decltype(orthUnit) > ( orthUnit, "orthUnit", "./aie/src/ProcessLevel/EvenLevel.h:31:3", adf::frontend::getParentGraphImpl(*this));
+  OrthogonalizeUnit<ROW> orthUnit[COL-1]; decltype(adf::frontend::instrument< decltype(orthUnit) > (orthUnit)) __ci21__ = adf::frontend::instrument< decltype(orthUnit) > ( orthUnit, "orthUnit", "./aie/src/ProcessLevel/EvenLevel.h:31:3", adf::frontend::getParentGraphImpl(*this));
 
 public:
   EvenLevel1() {
-    adf::connect<> (this->in[0], transUnit[0].in[0]); adf::frontend::DeclConnect __ci51__{"./aie/src/ProcessLevel/EvenLevel.h:35:5", ""};
-    adf::connect<> (transUnit[0].out[0], this->out[0]); adf::frontend::DeclConnect __ci52__{"./aie/src/ProcessLevel/EvenLevel.h:36:5", ""};
-    adf::connect<> (this->in[COL*2-1], transUnit[1].in[0]); adf::frontend::DeclConnect __ci53__{"./aie/src/ProcessLevel/EvenLevel.h:37:5", ""};
-    adf::connect<> (transUnit[1].out[0], this->out[COL*2-1]); adf::frontend::DeclConnect __ci54__{"./aie/src/ProcessLevel/EvenLevel.h:38:5", ""};
+    adf::connect<> (this->in[0], transUnit[0].in[0]); adf::frontend::DeclConnect __ci53__{"./aie/src/ProcessLevel/EvenLevel.h:35:5", ""};
+    adf::connect<> (transUnit[0].out[0], this->out[0]); adf::frontend::DeclConnect __ci54__{"./aie/src/ProcessLevel/EvenLevel.h:36:5", ""};
+    adf::connect<> (this->in[COL*2-1], transUnit[1].in[0]); adf::frontend::DeclConnect __ci55__{"./aie/src/ProcessLevel/EvenLevel.h:37:5", ""};
+    adf::connect<> (transUnit[1].out[0], this->out[COL*2-1]); adf::frontend::DeclConnect __ci56__{"./aie/src/ProcessLevel/EvenLevel.h:38:5", ""};
     for(int i = 1, j = 0;i < COL*2-1; i += 2, j ++) {
-      adf::connect<> (this->in[i], orthUnit[j].in[0]); adf::frontend::DeclConnect __ci55__{"./aie/src/ProcessLevel/EvenLevel.h:40:7", ""};
-      adf::connect<> (this->in[i+1], orthUnit[j].in[1]); adf::frontend::DeclConnect __ci56__{"./aie/src/ProcessLevel/EvenLevel.h:41:7", ""};
-      adf::connect<> (orthUnit[j].out[0], this->out[i]); adf::frontend::DeclConnect __ci57__{"./aie/src/ProcessLevel/EvenLevel.h:42:7", ""};
-      adf::connect<> (orthUnit[j].out[1], this->out[i+1]); adf::frontend::DeclConnect __ci58__{"./aie/src/ProcessLevel/EvenLevel.h:43:7", ""};
+      adf::connect<> (this->in[i], orthUnit[j].in[0]); adf::frontend::DeclConnect __ci57__{"./aie/src/ProcessLevel/EvenLevel.h:40:7", ""};
+      adf::connect<> (this->in[i+1], orthUnit[j].in[1]); adf::frontend::DeclConnect __ci58__{"./aie/src/ProcessLevel/EvenLevel.h:41:7", ""};
+      adf::connect<> (orthUnit[j].out[0], this->out[i]); adf::frontend::DeclConnect __ci59__{"./aie/src/ProcessLevel/EvenLevel.h:42:7", ""};
+      adf::connect<> (orthUnit[j].out[1], this->out[i+1]); adf::frontend::DeclConnect __ci60__{"./aie/src/ProcessLevel/EvenLevel.h:43:7", ""};
     }
   }
 };
 # 3 "aie/src/ProcessArray/EvenArray.h" 2
 
+
 template<int COL, int ROW>
 class EvenArray: public adf::graph {
 private:
-  EvenLevel<COL, ROW> evenLevel[COL]; decltype(adf::frontend::instrument< decltype(evenLevel) > (evenLevel)) __ci22__ = adf::frontend::instrument< decltype(evenLevel) > ( evenLevel, "evenLevel", "aie/src/ProcessArray/EvenArray.h:7:3", adf::frontend::getParentGraphImpl(*this));
+  EvenLevel0<COL,ROW> evenLevel0[COL]; decltype(adf::frontend::instrument< decltype(evenLevel0) > (evenLevel0)) __ci22__ = adf::frontend::instrument< decltype(evenLevel0) > ( evenLevel0, "evenLevel0", "aie/src/ProcessArray/EvenArray.h:8:3", adf::frontend::getParentGraphImpl(*this));
+  EvenLevel1<COL,ROW> evenLevel1[COL]; decltype(adf::frontend::instrument< decltype(evenLevel1) > (evenLevel1)) __ci23__ = adf::frontend::instrument< decltype(evenLevel1) > ( evenLevel1, "evenLevel1", "aie/src/ProcessArray/EvenArray.h:9:3", adf::frontend::getParentGraphImpl(*this));
 
 public:
-  adf::port<input> in[COL*2]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci23__ = adf::frontend::instrument< decltype(in) > ( in, "in", "aie/src/ProcessArray/EvenArray.h:10:3", adf::frontend::getParentGraphImpl(*this));
-  adf::port<inout> out[COL*2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci24__ = adf::frontend::instrument< decltype(out) > ( out, "out", "aie/src/ProcessArray/EvenArray.h:11:3", adf::frontend::getParentGraphImpl(*this));
+  adf::port<input> in[COL*2]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci24__ = adf::frontend::instrument< decltype(in) > ( in, "in", "aie/src/ProcessArray/EvenArray.h:12:3", adf::frontend::getParentGraphImpl(*this));
+  adf::port<output> out[COL*2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci25__ = adf::frontend::instrument< decltype(out) > ( out, "out", "aie/src/ProcessArray/EvenArray.h:13:3", adf::frontend::getParentGraphImpl(*this));
 
   EvenArray() {
-    if(COL == 1) {
-      evenLevel[0] = EvenLevel0<COL, ROW>();
-      adf::connect<> (in[0], evenLevel[0].in[0]); adf::frontend::DeclConnect __ci34__{"aie/src/ProcessArray/EvenArray.h:16:7", ""};
-      adf::connect<> (in[1], evenLevel[0].in[1]); adf::frontend::DeclConnect __ci35__{"aie/src/ProcessArray/EvenArray.h:17:7", ""};
-      adf::connect<> (evenLevel[COL-1].out[0], out[0]); adf::frontend::DeclConnect __ci36__{"aie/src/ProcessArray/EvenArray.h:18:7", ""};
-      adf::connect<> (evenLevel[COL-1].out[1], out[1]); adf::frontend::DeclConnect __ci37__{"aie/src/ProcessArray/EvenArray.h:19:7", ""};
-      return ;
-
-    }
-    else {
-        for(int i = 0;i < COL;i += 2) {
-          evenLevel[i] = EvenLevel0<COL, ROW>();
-          evenLevel[i+1] = EvenLevel1<COL, ROW>();
-
-        }
-    }
-
-
 
     for(int i = 0;i < COL*2;i ++) {
-      adf::connect<> (in[i], evenLevel[0].in[i]); adf::frontend::DeclConnect __ci38__{"aie/src/ProcessArray/EvenArray.h:34:7", ""};
-      adf::connect<> (evenLevel[COL-1].out[i], out[i]); adf::frontend::DeclConnect __ci39__{"aie/src/ProcessArray/EvenArray.h:35:7", ""};
+      adf::connect<> (in[i], evenLevel0[0].in[i]); adf::frontend::DeclConnect __ci35__{"aie/src/ProcessArray/EvenArray.h:18:7", ""};
+      adf::connect<> (evenLevel1[COL-1].out[i], out[i]); adf::frontend::DeclConnect __ci36__{"aie/src/ProcessArray/EvenArray.h:19:7", ""};
     }
 
-    for(int i = 0;i < COL-1;i ++) {
+
+    for(int i = 0;i < COL;i ++) {
       for(int j = 0;j < COL*2;j ++) {
-        adf::connect<> (evenLevel[i].out[j], evenLevel[i+1].in[j]); adf::frontend::DeclConnect __ci40__{"aie/src/ProcessArray/EvenArray.h:40:9", ""};
+        if(j&1) {
+          adf::connect<> (evenLevel0[i].out[j], evenLevel1[i].in[j-1]); adf::frontend::DeclConnect __ci37__{"aie/src/ProcessArray/EvenArray.h:26:11", ""};
+        }
+        else {
+          adf::connect<> (evenLevel0[i].out[j], evenLevel1[i].in[j+1]); adf::frontend::DeclConnect __ci38__{"aie/src/ProcessArray/EvenArray.h:29:11", ""};
+        }
       }
-# 62 "aie/src/ProcessArray/EvenArray.h"
+    }
+
+
+    for(int i = 0;i < COL-1;i ++) {
+      adf::connect<> (evenLevel1[i].out[0], evenLevel0[i+1].in[0]); adf::frontend::DeclConnect __ci39__{"aie/src/ProcessArray/EvenArray.h:36:7", ""};
+      adf::connect<> (evenLevel1[i].out[COL*2-1], evenLevel0[i+1].in[COL*2-1]); adf::frontend::DeclConnect __ci40__{"aie/src/ProcessArray/EvenArray.h:37:7", ""};
+      for(int j = 1;j < COL*2-1;j ++) {
+        if(j&1) {
+          adf::connect<> (evenLevel1[i].out[j], evenLevel0[i+1].in[j+1]); adf::frontend::DeclConnect __ci41__{"aie/src/ProcessArray/EvenArray.h:40:11", ""};
+        }
+        else {
+          adf::connect<> (evenLevel1[i].out[j], evenLevel0[i+1].in[j-1]); adf::frontend::DeclConnect __ci42__{"aie/src/ProcessArray/EvenArray.h:43:11", ""};
+        }
+      }
     }
 
   }
@@ -63333,17 +63336,17 @@ public:
 # 4 "aie/src/TopGraph.h" 2
 
 
-adf::frontend::SignalHandler __ci26__;
-const int ROW = 8; decltype(adf::frontend::instrument< decltype(ROW) > (ROW)) __ci25__ = adf::frontend::instrument< decltype(ROW) > ( ROW, "ROW", "aie/src/TopGraph.h:5:1", nullptr, "");
-const int COL = 4; decltype(adf::frontend::instrument< decltype(COL) > (COL)) __ci27__ = adf::frontend::instrument< decltype(COL) > ( COL, "COL", "aie/src/TopGraph.h:6:1", nullptr, "");
+adf::frontend::SignalHandler __ci27__;
+const int ROW = 8; decltype(adf::frontend::instrument< decltype(ROW) > (ROW)) __ci26__ = adf::frontend::instrument< decltype(ROW) > ( ROW, "ROW", "aie/src/TopGraph.h:5:1", nullptr, "");
+const int COL = 4; decltype(adf::frontend::instrument< decltype(COL) > (COL)) __ci28__ = adf::frontend::instrument< decltype(COL) > ( COL, "COL", "aie/src/TopGraph.h:6:1", nullptr, "");
 
 class TopGraph: public adf::graph {
 private:
-    EvenArray<COL,ROW> pl; decltype(adf::frontend::instrument< decltype(pl) > (pl)) __ci28__ = adf::frontend::instrument< decltype(pl) > ( pl, "pl", "aie/src/TopGraph.h:10:5", adf::frontend::getParentGraphImpl(*this));
+    EvenArray<COL, ROW> pl; decltype(adf::frontend::instrument< decltype(pl) > (pl)) __ci29__ = adf::frontend::instrument< decltype(pl) > ( pl, "pl", "aie/src/TopGraph.h:10:5", adf::frontend::getParentGraphImpl(*this));
 
 public:
-    adf::input_plio in[COL*2]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci29__ = adf::frontend::instrument< decltype(in) > ( in, "in", "aie/src/TopGraph.h:13:5", adf::frontend::getParentGraphImpl(*this));
-    adf::output_plio out[COL*2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci30__ = adf::frontend::instrument< decltype(out) > ( out, "out", "aie/src/TopGraph.h:14:5", adf::frontend::getParentGraphImpl(*this));
+    adf::input_plio in[COL*2]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci30__ = adf::frontend::instrument< decltype(in) > ( in, "in", "aie/src/TopGraph.h:13:5", adf::frontend::getParentGraphImpl(*this));
+    adf::output_plio out[COL*2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci31__ = adf::frontend::instrument< decltype(out) > ( out, "out", "aie/src/TopGraph.h:14:5", adf::frontend::getParentGraphImpl(*this));
 
     TopGraph() {
         for(int i = 0;i < COL*2;i ++) {
@@ -63355,15 +63358,15 @@ public:
 
 
         for(int i = 0;i < COL*2; i ++) {
-            adf::connect<> (in[i].out[0], pl.in[i]); adf::frontend::DeclConnect __ci31__{"aie/src/TopGraph.h:26:13", ""};
-            adf::connect<> (pl.out[i], out[i].in[0]); adf::frontend::DeclConnect __ci32__{"aie/src/TopGraph.h:27:13", ""};
+            adf::connect<> (in[i].out[0], pl.in[i]); adf::frontend::DeclConnect __ci32__{"aie/src/TopGraph.h:26:13", ""};
+            adf::connect<> (pl.out[i], out[i].in[0]); adf::frontend::DeclConnect __ci33__{"aie/src/TopGraph.h:27:13", ""};
         }
 
     }
 
 };
 # 2 "aie/src/TopGraph.cpp" 2
-EvenArray<1,8> g1; decltype(adf::frontend::instrument< decltype(g1) > (g1)) __ci33__ = adf::frontend::instrument< decltype(g1) > ( g1, "g1", "aie/src/TopGraph.cpp:2:1", nullptr, "aie/src/ProcessArray/EvenArray.h:5:1");
+TopGraph g1; decltype(adf::frontend::instrument< decltype(g1) > (g1)) __ci34__ = adf::frontend::instrument< decltype(g1) > ( g1, "g1", "aie/src/TopGraph.cpp:2:1", nullptr, "aie/src/TopGraph.h:8:1");
 
 
 int main(int argc, char** argv)

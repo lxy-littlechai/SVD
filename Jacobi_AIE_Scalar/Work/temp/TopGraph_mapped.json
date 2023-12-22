@@ -46,138 +46,6 @@
                 }
             }
         },
-        "b5": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[2].out[0]"
-                }
-            }
-        },
-        "b6": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[2].in[0]"
-                }
-            }
-        },
-        "b7": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[3].out[0]"
-                }
-            }
-        },
-        "b8": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[3].in[0]"
-                }
-            }
-        },
-        "b9": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[4].out[0]"
-                }
-            }
-        },
-        "b10": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[4].in[0]"
-                }
-            }
-        },
-        "b11": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[5].out[0]"
-                }
-            }
-        },
-        "b12": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[5].in[0]"
-                }
-            }
-        },
-        "b13": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[6].out[0]"
-                }
-            }
-        },
-        "b14": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[6].in[0]"
-                }
-            }
-        },
-        "b15": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[7].out[0]"
-                }
-            }
-        },
-        "b16": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[7].in[0]"
-                }
-            }
-        },
         "b0": {
             "type": "function",
             "function": "orthogonalize<8>",
@@ -222,7 +90,7 @@
                 }
             }
         },
-        "ps_b17": {
+        "ps_b5": {
             "type": "function",
             "function": "ps_main",
             "srcFile": "aie/src/TopGraph.cpp",
@@ -233,68 +101,21 @@
         "i0": {
             "blockType": "b0",
             "graphIds": [
+                3,
                 2,
                 1,
                 0
             ],
             "graphName": "g1",
             "graphType": "TopGraph",
-            "qualifiedGraphName": "g1.pl.orthUnit[0]",
-            "qualifiedName": "g1.pl.orthUnit[0].k",
+            "qualifiedGraphName": "g1.pl.evenLevel[0].orthUnit[0]",
+            "qualifiedName": "g1.pl.evenLevel[0].orthUnit[0].k",
             "runTime": 1.0,
             "fabric": "me",
             "instanceId": 0,
             "loc": "./aie/src/ProcessUnit/ProcessUnit.h:15:13"
         },
         "i1": {
-            "blockType": "b0",
-            "graphIds": [
-                3,
-                1,
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1.pl.orthUnit[1]",
-            "qualifiedName": "g1.pl.orthUnit[1].k",
-            "runTime": 1.0,
-            "fabric": "me",
-            "instanceId": 1,
-            "loc": "./aie/src/ProcessUnit/ProcessUnit.h:15:13"
-        },
-        "i2": {
-            "blockType": "b0",
-            "graphIds": [
-                4,
-                1,
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1.pl.orthUnit[2]",
-            "qualifiedName": "g1.pl.orthUnit[2].k",
-            "runTime": 1.0,
-            "fabric": "me",
-            "instanceId": 2,
-            "loc": "./aie/src/ProcessUnit/ProcessUnit.h:15:13"
-        },
-        "i3": {
-            "blockType": "b0",
-            "graphIds": [
-                5,
-                1,
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1.pl.orthUnit[3]",
-            "qualifiedName": "g1.pl.orthUnit[3].k",
-            "runTime": 1.0,
-            "fabric": "me",
-            "instanceId": 3,
-            "loc": "./aie/src/ProcessUnit/ProcessUnit.h:15:13"
-        },
-        "i4": {
             "blockType": "b1",
             "graphIds": [
                 0
@@ -310,7 +131,7 @@
             "instanceId": 0,
             "loc": "aie/src/TopGraph.h:13:5"
         },
-        "i5": {
+        "i2": {
             "blockType": "b2",
             "graphIds": [
                 0
@@ -326,7 +147,7 @@
             "instanceId": 1,
             "loc": "aie/src/TopGraph.h:14:5"
         },
-        "i6": {
+        "i3": {
             "blockType": "b3",
             "graphIds": [
                 0
@@ -342,7 +163,7 @@
             "instanceId": 2,
             "loc": "aie/src/TopGraph.h:13:5"
         },
-        "i7": {
+        "i4": {
             "blockType": "b4",
             "graphIds": [
                 0
@@ -358,200 +179,8 @@
             "instanceId": 3,
             "loc": "aie/src/TopGraph.h:14:5"
         },
-        "i8": {
-            "blockType": "b5",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.in[2]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/in2.txt",
-            "logicalName": "g1_in_2_",
-            "plFreq": 312.5,
-            "instanceId": 4,
-            "loc": "aie/src/TopGraph.h:13:5"
-        },
-        "i9": {
-            "blockType": "b6",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.out[2]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/out2.txt",
-            "logicalName": "g1_out_2_",
-            "plFreq": 312.5,
-            "instanceId": 5,
-            "loc": "aie/src/TopGraph.h:14:5"
-        },
-        "i10": {
-            "blockType": "b7",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.in[3]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/in3.txt",
-            "logicalName": "g1_in_3_",
-            "plFreq": 312.5,
-            "instanceId": 6,
-            "loc": "aie/src/TopGraph.h:13:5"
-        },
-        "i11": {
-            "blockType": "b8",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.out[3]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/out3.txt",
-            "logicalName": "g1_out_3_",
-            "plFreq": 312.5,
-            "instanceId": 7,
-            "loc": "aie/src/TopGraph.h:14:5"
-        },
-        "i12": {
-            "blockType": "b9",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.in[4]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/in4.txt",
-            "logicalName": "g1_in_4_",
-            "plFreq": 312.5,
-            "instanceId": 8,
-            "loc": "aie/src/TopGraph.h:13:5"
-        },
-        "i13": {
-            "blockType": "b10",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.out[4]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/out4.txt",
-            "logicalName": "g1_out_4_",
-            "plFreq": 312.5,
-            "instanceId": 9,
-            "loc": "aie/src/TopGraph.h:14:5"
-        },
-        "i14": {
-            "blockType": "b11",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.in[5]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/in5.txt",
-            "logicalName": "g1_in_5_",
-            "plFreq": 312.5,
-            "instanceId": 10,
-            "loc": "aie/src/TopGraph.h:13:5"
-        },
-        "i15": {
-            "blockType": "b12",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.out[5]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/out5.txt",
-            "logicalName": "g1_out_5_",
-            "plFreq": 312.5,
-            "instanceId": 11,
-            "loc": "aie/src/TopGraph.h:14:5"
-        },
-        "i16": {
-            "blockType": "b13",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.in[6]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/in6.txt",
-            "logicalName": "g1_in_6_",
-            "plFreq": 312.5,
-            "instanceId": 12,
-            "loc": "aie/src/TopGraph.h:13:5"
-        },
-        "i17": {
-            "blockType": "b14",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.out[6]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/out6.txt",
-            "logicalName": "g1_out_6_",
-            "plFreq": 312.5,
-            "instanceId": 13,
-            "loc": "aie/src/TopGraph.h:14:5"
-        },
-        "i18": {
-            "blockType": "b15",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.in[7]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/in7.txt",
-            "logicalName": "g1_in_7_",
-            "plFreq": 312.5,
-            "instanceId": 14,
-            "loc": "aie/src/TopGraph.h:13:5"
-        },
-        "i19": {
-            "blockType": "b16",
-            "graphIds": [
-                0
-            ],
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "qualifiedGraphName": "g1",
-            "qualifiedName": "g1.out[7]",
-            "dataWidth": 32,
-            "dataFile": "aie/data/out7.txt",
-            "logicalName": "g1_out_7_",
-            "plFreq": 312.5,
-            "instanceId": 15,
-            "loc": "aie/src/TopGraph.h:14:5"
-        },
-        "ps_i20": {
-            "blockType": "ps_b17",
+        "ps_i5": {
+            "blockType": "ps_b5",
             "graphIds": [
                 -1
             ],
@@ -567,8 +196,8 @@
             "graphName": "g1",
             "graphType": "TopGraph",
             "portName": "k.in[0]",
-            "qualifiedName": "g1.pl.orthUnit[0].k.in[0]",
-            "instanceId": 20,
+            "qualifiedName": "g1.pl.evenLevel[0].orthUnit[0].k.in[0]",
+            "instanceId": 8,
             "blockInstance": "i0"
         },
         "i0_pi1": {
@@ -577,8 +206,8 @@
             "graphName": "g1",
             "graphType": "TopGraph",
             "portName": "k.in[1]",
-            "qualifiedName": "g1.pl.orthUnit[0].k.in[1]",
-            "instanceId": 21,
+            "qualifiedName": "g1.pl.evenLevel[0].orthUnit[0].k.in[1]",
+            "instanceId": 9,
             "blockInstance": "i0"
         },
         "i0_po0": {
@@ -587,8 +216,8 @@
             "graphName": "g1",
             "graphType": "TopGraph",
             "portName": "k.out[0]",
-            "qualifiedName": "g1.pl.orthUnit[0].k.out[0]",
-            "instanceId": 22,
+            "qualifiedName": "g1.pl.evenLevel[0].orthUnit[0].k.out[0]",
+            "instanceId": 10,
             "blockInstance": "i0"
         },
         "i0_po1": {
@@ -597,131 +226,11 @@
             "graphName": "g1",
             "graphType": "TopGraph",
             "portName": "k.out[1]",
-            "qualifiedName": "g1.pl.orthUnit[0].k.out[1]",
-            "instanceId": 23,
+            "qualifiedName": "g1.pl.evenLevel[0].orthUnit[0].k.out[1]",
+            "instanceId": 11,
             "blockInstance": "i0"
         },
-        "i1_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.in[0]",
-            "qualifiedName": "g1.pl.orthUnit[1].k.in[0]",
-            "instanceId": 28,
-            "blockInstance": "i1"
-        },
-        "i1_pi1": {
-            "margin": 0,
-            "port": "pi1",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.in[1]",
-            "qualifiedName": "g1.pl.orthUnit[1].k.in[1]",
-            "instanceId": 29,
-            "blockInstance": "i1"
-        },
         "i1_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.out[0]",
-            "qualifiedName": "g1.pl.orthUnit[1].k.out[0]",
-            "instanceId": 30,
-            "blockInstance": "i1"
-        },
-        "i1_po1": {
-            "margin": 0,
-            "port": "po1",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.out[1]",
-            "qualifiedName": "g1.pl.orthUnit[1].k.out[1]",
-            "instanceId": 31,
-            "blockInstance": "i1"
-        },
-        "i2_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.in[0]",
-            "qualifiedName": "g1.pl.orthUnit[2].k.in[0]",
-            "instanceId": 36,
-            "blockInstance": "i2"
-        },
-        "i2_pi1": {
-            "margin": 0,
-            "port": "pi1",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.in[1]",
-            "qualifiedName": "g1.pl.orthUnit[2].k.in[1]",
-            "instanceId": 37,
-            "blockInstance": "i2"
-        },
-        "i2_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.out[0]",
-            "qualifiedName": "g1.pl.orthUnit[2].k.out[0]",
-            "instanceId": 38,
-            "blockInstance": "i2"
-        },
-        "i2_po1": {
-            "margin": 0,
-            "port": "po1",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.out[1]",
-            "qualifiedName": "g1.pl.orthUnit[2].k.out[1]",
-            "instanceId": 39,
-            "blockInstance": "i2"
-        },
-        "i3_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.in[0]",
-            "qualifiedName": "g1.pl.orthUnit[3].k.in[0]",
-            "instanceId": 44,
-            "blockInstance": "i3"
-        },
-        "i3_pi1": {
-            "margin": 0,
-            "port": "pi1",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.in[1]",
-            "qualifiedName": "g1.pl.orthUnit[3].k.in[1]",
-            "instanceId": 45,
-            "blockInstance": "i3"
-        },
-        "i3_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.out[0]",
-            "qualifiedName": "g1.pl.orthUnit[3].k.out[0]",
-            "instanceId": 46,
-            "blockInstance": "i3"
-        },
-        "i3_po1": {
-            "margin": 0,
-            "port": "po1",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "k.out[1]",
-            "qualifiedName": "g1.pl.orthUnit[3].k.out[1]",
-            "instanceId": 47,
-            "blockInstance": "i3"
-        },
-        "i4_po0": {
             "margin": 0,
             "port": "po0",
             "graphName": "g1",
@@ -731,9 +240,9 @@
             "qualifiedGraphPortAliasNames": [
                 "g1.pl.in[0]"
             ],
-            "blockInstance": "i4"
+            "blockInstance": "i1"
         },
-        "i5_pi0": {
+        "i2_pi0": {
             "margin": 0,
             "port": "pi0",
             "graphName": "g1",
@@ -743,9 +252,9 @@
             "qualifiedGraphPortAliasNames": [
                 "g1.pl.out[0]"
             ],
-            "blockInstance": "i5"
+            "blockInstance": "i2"
         },
-        "i6_po0": {
+        "i3_po0": {
             "margin": 0,
             "port": "po0",
             "graphName": "g1",
@@ -755,9 +264,9 @@
             "qualifiedGraphPortAliasNames": [
                 "g1.pl.in[1]"
             ],
-            "blockInstance": "i6"
+            "blockInstance": "i3"
         },
-        "i7_pi0": {
+        "i4_pi0": {
             "margin": 0,
             "port": "pi0",
             "graphName": "g1",
@@ -767,407 +276,79 @@
             "qualifiedGraphPortAliasNames": [
                 "g1.pl.out[1]"
             ],
-            "blockInstance": "i7"
-        },
-        "i8_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "in[2].out[0]",
-            "qualifiedName": "g1.in[2].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.in[2]"
-            ],
-            "blockInstance": "i8"
-        },
-        "i9_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "out[2].in[0]",
-            "qualifiedName": "g1.out[2].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.out[2]"
-            ],
-            "blockInstance": "i9"
-        },
-        "i10_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "in[3].out[0]",
-            "qualifiedName": "g1.in[3].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.in[3]"
-            ],
-            "blockInstance": "i10"
-        },
-        "i11_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "out[3].in[0]",
-            "qualifiedName": "g1.out[3].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.out[3]"
-            ],
-            "blockInstance": "i11"
-        },
-        "i12_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "in[4].out[0]",
-            "qualifiedName": "g1.in[4].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.in[4]"
-            ],
-            "blockInstance": "i12"
-        },
-        "i13_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "out[4].in[0]",
-            "qualifiedName": "g1.out[4].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.out[4]"
-            ],
-            "blockInstance": "i13"
-        },
-        "i14_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "in[5].out[0]",
-            "qualifiedName": "g1.in[5].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.in[5]"
-            ],
-            "blockInstance": "i14"
-        },
-        "i15_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "out[5].in[0]",
-            "qualifiedName": "g1.out[5].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.out[5]"
-            ],
-            "blockInstance": "i15"
-        },
-        "i16_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "in[6].out[0]",
-            "qualifiedName": "g1.in[6].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.in[6]"
-            ],
-            "blockInstance": "i16"
-        },
-        "i17_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "out[6].in[0]",
-            "qualifiedName": "g1.out[6].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.out[6]"
-            ],
-            "blockInstance": "i17"
-        },
-        "i18_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "in[7].out[0]",
-            "qualifiedName": "g1.in[7].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.in[7]"
-            ],
-            "blockInstance": "i18"
-        },
-        "i19_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "g1",
-            "graphType": "TopGraph",
-            "portName": "out[7].in[0]",
-            "qualifiedName": "g1.out[7].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "g1.pl.out[7]"
-            ],
-            "blockInstance": "i19"
+            "blockInstance": "i4"
         }
     },
     "nets": {
         "net0": {
-            "srcInstance": "i4",
-            "srcPort": "i4_po0",
+            "srcInstance": "i1",
+            "srcPort": "i1_po0",
             "dstInstance": "i0",
             "dstPort": "i0_pi0",
             "varNames": [
                 "",
                 "",
+                "",
                 ""
             ],
             "locs": [
                 "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:19:7",
+                "aie/src/ProcessArray/EvenArray.h:27:7",
+                "./aie/src/ProcessLevel/EvenLevel.h:19:7",
                 "./aie/src/ProcessUnit/ProcessUnit.h:18:9"
             ]
         },
         "net1": {
-            "srcInstance": "i6",
-            "srcPort": "i6_po0",
+            "srcInstance": "i3",
+            "srcPort": "i3_po0",
             "dstInstance": "i0",
             "dstPort": "i0_pi1",
             "varNames": [
                 "",
                 "",
+                "",
                 ""
             ],
             "locs": [
                 "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:20:7",
+                "aie/src/ProcessArray/EvenArray.h:28:7",
+                "./aie/src/ProcessLevel/EvenLevel.h:20:7",
                 "./aie/src/ProcessUnit/ProcessUnit.h:19:9"
             ]
         },
         "net2": {
             "srcInstance": "i0",
             "srcPort": "i0_po0",
-            "dstInstance": "i5",
-            "dstPort": "i5_pi0",
+            "dstInstance": "i2",
+            "dstPort": "i2_pi0",
             "varNames": [
+                "",
                 "",
                 "",
                 ""
             ],
             "locs": [
                 "./aie/src/ProcessUnit/ProcessUnit.h:20:9",
-                "aie/src/ProcessLevel/EvenLevel.h:21:7",
+                "./aie/src/ProcessLevel/EvenLevel.h:21:7",
+                "aie/src/ProcessArray/EvenArray.h:29:7",
                 "aie/src/TopGraph.h:27:13"
             ]
         },
         "net3": {
             "srcInstance": "i0",
             "srcPort": "i0_po1",
-            "dstInstance": "i7",
-            "dstPort": "i7_pi0",
+            "dstInstance": "i4",
+            "dstPort": "i4_pi0",
             "varNames": [
+                "",
                 "",
                 "",
                 ""
             ],
             "locs": [
                 "./aie/src/ProcessUnit/ProcessUnit.h:21:9",
-                "aie/src/ProcessLevel/EvenLevel.h:22:7",
-                "aie/src/TopGraph.h:27:13"
-            ]
-        },
-        "net4": {
-            "srcInstance": "i8",
-            "srcPort": "i8_po0",
-            "dstInstance": "i1",
-            "dstPort": "i1_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:19:7",
-                "./aie/src/ProcessUnit/ProcessUnit.h:18:9"
-            ]
-        },
-        "net5": {
-            "srcInstance": "i10",
-            "srcPort": "i10_po0",
-            "dstInstance": "i1",
-            "dstPort": "i1_pi1",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:20:7",
-                "./aie/src/ProcessUnit/ProcessUnit.h:19:9"
-            ]
-        },
-        "net6": {
-            "srcInstance": "i1",
-            "srcPort": "i1_po0",
-            "dstInstance": "i9",
-            "dstPort": "i9_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "./aie/src/ProcessUnit/ProcessUnit.h:20:9",
-                "aie/src/ProcessLevel/EvenLevel.h:21:7",
-                "aie/src/TopGraph.h:27:13"
-            ]
-        },
-        "net7": {
-            "srcInstance": "i1",
-            "srcPort": "i1_po1",
-            "dstInstance": "i11",
-            "dstPort": "i11_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "./aie/src/ProcessUnit/ProcessUnit.h:21:9",
-                "aie/src/ProcessLevel/EvenLevel.h:22:7",
-                "aie/src/TopGraph.h:27:13"
-            ]
-        },
-        "net8": {
-            "srcInstance": "i12",
-            "srcPort": "i12_po0",
-            "dstInstance": "i2",
-            "dstPort": "i2_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:19:7",
-                "./aie/src/ProcessUnit/ProcessUnit.h:18:9"
-            ]
-        },
-        "net9": {
-            "srcInstance": "i14",
-            "srcPort": "i14_po0",
-            "dstInstance": "i2",
-            "dstPort": "i2_pi1",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:20:7",
-                "./aie/src/ProcessUnit/ProcessUnit.h:19:9"
-            ]
-        },
-        "net10": {
-            "srcInstance": "i2",
-            "srcPort": "i2_po0",
-            "dstInstance": "i13",
-            "dstPort": "i13_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "./aie/src/ProcessUnit/ProcessUnit.h:20:9",
-                "aie/src/ProcessLevel/EvenLevel.h:21:7",
-                "aie/src/TopGraph.h:27:13"
-            ]
-        },
-        "net11": {
-            "srcInstance": "i2",
-            "srcPort": "i2_po1",
-            "dstInstance": "i15",
-            "dstPort": "i15_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "./aie/src/ProcessUnit/ProcessUnit.h:21:9",
-                "aie/src/ProcessLevel/EvenLevel.h:22:7",
-                "aie/src/TopGraph.h:27:13"
-            ]
-        },
-        "net12": {
-            "srcInstance": "i16",
-            "srcPort": "i16_po0",
-            "dstInstance": "i3",
-            "dstPort": "i3_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:19:7",
-                "./aie/src/ProcessUnit/ProcessUnit.h:18:9"
-            ]
-        },
-        "net13": {
-            "srcInstance": "i18",
-            "srcPort": "i18_po0",
-            "dstInstance": "i3",
-            "dstPort": "i3_pi1",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "aie/src/TopGraph.h:26:13",
-                "aie/src/ProcessLevel/EvenLevel.h:20:7",
-                "./aie/src/ProcessUnit/ProcessUnit.h:19:9"
-            ]
-        },
-        "net14": {
-            "srcInstance": "i3",
-            "srcPort": "i3_po0",
-            "dstInstance": "i17",
-            "dstPort": "i17_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "./aie/src/ProcessUnit/ProcessUnit.h:20:9",
-                "aie/src/ProcessLevel/EvenLevel.h:21:7",
-                "aie/src/TopGraph.h:27:13"
-            ]
-        },
-        "net15": {
-            "srcInstance": "i3",
-            "srcPort": "i3_po1",
-            "dstInstance": "i19",
-            "dstPort": "i19_pi0",
-            "varNames": [
-                "",
-                "",
-                ""
-            ],
-            "locs": [
-                "./aie/src/ProcessUnit/ProcessUnit.h:21:9",
-                "aie/src/ProcessLevel/EvenLevel.h:22:7",
+                "./aie/src/ProcessLevel/EvenLevel.h:22:7",
+                "aie/src/ProcessArray/EvenArray.h:30:7",
                 "aie/src/TopGraph.h:27:13"
             ]
         }
@@ -1177,63 +358,18 @@
             "varName": "k"
         },
         "i1": {
-            "varName": "k"
-        },
-        "i2": {
-            "varName": "k"
-        },
-        "i3": {
-            "varName": "k"
-        },
-        "i4": {
             "varName": "in[0]"
         },
-        "i5": {
+        "i2": {
             "varName": "out[0]"
         },
-        "i6": {
+        "i3": {
             "varName": "in[1]"
         },
-        "i7": {
+        "i4": {
             "varName": "out[1]"
         },
-        "i8": {
-            "varName": "in[2]"
-        },
-        "i9": {
-            "varName": "out[2]"
-        },
-        "i10": {
-            "varName": "in[3]"
-        },
-        "i11": {
-            "varName": "out[3]"
-        },
-        "i12": {
-            "varName": "in[4]"
-        },
-        "i13": {
-            "varName": "out[4]"
-        },
-        "i14": {
-            "varName": "in[5]"
-        },
-        "i15": {
-            "varName": "out[5]"
-        },
-        "i16": {
-            "varName": "in[6]"
-        },
-        "i17": {
-            "varName": "out[6]"
-        },
-        "i18": {
-            "varName": "in[7]"
-        },
-        "i19": {
-            "varName": "out[7]"
-        },
-        "ps_i20": {
+        "ps_i5": {
             "varName": ""
         },
         "i0_pi0": {
@@ -1248,95 +384,24 @@
         "i0_po1": {
             "varName": "k.out[1]"
         },
-        "i1_pi0": {
-            "varName": "k.in[0]"
-        },
-        "i1_pi1": {
-            "varName": "k.in[1]"
-        },
         "i1_po0": {
-            "varName": "k.out[0]"
-        },
-        "i1_po1": {
-            "varName": "k.out[1]"
-        },
-        "i2_pi0": {
-            "varName": "k.in[0]"
-        },
-        "i2_pi1": {
-            "varName": "k.in[1]"
-        },
-        "i2_po0": {
-            "varName": "k.out[0]"
-        },
-        "i2_po1": {
-            "varName": "k.out[1]"
-        },
-        "i3_pi0": {
-            "varName": "k.in[0]"
-        },
-        "i3_pi1": {
-            "varName": "k.in[1]"
-        },
-        "i3_po0": {
-            "varName": "k.out[0]"
-        },
-        "i3_po1": {
-            "varName": "k.out[1]"
-        },
-        "i4_po0": {
             "varName": "in[0].out[0]"
         },
-        "i5_pi0": {
+        "i2_pi0": {
             "varName": "out[0].in[0]"
         },
-        "i6_po0": {
+        "i3_po0": {
             "varName": "in[1].out[0]"
         },
-        "i7_pi0": {
+        "i4_pi0": {
             "varName": "out[1].in[0]"
-        },
-        "i8_po0": {
-            "varName": "in[2].out[0]"
-        },
-        "i9_pi0": {
-            "varName": "out[2].in[0]"
-        },
-        "i10_po0": {
-            "varName": "in[3].out[0]"
-        },
-        "i11_pi0": {
-            "varName": "out[3].in[0]"
-        },
-        "i12_po0": {
-            "varName": "in[4].out[0]"
-        },
-        "i13_pi0": {
-            "varName": "out[4].in[0]"
-        },
-        "i14_po0": {
-            "varName": "in[5].out[0]"
-        },
-        "i15_pi0": {
-            "varName": "out[5].in[0]"
-        },
-        "i16_po0": {
-            "varName": "in[6].out[0]"
-        },
-        "i17_pi0": {
-            "varName": "out[6].in[0]"
-        },
-        "i18_po0": {
-            "varName": "in[7].out[0]"
-        },
-        "i19_pi0": {
-            "varName": "out[7].in[0]"
         }
     },
     "graphFilesInfo": {
         "headerFiles": [
             "./aie/src/ProcessUnit/ProcessUnit.h",
-            "aie/src/ProcessLevel/EvenLevel.h",
+            "./aie/src/ProcessLevel/EvenLevel.h",
+            "aie/src/ProcessArray/EvenArray.h",
             "aie/src/TopGraph.h"
         ]
     },
@@ -1345,109 +410,28 @@
             "i0": {
                 "fabric": "me",
                 "schedule": 0,
-                "column": 22,
+                "column": 24,
                 "row": 0,
-                "coreId": 22
+                "coreId": 24
             },
             "i1": {
                 "fabric": "me",
-                "schedule": 0,
-                "column": 25,
-                "row": 0,
-                "coreId": 25
-            },
-            "i10": {
-                "fabric": "me",
-                "ioshimId": 25,
-                "ioshimType": "plioshim"
-            },
-            "i11": {
-                "fabric": "me",
-                "ioshimId": 25,
-                "ioshimType": "plioshim"
-            },
-            "i12": {
-                "fabric": "me",
-                "ioshimId": 27,
-                "ioshimType": "plioshim"
-            },
-            "i13": {
-                "fabric": "me",
-                "ioshimId": 27,
-                "ioshimType": "plioshim"
-            },
-            "i14": {
-                "fabric": "me",
-                "ioshimId": 27,
-                "ioshimType": "plioshim"
-            },
-            "i15": {
-                "fabric": "me",
-                "ioshimId": 27,
-                "ioshimType": "plioshim"
-            },
-            "i16": {
-                "fabric": "me",
-                "ioshimId": 23,
-                "ioshimType": "plioshim"
-            },
-            "i17": {
-                "fabric": "me",
-                "ioshimId": 23,
-                "ioshimType": "plioshim"
-            },
-            "i18": {
-                "fabric": "me",
-                "ioshimId": 23,
-                "ioshimType": "plioshim"
-            },
-            "i19": {
-                "fabric": "me",
-                "ioshimId": 23,
+                "ioshimId": 24,
                 "ioshimType": "plioshim"
             },
             "i2": {
                 "fabric": "me",
-                "schedule": 0,
-                "column": 27,
-                "row": 0,
-                "coreId": 27
+                "ioshimId": 24,
+                "ioshimType": "plioshim"
             },
             "i3": {
                 "fabric": "me",
-                "schedule": 0,
-                "column": 23,
-                "row": 0,
-                "coreId": 23
+                "ioshimId": 24,
+                "ioshimType": "plioshim"
             },
             "i4": {
                 "fabric": "me",
-                "ioshimId": 22,
-                "ioshimType": "plioshim"
-            },
-            "i5": {
-                "fabric": "me",
-                "ioshimId": 22,
-                "ioshimType": "plioshim"
-            },
-            "i6": {
-                "fabric": "me",
-                "ioshimId": 22,
-                "ioshimType": "plioshim"
-            },
-            "i7": {
-                "fabric": "me",
-                "ioshimId": 22,
-                "ioshimType": "plioshim"
-            },
-            "i8": {
-                "fabric": "me",
-                "ioshimId": 25,
-                "ioshimType": "plioshim"
-            },
-            "i9": {
-                "fabric": "me",
-                "ioshimId": 25,
+                "ioshimId": 24,
                 "ioshimType": "plioshim"
             }
         },
@@ -1457,57 +441,12 @@
                 "name": "sysmem0",
                 "fabric": "me",
                 "row": 0,
-                "column": 21,
+                "column": 24,
                 "bankId": 0,
                 "offset": 0,
                 "size": 4500,
                 "accessRow": 0,
-                "accessCol": 22,
-                "stackOffset": 32,
-                "stackSize": 4096,
-                "heapOffset": 4128,
-                "heapSize": 372
-            },
-            {
-                "name": "sysmem1",
-                "fabric": "me",
-                "row": 0,
-                "column": 25,
-                "bankId": 0,
-                "offset": 0,
-                "size": 4500,
-                "accessRow": 0,
-                "accessCol": 25,
-                "stackOffset": 32,
-                "stackSize": 4096,
-                "heapOffset": 4128,
-                "heapSize": 372
-            },
-            {
-                "name": "sysmem2",
-                "fabric": "me",
-                "row": 0,
-                "column": 27,
-                "bankId": 0,
-                "offset": 0,
-                "size": 4500,
-                "accessRow": 0,
-                "accessCol": 27,
-                "stackOffset": 32,
-                "stackSize": 4096,
-                "heapOffset": 4128,
-                "heapSize": 372
-            },
-            {
-                "name": "sysmem3",
-                "fabric": "me",
-                "row": 0,
-                "column": 23,
-                "bankId": 0,
-                "offset": 0,
-                "size": 4500,
-                "accessRow": 0,
-                "accessCol": 23,
+                "accessCol": 24,
                 "stackOffset": 32,
                 "stackSize": 4096,
                 "heapOffset": 4128,

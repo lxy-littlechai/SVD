@@ -1,112 +1,13 @@
 {
   "NodeConstraints": {
-    "g1.pl.orthUnit[0].k": {
+    "g1.pl.evenLevel[0].orthUnit[0].k": {
       "tile": {
-        "column": 22,
+        "column": 24,
         "row": 0,
         "tile_type": "core"
       },
       "reserved_memory": {
-        "column": 21,
-        "row": 0,
-        "bankId": 0,
-        "offset": 0
-      }
-    },
-    "g1.pl.orthUnit[1].k": {
-      "tile": {
-        "column": 25,
-        "row": 0,
-        "tile_type": "core"
-      },
-      "reserved_memory": {
-        "column": 25,
-        "row": 0,
-        "bankId": 0,
-        "offset": 0
-      }
-    },
-    "g1_in_3_": {
-      "shim": {
-        "column": 25,
-        "channel": 1
-      }
-    },
-    "g1_out_3_": {
-      "shim": {
-        "column": 25,
-        "channel": 0
-      }
-    },
-    "g1_in_4_": {
-      "shim": {
-        "column": 27,
-        "channel": 5
-      }
-    },
-    "g1_out_4_": {
-      "shim": {
-        "column": 27,
-        "channel": 0
-      }
-    },
-    "g1_in_5_": {
-      "shim": {
-        "column": 27,
-        "channel": 1
-      }
-    },
-    "g1_out_5_": {
-      "shim": {
-        "column": 27,
-        "channel": 4
-      }
-    },
-    "g1_in_6_": {
-      "shim": {
-        "column": 23,
-        "channel": 6
-      }
-    },
-    "g1_out_6_": {
-      "shim": {
-        "column": 23,
-        "channel": 5
-      }
-    },
-    "g1_in_7_": {
-      "shim": {
-        "column": 23,
-        "channel": 4
-      }
-    },
-    "g1_out_7_": {
-      "shim": {
-        "column": 23,
-        "channel": 4
-      }
-    },
-    "g1.pl.orthUnit[2].k": {
-      "tile": {
-        "column": 27,
-        "row": 0,
-        "tile_type": "core"
-      },
-      "reserved_memory": {
-        "column": 27,
-        "row": 0,
-        "bankId": 0,
-        "offset": 0
-      }
-    },
-    "g1.pl.orthUnit[3].k": {
-      "tile": {
-        "column": 23,
-        "row": 0,
-        "tile_type": "core"
-      },
-      "reserved_memory": {
-        "column": 23,
+        "column": 24,
         "row": 0,
         "bankId": 0,
         "offset": 0
@@ -114,38 +15,26 @@
     },
     "g1_in_0_": {
       "shim": {
-        "column": 22,
-        "channel": 6
+        "column": 24,
+        "channel": 4
       }
     },
     "g1_out_0_": {
       "shim": {
-        "column": 22,
+        "column": 24,
         "channel": 0
       }
     },
     "g1_in_1_": {
       "shim": {
-        "column": 22,
-        "channel": 1
+        "column": 24,
+        "channel": 2
       }
     },
     "g1_out_1_": {
       "shim": {
-        "column": 22,
-        "channel": 5
-      }
-    },
-    "g1_in_2_": {
-      "shim": {
-        "column": 25,
-        "channel": 5
-      }
-    },
-    "g1_out_2_": {
-      "shim": {
-        "column": 25,
-        "channel": 2
+        "column": 24,
+        "channel": 1
       }
     }
   }

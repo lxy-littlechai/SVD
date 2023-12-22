@@ -13,26 +13,11 @@ Block Mapping Report:
 
 Block:Function Name  CR(x,y)/IO(x)  Schedule  Utilization  Variable Name  Graph Name
 -------------------  -------------  --------  -----------  -------------  ----------
-i0:orthogonalize<8>  CR(22,0)              0        1.000  k              g1
-i1:orthogonalize<8>  CR(25,0)              0        1.000  k              g1
-i10:PLIO             IO(25)                                in[3]          g1
-i11:PLIO             IO(25)                                out[3]         g1
-i12:PLIO             IO(27)                                in[4]          g1
-i13:PLIO             IO(27)                                out[4]         g1
-i14:PLIO             IO(27)                                in[5]          g1
-i15:PLIO             IO(27)                                out[5]         g1
-i16:PLIO             IO(23)                                in[6]          g1
-i17:PLIO             IO(23)                                out[6]         g1
-i18:PLIO             IO(23)                                in[7]          g1
-i19:PLIO             IO(23)                                out[7]         g1
-i2:orthogonalize<8>  CR(27,0)              0        1.000  k              g1
-i3:orthogonalize<8>  CR(23,0)              0        1.000  k              g1
-i4:PLIO              IO(22)                                in[0]          g1
-i5:PLIO              IO(22)                                out[0]         g1
-i6:PLIO              IO(22)                                in[1]          g1
-i7:PLIO              IO(22)                                out[1]         g1
-i8:PLIO              IO(25)                                in[2]          g1
-i9:PLIO              IO(25)                                out[2]         g1
+i0:orthogonalize<8>  CR(24,0)              0        1.000  k              g1
+i1:PLIO              IO(24)                                in[0]          g1
+i2:PLIO              IO(24)                                out[0]         g1
+i3:PLIO              IO(24)                                in[1]          g1
+i4:PLIO              IO(24)                                out[1]         g1
 
 
 ===============================================
@@ -49,8 +34,5 @@ Memory Bank Report:
 
 MG(x,y):b   Buffer Name     Addr  Size  Accessing Block  CR(x,y)/IO(x)
 ----------  -----------  -------  ----  ---------------  -------------
-MG(21,0):0  sysmem0      0x00000  4500  main             CR(22,0)
-MG(23,0):0  sysmem3      0x00000  4500  main             CR(23,0)
-MG(25,0):0  sysmem1      0x00000  4500  main             CR(25,0)
-MG(27,0):0  sysmem2      0x00000  4500  main             CR(27,0)
+MG(24,0):0  sysmem0      0x00000  4500  main             CR(24,0)
 

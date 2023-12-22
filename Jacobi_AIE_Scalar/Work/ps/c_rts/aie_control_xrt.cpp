@@ -10,7 +10,7 @@
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {0, "g1", nullptr, nullptr, nullptr, {22, 23, 25, 27}, {0, 0, 0, 0}, {21, 23, 25, 27}, {0, 0, 0, 0}, {0x4, 0x4, 0x4, 0x4}, {0, 0, 0, 0}, {}, {}, {}, {},  }, 
+    {0, "g1", nullptr, nullptr, nullptr, {24}, {0}, {24}, {0}, {0x4}, {0}, {}, {}, {}, {},  }, 
   };
   const int NUM_GRAPH = 1;
 
@@ -18,24 +18,12 @@
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "g1.in[0]", "g1_in_0_", 22, 0, 6},
-    {1, "g1.out[0]", "g1_out_0_", 22, 1, 0},
-    {2, "g1.in[1]", "g1_in_1_", 22, 0, 1},
-    {3, "g1.out[1]", "g1_out_1_", 22, 1, 5},
-    {4, "g1.in[2]", "g1_in_2_", 25, 0, 5},
-    {5, "g1.out[2]", "g1_out_2_", 25, 1, 2},
-    {6, "g1.in[3]", "g1_in_3_", 25, 0, 1},
-    {7, "g1.out[3]", "g1_out_3_", 25, 1, 0},
-    {8, "g1.in[4]", "g1_in_4_", 27, 0, 5},
-    {9, "g1.out[4]", "g1_out_4_", 27, 1, 0},
-    {10, "g1.in[5]", "g1_in_5_", 27, 0, 1},
-    {11, "g1.out[5]", "g1_out_5_", 27, 1, 4},
-    {12, "g1.in[6]", "g1_in_6_", 23, 0, 6},
-    {13, "g1.out[6]", "g1_out_6_", 23, 1, 5},
-    {14, "g1.in[7]", "g1_in_7_", 23, 0, 4},
-    {15, "g1.out[7]", "g1_out_7_", 23, 1, 4},
+    {0, "g1.in[0]", "g1_in_0_", 24, 0, 4},
+    {1, "g1.out[0]", "g1_out_0_", 24, 1, 0},
+    {2, "g1.in[1]", "g1_in_1_", 24, 0, 2},
+    {3, "g1.out[1]", "g1_out_1_", 24, 1, 1},
   };
-  const int NUM_PLIO = 16;
+  const int NUM_PLIO = 4;
 
 
 /************************** ADF API initializer *****************************/

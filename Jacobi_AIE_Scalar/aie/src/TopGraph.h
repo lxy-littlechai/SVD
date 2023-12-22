@@ -7,7 +7,7 @@ const int COL = 4;
 
 class TopGraph: public adf::graph {
 private:
-    EvenArray<COL,ROW> pl;
+    EvenArray<COL, ROW> pl;
 
 public:
     adf::input_plio in[COL*2];
