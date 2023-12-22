@@ -3,83 +3,79 @@ Contents of the .debug_line section:
 CU: 24_0/src/24_0.cc:
 File name                            Line number    Starting address    View    Stmt
 
-/home/lxy/Projects/SVD/Jacobi_AIE/aie/src/ProcessUnit/Orthogonalize.cpp:
-Orthogonalize.cpp                             16               0x2e0               x
+/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src/ProcessUnit/Transfer.cpp:
+Transfer.cpp                                  11               0x2c0               x
+Transfer.cpp                                  11               0x2c6        
+Transfer.cpp                                  11               0x2c6       1
+Transfer.cpp                                  11               0x2dc        
+Transfer.cpp                                  11               0x2e0        
 
 /home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/stream/me/stream_utils.h:
-stream_utils.h                               193               0x2e6               x
-stream_utils.h                               226               0x2e6       1       x
-stream_utils.h                               193               0x2ee        
-stream_utils.h                               226               0x2ee       1
-stream_utils.h                               193               0x302        
-stream_utils.h                               193               0x306        
+stream_utils.h                               135               0x2e4               x
+stream_utils.h                               135               0x2e8        
+stream_utils.h                               176               0x2e8       1       x
+stream_utils.h                               135               0x2f0               x
+stream_utils.h                               176               0x2f0       1
 
-/home/lxy/Projects/SVD/Jacobi_AIE/aie/src/ProcessUnit/Orthogonalize.cpp:
-Orthogonalize.cpp                             53               0x30a               x
+/home/lxy/Projects/SVD/Jacobi_AIE_Scalar/aie/src/ProcessUnit/Transfer.cpp:
+Transfer.cpp                                  16               0x2f8               x
 
 /home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/stream/me/stream_utils.h:
-stream_utils.h                               226               0x30c               x
-stream_utils.h                               226               0x30c       1       x
-stream_utils.h                               193               0x314               x
-stream_utils.h                               193               0x318        
-stream_utils.h                               226               0x31c               x
-stream_utils.h                               226               0x320        
-
-/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/stream/me/structs.h:
-structs.h                                     50               0x120        
-structs.h                                     60               0x120       1
-
-24_0/src/24_0.cc:
-24_0.cc                                       20               0x120       2
-24_0.cc                                       20               0x120       3       x
-24_0.cc                                       21               0x120       4
-
-/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/stream/me/structs.h:
-structs.h                                     50               0x12c        
-structs.h                                     60               0x12c       1
+stream_utils.h                               135               0x2f8       1
+stream_utils.h                               176               0x2f8       2       x
+stream_utils.h                               135               0x300               x
+stream_utils.h                               176               0x300       1
+stream_utils.h                               135               0x308        
+stream_utils.h                               176               0x308       1       x
+stream_utils.h                               135               0x310               x
+stream_utils.h                               176               0x310       1
+stream_utils.h                               135               0x318        
+stream_utils.h                               176               0x318       1       x
+stream_utils.h                               176               0x320        
 
 24_0/src/24_0.cc:
-24_0.cc                                       20               0x12c       2
-24_0.cc                                       21               0x12c       3
+24_0.cc                                       20               0x120        
+24_0.cc                                       20               0x120       1       x
+
+/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/stream/me/structs.h:
+structs.h                                     50               0x128        
+structs.h                                     60               0x128       1
+
+24_0/src/24_0.cc:
+24_0.cc                                       20               0x128       2
+24_0.cc                                       21               0x128       3
+24_0.cc                                       21               0x134        
 24_0.cc                                       21               0x13c               x
-24_0.cc                                       41               0x154        
-24_0.cc                                       45               0x154       1
+24_0.cc                                       39               0x14c        
+24_0.cc                                       43               0x14c       1
 
 /home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/stream/me/structs.h:
-structs.h                                     50               0x160               x
-structs.h                                     50               0x168        
+structs.h                                     50               0x164               x
+structs.h                                     60               0x168               x
 
 24_0/src/24_0.cc:
-24_0.cc                                       36               0x168       1
-
-/home/lxy/tools/Xilinx/Vitis/2023.2/aietools/include/adf/stream/me/structs.h:
-structs.h                                     60               0x170               x
-structs.h                                     60               0x174        
-
-24_0/src/24_0.cc:
-24_0.cc                                       30               0x1a0               x
-24_0.cc                                       32               0x1b6               x
-24_0.cc                                       32               0x1b6       1       x
-24_0.cc                                       36               0x1d0               x
-24_0.cc                                       36               0x1d8        
-24_0.cc                                       36               0x1da        
-24_0.cc                                       36               0x1dc        
-24_0.cc                                       41               0x1f0               x
-24_0.cc                                       41               0x1f4        
-24_0.cc                                       32               0x1f8               x
-24_0.cc                                       32               0x1f8       1       x
-24_0.cc                                       36               0x204        
-24_0.cc                                       45               0x218        
-24_0.cc                                       45               0x230        
-24_0.cc                                       44               0x250               x
-24_0.cc                                       45               0x25e               x
-24_0.cc                                       45               0x274        
-24_0.cc                                       48               0x28a        
-24_0.cc                                       48               0x28a       1
-24_0.cc                                       48               0x2b2        
-24_0.cc                                       48               0x2b6               x
-24_0.cc                                       48               0x2cc        
-24_0.cc                                        -               0x2cd
+24_0.cc                                       28               0x190               x
+24_0.cc                                       30               0x1a6               x
+24_0.cc                                       30               0x1a6       1       x
+24_0.cc                                       43               0x1ae        
+24_0.cc                                       34               0x1c0               x
+24_0.cc                                       34               0x1c8        
+24_0.cc                                       34               0x1ca        
+24_0.cc                                       39               0x1e0               x
+24_0.cc                                       39               0x1e4        
+24_0.cc                                       30               0x1e8               x
+24_0.cc                                       30               0x1e8       1       x
+24_0.cc                                       43               0x202        
+24_0.cc                                       43               0x210        
+24_0.cc                                       42               0x230               x
+24_0.cc                                       43               0x23e               x
+24_0.cc                                       43               0x254        
+24_0.cc                                       46               0x26a        
+24_0.cc                                       46               0x26a       1
+24_0.cc                                       46               0x292        
+24_0.cc                                       46               0x296               x
+24_0.cc                                       46               0x2ac        
+24_0.cc                                        -               0x2ad
 
 
 CU: No directory table
@@ -175,30 +171,5 @@ atexit.c                                      62               0x488            
 atexit.c                                      68               0x496        
 atexit.c                                      68               0x498               x
 atexit.c                                       -               0x499
-
-
-CU: No directory table
-CU: Empty file name table
-<unknown>                                      -                 0x1
-
-
-CU: No directory table
-CU: Empty file name table
-<unknown>                                      -                 0x1
-
-
-CU: No directory table
-CU: Empty file name table
-<unknown>                                      -                 0x1
-
-
-CU: No directory table
-CU: Empty file name table
-<unknown>                                      -                 0x1
-
-
-CU: No directory table
-CU: Empty file name table
-<unknown>                                      -                 0x1
 
 

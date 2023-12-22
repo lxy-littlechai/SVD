@@ -1,15 +1,17 @@
 
 
 BUFFER,FROM_INSTANCE.PORT,TO_INSTANCE.PORT,SIZE,MEMORY_GROUP,BANK,OFFSET,DMA_NEEDED
-sysmem0,-,-,4501,"(24, 0)",0,0,-
+sysmem0,-,-,4500,"(24, 0)",1,3680,-
+sysmem1,-,-,4500,"(24, 0)",0,0,-
 
 
 PLIO,IN/OUT,TILE_COLUMN,CHANNEL
-g1_out0,out,24,0
-g1_out1,out,24,1
-g1_in0,in,24,4
-g1_in1,in,24,2
+g1_out_0_,out,25,4
+g1_in_0_,in,25,6
+g1_out_1_,out,24,1
+g1_in_1_,in,24,2
 
 
 CLUSTER,KERNELS,TILE
-PT0,"g1.pu.k,","(24, 0)"
+PT1,"g1.pl.normUnit[1].k,","(24, 0)"
+PT0,"g1.pl.normUnit[0].k,","(25, 0)"

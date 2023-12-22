@@ -5,48 +5,45 @@
 #include <vector>
 
 float sign(double x) {
-    if(x > 0) return x;
+    if(x > 0) return 1;
     else if(x == 0) return 0;
     else return -1;
 }
 
 template<int ROW>
-void orthogonalize(input_stream<float> * __restrict Ap, 
-                   input_stream<float> * __restrict Aq, 
-                   output_stream<float> * __restrict Bp, 
-                   output_stream<float> * __restrict Bq) {
+void orthogonalize(input_stream<float> * __restrict in0, 
+                   input_stream<float> * __restrict in1, 
+                   output_stream<float> * __restrict out0, 
+                   output_stream<float> * __restrict out1) {
     const int VECSIZE = 4;
     
-   // const int ROW = 4;
+    float Ap[ROW], Aq[ROW], Bp[ROW], Bq[ROW];
 
-    std::vector<float> tmpAp;
-    std::vector<float> tmpAq; 
+    for(int i = 0;i < ROW;i ++) {
+        Ap[i] = readincr(in0);
+        Aq[i] = readincr(in1);
+    }
 
-    aie::vector<float, VECSIZE> Ap_vec, Aq_vec;
-    aie::accum<accfloat,VECSIZE> acc_top = aie::zeros<accfloat, VECSIZE>();
-    aie::accum<accfloat,VECSIZE> acc_pq = aie::zeros<accfloat, VECSIZE>();
-
-    for(int i = 0;i < ROW/VECSIZE;i ++) 
+    float tmp1 = 0;
+    float tmp2 = 0;
+    for(int i = 0;i < ROW;i ++) 
     //chess_prepare_for_pipelining
     {
-        Ap_vec = readincr_v<VECSIZE>(Ap);
-        Aq_vec = readincr_v<VECSIZE>(Aq);
-        tmpAp.emplace_back(Ap_vec.vector_cast<std::vector<float>>());
-        tmpAq.emplace_back(Aq_vec.vector_cast<std::vector<float>>());
-        acc_top = aie::mac(acc_top, Ap_vec, Ap_vec);
-        acc_top = aie::msc(acc_top, Aq_vec, Aq_vec);
-        acc_pq = aie::mac(acc_pq, Ap_vec, Aq_vec);
-
-        writeincr(Bp, Ap_vec);
-        writeincr(Bq, Aq_vec);
+        tmp1 += Ap[i] * Ap[i] - Aq[i] * Aq[i];
+        tmp2 += 2 * Ap[i] * Aq[i];
                 
     }     
-    auto top = aie::reduce_add(acc_top.to_vector<float>(0));   
-    auto Apq = 2*aie::reduce_add(acc_pq.to_vector<float>(0));   
-    auto tau = top/Apq;
+   
+    auto tau = tmp1 / tmp2;;
     auto t = sign(tau) / (aie::abs(tau) + aie::sqrt(1 + tau * tau));
     auto c = 1 / (aie::sqrt(1 + t * t));
     auto s = t * c;
+    for (int i = 0; i < ROW; i++) {
+        writeincr(out0, Ap[i] * c + Aq[i] * s);
+        writeincr(out1, -Ap[i] * s + Aq[i] * c);
+    //Vp[i] = Vp[i] * c + Vq[i] * s;
+    //Vq[i] = -Vp[i] * c + Vq[i] * s;
+    }
    
                                             
 

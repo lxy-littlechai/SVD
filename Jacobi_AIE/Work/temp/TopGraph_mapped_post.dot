@@ -1,13 +1,14 @@
 digraph G { 
-"i0:orthogonalize<4>\n CR(24,0)"[style=filled, fillcolor=aquamarine]; 
-"i1:PLIO(24)\ncol:24,ch:4"[shape=box, style=filled, fillcolor=lightgrey]; 
-"i2:PLIO(24)\ncol:24,ch:2"[shape=box, style=filled, fillcolor=lightgrey]; 
-"i3:PLIO(24)\ncol:24,ch:0"[shape=box, style=filled, fillcolor=lightgrey]; 
-"i4:PLIO(24)\ncol:24,ch:1"[shape=box, style=filled, fillcolor=lightgrey]; 
-"ps_i5:PS\nps_main"[shape=box, style=filled, fillcolor=snow]; 
-"i1:PLIO(24)\ncol:24,ch:4" -> "i0:orthogonalize<4>\n CR(24,0)"[label=" Stream(ss0)"];
-"i2:PLIO(24)\ncol:24,ch:2" -> "i0:orthogonalize<4>\n CR(24,0)"[label=" Stream(ss1)"];
-"i0:orthogonalize<4>\n CR(24,0)" -> "i3:PLIO(24)\ncol:24,ch:0"[label=" Stream(ms0)"];
-"i0:orthogonalize<4>\n CR(24,0)" -> "i4:PLIO(24)\ncol:24,ch:1"[label=" Stream(ms1)"];
+"i0:transfer<8>\n CR(25,0)"[style=filled, fillcolor=aquamarine]; 
+"i1:transfer<8>\n CR(24,0)"[style=filled, fillcolor=coral]; 
+"i2:PLIO(25)\ncol:25,ch:6"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i3:PLIO(25)\ncol:25,ch:4"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i4:PLIO(24)\ncol:24,ch:2"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i5:PLIO(24)\ncol:24,ch:1"[shape=box, style=filled, fillcolor=lightgrey]; 
+"ps_i6:PS\nps_main"[shape=box, style=filled, fillcolor=snow]; 
+"i2:PLIO(25)\ncol:25,ch:6" -> "i0:transfer<8>\n CR(25,0)"[label=" Stream(ss0)"];
+"i0:transfer<8>\n CR(25,0)" -> "i3:PLIO(25)\ncol:25,ch:4"[label=" Stream(ms0)"];
+"i4:PLIO(24)\ncol:24,ch:2" -> "i1:transfer<8>\n CR(24,0)"[label=" Stream(ss0)"];
+"i1:transfer<8>\n CR(24,0)" -> "i5:PLIO(24)\ncol:24,ch:1"[label=" Stream(ms0)"];
 
  }

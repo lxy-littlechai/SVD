@@ -2,7 +2,9 @@
     "Version": 0.0,
     "Non-Netlist Instances": [
         "sysmem0",
+        "sysmem1",
         "PT0",
+        "PT1",
         "net0",
         "net1",
         "net2",
@@ -16,37 +18,52 @@
         {
             "Name": "sysmem0",
             "Site": "AIE_MEMGRP_X24Y0",
+            "Bel": "BANK1"
+        },
+        {
+            "Name": "sysmem1",
+            "Site": "AIE_MEMGRP_X24Y0",
             "Bel": "BANK0"
         },
         {
             "Name": "PT0",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "PT1",
             "Site": "AIE_CORE_X24Y0",
             "Bel": "CORE"
         }
     ],
     "Instance Placement": [
         {
-            "Name": "g1.pu.k",
+            "Name": "g1.pl.normUnit[0].k",
+            "Site": "AIE_CORE_X25Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "g1.pl.normUnit[1].k",
             "Site": "AIE_CORE_X24Y0",
             "Bel": "CORE"
         },
         {
-            "Name": "g1_in0",
-            "Site": "AIE_PL_X23Y0",
-            "Bel": "AIE_PL_S_AXIS_4"
+            "Name": "g1_in_0_",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_S_AXIS_6"
         },
         {
-            "Name": "g1_in1",
+            "Name": "g1_in_1_",
             "Site": "AIE_PL_X23Y0",
             "Bel": "AIE_PL_S_AXIS_2"
         },
         {
-            "Name": "g1_out0",
-            "Site": "AIE_PL_X23Y0",
-            "Bel": "AIE_PL_M_AXIS_0"
+            "Name": "g1_out_0_",
+            "Site": "AIE_PL_X24Y0",
+            "Bel": "AIE_PL_M_AXIS_4"
         },
         {
-            "Name": "g1_out1",
+            "Name": "g1_out_1_",
             "Site": "AIE_PL_X23Y0",
             "Bel": "AIE_PL_M_AXIS_1"
         }
@@ -56,27 +73,32 @@
     "Non-Netlist Instance Links": [
         {
             "PT0": [
-                "g1.pu.k"
+                "g1.pl.normUnit[0].k"
+            ]
+        },
+        {
+            "PT1": [
+                "g1.pl.normUnit[1].k"
             ]
         },
         {
             "unconstraint_fifo0": [
-                "g1.pu.k/pi0"
+                "g1.pl.normUnit[0].k/pi0"
             ]
         },
         {
             "unconstraint_fifo1": [
-                "g1.pu.k/pi1"
+                "g1_out_0_/pi0"
             ]
         },
         {
             "unconstraint_fifo2": [
-                "g1_out0/pi0"
+                "g1.pl.normUnit[1].k/pi0"
             ]
         },
         {
             "unconstraint_fifo3": [
-                "g1_out1/pi0"
+                "g1_out_1_/pi0"
             ]
         }
     ],
@@ -98,7 +120,7 @@
                 },
                 {
                     "Key": "heapSize",
-                    "Val": "INT 373"
+                    "Val": "INT 372"
                 },
                 {
                     "Key": "name",
@@ -110,11 +132,68 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 4501"
+                    "Val": "INT 4500"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 4501"
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 3680"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 24"
+                },
+                {
+                    "Key": "accessRow",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "accessCol",
+                    "Val": "INT 25"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem1",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 4096"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 372"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem1"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 4500"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 4500"
                 },
                 {
                     "Key": "offset",
@@ -160,6 +239,27 @@
             ]
         },
         {
+            "Name": "PT1",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING coral"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem1"
+                }
+            ]
+        },
+        {
             "Name": "net0",
             "attrs": [
                 {
@@ -168,7 +268,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1_in0"
+                    "Val": "STRING g1_in_0_"
                 },
                 {
                     "Key": "srcPort",
@@ -176,7 +276,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.normUnit[0].k"
                 },
                 {
                     "Key": "dstPort",
@@ -205,7 +305,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1_in1"
+                    "Val": "STRING g1.pl.normUnit[0].k"
                 },
                 {
                     "Key": "srcPort",
@@ -213,11 +313,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1_out_0_"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi1"
+                    "Val": "STRING pi0"
                 },
                 {
                     "Key": "numLocks",
@@ -242,7 +342,7 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1_in_1_"
                 },
                 {
                     "Key": "srcPort",
@@ -250,7 +350,7 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1_out0"
+                    "Val": "STRING g1.pl.normUnit[1].k"
                 },
                 {
                     "Key": "dstPort",
@@ -279,15 +379,15 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING g1.pu.k"
+                    "Val": "STRING g1.pl.normUnit[1].k"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po1"
+                    "Val": "STRING po0"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING g1_out1"
+                    "Val": "STRING g1_out_1_"
                 },
                 {
                     "Key": "dstPort",
@@ -362,7 +462,7 @@
     ],
     "Netlist Element Attrs": [
         {
-            "Name": "g1.pu.k",
+            "Name": "g1.pl.normUnit[0].k",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -375,7 +475,20 @@
             ]
         },
         {
-            "Name": "g1_in0",
+            "Name": "g1.pl.normUnit[1].k",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "schedule",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "g1_in_0_",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -388,7 +501,7 @@
             ]
         },
         {
-            "Name": "g1_in1",
+            "Name": "g1_out_0_",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -401,7 +514,7 @@
             ]
         },
         {
-            "Name": "g1_out0",
+            "Name": "g1_in_1_",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -414,7 +527,7 @@
             ]
         },
         {
-            "Name": "g1_out1",
+            "Name": "g1_out_1_",
             "attrs": [
                 {
                     "Key": "fabric",
