@@ -32,7 +32,7 @@ void generate2Col(string filepath, int col) {
 }
 
 int main() {
-    const int COL = 4;
+    const int COL = 8;
     const int ROW = 8;
     for(int i = 0;i < COL;i ++) {
         string path = "../aie/data/";

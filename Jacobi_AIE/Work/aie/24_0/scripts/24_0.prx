@@ -5,7 +5,7 @@
  <option id="llvm.xargs" value="-fno-jump-tables -fno-discard-value-names -mllvm -chess-collapse-struct-types-during-linking=0" inherit = "1"/>
  <option id="llvm.lang" value="Follow file extension"/>
   <option id="bridge.cfg" value="24_0.bcf"/>
-  <option id="cpp.include" value="&lt;XILINX_VITIS_AIETOOLS&gt;/include ./aie/src /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/&lt;AIE_SRC_DIR&gt; /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/&lt;AIE_SRC_DIR&gt;/aie/src/ProcessUnit /home/lxy/Projects/SVD/Jacobi_AIE_Scalar/./aie/src " inherit="1"/>
+  <option id="cpp.include" value="&lt;XILINX_VITIS_AIETOOLS&gt;/include ./aie/src /home/lxy/Projects/SVD/Jacobi_AIE/&lt;AIE_SRC_DIR&gt; /home/lxy/Projects/SVD/Jacobi_AIE/&lt;AIE_SRC_DIR&gt;/aie/src/ProcessUnit /home/lxy/Projects/SVD/Jacobi_AIE/./aie/src " inherit="1"/>
   <option id="project.dir" value="&lt;CONFIG&gt;/24_0"/>
   <option id="project.name" value="24_0"/>
   <option id="project.type" value="exe"/>

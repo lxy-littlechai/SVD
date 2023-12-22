@@ -4,7 +4,7 @@
 #include <aie_api/aie_adf.hpp>
 #include <vector>
 
-float sign(double x) {
+float sign(float x) {
     if(x > 0) return 1;
     else if(x == 0) return 0;
     else return -1;

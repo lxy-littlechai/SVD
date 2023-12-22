@@ -6,7 +6,7 @@ using namespace std;
 void readDataFromFile(const string& filePath, vector<double>&vec, int row) {
     std::ifstream inputFile(filePath);
     if (!inputFile.is_open()) {
-        std::cerr << "无法打开文件: " << filePath << std::endl;
+        std::cerr << "ERROR: " << filePath << std::endl;
         return ;
     }
     double number;
@@ -21,10 +21,12 @@ void readDataFromFile(const string& filePath, vector<double>&vec, int row) {
 int main() {              
 
   const int row = 8;
-  const int col = 2;
+  const int col = 4;
   std::vector<double> vecA;
-  readDataFromFile("inAp.txt", vecA, row);
-  readDataFromFile("inAq.txt", vecA, row);
+  readDataFromFile("./data/in0.txt", vecA, row);
+  readDataFromFile("./data/in1.txt", vecA, row);
+  readDataFromFile("./data/in2.txt", vecA, row);
+  readDataFromFile("./data/in3.txt", vecA, row);
   
   // for(int i = 0;i < vecA.size();i ++) {
   //   cout << vecA[i] << endl;

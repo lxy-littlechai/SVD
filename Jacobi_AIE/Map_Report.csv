@@ -1,17 +1,113 @@
 
 
 BUFFER,FROM_INSTANCE.PORT,TO_INSTANCE.PORT,SIZE,MEMORY_GROUP,BANK,OFFSET,DMA_NEEDED
-sysmem0,-,-,4500,"(24, 0)",1,3680,-
-sysmem1,-,-,4500,"(24, 0)",0,0,-
+sysmem13,-,-,4500,"(30, 3)",0,0,-
+sysmem9,-,-,4500,"(26, 3)",0,0,-
+sysmem32,-,-,4500,"(22, 3)",0,0,-
+sysmem22,-,-,4500,"(31, 2)",0,0,-
+sysmem28,-,-,4500,"(29, 2)",0,0,-
+sysmem25,-,-,4500,"(27, 2)",0,0,-
+sysmem31,-,-,4500,"(26, 2)",0,3680,-
+sysmem27,-,-,4500,"(23, 2)",0,3680,-
+sysmem16,-,-,4500,"(19, 2)",1,3680,-
+sysmem12,-,-,4500,"(31, 1)",0,3680,-
+sysmem20,-,-,4500,"(25, 1)",0,0,-
+sysmem6,-,-,4500,"(24, 1)",0,0,-
+sysmem38,-,-,4500,"(18, 1)",0,0,-
+sysmem43,-,-,4500,"(26, 0)",0,0,-
+sysmem2,-,-,4500,"(24, 0)",0,0,-
+sysmem21,-,-,4500,"(23, 0)",0,3680,-
+sysmem3,-,-,4500,"(19, 0)",0,0,-
+sysmem33,-,-,4500,"(32, 3)",0,0,-
+sysmem39,-,-,4500,"(18, 0)",1,3680,-
+sysmem30,-,-,4500,"(27, 3)",0,0,-
+sysmem41,-,-,4500,"(17, 1)",0,3680,-
+sysmem8,-,-,4500,"(28, 3)",0,0,-
+sysmem42,-,-,4500,"(31, 0)",0,3680,-
+sysmem29,-,-,4500,"(19, 2)",0,3680,-
+sysmem7,-,-,4500,"(23, 0)",1,3680,-
+sysmem5,-,-,4500,"(26, 2)",1,3680,-
+sysmem34,-,-,4500,"(21, 0)",0,3680,-
+sysmem18,-,-,4500,"(20, 1)",0,0,-
+sysmem23,-,-,4500,"(20, 0)",0,0,-
+sysmem36,-,-,4500,"(30, 2)",0,0,-
+sysmem0,-,-,4500,"(32, 1)",0,0,-
+sysmem15,-,-,4500,"(21, 2)",3,0,-
+sysmem35,-,-,4500,"(17, 1)",1,3680,-
+sysmem26,-,-,4500,"(24, 2)",0,0,-
+sysmem14,-,-,4500,"(27, 1)",0,0,-
+sysmem1,-,-,4500,"(29, 0)",0,0,-
+sysmem10,-,-,4500,"(23, 2)",1,3680,-
+sysmem4,-,-,4500,"(31, 1)",1,3680,-
+sysmem17,-,-,4500,"(32, 0)",0,0,-
+sysmem37,-,-,4500,"(21, 2)",2,0,-
+sysmem19,-,-,4500,"(31, 0)",1,3680,-
+sysmem11,-,-,4500,"(22, 1)",0,0,-
+sysmem24,-,-,4500,"(21, 0)",1,3680,-
+sysmem40,-,-,4500,"(18, 0)",0,3680,-
 
 
 PLIO,IN/OUT,TILE_COLUMN,CHANNEL
-g1_out_0_,out,25,4
-g1_in_0_,in,25,6
-g1_out_1_,out,24,1
-g1_in_1_,in,24,2
+g1_out_0_,out,32,0
+g1_in_0_,in,32,1
+g1_in_1_,in,32,4
+g1_out_4_,out,21,0
+g1_in_5_,in,25,4
+g1_out_5_,out,18,1
+g1_out_7_,out,17,0
+g1_in_7_,in,19,4
+g1_in_6_,in,19,1
+g1_out_6_,out,18,3
+g1_out_3_,out,20,0
+g1_in_3_,in,26,4
+g1_in_4_,in,25,1
+g1_out_2_,out,31,0
+g1_in_2_,in,26,1
+g1_out_1_,out,30,0
 
 
 CLUSTER,KERNELS,TILE
-PT1,"g1.pl.normUnit[1].k,","(24, 0)"
-PT0,"g1.pl.normUnit[0].k,","(25, 0)"
+PT41,"g1.normLevel.normUnit[7].k,","(17, 0)"
+PT39,"g1.normLevel.normUnit[5].k,","(18, 1)"
+PT38,"g1.evenArray.evenLevel1[3].orthUnit[2].k,","(18, 2)"
+PT37,"g1.evenArray.evenLevel1[3].orthUnit[1].k,","(21, 1)"
+PT36,"g1.evenArray.evenLevel1[3].orthUnit[0].k,","(30, 1)"
+PT34,"g1.normLevel.normUnit[4].k,","(21, 0)"
+PT33,"g1.evenArray.evenLevel1[3].transUnit[0].k,","(32, 3)"
+PT32,"g1.evenArray.evenLevel1[2].orthUnit[2].k,","(22, 2)"
+PT31,"g1.evenArray.evenLevel1[2].orthUnit[1].k,","(26, 2)"
+PT29,"g1.evenArray.evenLevel1[2].transUnit[1].k,","(19, 1)"
+PT11,"g1.evenArray.evenLevel0[2].orthUnit[3].k,","(22, 1)"
+PT3,"g1.evenArray.evenLevel0[0].orthUnit[3].k,","(19, 0)"
+PT10,"g1.evenArray.evenLevel0[2].orthUnit[2].k,","(23, 2)"
+PT12,"g1.normLevel.normUnit[2].k,","(31, 1)"
+PT43,"g1.evenArray.evenLevel0[0].orthUnit[1].k,","(26, 0)"
+PT6,"g1.evenArray.evenLevel0[1].orthUnit[2].k,","(24, 1)"
+PT35,"g1.evenArray.evenLevel1[3].transUnit[1].k,","(17, 2)"
+PT8,"g1.evenArray.evenLevel0[2].orthUnit[0].k,","(28, 3)"
+PT4,"g1.evenArray.evenLevel0[1].orthUnit[0].k,","(31, 2)"
+PT7,"g1.evenArray.evenLevel0[1].orthUnit[3].k,","(23, 0)"
+PT9,"g1.evenArray.evenLevel0[2].orthUnit[1].k,","(26, 3)"
+PT13,"g1.evenArray.evenLevel0[3].orthUnit[0].k,","(30, 3)"
+PT1,"g1.normLevel.normUnit[1].k,","(30, 0)"
+PT30,"g1.evenArray.evenLevel1[2].orthUnit[0].k,","(27, 3)"
+PT5,"g1.evenArray.evenLevel0[1].orthUnit[1].k,","(26, 1)"
+PT0,"g1.normLevel.normUnit[0].k,","(32, 2)"
+PT40,"g1.normLevel.normUnit[6].k,","(18, 0)"
+PT14,"g1.evenArray.evenLevel0[3].orthUnit[1].k,","(27, 1)"
+PT27,"g1.evenArray.evenLevel1[1].orthUnit[2].k,","(23, 1)"
+PT16,"g1.evenArray.evenLevel0[3].orthUnit[3].k,","(19, 2)"
+PT42,"g1.evenArray.evenLevel0[0].orthUnit[0].k,","(32, 0)"
+PT17,"g1.evenArray.evenLevel1[0].transUnit[0].k,","(32, 1)"
+PT18,"g1.evenArray.evenLevel1[0].transUnit[1].k,","(20, 0)"
+PT21,"g1.evenArray.evenLevel1[0].orthUnit[2].k,","(24, 0)"
+PT19,"g1.evenArray.evenLevel1[0].orthUnit[0].k,","(31, 0)"
+PT20,"g1.evenArray.evenLevel1[0].orthUnit[1].k,","(25, 1)"
+PT22,"g1.evenArray.evenLevel1[1].transUnit[0].k,","(31, 3)"
+PT23,"g1.normLevel.normUnit[3].k,","(20, 1)"
+PT15,"g1.evenArray.evenLevel0[3].orthUnit[2].k,","(21, 2)"
+PT24,"g1.evenArray.evenLevel1[1].transUnit[1].k,","(22, 0)"
+PT26,"g1.evenArray.evenLevel1[1].orthUnit[1].k,","(24, 2)"
+PT2,"g1.evenArray.evenLevel0[0].orthUnit[2].k,","(25, 0)"
+PT25,"g1.evenArray.evenLevel1[1].orthUnit[0].k,","(27, 2)"
+PT28,"g1.evenArray.evenLevel1[2].transUnit[0].k,","(29, 3)"

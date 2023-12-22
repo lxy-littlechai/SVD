@@ -61,7 +61,7 @@ void Graph::evenGraph() {
     idx ++;
     A.insert(idx, processArray[AIEcol-1][j].outBp());
   }
-  A.print();
+  //A.print();
 }
 
 void Graph::normalize() {

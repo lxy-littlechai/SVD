@@ -10,7 +10,7 @@
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {0, "g1", nullptr, nullptr, nullptr, {24, 25}, {0, 0}, {24, 24}, {0, 0}, {0x4, 0x2e64}, {0, 0}, {}, {}, {}, {},  }, 
+    {0, "g1", nullptr, nullptr, nullptr, {17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 21, 21, 21, 22, 22, 22, 23, 23, 23, 24, 24, 24, 25, 25, 26, 26, 26, 26, 27, 27, 27, 28, 29, 30, 30, 30, 31, 31, 31, 31, 32, 32, 32, 32}, {0, 2, 0, 1, 2, 0, 1, 2, 0, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 0, 1, 2, 3, 1, 2, 3, 3, 3, 0, 1, 3, 0, 1, 2, 3, 0, 1, 2, 3}, {17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 21, 21, 21, 21, 22, 22, 23, 23, 23, 23, 24, 24, 24, 25, 26, 26, 26, 26, 27, 27, 27, 28, 29, 29, 30, 30, 31, 31, 31, 31, 31, 32, 32, 32}, {1, 1, 0, 0, 1, 0, 2, 2, 1, 0, 0, 2, 2, 0, 1, 3, 0, 2, 2, 0, 1, 2, 0, 1, 0, 2, 2, 3, 1, 2, 3, 3, 2, 0, 2, 3, 0, 1, 1, 2, 0, 0, 1, 3}, {0xe64, 0x2e64, 0xe64, 0x2e64, 0x4, 0x4, 0xe64, 0x2e64, 0x4, 0x4, 0xe64, 0x4004, 0x6004, 0x2e64, 0x4, 0x4, 0x2e64, 0xe64, 0x2e64, 0xe64, 0x4, 0x4, 0x4, 0x4, 0x4, 0x2e64, 0xe64, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x2e64, 0xe64, 0x2e64, 0x4, 0xe64, 0x4, 0x4, 0x4}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {}, {}, {}, {},  }, 
   };
   const int NUM_GRAPH = 1;
 
@@ -18,12 +18,24 @@
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "g1.in[0]", "g1_in_0_", 25, 0, 6},
-    {1, "g1.out[0]", "g1_out_0_", 25, 1, 4},
-    {2, "g1.in[1]", "g1_in_1_", 24, 0, 2},
-    {3, "g1.out[1]", "g1_out_1_", 24, 1, 1},
+    {0, "g1.in[0]", "g1_in_0_", 32, 0, 1},
+    {1, "g1.out[0]", "g1_out_0_", 32, 1, 0},
+    {2, "g1.in[1]", "g1_in_1_", 32, 0, 4},
+    {3, "g1.out[1]", "g1_out_1_", 30, 1, 0},
+    {4, "g1.in[2]", "g1_in_2_", 26, 0, 1},
+    {5, "g1.out[2]", "g1_out_2_", 31, 1, 0},
+    {6, "g1.in[3]", "g1_in_3_", 26, 0, 4},
+    {7, "g1.out[3]", "g1_out_3_", 20, 1, 0},
+    {8, "g1.in[4]", "g1_in_4_", 25, 0, 1},
+    {9, "g1.out[4]", "g1_out_4_", 21, 1, 0},
+    {10, "g1.in[5]", "g1_in_5_", 25, 0, 4},
+    {11, "g1.out[5]", "g1_out_5_", 18, 1, 1},
+    {12, "g1.in[6]", "g1_in_6_", 19, 0, 1},
+    {13, "g1.out[6]", "g1_out_6_", 18, 1, 3},
+    {14, "g1.in[7]", "g1_in_7_", 19, 0, 4},
+    {15, "g1.out[7]", "g1_out_7_", 17, 1, 0},
   };
-  const int NUM_PLIO = 4;
+  const int NUM_PLIO = 16;
 
 
 /************************** ADF API initializer *****************************/
@@ -62,6 +74,8 @@
 #if !defined(__CDO__) && !defined(__AIECONTROLCODE__)
 
 // Kernel Stub Definition
+  template<int ROW> void orthogonalize(input_stream<float> *__restrict Ap, input_stream<float> *__restrict Aq, output_stream<float> *__restrict Bp, output_stream<float> *__restrict Bq) { /* Stub */ } 
   template<int ROW> void transfer(input_stream<float> *__restrict in, output_stream<float> *__restrict out) { /* Stub */ } 
+  template void orthogonalize<8>(input_stream<float> *__restrict,input_stream<float> *__restrict,output_stream<float> *__restrict,output_stream<float> *__restrict); /* explicit template instantiation */ 
   template void transfer<8>(input_stream<float> *__restrict,output_stream<float> *__restrict); /* explicit template instantiation */ 
 #endif

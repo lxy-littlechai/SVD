@@ -1,38 +1,848 @@
 {
+  "net9":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C21_R0", "S_SHIM_NORTH_ch3_C21"],
+      ["S_AIE_OUT_ch0_C21_R0", "M_SOUTH_ch3_C21_R0"],
+      ["S_SHIM_NORTH_ch3_C21", "M_SHIM_SOUTH_ch0_C21"]
+    ]
+  },
+  "net8":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C21_R1", "S_NORTH_ch3_C21_R0"],
+      ["S_AIE_OUT_ch1_C21_R1", "M_SOUTH_ch3_C21_R1"],
+      ["S_NORTH_ch3_C21_R0", "M_AIE_IN_ch0_C21_R0"]
+    ]
+  },
+  "net79":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C19_R2", "S_EAST_ch3_C18_R2"],
+      ["S_AIE_OUT_ch1_C19_R2", "M_WEST_ch3_C19_R2"],
+      ["S_EAST_ch3_C18_R2", "M_AIE_IN_ch1_C18_R2"]
+    ]
+  },
+  "net78":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C19_R2", "S_EAST_ch2_C18_R2"],
+      ["M_WEST_ch3_C18_R2", "S_EAST_ch3_C17_R2"],
+      ["S_AIE_OUT_ch0_C19_R2", "M_WEST_ch2_C19_R2"],
+      ["S_EAST_ch2_C18_R2", "M_WEST_ch3_C18_R2"],
+      ["S_EAST_ch3_C17_R2", "M_AIE_IN_ch0_C17_R2"]
+    ]
+  },
+  "net77":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C19_R1", "S_SOUTH_ch5_C19_R2"],
+      ["S_AIE_OUT_ch0_C19_R1", "M_NORTH_ch5_C19_R1"],
+      ["S_SOUTH_ch5_C19_R2", "M_AIE_IN_ch1_C19_R2"]
+    ]
+  },
+  "net76":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C20_R2", "S_EAST_ch3_C19_R2"],
+      ["M_WEST_ch3_C21_R2", "S_EAST_ch3_C20_R2"],
+      ["M_WEST_ch3_C22_R2", "S_EAST_ch3_C21_R2"],
+      ["S_AIE_OUT_ch0_C22_R2", "M_WEST_ch3_C22_R2"],
+      ["S_EAST_ch3_C19_R2", "M_AIE_IN_ch0_C19_R2"],
+      ["S_EAST_ch3_C20_R2", "M_WEST_ch3_C20_R2"],
+      ["S_EAST_ch3_C21_R2", "M_WEST_ch3_C21_R2"]
+    ]
+  },
+  "net75":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C21_R2", "S_NORTH_ch3_C21_R1"],
+      ["S_AIE_OUT_ch1_C21_R2", "M_SOUTH_ch3_C21_R2"],
+      ["S_NORTH_ch3_C21_R1", "M_AIE_IN_ch1_C21_R1"]
+    ]
+  },
+  "net74":
+  {
+    "tree":
+    [
+      ["M_WEST_ch1_C19_R2", "S_EAST_ch1_C18_R2"],
+      ["M_WEST_ch2_C20_R2", "S_EAST_ch2_C19_R2"],
+      ["M_WEST_ch2_C21_R2", "S_EAST_ch2_C20_R2"],
+      ["S_AIE_OUT_ch0_C21_R2", "M_WEST_ch2_C21_R2"],
+      ["S_EAST_ch1_C18_R2", "M_AIE_IN_ch0_C18_R2"],
+      ["S_EAST_ch2_C19_R2", "M_WEST_ch1_C19_R2"],
+      ["S_EAST_ch2_C20_R2", "M_WEST_ch2_C20_R2"]
+    ]
+  },
+  "net73":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C22_R2", "S_EAST_ch2_C21_R2"],
+      ["S_AIE_OUT_ch1_C22_R2", "M_WEST_ch2_C22_R2"],
+      ["S_EAST_ch2_C21_R2", "M_AIE_IN_ch1_C21_R2"]
+    ]
+  },
+  "net72":
+  {
+    "tree":
+    [
+      ["M_WEST_ch1_C22_R2", "S_EAST_ch1_C21_R2"],
+      ["M_WEST_ch3_C23_R2", "S_EAST_ch3_C22_R2"],
+      ["M_WEST_ch3_C24_R2", "S_EAST_ch3_C23_R2"],
+      ["M_WEST_ch3_C25_R2", "S_EAST_ch3_C24_R2"],
+      ["M_WEST_ch3_C26_R2", "S_EAST_ch3_C25_R2"],
+      ["S_AIE_OUT_ch0_C26_R2", "M_WEST_ch3_C26_R2"],
+      ["S_EAST_ch1_C21_R2", "M_AIE_IN_ch0_C21_R2"],
+      ["S_EAST_ch3_C22_R2", "M_WEST_ch1_C22_R2"],
+      ["S_EAST_ch3_C23_R2", "M_WEST_ch3_C23_R2"],
+      ["S_EAST_ch3_C24_R2", "M_WEST_ch3_C24_R2"],
+      ["S_EAST_ch3_C25_R2", "M_WEST_ch3_C25_R2"]
+    ]
+  },
+  "net71":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C27_R1", "S_WEST_ch3_C28_R1"],
+      ["M_EAST_ch3_C28_R1", "S_WEST_ch3_C29_R1"],
+      ["M_EAST_ch3_C29_R1", "S_WEST_ch3_C30_R1"],
+      ["S_AIE_OUT_ch1_C27_R1", "M_EAST_ch3_C27_R1"],
+      ["S_WEST_ch3_C28_R1", "M_EAST_ch3_C28_R1"],
+      ["S_WEST_ch3_C29_R1", "M_EAST_ch3_C29_R1"],
+      ["S_WEST_ch3_C30_R1", "M_AIE_IN_ch1_C30_R1"]
+    ]
+  },
+  "net70":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C22_R1", "S_EAST_ch3_C21_R1"],
+      ["M_WEST_ch3_C23_R1", "S_EAST_ch3_C22_R1"],
+      ["M_WEST_ch3_C24_R1", "S_EAST_ch3_C23_R1"],
+      ["M_WEST_ch3_C25_R1", "S_EAST_ch3_C24_R1"],
+      ["M_WEST_ch3_C26_R1", "S_EAST_ch3_C25_R1"],
+      ["M_WEST_ch3_C27_R1", "S_EAST_ch3_C26_R1"],
+      ["S_AIE_OUT_ch0_C27_R1", "M_WEST_ch3_C27_R1"],
+      ["S_EAST_ch3_C21_R1", "M_AIE_IN_ch0_C21_R1"],
+      ["S_EAST_ch3_C22_R1", "M_WEST_ch3_C22_R1"],
+      ["S_EAST_ch3_C23_R1", "M_WEST_ch3_C23_R1"],
+      ["S_EAST_ch3_C24_R1", "M_WEST_ch3_C24_R1"],
+      ["S_EAST_ch3_C25_R1", "M_WEST_ch3_C25_R1"],
+      ["S_EAST_ch3_C26_R1", "M_WEST_ch3_C26_R1"]
+    ]
+  },
+  "net7":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C20_R0", "S_SHIM_NORTH_ch3_C20"],
+      ["M_SOUTH_ch3_C20_R1", "S_NORTH_ch3_C20_R0"],
+      ["S_AIE_OUT_ch0_C20_R1", "M_SOUTH_ch3_C20_R1"],
+      ["S_NORTH_ch3_C20_R0", "M_SOUTH_ch3_C20_R0"],
+      ["S_SHIM_NORTH_ch3_C20", "M_SHIM_SOUTH_ch0_C20"]
+    ]
+  },
+  "net69":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C26_R2", "S_WEST_ch3_C27_R2"],
+      ["M_SOUTH_ch3_C27_R2", "S_NORTH_ch3_C27_R1"],
+      ["S_AIE_OUT_ch1_C26_R2", "M_EAST_ch3_C26_R2"],
+      ["S_NORTH_ch3_C27_R1", "M_AIE_IN_ch1_C27_R1"],
+      ["S_WEST_ch3_C27_R2", "M_SOUTH_ch3_C27_R2"]
+    ]
+  },
+  "net68":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch2_C27_R2", "S_NORTH_ch2_C27_R1"],
+      ["M_SOUTH_ch3_C27_R3", "S_NORTH_ch3_C27_R2"],
+      ["S_AIE_OUT_ch0_C27_R3", "M_SOUTH_ch3_C27_R3"],
+      ["S_NORTH_ch2_C27_R1", "M_AIE_IN_ch0_C27_R1"],
+      ["S_NORTH_ch3_C27_R2", "M_SOUTH_ch2_C27_R2"]
+    ]
+  },
+  "net67":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C30_R3", "S_WEST_ch3_C31_R3"],
+      ["M_EAST_ch3_C31_R3", "S_WEST_ch3_C32_R3"],
+      ["S_AIE_OUT_ch1_C30_R3", "M_EAST_ch3_C30_R3"],
+      ["S_WEST_ch3_C31_R3", "M_EAST_ch3_C31_R3"],
+      ["S_WEST_ch3_C32_R3", "M_AIE_IN_ch0_C32_R3"]
+    ]
+  },
+  "net66":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C30_R2", "S_NORTH_ch3_C30_R1"],
+      ["M_SOUTH_ch3_C30_R3", "S_NORTH_ch3_C30_R2"],
+      ["S_AIE_OUT_ch0_C30_R3", "M_SOUTH_ch3_C30_R3"],
+      ["S_NORTH_ch3_C30_R1", "M_AIE_IN_ch0_C30_R1"],
+      ["S_NORTH_ch3_C30_R2", "M_SOUTH_ch3_C30_R2"]
+    ]
+  },
+  "net65":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C27_R3", "S_WEST_ch3_C28_R3"],
+      ["M_EAST_ch3_C28_R3", "S_WEST_ch3_C29_R3"],
+      ["M_EAST_ch3_C29_R3", "S_WEST_ch3_C30_R3"],
+      ["S_AIE_OUT_ch1_C27_R3", "M_EAST_ch3_C27_R3"],
+      ["S_WEST_ch3_C28_R3", "M_EAST_ch3_C28_R3"],
+      ["S_WEST_ch3_C29_R3", "M_EAST_ch3_C29_R3"],
+      ["S_WEST_ch3_C30_R3", "M_AIE_IN_ch1_C30_R3"]
+    ]
+  },
+  "net64":
+  {
+    "tree":
+    [
+      ["M_EAST_ch2_C29_R3", "S_WEST_ch2_C30_R3"],
+      ["S_AIE_OUT_ch0_C29_R3", "M_EAST_ch2_C29_R3"],
+      ["S_WEST_ch2_C30_R3", "M_AIE_IN_ch0_C30_R3"]
+    ]
+  },
+  "net63":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C22_R1", "S_SOUTH_ch5_C22_R2"],
+      ["S_AIE_OUT_ch1_C22_R1", "M_NORTH_ch5_C22_R1"],
+      ["S_SOUTH_ch5_C22_R2", "M_AIE_IN_ch1_C22_R2"]
+    ]
+  },
+  "net62":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C22_R1", "S_EAST_ch2_C21_R1"],
+      ["M_WEST_ch3_C20_R1", "S_EAST_ch3_C19_R1"],
+      ["M_WEST_ch3_C21_R1", "S_EAST_ch3_C20_R1"],
+      ["S_AIE_OUT_ch0_C22_R1", "M_WEST_ch2_C22_R1"],
+      ["S_EAST_ch2_C21_R1", "M_WEST_ch3_C21_R1"],
+      ["S_EAST_ch3_C19_R1", "M_AIE_IN_ch0_C19_R1"],
+      ["S_EAST_ch3_C20_R1", "M_WEST_ch3_C20_R1"]
+    ]
+  },
+  "net61":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C22_R0", "S_SOUTH_ch5_C22_R1"],
+      ["S_AIE_OUT_ch0_C22_R0", "M_NORTH_ch5_C22_R0"],
+      ["S_SOUTH_ch5_C22_R1", "M_AIE_IN_ch1_C22_R1"]
+    ]
+  },
+  "net60":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C23_R1", "S_EAST_ch2_C22_R1"],
+      ["S_AIE_OUT_ch0_C23_R1", "M_WEST_ch2_C23_R1"],
+      ["S_EAST_ch2_C22_R1", "M_AIE_IN_ch0_C22_R1"]
+    ]
+  },
+  "net6":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C21_R1", "S_EAST_ch2_C20_R1"],
+      ["S_AIE_OUT_ch0_C21_R1", "M_WEST_ch2_C21_R1"],
+      ["S_EAST_ch2_C20_R1", "M_AIE_IN_ch0_C20_R1"]
+    ]
+  },
+  "net59":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C23_R2", "S_WEST_ch3_C24_R2"],
+      ["M_EAST_ch3_C24_R2", "S_WEST_ch3_C25_R2"],
+      ["M_EAST_ch3_C25_R2", "S_WEST_ch3_C26_R2"],
+      ["S_AIE_OUT_ch1_C23_R2", "M_EAST_ch3_C23_R2"],
+      ["S_WEST_ch3_C24_R2", "M_EAST_ch3_C24_R2"],
+      ["S_WEST_ch3_C25_R2", "M_EAST_ch3_C25_R2"],
+      ["S_WEST_ch3_C26_R2", "M_AIE_IN_ch1_C26_R2"]
+    ]
+  },
+  "net58":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C23_R2", "S_EAST_ch2_C22_R2"],
+      ["S_AIE_OUT_ch0_C23_R2", "M_WEST_ch2_C23_R2"],
+      ["S_EAST_ch2_C22_R2", "M_AIE_IN_ch0_C22_R2"]
+    ]
+  },
+  "net57":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C23_R1", "S_SOUTH_ch5_C23_R2"],
+      ["S_AIE_OUT_ch1_C23_R1", "M_NORTH_ch5_C23_R1"],
+      ["S_SOUTH_ch5_C23_R2", "M_AIE_IN_ch1_C23_R2"]
+    ]
+  },
+  "net56":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C24_R2", "S_EAST_ch2_C23_R2"],
+      ["S_AIE_OUT_ch0_C24_R2", "M_WEST_ch2_C24_R2"],
+      ["S_EAST_ch2_C23_R2", "M_AIE_IN_ch0_C23_R2"]
+    ]
+  },
+  "net55":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C26_R3", "S_WEST_ch3_C27_R3"],
+      ["S_AIE_OUT_ch1_C26_R3", "M_EAST_ch3_C26_R3"],
+      ["S_WEST_ch3_C27_R3", "M_AIE_IN_ch1_C27_R3"]
+    ]
+  },
+  "net54":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C26_R3", "S_NORTH_ch3_C26_R2"],
+      ["S_AIE_OUT_ch0_C26_R3", "M_SOUTH_ch3_C26_R3"],
+      ["S_NORTH_ch3_C26_R2", "M_AIE_IN_ch0_C26_R2"]
+    ]
+  },
+  "net53":
+  {
+    "tree":
+    [
+      ["M_EAST_ch2_C24_R2", "S_WEST_ch2_C25_R2"],
+      ["M_EAST_ch2_C25_R2", "S_WEST_ch2_C26_R2"],
+      ["M_NORTH_ch5_C26_R2", "S_SOUTH_ch5_C26_R3"],
+      ["S_AIE_OUT_ch1_C24_R2", "M_EAST_ch2_C24_R2"],
+      ["S_SOUTH_ch5_C26_R3", "M_AIE_IN_ch1_C26_R3"],
+      ["S_WEST_ch2_C25_R2", "M_EAST_ch2_C25_R2"],
+      ["S_WEST_ch2_C26_R2", "M_NORTH_ch5_C26_R2"]
+    ]
+  },
+  "net52":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C27_R2", "S_SOUTH_ch5_C27_R3"],
+      ["M_WEST_ch3_C27_R3", "S_EAST_ch3_C26_R3"],
+      ["S_AIE_OUT_ch0_C27_R2", "M_NORTH_ch5_C27_R2"],
+      ["S_EAST_ch3_C26_R3", "M_AIE_IN_ch0_C26_R3"],
+      ["S_SOUTH_ch5_C27_R3", "M_WEST_ch3_C27_R3"]
+    ]
+  },
+  "net51":
+  {
+    "tree":
+    [
+      ["M_EAST_ch2_C28_R3", "S_WEST_ch2_C29_R3"],
+      ["S_AIE_OUT_ch1_C28_R3", "M_EAST_ch2_C28_R3"],
+      ["S_WEST_ch2_C29_R3", "M_AIE_IN_ch0_C29_R3"]
+    ]
+  },
+  "net50":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C28_R3", "S_EAST_ch3_C27_R3"],
+      ["S_AIE_OUT_ch0_C28_R3", "M_WEST_ch3_C28_R3"],
+      ["S_EAST_ch3_C27_R3", "M_AIE_IN_ch0_C27_R3"]
+    ]
+  },
+  "net5":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C31_R0", "S_SHIM_NORTH_ch3_C31"],
+      ["M_SOUTH_ch3_C31_R1", "S_NORTH_ch3_C31_R0"],
+      ["S_AIE_OUT_ch0_C31_R1", "M_SOUTH_ch3_C31_R1"],
+      ["S_NORTH_ch3_C31_R0", "M_SOUTH_ch3_C31_R0"],
+      ["S_SHIM_NORTH_ch3_C31", "M_SHIM_SOUTH_ch0_C31"]
+    ]
+  },
+  "net49":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C27_R2", "S_WEST_ch3_C28_R2"],
+      ["M_NORTH_ch5_C28_R2", "S_SOUTH_ch5_C28_R3"],
+      ["S_AIE_OUT_ch1_C27_R2", "M_EAST_ch3_C27_R2"],
+      ["S_SOUTH_ch5_C28_R3", "M_AIE_IN_ch1_C28_R3"],
+      ["S_WEST_ch3_C28_R2", "M_NORTH_ch5_C28_R2"]
+    ]
+  },
+  "net48":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C29_R3", "S_EAST_ch3_C28_R3"],
+      ["M_WEST_ch3_C30_R3", "S_EAST_ch3_C29_R3"],
+      ["M_WEST_ch3_C31_R3", "S_EAST_ch3_C30_R3"],
+      ["S_AIE_OUT_ch0_C31_R3", "M_WEST_ch3_C31_R3"],
+      ["S_EAST_ch3_C28_R3", "M_AIE_IN_ch0_C28_R3"],
+      ["S_EAST_ch3_C29_R3", "M_WEST_ch3_C29_R3"],
+      ["S_EAST_ch3_C30_R3", "M_WEST_ch3_C30_R3"]
+    ]
+  },
+  "net47":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C23_R0", "S_SOUTH_ch5_C23_R1"],
+      ["S_AIE_OUT_ch1_C23_R0", "M_NORTH_ch5_C23_R0"],
+      ["S_SOUTH_ch5_C23_R1", "M_AIE_IN_ch1_C23_R1"]
+    ]
+  },
+  "net46":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C23_R0", "S_EAST_ch3_C22_R0"],
+      ["S_AIE_OUT_ch0_C23_R0", "M_WEST_ch3_C23_R0"],
+      ["S_EAST_ch3_C22_R0", "M_AIE_IN_ch0_C22_R0"]
+    ]
+  },
+  "net45":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C20_R0", "S_WEST_ch3_C21_R0"],
+      ["M_EAST_ch3_C21_R0", "S_WEST_ch3_C22_R0"],
+      ["M_EAST_ch3_C22_R0", "S_WEST_ch3_C23_R0"],
+      ["S_AIE_OUT_ch0_C20_R0", "M_EAST_ch3_C20_R0"],
+      ["S_WEST_ch3_C21_R0", "M_EAST_ch3_C21_R0"],
+      ["S_WEST_ch3_C22_R0", "M_EAST_ch3_C22_R0"],
+      ["S_WEST_ch3_C23_R0", "M_AIE_IN_ch1_C23_R0"]
+    ]
+  },
+  "net44":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C24_R0", "S_EAST_ch3_C23_R0"],
+      ["S_AIE_OUT_ch0_C24_R0", "M_WEST_ch3_C24_R0"],
+      ["S_EAST_ch3_C23_R0", "M_AIE_IN_ch0_C23_R0"]
+    ]
+  },
+  "net43":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C24_R1", "S_SOUTH_ch5_C24_R2"],
+      ["S_AIE_OUT_ch1_C24_R1", "M_NORTH_ch5_C24_R1"],
+      ["S_SOUTH_ch5_C24_R2", "M_AIE_IN_ch1_C24_R2"]
+    ]
+  },
+  "net42":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C24_R1", "S_EAST_ch2_C23_R1"],
+      ["S_AIE_OUT_ch0_C24_R1", "M_WEST_ch2_C24_R1"],
+      ["S_EAST_ch2_C23_R1", "M_AIE_IN_ch0_C23_R1"]
+    ]
+  },
+  "net41":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C24_R0", "S_SOUTH_ch5_C24_R1"],
+      ["S_AIE_OUT_ch1_C24_R0", "M_NORTH_ch5_C24_R0"],
+      ["S_SOUTH_ch5_C24_R1", "M_AIE_IN_ch1_C24_R1"]
+    ]
+  },
+  "net40":
+  {
+    "tree":
+    [
+      ["M_WEST_ch2_C25_R1", "S_EAST_ch2_C24_R1"],
+      ["S_AIE_OUT_ch0_C25_R1", "M_WEST_ch2_C25_R1"],
+      ["S_EAST_ch2_C24_R1", "M_AIE_IN_ch0_C24_R1"]
+    ]
+  },
+  "net4":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C30_R1", "S_WEST_ch3_C31_R1"],
+      ["S_AIE_OUT_ch1_C30_R1", "M_EAST_ch3_C30_R1"],
+      ["S_WEST_ch3_C31_R1", "M_AIE_IN_ch0_C31_R1"]
+    ]
+  },
+  "net39":
+  {
+    "tree":
+    [
+      ["M_EAST_ch2_C26_R2", "S_WEST_ch2_C27_R2"],
+      ["M_NORTH_ch5_C26_R1", "S_SOUTH_ch5_C26_R2"],
+      ["S_AIE_OUT_ch1_C26_R1", "M_NORTH_ch5_C26_R1"],
+      ["S_SOUTH_ch5_C26_R2", "M_EAST_ch2_C26_R2"],
+      ["S_WEST_ch2_C27_R2", "M_AIE_IN_ch1_C27_R2"]
+    ]
+  },
+  "net38":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch4_C24_R1", "S_SOUTH_ch4_C24_R2"],
+      ["M_WEST_ch1_C25_R1", "S_EAST_ch1_C24_R1"],
+      ["M_WEST_ch2_C26_R1", "S_EAST_ch2_C25_R1"],
+      ["S_AIE_OUT_ch0_C26_R1", "M_WEST_ch2_C26_R1"],
+      ["S_EAST_ch1_C24_R1", "M_NORTH_ch4_C24_R1"],
+      ["S_EAST_ch2_C25_R1", "M_WEST_ch1_C25_R1"],
+      ["S_SOUTH_ch4_C24_R2", "M_AIE_IN_ch0_C24_R2"]
+    ]
+  },
+  "net37":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C25_R1", "S_WEST_ch3_C26_R1"],
+      ["S_AIE_OUT_ch1_C25_R1", "M_EAST_ch3_C25_R1"],
+      ["S_WEST_ch3_C26_R1", "M_AIE_IN_ch1_C26_R1"]
+    ]
+  },
+  "net36":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C31_R0", "S_SOUTH_ch5_C31_R1"],
+      ["M_WEST_ch2_C27_R1", "S_EAST_ch2_C26_R1"],
+      ["M_WEST_ch3_C28_R1", "S_EAST_ch3_C27_R1"],
+      ["M_WEST_ch3_C29_R1", "S_EAST_ch3_C28_R1"],
+      ["M_WEST_ch3_C30_R1", "S_EAST_ch3_C29_R1"],
+      ["M_WEST_ch3_C31_R1", "S_EAST_ch3_C30_R1"],
+      ["S_AIE_OUT_ch0_C31_R0", "M_NORTH_ch5_C31_R0"],
+      ["S_EAST_ch2_C26_R1", "M_AIE_IN_ch0_C26_R1"],
+      ["S_EAST_ch3_C27_R1", "M_WEST_ch2_C27_R1"],
+      ["S_EAST_ch3_C28_R1", "M_WEST_ch3_C28_R1"],
+      ["S_EAST_ch3_C29_R1", "M_WEST_ch3_C29_R1"],
+      ["S_EAST_ch3_C30_R1", "M_WEST_ch3_C30_R1"],
+      ["S_SOUTH_ch5_C31_R1", "M_WEST_ch3_C31_R1"]
+    ]
+  },
+  "net35":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C31_R2", "S_SOUTH_ch5_C31_R3"],
+      ["S_AIE_OUT_ch1_C31_R2", "M_NORTH_ch5_C31_R2"],
+      ["S_SOUTH_ch5_C31_R3", "M_AIE_IN_ch0_C31_R3"]
+    ]
+  },
+  "net34":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C28_R2", "S_EAST_ch3_C27_R2"],
+      ["M_WEST_ch3_C29_R2", "S_EAST_ch3_C28_R2"],
+      ["M_WEST_ch3_C30_R2", "S_EAST_ch3_C29_R2"],
+      ["M_WEST_ch3_C31_R2", "S_EAST_ch3_C30_R2"],
+      ["S_AIE_OUT_ch0_C31_R2", "M_WEST_ch3_C31_R2"],
+      ["S_EAST_ch3_C27_R2", "M_AIE_IN_ch0_C27_R2"],
+      ["S_EAST_ch3_C28_R2", "M_WEST_ch3_C28_R2"],
+      ["S_EAST_ch3_C29_R2", "M_WEST_ch3_C29_R2"],
+      ["S_EAST_ch3_C30_R2", "M_WEST_ch3_C30_R2"]
+    ]
+  },
+  "net33":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch4_C31_R0", "S_SOUTH_ch4_C31_R1"],
+      ["M_NORTH_ch5_C31_R1", "S_SOUTH_ch5_C31_R2"],
+      ["S_AIE_OUT_ch1_C31_R0", "M_NORTH_ch4_C31_R0"],
+      ["S_SOUTH_ch4_C31_R1", "M_NORTH_ch5_C31_R1"],
+      ["S_SOUTH_ch5_C31_R2", "M_AIE_IN_ch1_C31_R2"]
+    ]
+  },
+  "net32":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch4_C31_R1", "S_SOUTH_ch4_C31_R2"],
+      ["M_WEST_ch3_C32_R1", "S_EAST_ch3_C31_R1"],
+      ["S_AIE_OUT_ch0_C32_R1", "M_WEST_ch3_C32_R1"],
+      ["S_EAST_ch3_C31_R1", "M_NORTH_ch4_C31_R1"],
+      ["S_SOUTH_ch4_C31_R2", "M_AIE_IN_ch0_C31_R2"]
+    ]
+  },
+  "net31":
+  {
+    "tree":
+    [
+      ["M_EAST_ch2_C20_R0", "S_WEST_ch2_C21_R0"],
+      ["M_EAST_ch2_C21_R0", "S_WEST_ch2_C22_R0"],
+      ["M_EAST_ch2_C22_R0", "S_WEST_ch2_C23_R0"],
+      ["M_EAST_ch3_C19_R0", "S_WEST_ch3_C20_R0"],
+      ["M_EAST_ch3_C23_R0", "S_WEST_ch3_C24_R0"],
+      ["S_AIE_OUT_ch1_C19_R0", "M_EAST_ch3_C19_R0"],
+      ["S_WEST_ch2_C21_R0", "M_EAST_ch2_C21_R0"],
+      ["S_WEST_ch2_C22_R0", "M_EAST_ch2_C22_R0"],
+      ["S_WEST_ch2_C23_R0", "M_EAST_ch3_C23_R0"],
+      ["S_WEST_ch3_C20_R0", "M_EAST_ch2_C20_R0"],
+      ["S_WEST_ch3_C24_R0", "M_AIE_IN_ch1_C24_R0"]
+    ]
+  },
+  "net30":
+  {
+    "tree":
+    [
+      ["M_EAST_ch2_C19_R0", "S_WEST_ch2_C20_R0"],
+      ["S_AIE_OUT_ch0_C19_R0", "M_EAST_ch2_C19_R0"],
+      ["S_WEST_ch2_C20_R0", "M_AIE_IN_ch0_C20_R0"]
+    ]
+  },
   "net3":
   {
     "tree":
     [
-      ["M_SOUTH_ch3_C24_R0", "S_SHIM_NORTH_ch3_C24"],
-      ["S_AIE_OUT_ch0_C24_R0", "M_SOUTH_ch3_C24_R0"],
-      ["S_SHIM_NORTH_ch3_C24", "M_SHIM_SOUTH_ch1_C24"]
+      ["M_SOUTH_ch3_C30_R0", "S_SHIM_NORTH_ch3_C30"],
+      ["S_AIE_OUT_ch0_C30_R0", "M_SOUTH_ch3_C30_R0"],
+      ["S_SHIM_NORTH_ch3_C30", "M_SHIM_SOUTH_ch0_C30"]
+    ]
+  },
+  "net29":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch5_C19", "S_SOUTH_ch5_C19_R0"],
+      ["S_SHIM_SOUTH_ch4_C19", "M_SHIM_NORTH_ch5_C19"],
+      ["S_SOUTH_ch5_C19_R0", "M_AIE_IN_ch1_C19_R0"]
+    ]
+  },
+  "net28":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch4_C19", "S_SOUTH_ch4_C19_R0"],
+      ["S_SHIM_SOUTH_ch1_C19", "M_SHIM_NORTH_ch4_C19"],
+      ["S_SOUTH_ch4_C19_R0", "M_AIE_IN_ch0_C19_R0"]
+    ]
+  },
+  "net27":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C25_R0", "S_SOUTH_ch5_C25_R1"],
+      ["S_AIE_OUT_ch1_C25_R0", "M_NORTH_ch5_C25_R0"],
+      ["S_SOUTH_ch5_C25_R1", "M_AIE_IN_ch1_C25_R1"]
+    ]
+  },
+  "net26":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C25_R0", "S_EAST_ch3_C24_R0"],
+      ["S_AIE_OUT_ch0_C25_R0", "M_WEST_ch3_C25_R0"],
+      ["S_EAST_ch3_C24_R0", "M_AIE_IN_ch0_C24_R0"]
+    ]
+  },
+  "net25":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch5_C25", "S_SOUTH_ch5_C25_R0"],
+      ["S_SHIM_SOUTH_ch4_C25", "M_SHIM_NORTH_ch5_C25"],
+      ["S_SOUTH_ch5_C25_R0", "M_AIE_IN_ch1_C25_R0"]
+    ]
+  },
+  "net24":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch4_C25", "S_SOUTH_ch4_C25_R0"],
+      ["S_SHIM_SOUTH_ch1_C25", "M_SHIM_NORTH_ch4_C25"],
+      ["S_SOUTH_ch4_C25_R0", "M_AIE_IN_ch0_C25_R0"]
+    ]
+  },
+  "net23":
+  {
+    "tree":
+    [
+      ["M_EAST_ch3_C26_R0", "S_WEST_ch3_C27_R0"],
+      ["M_EAST_ch3_C27_R0", "S_WEST_ch3_C28_R0"],
+      ["M_EAST_ch3_C28_R0", "S_WEST_ch3_C29_R0"],
+      ["M_EAST_ch3_C29_R0", "S_WEST_ch3_C30_R0"],
+      ["M_EAST_ch3_C30_R0", "S_WEST_ch3_C31_R0"],
+      ["S_AIE_OUT_ch1_C26_R0", "M_EAST_ch3_C26_R0"],
+      ["S_WEST_ch3_C27_R0", "M_EAST_ch3_C27_R0"],
+      ["S_WEST_ch3_C28_R0", "M_EAST_ch3_C28_R0"],
+      ["S_WEST_ch3_C29_R0", "M_EAST_ch3_C29_R0"],
+      ["S_WEST_ch3_C30_R0", "M_EAST_ch3_C30_R0"],
+      ["S_WEST_ch3_C31_R0", "M_AIE_IN_ch1_C31_R0"]
+    ]
+  },
+  "net22":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C26_R0", "S_SOUTH_ch5_C26_R1"],
+      ["M_WEST_ch1_C26_R1", "S_EAST_ch1_C25_R1"],
+      ["S_AIE_OUT_ch0_C26_R0", "M_NORTH_ch5_C26_R0"],
+      ["S_EAST_ch1_C25_R1", "M_AIE_IN_ch0_C25_R1"],
+      ["S_SOUTH_ch5_C26_R1", "M_WEST_ch1_C26_R1"]
+    ]
+  },
+  "net21":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch5_C26", "S_SOUTH_ch5_C26_R0"],
+      ["S_SHIM_SOUTH_ch4_C26", "M_SHIM_NORTH_ch5_C26"],
+      ["S_SOUTH_ch5_C26_R0", "M_AIE_IN_ch1_C26_R0"]
+    ]
+  },
+  "net20":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch4_C26", "S_SOUTH_ch4_C26_R0"],
+      ["S_SHIM_SOUTH_ch1_C26", "M_SHIM_NORTH_ch4_C26"],
+      ["S_SOUTH_ch4_C26_R0", "M_AIE_IN_ch0_C26_R0"]
     ]
   },
   "net2":
   {
     "tree":
     [
-      ["M_SHIM_NORTH_ch5_C24", "S_SOUTH_ch5_C24_R0"],
-      ["S_SHIM_SOUTH_ch2_C24", "M_SHIM_NORTH_ch5_C24"],
-      ["S_SOUTH_ch5_C24_R0", "M_AIE_IN_ch0_C24_R0"]
+      ["M_SOUTH_ch3_C30_R1", "S_NORTH_ch3_C30_R0"],
+      ["S_AIE_OUT_ch0_C30_R1", "M_SOUTH_ch3_C30_R1"],
+      ["S_NORTH_ch3_C30_R0", "M_AIE_IN_ch0_C30_R0"]
+    ]
+  },
+  "net19":
+  {
+    "tree":
+    [
+      ["M_NORTH_ch5_C32_R0", "S_SOUTH_ch5_C32_R1"],
+      ["S_AIE_OUT_ch1_C32_R0", "M_NORTH_ch5_C32_R0"],
+      ["S_SOUTH_ch5_C32_R1", "M_AIE_IN_ch0_C32_R1"]
+    ]
+  },
+  "net18":
+  {
+    "tree":
+    [
+      ["M_WEST_ch3_C32_R0", "S_EAST_ch3_C31_R0"],
+      ["S_AIE_OUT_ch0_C32_R0", "M_WEST_ch3_C32_R0"],
+      ["S_EAST_ch3_C31_R0", "M_AIE_IN_ch0_C31_R0"]
+    ]
+  },
+  "net17":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch5_C32", "S_SOUTH_ch5_C32_R0"],
+      ["S_SHIM_SOUTH_ch4_C32", "M_SHIM_NORTH_ch5_C32"],
+      ["S_SOUTH_ch5_C32_R0", "M_AIE_IN_ch1_C32_R0"]
+    ]
+  },
+  "net16":
+  {
+    "tree":
+    [
+      ["M_SHIM_NORTH_ch4_C32", "S_SOUTH_ch4_C32_R0"],
+      ["S_SHIM_SOUTH_ch1_C32", "M_SHIM_NORTH_ch4_C32"],
+      ["S_SOUTH_ch4_C32_R0", "M_AIE_IN_ch0_C32_R0"]
+    ]
+  },
+  "net15":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C17_R0", "S_SHIM_NORTH_ch3_C17"],
+      ["S_AIE_OUT_ch0_C17_R0", "M_SOUTH_ch3_C17_R0"],
+      ["S_SHIM_NORTH_ch3_C17", "M_SHIM_SOUTH_ch0_C17"]
+    ]
+  },
+  "net14":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C17_R1", "S_NORTH_ch3_C17_R0"],
+      ["M_SOUTH_ch3_C17_R2", "S_NORTH_ch3_C17_R1"],
+      ["S_AIE_OUT_ch0_C17_R2", "M_SOUTH_ch3_C17_R2"],
+      ["S_NORTH_ch3_C17_R0", "M_AIE_IN_ch0_C17_R0"],
+      ["S_NORTH_ch3_C17_R1", "M_SOUTH_ch3_C17_R1"]
+    ]
+  },
+  "net13":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C18_R0", "S_SHIM_NORTH_ch3_C18"],
+      ["S_AIE_OUT_ch0_C18_R0", "M_SOUTH_ch3_C18_R0"],
+      ["S_SHIM_NORTH_ch3_C18", "M_SHIM_SOUTH_ch3_C18"]
+    ]
+  },
+  "net12":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch3_C18_R1", "S_NORTH_ch3_C18_R0"],
+      ["M_SOUTH_ch3_C18_R2", "S_NORTH_ch3_C18_R1"],
+      ["S_AIE_OUT_ch1_C18_R2", "M_SOUTH_ch3_C18_R2"],
+      ["S_NORTH_ch3_C18_R0", "M_AIE_IN_ch0_C18_R0"],
+      ["S_NORTH_ch3_C18_R1", "M_SOUTH_ch3_C18_R1"]
+    ]
+  },
+  "net11":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch2_C18_R0", "S_SHIM_NORTH_ch2_C18"],
+      ["M_SOUTH_ch2_C18_R1", "S_NORTH_ch2_C18_R0"],
+      ["S_AIE_OUT_ch0_C18_R1", "M_SOUTH_ch2_C18_R1"],
+      ["S_NORTH_ch2_C18_R0", "M_SOUTH_ch2_C18_R0"],
+      ["S_SHIM_NORTH_ch2_C18", "M_SHIM_SOUTH_ch1_C18"]
+    ]
+  },
+  "net10":
+  {
+    "tree":
+    [
+      ["M_SOUTH_ch2_C18_R2", "S_NORTH_ch2_C18_R1"],
+      ["S_AIE_OUT_ch0_C18_R2", "M_SOUTH_ch2_C18_R2"],
+      ["S_NORTH_ch2_C18_R1", "M_AIE_IN_ch0_C18_R1"]
     ]
   },
   "net1":
   {
     "tree":
     [
-      ["M_SOUTH_ch3_C25_R0", "S_SHIM_NORTH_ch3_C25"],
-      ["S_AIE_OUT_ch0_C25_R0", "M_SOUTH_ch3_C25_R0"],
-      ["S_SHIM_NORTH_ch3_C25", "M_SHIM_SOUTH_ch4_C25"]
+      ["M_SOUTH_ch3_C32_R0", "S_SHIM_NORTH_ch3_C32"],
+      ["M_SOUTH_ch3_C32_R1", "S_NORTH_ch3_C32_R0"],
+      ["M_SOUTH_ch3_C32_R2", "S_NORTH_ch3_C32_R1"],
+      ["S_AIE_OUT_ch0_C32_R2", "M_SOUTH_ch3_C32_R2"],
+      ["S_NORTH_ch3_C32_R0", "M_SOUTH_ch3_C32_R0"],
+      ["S_NORTH_ch3_C32_R1", "M_SOUTH_ch3_C32_R1"],
+      ["S_SHIM_NORTH_ch3_C32", "M_SHIM_SOUTH_ch0_C32"]
     ]
   },
   "net0":
   {
     "tree":
     [
-      ["M_SHIM_NORTH_ch5_C25", "S_SOUTH_ch5_C25_R0"],
-      ["S_SHIM_SOUTH_ch6_C25", "M_SHIM_NORTH_ch5_C25"],
-      ["S_SOUTH_ch5_C25_R0", "M_AIE_IN_ch0_C25_R0"]
+      ["M_SOUTH_ch3_C32_R3", "S_NORTH_ch3_C32_R2"],
+      ["S_AIE_OUT_ch0_C32_R3", "M_SOUTH_ch3_C32_R3"],
+      ["S_NORTH_ch3_C32_R2", "M_AIE_IN_ch0_C32_R2"]
     ]
   }}
 

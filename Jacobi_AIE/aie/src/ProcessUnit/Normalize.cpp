@@ -19,7 +19,7 @@ void normalize(input_stream<float>* __restrict in,
         tmp += A[i]*A[i];
     }
     float sigma = aie::sqrt(tmp);
-    for(int i = 0;i < ROW;i ++) {
-        writeincr(out, A[i]/sigma);
-    }
+    //for(int i = 0;i < ROW;i ++) {
+        writeincr(out, sigma);
+    //}
 }

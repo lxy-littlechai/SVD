@@ -237,10 +237,118 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(49, 0), XAIE_PL_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(49, 0), XAIE_PL_MOD, XAIE_EVENT_SWITCH_A, 8, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_NORTH);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(49, 0), XAIE_PL_MOD, XAIE_EVENT_SWITCH_B, 8, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_NORTH);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(17, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(17, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(17, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(17, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(17, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(17, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(18, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(18, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(18, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(18, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(18, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(18, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(19, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(19, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(19, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(19, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(19, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(19, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(20, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(20, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(20, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(20, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(20, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(20, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(21, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(21, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(21, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(21, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(21, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(21, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(22, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(23, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(23, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(23, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(23, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(23, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(23, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(24, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(24, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(24, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(24, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(24, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(24, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(25, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(25, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(25, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(25, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(25, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(25, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(26, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(27, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(28, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(29, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(30, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(31, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 4), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(32, 4), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcast(&DevInst, XAie_TileLoc(0, 0), XAIE_PL_MOD, 8, XAIE_EVENT_BROADCAST_A_8_PL);
 	return adf::return_code::ok;
   }
@@ -251,14 +359,224 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
 	std::string work_dir = (work_path.empty() ?  "./Work" : work_path);
 	printf("Loading elfs of graph g1...\n");
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(17, 1), (work_dir + "/aie/17_0/Release/17_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(17,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(17, 3), (work_dir + "/aie/17_2/Release/17_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(17,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(18, 1), (work_dir + "/aie/18_0/Release/18_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(18,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(18, 2), (work_dir + "/aie/18_1/Release/18_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(18,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(18, 3), (work_dir + "/aie/18_2/Release/18_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(18,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(19, 1), (work_dir + "/aie/19_0/Release/19_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(19,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(19, 2), (work_dir + "/aie/19_1/Release/19_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(19,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(19, 3), (work_dir + "/aie/19_2/Release/19_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(19,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(20, 1), (work_dir + "/aie/20_0/Release/20_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(20,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(20, 2), (work_dir + "/aie/20_1/Release/20_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(20,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(21, 1), (work_dir + "/aie/21_0/Release/21_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(21,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(21, 2), (work_dir + "/aie/21_1/Release/21_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(21,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(21, 3), (work_dir + "/aie/21_2/Release/21_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(21,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(22, 1), (work_dir + "/aie/22_0/Release/22_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(22,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(22, 2), (work_dir + "/aie/22_1/Release/22_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(22,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(22, 3), (work_dir + "/aie/22_2/Release/22_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(22,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(23, 1), (work_dir + "/aie/23_0/Release/23_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(23,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(23, 2), (work_dir + "/aie/23_1/Release/23_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(23,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(23, 3), (work_dir + "/aie/23_2/Release/23_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(23,2)" << std::endl;
+		return false;
+	}
 	if(XAie_LoadElf(&DevInst, XAie_TileLoc(24, 1), (work_dir + "/aie/24_0/Release/24_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
 	{
 		std::cerr << "ERROR: Failed to load elf for core(24,0)" << std::endl;
 		return false;
 	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(24, 2), (work_dir + "/aie/24_1/Release/24_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(24,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(24, 3), (work_dir + "/aie/24_2/Release/24_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(24,2)" << std::endl;
+		return false;
+	}
 	if(XAie_LoadElf(&DevInst, XAie_TileLoc(25, 1), (work_dir + "/aie/25_0/Release/25_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
 	{
 		std::cerr << "ERROR: Failed to load elf for core(25,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(25, 2), (work_dir + "/aie/25_1/Release/25_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(25,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(26, 1), (work_dir + "/aie/26_0/Release/26_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(26,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(26, 2), (work_dir + "/aie/26_1/Release/26_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(26,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(26, 3), (work_dir + "/aie/26_2/Release/26_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(26,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(26, 4), (work_dir + "/aie/26_3/Release/26_3").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(26,3)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(27, 2), (work_dir + "/aie/27_1/Release/27_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(27,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(27, 3), (work_dir + "/aie/27_2/Release/27_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(27,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(27, 4), (work_dir + "/aie/27_3/Release/27_3").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(27,3)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(28, 4), (work_dir + "/aie/28_3/Release/28_3").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(28,3)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(29, 4), (work_dir + "/aie/29_3/Release/29_3").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(29,3)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(30, 1), (work_dir + "/aie/30_0/Release/30_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(30,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(30, 2), (work_dir + "/aie/30_1/Release/30_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(30,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(30, 4), (work_dir + "/aie/30_3/Release/30_3").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(30,3)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(31, 1), (work_dir + "/aie/31_0/Release/31_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(31,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(31, 2), (work_dir + "/aie/31_1/Release/31_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(31,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(31, 3), (work_dir + "/aie/31_2/Release/31_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(31,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(31, 4), (work_dir + "/aie/31_3/Release/31_3").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(31,3)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(32, 1), (work_dir + "/aie/32_0/Release/32_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(32,0)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(32, 2), (work_dir + "/aie/32_1/Release/32_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(32,1)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(32, 3), (work_dir + "/aie/32_2/Release/32_2").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(32,2)" << std::endl;
+		return false;
+	}
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(32, 4), (work_dir + "/aie/32_3/Release/32_3").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	{
+		std::cerr << "ERROR: Failed to load elf for core(32,3)" << std::endl;
 		return false;
 	}
 	#endif
@@ -273,57 +591,1067 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
     #ifdef __PS_INIT_AIE__
 
 	std::string work_dir = (work_path.empty() ?  "./Work" : work_path);
-	// S_AIE_OUT_ch0_C24_R0 M_SOUTH_ch3_C24_R0 net3
+	// S_AIE_OUT_ch0_C17_R0 M_SOUTH_ch3_C17_R0 net15
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 1), CORE, 0, SOUTH, 3);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(17, 1), CORE, 0, SOUTH, 3);
 
-	// S_AIE_OUT_ch0_C25_R0 M_SOUTH_ch3_C25_R0 net1
+	// S_AIE_OUT_ch0_C17_R2 M_SOUTH_ch3_C17_R2 net14
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 1), CORE, 0, SOUTH, 3);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(17, 3), CORE, 0, SOUTH, 3);
 
-	// S_SHIM_NORTH_ch3_C24 M_SHIM_SOUTH_ch1_C24 net3
+	// S_AIE_OUT_ch0_C18_R0 M_SOUTH_ch3_C18_R0 net13
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 0), NORTH, 3, SOUTH, 1);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 1), CORE, 0, SOUTH, 3);
 
-	// S_SHIM_NORTH_ch3_C25 M_SHIM_SOUTH_ch4_C25 net1
+	// S_AIE_OUT_ch0_C18_R1 M_SOUTH_ch2_C18_R1 net11
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 0), NORTH, 3, SOUTH, 4);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 2), CORE, 0, SOUTH, 2);
 
-	// S_SHIM_SOUTH_ch2_C24 M_SHIM_NORTH_ch5_C24 net2
+	// S_AIE_OUT_ch0_C18_R2 M_SOUTH_ch2_C18_R2 net10
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 0), SOUTH, 2, NORTH, 5);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 3), CORE, 0, SOUTH, 2);
 
-	// S_SHIM_SOUTH_ch6_C25 M_SHIM_NORTH_ch5_C25 net0
+	// S_AIE_OUT_ch0_C19_R0 M_EAST_ch2_C19_R0 net30
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 0), SOUTH, 6, NORTH, 5);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 1), CORE, 0, EAST, 2);
 
-	// S_SOUTH_ch5_C24_R0 M_AIE_IN_ch0_C24_R0 net2
+	// S_AIE_OUT_ch0_C19_R1 M_NORTH_ch5_C19_R1 net77
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 1), SOUTH, 5, CORE, 0);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 2), CORE, 0, NORTH, 5);
 
-	// S_SOUTH_ch5_C25_R0 M_AIE_IN_ch0_C25_R0 net0
+	// S_AIE_OUT_ch0_C19_R2 M_WEST_ch2_C19_R2 net78
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 1), SOUTH, 5, CORE, 0);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 3), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C20_R0 M_EAST_ch3_C20_R0 net45
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 1), CORE, 0, EAST, 3);
+
+	// S_AIE_OUT_ch0_C20_R1 M_SOUTH_ch3_C20_R1 net7
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 2), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C21_R0 M_SOUTH_ch3_C21_R0 net9
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 1), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C21_R1 M_WEST_ch2_C21_R1 net6
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 2), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C21_R2 M_WEST_ch2_C21_R2 net74
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 3), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C22_R0 M_NORTH_ch5_C22_R0 net61
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 1), CORE, 0, NORTH, 5);
+
+	// S_AIE_OUT_ch0_C22_R1 M_WEST_ch2_C22_R1 net62
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 2), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C22_R2 M_WEST_ch3_C22_R2 net76
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 3), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C23_R0 M_WEST_ch3_C23_R0 net46
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 1), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C23_R1 M_WEST_ch2_C23_R1 net60
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 2), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C23_R2 M_WEST_ch2_C23_R2 net58
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 3), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C24_R0 M_WEST_ch3_C24_R0 net44
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 1), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C24_R1 M_WEST_ch2_C24_R1 net42
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 2), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C24_R2 M_WEST_ch2_C24_R2 net56
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 3), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C25_R0 M_WEST_ch3_C25_R0 net26
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 1), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C25_R1 M_WEST_ch2_C25_R1 net40
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 2), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C26_R0 M_NORTH_ch5_C26_R0 net22
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 1), CORE, 0, NORTH, 5);
+
+	// S_AIE_OUT_ch0_C26_R1 M_WEST_ch2_C26_R1 net38
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 2), CORE, 0, WEST, 2);
+
+	// S_AIE_OUT_ch0_C26_R2 M_WEST_ch3_C26_R2 net72
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 3), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C26_R3 M_SOUTH_ch3_C26_R3 net54
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 4), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C27_R1 M_WEST_ch3_C27_R1 net70
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 2), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C27_R2 M_NORTH_ch5_C27_R2 net52
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 3), CORE, 0, NORTH, 5);
+
+	// S_AIE_OUT_ch0_C27_R3 M_SOUTH_ch3_C27_R3 net68
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 4), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C28_R3 M_WEST_ch3_C28_R3 net50
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 4), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C29_R3 M_EAST_ch2_C29_R3 net64
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 4), CORE, 0, EAST, 2);
+
+	// S_AIE_OUT_ch0_C30_R0 M_SOUTH_ch3_C30_R0 net3
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 1), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C30_R1 M_SOUTH_ch3_C30_R1 net2
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 2), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C30_R3 M_SOUTH_ch3_C30_R3 net66
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 4), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C31_R0 M_NORTH_ch5_C31_R0 net36
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 1), CORE, 0, NORTH, 5);
+
+	// S_AIE_OUT_ch0_C31_R1 M_SOUTH_ch3_C31_R1 net5
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 2), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C31_R2 M_WEST_ch3_C31_R2 net34
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 3), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C31_R3 M_WEST_ch3_C31_R3 net48
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 4), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C32_R0 M_WEST_ch3_C32_R0 net18
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 1), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C32_R1 M_WEST_ch3_C32_R1 net32
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 2), CORE, 0, WEST, 3);
+
+	// S_AIE_OUT_ch0_C32_R2 M_SOUTH_ch3_C32_R2 net1
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 3), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch0_C32_R3 M_SOUTH_ch3_C32_R3 net0
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 4), CORE, 0, SOUTH, 3);
+
+	// S_AIE_OUT_ch1_C18_R2 M_SOUTH_ch3_C18_R2 net12
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 3), CORE, 1, SOUTH, 3);
+
+	// S_AIE_OUT_ch1_C19_R0 M_EAST_ch3_C19_R0 net31
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 1), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C19_R2 M_WEST_ch3_C19_R2 net79
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 3), CORE, 1, WEST, 3);
+
+	// S_AIE_OUT_ch1_C21_R1 M_SOUTH_ch3_C21_R1 net8
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 2), CORE, 1, SOUTH, 3);
+
+	// S_AIE_OUT_ch1_C21_R2 M_SOUTH_ch3_C21_R2 net75
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 3), CORE, 1, SOUTH, 3);
+
+	// S_AIE_OUT_ch1_C22_R1 M_NORTH_ch5_C22_R1 net63
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 2), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C22_R2 M_WEST_ch2_C22_R2 net73
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 3), CORE, 1, WEST, 2);
+
+	// S_AIE_OUT_ch1_C23_R0 M_NORTH_ch5_C23_R0 net47
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 1), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C23_R1 M_NORTH_ch5_C23_R1 net57
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 2), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C23_R2 M_EAST_ch3_C23_R2 net59
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 3), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C24_R0 M_NORTH_ch5_C24_R0 net41
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 1), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C24_R1 M_NORTH_ch5_C24_R1 net43
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 2), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C24_R2 M_EAST_ch2_C24_R2 net53
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 3), CORE, 1, EAST, 2);
+
+	// S_AIE_OUT_ch1_C25_R0 M_NORTH_ch5_C25_R0 net27
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 1), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C25_R1 M_EAST_ch3_C25_R1 net37
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 2), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C26_R0 M_EAST_ch3_C26_R0 net23
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 1), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C26_R1 M_NORTH_ch5_C26_R1 net39
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 2), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C26_R2 M_EAST_ch3_C26_R2 net69
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 3), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C26_R3 M_EAST_ch3_C26_R3 net55
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 4), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C27_R1 M_EAST_ch3_C27_R1 net71
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 2), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C27_R2 M_EAST_ch3_C27_R2 net49
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 3), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C27_R3 M_EAST_ch3_C27_R3 net65
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 4), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C28_R3 M_EAST_ch2_C28_R3 net51
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 4), CORE, 1, EAST, 2);
+
+	// S_AIE_OUT_ch1_C30_R1 M_EAST_ch3_C30_R1 net4
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 2), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C30_R3 M_EAST_ch3_C30_R3 net67
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 4), CORE, 1, EAST, 3);
+
+	// S_AIE_OUT_ch1_C31_R0 M_NORTH_ch4_C31_R0 net33
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 1), CORE, 1, NORTH, 4);
+
+	// S_AIE_OUT_ch1_C31_R2 M_NORTH_ch5_C31_R2 net35
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 3), CORE, 1, NORTH, 5);
+
+	// S_AIE_OUT_ch1_C32_R0 M_NORTH_ch5_C32_R0 net19
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 1), CORE, 1, NORTH, 5);
+
+	// S_EAST_ch1_C18_R2 M_AIE_IN_ch0_C18_R2 net74
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 3), EAST, 1, CORE, 0);
+
+	// S_EAST_ch1_C21_R2 M_AIE_IN_ch0_C21_R2 net72
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 3), EAST, 1, CORE, 0);
+
+	// S_EAST_ch1_C24_R1 M_NORTH_ch4_C24_R1 net38
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 2), EAST, 1, NORTH, 4);
+
+	// S_EAST_ch1_C25_R1 M_AIE_IN_ch0_C25_R1 net22
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 2), EAST, 1, CORE, 0);
+
+	// S_EAST_ch2_C18_R2 M_WEST_ch3_C18_R2 net78
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 3), EAST, 2, WEST, 3);
+
+	// S_EAST_ch2_C19_R2 M_WEST_ch1_C19_R2 net74
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 3), EAST, 2, WEST, 1);
+
+	// S_EAST_ch2_C20_R1 M_AIE_IN_ch0_C20_R1 net6
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 2), EAST, 2, CORE, 0);
+
+	// S_EAST_ch2_C20_R2 M_WEST_ch2_C20_R2 net74
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 3), EAST, 2, WEST, 2);
+
+	// S_EAST_ch2_C21_R1 M_WEST_ch3_C21_R1 net62
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 2), EAST, 2, WEST, 3);
+
+	// S_EAST_ch2_C21_R2 M_AIE_IN_ch1_C21_R2 net73
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 3), EAST, 2, CORE, 1);
+
+	// S_EAST_ch2_C22_R1 M_AIE_IN_ch0_C22_R1 net60
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 2), EAST, 2, CORE, 0);
+
+	// S_EAST_ch2_C22_R2 M_AIE_IN_ch0_C22_R2 net58
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 3), EAST, 2, CORE, 0);
+
+	// S_EAST_ch2_C23_R1 M_AIE_IN_ch0_C23_R1 net42
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 2), EAST, 2, CORE, 0);
+
+	// S_EAST_ch2_C23_R2 M_AIE_IN_ch0_C23_R2 net56
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 3), EAST, 2, CORE, 0);
+
+	// S_EAST_ch2_C24_R1 M_AIE_IN_ch0_C24_R1 net40
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 2), EAST, 2, CORE, 0);
+
+	// S_EAST_ch2_C25_R1 M_WEST_ch1_C25_R1 net38
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 2), EAST, 2, WEST, 1);
+
+	// S_EAST_ch2_C26_R1 M_AIE_IN_ch0_C26_R1 net36
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 2), EAST, 2, CORE, 0);
+
+	// S_EAST_ch3_C17_R2 M_AIE_IN_ch0_C17_R2 net78
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(17, 3), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C18_R2 M_AIE_IN_ch1_C18_R2 net79
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 3), EAST, 3, CORE, 1);
+
+	// S_EAST_ch3_C19_R1 M_AIE_IN_ch0_C19_R1 net62
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 2), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C19_R2 M_AIE_IN_ch0_C19_R2 net76
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 3), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C20_R1 M_WEST_ch3_C20_R1 net62
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C20_R2 M_WEST_ch3_C20_R2 net76
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C21_R1 M_AIE_IN_ch0_C21_R1 net70
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 2), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C21_R2 M_WEST_ch3_C21_R2 net76
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C22_R0 M_AIE_IN_ch0_C22_R0 net46
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 1), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C22_R1 M_WEST_ch3_C22_R1 net70
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C22_R2 M_WEST_ch1_C22_R2 net72
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 3), EAST, 3, WEST, 1);
+
+	// S_EAST_ch3_C23_R0 M_AIE_IN_ch0_C23_R0 net44
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 1), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C23_R1 M_WEST_ch3_C23_R1 net70
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C23_R2 M_WEST_ch3_C23_R2 net72
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C24_R0 M_AIE_IN_ch0_C24_R0 net26
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 1), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C24_R1 M_WEST_ch3_C24_R1 net70
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C24_R2 M_WEST_ch3_C24_R2 net72
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C25_R1 M_WEST_ch3_C25_R1 net70
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C25_R2 M_WEST_ch3_C25_R2 net72
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C26_R1 M_WEST_ch3_C26_R1 net70
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C26_R3 M_AIE_IN_ch0_C26_R3 net52
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 4), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C27_R1 M_WEST_ch2_C27_R1 net36
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 2), EAST, 3, WEST, 2);
+
+	// S_EAST_ch3_C27_R2 M_AIE_IN_ch0_C27_R2 net34
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 3), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C27_R3 M_AIE_IN_ch0_C27_R3 net50
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 4), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C28_R1 M_WEST_ch3_C28_R1 net36
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C28_R2 M_WEST_ch3_C28_R2 net34
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C28_R3 M_AIE_IN_ch0_C28_R3 net48
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 4), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C29_R1 M_WEST_ch3_C29_R1 net36
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C29_R2 M_WEST_ch3_C29_R2 net34
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C29_R3 M_WEST_ch3_C29_R3 net48
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 4), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C30_R1 M_WEST_ch3_C30_R1 net36
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 2), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C30_R2 M_WEST_ch3_C30_R2 net34
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 3), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C30_R3 M_WEST_ch3_C30_R3 net48
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 4), EAST, 3, WEST, 3);
+
+	// S_EAST_ch3_C31_R0 M_AIE_IN_ch0_C31_R0 net18
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 1), EAST, 3, CORE, 0);
+
+	// S_EAST_ch3_C31_R1 M_NORTH_ch4_C31_R1 net32
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 2), EAST, 3, NORTH, 4);
+
+	// S_NORTH_ch2_C18_R0 M_SOUTH_ch2_C18_R0 net11
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 1), NORTH, 2, SOUTH, 2);
+
+	// S_NORTH_ch2_C18_R1 M_AIE_IN_ch0_C18_R1 net10
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 2), NORTH, 2, CORE, 0);
+
+	// S_NORTH_ch2_C27_R1 M_AIE_IN_ch0_C27_R1 net68
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 2), NORTH, 2, CORE, 0);
+
+	// S_NORTH_ch3_C17_R0 M_AIE_IN_ch0_C17_R0 net14
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(17, 1), NORTH, 3, CORE, 0);
+
+	// S_NORTH_ch3_C17_R1 M_SOUTH_ch3_C17_R1 net14
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(17, 2), NORTH, 3, SOUTH, 3);
+
+	// S_NORTH_ch3_C18_R0 M_AIE_IN_ch0_C18_R0 net12
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 1), NORTH, 3, CORE, 0);
+
+	// S_NORTH_ch3_C18_R1 M_SOUTH_ch3_C18_R1 net12
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 2), NORTH, 3, SOUTH, 3);
+
+	// S_NORTH_ch3_C20_R0 M_SOUTH_ch3_C20_R0 net7
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 1), NORTH, 3, SOUTH, 3);
+
+	// S_NORTH_ch3_C21_R0 M_AIE_IN_ch0_C21_R0 net8
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 1), NORTH, 3, CORE, 0);
+
+	// S_NORTH_ch3_C21_R1 M_AIE_IN_ch1_C21_R1 net75
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 2), NORTH, 3, CORE, 1);
+
+	// S_NORTH_ch3_C26_R2 M_AIE_IN_ch0_C26_R2 net54
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 3), NORTH, 3, CORE, 0);
+
+	// S_NORTH_ch3_C27_R1 M_AIE_IN_ch1_C27_R1 net69
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 2), NORTH, 3, CORE, 1);
+
+	// S_NORTH_ch3_C27_R2 M_SOUTH_ch2_C27_R2 net68
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 3), NORTH, 3, SOUTH, 2);
+
+	// S_NORTH_ch3_C30_R0 M_AIE_IN_ch0_C30_R0 net2
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 1), NORTH, 3, CORE, 0);
+
+	// S_NORTH_ch3_C30_R1 M_AIE_IN_ch0_C30_R1 net66
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 2), NORTH, 3, CORE, 0);
+
+	// S_NORTH_ch3_C30_R2 M_SOUTH_ch3_C30_R2 net66
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 3), NORTH, 3, SOUTH, 3);
+
+	// S_NORTH_ch3_C31_R0 M_SOUTH_ch3_C31_R0 net5
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 1), NORTH, 3, SOUTH, 3);
+
+	// S_NORTH_ch3_C32_R0 M_SOUTH_ch3_C32_R0 net1
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 1), NORTH, 3, SOUTH, 3);
+
+	// S_NORTH_ch3_C32_R1 M_SOUTH_ch3_C32_R1 net1
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 2), NORTH, 3, SOUTH, 3);
+
+	// S_NORTH_ch3_C32_R2 M_AIE_IN_ch0_C32_R2 net0
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 3), NORTH, 3, CORE, 0);
+
+	// S_SHIM_NORTH_ch2_C18 M_SHIM_SOUTH_ch1_C18 net11
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 0), NORTH, 2, SOUTH, 1);
+
+	// S_SHIM_NORTH_ch3_C17 M_SHIM_SOUTH_ch0_C17 net15
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(17, 0), NORTH, 3, SOUTH, 0);
+
+	// S_SHIM_NORTH_ch3_C18 M_SHIM_SOUTH_ch3_C18 net13
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(18, 0), NORTH, 3, SOUTH, 3);
+
+	// S_SHIM_NORTH_ch3_C20 M_SHIM_SOUTH_ch0_C20 net7
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 0), NORTH, 3, SOUTH, 0);
+
+	// S_SHIM_NORTH_ch3_C21 M_SHIM_SOUTH_ch0_C21 net9
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 0), NORTH, 3, SOUTH, 0);
+
+	// S_SHIM_NORTH_ch3_C30 M_SHIM_SOUTH_ch0_C30 net3
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 0), NORTH, 3, SOUTH, 0);
+
+	// S_SHIM_NORTH_ch3_C31 M_SHIM_SOUTH_ch0_C31 net5
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 0), NORTH, 3, SOUTH, 0);
+
+	// S_SHIM_NORTH_ch3_C32 M_SHIM_SOUTH_ch0_C32 net1
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 0), NORTH, 3, SOUTH, 0);
+
+	// S_SHIM_SOUTH_ch1_C19 M_SHIM_NORTH_ch4_C19 net28
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 0), SOUTH, 1, NORTH, 4);
+
+	// S_SHIM_SOUTH_ch1_C25 M_SHIM_NORTH_ch4_C25 net24
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 0), SOUTH, 1, NORTH, 4);
+
+	// S_SHIM_SOUTH_ch1_C26 M_SHIM_NORTH_ch4_C26 net20
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 0), SOUTH, 1, NORTH, 4);
+
+	// S_SHIM_SOUTH_ch1_C32 M_SHIM_NORTH_ch4_C32 net16
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 0), SOUTH, 1, NORTH, 4);
+
+	// S_SHIM_SOUTH_ch4_C19 M_SHIM_NORTH_ch5_C19 net29
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 0), SOUTH, 4, NORTH, 5);
+
+	// S_SHIM_SOUTH_ch4_C25 M_SHIM_NORTH_ch5_C25 net25
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 0), SOUTH, 4, NORTH, 5);
+
+	// S_SHIM_SOUTH_ch4_C26 M_SHIM_NORTH_ch5_C26 net21
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 0), SOUTH, 4, NORTH, 5);
+
+	// S_SHIM_SOUTH_ch4_C32 M_SHIM_NORTH_ch5_C32 net17
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 0), SOUTH, 4, NORTH, 5);
+
+	// S_SOUTH_ch4_C19_R0 M_AIE_IN_ch0_C19_R0 net28
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 1), SOUTH, 4, CORE, 0);
+
+	// S_SOUTH_ch4_C24_R2 M_AIE_IN_ch0_C24_R2 net38
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 3), SOUTH, 4, CORE, 0);
+
+	// S_SOUTH_ch4_C25_R0 M_AIE_IN_ch0_C25_R0 net24
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 1), SOUTH, 4, CORE, 0);
+
+	// S_SOUTH_ch4_C26_R0 M_AIE_IN_ch0_C26_R0 net20
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 1), SOUTH, 4, CORE, 0);
+
+	// S_SOUTH_ch4_C31_R1 M_NORTH_ch5_C31_R1 net33
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 2), SOUTH, 4, NORTH, 5);
+
+	// S_SOUTH_ch4_C31_R2 M_AIE_IN_ch0_C31_R2 net32
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 3), SOUTH, 4, CORE, 0);
+
+	// S_SOUTH_ch4_C32_R0 M_AIE_IN_ch0_C32_R0 net16
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 1), SOUTH, 4, CORE, 0);
+
+	// S_SOUTH_ch5_C19_R0 M_AIE_IN_ch1_C19_R0 net29
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 1), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C19_R2 M_AIE_IN_ch1_C19_R2 net77
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(19, 3), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C22_R1 M_AIE_IN_ch1_C22_R1 net61
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 2), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C22_R2 M_AIE_IN_ch1_C22_R2 net63
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 3), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C23_R1 M_AIE_IN_ch1_C23_R1 net47
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 2), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C23_R2 M_AIE_IN_ch1_C23_R2 net57
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 3), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C24_R1 M_AIE_IN_ch1_C24_R1 net41
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 2), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C24_R2 M_AIE_IN_ch1_C24_R2 net43
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 3), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C25_R0 M_AIE_IN_ch1_C25_R0 net25
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 1), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C25_R1 M_AIE_IN_ch1_C25_R1 net27
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 2), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C26_R0 M_AIE_IN_ch1_C26_R0 net21
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 1), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C26_R1 M_WEST_ch1_C26_R1 net22
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 2), SOUTH, 5, WEST, 1);
+
+	// S_SOUTH_ch5_C26_R2 M_EAST_ch2_C26_R2 net39
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 3), SOUTH, 5, EAST, 2);
+
+	// S_SOUTH_ch5_C26_R3 M_AIE_IN_ch1_C26_R3 net53
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 4), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C27_R3 M_WEST_ch3_C27_R3 net52
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 4), SOUTH, 5, WEST, 3);
+
+	// S_SOUTH_ch5_C28_R3 M_AIE_IN_ch1_C28_R3 net49
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 4), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C31_R1 M_WEST_ch3_C31_R1 net36
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 2), SOUTH, 5, WEST, 3);
+
+	// S_SOUTH_ch5_C31_R2 M_AIE_IN_ch1_C31_R2 net33
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 3), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C31_R3 M_AIE_IN_ch0_C31_R3 net35
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 4), SOUTH, 5, CORE, 0);
+
+	// S_SOUTH_ch5_C32_R0 M_AIE_IN_ch1_C32_R0 net17
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 1), SOUTH, 5, CORE, 1);
+
+	// S_SOUTH_ch5_C32_R1 M_AIE_IN_ch0_C32_R1 net19
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 2), SOUTH, 5, CORE, 0);
+
+	// S_WEST_ch2_C20_R0 M_AIE_IN_ch0_C20_R0 net30
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 1), WEST, 2, CORE, 0);
+
+	// S_WEST_ch2_C21_R0 M_EAST_ch2_C21_R0 net31
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 1), WEST, 2, EAST, 2);
+
+	// S_WEST_ch2_C22_R0 M_EAST_ch2_C22_R0 net31
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 1), WEST, 2, EAST, 2);
+
+	// S_WEST_ch2_C23_R0 M_EAST_ch3_C23_R0 net31
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 1), WEST, 2, EAST, 3);
+
+	// S_WEST_ch2_C25_R2 M_EAST_ch2_C25_R2 net53
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 3), WEST, 2, EAST, 2);
+
+	// S_WEST_ch2_C26_R2 M_NORTH_ch5_C26_R2 net53
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 3), WEST, 2, NORTH, 5);
+
+	// S_WEST_ch2_C27_R2 M_AIE_IN_ch1_C27_R2 net39
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 3), WEST, 2, CORE, 1);
+
+	// S_WEST_ch2_C29_R3 M_AIE_IN_ch0_C29_R3 net51
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 4), WEST, 2, CORE, 0);
+
+	// S_WEST_ch2_C30_R3 M_AIE_IN_ch0_C30_R3 net64
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 4), WEST, 2, CORE, 0);
+
+	// S_WEST_ch3_C20_R0 M_EAST_ch2_C20_R0 net31
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(20, 1), WEST, 3, EAST, 2);
+
+	// S_WEST_ch3_C21_R0 M_EAST_ch3_C21_R0 net45
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(21, 1), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C22_R0 M_EAST_ch3_C22_R0 net45
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(22, 1), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C23_R0 M_AIE_IN_ch1_C23_R0 net45
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(23, 1), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C24_R0 M_AIE_IN_ch1_C24_R0 net31
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 1), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C24_R2 M_EAST_ch3_C24_R2 net59
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(24, 3), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C25_R2 M_EAST_ch3_C25_R2 net59
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(25, 3), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C26_R1 M_AIE_IN_ch1_C26_R1 net37
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 2), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C26_R2 M_AIE_IN_ch1_C26_R2 net59
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(26, 3), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C27_R0 M_EAST_ch3_C27_R0 net23
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 1), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C27_R2 M_SOUTH_ch3_C27_R2 net69
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 3), WEST, 3, SOUTH, 3);
+
+	// S_WEST_ch3_C27_R3 M_AIE_IN_ch1_C27_R3 net55
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(27, 4), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C28_R0 M_EAST_ch3_C28_R0 net23
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 1), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C28_R1 M_EAST_ch3_C28_R1 net71
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 2), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C28_R2 M_NORTH_ch5_C28_R2 net49
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 3), WEST, 3, NORTH, 5);
+
+	// S_WEST_ch3_C28_R3 M_EAST_ch3_C28_R3 net65
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(28, 4), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C29_R0 M_EAST_ch3_C29_R0 net23
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 1), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C29_R1 M_EAST_ch3_C29_R1 net71
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 2), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C29_R3 M_EAST_ch3_C29_R3 net65
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(29, 4), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C30_R0 M_EAST_ch3_C30_R0 net23
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 1), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C30_R1 M_AIE_IN_ch1_C30_R1 net71
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 2), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C30_R3 M_AIE_IN_ch1_C30_R3 net65
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(30, 4), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C31_R0 M_AIE_IN_ch1_C31_R0 net23
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 1), WEST, 3, CORE, 1);
+
+	// S_WEST_ch3_C31_R1 M_AIE_IN_ch0_C31_R1 net4
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 2), WEST, 3, CORE, 0);
+
+	// S_WEST_ch3_C31_R3 M_EAST_ch3_C31_R3 net67
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(31, 4), WEST, 3, EAST, 3);
+
+	// S_WEST_ch3_C32_R3 M_AIE_IN_ch0_C32_R3 net67
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(32, 4), WEST, 3, CORE, 0);
 
 
 	printf("Resetting cores of graph g1...\n");
+	XAie_CoreReset(&DevInst, XAie_TileLoc(17, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(17, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(17, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(17, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(17, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(17, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(18, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(18, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(18, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(18, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(18, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(18, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(18, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(18, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(18, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(19, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(19, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(19, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(19, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(19, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(19, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(19, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(19, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(19, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(20, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(20, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(20, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(20, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(20, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(20, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(21, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(21, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(21, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(21, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(21, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(21, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(21, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(21, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(21, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(22, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(22, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(22, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(22, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(22, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(22, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(22, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(22, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(22, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(23, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(23, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(23, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(23, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(23, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(23, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(23, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(23, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(23, 3));
 	XAie_CoreReset(&DevInst, XAie_TileLoc(24, 1));
 	XAie_CoreUnreset(&DevInst, XAie_TileLoc(24, 1));
 	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(24, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(24, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(24, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(24, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(24, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(24, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(24, 3));
 	XAie_CoreReset(&DevInst, XAie_TileLoc(25, 1));
 	XAie_CoreUnreset(&DevInst, XAie_TileLoc(25, 1));
 	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(25, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(25, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(25, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(25, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(26, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(26, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(26, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(26, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(26, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(26, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(26, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(26, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(26, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(26, 4));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(26, 4));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(26, 4));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(27, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(27, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(27, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(27, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(27, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(27, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(27, 4));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(27, 4));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(27, 4));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(28, 4));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(28, 4));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(28, 4));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(29, 4));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(29, 4));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(29, 4));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(30, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(30, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(30, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(30, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(30, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(30, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(30, 4));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(30, 4));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(30, 4));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(31, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(31, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(31, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(31, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(31, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(31, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(31, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(31, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(31, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(31, 4));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(31, 4));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(31, 4));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(32, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(32, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(32, 1));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(32, 2));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(32, 2));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(32, 2));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(32, 3));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(32, 3));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(32, 3));
+	XAie_CoreReset(&DevInst, XAie_TileLoc(32, 4));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(32, 4));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(32, 4));
 
 	printf("Configuring DMAs of graph g1...\n");
 
 	printf("Configuring PL-Interface for graph g1...\n");
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(25, 0), 6);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(25, 0), 6, PLIF_WIDTH_32);
-	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(25, 0), 4, PLIF_WIDTH_32);
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(32, 0), 1);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(32, 0), 1, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(32, 0), 0, PLIF_WIDTH_32);
 
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(24, 0), 2);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(24, 0), 2, PLIF_WIDTH_32);
-	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(24, 0), 1, PLIF_WIDTH_32);
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(32, 0), 4);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(32, 0), 4, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(30, 0), 0, PLIF_WIDTH_32);
+
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(26, 0), 1);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(26, 0), 1, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(31, 0), 0, PLIF_WIDTH_32);
+
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(26, 0), 4);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(26, 0), 4, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(20, 0), 0, PLIF_WIDTH_32);
+
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(25, 0), 1);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(25, 0), 1, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(21, 0), 0, PLIF_WIDTH_32);
+
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(25, 0), 4);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(25, 0), 4, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(18, 0), 1, PLIF_WIDTH_32);
+
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(19, 0), 1);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(19, 0), 1, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(18, 0), 3, PLIF_WIDTH_32);
+
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(19, 0), 4);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(19, 0), 4, PLIF_WIDTH_32);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(17, 0), 0, PLIF_WIDTH_32);
 
 
     #endif
@@ -334,16 +1662,100 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
  void g1_core_debug_halt()
   {
 	printf("Putting core(s) of graph g1 on halt state for debugging...\n");
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(17, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(17, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(18, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(18, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(18, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(19, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(19, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(19, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(20, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(20, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(21, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(21, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(21, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(22, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(22, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(22, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(23, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(23, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(23, 3));
 	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(24, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(24, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(24, 3));
 	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(25, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(25, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(26, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(26, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(26, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(26, 4));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(27, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(27, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(27, 4));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(28, 4));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(29, 4));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(30, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(30, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(30, 4));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(31, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(31, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(31, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(31, 4));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(32, 1));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(32, 2));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(32, 3));
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(32, 4));
 	return;
   }
 
   void g1_core_enable()
   {
 	printf("Enabling core(s) of graph g1...\n");
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(17,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(17,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(18,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(18,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(18,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(19,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(19,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(19,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(20,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(20,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(21,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(21,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(21,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(22,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(22,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(22,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(23,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(23,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(23,3 ));
 	XAie_CoreEnable(&DevInst, XAie_TileLoc(24,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(24,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(24,3 ));
 	XAie_CoreEnable(&DevInst, XAie_TileLoc(25,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(25,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(26,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(26,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(26,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(26,4 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(27,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(27,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(27,4 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(28,4 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(29,4 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(30,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(30,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(30,4 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(31,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(31,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(31,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(31,4 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(32,1 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(32,2 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(32,3 ));
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(32,4 ));
 	return;
   }
 
@@ -367,8 +1779,8 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   void enableClockGating()
   {
-    XAie_LocType locs[4] = {XAie_TileLoc(24, 1), XAie_TileLoc(25, 1), XAie_TileLoc(24, 0), XAie_TileLoc(25, 0), };
-    XAie_PmRequestTiles(&DevInst, locs, 4);
+    XAie_LocType locs[66] = {XAie_TileLoc(17, 1), XAie_TileLoc(17, 2), XAie_TileLoc(17, 3), XAie_TileLoc(18, 1), XAie_TileLoc(18, 2), XAie_TileLoc(18, 3), XAie_TileLoc(19, 1), XAie_TileLoc(19, 2), XAie_TileLoc(19, 3), XAie_TileLoc(20, 1), XAie_TileLoc(20, 2), XAie_TileLoc(20, 3), XAie_TileLoc(21, 1), XAie_TileLoc(21, 2), XAie_TileLoc(21, 3), XAie_TileLoc(22, 1), XAie_TileLoc(22, 2), XAie_TileLoc(22, 3), XAie_TileLoc(22, 4), XAie_TileLoc(23, 1), XAie_TileLoc(23, 2), XAie_TileLoc(23, 3), XAie_TileLoc(24, 1), XAie_TileLoc(24, 2), XAie_TileLoc(24, 3), XAie_TileLoc(25, 1), XAie_TileLoc(25, 2), XAie_TileLoc(25, 3), XAie_TileLoc(26, 1), XAie_TileLoc(26, 2), XAie_TileLoc(26, 3), XAie_TileLoc(26, 4), XAie_TileLoc(27, 1), XAie_TileLoc(27, 2), XAie_TileLoc(27, 3), XAie_TileLoc(27, 4), XAie_TileLoc(28, 1), XAie_TileLoc(28, 2), XAie_TileLoc(28, 3), XAie_TileLoc(28, 4), XAie_TileLoc(29, 1), XAie_TileLoc(29, 2), XAie_TileLoc(29, 3), XAie_TileLoc(29, 4), XAie_TileLoc(30, 1), XAie_TileLoc(30, 2), XAie_TileLoc(30, 3), XAie_TileLoc(30, 4), XAie_TileLoc(31, 1), XAie_TileLoc(31, 2), XAie_TileLoc(31, 3), XAie_TileLoc(31, 4), XAie_TileLoc(32, 1), XAie_TileLoc(32, 2), XAie_TileLoc(32, 3), XAie_TileLoc(32, 4), XAie_TileLoc(17, 0), XAie_TileLoc(18, 0), XAie_TileLoc(19, 0), XAie_TileLoc(20, 0), XAie_TileLoc(21, 0), XAie_TileLoc(25, 0), XAie_TileLoc(26, 0), XAie_TileLoc(30, 0), XAie_TileLoc(31, 0), XAie_TileLoc(32, 0), };
+    XAie_PmRequestTiles(&DevInst, locs, 66);
 
     XAie_TurnEccOn(&DevInst);
   }
@@ -394,7 +1806,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {0, "g1", &g1_load_elf, &g1_init, &g1_core_debug_halt, {24, 25}, {0, 0}, {24, 24}, {0, 0}, {0x4, 0x2e64}, {0, 0}, {}, {}, {}, {},  }, 
+    {0, "g1", &g1_load_elf, &g1_init, &g1_core_debug_halt, {17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 21, 21, 21, 22, 22, 22, 23, 23, 23, 24, 24, 24, 25, 25, 26, 26, 26, 26, 27, 27, 27, 28, 29, 30, 30, 30, 31, 31, 31, 31, 32, 32, 32, 32}, {0, 2, 0, 1, 2, 0, 1, 2, 0, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 0, 1, 2, 3, 1, 2, 3, 3, 3, 0, 1, 3, 0, 1, 2, 3, 0, 1, 2, 3}, {17, 17, 18, 18, 18, 19, 19, 19, 20, 20, 21, 21, 21, 21, 22, 22, 23, 23, 23, 23, 24, 24, 24, 25, 26, 26, 26, 26, 27, 27, 27, 28, 29, 29, 30, 30, 31, 31, 31, 31, 31, 32, 32, 32}, {1, 1, 0, 0, 1, 0, 2, 2, 1, 0, 0, 2, 2, 0, 1, 3, 0, 2, 2, 0, 1, 2, 0, 1, 0, 2, 2, 3, 1, 2, 3, 3, 2, 0, 2, 3, 0, 1, 1, 2, 0, 0, 1, 3}, {0xe64, 0x2e64, 0xe64, 0x2e64, 0x4, 0x4, 0xe64, 0x2e64, 0x4, 0x4, 0xe64, 0x4004, 0x6004, 0x2e64, 0x4, 0x4, 0x2e64, 0xe64, 0x2e64, 0xe64, 0x4, 0x4, 0x4, 0x4, 0x4, 0x2e64, 0xe64, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x4, 0x2e64, 0xe64, 0x2e64, 0x4, 0xe64, 0x4, 0x4, 0x4}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {}, {}, {}, {},  }, 
   };
   const int NUM_GRAPH = 1;
 
@@ -402,12 +1814,24 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "g1.in[0]", "g1_in_0_", 25, 0, 6},
-    {1, "g1.out[0]", "g1_out_0_", 25, 1, 4},
-    {2, "g1.in[1]", "g1_in_1_", 24, 0, 2},
-    {3, "g1.out[1]", "g1_out_1_", 24, 1, 1},
+    {0, "g1.in[0]", "g1_in_0_", 32, 0, 1},
+    {1, "g1.out[0]", "g1_out_0_", 32, 1, 0},
+    {2, "g1.in[1]", "g1_in_1_", 32, 0, 4},
+    {3, "g1.out[1]", "g1_out_1_", 30, 1, 0},
+    {4, "g1.in[2]", "g1_in_2_", 26, 0, 1},
+    {5, "g1.out[2]", "g1_out_2_", 31, 1, 0},
+    {6, "g1.in[3]", "g1_in_3_", 26, 0, 4},
+    {7, "g1.out[3]", "g1_out_3_", 20, 1, 0},
+    {8, "g1.in[4]", "g1_in_4_", 25, 0, 1},
+    {9, "g1.out[4]", "g1_out_4_", 21, 1, 0},
+    {10, "g1.in[5]", "g1_in_5_", 25, 0, 4},
+    {11, "g1.out[5]", "g1_out_5_", 18, 1, 1},
+    {12, "g1.in[6]", "g1_in_6_", 19, 0, 1},
+    {13, "g1.out[6]", "g1_out_6_", 18, 1, 3},
+    {14, "g1.in[7]", "g1_in_7_", 19, 0, 4},
+    {15, "g1.out[7]", "g1_out_7_", 17, 1, 0},
   };
-  const int NUM_PLIO = 4;
+  const int NUM_PLIO = 16;
 
 
 /************************** AIE driver and ADF API initializer *****************************/
@@ -486,6 +1910,8 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 #if !defined(__CDO__) && !defined(__AIECONTROLCODE__)
 
 // Kernel Stub Definition
+  template<int ROW> void orthogonalize(input_stream<float> *__restrict Ap, input_stream<float> *__restrict Aq, output_stream<float> *__restrict Bp, output_stream<float> *__restrict Bq) { /* Stub */ } 
   template<int ROW> void transfer(input_stream<float> *__restrict in, output_stream<float> *__restrict out) { /* Stub */ } 
+  template void orthogonalize<8>(input_stream<float> *__restrict,input_stream<float> *__restrict,output_stream<float> *__restrict,output_stream<float> *__restrict); /* explicit template instantiation */ 
   template void transfer<8>(input_stream<float> *__restrict,output_stream<float> *__restrict); /* explicit template instantiation */ 
 #endif

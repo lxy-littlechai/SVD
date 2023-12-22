@@ -60,7 +60,7 @@ void ProcessUnit::orthogonalize() {
     //Vp[i] = Vp[i] * c + Vq[i] * s;
     //Vq[i] = -Vp[i] * c + Vq[i] * s;
   }
-  std::cout << "-------------------\n";
+  std::cout << "\n-------------------\n";
   for(int i = 0;i < size;i ++) {
     std::cout << Ap[i] << " ";
   }
