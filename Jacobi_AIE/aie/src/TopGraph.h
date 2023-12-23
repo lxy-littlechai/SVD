@@ -3,8 +3,8 @@
 #include "ProcessLevel/NormalizeLevel.h"
 #include <cstring>
 
-const int ROW = 8;
-const int MATRIX_COL = 8;
+const int ROW = 4;
+const int MATRIX_COL = 4;
 const int COL = (MATRIX_COL+1)/2;
 
 class TopGraph: public adf::graph {

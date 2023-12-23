@@ -4,7 +4,7 @@
 template<int COL, int ROW>
 class NormalizeLevel:public adf::graph {
 private:
-    TransferUnit<ROW> normUnit[COL];
+    NormalizeUnit<ROW> normUnit[COL];
 
 public:
     adf::port<input> in[COL];
