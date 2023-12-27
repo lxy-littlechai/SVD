@@ -9,6 +9,8 @@ Work
 .Xil
 .theia
 .a
+.wdb
+.wcfg
 .vscode
 *.log
 *.Xil
@@ -21,5 +23,3 @@ pl_*
 /Work
 ISS_*
 .AIE_*
-*.wdb
-*.wcfg
