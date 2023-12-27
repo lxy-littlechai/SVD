@@ -20,8 +20,10 @@ public:
         for(int i = 0;i < MATRIX_COL;i ++) {
             std::string fileIn = "aie/data/in" + std::to_string(i) + ".txt";
             std::string fileOut = "aie/data/out" + std::to_string(i) + ".txt";
-            in[i] = adf::input_plio::create(adf::plio_32_bits, fileIn);
-            out[i] = adf::output_plio::create(adf::plio_32_bits, fileOut);
+            std::string plIn = "in_" + std::to_string(i);
+            std::string plout = "out_" + std::to_string(i);
+            in[i] = adf::input_plio::create(plIn, adf::plio_32_bits, fileIn);
+            out[i] = adf::output_plio::create(plout, adf::plio_32_bits, fileOut);
         }
         
 

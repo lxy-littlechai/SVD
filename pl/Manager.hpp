@@ -2,7 +2,7 @@
 #include <hls_stream.h>
 #include <ap_axi_sdata.h>
 
-
+#define DDR_WIDTH 32
 #define PLIO_WIDTH 32
 #define DATA_WIDTH 32
 
@@ -19,10 +19,10 @@ typedef hls::stream<axis_pkt> axis_pkt_stream;
         3. ~DataBlock
         4. storage order
 */
-template<int BLOCK_SIZE>
+template<int COL, int ROW>
 class DataBlock {
 private:
-    data_t buf[BLOCK_SIZE];
+    data_t buf[COL][ROW];
     int iter;
 
 public:
@@ -32,13 +32,13 @@ public:
 template<int COL, int ROW>
 class DataManager {
 private:
-    DataBlock dataBlock<COL*ROW>;
+    DataBlock dataBlock<COL, ROW>;
 
 public:
-    void load(data_t* in, axis_stream& dataIn);
-    void send(axis_stream& dataIn, axis_pkt_stream& sender);
-    void receive(axis_stream& dataOut, axis_pkt_stream& receiver);
-    void store(data_t* out, axis_stream& dataOut);
+    void load(data_t* in);
+    void send(axis_stream& tx_0, axis_stream& tx_1, axis_stream& tx_2, axis_stream& tx_3);
+    void receive(axis_stream& rx_0, axis_stream& rx_1, axis_stream& rx_2, axis_stream& rx_3);
+    void store(data_t* out);
 
 };
 
@@ -46,4 +46,4 @@ class Helper {
 public:
     static ap_uint<32> generateHeader(unsigned int pktType, unsigned int ID);
     static unsigned int getPacketId(ap_uint<32> header);
-}
+};

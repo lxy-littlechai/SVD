@@ -2,58 +2,65 @@
 #include <cmath>
 
 template<int COL, int ROW>
-void DataManager<COL, ROW>::load(data_t* in, axis_stream& dataIn) {
+void DataManager<COL, ROW>::load(data_t* in) {
     for(int j = 0;j < COL;j ++) {
         for(int i = 0;i < ROW;i ++) {
-            dataIn.write(in);
+            buf[j][i] = in[j*ROW + i]; 
         }
     }
 }
 
 template<int COL, int ROW>
-void DataManager<COL, ROW>::send(axis_stream& dataIn, axis_pkt_stream& sender) {
-    axis_pkt tmp;
+void DataManager<COL, ROW>::send(axis_stream& tx_0, axis_stream& tx_1, axis_stream& tx_2, axis_stream& tx_3) {
+    
     data_t data;
     for(int j = 0;j < COL;j ++) {
-        ap_uint<32> header = Helper::generateHeader(0, j);
-        data(31, 0) = header;
-        tmp.data = data;
-        tmp.keep = -1;
-        tmp.last = 0;
-        sender.write(tmp);
-
-        for(int i = 0;i < ROW-1;i ++) {
-        #pragma HLS PIPELINE II = 1
-            data = dataIn.read(in);
-            tmp.data = data;
-            tmp.keep = -1;
-            tmp.last = 0;
-            sender.write(tmp);
+        for(int i = 0;i < ROW;i ++) {
+            switch (j)  {
+            case 0:
+                tx_0.write(buf[j][i])
+                break;
+            case 0:
+                tx_1.write(buf[j][i])
+                break;
+            case 0:
+                tx_2.write(buf[j][i])
+                break;
+            case 0:
+                tx_3.write(buf[j][i])
+                break;
+            
+            default:
+                break;
+            }
         }
-        data(31, 0) = dataIn.read(in);
-        tmp.data = data;
-        tmp.keep = -1;
-        tmp.last = 1;
-        sender.write(tmp);
     }
 }
 
 template<int COL, int ROW>
-void DataManager<COL, ROW>::receive(axis_stream& dataOut, axis_pkt_stream& receiver) {
-    ap_uint<32> header;
-    data_t data;
-    header = receiver.read()
+void DataManager<COL, ROW>::receive(axis_stream& rx_0, axis_stream& rx_1, axis_stream& rx_2, axis_stream& rx_3) {
+    
     for(int j = 0;j < COL;j ++) {
-        data = receiver.read();
-        dataOut.write(data);
-
+        buf[0][j] = rx_0.read();
+    }
+    for(int j = 0;j < COL;j ++) {
+        buf[1][j] = rx_1.read();
+    }
+    for(int j = 0;j < COL;j ++) {
+        buf[2][j] = rx_2.read();
+    }
+    for(int j = 0;j < COL;j ++) {
+        buf[3][j] = rx_3.read();
     }
 }
 
 template<int COL, int ROW>
-void DataManager<COL, ROW>::store(data_t* out, axis_stream& dataOut) {
+void DataManager<COL, ROW>::store(data_t* out) {
     for(int j = 0;j < COL;j ++) {
-        out[j] = dataOut.read();
+        for(int i = 0;i < ROW;i ++) {
+            out[j*ROW + i] = buf[j][i];
+        }
+        
     }
 }
 
