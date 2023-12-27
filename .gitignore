@@ -21,3 +21,5 @@ pl_*
 /Work
 ISS_*
 .AIE_*
+*.wdb
+*.wcfg

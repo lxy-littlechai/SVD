@@ -4,13 +4,13 @@
 #include <cstring>
 
 const int ROW = 16;
-const int MATRIX_COL = 2;
+const int MATRIX_COL = 4;
 const int COL = (MATRIX_COL+1)/2;
 
 class TopGraph: public adf::graph {
 private:
-    //NormalizeLevel<MATRIX_COL, ROW> normLevel;
-    OrthogonalizeUnit<ROW> evenArray;
+    NormalizeLevel<MATRIX_COL, ROW> normLevel;
+    EvenArray<COL, ROW> evenArray;
 
 public:
     adf::input_plio in[MATRIX_COL];
@@ -27,9 +27,9 @@ public:
 
         for(int i = 0;i < MATRIX_COL; i ++) {
             adf::connect<> (in[i].out[0], evenArray.in[i]);
-            adf::connect<> (evenArray.out[i], out[i].in[0]); 
-            //adf::connect<> (evenArray.out[i], normLevel.in[i]); 
-            //adf::connect<> (normLevel.out[i], out[i].in[0]);
+            //adf::connect<> (evenArray.out[i], out[i].in[0]); 
+            adf::connect<> (evenArray.out[i], normLevel.in[i]); 
+            adf::connect<> (normLevel.out[i], out[i].in[0]);
         }
 
     }

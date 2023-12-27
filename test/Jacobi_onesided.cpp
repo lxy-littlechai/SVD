@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int COL = 2;
+const int COL = 4;
 const int ROW = 16;
 const int ITER = 1;
 float A[COL][ROW], U[COL][ROW], V[COL][ROW], sigma[COL];
@@ -53,6 +53,7 @@ void orthogonalize(int i, int j) {
     float t = sign(tau) / (abs(tau) + sqrt(1 + tau * tau));
     float c = 1 / (sqrt(1 + t * t));
     float s = t * c;
+    //printf("tau = %f, t = %f, c = %f, s = %f\n",tau,t,c,s);
     for(int k = 0;k < ROW;k ++) {
         tmpA[i][k] = A[i][k] * c + A[j][k] * s;
         tmpA[j][k] = -A[i][k] * s + A[j][k] * c;
@@ -122,6 +123,16 @@ void Normalize() {
     
 }
 
+void printA() {
+    cout << "A\n";
+    for(int i = 0;i < ROW;i ++) {
+        for(int j = 0;j < COL;j ++) {
+            cout << A[j][i] << " ";
+        }
+        cout << "\n";
+    }
+}
+
 void print() {
     cout << "U\n";
     for(int i = 0;i < ROW;i ++) {
@@ -147,6 +158,7 @@ void print() {
 void JacobiEven() {
     for(int i = 0;i < ITER;i ++) {
         for(int j = 0;j < COL;j ++) {
+            //printA();
             if(j&1) {
                 for(int k = 1;k < COL-1;k += 2) {
                     orthogonalize(k, k+1);

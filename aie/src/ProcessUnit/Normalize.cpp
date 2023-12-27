@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Normalize.h"
+#include "aie/src/Config.h"
 #include "adf.h"
 #include "aie_api/aie.hpp"
 #include <aie_api/aie_adf.hpp>
@@ -10,16 +11,17 @@ template<int ROW>
 void normalize(input_stream<float>* __restrict in, 
                 output_stream<float>* __restrict out) {
     
-    float A[ROW];
-    for(int i = 0;i < ROW;i ++) {
-        A[i] = readincr(in);
+    aie::vector<float, w> vec;
+    aie::accum<accfloat, w> acc = aie::zeros<accfloat, w>();
+    for(int i = 0;i < ROW/w;i ++) 
+    chess_prepare_for_pipelining
+    chess_loop_range(ROW/w,)
+    {
+        vec = readincr_v<w>(in);
+        acc = aie::mac_square(acc, vec);
     }
-    float tmp = 0;
-    for(int i = 0;i < ROW;i ++) {
-        tmp += A[i]*A[i];
-    }
+    float tmp = reduce_add(acc.to_vector<float>());
     float sigma = aie::sqrt(tmp);
-    //for(int i = 0;i < ROW;i ++) {
-        writeincr(out, sigma);
-    //}
+    writeincr(out, sigma);
+
 }
