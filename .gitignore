@@ -2,6 +2,8 @@ build
 function_*
 trdata*
 aiesimulator_output
+_x
+logs
 .log
 .db
 .vcd
@@ -23,6 +25,6 @@ pl_*
 /Work
 ISS_*
 .AIE_*
-_x.*
+
 
 
