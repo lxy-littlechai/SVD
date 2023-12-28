@@ -1,0 +1,374 @@
+--- !Failure
+Pass:            generate-ir-wrapper
+Name:            MAXIDepthUnspecified
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, Column: 0 }
+Function:        dma
+Args:            
+  - String:          'A depth specification is required for MAXI interface port '''
+  - Name:            in
+  - String:          ''' for cosimulation.'
+...
+--- !Failure
+Pass:            generate-ir-wrapper
+Name:            MAXIDepthUnspecified
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, Column: 0 }
+Function:        dma
+Args:            
+  - String:          'A depth specification is required for MAXI interface port '''
+  - Name:            out
+  - String:          ''' for cosimulation.'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, Column: 0 }
+Function:        dma
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'DataManager<4, 16>::load(ap_uint<128>*)'
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 38, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, Column: 0 }
+Function:        dma
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'DataManager<4, 16>::send(hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 48, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, Column: 0 }
+Function:        dma
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'DataManager<4, 16>::store(ap_uint<128>*)'
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 100, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 39, 
+                   Column: 26 }
+Function:        dma
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        inseq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_39_1
+  - String:          ' '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:39:26'
+  - String:          ' '
+  - Function:        dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 43, 
+                       Column: 27 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.i.load.7
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 101, 
+                   Column: 27 }
+Function:        dma
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        outseq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_101_1
+  - String:          ' '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:101:27'
+  - String:          ' '
+  - Function:        dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 105, 
+                       Column: 34 }
+  - OrigDirection:   write
+  - OrigID:          for.inc.i12.store.8
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 101, 
+                   Column: 27 }
+Function:        dma
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - OrigLength:      '64'
+  - String:          ' x '
+  - OrigWords:       '128'
+  - String:          'bit words has been widened by '
+  - Factor:          '4'
+  - String:          ': '
+  - Length:          '16'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 101, 
+                       Column: 27 }
+  - OrigDirection:   write
+  - OrigID:          outseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_103_2
+  - String:          ' '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:103:31'
+  - String:          ' '
+  - Function:        dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 39, 
+                   Column: 26 }
+Function:        dma
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '64'
+  - String:          ' x '
+  - OrigWords:       '128'
+  - String:          'bit words has been widened by '
+  - Factor:          '4'
+  - String:          ': '
+  - Length:          '16'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 39, 
+                       Column: 26 }
+  - OrigDirection:   read
+  - OrigID:          inseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq1
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_41_2
+  - String:          ' '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:41:30'
+  - String:          ' '
+  - Function:        dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_78_1
+  - String:          '> at '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:78:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_83_2
+  - String:          '> at '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:83:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_88_3
+  - String:          '> at '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:88:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_93_4
+  - String:          '> at '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:93:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_41_2
+  - String:          '> at '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:41:30'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_53_2
+  - String:          '> at '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:53:30'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_103_2
+  - String:          '> at '
+  - LoopLoc:         '/home/lxy/Projects/SVD/pl/Manager.hpp:103:31'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 39, 
+                   Column: 26 }
+Function:        dma
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 39, 
+                   Column: 26 }
+Function:        dma
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 101, 
+                   Column: 27 }
+Function:        dma
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - Function:        dma
+    DebugLoc:        { File: /home/lxy/Projects/SVD/pl/dma.cpp, Line: 9, 
+                       Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /home/lxy/Projects/SVD/pl/Manager.hpp, Line: 101, 
+                   Column: 27 }
+Function:        dma
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

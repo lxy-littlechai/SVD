@@ -1,0 +1,16 @@
+Begin Function 'receive'
+
+RTL state condition: (1'b1 == ap_CS_fsm_state11)
+# ST_11
+
+RTL state condition: (1'b1 == ap_CS_fsm_state2)
+# ST_2
+
+RTL state condition: (1'b1 == ap_CS_fsm_state5)
+# ST_5
+
+RTL state condition: (1'b1 == ap_CS_fsm_state8)
+# ST_8
+
+End Function 'receive'
+

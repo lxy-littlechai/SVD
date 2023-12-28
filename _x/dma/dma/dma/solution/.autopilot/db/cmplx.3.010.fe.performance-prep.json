@@ -1,0 +1,33 @@
+{
+  "0": {
+    "basicblocks": 22,
+    "calls": "1",
+    "file": "dma.cpp",
+    "fileloc": 7,
+    "instructions": 203,
+    "loads": {
+      "G": 4,
+      "L": 6
+    },
+    "name": "dma",
+    "stores": {
+      "L": 21
+    },
+    "total_instructions": 360
+  },
+  "1": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "Manager.hpp",
+    "fileloc": 75,
+    "instructions": 89,
+    "loads": {
+      "L": 8
+    },
+    "name": "receive",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 109
+  }
+}

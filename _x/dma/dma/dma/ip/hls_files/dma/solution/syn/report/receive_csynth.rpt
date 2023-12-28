@@ -1,0 +1,184 @@
+
+
+================================================================
+== Vitis HLS Report for 'receive'
+================================================================
+* Date:           Fri Dec 29 00:01:03 2023
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        dma
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  1.899 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       34|       34|  0.113 us|  0.113 us|   34|   34|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------+----------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                                             |                                  |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |                   Instance                  |              Module              |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +---------------------------------------------+----------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |grp_receive_Pipeline_VITIS_LOOP_78_1_fu_68   |receive_Pipeline_VITIS_LOOP_78_1  |        6|        6|  19.998 ns|  19.998 ns|    6|    6|       no|
+        |grp_receive_Pipeline_VITIS_LOOP_83_2_fu_82   |receive_Pipeline_VITIS_LOOP_83_2  |        6|        6|  19.998 ns|  19.998 ns|    6|    6|       no|
+        |grp_receive_Pipeline_VITIS_LOOP_88_3_fu_96   |receive_Pipeline_VITIS_LOOP_88_3  |        6|        6|  19.998 ns|  19.998 ns|    6|    6|       no|
+        |grp_receive_Pipeline_VITIS_LOOP_93_4_fu_110  |receive_Pipeline_VITIS_LOOP_93_4  |        6|        6|  19.998 ns|  19.998 ns|    6|    6|       no|
+        +---------------------------------------------+----------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+---------+--------+-----+
+|       Name      | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++-----------------+---------+------+---------+--------+-----+
+|DSP              |        -|     -|        -|       -|    -|
+|Expression       |        -|     -|        0|       6|    -|
+|FIFO             |        -|     -|        -|       -|    -|
+|Instance         |        -|     -|      548|     144|    -|
+|Memory           |        -|     -|        -|       -|    -|
+|Multiplexer      |        -|     -|        -|     417|    -|
+|Register         |        -|     -|       15|       -|    -|
++-----------------+---------+------+---------+--------+-----+
+|Total            |        0|     0|      563|     567|    0|
++-----------------+---------+------+---------+--------+-----+
+|Available        |     1934|  1968|  1799680|  899840|  463|
++-----------------+---------+------+---------+--------+-----+
+|Utilization (%)  |        0|     0|       ~0|      ~0|    0|
++-----------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------+----------------------------------+---------+----+-----+----+-----+
+    |                   Instance                  |              Module              | BRAM_18K| DSP|  FF | LUT| URAM|
+    +---------------------------------------------+----------------------------------+---------+----+-----+----+-----+
+    |grp_receive_Pipeline_VITIS_LOOP_78_1_fu_68   |receive_Pipeline_VITIS_LOOP_78_1  |        0|   0|  137|  36|    0|
+    |grp_receive_Pipeline_VITIS_LOOP_83_2_fu_82   |receive_Pipeline_VITIS_LOOP_83_2  |        0|   0|  137|  36|    0|
+    |grp_receive_Pipeline_VITIS_LOOP_88_3_fu_96   |receive_Pipeline_VITIS_LOOP_88_3  |        0|   0|  137|  36|    0|
+    |grp_receive_Pipeline_VITIS_LOOP_93_4_fu_110  |receive_Pipeline_VITIS_LOOP_93_4  |        0|   0|  137|  36|    0|
+    +---------------------------------------------+----------------------------------+---------+----+-----+----+-----+
+    |Total                                        |                                  |        0|   0|  548| 144|    0|
+    +---------------------------------------------+----------------------------------+---------+----+-----+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------+----------+----+---+----+------------+------------+
+    |   Variable Name   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------+----------+----+---+----+------------+------------+
+    |ap_ext_blocking_n  |       and|   0|  0|   2|           1|           2|
+    |ap_int_blocking_n  |       and|   0|  0|   2|           1|           2|
+    |ap_str_blocking_n  |       and|   0|  0|   2|           1|           2|
+    +-------------------+----------+----+---+----+------------+------------+
+    |Total              |          |   0|  0|   6|           3|           6|
+    +-------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------+-----+-----------+-----+-----------+
+    |       Name      | LUT | Input Size| Bits| Total Bits|
+    +-----------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm        |   10|         12|    1|         12|
+    |rx_0_TREADY      |    2|          2|    1|          2|
+    |rx_1_TREADY      |    2|          2|    1|          2|
+    |rx_2_TREADY      |    2|          2|    1|          2|
+    |rx_3_TREADY      |    2|          2|    1|          2|
+    |this_r_address0  |   17|          5|    6|         30|
+    |this_r_ce0       |    6|          5|    1|          5|
+    |this_r_d0        |  370|          5|  128|        640|
+    |this_r_we0       |    6|          5|    1|          5|
+    +-----------------+-----+-----------+-----+-----------+
+    |Total            |  417|         40|  141|        700|
+    +-----------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |                           Name                           | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                 |  11|   0|   11|          0|
+    |grp_receive_Pipeline_VITIS_LOOP_78_1_fu_68_ap_start_reg   |   1|   0|    1|          0|
+    |grp_receive_Pipeline_VITIS_LOOP_83_2_fu_82_ap_start_reg   |   1|   0|    1|          0|
+    |grp_receive_Pipeline_VITIS_LOOP_88_3_fu_96_ap_start_reg   |   1|   0|    1|          0|
+    |grp_receive_Pipeline_VITIS_LOOP_93_4_fu_110_ap_start_reg  |   1|   0|    1|          0|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                     |  15|   0|   15|          0|
+    +----------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+---------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  | Source Object |    C Type    |
++-------------------+-----+-----+------------+---------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_ext_blocking_n  |  out|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_str_blocking_n  |  out|    1|  ap_ctrl_hs|        receive|  return value|
+|ap_int_blocking_n  |  out|    1|  ap_ctrl_hs|        receive|  return value|
+|this_r_address0    |  out|    6|   ap_memory|         this_r|         array|
+|this_r_ce0         |  out|    1|   ap_memory|         this_r|         array|
+|this_r_we0         |  out|    1|   ap_memory|         this_r|         array|
+|this_r_d0          |  out|  128|   ap_memory|         this_r|         array|
+|rx_0_TDATA         |   in|  128|        axis|  rx_0_V_data_V|       pointer|
+|rx_0_TVALID        |   in|    1|        axis|  rx_0_V_last_V|       pointer|
+|rx_0_TREADY        |  out|    1|        axis|  rx_0_V_last_V|       pointer|
+|rx_0_TLAST         |   in|    1|        axis|  rx_0_V_last_V|       pointer|
+|rx_0_TKEEP         |   in|   16|        axis|  rx_0_V_keep_V|       pointer|
+|rx_0_TSTRB         |   in|   16|        axis|  rx_0_V_strb_V|       pointer|
+|rx_1_TDATA         |   in|  128|        axis|  rx_1_V_data_V|       pointer|
+|rx_1_TVALID        |   in|    1|        axis|  rx_1_V_last_V|       pointer|
+|rx_1_TREADY        |  out|    1|        axis|  rx_1_V_last_V|       pointer|
+|rx_1_TLAST         |   in|    1|        axis|  rx_1_V_last_V|       pointer|
+|rx_1_TKEEP         |   in|   16|        axis|  rx_1_V_keep_V|       pointer|
+|rx_1_TSTRB         |   in|   16|        axis|  rx_1_V_strb_V|       pointer|
+|rx_2_TDATA         |   in|  128|        axis|  rx_2_V_data_V|       pointer|
+|rx_2_TVALID        |   in|    1|        axis|  rx_2_V_last_V|       pointer|
+|rx_2_TREADY        |  out|    1|        axis|  rx_2_V_last_V|       pointer|
+|rx_2_TLAST         |   in|    1|        axis|  rx_2_V_last_V|       pointer|
+|rx_2_TKEEP         |   in|   16|        axis|  rx_2_V_keep_V|       pointer|
+|rx_2_TSTRB         |   in|   16|        axis|  rx_2_V_strb_V|       pointer|
+|rx_3_TDATA         |   in|  128|        axis|  rx_3_V_data_V|       pointer|
+|rx_3_TVALID        |   in|    1|        axis|  rx_3_V_last_V|       pointer|
+|rx_3_TREADY        |  out|    1|        axis|  rx_3_V_last_V|       pointer|
+|rx_3_TLAST         |   in|    1|        axis|  rx_3_V_last_V|       pointer|
+|rx_3_TKEEP         |   in|   16|        axis|  rx_3_V_keep_V|       pointer|
+|rx_3_TSTRB         |   in|   16|        axis|  rx_3_V_strb_V|       pointer|
++-------------------+-----+-----+------------+---------------+--------------+
+

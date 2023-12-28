@@ -1,0 +1,201 @@
+
+
+================================================================
+== Vitis HLS Report for 'receive'
+================================================================
+* Date:           Fri Dec 29 00:01:02 2023
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        dma
+* Solution:       solution (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  1.899 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       34|       34|  0.113 us|  0.113 us|   34|   34|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%empty = wait i32 @_ssdm_op_Wait"   --->   Operation 12 'wait' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [2/2] (1.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_78_1, i128 %this_r, i128 %rx_0_V_data_V, i16 %rx_0_V_keep_V, i16 %rx_0_V_strb_V, i1 %rx_0_V_last_V"   --->   Operation 13 'call' 'call_ln0' <Predicate = true> <Delay = 1.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 14 [1/2] (0.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_78_1, i128 %this_r, i128 %rx_0_V_data_V, i16 %rx_0_V_keep_V, i16 %rx_0_V_strb_V, i1 %rx_0_V_last_V"   --->   Operation 14 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%empty_35 = wait i32 @_ssdm_op_Wait"   --->   Operation 15 'wait' 'empty_35' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 1.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%empty_36 = wait i32 @_ssdm_op_Wait"   --->   Operation 16 'wait' 'empty_36' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [2/2] (1.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_83_2, i128 %this_r, i128 %rx_1_V_data_V, i16 %rx_1_V_keep_V, i16 %rx_1_V_strb_V, i1 %rx_1_V_last_V"   --->   Operation 17 'call' 'call_ln0' <Predicate = true> <Delay = 1.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 18 [1/2] (0.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_83_2, i128 %this_r, i128 %rx_1_V_data_V, i16 %rx_1_V_keep_V, i16 %rx_1_V_strb_V, i1 %rx_1_V_last_V"   --->   Operation 18 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%empty_37 = wait i32 @_ssdm_op_Wait"   --->   Operation 19 'wait' 'empty_37' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 1.00>
+ST_7 : Operation 20 [1/1] (0.00ns)   --->   "%empty_38 = wait i32 @_ssdm_op_Wait"   --->   Operation 20 'wait' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 21 [2/2] (1.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_88_3, i128 %this_r, i128 %rx_2_V_data_V, i16 %rx_2_V_keep_V, i16 %rx_2_V_strb_V, i1 %rx_2_V_last_V"   --->   Operation 21 'call' 'call_ln0' <Predicate = true> <Delay = 1.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_88_3, i128 %this_r, i128 %rx_2_V_data_V, i16 %rx_2_V_keep_V, i16 %rx_2_V_strb_V, i1 %rx_2_V_last_V"   --->   Operation 22 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 23 [1/1] (0.00ns)   --->   "%empty_39 = wait i32 @_ssdm_op_Wait"   --->   Operation 23 'wait' 'empty_39' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 1.00>
+ST_10 : Operation 24 [1/1] (0.00ns)   --->   "%empty_40 = wait i32 @_ssdm_op_Wait"   --->   Operation 24 'wait' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 25 [2/2] (1.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_93_4, i128 %this_r, i128 %rx_3_V_data_V, i16 %rx_3_V_keep_V, i16 %rx_3_V_strb_V, i1 %rx_3_V_last_V"   --->   Operation 25 'call' 'call_ln0' <Predicate = true> <Delay = 1.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 26 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %rx_1_V_data_V, i16 %rx_1_V_keep_V, i16 %rx_1_V_strb_V, i1 0, i1 %rx_1_V_last_V, i1 0, i1 0, void @empty_1"   --->   Operation 26 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 27 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %rx_2_V_data_V, i16 %rx_2_V_keep_V, i16 %rx_2_V_strb_V, i1 0, i1 %rx_2_V_last_V, i1 0, i1 0, void @empty_2"   --->   Operation 27 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 28 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %rx_3_V_data_V, i16 %rx_3_V_keep_V, i16 %rx_3_V_strb_V, i1 0, i1 %rx_3_V_last_V, i1 0, i1 0, void @empty_3"   --->   Operation 28 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 29 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %rx_0_V_data_V, i16 %rx_0_V_keep_V, i16 %rx_0_V_strb_V, i1 0, i1 %rx_0_V_last_V, i1 0, i1 0, void @empty_10"   --->   Operation 29 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %rx_3_V_last_V, i16 %rx_3_V_strb_V, i16 %rx_3_V_keep_V, i128 %rx_3_V_data_V, void @empty_22, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %rx_2_V_last_V, i16 %rx_2_V_strb_V, i16 %rx_2_V_keep_V, i128 %rx_2_V_data_V, void @empty_22, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %rx_1_V_last_V, i16 %rx_1_V_strb_V, i16 %rx_1_V_keep_V, i128 %rx_1_V_data_V, void @empty_22, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %rx_0_V_last_V, i16 %rx_0_V_strb_V, i16 %rx_0_V_keep_V, i128 %rx_0_V_data_V, void @empty_22, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 34 [1/2] (0.00ns)   --->   "%call_ln0 = call void @receive_Pipeline_VITIS_LOOP_93_4, i128 %this_r, i128 %rx_3_V_data_V, i16 %rx_3_V_keep_V, i16 %rx_3_V_strb_V, i1 %rx_3_V_last_V"   --->   Operation 34 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 35 [1/1] (0.00ns)   --->   "%ret_ln98 = ret" [/home/lxy/Projects/SVD/pl/Manager.hpp:98]   --->   Operation 35 'ret' 'ret_ln98' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.333ns, clock uncertainty: 0.900ns.
+
+ <State 1>: 1.000ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln0') to 'receive_Pipeline_VITIS_LOOP_78_1' [27]  (1.000 ns)
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 0.000ns
+The critical path consists of the following:
+
+ <State 4>: 1.000ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln0') to 'receive_Pipeline_VITIS_LOOP_83_2' [30]  (1.000 ns)
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 0.000ns
+The critical path consists of the following:
+
+ <State 7>: 1.000ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln0') to 'receive_Pipeline_VITIS_LOOP_88_3' [33]  (1.000 ns)
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+ <State 9>: 0.000ns
+The critical path consists of the following:
+
+ <State 10>: 1.000ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln0') to 'receive_Pipeline_VITIS_LOOP_93_4' [36]  (1.000 ns)
+
+ <State 11>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

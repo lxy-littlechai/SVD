@@ -3,10 +3,7 @@
 #include "ProcessLevel/NormalizeLevel.h"
 #include <cstring>
 
-const int ROW = 16;
-const int MATRIX_COL = 4;
-const int COL = (MATRIX_COL+1)/2;
-
+template<int ROW, int MATRIX_COL, int COL>
 class TopGraph: public adf::graph {
 private:
     NormalizeLevel<MATRIX_COL, ROW> normLevel;

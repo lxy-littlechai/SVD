@@ -1,0 +1,242 @@
+
+
+================================================================
+== Synthesis Summary Report of 'dma'
+================================================================
++ General Information: 
+    * Date:           Fri Dec 29 00:01:04 2023
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        dma
+    * Solution:       solution (Vitis Kernel Flow Target)
+    * Product family: versalaicore
+    * Target device:  xcvc1902-vsva2197-2MP-e-S
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |                      Modules                      |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |         |    |            |            |     |
+    |                      & Loops                      |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF     |     LUT    | URAM|
+    +---------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+------------+------------+-----+
+    |+ dma                                              |  Timing|  -0.07|      381|  1.270e+03|         -|      382|     -|        no|  78 (4%)|   -|  9041 (~0%)|  8227 (~0%)|    -|
+    | + dma_Pipeline_VITIS_LOOP_39_1_VITIS_LOOP_41_2    |  Timing|  -0.07|       67|    223.311|         -|       67|     -|        no|        -|   -|   546 (~0%)|   593 (~0%)|    -|
+    |  o VITIS_LOOP_39_1_VITIS_LOOP_41_2                |       -|   2.43|       65|    216.645|         3|        1|    64|       yes|        -|   -|           -|           -|    -|
+    | + dma_Pipeline_VITIS_LOOP_51_1_VITIS_LOOP_53_2    |  Timing|  -0.07|       67|    223.311|         -|       67|     -|        no|        -|   -|    30 (~0%)|   103 (~0%)|    -|
+    |  o VITIS_LOOP_51_1_VITIS_LOOP_53_2                |       -|   2.43|       65|    216.645|         3|        1|    64|       yes|        -|   -|           -|           -|    -|
+    | + receive                                         |       -|   0.53|       34|    113.322|         -|       34|     -|        no|        -|   -|   563 (~0%)|   567 (~0%)|    -|
+    |  + receive_Pipeline_VITIS_LOOP_78_1               |       -|   0.53|        6|     19.998|         -|        6|     -|        no|        -|   -|   137 (~0%)|    36 (~0%)|    -|
+    |   o VITIS_LOOP_78_1                               |       -|   2.43|        4|     13.332|         2|        1|     4|       yes|        -|   -|           -|           -|    -|
+    |  + receive_Pipeline_VITIS_LOOP_83_2               |       -|   0.53|        6|     19.998|         -|        6|     -|        no|        -|   -|   137 (~0%)|    36 (~0%)|    -|
+    |   o VITIS_LOOP_83_2                               |       -|   2.43|        4|     13.332|         2|        1|     4|       yes|        -|   -|           -|           -|    -|
+    |  + receive_Pipeline_VITIS_LOOP_88_3               |       -|   0.53|        6|     19.998|         -|        6|     -|        no|        -|   -|   137 (~0%)|    36 (~0%)|    -|
+    |   o VITIS_LOOP_88_3                               |       -|   2.43|        4|     13.332|         2|        1|     4|       yes|        -|   -|           -|           -|    -|
+    |  + receive_Pipeline_VITIS_LOOP_93_4               |       -|   0.53|        6|     19.998|         -|        6|     -|        no|        -|   -|   137 (~0%)|    36 (~0%)|    -|
+    |   o VITIS_LOOP_93_4                               |       -|   2.43|        4|     13.332|         2|        1|     4|       yes|        -|   -|           -|           -|    -|
+    | + dma_Pipeline_VITIS_LOOP_101_1_VITIS_LOOP_103_2  |  Timing|  -0.07|       67|    223.311|         -|       67|     -|        no|        -|   -|   414 (~0%)|   711 (~0%)|    -|
+    |  o VITIS_LOOP_101_1_VITIS_LOOP_103_2              |       -|   2.43|       65|    216.645|         3|        1|    64|       yes|        -|   -|           -|           -|    -|
+    +---------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+---------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | 128 -> 512 | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 64          | 16          | BRAM=44           |
+| m_axi_gmem2 | 128 -> 512 | 64            | 64      | slave  | 0        | 512       | 16           | 1            | 16          | 64          | BRAM=30           |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | in_r_1   | 0x10   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | in_r_2   | 0x14   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | out_r_1  | 0x1c   | 32    | W      | Data signal of out_r             |                                                                                    |
+| s_axi_control | out_r_2  | 0x20   | 32    | W      | Data signal of out_r             |                                                                                    |
++---------------+----------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* AXIS
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| rx_0      | in        | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| rx_1      | in        | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| rx_2      | in        | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| rx_3      | in        | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| tx_0      | out       | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| tx_1      | out       | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| tx_2      | out       | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| tx_3      | out       | both          | 128   | 16    | 1     | 1      | 16    | 1      |
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* Other Ports
++-------------+-----------+----------+
+| Port        | Direction | Bitwidth |
++-------------+-----------+----------+
+| event_done  | out       | 1        |
+| event_start | out       | 1        |
++-------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------------------------------------------------------+
+| Argument | Direction | Datatype                                                 |
++----------+-----------+----------------------------------------------------------+
+| in       | in        | ap_uint<128>*                                            |
+| out      | out       | ap_uint<128>*                                            |
+| tx_0     | out       | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| tx_1     | out       | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| tx_2     | out       | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| tx_3     | out       | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| rx_0     | in        | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| rx_1     | in        | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| rx_2     | in        | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| rx_3     | in        | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
++----------+-----------+----------------------------------------------------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| in       | m_axi_gmem0   | interface |          |
+| in       | s_axi_control | interface | offset   |
+| out      | m_axi_gmem2   | interface |          |
+| out      | s_axi_control | interface | offset   |
+| tx_0     | tx_0          | interface |          |
+| tx_1     | tx_1          | interface |          |
+| tx_2     | tx_2          | interface |          |
+| tx_3     | tx_3          | interface |          |
+| rx_0     | rx_0          | interface |          |
+| rx_1     | rx_1          | interface |          |
+| rx_2     | rx_2          | interface |          |
+| rx_3     | rx_3          | interface |          |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+
+| HW Interface | Direction | Length | Width |
++--------------+-----------+--------+-------+
+| m_axi_gmem0  | read      | 16     | 512   |
+| m_axi_gmem2  | write     | 16     | 512   |
++--------------+-----------+--------+-------+
+
+* All M_AXI Variable Accesses
++--------------+----------+----------------------------------------------+-----------+--------------+--------+------------------+----------------------------------------------+
+| HW Interface | Variable | Access Location                              | Direction | Burst Status | Length | Loop             | Loop Location                                |
++--------------+----------+----------------------------------------------+-----------+--------------+--------+------------------+----------------------------------------------+
+| m_axi_gmem0  | in       | /home/lxy/Projects/SVD/pl/Manager.hpp:43:27  | read      | Widened      | 16     | VITIS_LOOP_41_2  | /home/lxy/Projects/SVD/pl/Manager.hpp:41:30  |
+| m_axi_gmem0  | in       | /home/lxy/Projects/SVD/pl/Manager.hpp:43:27  | read      | Inferred     | 64     | VITIS_LOOP_39_1  | /home/lxy/Projects/SVD/pl/Manager.hpp:39:26  |
+| m_axi_gmem2  | out      | /home/lxy/Projects/SVD/pl/Manager.hpp:105:34 | write     | Widened      | 16     | VITIS_LOOP_103_2 | /home/lxy/Projects/SVD/pl/Manager.hpp:103:31 |
+| m_axi_gmem2  | out      | /home/lxy/Projects/SVD/pl/Manager.hpp:105:34 | write     | Inferred     | 64     | VITIS_LOOP_101_1 | /home/lxy/Projects/SVD/pl/Manager.hpp:101:27 |
++--------------+----------+----------------------------------------------+-----------+--------------+--------+------------------+----------------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                              | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++---------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + dma                                             | 0   |        |             |     |        |         |
+|  + dma_Pipeline_VITIS_LOOP_39_1_VITIS_LOOP_41_2   | 0   |        |             |     |        |         |
+|    add_ln39_1_fu_183_p2                           |     |        | add_ln39_1  | add | fabric | 0       |
+|    add_ln39_fu_273_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln43_fu_313_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|    add_ln41_fu_225_p2                             |     |        | add_ln41    | add | fabric | 0       |
+|  + dma_Pipeline_VITIS_LOOP_51_1_VITIS_LOOP_53_2   | 0   |        |             |     |        |         |
+|    add_ln51_1_fu_253_p2                           |     |        | add_ln51_1  | add | fabric | 0       |
+|    add_ln51_fu_277_p2                             |     |        | add_ln51    | add | fabric | 0       |
+|    add_ln55_fu_321_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln53_fu_327_p2                             |     |        | add_ln53    | add | fabric | 0       |
+|  + receive                                        | 0   |        |             |     |        |         |
+|   + receive_Pipeline_VITIS_LOOP_78_1              | 0   |        |             |     |        |         |
+|     add_ln78_fu_97_p2                             |     |        | add_ln78    | add | fabric | 0       |
+|   + receive_Pipeline_VITIS_LOOP_83_2              | 0   |        |             |     |        |         |
+|     add_ln83_fu_101_p2                            |     |        | add_ln83    | add | fabric | 0       |
+|   + receive_Pipeline_VITIS_LOOP_88_3              | 0   |        |             |     |        |         |
+|     add_ln88_fu_99_p2                             |     |        | add_ln88    | add | fabric | 0       |
+|   + receive_Pipeline_VITIS_LOOP_93_4              | 0   |        |             |     |        |         |
+|     add_ln93_fu_101_p2                            |     |        | add_ln93    | add | fabric | 0       |
+|  + dma_Pipeline_VITIS_LOOP_101_1_VITIS_LOOP_103_2 | 0   |        |             |     |        |         |
+|    add_ln101_1_fu_183_p2                          |     |        | add_ln101_1 | add | fabric | 0       |
+|    add_ln101_fu_207_p2                            |     |        | add_ln101   | add | fabric | 0       |
+|    add_ln105_fu_251_p2                            |     |        | add_ln105   | add | fabric | 0       |
+|    add_ln103_fu_267_p2                            |     |        | add_ln103   | add | fabric | 0       |
++---------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+--------------+-----------+------+------+--------+-------------+------+---------+------------------+
+| Name              | Usage        | Type      | BRAM | URAM | Pragma | Variable    | Impl | Latency | Bitwidth, Depth, |
+|                   |              |           |      |      |        |             |      |         | Banks            |
++-------------------+--------------+-----------+------+------+--------+-------------+------+---------+------------------+
+| + dma             |              |           | 78   | 0    |        |             |      |         |                  |
+|   control_s_axi_U | interface    | s_axilite |      |      |        |             |      |         |                  |
+|   gmem0_m_axi_U   | interface    | m_axi     | 44   |      |        |             |      |         |                  |
+|   gmem2_m_axi_U   | interface    | m_axi     | 30   |      |        |             |      |         |                  |
+|   dataManager_U   | ram_1p array |           | 4    |      |        | dataManager | auto | 1       | 128, 64, 1       |
++-------------------+--------------+-----------+------+------+--------+-------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+--------------------------------------------------------------------------------------------+-----------------------------------------------+
+| Type      | Options                                                                                    | Location                                      |
++-----------+--------------------------------------------------------------------------------------------+-----------------------------------------------+
+| interface | m_axi offset=slave bundle=gmem0 port=in max_read_burst_length=16 num_read_outstanding=64   | ../../../pl/dma.cpp:10 in dma, in             |
+| interface | s_axilite bundle=control port=in                                                           | ../../../pl/dma.cpp:11 in dma, in             |
+| interface | m_axi offset=slave bundle=gmem2 port=out max_write_burst_length=1 num_write_outstanding=64 | ../../../pl/dma.cpp:12 in dma, out            |
+| interface | s_axilite bundle=control port=out                                                          | ../../../pl/dma.cpp:13 in dma, out            |
+| interface | axis port=tx_0                                                                             | ../../../pl/dma.cpp:14 in dma, tx_0           |
+| interface | axis port=tx_1                                                                             | ../../../pl/dma.cpp:15 in dma, tx_1           |
+| interface | axis port=tx_2                                                                             | ../../../pl/dma.cpp:16 in dma, tx_2           |
+| interface | axis port=tx_3                                                                             | ../../../pl/dma.cpp:17 in dma, tx_3           |
+| interface | axis port=rx_0                                                                             | ../../../pl/dma.cpp:18 in dma, rx_0           |
+| interface | axis port=rx_1                                                                             | ../../../pl/dma.cpp:19 in dma, rx_1           |
+| interface | axis port=rx_2                                                                             | ../../../pl/dma.cpp:20 in dma, rx_2           |
+| interface | axis port=rx_3                                                                             | ../../../pl/dma.cpp:21 in dma, rx_3           |
+| interface | s_axilite bundle=control port=return                                                       | ../../../pl/dma.cpp:22 in dma, return         |
+| inline    |                                                                                            | ../../../pl/Manager.hpp:116 in generateheader |
+| inline    |                                                                                            | ../../../pl/Manager.hpp:130 in getpacketid    |
++-----------+--------------------------------------------------------------------------------------------+-----------------------------------------------+
+
+

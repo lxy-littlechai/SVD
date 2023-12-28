@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: dma
+Log file: /home/lxy/Projects/SVD/_x/dma/dma/vitis_hls.log

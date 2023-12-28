@@ -15,7 +15,7 @@ mkfile_dir := $(dir $(mkfile_path))
 TARGET   = hw
 MODE	 = linux
 HOST_ARCH = aarch64
-PRE_BUILT = 1
+PRE_BUILT = 0
 #PLATFORM_REPO_PATHS=/opt/xilinx/platforms
 PLATFORM = ${PLATFORM_REPO_PATHS}/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm
 XCLBIN   = vck190_aie_base_graph_${TARGET}.xclbin
@@ -32,8 +32,8 @@ ROOTFS=${EDGE_COMMON_SW}/rootfs.ext4
 IMAGE=${EDGE_COMMON_SW}/Image
 
 FINAL_XCLBIN=mm_${TARGET}.xclbin
-TEMP_DIR := ./_x.$(TARGET).xilinx_vck190_base_202110_1
-BUILD_DIR := ./build_dir.$(TARGET).xilinx_vck190_base_202110_1
+TEMP_DIR := ./_x.$(TARGET).xilinx_vck190_base_202320_1
+BUILD_DIR := ./build_dir.$(TARGET).xilinx_vck190_base_202320_1
 
 KERNEL_XO := $(TEMP_DIR)/dma.xo
 GRAPH    = aie/src/TopGraph.cpp
@@ -60,7 +60,7 @@ BINARY_CONTAINERS += $(BUILD_DIR)/${XCLBIN}
 VCC      = v++
 VPP_XO_FLAGS += -c --platform $(PLATFORM) --save-temps --optimize 2 -g
 VPP_XO_FLAGS += --hls.jobs 8
-VPP_XO_FLAGS += -I$(CUR_DIR)/kernel
+VPP_XO_FLAGS += -I$(CUR_DIR)/pl
 
 
 GCC_FLAGS := -Wall -c \
@@ -139,10 +139,10 @@ aiesim: ${LIBADF}
 	@echo "COMPLETE: aiesim success."
 
 kernels:$(KERNEL_XO)
-$(TEMP_DIR)/dma.xo: kernel/dma.cpp kernel/packet_sender.hpp
+$(TEMP_DIR)/dma.xo: pl/dma.cpp pl/Manager.hpp
 	mkdir -p $(TEMP_DIR)
 	$(VCC) $(VPP_XO_FLAGS) -k dma --hls.clock 300000000:dma $< -o $@ | tee $(TEMP_DIR)/dma.log
-	@echo "### ***** dma compilation done! *****"
+	@echo "### ***** pl compilation done! *****"
 
 
 build: $(BINARY_CONTAINERS)
@@ -153,8 +153,8 @@ $(BUILD_DIR)/${XCLBIN}: ${KERNEL_XO} ${LIBADF}
 
 aiehost: $(AIE_HOSTEXE)
 ifneq ($(PRE_BUILT),1)
-$(AIE_HOSTEXE): ./Work/ps/c_rts/aie_control_xrt.cpp
-	$(CXX) $(GCC_FLAGS) $(GCC_INCLUDES) -o'$@' $(+)
+$(AIE_HOSTEXE): 
+	$(CXX) $(GCC_FLAGS) $(GCC_INCLUDES) ./Work/ps/c_rts/aie_control_xrt.cpp -o'$@'
 endif
 
 host: guard-CXX guard-SDKTARGETSYSROOT ${HOST_EXE} 
@@ -177,7 +177,6 @@ package_${TARGET}: unzip ${PRE_BUILT_LIBADF} ${PRE_BUILT_XCLBIN} host
 		--package.kernel_image ${IMAGE} \
 		--package.boot_mode=sd \
 		--package.image_format=ext4 \
-		--package.sd_file run_mm.sh \
 		--package.sd_file ${HOST_EXE} \
 		${PRE_BUILT_LIBADF} ${PRE_BUILT_XCLBIN} -o ${FINAL_XCLBIN}
 	@echo "COMPLETE: Package created."
@@ -190,7 +189,6 @@ package_${TARGET}: ${LIBADF} ${BINARY_CONTAINERS} host
 		--package.boot_mode=sd \
 		--package.image_format=ext4 \
 		--package.defer_aie_run \
-		--package.sd_file run_mem.sh \
 		--package.sd_file ${HOST_EXE} \
 		${LIBADF} ${BINARY_CONTAINERS} -o ${FINAL_XCLBIN}
 	@echo "COMPLETE: Package created."
@@ -216,6 +214,7 @@ cleansim:
 cleantemp:
 	-$(RMDIR) ${TEMP_DIR}
 cleanhost:
-	-$(RMDIR) hostexe aie_control_xrt.o
+	-$(RMDIR) hostexe aie_control_xrt.o main.o
 cleanpac:
 	-$(RMDIR) ${FINAL_XCLBIN} mm_${TARGET}.xclbin.package_summary package.${TARGET} ./pre_built/libadf.a
+	

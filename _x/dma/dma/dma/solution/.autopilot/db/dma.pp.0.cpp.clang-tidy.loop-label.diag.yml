@@ -1,0 +1,139 @@
+---
+MainSourceFile:  /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1207_1:  '
+    FileOffset:      1207
+    FilePath:        /home/lxy/tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_base.h
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          55760
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1207_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        /home/lxy/tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          283420
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        /home/lxy/tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          283884
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        /home/lxy/tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          284349
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1247_1:  '
+    FileOffset:      1247
+    FilePath:        /home/lxy/tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_fixed_base.h
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          568051
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1247_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_39_1:  '
+    FileOffset:      39
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1030304
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_39_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_41_2:  '
+    FileOffset:      41
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1030356
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_41_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_51_1:  '
+    FileOffset:      51
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1030622
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_51_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_53_2:  '
+    FileOffset:      53
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1030674
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_53_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_78_1:  '
+    FileOffset:      78
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1031364
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_78_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_83_2:  '
+    FileOffset:      83
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1031497
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_83_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_88_3:  '
+    FileOffset:      88
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1031630
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_88_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_93_4:  '
+    FileOffset:      93
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1031763
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_93_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_101_1:  '
+    FileOffset:      101
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1031936
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_101_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_103_2:  '
+    FileOffset:      103
+    FilePath:        /home/lxy/Projects/SVD/pl/Manager.hpp
+    Replacements:    
+      - FilePath:        /home/lxy/Projects/SVD/_x/dma/dma/dma/solution/.autopilot/db/dma.pp.0.cpp
+        Offset:          1031988
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_103_2: '
+...

@@ -1,0 +1,66 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/Manager.hpp:116:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="generateHeader" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/Manager.hpp:130:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="getPacketId" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/_x/dma/dma/dma.tcl:28:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dma" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi offset=slave bundle=gmem0 port=in max_read_burst_length=16 num_read_outstanding=64" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite bundle=control port=in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi offset=slave bundle=gmem2 port=out max_write_burst_length=1 num_write_outstanding=64" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite bundle=control port=out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=tx_0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=tx_1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=tx_2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=tx_3" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=rx_0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=rx_1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=rx_2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=rx_3" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dma" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite bundle=control port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-386" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:9:0" msg_body="A depth specification is required for MAXI interface port 'in' for cosimulation.">
+        <args Name="in"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-386" msg_severity="WARNING" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:9:0" msg_body="A depth specification is required for MAXI interface port 'out' for cosimulation.">
+        <args Name="out"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:9:0" msg_body="Inlining function 'DataManager&lt;4, 16&gt;::load(ap_uint&lt;128&gt;*)' into 'dma'">
+        <args Callee="DataManager&lt;4, 16&gt;::load(ap_uint&lt;128&gt;*)" Callee-DebugLoc="File /home/lxy/Projects/SVD/pl/Manager.hpp Line 38 Column 0" Caller="dma" Caller-DebugLoc="File /home/lxy/Projects/SVD/pl/dma.cpp Line 9 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:9:0" msg_body="Inlining function 'DataManager&lt;4, 16&gt;::send(hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;)' into 'dma'">
+        <args Callee="DataManager&lt;4, 16&gt;::send(hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;, hls::stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0ul, 0ul, 0ul, (unsigned char)56, false&gt;, 0&gt;&amp;)" Callee-DebugLoc="File /home/lxy/Projects/SVD/pl/Manager.hpp Line 48 Column 0" Caller="dma" Caller-DebugLoc="File /home/lxy/Projects/SVD/pl/dma.cpp Line 9 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/lxy/Projects/SVD/pl/dma.cpp:9:0" msg_body="Inlining function 'DataManager&lt;4, 16&gt;::store(ap_uint&lt;128&gt;*)' into 'dma'">
+        <args Callee="DataManager&lt;4, 16&gt;::store(ap_uint&lt;128&gt;*)" Callee-DebugLoc="File /home/lxy/Projects/SVD/pl/Manager.hpp Line 100 Column 0" Caller="dma" Caller-DebugLoc="File /home/lxy/Projects/SVD/pl/dma.cpp Line 9 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

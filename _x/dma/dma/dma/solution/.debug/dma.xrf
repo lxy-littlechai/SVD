@@ -1,0 +1,29 @@
+Begin Function 'dma'
+
+RTL state condition: (1'b1 == ap_CS_fsm_state1)
+# ST_1
+local trunc_ln <partselect_26> <integer> <> 'partselect' </home/lxy/Projects/SVD/pl/Manager.hpp:39->/home/lxy/Projects/SVD/pl/dma.cpp:26>
+trunc_ln /home/lxy/Projects/SVD/pl/Manager.hpp:39
+trunc_ln /home/lxy/Projects/SVD/pl/dma.cpp:26
+reg: trunc_ln_reg_330[57:0] lv
+
+local trunc_ln3 <partselect_29> <integer> <> 'partselect' </home/lxy/Projects/SVD/pl/Manager.hpp:101->/home/lxy/Projects/SVD/pl/dma.cpp:29>
+trunc_ln3 /home/lxy/Projects/SVD/pl/Manager.hpp:101
+trunc_ln3 /home/lxy/Projects/SVD/pl/dma.cpp:29
+reg: trunc_ln3_reg_340[57:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_state73)
+# ST_73
+
+RTL state condition: (1'b1 == ap_CS_fsm_state75)
+# ST_75
+
+RTL state condition: (1'b1 == ap_CS_fsm_state77)
+# ST_77
+
+RTL state condition: (1'b1 == ap_CS_fsm_state79)
+# ST_79
+
+End Function 'dma'
+

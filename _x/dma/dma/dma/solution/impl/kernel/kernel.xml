@@ -1,0 +1,32 @@
+<root versionMajor="1" versionMinor="5">
+    <kernel name="dma" language="c" vlnv="xilinx.com:hls:dma:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="true" compileOptions="-g -I /pl" profileType="none" hwControlProtocol="ap_ctrl_chain" interrupt="true" swReset="false" mailbox="none" countedAutoRestart="0" deadlockDetection="local">
+        <ports>
+            <port name="M_AXI_GMEM0" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="512"/>
+            <port name="M_AXI_GMEM2" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="512"/>
+            <port name="TX_0" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="TX_1" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="TX_2" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="TX_3" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="RX_0" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="RX_1" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="RX_2" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="RX_3" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x28" dataWidth="32"/>
+        </ports>
+        <args>
+            <arg id="0" name="in" addressQualifier="1" port="M_AXI_GMEM0" hostOffset="0x0" hostSize="0x8" offset="0x10" size="0x8" type="void*"/>
+            <arg id="1" name="out" addressQualifier="1" port="M_AXI_GMEM2" hostOffset="0x0" hostSize="0x8" offset="0x1C" size="0x8" type="void*"/>
+            <arg id="2" name="tx_0" addressQualifier="4" port="TX_0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="tx_0" origUse="variable"/>
+            <arg id="3" name="tx_1" addressQualifier="4" port="TX_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="tx_1" origUse="variable"/>
+            <arg id="4" name="tx_2" addressQualifier="4" port="TX_2" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="tx_2" origUse="variable"/>
+            <arg id="5" name="tx_3" addressQualifier="4" port="TX_3" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="tx_3" origUse="variable"/>
+            <arg id="6" name="rx_0" addressQualifier="4" port="RX_0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="rx_0" origUse="variable"/>
+            <arg id="7" name="rx_1" addressQualifier="4" port="RX_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="rx_1" origUse="variable"/>
+            <arg id="8" name="rx_2" addressQualifier="4" port="RX_2" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="rx_2" origUse="variable"/>
+            <arg id="9" name="rx_3" addressQualifier="4" port="RX_3" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="rx_3" origUse="variable"/>
+        </args>
+        <compileWorkGroupSize x="1" y="1" z="1"/>
+        <maxWorkGroupSize x="1" y="1" z="1"/>
+    </kernel>
+</root>
+
