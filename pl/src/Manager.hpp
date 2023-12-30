@@ -106,6 +106,35 @@ public:
             }
         }
     }
+    void aieSimulator(axis_stream &tx_0, axis_stream &tx_1, axis_stream &tx_2, axis_stream &tx_3,
+                      axis_stream &rx_0, axis_stream &rx_1, axis_stream &rx_2, axis_stream &rx_3) {
+                        axis_pkt tx, rx;
+                        for(int i = 0;i < COL;i ++) {
+                            tx = tx_0.read();
+                            rx.data = tx.data;
+                            rx.keep = -1;
+                            rx.last = 0;
+                            rx_0.write(rx);
+
+                            tx = tx_1.read();
+                            rx.data = tx.data;
+                            rx.keep = -1;
+                            rx.last = 0;
+                            rx_1.write(rx);
+
+                            tx = tx_2.read();
+                            rx.data = tx.data;
+                            rx.keep = -1;
+                            rx.last = 0;
+                            rx_2.write(rx);
+
+                            tx = tx_3.read();
+                            rx.data = tx.data;
+                            rx.keep = -1;
+                            rx.last = 0;
+                            rx_3.write(rx);
+                        }
+                      }
 };
 
 class Helper
