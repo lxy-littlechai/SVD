@@ -5,6 +5,9 @@ aiesimulator_output
 _x
 logs
 .log
+.peers.ini
+.repo.yaml
+.lock
 .db
 .vcd
 Work

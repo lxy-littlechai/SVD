@@ -17,32 +17,33 @@ float sign(float x) {
 }
 
 template<int ROW>
-void orthogonalize(input_stream<float> * __restrict in0, 
-                   input_stream<float> * __restrict in1, 
-                   output_stream<float> * __restrict out0, 
-                   output_stream<float> * __restrict out1) {
-    aie::vector<float, w> Ap[ROW/w];
-    aie::vector<float, w> Aq[ROW/w];
-    aie::vector<float, w> vec1 = aie::zeros<float, w>();
-    aie::vector<float, w> vec2 = aie::zeros<float, w>();
-    aie::vector<float, w> vec3 = aie::zeros<float, w>();
+void orthogonalize(adf::input_buffer<float, adf::extents<ROW>>& __restrict in0, 
+                   adf::input_buffer<float, adf::extents<ROW>>& __restrict in1, 
+                   adf::output_buffer<float, adf::extents<ROW>>& __restrict out0, 
+                   adf::output_buffer<float, adf::extents<ROW>>& __restrict out1) {
+    auto ApIter = aie::begin_vector<w>(in0);
+    auto AqIter = aie::begin_vector<w>(in1);
+    auto BpIter = aie::begin_vector<w>(out0);
+    auto BqIter = aie::begin_vector<w>(out1);
     aie::accum<accfloat, w> acc0 = aie::zeros<accfloat, w>();
     aie::accum<accfloat, w> acc1 = aie::zeros<accfloat, w>();
     for(int i = 0;i < ROW/w;i ++) 
     chess_prepare_for_pipelining
     chess_loop_range(ROW/w,)
     {
-        Ap[i] = readincr_v<w>(in0);
-        Aq[i] = readincr_v<w>(in1);
-        acc0 = aie::mac_square(acc0, Ap[i]);
-        acc0 = aie::msc_square(acc0, Aq[i]);
-        acc1 = aie::mac(acc1, Ap[i], Aq[i]);         
+        auto vec1 = *ApIter ++;
+        auto vec2 = *AqIter ++;
+        acc0 = aie::mac_square(acc0, vec1);
+        acc0 = aie::msc_square(acc0, vec2);
+        acc1 = aie::mac(acc1, vec1, vec2);         
     }     
     float tau = aie::div(reduce_add(acc0.to_vector<float>()), 2*reduce_add(acc1.to_vector<float>()));
     float t = aie::div(sign(tau), (aie::abs(tau) + aie::sqrt(1 + aie::mul(tau, tau))));
     float c = aie::div(1, (aie::sqrt(1 + t * t)));
     float s = aie::mul(t, c);
 
+    ApIter = aie::begin_vector<w>(in0);
+    AqIter = aie::begin_vector<w>(in1);
     aie::vector<float, w> tmp1 = aie::zeros<float, w>();
     aie::vector<float, w> tmp2 = aie::zeros<float, w>();
     aie::vector<float, w> tmp3 = aie::zeros<float, w>();
@@ -50,17 +51,17 @@ void orthogonalize(input_stream<float> * __restrict in0,
     chess_prepare_for_pipelining
     chess_loop_range(ROW/w,)
     {
-        vec1 = Ap[i].template extract<w>(0);
-        vec2 = Aq[i].template extract<w>(0);
+        auto vec1 = *ApIter ++;
+        auto vec2 = *AqIter ++;
         tmp1 = aie::mul(vec1, c);
         tmp2 = aie::mul(vec2, s);
         tmp3 = aie::add(tmp1, tmp2);
-        writeincr(out0, tmp3);
+        *BpIter ++ = tmp3;
 
         tmp1 = aie::mul(vec1, aie::neg(s));
         tmp2 = aie::mul(vec2, c);
         tmp3 = aie::add(tmp1, tmp2);
-        writeincr(out1, tmp3);
+        *BqIter ++ = tmp3;
     //Vp[i] = Vp[i] * c + Vq[i] * s;
     //Vq[i] = -Vp[i] * c + Vq[i] * s;
     }

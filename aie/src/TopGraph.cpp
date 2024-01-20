@@ -1,6 +1,6 @@
 #include "TopGraph.h"
 
-TopGraph<16, 4, 2> g1;
+TopGraph<1024, 5> g1;
 #if defined(__AIESIM__) || defined(__X86SIM__)
 
 int main() {
