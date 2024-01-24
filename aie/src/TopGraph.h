@@ -86,14 +86,14 @@ public:
                 }
                 else if(pos_row[i]&1){
                     //out0 buffer 0 & COL-1
-                    col = orthInfo[0][i].col+1; row = orthInfo[0][i].row;
+                    col = orthInfo[0][i].col; row = orthInfo[0][i].row+direction;
                     location<buffer>(orth[0][i].out[0]) = {bank(col, row, getBankID(0, i, col, row, 0, 0)),
                                                            bank(col, row, getBankID(0, i, col, row, 0, 1))};
                     col = orthInfo[COL-1][i].col; row = orthInfo[COL-1][i].row+direction;
                     location<buffer>(orth[COL-1][i].out[0]) = {bank(col, row, getBankID(COL-1, i, col, row, 0, 0)),
                                                                bank(col, row, getBankID(COL-1, i, col, row, 0, 1))};
                     //out1 buffer 0 & COL-1
-                    col = orthInfo[0][i].col; row = orthInfo[0][i].row+direction;
+                    col = orthInfo[0][i].col+1; row = orthInfo[0][i].row;
                     location<buffer>(orth[0][i].out[1]) = {bank(col, row, getBankID(0, i, col, row, 1, 0)),
                                                            bank(col, row, getBankID(0, i, col, row, 1, 1))};
                     col = orthInfo[COL-1][i].col; row = orthInfo[COL-1][i].row+direction;
@@ -102,18 +102,18 @@ public:
 
                     for(int j = 1;j < COL-1;j ++) {
                         if(j&1) {
-                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
+                            col = orthInfo[j][i].col+1; row = orthInfo[j][i].row;
                             location<buffer>(orth[j][i].out[0]) = {bank(col, row, getBankID(j, i, col, row, 0, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 0, 1))};
-                            col = orthInfo[j][i].col+1; row = orthInfo[j][i].row;
+                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                             location<buffer>(orth[j][i].out[1]) = {bank(col, row, getBankID(j, i, col, row, 1, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 1, 1))};
                         }
                         else {
-                            col = orthInfo[j][i].col+1; row = orthInfo[j][i].row;
+                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                             location<buffer>(orth[j][i].out[0]) = {bank(col, row, getBankID(j, i, col, row, 0, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 0, 1))};
-                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
+                            col = orthInfo[j][i].col+1; row = orthInfo[j][i].row;
                             location<buffer>(orth[j][i].out[1]) = {bank(col, row, getBankID(j, i, col, row, 1, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 1, 1))};
                         }
@@ -124,31 +124,31 @@ public:
                     col = orthInfo[0][i].col; row = orthInfo[0][i].row+direction;
                     location<buffer>(orth[0][i].out[0]) = {bank(col, row, getBankID(0, i, col, row, 0, 0)),
                                                            bank(col, row, getBankID(0, i, col, row, 0, 1))};
-                    col = orthInfo[COL-1][i].col-1; row = orthInfo[COL-1][i].row;
+                    col = orthInfo[COL-1][i].col; row = orthInfo[COL-1][i].row+direction;
                     location<buffer>(orth[COL-1][i].out[0]) = {bank(col, row, getBankID(COL-1, i, col, row, 0, 0)),
                                                                bank(col, row, getBankID(COL-1, i, col, row, 0, 1))};
                     //out1 buffer 0 & COL-1
                     col = orthInfo[0][i].col; row = orthInfo[0][i].row+direction;
                     location<buffer>(orth[0][i].out[1]) = {bank(col, row, getBankID(0, i, col, row, 1, 0)),
                                                            bank(col, row, getBankID(0, i, col, row, 1, 1))};
-                    col = orthInfo[COL-1][i].col; row =  orthInfo[COL-1][i].row+direction;                                     
+                    col = orthInfo[COL-1][i].col-1; row =  orthInfo[COL-1][i].row;                                     
                     location<buffer>(orth[COL-1][i].out[1]) = {bank(col, row, getBankID(COL-1, i, col, row, 1, 0)),
                                                                bank(col, row, getBankID(COL-1, i, col, row, 1, 1))};
                     
                     for(int j = 1;j < COL-1;j ++) {
                         if(j&1) {
-                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
+                            col = orthInfo[j][i].col-1; row = orthInfo[j][i].row;
                             location<buffer>(orth[j][i].out[0]) = {bank(col, row, getBankID(j, i, col, row, 0, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 0, 1))};
-                            col = orthInfo[j][i].col-1; row = orthInfo[j][i].row;
+                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                             location<buffer>(orth[j][i].out[1]) = {bank(col, row, getBankID(j, i, col, row, 1, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 1, 1))};
                         }
                         else {
-                            col = orthInfo[j][i].col-1; row = orthInfo[j][i].row;
+                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                             location<buffer>(orth[j][i].out[0]) = {bank(col, row, getBankID(j, i, col, row, 0, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 0, 1))};
-                            col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
+                            col = orthInfo[j][i].col-1; row = orthInfo[j][i].row;
                             location<buffer>(orth[j][i].out[1]) = {bank(col, row, getBankID(j, i, col, row, 1, 0)),
                                                                    bank(col, row, getBankID(j, i, col, row, 1, 1))};
                         }
@@ -156,6 +156,9 @@ public:
 
                 }
             }
+        }
+        else {
+
         }
         
          // connection
