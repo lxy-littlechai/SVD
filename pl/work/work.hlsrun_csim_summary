@@ -1,6 +1,6 @@
 <ENTRY>
 {
- "thisFile": "/home/lxy/Projects/SVD/pl/work/work.hlsrun_csim_summary",
+ "thisFile": "/mnt/home/luanxinya/SVD/pl/work/work.hlsrun_csim_summary",
  "connectId": "",
  "serverToken": "",
  "timestamp": "0"
@@ -9,13 +9,13 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat Dec 30 15:20:07 2023",
- "timestampMillis": "1703920807514",
+ "dateTimestamp": "Tue Jan 30 12:49:51 2024",
+ "timestampMillis": "1706590191491",
  "buildStep": {
-  "cmdId": "8da8d9b7-096b-45b5-86cd-046419d3c52e",
+  "cmdId": "39e7bfe0-7306-4dca-b1bd-ebcc56a06d41",
   "name": "vitis-run",
-  "logFile": "/home/lxy/Projects/SVD/pl/work/logs/work.steps.log",
-  "commandLine": "/home/lxy/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config ./hls_config.cfg --work_dir work ",
+  "logFile": "/mnt/home/luanxinya/SVD/pl/work/logs/work.steps.log",
+  "commandLine": "/mnt/home/tools/xilinx_2023.2/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config ./hls_config.cfg --work_dir work ",
   "args": [
    "--mode",
    "hls",
@@ -26,17 +26,17 @@
    "work"
   ],
   "iniFiles": [],
-  "cwd": "/home/lxy/Projects/SVD/pl"
+  "cwd": "/mnt/home/luanxinya/SVD/pl"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Dec 30 15:20:07 2023",
- "timestampMillis": "1703920807514",
+ "dateTimestamp": "Tue Jan 30 12:49:51 2024",
+ "timestampMillis": "1706590191491",
  "status": {
-  "cmdId": "8da8d9b7-096b-45b5-86cd-046419d3c52e",
+  "cmdId": "39e7bfe0-7306-4dca-b1bd-ebcc56a06d41",
   "state": "CS_RUNNING"
  }
 }
@@ -44,8 +44,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sat Dec 30 15:20:09 2023",
- "timestampMillis": "1703920809752",
+ "dateTimestamp": "Tue Jan 30 12:49:54 2024",
+ "timestampMillis": "1706590194315",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -58,13 +58,13 @@
    {
     "base": {
      "type": "KERNEL",
-     "name": "dma",
+     "name": "Manager",
      "file": "",
      "reports": [],
      "uuid": ""
     },
     "sources": [
-     "/home/lxy/Projects/SVD/pl/src/dma.cpp"
+     "/mnt/home/luanxinya/SVD/pl/src/Manager.hpp"
     ],
     "psSources": [],
     "cuNames": [],
@@ -80,26 +80,26 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Dec 30 15:20:09 2023",
- "timestampMillis": "1703920809753",
+ "dateTimestamp": "Tue Jan 30 12:49:54 2024",
+ "timestampMillis": "1706590194319",
  "buildStep": {
-  "cmdId": "893f1e3c-c142-43d4-a991-57d79bac7b22",
+  "cmdId": "fe594f35-ea93-46a3-8d3d-98637a70d34a",
   "name": "csim_design",
-  "logFile": "/home/lxy/Projects/SVD/pl/work/hls/hls.log",
+  "logFile": "/mnt/home/luanxinya/SVD/pl/work/hls/hls.log",
   "commandLine": "csim_design",
   "args": [],
   "iniFiles": [],
-  "cwd": "/home/lxy/Projects/SVD/pl"
+  "cwd": "/mnt/home/luanxinya/SVD/pl"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Dec 30 15:20:09 2023",
- "timestampMillis": "1703920809753",
+ "dateTimestamp": "Tue Jan 30 12:49:54 2024",
+ "timestampMillis": "1706590194319",
  "status": {
-  "cmdId": "893f1e3c-c142-43d4-a991-57d79bac7b22",
+  "cmdId": "fe594f35-ea93-46a3-8d3d-98637a70d34a",
   "state": "CS_RUNNING"
  }
 }
@@ -107,10 +107,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Dec 30 15:20:14 2023",
- "timestampMillis": "1703920814845",
+ "dateTimestamp": "Tue Jan 30 12:49:57 2024",
+ "timestampMillis": "1706590197729",
  "status": {
-  "cmdId": "893f1e3c-c142-43d4-a991-57d79bac7b22",
+  "cmdId": "fe594f35-ea93-46a3-8d3d-98637a70d34a",
   "state": "CS_PASSED"
  }
 }
@@ -118,10 +118,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Dec 30 15:20:14 2023",
- "timestampMillis": "1703920814881",
+ "dateTimestamp": "Tue Jan 30 12:49:57 2024",
+ "timestampMillis": "1706590197770",
  "status": {
-  "cmdId": "8da8d9b7-096b-45b5-86cd-046419d3c52e",
+  "cmdId": "39e7bfe0-7306-4dca-b1bd-ebcc56a06d41",
   "state": "CS_PASSED"
  }
 }
@@ -129,8 +129,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Dec 30 15:20:14 2023",
- "timestampMillis": "1703920814881",
+ "dateTimestamp": "Tue Jan 30 12:49:57 2024",
+ "timestampMillis": "1706590197771",
  "report": {
   "path": "",
   "name": "",
@@ -143,8 +143,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Dec 30 15:20:14 2023",
- "timestampMillis": "1703920814882",
+ "dateTimestamp": "Tue Jan 30 12:49:57 2024",
+ "timestampMillis": "1706590197771",
  "report": {
   "path": "",
   "name": "",

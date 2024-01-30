@@ -22,6 +22,7 @@ void normalize(input_stream<float>* __restrict in,
     }
     float tmp = reduce_add(acc.to_vector<float>());
     float sigma = aie::sqrt(tmp);
+    printf("sigma: %f\n", sigma);
     writeincr(out, sigma);
 
 }

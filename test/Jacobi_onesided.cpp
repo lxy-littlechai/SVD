@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int COL = 4;
-const int ROW = 16;
-const int ITER = 1;
+const int COL = 6;
+const int ROW = 5;
+const int ITER = 5;
 float A[COL][ROW], U[COL][ROW], V[COL][ROW], sigma[COL];
 float tmpA[COL][ROW], tmpV[COL][ROW];
 
@@ -43,17 +43,30 @@ float sign(float x) {
     else return -1;
 }
 
+void print(int i, int j) {
+    for(int k = 0;k < ROW;k ++) {
+        cout << A[i][k] << " ";
+    }
+    cout << "\n";
+    for(int k = 0;k < ROW;k ++) {
+        cout << A[j][k] << " ";
+    }
+    cout << "\n";
+}
+
 void orthogonalize(int i, int j) {
+    print(i, j);
     float tmp1 = 0, tmp2 = 0;
     for(int k = 0;k < ROW;k ++) {
         tmp1 += A[i][k]*A[i][k] - A[j][k]*A[j][k];
         tmp2 += 2*A[i][k]*A[j][k];
     }
+    if(abs(tmp2) < 0.001) return ;
     float tau = tmp1 / tmp2;;
     float t = sign(tau) / (abs(tau) + sqrt(1 + tau * tau));
     float c = 1 / (sqrt(1 + t * t));
     float s = t * c;
-    //printf("tau = %f, t = %f, c = %f, s = %f\n",tau,t,c,s);
+    printf("tau = %f, t = %f, c = %f, s = %f\n",tau,t,c,s);
     for(int k = 0;k < ROW;k ++) {
         tmpA[i][k] = A[i][k] * c + A[j][k] * s;
         tmpA[j][k] = -A[i][k] * s + A[j][k] * c;
@@ -134,6 +147,7 @@ void printA() {
 }
 
 void print() {
+    printA();
     cout << "U\n";
     for(int i = 0;i < ROW;i ++) {
         for(int j = 0;j < COL;j ++) {
@@ -180,7 +194,8 @@ void JacobiEven() {
 void init() {
     for(int i = 0;i < ROW;i ++) {
         for(int j = 0;j < COL;j ++) {
-            A[j][i] = U[j][i] = V[j][i] = 0;
+            A[j][i] = j;
+            U[j][i] = V[j][i] = 0;
             sigma[j] = 0;
         }
     }
@@ -191,7 +206,7 @@ void init() {
 
 int main() {
     init();
-    readData();
+    //readData();
     if(COL&1) {
 
     }

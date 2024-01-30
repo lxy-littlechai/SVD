@@ -1,3 +1,3 @@
-relativeroot=/home/lxy/Projects/SVD/pl
+relativeroot=/mnt/home/luanxinya/SVD/pl
 original_argv=--mode hls --csim --config ./hls_config.cfg --work_dir work 
 

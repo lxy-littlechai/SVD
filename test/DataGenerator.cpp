@@ -17,11 +17,16 @@ private:
 
 public:
 
-    void writeArrayToFile(const std::string& filepath, string* arr, int length) {
+    template<typename T>
+    void writeArrayToFile(const std::string& filepath, T* arr, int col, int row) {
         std::ofstream file(filepath);
         if (file.is_open()) {
-            for (int i = 0; i < length; i++) {
-                file << arr[i] << "\n";
+            for (int i = 0; i < row; i++) {
+                for(int j = 0;j < col;j ++) {
+                    file << arr[i*col + j] << " ";
+                }   
+                file << "\n";
+                
             }
             file.close();
         } else {
@@ -29,28 +34,16 @@ public:
         }
     }
 
-    vector<float> generateCol(int col) {
-        vector<float> arr(col, 0);
+    vector<float> generateCol(int row) {
+        vector<float> arr(row);
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_real_distribution<float> dis(-5.0, 5.0);
+        std::uniform_real_distribution<float> dis(-50.0, 50.0);
         float random_number = dis(gen);
-        for(int i = 0;i < col;i ++) {
+        for(int i = 0;i < row;i ++) {
             arr[i] = dis(gen);
         }
         return arr;
-    }
-
-    void generateCol(string filepath, int col) {
-        float arr[col];
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_real_distribution<float> dis(-5.0, 5.0);
-        float random_number = dis(gen);
-        for(int i = 0;i < col;i ++) {
-            arr[i] = dis(gen);
-        }
-            writeArrayToFile(filepath, arr, col);
     }
 
     int calculateParity(int data) {
@@ -95,17 +88,40 @@ public:
         }
         string path = "../aie/data/";
         string filepath = path + "in.txt";
-        writeArrayToFile(filepath, arr, idx);
+        writeArrayToFile<string>(filepath, arr, 1, idx);
+    }
+
+    void generateMBCV(int graphID) {
+        float matrix[COL*ROW], tempCOL[ROW];
+        for(int j = 0;j < COL;j ++) {
+            auto matrixCOL = generateCol(ROW);
+            for(int i = 0;i < ROW;i ++) {
+                matrix[i*COL + j] = matrixCOL[i];
+                tempCOL[i] = matrixCOL[i];
+            }
+            if(j&1) {
+                string filePath = "../aie/data/" + to_string(graphID) + "in" +  to_string(j/2) + "_1.txt";
+                writeArrayToFile(filePath, tempCOL, 1, ROW);
+            }
+            else {
+                string filePath = "../aie/data/" + to_string(graphID) + "in" +  to_string(j/2) + "_0.txt";
+                writeArrayToFile(filePath, tempCOL, 1, ROW);
+            }
+        }
+
+        string filePath = "../aie/data/matrix.txt";
+        writeArrayToFile(filePath, matrix, COL, ROW);
+
     }
 };
 
 
 
 int main() {
-    const int COL = 4;
-    const int ROW = 4;
+    const int COL = 8;
+    const int ROW = 8;
     const int ITER = 6;
     DataGenerator<COL, ROW, ITER> generator;
-    generator.generateFpPacket();
+    generator.generateMBCV(0);
     
 }
