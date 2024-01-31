@@ -1,39 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int COL = 6;
-const int ROW = 5;
-const int ITER = 5;
+const int COL = 8;
+const int ROW = 8;
+const int ITER = 1;
 float A[COL][ROW], U[COL][ROW], V[COL][ROW], sigma[COL];
 float tmpA[COL][ROW], tmpV[COL][ROW];
 
-void readDataFromFile(const string& filePath, float* vec, int row) {
-    std::ifstream inputFile(filePath);
-    if (!inputFile.is_open()) {
-        std::cerr << "Error: " << filePath << std::endl;
-        return ;
-    }
-    double number;
-    for(int i = 0;i < row;i ++) {
-      inputFile >> number;
-      vec[i] = number;
-        //cout  << number << " ";
-    }
-    inputFile.close();
-}
-
 void readData() {
-    for(int i = 0;i < COL;i ++) {
-        string path = "../aie/data/";
-        string filepath = path + "in" + to_string(i) + ".txt";
-        readDataFromFile(filepath, A[i], ROW);
-    }
-    cout << "A\n";
-    for(int i = 0;i < ROW;i ++) {
-        for(int j = 0;j < COL;j ++) {
-            cout << A[j][i] << " ";
+    string path = "../data/";
+    string filepath = path + "matrix.txt";
+    std::ifstream inputFile(filepath);
+    if(inputFile.is_open()) {
+        for(int i = 0;i < ROW;i ++) {
+            for(int j = 0;j < COL;j ++) {
+                inputFile >> A[j][i];
+            }
         }
-        cout << "\n";
     }
 }
 
@@ -55,7 +38,7 @@ void print(int i, int j) {
 }
 
 void orthogonalize(int i, int j) {
-    print(i, j);
+    //print(i, j);
     float tmp1 = 0, tmp2 = 0;
     for(int k = 0;k < ROW;k ++) {
         tmp1 += A[i][k]*A[i][k] - A[j][k]*A[j][k];
@@ -66,7 +49,7 @@ void orthogonalize(int i, int j) {
     float t = sign(tau) / (abs(tau) + sqrt(1 + tau * tau));
     float c = 1 / (sqrt(1 + t * t));
     float s = t * c;
-    printf("tau = %f, t = %f, c = %f, s = %f\n",tau,t,c,s);
+    //printf("tau = %f, t = %f, c = %f, s = %f\n",tau,t,c,s);
     for(int k = 0;k < ROW;k ++) {
         tmpA[i][k] = A[i][k] * c + A[j][k] * s;
         tmpA[j][k] = -A[i][k] * s + A[j][k] * c;
@@ -147,26 +130,26 @@ void printA() {
 }
 
 void print() {
-    printA();
-    cout << "U\n";
+    //printA();
+    /*cout << "U\n";
     for(int i = 0;i < ROW;i ++) {
         for(int j = 0;j < COL;j ++) {
             cout << U[j][i] << " ";
         }
         cout << "\n";
-    }
+    }*/
     cout << "Sigma\n";
     for(int i = 0;i < COL;i ++) {
         cout << sigma[i] << " ";
     }
     cout << "\n";
-    cout << "V\n";
+    /*cout << "V\n";
     for(int i = 0;i < ROW;i ++) {
         for(int j = 0;j < COL;j ++) {
             cout << V[j][i] << " ";
         }
         cout << "\n";
-    }
+    }*/
 }
 
 void JacobiEven() {
@@ -206,7 +189,7 @@ void init() {
 
 int main() {
     init();
-    //readData();
+    readData();
     if(COL&1) {
 
     }

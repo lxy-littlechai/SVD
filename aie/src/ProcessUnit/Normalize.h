@@ -1,5 +1,5 @@
 #include "adf.h"
 
 template<int ROW>
-void normalize(input_stream<float>* __restrict in, 
-                output_stream<float>* __restrict out);
+void normalize(adf::input_buffer<float, adf::extents<ROW>>& __restrict in, 
+                adf::output_buffer<float, adf::extents<1>>& __restrict out);

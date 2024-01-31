@@ -1,5 +1,5 @@
 #include "TopGraph.h"
-TopGraph<8, 4> g1(0);
+TopSweepGraph<8, 4> g1(0);
 #if defined(__AIESIM__) || defined(__X86SIM__)
 
 int main() {

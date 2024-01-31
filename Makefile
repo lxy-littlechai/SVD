@@ -12,7 +12,7 @@
 #
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 mkfile_dir := $(dir $(mkfile_path))
-TARGET   = hw
+TARGET   = hw_emu
 MODE	 = linux
 HOST_ARCH = aarch64
 PRE_BUILT = 0

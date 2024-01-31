@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-  const int ROW = 8;
-  const int COL = 8;
+  const int ROW = 16;
+  const int COL = 16;
   const int BLOCK_SIZE = 2;
   const int BLOCK_NUM= COL/BLOCK_SIZE;
 

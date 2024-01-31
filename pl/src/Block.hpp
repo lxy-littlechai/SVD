@@ -7,6 +7,9 @@
 template<int ROW, int BLOCK_SIZE>
 class Block {
 private:
+#pragma HLS array_partition variable = mem type = complete dim = 1
+#pragma HLS INTERFACE axis port = ready
+
   ap_uint<W> mem[ROW*BLOCK_SIZE/ELEM_NUM];
   axis_stream ready;
 
