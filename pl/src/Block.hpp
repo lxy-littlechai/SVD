@@ -7,13 +7,16 @@
 template<int ROW, int BLOCK_SIZE>
 class Block {
 private:
-#pragma HLS array_partition variable = mem type = complete dim = 1
-#pragma HLS INTERFACE axis port = ready
 
   ap_uint<W> mem[ROW*BLOCK_SIZE/ELEM_NUM];
   axis_stream ready;
 
 public:
+
+  Block() {
+#pragma HLS array_partition variable = mem type = complete dim = 1
+#pragma HLS INTERFACE axis port = ready
+  }
   void load4DDR(ap_uint<DDR_WIDTH>* dataIn, int k) {
     for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
       for(int i = 0;i < ROW/ELEM_NUM;i ++) {

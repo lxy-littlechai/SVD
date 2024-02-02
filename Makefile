@@ -12,7 +12,7 @@
 #
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 mkfile_dir := $(dir $(mkfile_path))
-TARGET   = hw_emu
+TARGET   = hw
 MODE	 = linux
 HOST_ARCH = aarch64
 PRE_BUILT = 0
@@ -23,19 +23,18 @@ XSA	 = vck190_aie_base_graph_${TARGET}.xsa
 XPFM	 = vck190_xpfm
 HOST_EXE = hostexe
 HOST_SRCS := ./host/host.cpp
-SYSROOT_PATH = ./
+
 SYSROOT = ${SYSROOT_PATH}/sysroots/cortexa72-cortexa53-xilinx-linux
 SDKTARGETSYSROOT = ${SYSROOT}
-EDGE_COMMON_SW_PATH = ./
-EDGE_COMMON_SW= ${EDGE_COMMON_SW_PATH}/xilinx-versal-common-v2021.1
-ROOTFS=${EDGE_COMMON_SW}/rootfs.ext4
-IMAGE=${EDGE_COMMON_SW}/Image
 
-FINAL_XCLBIN=mm_${TARGET}.xclbin
+ROOTFS=${EDGE_COMMON_SW_PATH}/rootfs.ext4
+IMAGE=${EDGE_COMMON_SW_PATH}/Image
+
+FINAL_XCLBIN=${TARGET}.xclbin
 TEMP_DIR := ./_x.$(TARGET).xilinx_vck190_base_202320_1
 BUILD_DIR := ./build_dir.$(TARGET).xilinx_vck190_base_202320_1
 
-KERNEL_XO := $(TEMP_DIR)/dma.xo
+KERNEL_XO := $(TEMP_DIR)/TopFunc.xo
 GRAPH    = aie/src/TopGraph.cpp
 LIBADF  = libadf.a
 AIE_CMPL_CMD = aiecompiler -platform=${PLATFORM} --target=hw --stacksize=4096 -include="./aie/src" -workdir=./Work ${GRAPH} #-v
@@ -54,7 +53,7 @@ RMDIR = rm -rf
 ### DO NOT MODIFY BELOW THIS LINE UNLESS NECESSARY
 ################################################################################################################################################
 
-CUR_DIR := $(patsubst %/,%,$(dir $(MK_PATH)))
+CUR_DIR := $(patsusource /opt/xilinx/xrt/setup.shbst %/,%,$(dir $(MK_PATH)))
 
 BINARY_CONTAINERS += $(BUILD_DIR)/${XCLBIN}
 VCC      = v++
@@ -139,9 +138,9 @@ aiesim: ${LIBADF}
 	@echo "COMPLETE: aiesim success."
 
 kernels:$(KERNEL_XO)
-$(TEMP_DIR)/dma.xo: pl/dma.cpp pl/Manager.hpp
+$(TEMP_DIR)/TopFunc.xo: pl/src/TopFunc.cpp pl/src/Manager.hpp pl/src/Block.hpp
 	mkdir -p $(TEMP_DIR)
-	$(VCC) $(VPP_XO_FLAGS) -k dma --hls.clock 300000000:dma $< -o $@ | tee $(TEMP_DIR)/dma.log
+	$(VCC) $(VPP_XO_FLAGS) -k TopFunc --hls.clock 300000000:TopFunc $< -o $@ | tee $(TEMP_DIR)/TopFunc.log
 	@echo "### ***** pl compilation done! *****"
 
 
@@ -216,5 +215,5 @@ cleantemp:
 cleanhost:
 	-$(RMDIR) hostexe aie_control_xrt.o main.o
 cleanpac:
-	-$(RMDIR) ${FINAL_XCLBIN} mm_${TARGET}.xclbin.package_summary package.${TARGET} ./pre_built/libadf.a
+	-$(RMDIR) ${FINAL_XCLBIN} ${TARGET}.xclbin.package_summary package.${TARGET} ./pre_built/libadf.a
 	

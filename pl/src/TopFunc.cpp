@@ -1,7 +1,7 @@
 
 #include "Manager.hpp"
 
-exterm "C" void kernel(ap_uint<DDR_WIDTH>* in, ap_uint<DDR_WIDTH>* out,
+extern "C" void TopFunc(ap_uint<DDR_WIDTH>* in, ap_uint<DDR_WIDTH>* out,
                       axis_pkt_stream& toAIEstrm0, axis_pkt_stream& toAIEstrm1,
                       axis_pkt_stream& fromAIEstrm0, axis_pkt_stream& fromAIEstrm1) {
 #pragma HLS INTERFACE m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = \
@@ -10,6 +10,7 @@ exterm "C" void kernel(ap_uint<DDR_WIDTH>* in, ap_uint<DDR_WIDTH>* out,
     16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = out depth = 8192
 #pragma HLS INTERFACE s_axilite port = in bundle = control
 #pragma HLS INTERFACE s_axilite port = out bundle = control
+#pragma HLS INTERFACE s_axilite port = return bundle = control
 #pragma HLS INTERFACE axis port = toAIEstrm0
 #pragma HLS INTERFACE axis port = toAIEstrm1
 #pragma HLS INTERFACE axis port = fromAIEstrm0

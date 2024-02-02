@@ -8,14 +8,17 @@
 template<int ROW, int BLOCK_NUM, int BLOCK_SIZE>
 class Manager {
 private:
-#pragma HLS array_partition variable = block type = complete dim = 1
-#pragma HLS INTERFACE axis port = order2AIE
-#pragma HLS INTERFACE axis port = order4AIE
 
   Block<ROW, BLOCK_SIZE> block[BLOCK_NUM];
   axis_stream order2AIE[2], order4AIE[2];
 
 public:
+
+  Manager() {
+#pragma HLS array_partition variable = block type = complete dim = 1
+#pragma HLS INTERFACE axis port = order2AIE
+#pragma HLS INTERFACE axis port = order4AIE
+  }
   void load4DDR(ap_uint<DDR_WIDTH>* dataIn) {
     for(int k = 0;k < BLOCK_NUM;k ++) {
       block[k].load4DDR(dataIn, k);
@@ -62,7 +65,7 @@ public:
 
   void sendR2AIE(axis_pkt_stream& toAIEstrm) {
     int Right = order2AIE[1].read();
-    block[Right].send2AIE(toAIEstrm1);
+    block[Right].send2AIE(toAIEstrm);
     order4AIE[1].write(Right);
   }
 
