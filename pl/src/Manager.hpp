@@ -10,14 +10,14 @@ class Manager {
 private:
 
   Block<ROW, BLOCK_SIZE> block[BLOCK_NUM];
-  axis_stream order2AIE[2], order4AIE[2];
+  
 
 public:
 
   Manager() {
 #pragma HLS array_partition variable = block type = complete dim = 1
-#pragma HLS INTERFACE axis port = order2AIE
-#pragma HLS INTERFACE axis port = order4AIE
+//#pragma HLS INTERFACE axis port = order2AIE
+//#pragma HLS INTERFACE axis port = order4AIE
   }
   void load4DDR(ap_uint<DDR_WIDTH>* dataIn) {
     for(int k = 0;k < BLOCK_NUM;k ++) {
@@ -25,7 +25,7 @@ public:
     }
   }
 
-  void generateOrder() {
+  void generateOrder(axis_stream& order2AIE0, axis_stream& order2AIE1) {
     if(BLOCK_NUM%2 == 0) {
       int pu[BLOCK_NUM/2][2], tmp[BLOCK_NUM/2][2];
       for(int i = 0;i < BLOCK_NUM;i += 2) {
@@ -35,8 +35,8 @@ public:
       const int PU_NUM = BLOCK_NUM/2;
       for(int i = 0;i < BLOCK_NUM-1;i ++) {
         for(int j = 0;j < PU_NUM;j ++) {
-          order2AIE[0].write(pu[j][0]);
-          order2AIE[1].write(pu[j][1]);
+          order2AIE0.write(pu[j][0]);
+          order2AIE1.write(pu[j][1]);
         }
         tmp[1][0] = pu[0][0];
         tmp[0][0] = pu[0][1];
@@ -57,58 +57,81 @@ public:
     }
   }
 
-  void sendL2AIE(axis_pkt_stream& toAIEstrm) {
-    int Left = order2AIE[0].read();
-    block[Left].send2AIE(toAIEstrm);
-    order4AIE[0].write(Left);
+  /*void send2AIE(axis_pkt_stream& toAIEstrm, axis_stream& order2AIE, axis_stream& order4AIE) {
+    int id = order2AIE.read();
+    block[id].send2AIE(toAIEstrm);
+    order4AIE.write(id);
+  }*/
+
+  void send2AIE(axis_pkt_stream& toAIEstrm, axis_stream& order2AIE, axis_stream& order4AIE, axis_stream* ready, bool first) {
+    ap_uint<32> temp;
+    int id = order2AIE.read();
+    if(first) ready[id].read_nb(temp);
+    else ready[id].read();
+    block[id].send2AIE(toAIEstrm);
+    order4AIE.write(id);
   }
 
-  void sendR2AIE(axis_pkt_stream& toAIEstrm) {
-    int Right = order2AIE[1].read();
-    block[Right].send2AIE(toAIEstrm);
-    order4AIE[1].write(Right);
-  }
-
-  void send2AIE(axis_pkt_stream& toAIEstrm0, axis_pkt_stream& toAIEstrm1) {
+  void send2AIE(
+                axis_pkt_stream& toAIEstrm0, axis_stream& order2AIE0, axis_stream& order4AIE0, 
+                axis_pkt_stream& toAIEstrm1, axis_stream& order2AIE1, axis_stream& order4AIE1,
+                axis_stream* ready) {
+    // Sweep
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1);
     for(int step = 0;step < SWEEP_STEP;step ++){
-#pragma HLS dataflow
-      sendL2AIE(toAIEstrm0);
-      sendR2AIE(toAIEstrm1);
+//#pragma HLS dataflow
+      send2AIE(toAIEstrm0, order2AIE0, order4AIE0, ready, step == 0);
+      send2AIE(toAIEstrm1, order2AIE1, order4AIE1, ready, step == 0);
     }
   }
 
-  void receiveL4AIE(axis_pkt_stream& fromAIEstrm) {
-    int Left = order4AIE[0].read();
-    block[Left].receive4AIE(fromAIEstrm);
+  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& order4AIE, axis_stream* ready) {
+    int id = order4AIE.read();
+    block[id].receive4AIE(fromAIEstrm);
+    ready[id].write(1);
   }
 
-  void receiveR4AIE(axis_pkt_stream& fromAIEstrm) {
-    int Right = order4AIE[1].read();
-    block[Right].receive4AIE(fromAIEstrm);
-  }
-
-  void receive4AIE(axis_pkt_stream& fromAIEstrm0, axis_pkt_stream& fromAIEstrm1) {
+  void receive4AIE(axis_pkt_stream& fromAIEstrm0, axis_stream& order4AIE0,
+                   axis_pkt_stream& fromAIEstrm1, axis_stream& order4AIE1,
+                   axis_stream* ready) {
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1);
     for(int step = 0;step < SWEEP_STEP;step ++){
-#pragma HLS dataflow      
-      receiveL4AIE(fromAIEstrm0);
-      receiveR4AIE(fromAIEstrm1);
+//#pragma HLS dataflow      
+      receive4AIE(fromAIEstrm0, order4AIE0, ready);
+      receive4AIE(fromAIEstrm1, order4AIE1, ready);
     }
   }
 
   void sweep(axis_pkt_stream& toAIEstrm0, axis_pkt_stream& toAIEstrm1,
              axis_pkt_stream& fromAIEstrm0, axis_pkt_stream& fromAIEstrm1) {
-#pragma HLS dataflow 
-     send2AIE(toAIEstrm0, toAIEstrm1);
-     receive4AIE(fromAIEstrm0, fromAIEstrm1);             
+     axis_stream order2AIE[2], order4AIE[2];
+     axis_stream ready[BLOCK_NUM];
+     
+#pragma HLS dataflow
+     generateOrder(order2AIE[0], order2AIE[1]);
+     send2AIE(toAIEstrm0, order2AIE[0], order4AIE[0],
+              toAIEstrm1, order2AIE[1], order4AIE[1],
+              ready);
+     receive4AIE(fromAIEstrm0, order4AIE[0],
+                 fromAIEstrm1, order4AIE[1], 
+                 ready); 
+                      
   }
 
   void store2DDR(ap_uint<DDR_WIDTH>* dataOut) {
     for(int k = 0;k < BLOCK_NUM;k ++) {
       block[k].store2DDR(dataOut, k);
     }
-  }        
+  }      
+
+  void Entrance(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* dataOut,
+             axis_pkt_stream& toAIEstrm0, axis_pkt_stream& toAIEstrm1,
+             axis_pkt_stream& fromAIEstrm0, axis_pkt_stream& fromAIEstrm1) {
+    load4DDR(dataIn);
+    sweep(toAIEstrm0, toAIEstrm1, 
+          fromAIEstrm0, fromAIEstrm1);
+    store2DDR(dataOut);
+  }  
   
 
 };

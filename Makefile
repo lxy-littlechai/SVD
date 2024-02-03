@@ -18,11 +18,11 @@ HOST_ARCH = aarch64
 PRE_BUILT = 0
 #PLATFORM_REPO_PATHS=/opt/xilinx/platforms
 PLATFORM = ${PLATFORM_REPO_PATHS}/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm
-XCLBIN   = vck190_aie_base_graph_${TARGET}.xclbin
-XSA	 = vck190_aie_base_graph_${TARGET}.xsa
+#XCLBIN   = vck190_aie_base_graph_${TARGET}.xclbin
+XCLBIN	 = vck190_aie_base_graph_${TARGET}.xsa
 XPFM	 = vck190_xpfm
 HOST_EXE = hostexe
-HOST_SRCS := ./host/host.cpp
+HOST_SRCS := ./ps/host.cpp
 
 SYSROOT = ${SYSROOT_PATH}/sysroots/cortexa72-cortexa53-xilinx-linux
 SDKTARGETSYSROOT = ${SYSROOT}
@@ -71,7 +71,10 @@ GCC_INCLUDES := -I$(SYSROOT)/usr/include/xrt \
 				-I./  \
 				-I${XILINX_VITIS}/aietools/include \
 				-I${XILINX_VITIS}/include \
-				-I./aie
+				-I./aie \
+				-I./aie/src/ProcessGraph \
+				-I./aie/src/ProcessUnit \
+				-I./aie/src \
 				#-I$(SYSROOT)/usr/include \
 
 

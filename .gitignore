@@ -1,8 +1,21 @@
 build
+# aie work
 function_*
 trdata*
 aiesimulator_output
+*.wdb
+*.wcfg
+*.o
+*lock
+
+# host
+hostexe
+
+# temp
 _x
+_x.hw.*
+*.ini
+build_dir.*
 logs
 .log
 .peers.ini
@@ -14,12 +27,10 @@ Work
 .Xil
 .theia
 .a
-*.wdb
-*.wcfg
+
 .vscode
 *.log
 *.Xil
-/aiesimulator_output
 *.vcd
 *.a
 *.csv

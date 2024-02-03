@@ -9,13 +9,13 @@ class Block {
 private:
 
   ap_uint<W> mem[ROW*BLOCK_SIZE/ELEM_NUM];
-  axis_stream ready;
+  //axis_stream ready;
 
 public:
 
   Block() {
 #pragma HLS array_partition variable = mem type = complete dim = 1
-#pragma HLS INTERFACE axis port = ready
+//#pragma HLS INTERFACE axis port = ready
   }
   void load4DDR(ap_uint<DDR_WIDTH>* dataIn, int k) {
     for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
@@ -27,14 +27,14 @@ public:
         mem[j*ROW/ELEM_NUM + i] = data;
       }
     }
-    ready.write(1);
+    //ready.write(1);
   }
 
   void send2AIE(axis_pkt_stream& toAIEstrm) {
     axis_pkt tmp;
     ap_uint<32> header;
 
-    ready.read();
+    //ready.read();
     for(int i = 0;i < BLOCK_SIZE;i ++) {
       header = generateHeader(0, i);
 
@@ -97,7 +97,7 @@ public:
 
 
       }
-      ready.write(1);
+      //ready.write(1);
       
 
   }
