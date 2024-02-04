@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
         std::cout << "\n";
     }
     
-    HarnessDriver harnessDriver(0, argv[1], {"kernel"}, {"TopSweepGraph"});
+    HarnessDriver harnessDriver(0, argv[1], {"TopFunc"}, {"topSweepGraph"});
     harnessDriver.runGraph(0, BLOCK_NUM/2*(BLOCK_NUM-1));
 
     std::vector<plKernelArg> pl_arg;
