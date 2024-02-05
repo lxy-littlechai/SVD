@@ -13,6 +13,7 @@ XSA_DIR=./$(TARGET).xsa_dir
 PACKAGE_DIR = ./$(TARGET).xclbin_dir
 
 # File names and locations
+KERNEL_SRC = ./pl/src/TopFunc.cpp
 KERNEL_XO := ./$(XO_DIR)/TopFunc.xo
 XSA := ./$(XSA_DIR)/svd.xsa
 HOST_SRC = ./ps/host.cpp
@@ -111,7 +112,7 @@ sd_card: all
 # compile HLS kernels
 
 kernels: guard-PLATFORM_REPO_PATHS $(KERNEL_XO)
-$(KERNEL_XO): pl/src/TopFunc.cpp
+$(KERNEL_XO): $(KERNEL_SRC)
 	mkdir -p $(XO_DIR)
 	$(VPP) $(VPP_XO_FLAGS) -k TopFunc --hls.clock 300000000:TopFunc $< -o $@ | tee $(XO_DIR)/TopFunc.log
 	
@@ -188,9 +189,6 @@ endif
 
 ###########################################################################
 
-clean_all:
-	rm -rf _x v++* .Xil .db   *.log
-	clean_aie clean_pl clean_ps clean_xsa clean_package
 clean_aie:
 	rm -rf Work *.a
 clean_pl:
@@ -201,3 +199,6 @@ clean_xsa:
 	rm -rf $(XSA_DIR)
 clean_package: 
 	rm -rf $(PACKAGE_DIR)
+clean_all: clean_aie clean_pl clean_ps clean_xsa clean_package
+	rm -rf _x v++* .Xil *.db   *.log
+	 
