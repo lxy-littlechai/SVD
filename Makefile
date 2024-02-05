@@ -28,7 +28,7 @@ AIECC := v++ -c --mode aie
 AIESIM := aiesimulator
 X86SIM := x86simulator
 
-HW_EMU_CMD := ./launch_hw_emu.sh -aie-sim-options ../aiesimulator_output/aiesim_options.txt -add-env AIE_COMPILER_WORKDIR=../Work 
+HW_EMU_CMD := ./launch_hw_emu.sh -graphic-xsim -add-env AIE_COMPILER_WORKDIR=../Work 
 
 # compile aie
 AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./aie/src" --include "./" --aie.xlopt=0
@@ -188,7 +188,16 @@ endif
 
 ###########################################################################
 
-clean:
-	rm -rf _x v++* $(KERNEL_XO) $(GRAPH_O) *.o *.compile_summary* *.xpe xnwOut *.xclbin* *.log *.xsa Work *.db *.csv *$(XSA)* *.jou .Xil
-	rm -rf sw/*.log sw/*.xclbin sw/cfg/ sw/launch_hw_emu.sh sw/qemu_dts_files sw/emu_qemu_scripts sw/*.exe sw/_x/ sw/*summary sw/*.o sw/*.elf sw/*.xpe sw/xnwOut sw/Work sw/*.csv sw/*.db sw/*.bin sw/*.BIN sw/*.bif sw/launch_hw_emulator.sh sw/*.txt sw/emulation sw/.Xil ./x86simulator_output
-	rm -rf sw/sd_card sw/sd_card.img sw/*.o ./*.exe sw/qeumu* x86simulator_output/ aiesimulator_output/ s2mm/ mm2s/ hls/
+clean_all:
+	rm -rf _x v++* .Xil .db   *.log
+	clean_aie clean_pl clean_ps clean_xsa clean_package
+clean_aie:
+	rm -rf Work *.a
+clean_pl:
+	rm -rf $(XO_DIR)
+clean_ps: 
+	rm -rf *.o *.exe
+clean_xsa:
+	rm -rf $(XSA_DIR)
+clean_package: 
+	rm -rf $(PACKAGE_DIR)

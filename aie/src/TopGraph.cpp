@@ -3,9 +3,9 @@ TopSweepGraph<8, 4> topSweepGraph(0);
 #if defined(__AIESIM__) || defined(__X86SIM__)
 
 int main() {
-    g1.init();
-    g1.run(1);
-    g1.end();
+    topSweepGraph.init();
+    topSweepGraph.run(1);
+    topSweepGraph.end();
     return 0;
 }
 #endif

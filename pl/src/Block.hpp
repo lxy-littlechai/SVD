@@ -53,7 +53,7 @@ public:
         tmp.data(95, 64) = mem[i*ROW/ELEM_NUM + j](63, 32);
         tmp.data(127, 96) = mem[i*ROW/ELEM_NUM + j](95, 64);
         tmp.keep = -1;
-        tmp.last = (j == ROW/ELEM_NUM-1);
+        tmp.last = 0;
         toAIEstrm.write(tmp);
       }
       
@@ -97,7 +97,6 @@ public:
 
 
       }
-      //ready.write(1);
       
 
   }
