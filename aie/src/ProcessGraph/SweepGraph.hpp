@@ -33,7 +33,7 @@ public:
                 orth[j][i] = adf::kernel::create(orthogonalize<MatrixROW>);
                 adf::source(orth[j][i]) = "aie/src/ProcessUnit/Orthogonalize.cpp";
                 runtime<ratio>(orth[j][i]) = 0.9;
-                location<kernel>(orth[j][i]) = tile(j+1, i);
+                location<kernel>(orth[j][i]) = tile(i+1, j);
                 orthInfo[j][i].col = j+1;
                 orthInfo[j][i].row = i;
 
