@@ -1,8 +1,49 @@
 #include "adf.h"
 #include "ProcessGraph/SweepGraph.hpp"
 #include "ProcessGraph/NormGraph.hpp"
+#include "ProcessGraph/TransGraph.hpp"
 #include <cstring>
 using namespace adf;
+
+template<int MatrixROW, int GraphSize>
+class TopNormGraph: public graph {
+private:
+    NormGraph<MatrixROW, GraphSize> normGraph;
+public:
+    input_plio in[1];
+    output_plio out[1];
+    pktsplit<GraphSize> sp[1];
+    pktmerge<GraphSize> mg[1];
+
+    TopNormGraph(int graphID) {
+        std::string ID = std::to_string(graphID);
+        for(int j = 0;j < 1;j ++) {
+            std::string fileIn = "aie/data/" + ID + "_norm_in_" + std::to_string(j) + ".txt";
+            std::string fileOut = "aie/data/" + ID + "_norm_out_" + std::to_string(j) +".txt";
+            std::string plIn = ID + "_norm_in_" + std::to_string(j);
+            std::string plout = ID + "_norm_out_" + std::to_string(j);
+            in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
+            out[j] = output_plio::create(plout, plio_128_bits, fileOut);
+            sp[j] = pktsplit<GraphSize>::create();
+            mg[j] = pktmerge<GraphSize>::create();
+        }
+        
+        for(int j = 0;j < 1;j ++) {
+            connect<> (in[j].out[0], sp[j].in[0]);
+            connect<> (mg[j].out[0], out[j].in[0]);
+        }
+        for(int i = 0;i < GraphSize;i ++) {
+            for(int j = 0;j < 1;j ++) {
+                connect<> (sp[j].out[i], normGraph.in[i]);
+                connect<> (normGraph.out[i], mg[j].in[i]);
+            }
+            
+        }
+
+
+    }
+};
+
 
 template<int MatrixROW, int GraphSize>
 class TopSweepGraph: public graph {
@@ -42,39 +83,3 @@ public:
 
     }
 };
-
-template<int MatrixROW, int GraphSize>
-class TopNormGraph: public graph {
-private:
-    NormGraph<MatrixROW, GraphSize> normGraph;
-public:
-    input_plio in;
-    output_plio out;
-    pktsplit<GraphSize> sp;
-    pktmerge<GraphSize> mg;
-
-    TopNormGraph(int graphID) {
-        std::string ID = std::to_string(graphID);
-        std::string fileIn = "aie/data/" + ID + "_norm_in" + ".txt";
-        std::string fileOut = "aie/data/" + ID + "_norm_out" +".txt";
-        std::string plIn = ID + "_norm_in";
-        std::string plout = ID + "_norm_out";
-        in = input_plio::create(plIn, plio_128_bits, fileIn);
-        out = output_plio::create(plout, plio_128_bits, fileOut);
-        sp = pktsplit<GraphSize>::create();
-        mg = pktmerge<GraphSize>::create();
-        
-        connect<> (in.out[0], sp.in[0]);
-        connect<> (mg.out[0], out.in[0]);
-        
-        for(int i = 0;i < GraphSize;i ++) {
-            connect<> (sp.out[i], normGraph.in[i]);
-            connect<> (normGraph.out[i], mg.in[i]);
-            
-        }
-
-
-    }
-};
-
-

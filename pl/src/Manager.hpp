@@ -119,8 +119,7 @@ public:
   }
 
   void norm(axis_pkt_stream& toNormstrm0, axis_pkt_stream& fromNormstrm0) {
-     
-
+   
     for(int i = 0;i < BLOCK_NUM;i ++) {
 #pragma HLS dataflow
       block[i].send2AIE(toNormstrm0);
@@ -135,14 +134,6 @@ public:
     }
   }      
 
-  void Entrance(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* dataOut,
-             axis_pkt_stream& toSweepstrm0, axis_pkt_stream& toSweepstrm1,
-             axis_pkt_stream& fromSweepstrm0, axis_pkt_stream& fromSweepstrm1) {
-    load4DDR(dataIn);
-    sweep(toSweepstrm0, toSweepstrm1, 
-          fromSweepstrm0, fromSweepstrm1);
-    store2DDR(dataOut);
-  }  
   
 
 };

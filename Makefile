@@ -189,16 +189,16 @@ endif
 
 ###########################################################################
 
-clean_aie:
+clear_aie:
 	rm -rf Work *.a
-clean_pl:
+clear_pl:
 	rm -rf $(XO_DIR)
-clean_ps: 
+clear_ps: 
 	rm -rf *.o *.exe
-clean_xsa:
+clear_xsa:
 	rm -rf $(XSA_DIR)
-clean_package: 
+clear_package: 
 	rm -rf $(PACKAGE_DIR)
-clean_all: clean_aie clean_pl clean_ps clean_xsa clean_package
+clear_all: clear_aie clear_pl clear_ps clear_xsa clear_package
 	rm -rf _x v++* .Xil *.db   *.log
 	 
