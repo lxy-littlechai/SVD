@@ -8,7 +8,7 @@
 #include <string>
 #include "HarnessDriver.hpp"
 #include "../aie/src/TopGraph.h"
-
+using namespace std;
 int main(int argc, char** argv) {
     
     const int ROW = 8;
@@ -22,13 +22,19 @@ int main(int argc, char** argv) {
     float* data = new float[COL*ROW];
     float* result = new float[COL*ROW];
 
-    std::cout << "data\n";
+    
     for(int j = 0;j < COL;j ++) {
         for(int i = 0;i < ROW;i ++) {
-            data[j*ROW + i] = j+1;
-            std::cout << data[j*ROW + i] << " ";
+            data[j*ROW + i] = rand()%50;
         }
-        std::cout << "\n";
+    }
+
+    std::cout << "data\n";
+    for(int i = 0;i < ROW;i ++) {
+        for(int j = 0;j < COL;j ++) {
+            cout << data[j*ROW + i] << " ";
+        }
+        cout << endl;
     }
     
     HarnessDriver harnessDriver(0, argv[1], {"TopFunc"}, {"topSweepGraph", "topNormGraph"});
@@ -44,11 +50,11 @@ int main(int argc, char** argv) {
     harnessDriver.fetchRes();
 
     std::cout << "result\n";
-    for(int j = 0;j < COL;j ++) {
-        for(int i = 0;i < ROW;i ++) {
-            std::cout << result[j*ROW + i] << " ";
+    for(int i = 0;i < ROW;i ++) {
+        for(int j = 0;j < COL;j ++) {
+            cout << result[j*ROW + i] << " ";
         }
-        std::cout << "\n";
+        cout << endl;
     }
 
     

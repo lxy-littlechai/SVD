@@ -3,11 +3,21 @@
 #include "ProcessUnit/Orthogonalize.h"
 using namespace adf;
 
+const int VCK190_ROW = 8;
+const int VCK190_COL = 50;
 template<int MatrixROW, int GraphSize>
 class SweepGraph: public adf::graph {
 private:
+    const int ROW = 2*GraphSize;
+    const int COL = GraphSize;
+    const int PKT_NUM = (2*GraphSize-1)/(VCK190_ROW-1);
+
     kernel orth[GraphSize][2*GraphSize];// (col, row)
-    int bankID[50][8];
+    pktsplit<GraphSize> sp[(2*GraphSize-1)/(VCK190_ROW-1)][2];
+    pktmerge<GraphSize> mg[(2*GraphSize-1)/(VCK190_ROW-1)][2];
+    
+
+    int bankID[VCK190_COL][VCK190_ROW];
 
     struct Pos {
         int col;
@@ -18,10 +28,7 @@ private:
         int bank_row[2][2];
     }orthInfo[GraphSize][2*GraphSize];
 
-    const int ROW = 2*GraphSize;
-    const int COL = GraphSize;
-    const int VCK190_ROW = 4;
-    const int VCK190_COL = 50;
+    
 
 public:
     input_port in[GraphSize][2];
@@ -33,10 +40,35 @@ public:
                 orth[j][i] = adf::kernel::create(orthogonalize<MatrixROW>);
                 adf::source(orth[j][i]) = "aie/src/ProcessUnit/Orthogonalize.cpp";
                 runtime<ratio>(orth[j][i]) = 0.9;
-                location<kernel>(orth[j][i]) = tile(i+1, j);
-                orthInfo[j][i].col = j+1;
-                orthInfo[j][i].row = i;
+            }
+        }
+        for(int i = 0;i < PKT_NUM;i ++) {
+            for(int j = 0;j < 2;j ++) {
+                sp[i][j] = pktsplit<GraphSize>::create();
+                mg[i][j] = pktmerge<GraphSize>::create();
+            }
+            
+        }
 
+        int row = 0, col = 0, direction = 1;
+
+        for(int i = 0;i < ROW;i ++) {
+            int base_col = col;
+            for(int j = 0;j < COL;j ++) {
+                location<kernel>(orth[j][i]) = tile(base_col+j, row);
+                orthInfo[j][i].col = base_col+j;
+                orthInfo[j][i].row = row;
+            }
+            row += direction;
+            if(row == VCK190_ROW-1 && direction == 1) {
+                row = VCK190_ROW-1;
+                col += COL;
+                direction *= -1;
+            }
+            else if(row == 0 && direction == -1) {
+                row = 0;
+                col += COL;
+                direction *= -1;
             }
         }
 
@@ -74,15 +106,39 @@ public:
             
         }
         else {
+            int row = 0, direction = 1, pkt_num = 0;
             for(int i = 0;i < ROW-1;i ++) {
-                connect<> (orth[0][i].out[0], orth[1][i+1].in[0]);
-                connect<> (orth[0][i].out[1], orth[0][i+1].in[0]);
-                for(int j = 1;j < COL-1;j ++) {
-                    connect<> (orth[j][i].out[0], orth[j+1][i+1].in[0]);
-                    connect<> (orth[j][i].out[1], orth[j-1][i+1].in[1]);
+                if((row == VCK190_ROW-2 && direction == 1) || (row == 1 && direction == -1)) {
+                    connect<> (mg[pkt_num][0].out[0], sp[pkt_num][0].in[0]);
+                    connect<> (mg[pkt_num][1].out[0], sp[pkt_num][1].in[0]);
+                    for(int j = 0;j < COL;j ++) {
+                        connect<> (orth[j][i].out[0], mg[pkt_num][0].in[j]);
+                        connect<> (orth[j][i].out[1], mg[pkt_num][1].in[j]);
+                        connect<> (sp[pkt_num][0].out[j], orth[j][i+1].in[0]);
+                        connect<> (sp[pkt_num][1].out[j], orth[j][i+1].in[1]);
+                    }
+                    pkt_num ++;
                 }
-                connect<> (orth[COL-1][i].out[0], orth[COL-2][i+1].in[1]);
-                connect<> (orth[COL-1][i].out[1], orth[COL-1][i+1].in[1]);
+                else {
+                    connect<> (orth[0][i].out[0], orth[1][i+1].in[0]);
+                    connect<> (orth[0][i].out[1], orth[0][i+1].in[0]);
+                    for(int j = 1;j < COL-1;j ++) {
+                        connect<> (orth[j][i].out[0], orth[j+1][i+1].in[0]);
+                        connect<> (orth[j][i].out[1], orth[j-1][i+1].in[1]);
+                    }
+                    connect<> (orth[COL-1][i].out[0], orth[COL-2][i+1].in[1]);
+                    connect<> (orth[COL-1][i].out[1], orth[COL-1][i+1].in[1]);
+                }  
+            
+                row += direction;
+                if(row == VCK190_ROW-1 && direction == 1) {
+                    row = VCK190_ROW-1;
+                    direction *= -1;
+                }
+                else if(row == 0 && direction == -1) {
+                    row = 0;
+                    direction *= -1;
+                }
             }
             connect<> (orth[0][ROW-1].out[0], out[1][0]);
             connect<> (orth[0][ROW-1].out[1], out[0][0]);

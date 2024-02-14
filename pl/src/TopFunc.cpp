@@ -24,8 +24,7 @@ extern "C" void TopFunc(ap_uint<DDR_WIDTH>* in, ap_uint<DDR_WIDTH>* out,
   Manager<8, 2, 4> manager;
   manager.load4DDR(in);
   manager.sweep(toSweepstrm0, toSweepstrm1, fromSweepstrm0, fromSweepstrm1);
-  manager.norm(toNormstrm0, fromNormstrm0);
-  manager.store2DDR(out);                
+  manager.norm(out, toNormstrm0, fromNormstrm0);               
 
 
 }

@@ -57,12 +57,6 @@ public:
     }
   }
 
-  /*void send2AIE(axis_pkt_stream& toAIEstrm, axis_stream& order2AIE, axis_stream& order4AIE) {
-    int id = order2AIE.read();
-    block[id].send2AIE(toAIEstrm);
-    order4AIE.write(id);
-  }*/
-
   void send2AIE(axis_pkt_stream& toAIEstrm, axis_stream& order2AIE, axis_stream& order4AIE, axis_stream* ready, bool first) {
     ap_uint<32> temp;
     int id = order2AIE.read();
@@ -72,8 +66,7 @@ public:
     order4AIE.write(id);
   }
 
-  void send2AIE(
-                axis_pkt_stream& toSweepstrm0, axis_stream& order2AIE0, axis_stream& order4AIE0, 
+  void send2AIE(axis_pkt_stream& toSweepstrm0, axis_stream& order2AIE0, axis_stream& order4AIE0, 
                 axis_pkt_stream& toSweepstrm1, axis_stream& order2AIE1, axis_stream& order4AIE1,
                 axis_stream* ready) {
     // Sweep
@@ -118,22 +111,31 @@ public:
                       
   }
 
-  void norm(axis_pkt_stream& toNormstrm0, axis_pkt_stream& fromNormstrm0) {
-   
+  void norm_send2AIE(axis_pkt_stream& toAIEstrm) {
     for(int i = 0;i < BLOCK_NUM;i ++) {
-#pragma HLS dataflow
-      block[i].send2AIE(toNormstrm0);
-      block[i].receive4AIE(fromNormstrm0);
+      block[i].send2AIE(toAIEstrm);
     }
-                      
   }
 
-  void store2DDR(ap_uint<DDR_WIDTH>* dataOut) {
-    for(int k = 0;k < BLOCK_NUM;k ++) {
-      block[k].store2DDR(dataOut, k);
+  void norm_receive4AIE(ap_uint<DDR_WIDTH>* dataOut, axis_pkt_stream& fromAIEstrm) {
+    axis_pkt tmp;
+    ap_uint<32> header;
+    ap_uint<32> sigma;
+    for(int i = 0;i < BLOCK_NUM;i ++) {
+      for(int j = 0;j < BLOCK_SIZE;j ++) {
+        tmp = fromAIEstrm.read();
+        header = tmp.data(31, 0);
+        sigma = tmp.data(63, 32);
+        dataOut[i*BLOCK_SIZE + j] = sigma;
+      }
     }
-  }      
+  }
 
-  
 
+  void norm(ap_uint<DDR_WIDTH>* dataOut, axis_pkt_stream& toNormstrm0, axis_pkt_stream& fromNormstrm0) {
+#pragma HLS dataflow
+    norm_send2AIE(toNormstrm0);
+    norm_receive4AIE(dataOut, fromNormstrm0);             
+  }
+    
 };

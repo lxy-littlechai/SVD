@@ -29,7 +29,8 @@ AIECC := v++ -c --mode aie
 AIESIM := aiesimulator
 X86SIM := x86simulator
 
-HW_EMU_CMD := ./launch_hw_emu.sh -graphic-xsim -add-env AIE_COMPILER_WORKDIR=../Work 
+#HW_EMU_CMD := ./launch_hw_emu.sh -graphic-xsim -add-env AIE_COMPILER_WORKDIR=../Work 
+HW_EMU_CMD := ./launch_hw_emu.sh -add-env AIE_COMPILER_WORKDIR=../Work 
 
 # compile aie
 AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./aie/src" --include "./" --aie.xlopt=0
@@ -126,7 +127,7 @@ sim: $(GRAPH_O)
 ifeq ($(TARGET),sw_emu)
 	$(X86SIM) --pkg-dir=./Work
 else
-	$(AIESIM) --profile --pkg-dir=./Work
+	$(AIESIM) --profile --pkg-dir=./Work --online -wdb
 # $(AIESIM) --profile --dump-vcd=tutorial --pkg-dir=./Work
 endif 
 

@@ -5,9 +5,9 @@ TopNormGraph<8, 4> topNormGraph(0);
 #if defined(__AIESIM__) || defined(__X86SIM__)
 
 int main() {
-    //topSweepGraph.init();
-    //topSweepGraph.run(1);
-    //topSweepGraph.end();
+    topNormGraph.init();
+    topNormGraph.run(1);
+    topNormGraph.end();
     return 0;
 }
 #endif

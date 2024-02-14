@@ -61,7 +61,7 @@ public:
         fileMatrix.close();
 
 
-        std::ofstream file0(filepath + "/0_sweep_in_0.txt");
+        std::ofstream file0(filepath + "/0_norm_in_0.txt");
         if(file0.is_open()) {
             for(int j = 0;j < COL;j += 2) {
                 int idx = 0;
@@ -81,7 +81,7 @@ public:
         }
         file0.close();
 
-        std::ofstream file1(filepath + "/0_sweep_in_1.txt");
+        std::ofstream file1(filepath + "/0_norm_in_1.txt");
         if(file1.is_open()) {
             for(int j = 1;j < COL;j += 2) {
                 int idx = 0;
