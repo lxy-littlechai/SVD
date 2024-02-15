@@ -45,6 +45,7 @@ int main(int argc, char** argv) {
     std::vector<plKernelArg> pl_arg;
     pl_arg.push_back({0, true, DATA_SIZE, (char*)data, 0});
     pl_arg.push_back({1, true, DATA_SIZE, (char*)result, 0});
+    pl_arg.push_back({2, false, 0, nullptr, ITER});
     harnessDriver.runPL(0, pl_arg);
     harnessDriver.waitDone(100000);
     harnessDriver.fetchRes();

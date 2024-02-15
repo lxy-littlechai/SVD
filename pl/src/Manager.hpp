@@ -25,35 +25,35 @@ public:
     }
   }
 
-  void generateOrder(axis_stream& order2AIE0, axis_stream& order2AIE1) {
+  void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2AIE1) {
     if(BLOCK_NUM%2 == 0) {
       int pu[BLOCK_NUM/2][2], tmp[BLOCK_NUM/2][2];
-      for(int i = 0;i < BLOCK_NUM;i += 2) {
-        pu[i/2][0] = i;
-        pu[i/2][1] = i+1;
+      for(int k = 0;k < ITER;k ++) {
+        for(int i = 0;i < BLOCK_NUM;i += 2) {
+          pu[i/2][0] = i;
+          pu[i/2][1] = i+1;
+        }
+        const int PU_NUM = BLOCK_NUM/2;
+        for(int i = 0;i < BLOCK_NUM-1;i ++) {
+          for(int j = 0;j < PU_NUM;j ++) {
+            order2AIE0.write(pu[j][0]);
+            order2AIE1.write(pu[j][1]);
+          }
+          tmp[1][0] = pu[0][0];
+          tmp[0][0] = pu[0][1];
+          for(int j = 1;j < PU_NUM-1;j ++) {
+            tmp[j+1][0] = pu[j][0];
+            tmp[j-1][1] = pu[j][1];
+          }
+          tmp[PU_NUM-2][1] = pu[PU_NUM-1][0];
+          tmp[PU_NUM-1][1] = pu[PU_NUM-1][1];
+
+          for(int j = 0;j < PU_NUM;j ++) {
+            pu[j][0] = tmp[j][0];
+            pu[j][1] = tmp[j][1];
+          }
+        }
       }
-      const int PU_NUM = BLOCK_NUM/2;
-      for(int i = 0;i < BLOCK_NUM-1;i ++) {
-        for(int j = 0;j < PU_NUM;j ++) {
-          order2AIE0.write(pu[j][0]);
-          order2AIE1.write(pu[j][1]);
-        }
-        tmp[1][0] = pu[0][0];
-        tmp[0][0] = pu[0][1];
-        for(int j = 1;j < PU_NUM-1;j ++) {
-          tmp[j+1][0] = pu[j][0];
-          tmp[j-1][1] = pu[j][1];
-        }
-        tmp[PU_NUM-2][1] = pu[PU_NUM-1][0];
-        tmp[PU_NUM-1][1] = pu[PU_NUM-1][1];
-
-        for(int j = 0;j < PU_NUM;j ++) {
-          pu[j][0] = tmp[j][0];
-          pu[j][1] = tmp[j][1];
-        }
-
-      }
-
     }
   }
 
@@ -68,9 +68,9 @@ public:
 
   void send2AIE(axis_pkt_stream& toSweepstrm0, axis_stream& order2AIE0, axis_stream& order4AIE0, 
                 axis_pkt_stream& toSweepstrm1, axis_stream& order2AIE1, axis_stream& order4AIE1,
-                axis_stream* ready) {
+                axis_stream* ready, const int ITER) {
     // Sweep
-    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1);
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
     for(int step = 0;step < SWEEP_STEP;step ++){
 //#pragma HLS dataflow
       send2AIE(toSweepstrm0, order2AIE0, order4AIE0, ready, step == 0);
@@ -78,7 +78,7 @@ public:
     }
   }
 
-  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& order4AIE, axis_stream* ready) {
+  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& order4AIE, axis_stream* ready, bool last) {
     int id = order4AIE.read();
     block[id].receive4AIE(fromAIEstrm);
     ready[id].write(1);
@@ -86,28 +86,30 @@ public:
 
   void receive4AIE(axis_pkt_stream& fromSweepstrm0, axis_stream& order4AIE0,
                    axis_pkt_stream& fromSweepstrm1, axis_stream& order4AIE1,
-                   axis_stream* ready) {
-    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1);
+                   axis_stream* ready, const int ITER) {
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
     for(int step = 0;step < SWEEP_STEP;step ++){
 //#pragma HLS dataflow      
-      receive4AIE(fromSweepstrm0, order4AIE0, ready);
-      receive4AIE(fromSweepstrm1, order4AIE1, ready);
+      receive4AIE(fromSweepstrm0, order4AIE0, ready, step == SWEEP_STEP-1);
+      receive4AIE(fromSweepstrm1, order4AIE1, ready, step == SWEEP_STEP-1);
     }
   }
 
-  void sweep(axis_pkt_stream& toSweepstrm0, axis_pkt_stream& toSweepstrm1,
+  void sweep(const int ITER,
+             axis_pkt_stream& toSweepstrm0, axis_pkt_stream& toSweepstrm1,
              axis_pkt_stream& fromSweepstrm0, axis_pkt_stream& fromSweepstrm1) {
      axis_stream order2AIE[2], order4AIE[2];
      axis_stream ready[BLOCK_NUM];
      
-#pragma HLS dataflow
-     generateOrder(order2AIE[0], order2AIE[1]);
-     send2AIE(toSweepstrm0, order2AIE[0], order4AIE[0],
+      #pragma HLS dataflow
+      generateOrder(ITER, order2AIE[0], order2AIE[1]);
+      send2AIE(toSweepstrm0, order2AIE[0], order4AIE[0],
               toSweepstrm1, order2AIE[1], order4AIE[1],
-              ready);
-     receive4AIE(fromSweepstrm0, order4AIE[0],
+              ready, ITER);
+      receive4AIE(fromSweepstrm0, order4AIE[0],
                  fromSweepstrm1, order4AIE[1], 
-                 ready); 
+                 ready, ITER);
+      
                       
   }
 
