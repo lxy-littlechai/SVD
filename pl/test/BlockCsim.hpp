@@ -2,37 +2,49 @@
 #include <ap_axi_sdata.h>
 #include <hls_stream.h>
 #include <hls_burst_maxi.h>
-#include "../src/config.h"
-#include <bits/stdc++.h>
+#include "config.h"
+#include <iostream>
 using namespace std;
 
 template<int ROW, int BLOCK_SIZE>
 class Block {
 private:
+
   ap_uint<W> mem[ROW*BLOCK_SIZE/ELEM_NUM];
   axis_stream ready;
 
 public:
+
+  Block() {
+#pragma HLS array_partition variable = mem type = complete dim = 1
+//#pragma HLS INTERFACE axis port = ready
+  }
   void load4DDR(ap_uint<DDR_WIDTH>* dataIn, int k) {
     for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
       for(int i = 0;i < ROW/ELEM_NUM;i ++) {
         ap_uint<W> data;
         for(int u = 0;u < ELEM_NUM;u ++) {
           data(32*(u+1)-1,32*u) = dataIn[k*BLOCK_SIZE*ROW + j*ROW + i*ELEM_NUM + u];
-          cout << dataIn[k*BLOCK_SIZE*ROW + j*ROW + i*ELEM_NUM + u] << " ";
         }
         mem[j*ROW/ELEM_NUM + i] = data;
       }
     }
-    cout << "\n";
-    ready.write(1);
+    //ready.write(1);
   }
 
   void send2AIE(axis_pkt_stream& toAIEstrm) {
     axis_pkt tmp;
     ap_uint<32> header;
 
-    ready.read();
+    for(int i = 0;i < BLOCK_SIZE;i ++) {
+      for(int j = 0;j < ROW/ELEM_NUM;j ++) {
+        for(int u = 0;u < ELEM_NUM;u ++) {
+          cout << mem[i*ROW/ELEM_NUM + j](31*(u+1), 32*u) << " ";
+        }
+      }
+      cout << "\n";
+    }
+    //ready.read();
     for(int i = 0;i < BLOCK_SIZE;i ++) {
       header = generateHeader(0, i);
 
@@ -51,7 +63,7 @@ public:
         tmp.data(95, 64) = mem[i*ROW/ELEM_NUM + j](63, 32);
         tmp.data(127, 96) = mem[i*ROW/ELEM_NUM + j](95, 64);
         tmp.keep = -1;
-        tmp.last = (j == ROW/ELEM_NUM-1);
+        tmp.last = 0;
         toAIEstrm.write(tmp);
       }
       
@@ -68,7 +80,7 @@ public:
     
   }
 
-  void receive4AIE(axis_pkt_stream& fromAIEstrm) {
+  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& ready) {
       axis_pkt tmp;
       ap_uint<32> header;
       ap_int<W> data_temp[2];
@@ -76,7 +88,6 @@ public:
         tmp = fromAIEstrm.read();
         header = tmp.data(31, 0);
         int ID = getPacketID(header);
-        cout << ID << endl;
         data_temp[0](31, 0) = tmp.data(63, 32);
         data_temp[0](63, 32) = tmp.data(95, 64);
         data_temp[0](95, 64) = tmp.data(127, 96);
@@ -97,7 +108,6 @@ public:
 
       }
       ready.write(1);
-      
 
   }
 

@@ -9,15 +9,17 @@ class Block {
 private:
 
   ap_uint<W> mem[ROW*BLOCK_SIZE/ELEM_NUM];
-  //axis_stream ready;
+  axis_stream ready;
 
 public:
 
   Block() {
-#pragma HLS array_partition variable = mem type = complete dim = 1
+    #pragma HLS bind_storage variable=mem type=RAM_T2P impl=URAM
+    #pragma HLS array_partition variable = mem type = complete dim = 1
 //#pragma HLS INTERFACE axis port = ready
   }
   void load4DDR(ap_uint<DDR_WIDTH>* dataIn, int k) {
+  #pragma HLS inline off
     for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
       for(int i = 0;i < ROW/ELEM_NUM;i ++) {
         ap_uint<W> data;
@@ -31,6 +33,7 @@ public:
   }
 
   void send2AIE(axis_pkt_stream& toAIEstrm) {
+  #pragma HLS inline off
     axis_pkt tmp;
     ap_uint<32> header;
 
@@ -70,7 +73,8 @@ public:
     
   }
 
-  void receive4AIE(axis_pkt_stream& fromAIEstrm) {
+  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& ready) {
+  #pragma HLS inline off
       axis_pkt tmp;
       ap_uint<32> header;
       ap_int<W> data_temp[2];
@@ -97,12 +101,12 @@ public:
 
 
       }
-      
+      ready.write(1);
 
   }
 
   void store2DDR(ap_uint<DDR_WIDTH>* dataOut, int k) {
-
+  #pragma HLS inline off
       for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
         for(int i = 0;i < ROW/ELEM_NUM;i ++) {
           ap_uint<W> data = mem[j*ROW/ELEM_NUM + i];

@@ -13,14 +13,14 @@ int main(int argc, char** argv) {
     
     const int ROW = 8;
     const int COL = 8;
-    const int ITER = 1;
+    const int ITER = 5;
     const int DATA_SIZE = ROW*COL*sizeof(float);
 
     const int BLOCK_SIZE = 4;
     const int BLOCK_NUM = COL/BLOCK_SIZE;
 
     float* data = new float[COL*ROW];
-    float* result = new float[COL*ROW];
+    float* result = new float[COL];
 
     
     for(int j = 0;j < COL;j ++) {
@@ -38,8 +38,8 @@ int main(int argc, char** argv) {
     }
     
     HarnessDriver harnessDriver(0, argv[1], {"TopFunc"}, {"topSweepGraph", "topNormGraph"});
-    harnessDriver.runGraph(0, BLOCK_NUM/2*(BLOCK_NUM-1));
-    harnessDriver.runGraph(1, BLOCK_NUM);
+    harnessDriver.runGraph(0, BLOCK_NUM/2*(BLOCK_NUM-1)*ITER);
+    harnessDriver.runGraph(1, BLOCK_NUM*ITER);
 
 
     std::vector<plKernelArg> pl_arg;
@@ -51,12 +51,10 @@ int main(int argc, char** argv) {
     harnessDriver.fetchRes();
 
     std::cout << "result\n";
-    for(int i = 0;i < ROW;i ++) {
-        for(int j = 0;j < COL;j ++) {
-            cout << result[j*ROW + i] << " ";
-        }
-        cout << endl;
+    for(int j = 0;j < COL;j ++) {
+        cout << result[j] << " ";
     }
+    cout << endl;
 
     
     return 0;

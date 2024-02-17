@@ -35,8 +35,7 @@ int main() {
     manager.simulateAIE(toAIEstrm0, toAIEstrm1, fromAIEstrm0, fromAIEstrm1);
     manager.receive4AIE(fromAIEstrm0, fromAIEstrm1);
   }
-  
-  manager.store2DDR(result);
+  manager.norm(result, toNormstrm0, fromNormstrm0);
 
   cout << "Result: \n";
   for(int i = 0;i < ROW;i ++) {
