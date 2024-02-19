@@ -35,7 +35,7 @@ public:
   void send2AIE(axis_pkt_stream& toAIEstrm) {
     axis_pkt tmp;
     ap_uint<32> header;
-
+    
     for(int i = 0;i < BLOCK_SIZE;i ++) {
       for(int j = 0;j < ROW/ELEM_NUM;j ++) {
         for(int u = 0;u < ELEM_NUM;u ++) {
@@ -88,6 +88,7 @@ public:
         tmp = fromAIEstrm.read();
         header = tmp.data(31, 0);
         int ID = getPacketID(header);
+
         data_temp[0](31, 0) = tmp.data(63, 32);
         data_temp[0](63, 32) = tmp.data(95, 64);
         data_temp[0](95, 64) = tmp.data(127, 96);
@@ -108,6 +109,7 @@ public:
 
       }
       ready.write(1);
+      cout << "receive\n";
 
   }
 

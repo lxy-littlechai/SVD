@@ -6,7 +6,7 @@
 #include "config.h"
 
 template<int ROW, int BLOCK_NUM, int BLOCK_SIZE>
-class ManagerCsim {
+class Manager {
 private:
 
   Block<ROW, BLOCK_SIZE> block[BLOCK_NUM];
@@ -20,13 +20,14 @@ public:
 //#pragma HLS INTERFACE axis port = order4AIE
   }
   void load4DDR(ap_uint<DDR_WIDTH>* dataIn) {
+  #pragma HLS inline off
     for(int k = 0;k < BLOCK_NUM;k ++) {
       block[k].load4DDR(dataIn, k);
     }
   }
-
   void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2AIE1) {
-    if(BLOCK_NUM%2 == 0) {
+  #pragma HLS inline off 
+   if(BLOCK_NUM%2 == 0) {
       int pu[BLOCK_NUM/2][2], tmp[BLOCK_NUM/2][2];
       for(int k = 0;k < ITER;k ++) {
         for(int i = 0;i < BLOCK_NUM;i += 2) {
@@ -58,11 +59,12 @@ public:
   }
 
   void send2AIE(axis_pkt_stream& toAIEstrm, axis_stream& order2AIE, axis_stream& order4AIE, axis_stream* ready, bool first) {
+  #pragma HLS inline off  
     ap_uint<32> temp;
     int id = order2AIE.read();
     if(first) ready[id].read_nb(temp);
     else ready[id].read();
-    cout << id << "\n";
+    cout << "send BLOCK: " << id << "\n";
     block[id].send2AIE(toAIEstrm);
     order4AIE.write(id);
   }
@@ -70,7 +72,7 @@ public:
   void send2AIE(axis_pkt_stream& toSweepstrm0, axis_stream& order2AIE0, axis_stream& order4AIE0, 
                 axis_pkt_stream& toSweepstrm1, axis_stream& order2AIE1, axis_stream& order4AIE1,
                 axis_stream* ready, const int ITER) {
-    // Sweep
+  #pragma HLS inline off
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
     for(int step = 0;step < SWEEP_STEP;step ++){
 //#pragma HLS dataflow
@@ -79,8 +81,10 @@ public:
     }
   }
 
-  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& order4AIE, axis_stream* ready, bool last) {
+  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& order4AIE, axis_stream* ready) {
+  #pragma HLS inline off  
     int id = order4AIE.read();
+    cout << "block: " << id << " receive\n";
     block[id].receive4AIE(fromAIEstrm, ready[id]);
     //ready[id].write(1);
   }
@@ -88,17 +92,19 @@ public:
   void receive4AIE(axis_pkt_stream& fromSweepstrm0, axis_stream& order4AIE0,
                    axis_pkt_stream& fromSweepstrm1, axis_stream& order4AIE1,
                    axis_stream* ready, const int ITER) {
+  #pragma HLS inline off
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
     for(int step = 0;step < SWEEP_STEP;step ++){
 //#pragma HLS dataflow      
-      receive4AIE(fromSweepstrm0, order4AIE0, ready, step == SWEEP_STEP-1);
-      receive4AIE(fromSweepstrm1, order4AIE1, ready, step == SWEEP_STEP-1);
+      receive4AIE(fromSweepstrm0, order4AIE0, ready);
+      receive4AIE(fromSweepstrm1, order4AIE1, ready);
     }
   }
 
   void sweep(const int ITER,
              axis_pkt_stream& toSweepstrm0, axis_pkt_stream& toSweepstrm1,
              axis_pkt_stream& fromSweepstrm0, axis_pkt_stream& fromSweepstrm1) {
+  #pragma HLS inline off
      axis_stream order2AIE[2], order4AIE[2];
      axis_stream ready[BLOCK_NUM];
      
@@ -115,12 +121,14 @@ public:
   }
 
   void norm_send2AIE(axis_pkt_stream& toAIEstrm) {
+  #pragma HLS inline off
     for(int i = 0;i < BLOCK_NUM;i ++) {
       block[i].send2AIE(toAIEstrm);
     }
   }
 
   void norm_receive4AIE(ap_uint<DDR_WIDTH>* dataOut, axis_pkt_stream& fromAIEstrm) {
+  #pragma HLS inline off
     axis_pkt tmp;
     ap_uint<32> header;
     ap_uint<32> sigma;
@@ -129,7 +137,7 @@ public:
         tmp = fromAIEstrm.read();
         header = tmp.data(31, 0);
         sigma = tmp.data(63, 32);
-        dataOut[i*BLOCK_SIZE + j] = sigma;
+        dataOut[i*BLOCK_SIZE + header] = sigma;
       }
     }
   }
@@ -139,6 +147,50 @@ public:
 #pragma HLS dataflow
     norm_send2AIE(toNormstrm0);
     norm_receive4AIE(dataOut, fromNormstrm0);             
+  }
+
+  void simulateAIE(axis_pkt_stream& toSweepstrm0, axis_pkt_stream& toSweepstrm1, 
+                  axis_pkt_stream& fromSweepstrm0, axis_pkt_stream& fromSweepstrm1) {
+                    axis_pkt tmp;
+                    ap_uint<32> header;
+                    for(int i = 0;i < BLOCK_SIZE;i ++) {
+                      tmp = toSweepstrm0.read();
+                      for(int u = 1;u < ELEM_NUM;u ++) {
+                        tmp.data(31*(u+1), 32*u) = 1;
+                      }
+                      fromSweepstrm0.write(tmp);
+
+                      for(int j = 1;j < ROW/ELEM_NUM;j ++) {
+                        tmp = toSweepstrm0.read();
+                        for(int u = 0;u < ELEM_NUM;u ++) {
+                          tmp.data(31*(u+1), 32*u) = 1;
+                        }
+                        fromSweepstrm0.write(tmp);
+                      }
+                      tmp = toSweepstrm0.read();
+                      tmp.data(31, 0) = 1;
+                      fromSweepstrm0.write(tmp);
+                    } 
+
+
+                    for(int i = 0;i < BLOCK_SIZE;i ++) {
+                      tmp = toSweepstrm1.read();
+                      for(int u = 1;u < ELEM_NUM;u ++) {
+                        tmp.data(31*(u+1), 32*u) = 1;
+                      }
+                      fromSweepstrm1.write(tmp);
+
+                      for(int j = 1;j < ROW/ELEM_NUM;j ++) {
+                        tmp = toSweepstrm1.read();
+                        for(int u = 0;u < ELEM_NUM;u ++) {
+                          tmp.data(31*(u+1), 32*u) = 1;
+                        }
+                        fromSweepstrm1.write(tmp);
+                      }
+                      tmp = toSweepstrm1.read();
+                      tmp.data(31, 0) = 1;
+                      fromSweepstrm1.write(tmp);
+                    }
   }
     
 };

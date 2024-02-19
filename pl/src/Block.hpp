@@ -7,9 +7,7 @@
 template<int ROW, int BLOCK_SIZE>
 class Block {
 private:
-
   ap_uint<W> mem[ROW*BLOCK_SIZE/ELEM_NUM];
-  axis_stream ready;
 
 public:
 
@@ -37,7 +35,6 @@ public:
     axis_pkt tmp;
     ap_uint<32> header;
 
-    //ready.read();
     for(int i = 0;i < BLOCK_SIZE;i ++) {
       header = generateHeader(0, i);
 

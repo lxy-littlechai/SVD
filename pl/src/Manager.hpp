@@ -80,7 +80,7 @@ public:
     }
   }
 
-  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& order4AIE, axis_stream* ready, bool last) {
+  void receive4AIE(axis_pkt_stream& fromAIEstrm, axis_stream& order4AIE, axis_stream* ready) {
   #pragma HLS inline off  
     int id = order4AIE.read();
     block[id].receive4AIE(fromAIEstrm, ready[id]);
@@ -92,10 +92,9 @@ public:
                    axis_stream* ready, const int ITER) {
   #pragma HLS inline off
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
-    for(int step = 0;step < SWEEP_STEP;step ++){
-//#pragma HLS dataflow      
-      receive4AIE(fromSweepstrm0, order4AIE0, ready, step == SWEEP_STEP-1);
-      receive4AIE(fromSweepstrm1, order4AIE1, ready, step == SWEEP_STEP-1);
+    for(int step = 0;step < SWEEP_STEP;step ++){    
+      receive4AIE(fromSweepstrm0, order4AIE0, ready);
+      receive4AIE(fromSweepstrm1, order4AIE1, ready);
     }
   }
 
