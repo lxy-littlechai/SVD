@@ -1,10 +1,4 @@
-#include <ap_int.h>
-#include <ap_axi_sdata.h>
-#include <hls_stream.h>
-#include <hls_burst_maxi.h>
-#include <hls_streamofblocks.h>
-#include <hls_print.h>
-#include "config.h"
+#include "TopFunc.h"
 
 static ap_uint<32> generateHeader(unsigned int pktType, unsigned int ID){
 #pragma HLS inline
@@ -30,21 +24,21 @@ static unsigned int getPacketID(ap_uint<32> header){
 void load4DDR(ap_uint<DDR_WIDTH>* dataIn, axis_block_stream block[BLOCK_NUM]) {
 #pragma HLS inline off
   for(int k = 0;k < BLOCK_NUM;k ++) {
-        hls::write_lock<buf> mem(block[k]);
-        for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
-            for(int i = 0;i < ROW/ELEM_NUM;i ++) {
-                ap_uint<W> data;
-                for(int u = 0;u < ELEM_NUM;u ++) {
-                    data(32*(u+1)-1,32*u) = dataIn[k*BLOCK_SIZE*ROW + j*ROW + i*ELEM_NUM + u];
-                }
-                mem[j*ROW/ELEM_NUM + i] = data;
-            }
-        } 
+    hls::write_lock<buf> mem(block[k]);
+    //bug here
+    for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
+      for(int i = 0;i < ROW/ELEM_NUM;i ++) {
+        ap_uint<W> data;
+        for(int u = 0;u < ELEM_NUM;u ++) {
+          data(32*(u+1)-1,32*u) = dataIn[k*BLOCK_SIZE*ROW + j*ROW + i*ELEM_NUM + u];
+        }
+        mem[j*ROW/ELEM_NUM + i] = data;
+      }
     }
+  }
 }
 
-void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2AIE1
-                   ) {
+void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2AIE1) {
   #pragma HLS inline off 
    if(BLOCK_NUM%2 == 0) {
       int pu[BLOCK_NUM/2][2], tmp[BLOCK_NUM/2][2];
@@ -133,6 +127,7 @@ void send2AIE(axis_block_stream block[BLOCK_NUM], axis_stream& order2AIE, axis_s
     ap_uint<32> header;
     hls::print("before read\n");
     int id = order2AIE.read();
+    order4AIE.write(id);
     hls::print("block %d\n",id);
     hls::read_lock<buf>mem(block[id]);
     hls::print("read_lock %d get\n",id);
@@ -168,7 +163,7 @@ void send2AIE(axis_block_stream block[BLOCK_NUM], axis_stream& order2AIE, axis_s
       toAIEstrm.write(tmp);
 
     }
-    order4AIE.write(id);
+    
 }
 
 void send2AIE(axis_block_stream& block, axis_pkt_stream& toAIEstrm) {

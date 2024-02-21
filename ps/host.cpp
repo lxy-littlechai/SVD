@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     
     const int ROW = 8;
     const int COL = 8;
-    const int ITER = 5;
+    const int ITER = 3;
     const int DATA_SIZE = ROW*COL*sizeof(float);
 
     const int BLOCK_SIZE = 4;

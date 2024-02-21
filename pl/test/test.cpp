@@ -1,4 +1,4 @@
-#include "../src/TopFunc.cpp"
+#include "../src/TopFunc.h"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -28,7 +28,11 @@ int main() {
   axis_block_stream blockIn[BLOCK_NUM], blockOut[BLOCK_NUM], block[BLOCK_NUM];
   axis_pkt_stream toSweepstrm0, toSweepstrm1, toNormstrm0;
   axis_pkt_stream fromSweepstrm0, fromSweepstrm1, fromNormstrm0;
-  const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
+  TopFunc(data, result, ITER,
+         toSweepstrm0, fromSweepstrm0,
+         toSweepstrm1, fromSweepstrm1,
+         toNormstrm0, fromNormstrm0);
+/*  const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
 
   load4DDR(data, blockIn);
   generateOrder(ITER, order2AIE[0], order2AIE[1]);
@@ -55,7 +59,7 @@ int main() {
         receive4AIE(blockOut, order4AIE[1], fromSweepstrm1);
       }
     }
-  
+  */
 
   cout << "Result: \n";
   for(int i = 0;i < ROW;i ++) {
