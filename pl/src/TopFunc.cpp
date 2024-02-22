@@ -20,12 +20,11 @@ static unsigned int getPacketID(ap_uint<32> header){
   ID(4, 0) = header(4, 0);
   return ID;
 }
-
-void load4DDR(ap_uint<DDR_WIDTH>* dataIn, axis_block_stream block[BLOCK_NUM]) {
+/*
+void load4DDR(ap_uint<DDR_WIDTH>* dataIn, axis_stream block[BLOCK_NUM]) {
 #pragma HLS inline off
   ap_uint<W> data;
   for(int k = 0;k < BLOCK_NUM;k ++) {
-    hls::write_lock<buf> mem(block[k]);
     hls::print("load4DDR write_lock %d get\n",k);
     for(int i = 0;i < BLOCK_SIZE*ROW/ELEM_NUM;i ++) {
       for(int u = 0;u < ELEM_NUM;u ++) {
@@ -37,20 +36,10 @@ void load4DDR(ap_uint<DDR_WIDTH>* dataIn, axis_block_stream block[BLOCK_NUM]) {
       hls::print("\n%d\n",mem[i]);
     }
     hls::print("load4DDR write_lock k release\n");
-    //bug here
-    /*
-    for(int j = 0;j < BLOCK_SIZE;j ++) {//col first
-      for(int i = 0;i < ROW/ELEM_NUM;i ++) {
-        ap_uint<W> data;
-        for(int u = 0;u < ELEM_NUM;u ++) {
-          data(32*(u+1)-1,32*u) = dataIn[k*BLOCK_SIZE*ROW + j*ROW + i*ELEM_NUM + u];
-        }
-        mem[j*ROW/ELEM_NUM + i] = data;
-      }
-    }*/
+ 
   }
 }
-
+*/
 void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2AIE1) {
   #pragma HLS inline off 
    if(BLOCK_NUM%2 == 0) {
@@ -84,19 +73,19 @@ void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2A
     }
   }
 
-void receive4AIE(axis_block_stream block[BLOCK_NUM], axis_stream& order4AIE, axis_pkt_stream& fromAIEstrm) {
+void receive4AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM], axis_stream& order4AIE, axis_pkt_stream& fromAIEstrm) {
     #pragma HLS inline off  
     axis_pkt tmp;
     ap_uint<32> header;
     ap_int<W> data_temp[2];
 
     int id = order4AIE.read();
-    hls::write_lock<buf> mem(block[id]);
     hls::print("write_lock %d get\n",id);
     for(int i = 0;i < BLOCK_SIZE;i ++) {
         tmp = fromAIEstrm.read();
         header = tmp.data(31, 0);
-        int ID = getPacketID(header);
+        int COL_INDEX = getPacketID(header);
+        col_index[id].write(COL_INDEX);
         data_temp[0](31, 0) = tmp.data(63, 32);
         data_temp[0](63, 32) = tmp.data(95, 64);
         data_temp[0](95, 64) = tmp.data(127, 96);
@@ -107,33 +96,33 @@ void receive4AIE(axis_block_stream block[BLOCK_NUM], axis_stream& order4AIE, axi
           data_temp[j%2](31, 0) = tmp.data(63, 32);
           data_temp[j%2](63, 32) = tmp.data(95, 64);
           data_temp[j%2](95, 64) = tmp.data(127, 96);
-          mem[ID*ROW/ELEM_NUM + j-1] = 1;
+          block[id].write(data_temp[(j-1)%2]);
           //mem[ID*ROW/ELEM_NUM + j-1] = data_temp[(j-1)%2];
           //hls::print("data %d\n",data_temp[(j-1)%2]);
         }
         tmp = fromAIEstrm.read();
         data_temp[(ROW/ELEM_NUM-1)%2](127, 96) = tmp.data(31, 0);
-        mem[ID*ROW/ELEM_NUM + ROW/ELEM_NUM-1] = 1;
+        block[id].write(data_temp[(ROW/ELEM_NUM-1)%2]);
         //mem[ID*ROW/ELEM_NUM + ROW/ELEM_NUM-1] = data_temp[(ROW/ELEM_NUM-1)%2];
     }
     hls::print("write_lock %d release\n", id);
 }
 
-void sweep_receive(const int ITER, axis_block_stream blockOut[BLOCK_NUM], axis_block_stream block[BLOCK_NUM],
+void svd_receive(const int ITER, axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM],
                    axis_stream& order4AIE0, axis_pkt_stream& fromSweepstrm0, 
                    axis_stream& order4AIE1, axis_pkt_stream& fromSweepstrm1) {
     #pragma HLS inline off
 
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
     for(int step = 0;step < SWEEP_STEP;step ++){    
-      if(step < SWEEP_STEP - BLOCK_NUM/2) {
-        receive4AIE(block, order4AIE0, fromSweepstrm0);
-        receive4AIE(block, order4AIE1, fromSweepstrm1);
-      }
-      else {
-        receive4AIE(blockOut, order4AIE0, fromSweepstrm0);
-        receive4AIE(blockOut, order4AIE1, fromSweepstrm1);
-      }
+     // if(step < SWEEP_STEP - BLOCK_NUM/2) {
+        receive4AIE(block, col_index, order4AIE0, fromSweepstrm0);
+        receive4AIE(block, col_index, order4AIE1, fromSweepstrm1);
+      //}
+      /*else {
+        receive4AIE(blockOut, col_index, order4AIE0, fromSweepstrm0);
+        receive4AIE(blockOut, col_index, order4AIE1, fromSweepstrm1);
+      }*/
     }
     
 }
@@ -185,33 +174,37 @@ void send2AIE(ap_uint<DDR_WIDTH>* dataIn, axis_stream& order2AIE, axis_stream& o
     hls::print("read_lock %d release\n", id);
 }
 
-void send2AIE(axis_block_stream block[BLOCK_NUM], axis_stream& order2AIE, axis_stream& order4AIE, axis_pkt_stream& toAIEstrm) {
+void send2AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM],
+              axis_stream& order2AIE, axis_stream& order4AIE, axis_pkt_stream& toAIEstrm) {
   #pragma HLS inline off    
     axis_pkt tmp;
     ap_uint<32> header;
+    ap_int<W> data_temp[2];
     hls::print("before read\n");
     int id = order2AIE.read();
     order4AIE.write(id);
     hls::print("block %d\n",id);
-    hls::read_lock<buf>mem(block[id]);
+    
     hls::print("read_lock %d get\n",id);
     for(int i = 0;i < BLOCK_SIZE;i ++) {
-      header = generateHeader(0, i);
+      int header = col_index[id].read();
+      data_temp[0] = block[id].read();
       //hls::print("header %d\n",header);
       tmp.data(31, 0) = header;
-      tmp.data(63, 32) = mem[i*ROW/ELEM_NUM](31, 0);
-      tmp.data(95, 64) = mem[i*ROW/ELEM_NUM](63, 32);
-      tmp.data(127, 96) = mem[i*ROW/ELEM_NUM](95, 64);
+      tmp.data(63, 32) = data_temp[0](31, 0);
+      tmp.data(95, 64) = data_temp[0](63, 32);
+      tmp.data(127, 96) = data_temp[0](95, 64);
       tmp.keep = -1;
       tmp.last = 0;
       toAIEstrm.write(tmp);
       //hls::print("data %d\n",tmp.data);
       for(int j = 1;j < ROW/ELEM_NUM;j ++) {
         //tmp.data = mem[i*ROW/ELEM_NUM + j];
-        tmp.data(31, 0) = mem[i*ROW/ELEM_NUM + j - 1](127, 96);
-        tmp.data(63, 32) = mem[i*ROW/ELEM_NUM + j](31, 0);
-        tmp.data(95, 64) = mem[i*ROW/ELEM_NUM + j](63, 32);
-        tmp.data(127, 96) = mem[i*ROW/ELEM_NUM + j](95, 64);
+        data_temp[j%2] = block[id].read();
+        tmp.data(31, 0) = data_temp[(j-1)%2](127, 96);
+        tmp.data(63, 32) = data_temp[j%2](31, 0);
+        tmp.data(95, 64) = data_temp[j%2](63, 32);
+        tmp.data(127, 96) = data_temp[j%2](95, 64);
         tmp.keep = -1;
         tmp.last = 0;
         toAIEstrm.write(tmp);
@@ -219,7 +212,7 @@ void send2AIE(axis_block_stream block[BLOCK_NUM], axis_stream& order2AIE, axis_s
       }
       
 
-      tmp.data(31, 0) = mem[i*ROW/ELEM_NUM + ROW/ELEM_NUM - 1](127, 96);
+      tmp.data(31, 0) = data_temp[(ROW/ELEM_NUM-1)%2](127, 96);
       tmp.data(63, 32) = 0;
       tmp.data(95, 64) = 0;
       tmp.data(127, 96) = 0;
@@ -229,50 +222,11 @@ void send2AIE(axis_block_stream block[BLOCK_NUM], axis_stream& order2AIE, axis_s
       //hls::print("data %d\n",tmp.data);
 
     }
+    
     hls::print("read_lock %d release\n", id);
 }
 
-void send2AIE(axis_block_stream& block, axis_pkt_stream& toAIEstrm) {
-  #pragma HLS inline off    
-    axis_pkt tmp;
-    ap_uint<32> header;
-    
-    hls::read_lock<buf>mem(block);
-    for(int i = 0;i < BLOCK_SIZE;i ++) {
-      header = generateHeader(0, i);
-
-      tmp.data(31, 0) = header;
-      tmp.data(63, 32) = mem[i*ROW/ELEM_NUM](31, 0);
-      tmp.data(95, 64) = mem[i*ROW/ELEM_NUM](63, 32);
-      tmp.data(127, 96) = mem[i*ROW/ELEM_NUM](95, 64);
-      tmp.keep = -1;
-      tmp.last = 0;
-      toAIEstrm.write(tmp);
-      
-      for(int j = 1;j < ROW/ELEM_NUM;j ++) {
-        tmp.data = mem[i*ROW/ELEM_NUM + j];
-        tmp.data(31, 0) = mem[i*ROW/ELEM_NUM + j - 1](127, 96);
-        tmp.data(63, 32) = mem[i*ROW/ELEM_NUM + j](31, 0);
-        tmp.data(95, 64) = mem[i*ROW/ELEM_NUM + j](63, 32);
-        tmp.data(127, 96) = mem[i*ROW/ELEM_NUM + j](95, 64);
-        tmp.keep = -1;
-        tmp.last = 0;
-        toAIEstrm.write(tmp);
-      }
-      
-
-      tmp.data(31, 0) = mem[i*ROW/ELEM_NUM + ROW/ELEM_NUM - 1](127, 96);
-      tmp.data(63, 32) = 0;
-      tmp.data(95, 64) = 0;
-      tmp.data(127, 96) = 0;
-      tmp.keep = 0x000f;
-      tmp.last = 1;
-      toAIEstrm.write(tmp);
-
-    }
-}
-
-void sweep_send(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_block_stream block[BLOCK_NUM],
+void svd_send(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM],
                 axis_stream& order2AIE0, axis_stream& order4AIE0, axis_pkt_stream& toSweepstrm0, 
                 axis_stream& order2AIE1, axis_stream& order4AIE1, axis_pkt_stream& toSweepstrm1){
     #pragma HLS inline off
@@ -284,33 +238,17 @@ void sweep_send(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_block_stream bl
         send2AIE(dataIn, order2AIE1, order4AIE1, toSweepstrm1);
       }
       else {
-        send2AIE(block, order2AIE0, order4AIE0, toSweepstrm0);
-        send2AIE(block, order2AIE1, order4AIE1, toSweepstrm1);
+        send2AIE(block, col_index, order2AIE0, order4AIE0, toSweepstrm0);
+        send2AIE(block, col_index, order2AIE1, order4AIE1, toSweepstrm1);
       }
-      
     }
                   
 }
 
-void sweep(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_block_stream blockOut[BLOCK_NUM],
-           axis_pkt_stream& toSweepstrm0, axis_pkt_stream& fromSweepstrm0,
-           axis_pkt_stream& toSweepstrm1, axis_pkt_stream& fromSweepstrm1 ) {
-    #pragma HLS dataflow
-    axis_block_stream block[BLOCK_NUM];
-    axis_stream order2AIE[2], order4AIE[2];
-    generateOrder(ITER, order2AIE[0], order2AIE[1]);
-    sweep_send(ITER, dataIn, block, 
-               order2AIE[0], order4AIE[0], toSweepstrm0,
-               order2AIE[1], order4AIE[1], toSweepstrm1);
-    sweep_receive(ITER, blockOut, block, 
-                  order4AIE[0], fromSweepstrm0,
-                  order4AIE[1], fromSweepstrm1);
-    
-}
 
-void norm_send(axis_block_stream block[BLOCK_NUM], axis_pkt_stream& toAIEstrm) {
+void norm_send(axis_stream_128 block[BLOCK_NUM], axis_pkt_stream& toAIEstrm) {
   for(int i = 0;i < BLOCK_NUM;i ++) {
-    send2AIE(block[i], toAIEstrm);
+    //send2AIE(block[i], toAIEstrm);
   }
 }
 
@@ -329,25 +267,25 @@ void norm_receive(ap_uint<DDR_WIDTH>* dataOut, axis_pkt_stream& fromAIEstrm) {
     }
 }
 
-void norm(ap_uint<DDR_WIDTH>* out, axis_block_stream blockIn[BLOCK_NUM],
+void norm(ap_uint<DDR_WIDTH>* out, axis_stream blockIn[BLOCK_NUM],
           axis_pkt_stream& toNormstrm0, axis_pkt_stream& fromNormstrm0) {
   #pragma HLS dataflow
-  norm_send(blockIn, toNormstrm0);
-  norm_receive(out, fromNormstrm0);
+  //norm_send(blockIn, toNormstrm0);
+  //norm_receive(out, fromNormstrm0);
 
 }
 
-void TopFunc(ap_uint<DDR_WIDTH>* in, ap_uint<DDR_WIDTH>* out,
+void TopFunc(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* dataOut,
          const int ITER, 
          axis_pkt_stream& toSweepstrm0, axis_pkt_stream& fromSweepstrm0,
-         axis_pkt_stream& toSweepstrm1, axis_pkt_stream& fromSweepstrm1,
-         axis_pkt_stream& toNormstrm0, axis_pkt_stream& fromNormstrm0) {
+         axis_pkt_stream& toSweepstrm1, axis_pkt_stream& fromSweepstrm1
+         /*axis_pkt_stream& toNormstrm0, axis_pkt_stream& fromNormstrm0*/) {
 #pragma HLS INTERFACE m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = \
-    16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = in depth = 8192
+    16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = dataIn depth = 8192
 #pragma HLS INTERFACE m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = \
-    16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = out depth = 8192
-#pragma HLS INTERFACE s_axilite port = in bundle = control
-#pragma HLS INTERFACE s_axilite port = out bundle = control
+    16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = dataOut depth = 8192
+#pragma HLS INTERFACE s_axilite port = dataIn bundle = control
+#pragma HLS INTERFACE s_axilite port = dataOut bundle = control
 #pragma HLS INTERFACE s_axilite port = ITER bundle = control
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
@@ -355,18 +293,21 @@ void TopFunc(ap_uint<DDR_WIDTH>* in, ap_uint<DDR_WIDTH>* out,
 #pragma HLS INTERFACE axis port = toSweepstrm1
 #pragma HLS INTERFACE axis port = fromSweepstrm0
 #pragma HLS INTERFACE axis port = fromSweepstrm1
-
+/*
 #pragma HLS INTERFACE axis port = toNormstrm0
 #pragma HLS INTERFACE axis port = fromNormstrm0   
-
+*/
     #pragma HLS dataflow
-    
-    axis_block_stream blockOut[BLOCK_NUM];
-    //load4DDR(in, blockIn);
-    sweep(ITER, in, blockOut, 
-          toSweepstrm0, fromSweepstrm0, 
-          toSweepstrm1, fromSweepstrm1);
-    norm(out, blockOut, toNormstrm0, fromNormstrm0);
+    axis_stream_128 block[BLOCK_NUM];
+    axis_stream_32 col_index[BLOCK_NUM];
+    axis_stream order2AIE[2], order4AIE[2];
+    generateOrder(ITER, order2AIE[0], order2AIE[1]);
+    svd_send(ITER, dataIn, block, col_index,
+               order2AIE[0], order4AIE[0], toSweepstrm0,
+               order2AIE[1], order4AIE[1], toSweepstrm1);
+    svd_receive(ITER, block, col_index,
+                  order4AIE[0], fromSweepstrm0,
+                  order4AIE[1], fromSweepstrm1);
 }
 
 void simulateAIE(axis_pkt_stream& toSweepstrm0, axis_pkt_stream& toSweepstrm1,
