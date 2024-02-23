@@ -1,7 +1,7 @@
 #include "TopFunc.h"
 
 static ap_uint<32> generateHeader(unsigned int pktType, unsigned int ID){
-#pragma HLS inline
+#pragma HLS inline off
   ap_uint<32> header = 0;
   header(4, 0) = ID;
   header(11, 5) = 0;
@@ -15,7 +15,7 @@ static ap_uint<32> generateHeader(unsigned int pktType, unsigned int ID){
 }
 
 static unsigned int getPacketID(ap_uint<32> header){
-#pragma HLS inline
+#pragma HLS inline off
   ap_uint<32> ID = 0;
   ID(4, 0) = header(4, 0);
   return ID;
@@ -73,18 +73,20 @@ void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2A
     }
   }
 
-void receive4AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM], axis_stream& order4AIE, axis_pkt_stream& fromAIEstrm) {
+void receive4AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM], axis_stream& order4AIE, axis_pkt_stream& fromAIEstrm) {
     #pragma HLS inline off  
     axis_pkt tmp;
     ap_uint<32> header;
-    ap_int<W> data_temp[2];
+    ap_int<W> data_temp[2] = {0, 0};
 
     int id = order4AIE.read();
     hls::print("write_lock %d get\n",id);
     for(int i = 0;i < BLOCK_SIZE;i ++) {
         tmp = fromAIEstrm.read();
         header = tmp.data(31, 0);
-        int COL_INDEX = getPacketID(header);
+        hls::print("receive header %d\n",header);
+        unsigned int COL_INDEX = getPacketID(header);
+        hls::print("receive COL_INDEX %d\n",COL_INDEX);
         col_index[id].write(COL_INDEX);
         data_temp[0](31, 0) = tmp.data(63, 32);
         data_temp[0](63, 32) = tmp.data(95, 64);
@@ -98,17 +100,18 @@ void receive4AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOC
           data_temp[j%2](95, 64) = tmp.data(127, 96);
           block[id].write(data_temp[(j-1)%2]);
           //mem[ID*ROW/ELEM_NUM + j-1] = data_temp[(j-1)%2];
-          //hls::print("data %d\n",data_temp[(j-1)%2]);
+          hls::print("data %d\n",data_temp[(j-1)%2](31, 0));
         }
         tmp = fromAIEstrm.read();
         data_temp[(ROW/ELEM_NUM-1)%2](127, 96) = tmp.data(31, 0);
         block[id].write(data_temp[(ROW/ELEM_NUM-1)%2]);
+        hls::print("data %d\n",data_temp[(ROW/ELEM_NUM-1)%2](31, 0));
         //mem[ID*ROW/ELEM_NUM + ROW/ELEM_NUM-1] = data_temp[(ROW/ELEM_NUM-1)%2];
     }
     hls::print("write_lock %d release\n", id);
 }
 
-void svd_receive(const int ITER, axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM],
+void svd_receive(const int ITER, axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
                    axis_stream& order4AIE0, axis_pkt_stream& fromSweepstrm0, 
                    axis_stream& order4AIE1, axis_pkt_stream& fromSweepstrm1) {
     #pragma HLS inline off
@@ -174,7 +177,7 @@ void send2AIE(ap_uint<DDR_WIDTH>* dataIn, axis_stream& order2AIE, axis_stream& o
     hls::print("read_lock %d release\n", id);
 }
 
-void send2AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM],
+void send2AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
               axis_stream& order2AIE, axis_stream& order4AIE, axis_pkt_stream& toAIEstrm) {
   #pragma HLS inline off    
     axis_pkt tmp;
@@ -187,9 +190,10 @@ void send2AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_N
     
     hls::print("read_lock %d get\n",id);
     for(int i = 0;i < BLOCK_SIZE;i ++) {
-      int header = col_index[id].read();
+      unsigned int COL_INDEX = col_index[id].read();
+      header = generateHeader(0, COL_INDEX);
       data_temp[0] = block[id].read();
-      //hls::print("header %d\n",header);
+      hls::print("send header %d\n",COL_INDEX);
       tmp.data(31, 0) = header;
       tmp.data(63, 32) = data_temp[0](31, 0);
       tmp.data(95, 64) = data_temp[0](63, 32);
@@ -226,7 +230,7 @@ void send2AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_N
     hls::print("read_lock %d release\n", id);
 }
 
-void svd_send(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 block[BLOCK_NUM], axis_stream_32 col_index[BLOCK_NUM],
+void svd_send(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
                 axis_stream& order2AIE0, axis_stream& order4AIE0, axis_pkt_stream& toSweepstrm0, 
                 axis_stream& order2AIE1, axis_stream& order4AIE1, axis_pkt_stream& toSweepstrm1){
     #pragma HLS inline off
@@ -299,7 +303,7 @@ void TopFunc(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* dataOut,
 */
     #pragma HLS dataflow
     axis_stream_128 block[BLOCK_NUM];
-    axis_stream_32 col_index[BLOCK_NUM];
+    axis_stream_uint col_index[BLOCK_NUM];
     axis_stream order2AIE[2], order4AIE[2];
     generateOrder(ITER, order2AIE[0], order2AIE[1]);
     svd_send(ITER, dataIn, block, col_index,
