@@ -72,8 +72,7 @@ void generateOrder(const int ITER, axis_stream& order2AIE0, axis_stream& order2A
       }
     }
   }
-
-void receive4AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM], axis_stream& order4AIE, axis_pkt_stream& fromAIEstrm) {
+void receive4AIE0(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM], axis_stream& order4AIE, axis_pkt_stream& fromAIEstrm) {
     #pragma HLS inline off  
     axis_pkt tmp;
     ap_uint<32> header;
@@ -83,6 +82,7 @@ void receive4AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BL
     hls::print("write_lock %d get\n",id);
     for(int i = 0;i < BLOCK_SIZE;i ++) {
         tmp = fromAIEstrm.read();
+        hls::print("receive keep %d\n",tmp.keep);
         header = tmp.data(31, 0);
         hls::print("receive header %d\n",header);
         unsigned int COL_INDEX = getPacketID(header);
@@ -100,35 +100,58 @@ void receive4AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BL
           data_temp[j%2](95, 64) = tmp.data(127, 96);
           block[id].write(data_temp[(j-1)%2]);
           //mem[ID*ROW/ELEM_NUM + j-1] = data_temp[(j-1)%2];
-          hls::print("data %d\n",data_temp[(j-1)%2](31, 0));
+          hls::print("receive loop %d\n",j);
+          hls::print("receive data %d\n",data_temp[(j-1)%2](31, 0));
         }
         tmp = fromAIEstrm.read();
         data_temp[(ROW/ELEM_NUM-1)%2](127, 96) = tmp.data(31, 0);
         block[id].write(data_temp[(ROW/ELEM_NUM-1)%2]);
-        hls::print("data %d\n",data_temp[(ROW/ELEM_NUM-1)%2](31, 0));
+        hls::print("receive data %d\n",data_temp[(ROW/ELEM_NUM-1)%2](31, 0));
         //mem[ID*ROW/ELEM_NUM + ROW/ELEM_NUM-1] = data_temp[(ROW/ELEM_NUM-1)%2];
     }
     hls::print("write_lock %d release\n", id);
 }
 
-void svd_receive(const int ITER, axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
-                   axis_stream& order4AIE0, axis_pkt_stream& fromSweepstrm0, 
-                   axis_stream& order4AIE1, axis_pkt_stream& fromSweepstrm1) {
-    #pragma HLS inline off
+void receive4AIE1(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM], axis_stream& order4AIE, axis_pkt_stream& fromAIEstrm) {
+    #pragma HLS inline off  
+    axis_pkt tmp;
+    ap_uint<32> header;
+    ap_int<W> data_temp[2] = {0, 0};
 
-    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
-    for(int step = 0;step < SWEEP_STEP;step ++){    
-     // if(step < SWEEP_STEP - BLOCK_NUM/2) {
-        receive4AIE(block, col_index, order4AIE0, fromSweepstrm0);
-        receive4AIE(block, col_index, order4AIE1, fromSweepstrm1);
-      //}
-      /*else {
-        receive4AIE(blockOut, col_index, order4AIE0, fromSweepstrm0);
-        receive4AIE(blockOut, col_index, order4AIE1, fromSweepstrm1);
-      }*/
+    int id = order4AIE.read();
+    hls::print("write_lock %d get\n",id);
+    for(int i = 0;i < BLOCK_SIZE;i ++) {
+        tmp = fromAIEstrm.read();
+        hls::print("receive keep %d\n",tmp.keep);
+        header = tmp.data(31, 0);
+        hls::print("receive header %d\n",header);
+        unsigned int COL_INDEX = getPacketID(header);
+        hls::print("receive COL_INDEX %d\n",COL_INDEX);
+        col_index[id].write(COL_INDEX);
+        data_temp[0](31, 0) = tmp.data(63, 32);
+        data_temp[0](63, 32) = tmp.data(95, 64);
+        data_temp[0](95, 64) = tmp.data(127, 96);
+
+        for(int j = 1;j < ROW/ELEM_NUM;j ++) {
+          tmp = fromAIEstrm.read();
+          data_temp[(j-1)%2](127, 96) = tmp.data(31, 0);
+          data_temp[j%2](31, 0) = tmp.data(63, 32);
+          data_temp[j%2](63, 32) = tmp.data(95, 64);
+          data_temp[j%2](95, 64) = tmp.data(127, 96);
+          block[id].write(data_temp[(j-1)%2]);
+          //mem[ID*ROW/ELEM_NUM + j-1] = data_temp[(j-1)%2];
+          hls::print("receive loop %d\n",j);
+          hls::print("receive data %d\n",data_temp[(j-1)%2](31, 0));
+        }
+        tmp = fromAIEstrm.read();
+        data_temp[(ROW/ELEM_NUM-1)%2](127, 96) = tmp.data(31, 0);
+        block[id].write(data_temp[(ROW/ELEM_NUM-1)%2]);
+        hls::print("receive data %d\n",data_temp[(ROW/ELEM_NUM-1)%2](31, 0));
+        //mem[ID*ROW/ELEM_NUM + ROW/ELEM_NUM-1] = data_temp[(ROW/ELEM_NUM-1)%2];
     }
-    
+    hls::print("write_lock %d release\n", id);
 }
+
 void send2AIE(ap_uint<DDR_WIDTH>* dataIn, axis_stream& order2AIE, axis_stream& order4AIE, axis_pkt_stream& toAIEstrm) {
   #pragma HLS inline off    
     axis_pkt tmp;
@@ -177,7 +200,7 @@ void send2AIE(ap_uint<DDR_WIDTH>* dataIn, axis_stream& order2AIE, axis_stream& o
     hls::print("read_lock %d release\n", id);
 }
 
-void send2AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
+void send2AIE0(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
               axis_stream& order2AIE, axis_stream& order4AIE, axis_pkt_stream& toAIEstrm) {
   #pragma HLS inline off    
     axis_pkt tmp;
@@ -230,6 +253,60 @@ void send2AIE(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK
     hls::print("read_lock %d release\n", id);
 }
 
+void send2AIE1(axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
+              axis_stream& order2AIE, axis_stream& order4AIE, axis_pkt_stream& toAIEstrm) {
+  #pragma HLS inline off    
+    axis_pkt tmp;
+    ap_uint<32> header;
+    ap_int<W> data_temp[2];
+    hls::print("before read\n");
+    int id = order2AIE.read();
+    order4AIE.write(id);
+    hls::print("block %d\n",id);
+    
+    hls::print("read_lock %d get\n",id);
+    for(int i = 0;i < BLOCK_SIZE;i ++) {
+      unsigned int COL_INDEX = col_index[id].read();
+      header = generateHeader(0, COL_INDEX);
+      data_temp[0] = block[id].read();
+      hls::print("send header %d\n",COL_INDEX);
+      tmp.data(31, 0) = header;
+      tmp.data(63, 32) = data_temp[0](31, 0);
+      tmp.data(95, 64) = data_temp[0](63, 32);
+      tmp.data(127, 96) = data_temp[0](95, 64);
+      tmp.keep = -1;
+      tmp.last = 0;
+      toAIEstrm.write(tmp);
+      //hls::print("data %d\n",tmp.data);
+      for(int j = 1;j < ROW/ELEM_NUM;j ++) {
+        //tmp.data = mem[i*ROW/ELEM_NUM + j];
+        data_temp[j%2] = block[id].read();
+        tmp.data(31, 0) = data_temp[(j-1)%2](127, 96);
+        tmp.data(63, 32) = data_temp[j%2](31, 0);
+        tmp.data(95, 64) = data_temp[j%2](63, 32);
+        tmp.data(127, 96) = data_temp[j%2](95, 64);
+        tmp.keep = -1;
+        tmp.last = 0;
+        toAIEstrm.write(tmp);
+        //hls::print("data %d\n",tmp.data);
+      }
+      
+
+      tmp.data(31, 0) = data_temp[(ROW/ELEM_NUM-1)%2](127, 96);
+      tmp.data(63, 32) = 0;
+      tmp.data(95, 64) = 0;
+      tmp.data(127, 96) = 0;
+      tmp.keep = 0x000f;
+      tmp.last = 1;
+      toAIEstrm.write(tmp);
+      //hls::print("data %d\n",tmp.data);
+
+    }
+    
+    hls::print("read_lock %d release\n", id);
+}
+
+
 void svd_send(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
                 axis_stream& order2AIE0, axis_stream& order4AIE0, axis_pkt_stream& toSweepstrm0, 
                 axis_stream& order2AIE1, axis_stream& order4AIE1, axis_pkt_stream& toSweepstrm1){
@@ -242,11 +319,30 @@ void svd_send(const int ITER, ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 block[
         send2AIE(dataIn, order2AIE1, order4AIE1, toSweepstrm1);
       }
       else {
-        send2AIE(block, col_index, order2AIE0, order4AIE0, toSweepstrm0);
-        send2AIE(block, col_index, order2AIE1, order4AIE1, toSweepstrm1);
+        send2AIE0(block, col_index, order2AIE0, order4AIE0, toSweepstrm0);
+        send2AIE1(block, col_index, order2AIE1, order4AIE1, toSweepstrm1);
       }
     }
                   
+}
+
+void svd_receive(const int ITER, axis_stream_128 block[BLOCK_NUM], axis_stream_uint col_index[BLOCK_NUM],
+                   axis_stream& order4AIE0, axis_pkt_stream& fromSweepstrm0, 
+                   axis_stream& order4AIE1, axis_pkt_stream& fromSweepstrm1) {
+    #pragma HLS inline off
+
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
+    for(int step = 0;step < SWEEP_STEP;step ++){    
+     // if(step < SWEEP_STEP - BLOCK_NUM/2) {
+        receive4AIE0(block, col_index, order4AIE0, fromSweepstrm0);
+        receive4AIE1(block, col_index, order4AIE1, fromSweepstrm1);
+      //}
+      /*else {
+        receive4AIE(blockOut, col_index, order4AIE0, fromSweepstrm0);
+        receive4AIE(blockOut, col_index, order4AIE1, fromSweepstrm1);
+      }*/
+    }
+    
 }
 
 
