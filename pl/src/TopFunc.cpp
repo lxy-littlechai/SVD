@@ -334,16 +334,13 @@ void sweep_receive(const int ITER,
     #pragma HLS inline off
 
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
-    for(int step = 0;step < SWEEP_STEP;step ++){    
-      if(step < SWEEP_STEP - BLOCK_NUM/2) {
-        receive4AIE0(sweep_block, sweep_col_index, order4AIE0, fromSweepstrm0);
-        receive4AIE1(sweep_block, sweep_col_index, order4AIE1, fromSweepstrm1);
-      }
-      else {
-        //try split here
-        receive4AIE0(norm_block, norm_col_index, order4AIE0, fromSweepstrm0);
-        receive4AIE1(norm_block, norm_col_index, order4AIE1, fromSweepstrm1);
-      }
+    for(int step = 0;step < SWEEP_STEP - BLOCK_NUM/2;step ++){    
+      receive4AIE0(sweep_block, sweep_col_index, order4AIE0, fromSweepstrm0);
+      receive4AIE1(sweep_block, sweep_col_index, order4AIE1, fromSweepstrm1);
+    }
+    for(int i = 0;i < BLOCK_NUM/2;i ++) {
+      receive4AIE0(norm_block, norm_col_index, order4AIE0, fromSweepstrm0);
+      receive4AIE1(norm_block, norm_col_index, order4AIE1, fromSweepstrm1);
     }
     
 }
@@ -355,7 +352,7 @@ void norm_send(axis_stream_128 norm_block[BLOCK_NUM],
     axis_pkt tmp;
     ap_uint<32> header;
     ap_int<W> data_temp[2];
-
+    hls::print("norm send\n");
     for(int k = 0;k < BLOCK_NUM;k ++) {
       hls::print("norm block %d\n",k);
       hls::print("norm read_lock %d get\n",k);
