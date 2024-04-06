@@ -27,7 +27,6 @@ int main(int argc, char** argv) {
     
 
     auto kernel = xrt::kernel(device, xclbin_uuid, "CascadeMux");
-    auto kernel_1 = xrt::kernel(device, xclbin_uuid, "SplitMerge");
 
     auto input_buffer = xrt::bo(device, DATA_SIZE_BYTE, kernel.group_id(0));
     auto output_buffer_U = xrt::bo(device, U_SIZE_BYTE, kernel.group_id(1));
@@ -69,8 +68,6 @@ int main(int argc, char** argv) {
     auto kernel_start = std::chrono::high_resolution_clock::now();
     
     auto run = kernel(input_buffer, output_buffer_U, output_buffer_S, ITER);
-    auto run_1 = kernel_1(ITER);
-    run_1.wait();
     run.wait();
 
     auto kernel_end = std::chrono::high_resolution_clock::now();
