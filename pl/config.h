@@ -19,6 +19,8 @@ typedef hls::stream<ap_uint<32>, MUX_NUM*BLOCK_NUM> axis_stream;
 typedef hls::stream<ap_uint<128>, MUX_SIZE*BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_128;
 typedef hls::stream<axis_pkt> axis_pkt_stream;
 
+const int END = 0xffffffff;
+
 
 
 

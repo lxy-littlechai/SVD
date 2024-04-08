@@ -72,6 +72,10 @@ void generateInOrder(axis_stream mux_insel[MUX_NUM], axis_stream& top_insel) {
       }
     }
 
+    for(int i = 0;i < BLOCK_NUM;i ++) {
+        int id = i/MUX_SIZE;
+        mux_insel[id].write(END);
+    }
 
 }
 
@@ -122,9 +126,12 @@ void generateOutOrder(axis_stream mux_outsel[MUX_NUM], axis_stream& top_outsel) 
         mux_outsel[id].write(i%MUX_SIZE);
     }
 
+    for(int i = 0;i < BLOCK_NUM;i ++) {
+        int id = i/MUX_SIZE;
+        mux_outsel[id].write(END);
+    }
 }
 
-//todo:1. try fifo 2. try while
 void mux8to1(const int ITER, axis_stream_128 block[MUX_SIZE], axis_stream_128& out, axis_stream& select) {
 #pragma HLS INLINE off
     const int MUX_RUN_TIMES = ITER*MUX_SIZE*(BLOCK_NUM-1) + BLOCK_NUM;
@@ -133,7 +140,6 @@ void mux8to1(const int ITER, axis_stream_128 block[MUX_SIZE], axis_stream_128& o
     while(1) {
       if(select.read_nb(sel)) {
         int index = sel%MUX_SIZE;
-        hls::print("mux8to1 index: %d\n", index);
         for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
             ap_uint<128> tmp = block[index].read();
             out.write(tmp);
@@ -152,7 +158,6 @@ void mux1to8(const int ITER, axis_stream_128 block[MUX_SIZE], axis_stream_128& i
     while(1) {
         if(select.read_nb(sel)) {
           int index = sel%MUX_SIZE;
-          hls::print("mux1to8 index: %d\n", index);
           for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
             ap_uint<128> tmp = in.read();
             block[index].write(tmp);
