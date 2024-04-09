@@ -1,4 +1,4 @@
-const int ITER = 1;
+const int ITER = 5;
 const int ROW = 32;
 const int COL = 32;
 const int BLOCK_SIZE = 4;

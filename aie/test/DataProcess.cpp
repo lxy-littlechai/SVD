@@ -114,8 +114,8 @@ public:
 
 
 int main() {
-    const int COL = 16;
-    const int ROW = 16;
+    const int COL = 32;
+    const int ROW = 32;
     const int ITER = 1;
     const int WIDTH = 128;
     DataGenerator<COL, ROW, ITER, WIDTH> generator;

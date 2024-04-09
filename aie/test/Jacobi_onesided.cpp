@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int COL = 8;
-const int ROW = 8;
-const int ITER = 1;
+const int COL = 32;
+const int ROW = 32;
+const int ITER = 10;
 float A[COL][ROW], U[COL][ROW], V[COL][ROW], sigma[COL];
 float tmpA[COL][ROW], tmpV[COL][ROW];
 
@@ -138,9 +138,10 @@ void print() {
         }
         cout << "\n";
     }*/
+    sort(sigma, sigma+COL);
     cout << "Sigma\n";
     for(int i = 0;i < COL;i ++) {
-        cout << sigma[i] << " ";
+        printf("%.6f ",sigma[i]);
     }
     cout << "\n";
     /*cout << "V\n";

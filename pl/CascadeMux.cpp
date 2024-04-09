@@ -72,9 +72,8 @@ void generateInOrder(axis_stream mux_insel[MUX_NUM], axis_stream& top_insel) {
       }
     }
 
-    for(int i = 0;i < BLOCK_NUM;i ++) {
-        int id = i/MUX_SIZE;
-        mux_insel[id].write(END);
+    for(int i = 0;i < MUX_NUM;i ++) {
+        mux_insel[i].write(END);
     }
 
 }
@@ -126,44 +125,47 @@ void generateOutOrder(axis_stream mux_outsel[MUX_NUM], axis_stream& top_outsel) 
         mux_outsel[id].write(i%MUX_SIZE);
     }
 
-    for(int i = 0;i < BLOCK_NUM;i ++) {
-        int id = i/MUX_SIZE;
-        mux_outsel[id].write(END);
+    for(int i = 0;i < MUX_NUM;i ++) {
+        mux_outsel[i].write(END);
     }
 }
 
 void mux8to1(const int ITER, axis_stream_128 block[MUX_SIZE], axis_stream_128& out, axis_stream& select) {
 #pragma HLS INLINE off
-    const int MUX_RUN_TIMES = ITER*MUX_SIZE*(BLOCK_NUM-1) + BLOCK_NUM;
     const int BLOCK_ELEM_NUM = BLOCK_SIZE*ROW/ELEM_NUM;
-    ap_uint<32> sel;
-    while(1) {
+    ap_uint<32> sel = 0;
+    bool last = 0;
+    while(!last) {
       if(select.read_nb(sel)) {
-        int index = sel%MUX_SIZE;
-        for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
-            ap_uint<128> tmp = block[index].read();
-            out.write(tmp);
-        }
-      }
-        
+        last = (sel == END);
+        if(!last) {
+          int index = sel%MUX_SIZE;
+          for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
+              ap_uint<128> tmp = block[index].read();
+              out.write(tmp);
+          }
+        } 
+      }  
     }
 }
 
 
 void mux1to8(const int ITER, axis_stream_128 block[MUX_SIZE], axis_stream_128& in, axis_stream& select) {
 #pragma HLS INLINE off
-    const int MUX_RUN_TIMES = ITER*MUX_SIZE*(BLOCK_NUM-1) + BLOCK_NUM;
     const int BLOCK_ELEM_NUM = BLOCK_SIZE*ROW/ELEM_NUM;
-    ap_uint<32> sel;
-    while(1) {
+    ap_uint<32> sel = 0;
+    bool last = 0;
+    while(!last) {
         if(select.read_nb(sel)) {
-          int index = sel%MUX_SIZE;
-          for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
-            ap_uint<128> tmp = in.read();
-            block[index].write(tmp);
-          } 
-        }
-        
+          last = (sel == END);
+          if(!last) {
+            int index = sel%MUX_SIZE;
+            for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
+              ap_uint<128> tmp = in.read();
+              block[index].write(tmp);
+            } 
+          }
+        } 
     }
     
 }
@@ -241,8 +243,7 @@ void send2AIE(axis_stream_128& block,
     ap_int<W> data_temp[2];
 
     for(int i = 0;i < BLOCK_SIZE;i ++) {
-      unsigned int COL_INDEX = i;
-      header = generateHeader(0, COL_INDEX);
+      header = generateHeader(0, i);
       data_temp[0] = block.read();
       tmp.data(31, 0) = header;
       tmp.data(63, 32) = data_temp[0](31, 0);
@@ -279,23 +280,28 @@ void CascadeMuxSend(const int ITER, axis_stream& top_outsel, axis_stream_128 mux
                     axis_pkt_stream& sweep_tx0_0, axis_pkt_stream& sweep_tx0_1, 
                     axis_pkt_stream& norm_tx0) {
     #pragma HLS INLINE off
-    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
+    const int SWEEP_STEP = BLOCK_NUM*(BLOCK_NUM-1)*ITER;
 
     for(int i = 0;i < SWEEP_STEP;i ++) {
-        int id0 = top_outsel.read();
-        int id1 = top_outsel.read();
+        int id = top_outsel.read();
         int index = i%SWEEP_PLIO_NUM;
         if(index == 0) {
-            send2AIE(mux_out[id0], sweep_tx0_0);
-            send2AIE(mux_out[id1], sweep_tx0_1);
+          if(i&1) {
+            send2AIE(mux_out[id], sweep_tx0_1);
+          }
+          else {
+            send2AIE(mux_out[id], sweep_tx0_0);
+          }
+            
+            
         }
     }
 
     for(int i = 0;i < BLOCK_NUM;i ++) {
-        int id0 = top_outsel.read();
+        int id = top_outsel.read();
         int index = i%NORM_PLIO_NUM;
         if(index == 0) {
-            send2AIE(mux_out[id0], norm_tx0);
+            send2AIE(mux_out[id], norm_tx0);
         }
     }
 }
@@ -316,14 +322,19 @@ void CascadeMuxReceive(const int ITER, axis_stream& top_insel, axis_stream_128 m
         }
     }
 
-    const int SWEEP_TIMES = ITER*BLOCK_NUM/2*(BLOCK_NUM-1);
+    const int SWEEP_TIMES = ITER*BLOCK_NUM*(BLOCK_NUM-1);
     for(int i = 0;i < SWEEP_TIMES;i ++) {
-        int id0 = top_insel.read();
-        int id1 = top_insel.read();
+        int id = top_insel.read();
         int index = i%SWEEP_PLIO_NUM;
         if(index == 0) {
-            receive4AIE(mux_in[id0], sweep_rx0_0);
-            receive4AIE(mux_in[id1], sweep_rx0_1);
+          if(i&1) {
+            receive4AIE(mux_in[id], sweep_rx0_1);
+          }
+          else {
+            receive4AIE(mux_in[id], sweep_rx0_0);
+          }
+            
+            
         }
     }
 
