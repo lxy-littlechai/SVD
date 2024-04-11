@@ -17,6 +17,8 @@
 using namespace std;
 int main(int argc, char** argv) {
     
+    int ITER = 1;//default
+
     const int DATA_SIZE_BYTE = ROW*COL*sizeof(float);
     const int U_SIZE_BYTE = ROW*COL*sizeof(float);
     const int S_SIZE_BYTE = COL*sizeof(float);
@@ -24,6 +26,7 @@ int main(int argc, char** argv) {
     unsigned int dev_index = 0;
     auto device = xrt::device(dev_index);
     auto xclbin_uuid = device.load_xclbin(argv[1]);
+    if(argc == 3) sscanf (argv[2], "%i", &ITER);
     
 
     auto kernel = xrt::kernel(device, xclbin_uuid, "CascadeMux");

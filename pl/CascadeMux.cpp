@@ -25,7 +25,7 @@ static unsigned int getPacketID(ap_uint<32> header){
 }
 
 // todo: split mux_sel & top_sel
-void generateInOrder(axis_stream mux_insel[MUX_NUM], axis_stream& top_insel) {
+void generateInOrder(const int ITER, axis_stream mux_insel[MUX_NUM], axis_stream& top_insel) {
     #pragma HLS inline off 
 
     /* Load DDR Stage */
@@ -78,7 +78,7 @@ void generateInOrder(axis_stream mux_insel[MUX_NUM], axis_stream& top_insel) {
 
 }
 
-void generateOutOrder(axis_stream mux_outsel[MUX_NUM], axis_stream& top_outsel) {
+void generateOutOrder(const int ITER, axis_stream mux_outsel[MUX_NUM], axis_stream& top_outsel) {
     #pragma HLS inline off 
 
     /* Sweep Stage */
@@ -377,8 +377,8 @@ void CascadeMux(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* 
     axis_stream mux_insel[MUX_NUM], mux_outsel[MUX_NUM];
     axis_stream top_insel, top_outsel;
 
-    generateInOrder(mux_insel, top_insel);
-    generateOutOrder(mux_outsel, top_outsel);
+    generateInOrder(ITER, mux_insel, top_insel);
+    generateOutOrder(ITER, mux_outsel, top_outsel);
     for(int i = 0;i < MUX_NUM;i ++) {
         #pragma HLS unroll
         mux8to1(ITER, block+i*MUX_SIZE, mux_out[i], mux_outsel[i]);

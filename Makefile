@@ -63,7 +63,7 @@ VPP_XO_FLAGS += -I$(CUR_DIR)/pl
 
 	
 VPP_LINK_FLAGS := -l -t $(TARGET) --platform $(BASE_PLATFORM) $(KERNEL_XO) $(GRAPH_O) --save-temps -g --config $(CONFIG_FILE) -o $(XSA)
-VPP_LINK_FLAGS += $(LINK_FREQ)
+VPP_LINK_FLAGS += $(LINK_FREQ) --vivado.impl.jobs 8
 VPP_FLAGS := $(VPP_LINK_FLAGS)
 
 CXX := $(XILINX_VITIS)/gnu/aarch64/lin/aarch64-linux/bin/aarch64-linux-gnu-g++
