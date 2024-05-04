@@ -1,7 +1,7 @@
 //const int ITER = 1;
-const int ROW = 1024;
-const int COL = 1024;
-const int BLOCK_SIZE = 8;
+const int ROW = 32;
+const int COL = 32;
+const int BLOCK_SIZE = 4;
 const int BLOCK_NUM = COL/BLOCK_SIZE;
 
 //AIE CONFIG

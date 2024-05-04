@@ -155,10 +155,19 @@ public:
                 }
             }
 
-            for(int j = 0;j < COL;j ++) {
-                connect<> (orth[j][ROW-1].out[0], out[j][0]);
-                connect<> (orth[j][ROW-1].out[1], out[j][1]);
-            }
+            //keep prior block construction, don't change column into other block
+             for(int j = 0;j < 2*COL;j ++) {
+               int out_col = ring[j][ROW-1].col;
+               int out_port = ring[j][ROW-1].port;
+               if(j&1) {
+                connect<> (orth[out_col][ROW-1].out[out_port], out[out_col][1]);
+               }
+               else {
+                connect<> (orth[out_col][ROW-1].out[out_port], out[out_col][0]);
+               }
+               
+             }
+            
         }
 
     }
@@ -180,7 +189,7 @@ public:
       }
 
       int ptr = COL-1;
-      for(int i = 0;i < ROW-1;i ++) {
+      for(int i = 0;i < ROW;i ++) {
         std::swap(ring0[ptr][i], ring1[ptr][i]);
         for(int j = 0;j < COL;j ++) {
           ring0[j][i+1] = ring0[j][i];
@@ -191,7 +200,7 @@ public:
       }
       //give offset
       int row = START_ROW, direction = DIRECTION, offset = 0;
-      for(int i = 0;i < ROW-1;i ++) {
+      for(int i = 0;i < ROW;i ++) {
         if(row&1) {
           offset = (offset-1+COL)%COL;
         }
@@ -216,7 +225,7 @@ public:
         }
       }
 
-      for(int i = 0;i < ROW;i ++) {
+      for(int i = 0;i < ROW+1;i ++) {
         for(int j = 0;j < COL;j ++) {
           ring[ring0[j][i]][i].col = j;
           ring[ring1[j][i]][i].col = j;

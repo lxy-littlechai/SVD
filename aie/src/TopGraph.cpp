@@ -9,9 +9,9 @@ TopNormGraph<ROW, BLOCK_SIZE, BLOCK_SIZE> topNormGraph(0);
 
 int main() {
     
-/*     topSweepGraph0.init();
+    topSweepGraph0.init();
     topSweepGraph0.run(1);
-    topSweepGraph0.end(); */
+    topSweepGraph0.end();
     
     return 0;
 }

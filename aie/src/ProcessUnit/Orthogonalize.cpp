@@ -29,14 +29,11 @@ void orthogonalize(adf::input_buffer<float, adf::extents<ROW>>& in0,
     aie::accum<accfloat, w> acc0 = aie::zeros<accfloat, w>();
     aie::accum<accfloat, w> acc1 = aie::zeros<accfloat, w>();
     for(int i = 0;i < ROW/w;i ++) 
-    //chess_prepare_for_pipelining
-    //chess_loop_range(ROW/w,)
+    chess_prepare_for_pipelining
+    chess_loop_range(ROW/w,)
     {
         auto vec1 = *ApIter ++;
         auto vec2 = *AqIter ++;
-        /* for(int j = 0;j < w;j ++) {
-            printf("vec1: %f, vec2: %f\n",vec1.get(j), vec2.get(j));
-        } */
         acc0 = aie::mac_square(acc0, vec1);
         acc0 = aie::msc_square(acc0, vec2);
         acc1 = aie::mac(acc1, vec1, vec2);         
@@ -48,8 +45,8 @@ void orthogonalize(adf::input_buffer<float, adf::extents<ROW>>& in0,
 
     if(fm < 0.000001) {
         for (int i = 0; i < ROW/w; i++) 
-            //chess_prepare_for_pipelining
-            //chess_loop_range(ROW/w,)
+        chess_prepare_for_pipelining
+        chess_loop_range(ROW/w,)
         {
 
                 *BpIter ++ = *ApIter ++;
@@ -63,11 +60,9 @@ void orthogonalize(adf::input_buffer<float, adf::extents<ROW>>& in0,
         float c = aie::div(1, aie::sqrt(t * t + 1));
         float s = aie::mul(t, c);
 
-        //printf("tau: %f, t: %f, c: %f, s: %f\n", tau, t, c, s);
-
         for (int i = 0; i < ROW/w; i++) 
-        //chess_prepare_for_pipelining
-        //chess_loop_range(ROW/w,)
+        chess_prepare_for_pipelining
+        chess_loop_range(ROW/w,)
         {
             auto vec1 = *ApIter ++;
             auto vec2 = *AqIter ++;
@@ -80,9 +75,6 @@ void orthogonalize(adf::input_buffer<float, adf::extents<ROW>>& in0,
             tmp1_2 = aie::mul(vec2, c);
             tmp1_3 = aie::add(tmp1_1, tmp1_2);
             *BqIter ++ = tmp1_3;
-/*             for(int j = 0;j < w;j ++) {
-                printf("vec1: %f, vec2: %f, tmp0_3: %f, tmp1_3: %f\n",vec1.get(j), vec2.get(j), tmp0_3.get(j), tmp1_3.get(j));
-            } */
         //Vp[i] = Vp[i] * c + Vq[i] * s;
         //Vq[i] = -Vp[i] * c + Vq[i] * s;
         }
