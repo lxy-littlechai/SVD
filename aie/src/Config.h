@@ -1,1 +1,1 @@
-const int w = 4;
+const int w = 8;

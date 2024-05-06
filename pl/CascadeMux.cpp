@@ -305,7 +305,7 @@ void CascadeMuxSend(const int ITER, axis_stream& top_outsel, axis_stream_128 mux
         }
     }
 }
-
+// todo: move DataIn 2 CascadeMuxSend
 void CascadeMuxReceive(const int ITER, axis_stream& top_insel, axis_stream_128 mux_in[MUX_NUM], 
                        ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
                        axis_pkt_stream& sweep_rx0_0, axis_pkt_stream& sweep_rx0_1,
