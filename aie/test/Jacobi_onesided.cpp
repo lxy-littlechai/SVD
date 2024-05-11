@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int COL = 32;
-const int ROW = 32;
-const int ITER = 10;
+const int COL = 16;
+const int ROW = 16;
+const int ITER = 6;
 float A[COL][ROW], U[COL][ROW], V[COL][ROW], sigma[COL];
 float tmpA[COL][ROW], tmpV[COL][ROW];
 
@@ -191,11 +191,23 @@ void init() {
 int main() {
     init();
     readData();
+    double kernel_time_in_sec = 0;
+    std::chrono::duration<double> kernel_time(0);
+    auto kernel_start = std::chrono::high_resolution_clock::now();
+
     if(COL&1) {
 
     }
     else {
         JacobiEven();
     }
+
+    auto kernel_end = std::chrono::high_resolution_clock::now();
+    kernel_time = std::chrono::duration<double>(kernel_end - kernel_start);
+    kernel_time_in_sec = kernel_time.count();
+    
+    cout << "------------------------------------------------\n";
+    std::cout << "Total time is: "<< kernel_time_in_sec <<"s\n";
+    cout << "------------------------------------------------\n";
     
 }

@@ -81,9 +81,9 @@ int main(int argc, char** argv) {
     std::cout << "Total time is: "<< kernel_time_in_sec <<"s\n";
     cout << "------------------------------------------------\n";
 
-    topSweepGraph0.end(0);
+    topSweepGraph0.wait(0);
     //topSweepGraph1.end(0);
-    topNormGraph.end(0);
+    topNormGraph.wait(0);
 
     output_buffer_U.sync(XCL_BO_SYNC_BO_TO_DEVICE);
     output_buffer_S.sync(XCL_BO_SYNC_BO_TO_DEVICE);

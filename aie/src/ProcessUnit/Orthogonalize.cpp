@@ -42,8 +42,19 @@ void orthogonalize(adf::input_buffer<float, adf::extents<ROW>>& in0,
     ApIter = aie::begin_vector<w>(in0);
     AqIter = aie::begin_vector<w>(in1);
     aie::vector<float, w> tmp0_1, tmp0_2, tmp0_3, tmp1_1, tmp1_2, tmp1_3; 
-
     
+    if(fm == 0) {
+        for (int i = 0; i < ROW/w; i++) 
+        chess_prepare_for_pipelining
+        chess_loop_range(ROW/w,)
+        {
+
+                *BpIter ++ = *ApIter ++;
+                *BqIter ++ = *AqIter ++;
+
+        }
+    }
+    else {
         float tau = aie::div(reduce_add(acc0.to_vector<float>()), 2.0*fm);
         float t = aie::div(sign(tau), aie::add(aie::abs(tau), aie::sqrt(aie::mul(tau, tau) + 1)));
         float c = aie::div(1, aie::sqrt(t * t + 1));
@@ -68,6 +79,7 @@ void orthogonalize(adf::input_buffer<float, adf::extents<ROW>>& in0,
         //Vq[i] = -Vp[i] * c + Vq[i] * s;
         }
       
+    }
     
    
                                             

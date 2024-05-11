@@ -4,7 +4,6 @@
 #include <ap_axi_sdata.h>
 #include <hls_stream.h>
 #include <hls_burst_maxi.h>
-#include <hls_print.h>
 
 
 const int W = 128;
@@ -16,7 +15,7 @@ const int DDR_ELEM_NUM = DDR_WIDTH/32;
 
 typedef ap_axiu<W, 0, 0, 0> axis_pkt;
 typedef hls::stream<ap_uint<32>, 2> axis_stream;
-typedef hls::stream<ap_uint<128>, BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_128;
+typedef hls::stream<ap_uint<128>, BLOCK_NUM*BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_128;
 typedef hls::stream<axis_pkt> axis_pkt_stream;
 
 const int END = 0xffffffff;

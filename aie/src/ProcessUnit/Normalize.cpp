@@ -9,16 +9,16 @@
 //in0 -> B; ou0 -> Sigma & U & V in order
 template<int ROW>
 void normalize(adf::input_buffer<float, adf::extents<ROW>>& __restrict in, 
-                adf::output_buffer<float, adf::extents<4+ROW>>& __restrict out) {
+                adf::output_buffer<float, adf::extents<1+ROW>>& __restrict out) {
     auto inIter = aie::begin_vector<w>(in);
-    aie::vector<float, w> vec;
+    aie::vector<float, w> vec = *inIter ++;
     aie::accum<accfloat, w> acc = aie::zeros<accfloat, w>();
     for(int i = 0;i < ROW/w;i ++) 
     chess_prepare_for_pipelining
     chess_loop_range(ROW/w,)
     {
-        vec = *inIter ++;
         acc = aie::mac_square(acc, vec);
+        vec = *inIter ++;
     }
     float tmp = reduce_add(acc.to_vector<float>());
     float sigma = aie::sqrt(tmp);
@@ -33,8 +33,7 @@ void normalize(adf::input_buffer<float, adf::extents<ROW>>& __restrict in,
         vec = aie::div(vec, sigma);
         *outIter ++= vec;
     }
-    aie::vector<float, w> sigmaVec;
-    sigmaVec.set(sigma,0);
-    *outIter = sigmaVec;
+    float* lastIter = out.data();
+    lastIter[ROW] = sigma;
 
 }

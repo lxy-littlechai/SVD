@@ -1,5 +1,7 @@
 g++ DataProcess.cpp -o DataProcess
 ./DataProcess
-cd ..
-cd ..
-make sim
+g++ Jacobi_onesided.cpp -o Jacobi_onesided
+./Jacobi_onesided
+#cd ..
+#cd ..
+#make sim

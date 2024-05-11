@@ -1,5 +1,4 @@
 #include <hls_stream.h>
-#include <hls_print.h>
 #include <cmath>
 #include "config.h"
 
@@ -22,152 +21,6 @@ static unsigned int getPacketID(ap_uint<32> header){
   ap_uint<32> ID = 0;
   ID(4, 0) = header(4, 0);
   return ID;
-}
-
-// todo: split mux_sel & top_sel
-void generateInOrder(const int ITER, axis_stream mux_insel[MUX_NUM], axis_stream& top_insel) {
-    #pragma HLS inline off 
-
-    /* Load DDR Stage */
-    for(int i = 0;i < BLOCK_NUM;i ++) {
-        int id = i/MUX_SIZE;
-        top_insel.write(id);
-        mux_insel[id].write(i%MUX_SIZE);
-    }
-
-    /* Sweep Stage */
-    if(BLOCK_NUM%2 == 0) {
-      int pu[BLOCK_NUM/2][2], tmp[BLOCK_NUM/2][2];
-      for(int k = 0;k < ITER;k ++) {
-        for(int i = 0;i < BLOCK_NUM;i += 2) {
-          pu[i/2][0] = i;
-          pu[i/2][1] = i+1;
-        }
-        const int PU_NUM = BLOCK_NUM/2;
-        for(int i = 0;i < BLOCK_NUM-1;i ++) {
-          for(int j = 0;j < PU_NUM;j ++) {
-            #pragma HLS PIPELINE II = 1
-            int id0 = pu[j][0]/MUX_SIZE;
-            top_insel.write(id0);
-            mux_insel[id0].write(pu[j][0]%MUX_SIZE);
-
-            int id1 = pu[j][1]/MUX_SIZE;
-            top_insel.write(id1);
-            mux_insel[id1].write(pu[j][1]%MUX_SIZE);
-          }
-          tmp[1][0] = pu[0][0];
-          tmp[0][0] = pu[0][1];
-          for(int j = 1;j < PU_NUM-1;j ++) {
-            tmp[j+1][0] = pu[j][0];
-            tmp[j-1][1] = pu[j][1];
-          }
-          tmp[PU_NUM-2][1] = pu[PU_NUM-1][0];
-          tmp[PU_NUM-1][1] = pu[PU_NUM-1][1];
-
-          for(int j = 0;j < PU_NUM;j ++) {
-            pu[j][0] = tmp[j][0];
-            pu[j][1] = tmp[j][1];
-          }
-        }
-      }
-    }
-
-    for(int i = 0;i < MUX_NUM;i ++) {
-        mux_insel[i].write(END);
-    }
-
-}
-
-void generateOutOrder(const int ITER, axis_stream mux_outsel[MUX_NUM], axis_stream& top_outsel) {
-    #pragma HLS inline off 
-
-    /* Sweep Stage */
-    if(BLOCK_NUM%2 == 0) {
-      int pu[BLOCK_NUM/2][2], tmp[BLOCK_NUM/2][2];
-      for(int k = 0;k < ITER;k ++) {
-        for(int i = 0;i < BLOCK_NUM;i += 2) {
-          pu[i/2][0] = i;
-          pu[i/2][1] = i+1;
-        }
-        const int PU_NUM = BLOCK_NUM/2;
-        for(int i = 0;i < BLOCK_NUM-1;i ++) {
-          for(int j = 0;j < PU_NUM;j ++) {
-            #pragma HLS PIPELINE II = 1
-            int id0 = pu[j][0]/MUX_SIZE;
-            top_outsel.write(id0);
-            mux_outsel[id0].write(pu[j][0]%MUX_SIZE);
-
-            int id1 = pu[j][1]/MUX_SIZE;
-            top_outsel.write(id1);
-            mux_outsel[id1].write(pu[j][1]%MUX_SIZE);
-          }
-          tmp[1][0] = pu[0][0];
-          tmp[0][0] = pu[0][1];
-          for(int j = 1;j < PU_NUM-1;j ++) {
-            tmp[j+1][0] = pu[j][0];
-            tmp[j-1][1] = pu[j][1];
-          }
-          tmp[PU_NUM-2][1] = pu[PU_NUM-1][0];
-          tmp[PU_NUM-1][1] = pu[PU_NUM-1][1];
-
-          for(int j = 0;j < PU_NUM;j ++) {
-            pu[j][0] = tmp[j][0];
-            pu[j][1] = tmp[j][1];
-          }
-        }
-      }
-    }
-
-    /* Norm Stage */
-    for(int i = 0;i < BLOCK_NUM;i ++) {
-        int id = i/MUX_SIZE;
-        top_outsel.write(id);
-        mux_outsel[id].write(i%MUX_SIZE);
-    }
-
-    for(int i = 0;i < MUX_NUM;i ++) {
-        mux_outsel[i].write(END);
-    }
-}
-
-void mux8to1(const int ITER, axis_stream_128 block[MUX_SIZE], axis_stream_128& out, axis_stream& select) {
-#pragma HLS INLINE off
-    const int BLOCK_ELEM_NUM = BLOCK_SIZE*ROW/ELEM_NUM;
-    ap_uint<32> sel = 0;
-    bool last = 0;
-    while(!last) {
-      if(select.read_nb(sel)) {
-        last = (sel == END);
-        if(!last) {
-          int index = sel%MUX_SIZE;
-          for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
-              ap_uint<128> tmp = block[index].read();
-              out.write(tmp);
-          }
-        } 
-      }  
-    }
-}
-
-
-void mux1to8(const int ITER, axis_stream_128 block[MUX_SIZE], axis_stream_128& in, axis_stream& select) {
-#pragma HLS INLINE off
-    const int BLOCK_ELEM_NUM = BLOCK_SIZE*ROW/ELEM_NUM;
-    ap_uint<32> sel = 0;
-    bool last = 0;
-    while(!last) {
-        if(select.read_nb(sel)) {
-          last = (sel == END);
-          if(!last) {
-            int index = sel%MUX_SIZE;
-            for(int i = 0;i < BLOCK_ELEM_NUM;i ++) {
-              ap_uint<128> tmp = in.read();
-              block[index].write(tmp);
-            } 
-          }
-        } 
-    }
-    
 }
 
 void norm_receive(ap_uint<DDR_WIDTH>* U,
@@ -199,18 +52,17 @@ void norm_receive(ap_uint<DDR_WIDTH>* U,
           data_temp[(ROW/ELEM_NUM-1)%2](127, 96) = tmp.data(31, 0);
           U[k*BLOCK_SIZE*ROW/ELEM_NUM + i*ROW/ELEM_NUM + ROW/ELEM_NUM-1] = data_temp[(ROW/ELEM_NUM-1)%2];
           S[k*BLOCK_SIZE + i] = tmp.data(63, 32);
-          tmp = fromAIEstrm.read();
       }
     }
 }
 
 void receive4AIE(axis_stream_128& block, 
                    axis_pkt_stream& fromAIEstrm) {
-    #pragma HLS FUNCTION_INSTANTIATE variable=fromAIEstrm
+    #pragma HLS FUNCTION_INSTANTIATE variable=block
     #pragma HLS inline off 
     axis_pkt tmp;
     ap_uint<32> header;
-    ap_int<W> data_temp[2] = {0, 0};
+    ap_uint<W> data_temp[2] = {0, 0};
 
     for(int i = 0;i < BLOCK_SIZE;i ++) {
         tmp = fromAIEstrm.read();
@@ -236,11 +88,11 @@ void receive4AIE(axis_stream_128& block,
 void send2AIE(axis_stream_128& block, 
               axis_pkt_stream& toAIEstrm) {
 
-    #pragma HLS FUNCTION_INSTANTIATE variable=toAIEstrm
+    #pragma HLS FUNCTION_INSTANTIATE variable=block 
     #pragma HLS inline off     
     axis_pkt tmp;
     ap_uint<32> header;
-    ap_int<W> data_temp[2];
+    ap_uint<W> data_temp[2];
 
     for(int i = 0;i < BLOCK_SIZE;i ++) {
       header = generateHeader(0, i);
@@ -276,69 +128,103 @@ void send2AIE(axis_stream_128& block,
     
 }
 
-void CascadeMuxSend(const int ITER, axis_stream& top_outsel, axis_stream_128 mux_out[MUX_NUM], 
+void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 ddr_fifo[2]) {
+  for(int i = 0;i < BLOCK_NUM;i ++) {
+    for(int j = 0;j < BLOCK_SIZE;j ++) {
+      for(int k = 0;k < ROW/DDR_ELEM_NUM;k ++) {
+        #pragma HLS PIPELINE II = 1
+        ap_uint<128> tmp = dataIn[i*BLOCK_SIZE*ROW/DDR_ELEM_NUM + j*ROW/DDR_ELEM_NUM + k];
+        if(i&1) {
+          ddr_fifo[1].write(tmp); 
+        }
+        else {
+          ddr_fifo[0].write(tmp); 
+        }
+        
+      }
+    }
+    
+  }
+}
+
+void Send(const int ITER, axis_stream_128 ddr_fifo[2],
+                    axis_stream_128 fifo[2], 
                     axis_pkt_stream& sweep_tx0_0, axis_pkt_stream& sweep_tx0_1, 
                     axis_pkt_stream& norm_tx0) {
     #pragma HLS INLINE off
-    const int SWEEP_STEP = BLOCK_NUM*(BLOCK_NUM-1)*ITER;
+
+    for(int i = 0;i < BLOCK_NUM/2;i ++) {
+      #pragma HLS dataflow
+      send2AIE(ddr_fifo[0], sweep_tx0_0);
+      send2AIE(ddr_fifo[1], sweep_tx0_1);
+    }
+
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER - BLOCK_NUM/2;
 
     for(int i = 0;i < SWEEP_STEP;i ++) {
-        int id = top_outsel.read();
-        int index = i%SWEEP_PLIO_NUM;
-        if(index == 0) {
-          if(i&1) {
-            send2AIE(mux_out[id], sweep_tx0_1);
-          }
-          else {
-            send2AIE(mux_out[id], sweep_tx0_0);
-          }
-            
-            
-        }
+        #pragma HLS dataflow
+        send2AIE(fifo[0], sweep_tx0_0);
+        send2AIE(fifo[1], sweep_tx0_1);
     }
 
-    for(int i = 0;i < BLOCK_NUM;i ++) {
-        int id = top_outsel.read();
-        int index = i%NORM_PLIO_NUM;
-        if(index == 0) {
-            send2AIE(mux_out[id], norm_tx0);
-        }
+    for(int i = 0;i < BLOCK_NUM/2;i ++) {
+        send2AIE(fifo[0], norm_tx0);
+        send2AIE(fifo[1], norm_tx0);
     }
 }
-// todo: move DataIn 2 CascadeMuxSend
-void CascadeMuxReceive(const int ITER, axis_stream& top_insel, axis_stream_128 mux_in[MUX_NUM], 
-                       ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
+
+void Receive(const int ITER, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
+                       axis_stream_128 fifo[2], 
                        axis_pkt_stream& sweep_rx0_0, axis_pkt_stream& sweep_rx0_1,
                        axis_pkt_stream& norm_rx0) {
     #pragma HLS INLINE off
-    for(int i = 0;i < BLOCK_NUM;i ++) {
-        int id = top_insel.read();
-        for(int j = 0;j < BLOCK_SIZE;j ++) {
-          for(int k = 0;k < ROW/DDR_ELEM_NUM;k ++) {
-            #pragma HLS PIPELINE II = 1
-            ap_uint<128> tmp = dataIn[i*BLOCK_SIZE*ROW/DDR_ELEM_NUM + j*ROW/DDR_ELEM_NUM + k];
-            mux_in[id].write(tmp); 
-          }
-        }
+    
+
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
+
+    for(int i = 0;i < SWEEP_STEP;i ++) {
+        #pragma HLS dataflow
+        receive4AIE(fifo[0], sweep_rx0_0);
+        receive4AIE(fifo[1], sweep_rx0_1);
     }
 
-    const int SWEEP_TIMES = ITER*BLOCK_NUM*(BLOCK_NUM-1);
-    for(int i = 0;i < SWEEP_TIMES;i ++) {
-        int id = top_insel.read();
-        int index = i%SWEEP_PLIO_NUM;
-        if(index == 0) {
-          if(i&1) {
-            receive4AIE(mux_in[id], sweep_rx0_1);
-          }
-          else {
-            receive4AIE(mux_in[id], sweep_rx0_0);
-          }
-            
-            
-        }
-    }
 
     norm_receive(U, S, norm_rx0); 
+}
+
+void RoundRobin(const int ITER, axis_stream_128 send_fifo[2], axis_stream_128 receive_fifo[2]) {
+  const int SINGLE_SWEEP_TIMES = ITER*(BLOCK_NUM-1);
+
+  for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
+      
+      for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        ap_uint<W> tmp = receive_fifo[1].read();
+        send_fifo[0].write(tmp);
+      }
+      for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        ap_uint<W> tmp = receive_fifo[0].read();
+        send_fifo[0].write(tmp);
+      }
+      
+      for(int j = 0;j < BLOCK_NUM/2-2;j ++) {
+        for(int k = 0;k < BLOCK_SIZE*ROW/ELEM_NUM;k ++) {
+          ap_uint<W> tmp0 = receive_fifo[0].read();
+          ap_uint<W> tmp1 = receive_fifo[1].read();
+          send_fifo[0].write(tmp0);
+          send_fifo[1].write(tmp1);
+        }
+      }
+
+      for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        ap_uint<W> tmp = receive_fifo[0].read();
+        send_fifo[1].write(tmp);
+      }
+      for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        ap_uint<W> tmp = receive_fifo[1].read();
+        send_fifo[1].write(tmp);
+      }
+      
+    }
 }
 
 
@@ -372,27 +258,18 @@ void CascadeMux(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* 
 
     #pragma HLS dataflow
 
-    axis_stream_128 block[BLOCK_NUM];
-    axis_stream_128 mux_in[MUX_NUM], mux_out[MUX_NUM];
-    axis_stream mux_insel[MUX_NUM], mux_outsel[MUX_NUM];
-    axis_stream top_insel, top_outsel;
+    axis_stream_128 send_fifo[2], receive_fifo[2];
+    axis_stream_128 ddr_fifo[2];
 
-    generateInOrder(ITER, mux_insel, top_insel);
-    generateOutOrder(ITER, mux_outsel, top_outsel);
-    for(int i = 0;i < MUX_NUM;i ++) {
-        #pragma HLS unroll
-        mux8to1(ITER, block+i*MUX_SIZE, mux_out[i], mux_outsel[i]);
-    }
-    for(int i = 0;i < MUX_NUM;i ++) {
-        #pragma HLS unroll
-        mux1to8(ITER, block+i*MUX_SIZE, mux_in[i], mux_insel[i]);
-    } 
+    DDR2FIFO(dataIn, ddr_fifo);
 
-    CascadeMuxSend(ITER, top_outsel, mux_out, 
+    Send(ITER, ddr_fifo,
+                   send_fifo,  
                    sweep_tx0_0, sweep_tx0_1,
                    norm_tx0);
-    CascadeMuxReceive(ITER, top_insel, mux_in, 
-                     dataIn, U, S,
+    RoundRobin(ITER, send_fifo, receive_fifo);
+    Receive(ITER, U, S,
+                     receive_fifo, 
                      sweep_rx0_0, sweep_rx0_1,
                      norm_rx0);
 
