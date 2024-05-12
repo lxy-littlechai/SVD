@@ -58,7 +58,6 @@ void norm_receive(ap_uint<DDR_WIDTH>* U,
 
 void receive4AIE(axis_stream_128& block, 
                    axis_pkt_stream& fromAIEstrm) {
-    #pragma HLS FUNCTION_INSTANTIATE variable=block
     #pragma HLS inline off 
     axis_pkt tmp;
     ap_uint<32> header;
@@ -72,6 +71,7 @@ void receive4AIE(axis_stream_128& block,
         data_temp[0](95, 64) = tmp.data(127, 96);
 
         for(int j = 1;j < ROW/ELEM_NUM;j ++) {
+	#pragma HLS PIPELINE II = 1
           tmp = fromAIEstrm.read();
           data_temp[(j-1)%2](127, 96) = tmp.data(31, 0);
           data_temp[j%2](31, 0) = tmp.data(63, 32);
@@ -88,7 +88,6 @@ void receive4AIE(axis_stream_128& block,
 void send2AIE(axis_stream_128& block, 
               axis_pkt_stream& toAIEstrm) {
 
-    #pragma HLS FUNCTION_INSTANTIATE variable=block 
     #pragma HLS inline off     
     axis_pkt tmp;
     ap_uint<32> header;
@@ -105,6 +104,7 @@ void send2AIE(axis_stream_128& block,
       tmp.last = 0;
       toAIEstrm.write(tmp);
       for(int j = 1;j < ROW/ELEM_NUM;j ++) {
+	#pragma HLS PIPELINE II = 1
         data_temp[j%2] = block.read();
         tmp.data(31, 0) = data_temp[(j-1)%2](127, 96);
         tmp.data(63, 32) = data_temp[j%2](31, 0);
@@ -129,20 +129,24 @@ void send2AIE(axis_stream_128& block,
 }
 
 void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 ddr_fifo[2]) {
+  const int BLOCK_DATA_SIZE = BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   for(int i = 0;i < BLOCK_NUM;i ++) {
-    for(int j = 0;j < BLOCK_SIZE;j ++) {
-      for(int k = 0;k < ROW/DDR_ELEM_NUM;k ++) {
+    if(i&1) {
+      for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
-        ap_uint<128> tmp = dataIn[i*BLOCK_SIZE*ROW/DDR_ELEM_NUM + j*ROW/DDR_ELEM_NUM + k];
-        if(i&1) {
-          ddr_fifo[1].write(tmp); 
-        }
-        else {
-          ddr_fifo[0].write(tmp); 
-        }
-        
+        ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
+        ddr_fifo[1].write(tmp); 
       }
+      
     }
+    else {
+      for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
+        #pragma HLS PIPELINE II = 1
+        ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
+        ddr_fifo[0].write(tmp); 
+      } 
+    }
+        
     
   }
 }

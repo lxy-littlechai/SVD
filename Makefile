@@ -40,9 +40,9 @@ HW_EMU_CMD := ./launch_hw_emu.sh -g
 #HW_EMU_CMD := ./launch_hw_emu.sh -add-env AIE_COMPILER_WORKDIR=../Work -aie-sim-options ../aiesimulator_output/aiesim_options.txt
 
 # Frequency Option
-AIE_FREQ = --freqhz=200000000
-KERNEL_FREQ = --freqhz=200000000
-LINK_FREQ = --freqhz=200000000:$(KERNEL)
+AIE_FREQ = --freqhz=300000000
+KERNEL_FREQ = --freqhz=300000000
+LINK_FREQ = --freqhz=300000000:$(KERNEL)
 
 # compile aie
 AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./aie/src" --include "./" --aie.xlopt=0
@@ -130,7 +130,7 @@ sd_card: all
 kernels: guard-PLATFORM_REPO_PATHS $(KERNEL_XO)
 $(KERNEL_XO): $(KERNEL_SRC)
 	mkdir -p $(XO_DIR)
-	$(VPP) $(VPP_XO_FLAGS) -k $(KERNEL) --hls.clock 200000000:$(KERNEL) $< -o $@ | tee $(XO_DIR)/$(KERNEL).log
+	$(VPP) $(VPP_XO_FLAGS) -k $(KERNEL) --hls.clock 300000000:$(KERNEL) $< -o $@ | tee $(XO_DIR)/$(KERNEL).log
 # $(KERNEL_XO_1): $(KERNEL_SRC_1)
 #	mkdir -p $(XO_DIR)
 #	$(VPP) $(VPP_XO_FLAGS) -k $(KERNEL_1) --hls.clock 300000000:$(KERNEL_1) $< -o $@ | tee $(XO_DIR)/$(KERNEL_1).log
