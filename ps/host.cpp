@@ -52,13 +52,13 @@ int main(int argc, char** argv) {
         }
     }
 
-    std::cout << "data\n";
-    for(int i = 0;i < ROW;i ++) {
-        for(int j = 0;j < COL;j ++) {
-            cout << data[j*ROW + i] << " ";
-        }
-        cout << endl;
-    }
+    //std::cout << "data\n";
+    //for(int i = 0;i < ROW;i ++) {
+    //    for(int j = 0;j < COL;j ++) {
+    //        cout << data[j*ROW + i] << " ";
+    //    }
+    //    cout << endl;
+    //}
 
     input_buffer.sync(XCL_BO_SYNC_BO_TO_DEVICE);
 
@@ -113,22 +113,22 @@ int main(int argc, char** argv) {
     }
 
     writeU<COL, ROW>("./data/test/U.txt", U_matrix);
-    cout << "U\n";
-    for(int i = 0;i < ROW;i ++) {
-        for(int j = 0;j < COL;j ++) {
-            printf("%.8f ", U_matrix[j][i]);
-        }
-        cout <<endl;
-    }
+    //cout << "U\n";
+    //for(int i = 0;i < ROW;i ++) {
+    //    for(int j = 0;j < COL;j ++) {
+    //        printf("%.8f ", U_matrix[j][i]);
+    //    }
+    //    cout <<endl;
+    //}
 
     writeSigma<COL, ROW>("./data/test/Sigma.txt", S_matrix);
-    cout << "S\n";
-    for(int i = 0;i < COL;i ++) {
-        for(int j = 0;j < COL;j ++) {
-            printf("%.8f ", S_matrix[j][i]);
-        }
-        cout <<endl;
-    }
+    //cout << "S\n";
+    //for(int i = 0;i < COL;i ++) {
+    //    for(int j = 0;j < COL;j ++) {
+    //        printf("%.8f ", S_matrix[j][i]);
+    //    }
+    //    cout <<endl;
+    //}
 
 
     

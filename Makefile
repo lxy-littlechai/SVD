@@ -15,11 +15,7 @@ PACKAGE_DIR = ./$(TARGET).xclbin_dir
 # File names and locations
 KERNEL = CascadeMux
 KERNEL_SRC = ./pl/$(KERNEL).cpp
-KERNEL_XO := ./$(XO_DIR)/$(KERNEL).xo
-
-KERNEL_1 = SplitMerge
-KERNEL_SRC_1 = ./pl/$(KERNEL_1).cpp
-KERNEL_XO_1 := ./$(XO_DIR)/$(KERNEL_1).xo
+KERNEL_XO := ./pl/$(KERNEL).xo
 
 XSA := ./$(XSA_DIR)/svd.xsa
 HOST_SRC = ./ps/host.cpp
@@ -42,13 +38,13 @@ HW_EMU_CMD := ./launch_hw_emu.sh -g
 # Frequency Option
 AIE_FREQ = --freqhz=200000000
 KERNEL_FREQ = --freqhz=200000000
-LINK_FREQ = --freqhz=200000000:$(KERNEL)
+LINK_FREQ = --freqhz=200000000:$(KERNEL).ap_clk
 
 # compile aie
-AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./aie/src" --include "./" --aie.xlopt=0
-#AIE_STRATEGY := --aie.Xmapper=DisableFloorplanning
+AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./aie/src" --include "./" 
+AIE_STRATEGY := --aie.xlopt=0
 AIE_FLAGS := $(AIE_INCLUDE_FLAGS) $(AIE_STRATEGY) --platform $(BASE_PLATFORM) --work_dir ./Work
-
+AIE_FLAGS += $(AIE_FREQ)
 
 ifeq ($(TARGET),sw_emu)
 	AIE_FLAGS += --target x86sim
@@ -57,9 +53,8 @@ else
 endif 
 
 # kernel build config
-VPP_XO_FLAGS += -c --platform $(BASE_PLATFORM)
-VPP_XO_FLAGS += --hls.jobs 8
-VPP_XO_FLAGS += -I$(CUR_DIR)/pl
+VPP_XO_FLAGS += -c --mode hls --platform $(BASE_PLATFORM)
+VPP_XO_FLAGS += $(KERNEL_FREQ)
 
 	
 VPP_LINK_FLAGS := -l -t $(TARGET) --platform $(BASE_PLATFORM) $(KERNEL_XO) $(GRAPH_O) --save-temps -g --config $(CONFIG_FILE) -o $(XSA)
@@ -90,33 +85,6 @@ LDCLFLAGS := $(GCC_LIB)
 .ONESHELL:
 .PHONY: clean all kernels aie sim xsa host package run_emu
 
-###
-# Guarding Checks. Do not modify.
-###
-check_defined = \
-	$(strip $(foreach 1,$1, \
-		$(call __check_defined,$1,$(strip $(value 2)))))
-
-__check_defined = \
-	$(if $(value $1),, \
-		$(error Undefined $1$(if $2, ($2))))
-
-guard-PLATFORM_REPO_PATHS:
-	$(call check_defined, PLATFORM_REPO_PATHS, Set your where you downloaded xilinx_vck190_base_202320_1)
-
-guard-ROOTFS:
-	$(call check_defined, ROOTFS, Set to: xilinx-versal-common-v2023.2/rootfs.ext4)
-
-guard-IMAGE:
-	$(call check_defined, IMAGE, Set to: xilinx-versal-common-v2023.2/Image)
-
-guard-CXX:
-	$(call check_defined, CXX, Run: xilinx-versal-common-v2023.2/environment-setup-aarch64-xilinx-linux)
-
-guard-SDKTARGETSYSROOT:
-	$(call check_defined, SDKTARGETSYSROOT, Run: xilinx-versal-common-v2023.2/environment-setup-aarch64-xilinx-linux)
-
-###
 
 all: aie kernels xsa host package
 sd_card: all
@@ -127,14 +95,10 @@ sd_card: all
 # Note : hw_emu and hw targets use the Unified CLI command to 
 # compile HLS kernels
 
-kernels: guard-PLATFORM_REPO_PATHS $(KERNEL_XO)
+kernels: $(KERNEL_XO)
 $(KERNEL_XO): $(KERNEL_SRC)
 	mkdir -p $(XO_DIR)
-	$(VPP) $(VPP_XO_FLAGS) -k $(KERNEL) --hls.clock 200000000:$(KERNEL) $< -o $@ | tee $(XO_DIR)/$(KERNEL).log
-# $(KERNEL_XO_1): $(KERNEL_SRC_1)
-#	mkdir -p $(XO_DIR)
-#	$(VPP) $(VPP_XO_FLAGS) -k $(KERNEL_1) --hls.clock 300000000:$(KERNEL_1) $< -o $@ | tee $(XO_DIR)/$(KERNEL_1).log
-	
+	$(VPP) $(VPP_XO_FLAGS) --config pl/CascadeMux.cfg | tee $(XO_DIR)/$(KERNEL).log
 
 
 aie: $(GRAPH_O)
@@ -159,7 +123,7 @@ $(GRAPH_O): $(GRAPH)
 # Once the kernels and graph are generated, you can build
 # the hardware part of the design. This creates an xsa
 # that will be used to run the design on the platform.
-xsa: guard-PLATFORM_REPO_PATHS $(XSA)
+xsa: $(XSA)
 $(XSA): 
 	mkdir -p $(XSA_DIR)
 	$(VPP) $(VPP_LINK_FLAGS) || (echo "task: [xsa] failed error code: $$?"; exit 1)
@@ -168,7 +132,7 @@ $(XSA):
 
 ############################################################################################################################
 # For sw emulation, hw emulation and hardware, compile the PS code and generate the host.exe. This is needed for creating the sd_card.
-host: guard-CXX guard-SDKTARGETSYSROOT  
+host:  
 	$(CXX) $(GCC_FLAGS) $(GCC_INCLUDES) -o host.o $(HOST_SRC)
 	$(CXX) *.o $(GCC_LIB) -std=c++20 -o $(HOST)
 	@echo "COMPLETE: Host application created."
@@ -177,7 +141,7 @@ host: guard-CXX guard-SDKTARGETSYSROOT
 ##################################################################################################
 # Depending on the TARGET, it'll either generate the PDI for sw_emu,hw_emu or hw.
 
-package: guard-PLATFORM_REPO_PATHS guard-IMAGE guard-ROOTFS $(XCLBIN)
+package: $(XCLBIN)
 $(XCLBIN):
 	mkdir -p $(PACKAGE_DIR)
 	v++ -p -t ${TARGET} \

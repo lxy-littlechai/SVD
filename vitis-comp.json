@@ -1,0 +1,9 @@
+{
+  "name": "Mux_new",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": ["pl\/CascadeMux.cfg"],
+    "work_dir": "cascademux"
+  }
+}
