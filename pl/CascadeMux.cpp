@@ -23,37 +23,36 @@ static unsigned int getPacketID(ap_uint<32> header){
   return ID;
 }
 
-void norm_receive(ap_uint<DDR_WIDTH>* U,
-                  ap_uint<32>* S, 
+void receive4DDR(axis_stream_128& block,
                   axis_pkt_stream& fromAIEstrm) {
   #pragma HLS inline off
     axis_pkt tmp;
     ap_uint<32> header;
-    ap_uint<32> sigma;
-    for(int k = 0;k < BLOCK_NUM;k ++) {
-      ap_int<DDR_WIDTH> data_temp[2] = {0, 0};
+    ap_int<DDR_WIDTH> data_temp[2] = {0, 0};
+    for(int i = 0;i < BLOCK_SIZE;i ++) {
+        tmp = fromAIEstrm.read();
+        header = tmp.data(31, 0);
+        data_temp[0](31, 0) = tmp.data(63, 32);
+        data_temp[0](63, 32) = tmp.data(95, 64);
+        data_temp[0](95, 64) = tmp.data(127, 96);
 
-      for(int i = 0;i < BLOCK_SIZE;i ++) {
+        for(int j = 1;j < ROW/ELEM_NUM;j ++) {
           tmp = fromAIEstrm.read();
-          header = tmp.data(31, 0);
-          data_temp[0](31, 0) = tmp.data(63, 32);
-          data_temp[0](63, 32) = tmp.data(95, 64);
-          data_temp[0](95, 64) = tmp.data(127, 96);
+          data_temp[(j-1)%2](127, 96) = tmp.data(31, 0);
+          data_temp[j%2](31, 0) = tmp.data(63, 32);
+          data_temp[j%2](63, 32) = tmp.data(95, 64);
+          data_temp[j%2](95, 64) = tmp.data(127, 96);
+          block.write(data_temp[(j-1)%2]);
+        }
 
-          for(int j = 1;j < ROW/ELEM_NUM;j ++) {
-            tmp = fromAIEstrm.read();
-            data_temp[(j-1)%2](127, 96) = tmp.data(31, 0);
-            data_temp[j%2](31, 0) = tmp.data(63, 32);
-            data_temp[j%2](63, 32) = tmp.data(95, 64);
-            data_temp[j%2](95, 64) = tmp.data(127, 96);
-            U[k*BLOCK_SIZE*ROW/ELEM_NUM + i*ROW/ELEM_NUM + j-1] = data_temp[(j-1)%2];
-          }
-          tmp = fromAIEstrm.read();
-          data_temp[(ROW/ELEM_NUM-1)%2](127, 96) = tmp.data(31, 0);
-          U[k*BLOCK_SIZE*ROW/ELEM_NUM + i*ROW/ELEM_NUM + ROW/ELEM_NUM-1] = data_temp[(ROW/ELEM_NUM-1)%2];
-          S[k*BLOCK_SIZE + i] = tmp.data(63, 32);
-      }
+        tmp = fromAIEstrm.read();
+        data_temp[(ROW/ELEM_NUM-1)%2](127, 96) = tmp.data(31, 0);
+        block.write(data_temp[(ROW/ELEM_NUM-1)%2]);
+        ap_int<DDR_WIDTH> sigma = 0;
+        sigma(31, 0) = tmp.data(63, 32);
+        block.write(sigma);
     }
+    
 }
 
 void receive4AIE(axis_stream_128& block, 
@@ -177,13 +176,11 @@ void Send(const int ITER, axis_stream_128 ddr_fifo[2],
     }
 }
 
-void Receive(const int ITER, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
+void Receive(const int ITER, 
                        axis_stream_128 fifo[2], 
-                       axis_pkt_stream& sweep_rx0_0, axis_pkt_stream& sweep_rx0_1,
-                       axis_pkt_stream& norm_rx0) {
+                       axis_pkt_stream& sweep_rx0_0, axis_pkt_stream& sweep_rx0_1) {
     #pragma HLS INLINE off
     
-
     const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
 
     for(int i = 0;i < SWEEP_STEP;i ++) {
@@ -192,8 +189,26 @@ void Receive(const int ITER, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
         receive4AIE(fifo[1], sweep_rx0_1);
     }
 
+}
 
-    norm_receive(U, S, norm_rx0); 
+void NormReceive(axis_stream_128& receive_ddr_fifo, axis_pkt_stream& norm_rx0) {
+  for(int i = 0;i < BLOCK_NUM;i ++) {
+    receive4DDR(receive_ddr_fifo, norm_rx0); 
+  }
+}
+
+void FIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_stream_128& receive_ddr_fifo) {
+  ap_uint<W> sigma;
+  ap_uint<W> data_temp;
+
+  for(int i = 0;i < COL;i ++) {
+    for(int j = 0;j < ROW/ELEM_NUM;j ++) {
+      #pragma HLS PIPELINE II = 1
+      U[i*ROW/ELEM_NUM + j] = receive_ddr_fifo.read();
+    }
+    sigma = receive_ddr_fifo.read();
+    S[i] = sigma(31, 0);
+  }
 }
 
 void RoundRobin(const int ITER, axis_stream_128 send_fifo[2], axis_stream_128 receive_fifo[2]) {
@@ -202,28 +217,31 @@ void RoundRobin(const int ITER, axis_stream_128 send_fifo[2], axis_stream_128 re
   for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
       
       for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        #pragma HLS PIPELINE II = 1
         ap_uint<W> tmp = receive_fifo[1].read();
         send_fifo[0].write(tmp);
       }
       for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        #pragma HLS PIPELINE II = 1
         ap_uint<W> tmp = receive_fifo[0].read();
         send_fifo[0].write(tmp);
       }
       
-      for(int j = 0;j < BLOCK_NUM/2-2;j ++) {
-        for(int k = 0;k < BLOCK_SIZE*ROW/ELEM_NUM;k ++) {
-          ap_uint<W> tmp0 = receive_fifo[0].read();
-          ap_uint<W> tmp1 = receive_fifo[1].read();
-          send_fifo[0].write(tmp0);
-          send_fifo[1].write(tmp1);
-        }
+      for(int j = 0;j < (BLOCK_NUM/2-2)*BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        #pragma HLS PIPELINE II = 1
+        ap_uint<W> tmp0 = receive_fifo[0].read();
+        ap_uint<W> tmp1 = receive_fifo[1].read();
+        send_fifo[0].write(tmp0);
+        send_fifo[1].write(tmp1);
       }
 
       for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        #pragma HLS PIPELINE II = 1
         ap_uint<W> tmp = receive_fifo[0].read();
         send_fifo[1].write(tmp);
       }
       for(int j = 0;j < BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+        #pragma HLS PIPELINE II = 1
         ap_uint<W> tmp = receive_fifo[1].read();
         send_fifo[1].write(tmp);
       }
@@ -263,20 +281,21 @@ void CascadeMux(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* 
     #pragma HLS dataflow
 
     axis_stream_128 send_fifo[2], receive_fifo[2];
-    axis_stream_128 ddr_fifo[2];
+    axis_stream_128 send_ddr_fifo[2], receive_ddr_fifo;
 
-    DDR2FIFO(dataIn, ddr_fifo);
+    DDR2FIFO(dataIn, send_ddr_fifo);
 
-    Send(ITER, ddr_fifo,
+    Send(ITER, send_ddr_fifo,
                    send_fifo,  
                    sweep_tx0_0, sweep_tx0_1,
                    norm_tx0);
     RoundRobin(ITER, send_fifo, receive_fifo);
-    Receive(ITER, U, S,
+    Receive(ITER, 
                      receive_fifo, 
-                     sweep_rx0_0, sweep_rx0_1,
-                     norm_rx0);
+                     sweep_rx0_0, sweep_rx0_1);
 
+    NormReceive(receive_ddr_fifo, norm_rx0);
+    FIFO2DDR(U, S, receive_ddr_fifo);
     
 
 }

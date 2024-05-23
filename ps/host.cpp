@@ -12,6 +12,7 @@
 #include <xrt/xrt_kernel.h>
 #include <experimental/xrt_aie.h>
 #include <experimental/xrt_graph.h>
+#include "./svd.hpp"
 #include "../SystemConfig.h"
 
 using namespace std;
@@ -26,7 +27,7 @@ int main(int argc, char** argv) {
     unsigned int dev_index = 0;
     auto device = xrt::device(dev_index);
     auto xclbin_uuid = device.load_xclbin(argv[1]);
-    if(argc == 3) sscanf (argv[2], "%i", &ITER);
+    if(argc == 3) sscanf (argv[2], "%d", &ITER);
     
 
     auto kernel = xrt::kernel(device, xclbin_uuid, "CascadeMux");
@@ -39,9 +40,15 @@ int main(int argc, char** argv) {
     auto U = output_buffer_U.map<float*>();
     auto S = output_buffer_S.map<float*>();
 
+    float matrix[COL*ROW];
+
+    read<COL, ROW>("./data/matrix.txt", matrix);
+
+    std::cout << "data\n";
+    int index = 0, matrix_id = 0;
     for(int j = 0;j < COL;j ++) {
         for(int i = 0;i < ROW;i ++) {
-            data[j*ROW + i] = rand()%50;
+            data[index ++] = matrix[matrix_id ++];
         }
     }
 
@@ -88,20 +95,40 @@ int main(int argc, char** argv) {
     output_buffer_U.sync(XCL_BO_SYNC_BO_TO_DEVICE);
     output_buffer_S.sync(XCL_BO_SYNC_BO_TO_DEVICE);
 
-    std::cout << "U\n";
+    float U_matrix[COL][ROW], S_matrix[COL][COL];
+    int indexU = 0, indexS = 0;
+    for(int j = 0;j < COL;j ++) {
+        for(int i = 0;i < ROW;i ++) {
+            U_matrix[j][i] = U[indexU ++];
+        }
+        for(int i = 0;i < COL;i ++) {
+            if(j == i) {
+                S_matrix[j][i] = S[indexS ++];
+            }
+            else {
+                S_matrix[j][i] = 0;
+            }
+        }
+        
+    }
+
+    writeU<COL, ROW>("./data/test/U.txt", U_matrix);
+    cout << "U\n";
     for(int i = 0;i < ROW;i ++) {
         for(int j = 0;j < COL;j ++) {
-            cout << U[j*ROW + i] << " ";
+            printf("%.8f ", U_matrix[j][i]);
         }
-        cout << endl;
+        cout <<endl;
     }
-    cout << endl;
 
-    std::cout << "S\n";
+    writeSigma<COL, ROW>("./data/test/Sigma.txt", S_matrix);
+    cout << "S\n";
     for(int i = 0;i < COL;i ++) {
-        cout << S[i] << " ";
+        for(int j = 0;j < COL;j ++) {
+            printf("%.8f ", S_matrix[j][i]);
+        }
+        cout <<endl;
     }
-    cout << endl;
 
 
     

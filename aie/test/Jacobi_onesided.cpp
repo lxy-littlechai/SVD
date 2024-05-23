@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int COL = 16;
-const int ROW = 16;
+const int COL = 128;
+const int ROW = 128;
 const int ITER = 6;
 float A[COL][ROW], U[COL][ROW], V[COL][ROW], sigma[COL];
 float tmpA[COL][ROW], tmpV[COL][ROW];
 
 void readData() {
-    string path = "../data/";
+    string path = "../../data/";
     string filepath = path + "matrix.txt";
     std::ifstream inputFile(filepath);
     if(inputFile.is_open()) {
@@ -138,12 +138,45 @@ void print() {
         }
         cout << "\n";
     }*/
+    std::ofstream file("../../data/test/U.txt");
+    if (!file.is_open()) {
+        std::cerr << "Failed to open the file for writing." << std::endl;
+        return;
+    }
+    file.setf(ios::fixed, ios::floatfield);  
+    file.precision(6);
+
+    for (int i = 0; i < ROW; ++i) {
+        for (int j = 0; j < COL; ++j) {
+            file << U[j][i];
+            if (j < COL - 1) {
+                file << " ";
+            }
+        }
+        file << "\n";
+    }
+    file.close();
+
+
     sort(sigma, sigma+COL);
     cout << "Sigma\n";
     for(int i = 0;i < COL;i ++) {
         printf("%.6f ",sigma[i]);
     }
     cout << "\n";
+
+    std::ofstream file1("../../data/test/Sigma.txt");
+    if (!file1.is_open()) {
+        std::cerr << "Failed to open the file for writing." << std::endl;
+        return;
+    }
+    file1.setf(ios::fixed, ios::floatfield);  
+    file1.precision(6);
+
+        for (int j = 0; j < COL; ++j) {
+                file1 << sigma[j] << "\n";
+        }
+    file1.close();
     /*cout << "V\n";
     for(int i = 0;i < ROW;i ++) {
         for(int j = 0;j < COL;j ++) {

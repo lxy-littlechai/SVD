@@ -105,7 +105,30 @@ public:
             }
             
         }
-        file1.close();  
+        file1.close(); 
+
+        std::ofstream file3(filepath + "/0_norm_in_0.txt");
+        if(file3.is_open()) {
+            for(int k = 0;k < ITER;k ++) {
+                for(int j = 1;j < COL;j += 2) {
+                    int idx = 0;
+                    file3 << generateHeader(j/2, 0) << " ";
+                    idx ++;
+                    for(int i = 0;i < ROW-1;i ++) {
+                        file3 << matrix[j][i].uintValue << " ";
+                        idx ++;
+                        if(idx == WIDTH/32) {
+                            file3 << "\n";
+                            idx = 0;
+                        }
+                    }
+                    file3 << "TLAST\n";
+                    file3 << matrix[j][ROW-1].uintValue << "\n";
+                }
+            }
+            
+        }
+        file3.close(); 
         
     }
 
@@ -114,9 +137,9 @@ public:
 
 
 int main() {
-    const int COL = 16;
-    const int ROW = 16;
-    const int ITER = 1;
+    const int COL = 8;
+    const int ROW = 1024;
+    const int ITER = 2;
     const int WIDTH = 128;
     DataGenerator<COL, ROW, ITER, WIDTH> generator;
     generator.generateFpPacket("../data");

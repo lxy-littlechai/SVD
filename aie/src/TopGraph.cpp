@@ -8,10 +8,15 @@ TopNormGraph<ROW, BLOCK_SIZE, BLOCK_SIZE> topNormGraph(0);
 #if defined(__AIESIM__) || defined(__X86SIM__)
 
 int main() {
+    topNormGraph.init();
+    topNormGraph.run(2);
+    topNormGraph.end();
     
     topSweepGraph0.init();
-    topSweepGraph0.run(1);
+    topSweepGraph0.run(2);
     topSweepGraph0.end();
+
+    
     
     return 0;
 }
