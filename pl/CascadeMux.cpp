@@ -128,6 +128,8 @@ void send2AIE(axis_stream_128& block,
 }
 
 void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 ddr_fifo[2]) {
+  #pragma HLS bind_storage variable=ddr_fifo  type=fifo impl=uram
+
   const int BLOCK_DATA_SIZE = BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   for(int i = 0;i < BLOCK_NUM;i ++) {
     if(i&1) {
@@ -145,24 +147,18 @@ void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 ddr_fifo[2]) {
         ddr_fifo[0].write(tmp); 
       } 
     }
-        
-    
   }
 }
 
-void Send(const int ITER, axis_stream_128 ddr_fifo[2],
+void Send(const int ITER, 
                     axis_stream_128 fifo[2], 
                     axis_pkt_stream& sweep_tx0_0, axis_pkt_stream& sweep_tx0_1, 
                     axis_pkt_stream& norm_tx0) {
+#pragma HLS bind_storage variable=fifo type=fifo impl=uram
+
     #pragma HLS INLINE off
 
-    for(int i = 0;i < BLOCK_NUM/2;i ++) {
-      #pragma HLS dataflow
-      send2AIE(ddr_fifo[0], sweep_tx0_0);
-      send2AIE(ddr_fifo[1], sweep_tx0_1);
-    }
-
-    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER - BLOCK_NUM/2;
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
 
     for(int i = 0;i < SWEEP_STEP;i ++) {
         #pragma HLS dataflow
@@ -176,21 +172,6 @@ void Send(const int ITER, axis_stream_128 ddr_fifo[2],
     }
 }
 
-void Receive(const int ITER, 
-                       axis_stream_128 fifo[2], 
-                       axis_pkt_stream& sweep_rx0_0, axis_pkt_stream& sweep_rx0_1) {
-    #pragma HLS INLINE off
-    
-    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
-
-    for(int i = 0;i < SWEEP_STEP;i ++) {
-        #pragma HLS dataflow
-        receive4AIE(fifo[0], sweep_rx0_0);
-        receive4AIE(fifo[1], sweep_rx0_1);
-    }
-
-}
-
 void NormReceive(axis_stream_128& receive_ddr_fifo, axis_pkt_stream& norm_rx0) {
   for(int i = 0;i < BLOCK_NUM;i ++) {
     receive4DDR(receive_ddr_fifo, norm_rx0); 
@@ -198,6 +179,7 @@ void NormReceive(axis_stream_128& receive_ddr_fifo, axis_pkt_stream& norm_rx0) {
 }
 
 void FIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_stream_128& receive_ddr_fifo) {
+  #pragma HLS bind_storage variable=receive_ddr_fifo  type=fifo impl=uram
   ap_uint<W> sigma;
   ap_uint<W> data_temp;
 
@@ -211,7 +193,37 @@ void FIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_stream_128& receive_dd
   }
 }
 
-void RoundRobin(const int ITER, axis_stream_128 send_fifo[2], axis_stream_128 receive_fifo[2]) {
+void Receive(const int ITER, 
+                       axis_stream_128 fifo[2], 
+                       axis_pkt_stream& sweep_rx0_0, axis_pkt_stream& sweep_rx0_1,
+                       axis_pkt_stream& norm_rx0) {
+#pragma HLS bind_storage variable=fifo type=fifo impl=uram
+    #pragma HLS INLINE off
+    
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
+
+    for(int i = 0;i < SWEEP_STEP;i ++) {
+        #pragma HLS dataflow
+        receive4AIE(fifo[0], sweep_rx0_0);
+        receive4AIE(fifo[1], sweep_rx0_1);
+    }
+
+    //Norm Receive
+    NormReceive(fifo[0], norm_rx0);
+    
+
+}
+
+
+
+void RoundRobin(const int ITER, ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
+                axis_stream_128 send_fifo[2], axis_stream_128 receive_fifo[2]) {
+  
+  //DDR2AIE
+  DDR2FIFO(dataIn, send_fifo);
+
+
+  //Sweep
   const int SINGLE_SWEEP_TIMES = ITER*(BLOCK_NUM-1);
 
   for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
@@ -247,6 +259,10 @@ void RoundRobin(const int ITER, axis_stream_128 send_fifo[2], axis_stream_128 re
       }
       
     }
+
+
+    //AIE2DDR
+    FIFO2DDR(U, S, receive_fifo[0]);
 }
 
 
@@ -280,22 +296,18 @@ void CascadeMux(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* 
 
     #pragma HLS dataflow
 
+
     axis_stream_128 send_fifo[2], receive_fifo[2];
-    axis_stream_128 send_ddr_fifo[2], receive_ddr_fifo;
 
-    DDR2FIFO(dataIn, send_ddr_fifo);
 
-    Send(ITER, send_ddr_fifo,
+    Send(ITER, 
                    send_fifo,  
                    sweep_tx0_0, sweep_tx0_1,
                    norm_tx0);
-    RoundRobin(ITER, send_fifo, receive_fifo);
+    RoundRobin(ITER, dataIn, U, S,
+               send_fifo, receive_fifo);
     Receive(ITER, 
                      receive_fifo, 
-                     sweep_rx0_0, sweep_rx0_1);
-
-    NormReceive(receive_ddr_fifo, norm_rx0);
-    FIFO2DDR(U, S, receive_ddr_fifo);
-    
-
+                     sweep_rx0_0, sweep_rx0_1,
+                     norm_rx0);
 }

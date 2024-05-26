@@ -117,7 +117,7 @@ public:
             connect<> (in[i][1], orth[i][0].in[1]);
         }
 
-        if(GraphSize&1) {
+        if(GraphSize == 1) {
             
         }
         else {

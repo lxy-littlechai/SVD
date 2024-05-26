@@ -37,7 +37,7 @@ matrix_file = './matrix.txt'
 u_file = './gold/U.txt'
 sigma_file = './gold/Sigma.txt'
 
-generate_matrix(256, 256, matrix_file)
+generate_matrix(32, 32, matrix_file)
 matrix = load_matrix_txt(matrix_file)
 U, Sigma = compute_svd(matrix)
 save_results(U, u_file)
