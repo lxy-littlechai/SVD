@@ -156,11 +156,11 @@ void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 ddr_fifo[2]) {
   }
 }
 
-void Send(const int ITER, axis_stream_sys& syscontrol,
+void Send(axis_stream_sys& syscontrol,
                     axis_stream_128 fifo[2], 
                     axis_pkt_stream& sweep_tx0_0, axis_pkt_stream& sweep_tx0_1, 
                     axis_pkt_stream& norm_tx0) {
-#pragma HLS bind_storage variable=fifo type=fifo impl=uram
+#pragma HLS bind_storage variable=fifo type=fifo impl=bram
 
     #pragma HLS INLINE off
 
@@ -204,14 +204,14 @@ void FIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_stream_deep_128& recei
   }
 }
 
-void Receive(const int ITER, axis_stream_sys& syscontrol, axis_stream_float convSet[2],
+void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet[2],
                        axis_stream_deep_128 fifo[2], 
                        axis_pkt_stream& sweep_rx0_0, axis_pkt_stream& sweep_rx0_1,
                        axis_pkt_stream& norm_rx0) {
 #pragma HLS bind_storage variable=fifo type=fifo impl=uram
     #pragma HLS INLINE off
     
-    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
+    const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1);
 
     while(true) {
       ap_uint<1> sig = syscontrol.read();
@@ -236,7 +236,7 @@ void Receive(const int ITER, axis_stream_sys& syscontrol, axis_stream_float conv
 
 
 
-void RoundRobin(const int ITER, axis_stream_sys& syscontrol,
+void RoundRobin(axis_stream_sys& syscontrol,
                 ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
                 axis_stream_128 send_fifo[2], axis_stream_deep_128 receive_fifo[2]) {
   
@@ -245,7 +245,7 @@ void RoundRobin(const int ITER, axis_stream_sys& syscontrol,
 
 
   //Sweep
-  const int SINGLE_SWEEP_TIMES = ITER*(BLOCK_NUM-1);
+  const int SINGLE_SWEEP_TIMES = (BLOCK_NUM-1);
 
   while(true) {
     ap_uint<1> sig = syscontrol.read();
@@ -297,7 +297,7 @@ void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sys sysco
   }
 
   int iter = 0;
-  const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1)*ITER;
+  const int SWEEP_STEP = BLOCK_NUM/2*(BLOCK_NUM-1);
   while(true) {
     fp_uint maxConv;
     maxConv.data_float = 0;
@@ -311,7 +311,7 @@ void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sys sysco
     ConvArray[iter] = maxConv.data_uint;
     hls::print("maxConv: %f\n", maxConv.data_float);
     iter ++;
-    if(maxConv.data_float < EPS || iter >= {{MaxSweep}}) {
+    if(maxConv.data_float < EPS || iter >= ITER) {
       for(int i = 0;i < FUNCNUM;i ++) {
         syscontrol[i].write(END);
       }
@@ -365,14 +365,14 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
     axis_stream_deep_128 receive_fifo[2];
 
     SystemControl(ITER, ConvArray, syscontrol, convSet);
-    Send(ITER, syscontrol[0],
+    Send(syscontrol[0],
                    send_fifo,  
                    sweep_tx0_0, sweep_tx0_1,
                    norm_tx0);
-    RoundRobin(ITER, syscontrol[1],
+    RoundRobin(syscontrol[1],
                 dataIn, U, S,
                send_fifo, receive_fifo);
-    Receive(ITER, syscontrol[2], convSet,
+    Receive(syscontrol[2], convSet,
                      receive_fifo, 
                      sweep_rx0_0, sweep_rx0_1,
                      norm_rx0);

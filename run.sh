@@ -1,2 +1,2 @@
 clear
-python3 main.py --PATH="./test" --COL=128 --ROW=128 --BATCH=100 --Frequency=2000000 --MaxSweep=1
+python3 main.py --PATH="./512" --COL=512 --ROW=512 --BATCH=1 --Frequency=200000000

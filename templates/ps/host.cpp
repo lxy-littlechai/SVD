@@ -18,7 +18,7 @@
 using namespace std;
 int main(int argc, char** argv) {
  
-    int ITER = 1;//default
+    int ITER = 20;//default
 
     const int DATA_SIZE_BYTE = ROW*COL*sizeof(float);
     const int U_SIZE_BYTE = ROW*COL*sizeof(float);
@@ -100,6 +100,7 @@ int main(int argc, char** argv) {
     }
     
     std::cout << "All Graph started\n";
+    std::cout << {{BATCH}} << "*" << ROW << "*" << COL << " ITER:" << ITER;
 
     double kernel_time_in_sec = 0;
     std::chrono::duration<double> kernel_time(0);
@@ -135,6 +136,12 @@ int main(int argc, char** argv) {
       output_buffer_U[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_S[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_CONV[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
+      int iteration = 0;
+      while(CONV[k][iteration] > EPS) {
+        cout << CONV[k][iteration] << " ";
+        iteration ++;
+      }
+      cout << endl << k << " " << iteration << endl;
     }
 
 

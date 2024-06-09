@@ -51,6 +51,7 @@ def generate(storePath, config):
             
             ("", "conn.cfg"),
             ("", "Makefile"),
+            ("", "run.sh"),
             ("", "SystemConfig.h")]
   for template in template_list:
     template_dir = os.getcwd() + "/templates/" + template[0]
@@ -65,13 +66,12 @@ if __name__ == '__main__':
   parser.add_argument("--ROW", type=int)
   parser.add_argument("--BATCH", type=int)
   parser.add_argument("--Frequency", type=int, default=300000000)
-  parser.add_argument("--MaxSweep", type=int, default=20)
+  #parser.add_argument("--MaxSweep", type=int, default=20)
   args = parser.parse_args()
   
   svd_model = SVD_Model(args.COL, args.ROW, args.BATCH, args.Frequency)
   svd_model.optimize()
   config = svd_model.getBestConfig()
-  config['MaxSweep'] = args.MaxSweep
 
   generate(args.PATH, config)
 
