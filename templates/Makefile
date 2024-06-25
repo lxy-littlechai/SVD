@@ -44,7 +44,7 @@ KERNEL_FREQ_{{id}} = --freqhz={{Frequency}}:TopPL_{{id}}.ap_clk
 
 # compile aie
 AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./" 
-AIE_STRATEGY := --aie.xlopt=0
+AIE_STRATEGY := --aie.xlopt=0 --aie.runtime-opt
 AIE_FLAGS := $(AIE_INCLUDE_FLAGS) $(AIE_STRATEGY) --platform $(BASE_PLATFORM) --work_dir ./Work
 AIE_FLAGS += $(AIE_FREQ)
 

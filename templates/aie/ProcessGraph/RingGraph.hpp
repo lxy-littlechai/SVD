@@ -111,7 +111,7 @@ public:
          {
             int row = START_ROW, direction = DIRECTION, pkt_num = 0;
             for(int i = 0;i < ROW-1;i ++) {
-                if((row == VCK190_ROW-2 && direction == 1) || (row == 1 && direction == -1)) {
+                /* if((row == VCK190_ROW-2 && direction == 1) || (row == 1 && direction == -1)) {
 
                     for(int k = 0;k < 2;k ++) {
                         sp[pkt_num][k] = pktsplit<GraphSize>::create();
@@ -120,15 +120,20 @@ public:
 
                     connect<> (mg[pkt_num][0].out[0], sp[pkt_num][0].in[0]);
                     connect<> (mg[pkt_num][1].out[0], sp[pkt_num][1].in[0]);
+                    for(int j = 0;j < 2*COL;j ++) {
+                        int out_col = ring[j][i].col;
+                        int out_port = ring[j][i].port;
+                        int in_col = ring[j][i+1].col;
+                        int in_port = ring[j][i+1].port;
+                        connect<> (orth[out_col][i].out[out_port], mg[pkt_num][in_port].in[in_col]);
+                    }
                     for(int j = 0;j < COL;j ++) {
-                        connect<> (orth[j][i].out[0], mg[pkt_num][0].in[j]);
-                        connect<> (orth[j][i].out[1], mg[pkt_num][1].in[j]);
-                        connect<> (sp[pkt_num][0].out[j], orth[j][i+1].in[0]);
-                        connect<> (sp[pkt_num][1].out[j], orth[j][i+1].in[1]);
+                      connect<> (sp[pkt_num][1].out[j], orth[j][i+1].in[1]);
+                      connect<> (sp[pkt_num][0].out[j], orth[j][i+1].in[0]);
                     }
                     pkt_num ++;
-                }
-                else {
+                } */
+                //else {
                   for(int j = 0;j < 2*COL;j ++) {
                     int out_col = ring[j][i].col;
                     int out_port = ring[j][i].port;
@@ -136,7 +141,7 @@ public:
                     int in_port = ring[j][i+1].port;
                     connect<> (orth[out_col][i].out[out_port], orth[in_col][i+1].in[in_port]);
                   }
-                }  
+                //}  
             
                 row += direction;
                 if(row == VCK190_ROW-1 && direction == 1) {
@@ -154,10 +159,10 @@ public:
                int out_col = ring[j][ROW-1].col;
                int out_port = ring[j][ROW-1].port;
                if(j&1) {
-                connect<> (orth[out_col][ROW-1].out[out_port], out[out_col][1]);
+                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][1]);
                }
                else {
-                connect<> (orth[out_col][ROW-1].out[out_port], out[out_col][0]);
+                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][0]);
                }
                
              }

@@ -65,11 +65,12 @@ if __name__ == '__main__':
   parser.add_argument("--COL", type=int)
   parser.add_argument("--ROW", type=int)
   parser.add_argument("--BATCH", type=int)
-  parser.add_argument("--Frequency", type=int, default=300000000)
+  parser.add_argument("--ITER", type=int, default=1)
+  parser.add_argument("--Frequency", type=int)
   #parser.add_argument("--MaxSweep", type=int, default=20)
   args = parser.parse_args()
   
-  svd_model = SVD_Model(args.COL, args.ROW, args.BATCH, args.Frequency)
+  svd_model = SVD_Model(args.COL, args.ROW, args.BATCH, args.Frequency, args.ITER)
   svd_model.optimize()
   config = svd_model.getBestConfig()
 

@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
     const int U_SIZE_BYTE = ROW*COL*sizeof(float);
     const int S_SIZE_BYTE = COL*sizeof(float);
 
-    const int CONV_SIZE_BYTE = 20*sizeof(float);
+    const int CONV_SIZE_BYTE = 100*sizeof(float);
 
     unsigned int dev_index = 0;
     auto device = xrt::device(dev_index);
@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
         }
       }
 
-      for(int i = 0;i < 20;i ++) {
+      for(int i = 0;i < 100;i ++) {
         CONV[k][i] = 0;
       }
     }

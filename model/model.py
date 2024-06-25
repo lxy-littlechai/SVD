@@ -3,6 +3,7 @@ import numpy as np
 from model.AIE import SVD_AIE
 from model.AIE import GraphInfo
 from model.PL import SVD_PL
+from model.AIE_sim import single_aie, total_aie
 
 VCK190_COL = 50
 VCK190_ROW = 8
@@ -14,13 +15,14 @@ class SysConfig:
         self.ROW = 0
         self.BATCH = 0
         self.Frequency = 0.0
+        self.ITER = 1
         self.BLOCK_SIZE = 0
         self.aie_num = 0
         self.graph_num = 0
         self.graph_list = [] #row, col, direction
 
         self.plio_num = 0
-        self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used; 1 - orth; 2 - norm;
+        self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
         self.estimated_time = 0.0
         
     def keys(self):
@@ -30,11 +32,12 @@ class SysConfig:
         return getattr(self, item)
 
 class SVD_Model:
-    def __init__(self, COL, ROW, BATCH, Frequency):
+    def __init__(self, COL, ROW, BATCH, Frequency, ITER):
         self.sysConfig = SysConfig()
         self.sysConfig.COL = COL
         self.sysConfig.ROW = ROW
         self.sysConfig.Frequency = Frequency
+        self.sysConfig.ITER = ITER
         self.sysConfig.BATCH = BATCH
         self.sysConfig.valid = False
 
@@ -47,14 +50,14 @@ class SVD_Model:
             if self.sysConfig.COL % i != 0:
                 continue
             BLOCK_SIZE = i
-
             config = self.resourceCheck(BLOCK_SIZE)
             
             if not config.valid:
-                break
+                continue
+            self.print(config)
 
             config.estimated_time = self.predict(config.BLOCK_SIZE, config.graph_num)
-            self.print(config)
+            
             if not best_config.valid or config.estimated_time < best_config.estimated_time:
                 best_config = config
 
@@ -84,8 +87,10 @@ class SVD_Model:
         svd_aie = SVD_AIE(1, 0, 1, BLOCK_SIZE)
         aiePosition = svd_aie.getAIEPosition()
         #print(config.graph_list)
+        ## PL Uram Check
+        svd_pl = SVD_PL(self.sysConfig.COL, self.sysConfig.ROW)
 
-        while svd_aie.tryAIEPlacement():
+        while svd_pl.checkRAM(svd_aie.getGraphNum()+1) and svd_aie.tryAIEPlacement():
             config.valid = True
             config.graph_list.append(aiePosition)
 
@@ -99,41 +104,41 @@ class SVD_Model:
         config.aie_num = svd_aie.getAIENum()
         config.graph_num = min(svd_aie.getGraphNum(), self.sysConfig.BATCH)
 
-        ## PL Check
-        svd_pl = SVD_PL(self.sysConfig.COL, self.sysConfig.ROW, config.graph_num)
-        if not svd_pl.checkRAM():
-            config.valid = False
-
         return config
 
     def predict(self, BLOCK_SIZE, GRAPH_NUM):
         COL = self.sysConfig.COL
         ROW = self.sysConfig.ROW
         BATCH = self.sysConfig.BATCH
-        Frequency = self.sysConfig.Frequency/1000000
+        Frequency = self.sysConfig.Frequency/10000000
+        ITER = self.sysConfig.ITER
 
-        BLOCK_NUM = COL / BLOCK_SIZE
-        # y = 0.0036x + 0.2125 us
-        orthAIE = 0.0036 * ROW + 0.2125
-        # y = 0.0003x + 0.1126
-        normAIE = 0.0003 * ROW + 0.1126
-        send = 1.0 / Frequency * ROW * 32 / 128
-        receive = 1.0 / Frequency * ROW * 32 / 128
+        BLOCK_NUM = COL/BLOCK_SIZE
 
-        orth_total = send + orthAIE * (2 * BLOCK_SIZE - 1) + receive
-        norm_total = send + normAIE + receive
+        Tx_row = 1.0/Frequency*(ROW*32/128 + 4)
 
-        predict_sweep = orth_total + BLOCK_NUM * (BLOCK_NUM - 1) / 2 * BLOCK_SIZE * send
-        predict_norm = norm_total + BLOCK_NUM * BLOCK_SIZE * send
+        id = str(ROW) + "_" + str(BLOCK_SIZE)
+        orth_single_aie = single_aie[id]
+        orth_total_aie = total_aie[id]
 
-        DDR_latency = BLOCK_NUM * BLOCK_SIZE * send / 2
-        Sweep_latency = max(0.0, orth_total + send - BLOCK_NUM / 2 * BLOCK_SIZE * send) * (BLOCK_NUM - 1)
-        #                  DDR_HLS_latency          + Sweep_HLS_latency                                + Norm_HLS_latency
-        HLS_latency = BLOCK_NUM * BLOCK_SIZE / Frequency + BLOCK_NUM * (BLOCK_NUM - 1) / 2 * BLOCK_SIZE / Frequency * 4 + BLOCK_NUM * BLOCK_SIZE / Frequency * 4
-        Round_robin_latency = min(Sweep_latency, (BLOCK_NUM - 1) * BLOCK_SIZE * send)
-        single_predict_time = predict_sweep + predict_norm + DDR_latency + Sweep_latency + HLS_latency + Round_robin_latency
+        CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row, 0.0)
+        Tx = 1.0/Frequency*(ROW*32/128 + 4)*BLOCK_SIZE + CTC_wait
+        Rx = 1.0/Frequency*(ROW*32/128 + 4)*BLOCK_SIZE + CTC_wait
 
-        batch_predict_time = (BATCH // GRAPH_NUM + BATCH%GRAPH_NUM) * single_predict_time
+        round_wait = max(orth_total_aie + Rx - BLOCK_NUM/2*Tx, 0.0)
+        round_robin_wait = Tx + Tx #second Tx -> algorithm latency
+
+        one_round = BLOCK_NUM/2*Tx + round_wait + round_robin_wait
+        one_sweep = (BLOCK_NUM-1)*one_round + orth_total_aie + Tx
+        
+        norm_aie = 0.0003 * ROW + 0.1126
+        norm_stage = BLOCK_NUM*Tx
+
+        DDR_Latency = Tx*BLOCK_NUM + 200
+        sys_predict_time = DDR_Latency + ITER*one_sweep + norm_stage
+
+        batch_predict_time = (BATCH//GRAPH_NUM*sys_predict_time + (BATCH > GRAPH_NUM)*sys_predict_time)/1000000
+    
         return batch_predict_time
     
     
