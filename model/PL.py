@@ -11,8 +11,12 @@ class SVD_PL:
   def checkRAM(self, cu_num):
     fifo_depth = self.col*self.row/4
     urams = cu_num*fifo_depth/self.URAM_depth*2*2
-    print("cu:", cu_num)
-    print("uram:", urams)
+    #print("cu:", cu_num)
+    #print("uram:", urams)
     if urams > self.URAM:
       return False
-    return True       
+    return True 
+  def getRAM(self, cu_num): 
+    fifo_depth = self.col*self.row/4
+    urams = cu_num*fifo_depth/self.URAM_depth*2*2
+    return urams     

@@ -2,3 +2,4 @@ test
 model_test
 FPGA_test
 GPU_test
+Predict_test

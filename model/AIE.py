@@ -17,7 +17,7 @@ class GraphInfo:
 class SVD_AIE:
     VCK190_COL = 50
     VCK190_ROW = 8
-    VCK190_PLIO = 39
+    VCK190_PLIO_128 = 78
 
     def __init__(self, col, row, direction, BLOCK_SIZE):
         self.gragh_list = []
@@ -45,8 +45,8 @@ class SVD_AIE:
             temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
         valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
 
-        # try PLIO
-        if self.plio_num + 2 > self.VCK190_PLIO:
+        # try PLIO sweep-2 + norm-1
+        if self.plio_num + 3 > self.VCK190_PLIO_128:
             return False
 
         if not valid:
@@ -58,7 +58,7 @@ class SVD_AIE:
             self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
         self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)  ## ignore memory AIE
 
-        self.plio_num += 2
+        self.plio_num += 3
         self.graph_num += 1
         return True
 

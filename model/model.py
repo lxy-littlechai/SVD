@@ -1,4 +1,5 @@
 import math
+import copy
 import numpy as np
 from model.AIE import SVD_AIE
 from model.AIE import GraphInfo
@@ -9,78 +10,147 @@ VCK190_COL = 50
 VCK190_ROW = 8
 
 class SysConfig:
-    def __init__(self):
+    def __init__(self, COL, ROW, ITER, BATCH):
         self.valid = False
-        self.COL = 0
-        self.ROW = 0
-        self.BATCH = 0
-        self.Frequency = 0.0
-        self.ITER = 1
+        self.COL = COL
+        self.ROW = ROW
+        self.BATCH = BATCH
+        self.ITER = ITER
         self.BLOCK_SIZE = 0
+        self.Frequency = 0
         self.aie_num = 0
         self.graph_num = 0
         self.graph_list = [] #row, col, direction
 
         self.plio_num = 0
         self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
+
+        self.uram = 0
         self.estimated_time = 0.0
+    
+    """ def __eq__(self, other):
+        if self.estimated_time == other.estimated_time and self.BLOCK_SIZE == other.BLOCK_SIZE:
+            return True
+        return False
+    
+    def __hash__(self):
+        return hash(self.estimated_time + self.BLOCK_SIZE) """
+        
+    def __lt__(self, other): 
+        if self.estimated_time < other.estimated_time:
+            return 1
+        elif self.estimated_time == other.estimated_time:
+            if self.Frequency <= other.Frequency:
+                return 1
+            else:
+                return -1
+        else:
+            return -1
+
         
     def keys(self):
-        return ('COL', 'ROW', 'BATCH', 'Frequency', 'BLOCK_SIZE', 'graph_num', 'graph_list')
+        return ('COL', 'ROW', 'BATCH', 'BLOCK_SIZE', 'graph_num', 'graph_list')
 
     def __getitem__(self, item):
         return getattr(self, item)
 
 class SVD_Model:
-    def __init__(self, COL, ROW, BATCH, Frequency, ITER):
-        self.sysConfig = SysConfig()
-        self.sysConfig.COL = COL
-        self.sysConfig.ROW = ROW
-        self.sysConfig.Frequency = Frequency
-        self.sysConfig.ITER = ITER
-        self.sysConfig.BATCH = BATCH
-        self.sysConfig.valid = False
+    def __init__(self, COL, ROW, BATCH, ITER):
+        self.COL = COL
+        self.ROW = ROW
+        self.ITER = ITER
+        self.BATCH = BATCH
 
-    def optimize(self):
-        best_config = SysConfig()
+        self.config_blocksize = []
+        self.config_list = []
+        self.best_config = SysConfig(COL, ROW, ITER, BATCH)
 
-        for i in range(1, self.sysConfig.COL):
+    def config4BlockSize(self):
+        for i in range(1, self.COL):
             if (i & 1) and (i != 1):
                 continue
-            if self.sysConfig.COL % i != 0:
+            if self.COL % i != 0:
                 continue
             BLOCK_SIZE = i
             config = self.resourceCheck(BLOCK_SIZE)
             
             if not config.valid:
                 continue
-            self.print(config)
-
-            config.estimated_time = self.predict(config.BLOCK_SIZE, config.graph_num)
             
-            if not best_config.valid or config.estimated_time < best_config.estimated_time:
-                best_config = config
+            self.config_blocksize.append(config)
+            #self.print(config)
 
-        self.sysConfig.BLOCK_SIZE = best_config.BLOCK_SIZE
-        self.sysConfig.aie_num = best_config.aie_num
-        self.sysConfig.graph_num = best_config.graph_num
-        self.sysConfig.graph_list = best_config.graph_list
-        self.sysConfig.estimated_time = best_config.estimated_time
+    def config4Freq(self):
+        #step 1. for freq & block_size, predict the config time then select the best config in the freq
+        best_config_list = []
+        MIN_FREQ = 200
+        MAX_FREQ = 460
+        FREQ_INTER = 20
+        for freq in range(MIN_FREQ, MAX_FREQ, FREQ_INTER):
+            bestConfig4freq = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
+            bestConfig4freq.estimated_time = math.inf
+            for config in self.config_blocksize:
+                config.Frequency = freq
+                config.estimated_time = self.predict(config)
+                if(config.estimated_time < bestConfig4freq.estimated_time):
+                    bestConfig4freq = copy.deepcopy(config)
+            #self.print(bestConfig4freq)
+            best_config_list.append(bestConfig4freq)
+        
+        #step 2. sort according time
+        best_config_list = sorted(best_config_list)   
+
+        #step 3. merge similar time, remain the lower freq
+        EPS = 1e-5
+        config = copy.deepcopy(best_config_list[0])
+        for i in range(1, len(best_config_list)):
+            if abs(config.estimated_time - best_config_list[i].estimated_time) < EPS and config.Frequency > best_config_list[i].Frequency:
+                config = copy.deepcopy(best_config_list[i])
+                if i == len(best_config_list)-1:
+                    self.config_list.append(config)
+            else:
+                self.config_list.append(copy.deepcopy(config))
+                config = copy.deepcopy(best_config_list[i])
+        
+         
+               
+
+    def optimize(self):
+        #step 1. find different block_size
+        #step 2. for freq to find the best_config in different freq
+        #step 3. get the best config rank
+        self.config4BlockSize()
+        self.config4Freq()
+        for config in self.config_list:
+            self.print(config)
+        self.best_config = self.config_list[0]
+        
+
+
+    def generateConfig(self, config):
+        svd_pl = SVD_PL(self.COL, self.ROW)
+        config.uram = svd_pl.getRAM(config.graph_num)
+        config.estimated_time = self.predict(config.BLOCK_SIZE, config.graph_num)
+        print("Current Config!")
+        self.print(config)
+        return dict(config)
 
     def getBestConfig(self):
         print("Best Config!")
-        self.print(self.sysConfig)
-        return dict(self.sysConfig)
+        self.print(self.best_config)
+        return dict(self.best_config)
 
     def print(self, config):
         print("----------------------------------")
-        print(f"COL: {self.sysConfig.COL} ROW: {self.sysConfig.ROW} BATCH: {self.sysConfig.BATCH}")
+        print(f"COL: {self.COL} ROW: {self.ROW} BATCH: {self.BATCH}")
+        print(f"Freq: {config.Frequency}")
         print(f"BLOCK_SIZE: {config.BLOCK_SIZE} aie_num: {config.aie_num} graph_num: {config.graph_num}")
+        print(f"URAM: {config.uram}")
         print(f"estimated_1ITER_time: {config.estimated_time}")
         print("----------------------------------")
 
     def resourceCheck(self, BLOCK_SIZE):
-        config = SysConfig()
+        config = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
         config.BLOCK_SIZE = BLOCK_SIZE
 
         ## AIE Check
@@ -88,13 +158,13 @@ class SVD_Model:
         aiePosition = svd_aie.getAIEPosition()
         #print(config.graph_list)
         ## PL Uram Check
-        svd_pl = SVD_PL(self.sysConfig.COL, self.sysConfig.ROW)
+        svd_pl = SVD_PL(self.COL, self.ROW)
 
         while svd_pl.checkRAM(svd_aie.getGraphNum()+1) and svd_aie.tryAIEPlacement():
             config.valid = True
             config.graph_list.append(aiePosition)
 
-            if svd_aie.getGraphNum() >= self.sysConfig.BATCH or (not config.valid):
+            if svd_aie.getGraphNum() >= self.BATCH or (not config.valid):
                 break
             
             aiePosition = svd_aie.getAIEPosition()
@@ -102,28 +172,30 @@ class SVD_Model:
             
         
         config.aie_num = svd_aie.getAIENum()
-        config.graph_num = min(svd_aie.getGraphNum(), self.sysConfig.BATCH)
-
+        config.graph_num = min(svd_aie.getGraphNum(), self.BATCH)
+        config.uram = svd_pl.getRAM(config.graph_num)
         return config
 
-    def predict(self, BLOCK_SIZE, GRAPH_NUM):
-        COL = self.sysConfig.COL
-        ROW = self.sysConfig.ROW
-        BATCH = self.sysConfig.BATCH
-        Frequency = self.sysConfig.Frequency/10000000
-        ITER = self.sysConfig.ITER
+    def predict(self, config):
+        COL = self.COL
+        ROW = self.ROW
+        BATCH = self.BATCH
+        Frequency = config.Frequency
+        ITER = self.ITER
+        BLOCK_SIZE = config.BLOCK_SIZE
+        GRAPH_NUM = config.graph_num
 
         BLOCK_NUM = COL/BLOCK_SIZE
 
         Tx_row = 1.0/Frequency*(ROW*32/128 + 4)
 
         id = str(ROW) + "_" + str(BLOCK_SIZE)
-        orth_single_aie = single_aie[id]
+        orth_single_aie = single_aie[str(ROW)]
         orth_total_aie = total_aie[id]
 
         CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row, 0.0)
-        Tx = 1.0/Frequency*(ROW*32/128 + 4)*BLOCK_SIZE + CTC_wait
-        Rx = 1.0/Frequency*(ROW*32/128 + 4)*BLOCK_SIZE + CTC_wait
+        Tx = Tx_row*BLOCK_SIZE + CTC_wait
+        Rx = Tx_row*BLOCK_SIZE + CTC_wait
 
         round_wait = max(orth_total_aie + Rx - BLOCK_NUM/2*Tx, 0.0)
         round_robin_wait = Tx + Tx #second Tx -> algorithm latency
@@ -139,6 +211,17 @@ class SVD_Model:
 
         batch_predict_time = (BATCH//GRAPH_NUM*sys_predict_time + (BATCH > GRAPH_NUM)*sys_predict_time)/1000000
     
+
+        #Tx = Tx_row*BLOCK_SIZE + CTC_wait
+        #   = Tx_row*BLOCK_SIZE + max(orth_single_aie - BLOCK_SIZE*Tx_row, 0.0)
+        #   when orth_single_aie > BLOCK_SIZE*Tx_row
+        #        orth_single_aie*Frequency > BLOCK_SIZE*(ROW/4 + 4) 
+        #        假设 orth_single_aie = a*ROW + b            
+        #   = Tx_row*BLOCK_SIZE + orth_single_aie - BLOCK_SIZE*Tx_row
+        #   = orth_single_aie
+        #print(f'orth_single_aie: {orth_single_aie}, Tx-block:  {BLOCK_SIZE*Tx_row}')
+        #print(f'Tx-row: {Tx_row}, Tx:  {Tx} round_wait: {round_wait}')
+        #print(f'DDR_Latency: {DDR_Latency}, one_sweep: {one_sweep}, batch_predict_time: {batch_predict_time}')
         return batch_predict_time
     
     
