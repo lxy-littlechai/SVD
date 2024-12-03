@@ -36,15 +36,15 @@ HW_EMU_CMD := ./launch_hw_emu.sh -g
 #HW_EMU_CMD := ./launch_hw_emu.sh -add-env AIE_COMPILER_WORKDIR=../Work -aie-sim-options ../aiesimulator_output/aiesim_options.txt
 
 # Frequency Option
-AIE_FREQ = --freqhz={{Frequency}}
-KERNEL_FREQ = --freqhz={{Frequency}}
+AIE_FREQ = --freqhz=200000000
+KERNEL_FREQ = --freqhz=200000000
 {% for id in range(1, graph_num+1) %}
-KERNEL_FREQ_{{id}} = --freqhz={{Frequency}}:TopPL_{{id}}.ap_clk
+KERNEL_FREQ_{{id}} = --freqhz=200000000:TopPL_{{id}}.ap_clk
 {% endfor %}
 
 # compile aie
 AIE_INCLUDE_FLAGS := --include "$(XILINX_VITIS)/aietools/include" --include "./aie" --include "./" 
-AIE_STRATEGY := --aie.xlopt=0 --aie.runtime-opt
+AIE_STRATEGY := --aie.xlopt=0 --aie.runtime-opt --aie.verbose --aie.Xchess=main:backend.mist2.xargs=-ggraph
 AIE_FLAGS := $(AIE_INCLUDE_FLAGS) $(AIE_STRATEGY) --platform $(BASE_PLATFORM) --work_dir ./Work
 AIE_FLAGS += $(AIE_FREQ)
 

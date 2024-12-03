@@ -38,9 +38,11 @@ class SysConfig:
         
     def __lt__(self, other): 
         if self.estimated_time < other.estimated_time:
+            """ print(self.Frequency, other.Frequency)
+            print(self.estimated_time, other.estimated_time) """
             return 1
         elif self.estimated_time == other.estimated_time:
-            if self.Frequency <= other.Frequency:
+            if self.Frequency > other.Frequency:
                 return 1
             else:
                 return -1
@@ -82,35 +84,47 @@ class SVD_Model:
 
     def config4Freq(self):
         #step 1. for freq & block_size, predict the config time then select the best config in the freq
+        config_dict = dict()
+        for i in range(1, 12):
+            config_dict[str(i)] = []
+
         best_config_list = []
-        MIN_FREQ = 200
-        MAX_FREQ = 460
-        FREQ_INTER = 20
+        MIN_FREQ = 308
+        MAX_FREQ = 318
+        FREQ_INTER = 10
         for freq in range(MIN_FREQ, MAX_FREQ, FREQ_INTER):
-            bestConfig4freq = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
-            bestConfig4freq.estimated_time = math.inf
+            #bestConfig4freq = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
+            #bestConfig4freq.estimated_time = math.inf
             for config in self.config_blocksize:
                 config.Frequency = freq
-                config.estimated_time = self.predict(config)
-                if(config.estimated_time < bestConfig4freq.estimated_time):
-                    bestConfig4freq = copy.deepcopy(config)
-            #self.print(bestConfig4freq)
-            best_config_list.append(bestConfig4freq)
+                config.estimated_time = round(self.predict(config), 7)
+                config_dict[str(config.BLOCK_SIZE)].append(copy.deepcopy(config))
+            
         
         #step 2. sort according time
-        best_config_list = sorted(best_config_list)   
+        for i in range(1, 12):
+            config_dict[str(i)] = sorted(config_dict[str(i)]) 
 
         #step 3. merge similar time, remain the lower freq
-        EPS = 1e-5
-        config = copy.deepcopy(best_config_list[0])
-        for i in range(1, len(best_config_list)):
-            if abs(config.estimated_time - best_config_list[i].estimated_time) < EPS and config.Frequency > best_config_list[i].Frequency:
-                config = copy.deepcopy(best_config_list[i])
-                if i == len(best_config_list)-1:
-                    self.config_list.append(config)
-            else:
-                self.config_list.append(copy.deepcopy(config))
-                config = copy.deepcopy(best_config_list[i])
+        EPS = 1e-6
+        for j in config_dict:
+            #print(i)
+            tmp_config = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
+            if len(config_dict[j]) > 0:
+                tmp_config = copy.deepcopy(config_dict[j][0])
+            for i in range(0, len(config_dict[j])):
+                #self.print(config)
+                config = config_dict[j][i]
+                if abs(tmp_config.estimated_time - config.estimated_time) < EPS and tmp_config.Frequency >= config.Frequency:
+                    tmp_config = copy.deepcopy(config)
+                    #self.print(tmp_config)
+                    if i == len(config_dict[j])-1:
+                        self.config_list.append(config)
+                else:
+                    self.config_list.append(copy.deepcopy(config))
+                    tmp_config = copy.deepcopy(config)
+        
+        self.config_list = sorted(self.config_list)
         
          
                
@@ -127,10 +141,11 @@ class SVD_Model:
         
 
 
-    def generateConfig(self, config):
+    def generateConfig(self, freq, config):
         svd_pl = SVD_PL(self.COL, self.ROW)
         config.uram = svd_pl.getRAM(config.graph_num)
-        config.estimated_time = self.predict(config.BLOCK_SIZE, config.graph_num)
+        config.Frequency = freq
+        config.estimated_time = self.predict(config)
         print("Current Config!")
         self.print(config)
         return dict(config)
@@ -146,7 +161,7 @@ class SVD_Model:
         print(f"Freq: {config.Frequency}")
         print(f"BLOCK_SIZE: {config.BLOCK_SIZE} aie_num: {config.aie_num} graph_num: {config.graph_num}")
         print(f"URAM: {config.uram}")
-        print(f"estimated_1ITER_time: {config.estimated_time}")
+        print(f"estimated_time: {config.estimated_time}")
         print("----------------------------------")
 
     def resourceCheck(self, BLOCK_SIZE):
@@ -174,6 +189,7 @@ class SVD_Model:
         config.aie_num = svd_aie.getAIENum()
         config.graph_num = min(svd_aie.getGraphNum(), self.BATCH)
         config.uram = svd_pl.getRAM(config.graph_num)
+        config.Frequency = 320
         return config
 
     def predict(self, config):
@@ -188,17 +204,20 @@ class SVD_Model:
         BLOCK_NUM = COL/BLOCK_SIZE
 
         Tx_row = 1.0/Frequency*(ROW*32/128 + 4)
+        if Frequency >= 350:
+            Tx_row = 1.0/Frequency*(ROW*32/128 + 4 + 8)
 
         id = str(ROW) + "_" + str(BLOCK_SIZE)
         orth_single_aie = single_aie[str(ROW)]
         orth_total_aie = total_aie[id]
 
-        CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row, 0.0)
+        CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row - ROW*32/128/1250, 0.0)
+        
         Tx = Tx_row*BLOCK_SIZE + CTC_wait
-        Rx = Tx_row*BLOCK_SIZE + CTC_wait
+        Rx = Tx_row*BLOCK_SIZE
 
-        round_wait = max(orth_total_aie + Rx - BLOCK_NUM/2*Tx, 0.0)
-        round_robin_wait = Tx + Tx #second Tx -> algorithm latency
+        round_wait = max(orth_total_aie - BLOCK_NUM/2*Tx, 0.0)
+        round_robin_wait = Tx+Tx#second Tx -> algorithm latency
 
         one_round = BLOCK_NUM/2*Tx + round_wait + round_robin_wait
         one_sweep = (BLOCK_NUM-1)*one_round + orth_total_aie + Tx
@@ -207,9 +226,10 @@ class SVD_Model:
         norm_stage = BLOCK_NUM*Tx
 
         DDR_Latency = Tx*BLOCK_NUM + 200
+        
         sys_predict_time = DDR_Latency + ITER*one_sweep + norm_stage
 
-        batch_predict_time = (BATCH//GRAPH_NUM*sys_predict_time + (BATCH > GRAPH_NUM)*sys_predict_time)/1000000
+        batch_predict_time = (BATCH//GRAPH_NUM*sys_predict_time + (BATCH > GRAPH_NUM)*sys_predict_time + (GRAPH_NUM-1)*50)/1000000
     
 
         #Tx = Tx_row*BLOCK_SIZE + CTC_wait
@@ -219,9 +239,10 @@ class SVD_Model:
         #        假设 orth_single_aie = a*ROW + b            
         #   = Tx_row*BLOCK_SIZE + orth_single_aie - BLOCK_SIZE*Tx_row
         #   = orth_single_aie
+        #print(f'round_wait: {round_wait}, one-round: {one_round}')
         #print(f'orth_single_aie: {orth_single_aie}, Tx-block:  {BLOCK_SIZE*Tx_row}')
-        #print(f'Tx-row: {Tx_row}, Tx:  {Tx} round_wait: {round_wait}')
-        #print(f'DDR_Latency: {DDR_Latency}, one_sweep: {one_sweep}, batch_predict_time: {batch_predict_time}')
+        #print(f'Tx-row: {Tx_row}, Tx:  {Tx} CTC_wait: {CTC_wait}')
+        #print(f'DDR_Latency: {DDR_Latency/1000000}, one_sweep: {one_sweep/1000000}, batch_predict_time: {batch_predict_time}')
         return batch_predict_time
     
     

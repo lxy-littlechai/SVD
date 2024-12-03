@@ -11,17 +11,17 @@
 #include <cstdio>
 
 // to mpdify
-float sign(float x) {
+inline float sign(float x) {
     if(x > 0) return 1;
     else if(x == 0) return 0;
     else return -1;
 }
 
 template<int ROW>
-void orthogonalize(adf::input_buffer<float, adf::extents<1+ROW>>& in0, 
-                   adf::input_buffer<float, adf::extents<1+ROW>>& in1, 
-                   adf::output_buffer<float, adf::extents<1+ROW>>& out0, 
-                   adf::output_buffer<float, adf::extents<1+ROW>>& out1) {
+void orthogonalize(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0, 
+                   adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in1, 
+                   adf::output_buffer<float, adf::extents<1+ROW>>& __restrict out0, 
+                   adf::output_buffer<float, adf::extents<1+ROW>>& __restrict out1) {
     auto ApIter = aie::begin_vector<w>(in0);
     auto AqIter = aie::begin_vector<w>(in1);
     auto BpIter = aie::begin_vector<w>(out0);
@@ -32,29 +32,38 @@ void orthogonalize(adf::input_buffer<float, adf::extents<1+ROW>>& in0,
 
     auto vec1 = *ApIter ++;
     auto vec2 = *AqIter ++;
+    
     for(int i = 0;i < ROW/w;i ++) 
     chess_prepare_for_pipelining
     chess_loop_range(ROW/w,)
     {
-        acc_i = aie::mac_square(acc_i, vec1);
-        acc_j = aie::mac_square(acc_j, vec2);
-        acc_ij = aie::mac(acc_ij, vec1, vec2);    
+        
+        acc_i = aie::mac(acc_i, vec1, vec1);
+        acc_ij = aie::mac(acc_ij, vec1, vec2);
+        acc_j = aie::mac(acc_j, vec2, vec2);
+            
         vec1 = *ApIter ++;
         vec2 = *AqIter ++;     
     }
+    
+
     float A_ii = reduce_add(acc_i.to_vector<float>());
     float A_jj = reduce_add(acc_j.to_vector<float>());
     float A_ij = reduce_add(acc_ij.to_vector<float>());
-    float conv = aie::abs(A_ij)/aie::sqrt(A_ii*A_jj);
+    float conv;
+    if(A_ii*A_jj == 0) conv = 0;
+    else {
+        conv = aie::div(aie::abs(A_ij), aie::sqrt(A_ii*A_jj));
+    }
+    
 
     ApIter = aie::begin_vector<w>(in0);
     AqIter = aie::begin_vector<w>(in1);
-    aie::vector<float, w> tmp0_1, tmp0_2, tmp0_3, tmp1_1, tmp1_2, tmp1_3; 
 
-    if(conv == 0) {
+     if(conv == 0) {
         for (int i = 0; i < ROW/w; i++) 
         chess_prepare_for_pipelining
-        chess_loop_range(ROW/w,)
+        chess_loop_range(ROW/w,ROW/w)
         {
 
                 *BpIter ++ = *ApIter ++;
@@ -62,35 +71,39 @@ void orthogonalize(adf::input_buffer<float, adf::extents<1+ROW>>& in0,
 
         }
     }
-    else {
+    else { 
 
         float tau = aie::div(A_ii-A_jj, aie::mul((float)2.0, A_ij));
         float t = aie::div(sign(tau), aie::add(aie::abs(tau), aie::sqrt(aie::mul(tau, tau) + 1)));
-        float c = aie::div(1, aie::sqrt(t * t + 1));
+        float c= aie::div(1, aie::sqrt(t * t + 1));
         float s = aie::mul(t, c);
 
+        aie::vector<float, w> vec_s = aie::broadcast<float, w>(s);
+        
         vec1 = *ApIter ++;
-        vec2 = *AqIter ++;
+        aie::vector<float, w> vec_c = aie::broadcast<float, w>(c);
+        
+        aie::accum<accfloat, w> acc0_0 = aie::zeros<accfloat, w>();
+        aie::accum<accfloat, w> acc0_1 = aie::zeros<accfloat, w>();
 
         for (int i = 0; i < ROW/w; i++) 
         chess_prepare_for_pipelining
-        chess_loop_range(ROW/w,)
+        chess_loop_range(ROW/w,ROW/w)
         {
-            tmp0_1 = aie::mul(vec1, c);
-            tmp0_2 = aie::mul(vec2, s);
-            tmp0_3 = aie::add(tmp0_1, tmp0_2);
-            *BpIter ++ = tmp0_3;
-
-            tmp1_1 = aie::mul(vec1, aie::neg(s));
-            tmp1_2 = aie::mul(vec2, c);
-            tmp1_3 = aie::add(tmp1_1, tmp1_2);
-            *BqIter ++ = tmp1_3;
-
-            vec1 = *ApIter ++;
+            auto acc_p = aie::mac(acc0_0, vec1, vec_c);
+            auto acc_q = aie::msc(acc0_1, vec1, vec_s);
             vec2 = *AqIter ++;
-        //Vp[i] = Vp[i] * c + Vq[i] * s;
-        //Vq[i] = -Vp[i] * c + Vq[i] * s;
+            acc_p = aie::mac(acc_p, vec2, vec_s);
+            auto out_p = acc_p.to_vector();
+            *BpIter ++ = out_p;
+
+            acc_q = aie::mac(acc_q, vec2, vec_c);
+            auto out_q = acc_q.to_vector();
+            *BqIter ++ = out_q;
+            
+            vec1 = *ApIter ++;
         }
+        
     }    
 
     float* lastIter0 = out0.data();

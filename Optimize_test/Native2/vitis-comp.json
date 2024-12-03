@@ -1,0 +1,9 @@
+{
+  "name": "Native2",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": ["pl\/TopPL.cfg"],
+    "work_dir": "toppl"
+  }
+}

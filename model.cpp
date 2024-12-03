@@ -25,7 +25,7 @@ void predict(Data data) {
   double orth_single_aie = single_aie[id];
   double orth_total_aie = total_aie[id];
 
-  double CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row, 0.0)/3;
+  double CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row, 0.0);
   double Tx = 1.0/Freq*(ROW*32/128 + 2)*BLOCK_SIZE + CTC_wait;
   double Rx = 1.0/Freq*(ROW*32/128 + 2)*BLOCK_SIZE + CTC_wait;
   

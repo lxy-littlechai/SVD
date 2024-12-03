@@ -1,6 +1,7 @@
 import sys
 import shutil
 import os
+import time
 import argparse
 
 from model.model import SVD_Model
@@ -60,6 +61,8 @@ def generate(storePath, config):
     gen4Template(dst_path, template_dir, template_file, config)
 
 if __name__ == '__main__':
+  time_start = time.time()
+
   parser = argparse.ArgumentParser()
   parser.add_argument("--PATH", type=str)
   parser.add_argument("--COL", type=int)
@@ -68,21 +71,24 @@ if __name__ == '__main__':
   parser.add_argument("--ITER", type=int, default=1)
   parser.add_argument("--optimize", type=int, default=1)
   parser.add_argument("--BLOCK_SIZE", type=int)
+  parser.add_argument("--Frequency", type=float)
   #parser.add_argument("--MaxSweep", type=int, default=20)
   args = parser.parse_args()
   
   svd_model = SVD_Model(args.COL, args.ROW, args.BATCH, args.ITER)
-  if args.optimize:
+  if args.optimize == 1:
     svd_model.optimize()
     config = svd_model.getBestConfig()
-  else:
+  elif args.optimize == 0:
     config = svd_model.resourceCheck(args.BLOCK_SIZE)
-    config = svd_model.generateConfig(config)
+    config = svd_model.generateConfig(args.Frequency, config)
   
 
   generate(args.PATH, config)
 
-  
+  time_end = time.time()  # 记录结束时间
+  time_sum = time_end - time_start  # 计算的时间差为程序的执行时间，单位为秒/s
+  print(f"代码执行时间：{time_sum} 秒")
 
 
 
