@@ -26,6 +26,8 @@ def gen4Template(storePath, template_dir, template_file, config):
 # generate file
 def generate(storePath, config):
 
+  print(config)
+
   template_list = [
             ("data", "svd.py"), 
             ("data", "performance.py"), 
@@ -71,6 +73,7 @@ if __name__ == '__main__':
   parser.add_argument("--ITER", type=int, default=1)
   parser.add_argument("--optimize", type=int, default=1)
   parser.add_argument("--BLOCK_SIZE", type=int)
+  parser.add_argument("--PARALLEL_NUM", type=int)
   parser.add_argument("--Frequency", type=float)
   #parser.add_argument("--MaxSweep", type=int, default=20)
   args = parser.parse_args()
@@ -81,7 +84,7 @@ if __name__ == '__main__':
     config = svd_model.getBestConfig()
   elif args.optimize == 0:
     config = svd_model.resourceCheck(args.BLOCK_SIZE)
-    config = svd_model.generateConfig(args.Frequency, config)
+    config = svd_model.generateConfig(args.Frequency, args.PARALLEL_NUM, config)
   
 
   generate(args.PATH, config)

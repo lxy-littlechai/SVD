@@ -1,0 +1,49 @@
+<ENTRY>
+{
+ "thisFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/toppl/toppl.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sat Oct 18 00:16:00 2025",
+ "timestampMillis": "1760717760391",
+ "buildStep": {
+  "cmdId": "e313841c-5fa7-4b73-82b7-7457b69ba045",
+  "name": "v++",
+  "logFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/toppl/logs/toppl.steps.log",
+  "commandLine": "/usr/xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --platform /usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --freqhz=200000000 --config pl/TopPL.cfg ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--platform",
+   "/usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm",
+   "--freqhz=200000000",
+   "--config",
+   "pl/TopPL.cfg"
+  ],
+  "iniFiles": [
+   {
+    "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cfg",
+    "content": "[hls]\nflow_target=vitis\nsyn.file=TopPL.cpp\nsyn.cflags=-I.\nsyn.top=TopPL\npackage.ip.name=TopPL\npackage.output.syn=true\npackage.output.format=xo\npackage.output.file=TopPL.xo"
+   }
+  ],
+  "cwd": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Oct 18 00:16:00 2025",
+ "timestampMillis": "1760717760391",
+ "status": {
+  "cmdId": "e313841c-5fa7-4b73-82b7-7457b69ba045",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>

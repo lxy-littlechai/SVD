@@ -21,7 +21,7 @@ class SysConfig:
         self.aie_num = 0
         self.graph_num = 0
         self.graph_list = [] #row, col, direction
-
+        self.PARALLEL_NUM = 0
         self.plio_num = 0
         self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
 
@@ -51,7 +51,7 @@ class SysConfig:
 
         
     def keys(self):
-        return ('COL', 'ROW', 'BATCH', 'BLOCK_SIZE', 'graph_num', 'graph_list')
+        return ('COL', 'ROW', 'BATCH', 'BLOCK_SIZE', 'PARALLEL_NUM', 'graph_num', 'graph_list')
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -141,9 +141,10 @@ class SVD_Model:
         
 
 
-    def generateConfig(self, freq, config):
+    def generateConfig(self, freq, parallel_num, config):
         svd_pl = SVD_PL(self.COL, self.ROW)
         config.uram = svd_pl.getRAM(config.graph_num)
+        config.PARALLEL_NUM = parallel_num
         config.Frequency = freq
         # config.estimated_time = self.predict(config)
         print("Current Config!")
@@ -159,6 +160,7 @@ class SVD_Model:
         print("----------------------------------")
         print(f"COL: {self.COL} ROW: {self.ROW} BATCH: {self.BATCH}")
         print(f"Freq: {config.Frequency}")
+        print(f"PARALLEL_NUM: {config.PARALLEL_NUM}")
         print(f"BLOCK_SIZE: {config.BLOCK_SIZE} aie_num: {config.aie_num} graph_num: {config.graph_num}")
         print(f"URAM: {config.uram}")
         print(f"estimated_time: {config.estimated_time}")
