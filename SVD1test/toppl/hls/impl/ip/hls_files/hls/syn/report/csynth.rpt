@@ -1,0 +1,410 @@
+
+
+================================================================
+== Synthesis Summary Report of 'TopPL'
+================================================================
++ General Information: 
+    * Date:           Fri Oct 17 13:08:07 2025
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        toppl
+    * Solution:       hls (Vitis Kernel Flow Target)
+    * Product family: versalaicore
+    * Target device:  xcvc1902-vsva2197-2MP-e-S
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+-----------+----+------------+------------+---------+
+    |                      Modules                     | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |           |    |            |            |         |
+    |                      & Loops                     | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM    | DSP|     FF     |     LUT    |   URAM  |
+    +--------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+-----------+----+------------+------------+---------+
+    |+ TopPL*                                          |     -|  0.00|        -|          -|         -|        -|     -|  dataflow|  198 (10%)|   -|  18836 (1%)|  20937 (2%)|  4 (~0%)|
+    | + SystemControl                                  |     -|  0.00|        -|          -|         -|        -|     -|        no|          -|   -|   508 (~0%)|  1771 (~0%)|        -|
+    |  + SystemControl_Pipeline_VITIS_LOOP_295_1       |     -|  2.46|        5|     25.000|         -|        5|     -|        no|          -|   -|     7 (~0%)|    32 (~0%)|        -|
+    |   o VITIS_LOOP_295_1                             |     -|  3.65|        3|     15.000|         2|        1|     3|       yes|          -|   -|           -|           -|        -|
+    |  + SystemControl_Pipeline_VITIS_LOOP_315_4       |     -|  2.46|        5|     25.000|         -|        5|     -|        no|          -|   -|     7 (~0%)|    32 (~0%)|        -|
+    |   o VITIS_LOOP_315_4                             |     -|  3.65|        3|     15.000|         2|        1|     3|       yes|          -|   -|           -|           -|        -|
+    |  o VITIS_LOOP_301_2                              |     -|  3.65|        -|          -|       323|        -|     -|        no|          -|   -|           -|           -|        -|
+    |   + SystemControl_Pipeline_VITIS_LOOP_304_3      |     -|  0.10|      245|  1.225e+03|         -|      245|     -|        no|          -|   -|   275 (~0%)|  1366 (~0%)|        -|
+    |    o VITIS_LOOP_304_3                            |    II|  3.65|      243|  1.215e+03|         6|        2|   120|       yes|          -|   -|           -|           -|        -|
+    |   + SystemControl_Pipeline_VITIS_LOOP_321_5      |     -|  2.46|        5|     25.000|         -|        5|     -|        no|          -|   -|     7 (~0%)|    32 (~0%)|        -|
+    |    o VITIS_LOOP_321_5                            |     -|  3.65|        3|     15.000|         2|        1|     3|       yes|          -|   -|           -|           -|        -|
+    | + Send                                           |     -|  1.11|        -|          -|         -|        -|     -|        no|   12 (~0%)|   -|   470 (~0%)|  1346 (~0%)|        -|
+    |  o VITIS_LOOP_169_1                              |     -|  3.65|        -|          -|      3963|        -|     -|        no|          -|   -|           -|           -|        -|
+    |   + dataflow_parent_loop_proc                    |     -|  1.11|     3961|  1.980e+04|         -|     3961|     -|        no|    8 (~0%)|   -|   337 (~0%)|   810 (~0%)|        -|
+    |    o VITIS_LOOP_172_2                            |     -|  3.65|     3960|  1.980e+04|        34|        -|   120|        no|          -|   -|           -|           -|        -|
+    |     + dataflow_in_loop_VITIS_LOOP_172_2*         |     -|  1.11|       32|    160.000|         -|       33|     -|  dataflow|    8 (~0%)|   -|   236 (~0%)|   758 (~0%)|        -|
+    |      + send2AIE                                  |     -|  1.11|       32|    160.000|         -|       32|     -|        no|    4 (~0%)|   -|   117 (~0%)|   369 (~0%)|        -|
+    |       o VITIS_LOOP_102_1                         |     -|  3.65|       30|    150.000|        15|        -|     2|        no|          -|   -|           -|           -|        -|
+    |        + send2AIE_Pipeline_VITIS_LOOP_112_2      |     -|  1.76|       10|     50.000|         -|       10|     -|        no|          -|   -|   106 (~0%)|    34 (~0%)|        -|
+    |         o VITIS_LOOP_112_2                       |     -|  3.65|        8|     40.000|         3|        1|     7|       yes|          -|   -|           -|           -|        -|
+    |      + send2AIE_2                                |     -|  1.11|       32|    160.000|         -|       32|     -|        no|    4 (~0%)|   -|   117 (~0%)|   369 (~0%)|        -|
+    |       o VITIS_LOOP_102_1                         |     -|  3.65|       30|    150.000|        15|        -|     2|        no|          -|   -|           -|           -|        -|
+    |        + send2AIE_2_Pipeline_VITIS_LOOP_112_2    |     -|  1.76|       10|     50.000|         -|       10|     -|        no|          -|   -|   106 (~0%)|    34 (~0%)|        -|
+    |         o VITIS_LOOP_112_2                       |     -|  3.65|        8|     40.000|         3|        1|     7|       yes|          -|   -|           -|           -|        -|
+    |  o VITIS_LOOP_179_3                              |     -|  3.65|      544|  2.720e+03|        68|        -|     8|        no|          -|   -|           -|           -|        -|
+    |   + send2AIE_3                                   |     -|  1.11|       32|    160.000|         -|       32|     -|        no|    4 (~0%)|   -|   116 (~0%)|   365 (~0%)|        -|
+    |    o VITIS_LOOP_102_1                            |     -|  3.65|       30|    150.000|        15|        -|     2|        no|          -|   -|           -|           -|        -|
+    |     + send2AIE_3_Pipeline_VITIS_LOOP_112_2       |     -|  1.76|       10|     50.000|         -|       10|     -|        no|          -|   -|   106 (~0%)|    34 (~0%)|        -|
+    |      o VITIS_LOOP_112_2                          |     -|  3.65|        8|     40.000|         3|        1|     7|       yes|          -|   -|           -|           -|        -|
+    | + RoundRobin                                     |     -|  0.00|        -|          -|         -|        -|     -|        no|          -|   -|  2018 (~0%)|  2386 (~0%)|        -|
+    |  o VITIS_LOOP_140_1                              |     -|  3.65|     1456|  7.280e+03|        91|        -|    16|        no|          -|   -|           -|           -|        -|
+    |   + RoundRobin_Pipeline_VITIS_LOOP_150_3         |     -|  1.11|       18|     90.000|         -|       18|     -|        no|          -|   -|   394 (~0%)|   291 (~0%)|        -|
+    |    o VITIS_LOOP_150_3                            |     -|  3.65|       16|     80.000|         2|        1|    16|       yes|          -|   -|           -|           -|        -|
+    |   + RoundRobin_Pipeline_VITIS_LOOP_142_2         |     -|  1.11|       18|     90.000|         -|       18|     -|        no|          -|   -|   394 (~0%)|   291 (~0%)|        -|
+    |    o VITIS_LOOP_142_2                            |     -|  3.65|       16|     80.000|         2|        1|    16|       yes|          -|   -|           -|           -|        -|
+    |  o VITIS_LOOP_250_1                              |     -|  3.65|        -|          -|      2762|        -|     -|        no|          -|   -|           -|           -|        -|
+    |   o VITIS_LOOP_254_2                             |     -|  3.65|     2760|  1.380e+04|       184|        -|    15|        no|          -|   -|           -|           -|        -|
+    |    + RoundRobin_Pipeline_VITIS_LOOP_256_3        |     -|  1.61|       18|     90.000|         -|       18|     -|        no|          -|   -|     8 (~0%)|    35 (~0%)|        -|
+    |     o VITIS_LOOP_256_3                           |     -|  3.65|       16|     80.000|         2|        1|    16|       yes|          -|   -|           -|           -|        -|
+    |    + RoundRobin_Pipeline_VITIS_LOOP_261_4        |     -|  1.61|       18|     90.000|         -|       18|     -|        no|          -|   -|     8 (~0%)|    35 (~0%)|        -|
+    |     o VITIS_LOOP_261_4                           |     -|  3.65|       16|     80.000|         2|        1|    16|       yes|          -|   -|           -|           -|        -|
+    |    + RoundRobin_Pipeline_VITIS_LOOP_267_5        |     -|  1.61|       98|    490.000|         -|       98|     -|        no|          -|   -|    10 (~0%)|    46 (~0%)|        -|
+    |     o VITIS_LOOP_267_5                           |     -|  3.65|       96|    480.000|         2|        1|    96|       yes|          -|   -|           -|           -|        -|
+    |    + RoundRobin_Pipeline_VITIS_LOOP_275_6        |     -|  1.61|       18|     90.000|         -|       18|     -|        no|          -|   -|     8 (~0%)|    35 (~0%)|        -|
+    |     o VITIS_LOOP_275_6                           |     -|  3.65|       16|     80.000|         2|        1|    16|       yes|          -|   -|           -|           -|        -|
+    |    + RoundRobin_Pipeline_VITIS_LOOP_280_7        |     -|  1.61|       18|     90.000|         -|       18|     -|        no|          -|   -|     8 (~0%)|    35 (~0%)|        -|
+    |     o VITIS_LOOP_280_7                           |     -|  3.65|       16|     80.000|         2|        1|    16|       yes|          -|   -|           -|           -|        -|
+    |  o VITIS_LOOP_197_1                              |     -|  3.65|      416|  2.080e+03|        13|        -|    32|        no|          -|   -|           -|           -|        -|
+    |   + RoundRobin_Pipeline_VITIS_LOOP_198_2         |     -|  1.37|       10|     50.000|         -|       10|     -|        no|          -|   -|   392 (~0%)|   405 (~0%)|        -|
+    |    o VITIS_LOOP_198_2                            |     -|  3.65|        8|     40.000|         2|        1|     8|       yes|          -|   -|           -|           -|        -|
+    | + Receive                                        |     -|  0.50|        -|          -|         -|        -|     -|        no|          -|   -|  3037 (~0%)|  5262 (~0%)|        -|
+    |  o VITIS_LOOP_216_1                              |     -|  3.65|        -|          -|      3845|        -|     -|        no|          -|   -|           -|           -|        -|
+    |   + dataflow_parent_loop_proc10                  |     -|  0.50|     3843|  1.922e+04|         -|     3843|     -|        no|          -|   -|  2333 (~0%)|  3908 (~0%)|        -|
+    |    o VITIS_LOOP_220_2                            |     -|  3.65|     3842|  1.921e+04|        35|        -|   120|        no|          -|   -|           -|           -|        -|
+    |     + dataflow_in_loop_VITIS_LOOP_220_2_1*       |     -|  0.50|       33|    165.000|         -|       32|     -|  dataflow|          -|   -|  2232 (~0%)|  3856 (~0%)|        -|
+    |      + receive4AIE_1                             |     -|  0.50|       31|    155.000|         -|       31|     -|        no|          -|   -|   943 (~0%)|  1828 (~0%)|        -|
+    |       o VITIS_LOOP_69_1                          |     -|  3.65|       30|    150.000|        15|        -|     2|        no|          -|   -|           -|           -|        -|
+    |        + receive4AIE_1_Pipeline_VITIS_LOOP_76_2  |     -|  1.07|        9|     45.000|         -|        9|     -|        no|          -|   -|   264 (~0%)|   787 (~0%)|        -|
+    |         o VITIS_LOOP_76_2                        |     -|  3.65|        7|     35.000|         2|        1|     7|       yes|          -|   -|           -|           -|        -|
+    |      + receive4AIE                               |     -|  0.50|       31|    155.000|         -|       31|     -|        no|          -|   -|   943 (~0%)|  1828 (~0%)|        -|
+    |       o VITIS_LOOP_69_1                          |     -|  3.65|       30|    150.000|        15|        -|     2|        no|          -|   -|           -|           -|        -|
+    |        + receive4AIE_Pipeline_VITIS_LOOP_76_2    |     -|  1.07|        9|     45.000|         -|        9|     -|        no|          -|   -|   264 (~0%)|   787 (~0%)|        -|
+    |         o VITIS_LOOP_76_2                        |     -|  3.65|        7|     35.000|         2|        1|     7|       yes|          -|   -|           -|           -|        -|
+    |      + Block_newFuncRoot_proc_proc               |     -|  1.98|        0|      0.000|         -|        0|     -|        no|          -|   -|    34 (~0%)|    36 (~0%)|        -|
+    |      + Block_newFuncRoot_proc_proc12             |     -|  1.98|        0|      0.000|         -|        0|     -|        no|          -|   -|    34 (~0%)|    36 (~0%)|        -|
+    |      + Block_newFuncRoot_proc_proc11             |     -|  2.80|        0|      0.000|         -|        0|     -|        no|          -|   -|     2 (~0%)|     6 (~0%)|        -|
+    |      + Block_newFuncRoot_proc_proc13             |     -|  2.80|        0|      0.000|         -|        0|     -|        no|          -|   -|     2 (~0%)|     6 (~0%)|        -|
+    |  o VITIS_LOOP_188_1                              |     -|  3.65|      496|  2.480e+03|        31|        -|    16|        no|          -|   -|           -|           -|        -|
+    |   + receive4DDR                                  |     -|  1.07|       29|    145.000|         -|       29|     -|        no|          -|   -|   689 (~0%)|  1187 (~0%)|        -|
+    |    o VITIS_LOOP_32_1                             |     -|  3.65|       28|    140.000|        14|        -|     2|        no|          -|   -|           -|           -|        -|
+    |     + receive4DDR_Pipeline_VITIS_LOOP_39_2       |     -|  1.07|        9|     45.000|         -|        9|     -|        no|          -|   -|   264 (~0%)|   787 (~0%)|        -|
+    |      o VITIS_LOOP_39_2                           |     -|  3.65|        7|     35.000|         2|        1|     7|       yes|          -|   -|           -|           -|        -|
+    +--------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+-----------+----+------------+------------+---------+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | 128 -> 512 | 64            | 64      | slave  | 0        | 512       | 64           | 64           | 16          | 16          | BRAM=58           |
+| m_axi_gmem1 | 128 -> 512 | 64            | 64      | slave  | 0        | 512       | 64           | 64           | 16          | 16          | BRAM=58           |
+| m_axi_gmem2 | 32 -> 512  | 64            | 64      | slave  | 0        | 512       | 64           | 64           | 16          | 16          | BRAM=58           |
+| m_axi_gmem3 | 32 -> 32   | 64            | 64      | slave  | 0        | 512       | 64           | 64           | 16          | 16          | BRAM=4            |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register    | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL        | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | dataIn_1    | 0x10   | 32    | W      | Data signal of dataIn            |                                                                                    |
+| s_axi_control | dataIn_2    | 0x14   | 32    | W      | Data signal of dataIn            |                                                                                    |
+| s_axi_control | U_1         | 0x1c   | 32    | W      | Data signal of U                 |                                                                                    |
+| s_axi_control | U_2         | 0x20   | 32    | W      | Data signal of U                 |                                                                                    |
+| s_axi_control | S_1         | 0x28   | 32    | W      | Data signal of S                 |                                                                                    |
+| s_axi_control | S_2         | 0x2c   | 32    | W      | Data signal of S                 |                                                                                    |
+| s_axi_control | ConvArray_1 | 0x34   | 32    | W      | Data signal of ConvArray         |                                                                                    |
+| s_axi_control | ConvArray_2 | 0x38   | 32    | W      | Data signal of ConvArray         |                                                                                    |
+| s_axi_control | ITER        | 0x40   | 32    | W      | Data signal of ITER              |                                                                                    |
++---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* AXIS
++-------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface   | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++-------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| norm_rx0    | in        | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| norm_tx0    | out       | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| sweep_rx0_0 | in        | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| sweep_rx0_1 | in        | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| sweep_tx0_0 | out       | both          | 128   | 16    | 1     | 1      | 16    | 1      |
+| sweep_tx0_1 | out       | both          | 128   | 16    | 1     | 1      | 16    | 1      |
++-------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-------------+-----------+----------------------------------------------------------+
+| Argument    | Direction | Datatype                                                 |
++-------------+-----------+----------------------------------------------------------+
+| dataIn      | in        | ap_uint<128>*                                            |
+| U           | out       | ap_uint<128>*                                            |
+| S           | out       | ap_uint<32>*                                             |
+| ConvArray   | out       | ap_uint<32>*                                             |
+| ITER        | in        | int const                                                |
+| sweep_tx0_0 | out       | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| sweep_rx0_0 | in        | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| sweep_tx0_1 | out       | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| sweep_rx0_1 | in        | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| norm_tx0    | out       | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
+| norm_rx0    | in        | stream<hls::axis<ap_uint<128>, 0, 0, 0, '8', false>, 0>& |
++-------------+-----------+----------------------------------------------------------+
+
+* SW-to-HW Mapping
++-------------+---------------+-----------+----------+---------------------------------------+
+| Argument    | HW Interface  | HW Type   | HW Usage | HW Info                               |
++-------------+---------------+-----------+----------+---------------------------------------+
+| dataIn      | m_axi_gmem0   | interface |          |                                       |
+| dataIn      | s_axi_control | register  | offset   | name=dataIn_1 offset=0x10 range=32    |
+| dataIn      | s_axi_control | register  | offset   | name=dataIn_2 offset=0x14 range=32    |
+| U           | m_axi_gmem1   | interface |          |                                       |
+| U           | s_axi_control | register  | offset   | name=U_1 offset=0x1c range=32         |
+| U           | s_axi_control | register  | offset   | name=U_2 offset=0x20 range=32         |
+| S           | m_axi_gmem2   | interface |          |                                       |
+| S           | s_axi_control | register  | offset   | name=S_1 offset=0x28 range=32         |
+| S           | s_axi_control | register  | offset   | name=S_2 offset=0x2c range=32         |
+| ConvArray   | m_axi_gmem3   | interface |          |                                       |
+| ConvArray   | s_axi_control | register  | offset   | name=ConvArray_1 offset=0x34 range=32 |
+| ConvArray   | s_axi_control | register  | offset   | name=ConvArray_2 offset=0x38 range=32 |
+| ITER        | s_axi_control | register  |          | name=ITER offset=0x40 range=32        |
+| sweep_tx0_0 | sweep_tx0_0   | interface |          |                                       |
+| sweep_rx0_0 | sweep_rx0_0   | interface |          |                                       |
+| sweep_tx0_1 | sweep_tx0_1   | interface |          |                                       |
+| sweep_rx0_1 | sweep_rx0_1   | interface |          |                                       |
+| norm_tx0    | norm_tx0      | interface |          |                                       |
+| norm_rx0    | norm_rx0      | interface |          |                                       |
++-------------+---------------+-----------+----------+---------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+
+| HW Interface | Direction | Length | Width |
++--------------+-----------+--------+-------+
+| m_axi_gmem0  | read      | 4      | 512   |
+| m_axi_gmem1  | write     | 64     | 512   |
+| m_axi_gmem2  | write     | 2      | 512   |
++--------------+-----------+--------+-------+
+
+* All M_AXI Variable Accesses
++--------------+----------+-------------------------------------------------------------------------------+-----------+--------------+--------+------------------+-------------------------------------------------------------------------------+------------+---------------------------+
+| HW Interface | Variable | Access Location                                                               | Direction | Burst Status | Length | Loop             | Loop Location                                                                 | Resolution | Problem                   |
++--------------+----------+-------------------------------------------------------------------------------+-----------+--------------+--------+------------------+-------------------------------------------------------------------------------+------------+---------------------------+
+| m_axi_gmem0  | dataIn   | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:144:21 | read      | Widened      | 4      | VITIS_LOOP_142_2 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:142:25 |            |                           |
+| m_axi_gmem0  | dataIn   | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:144:21 | read      | Fail         |        | VITIS_LOOP_140_1 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:140:21 | 214-229    | Could not analyze pattern |
+| m_axi_gmem0  | dataIn   | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:144:21 | read      | Inferred     | 16     | VITIS_LOOP_142_2 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:142:25 |            |                           |
+| m_axi_gmem0  | dataIn   | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:152:21 | read      | Widened      | 4      | VITIS_LOOP_150_3 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:150:25 |            |                           |
+| m_axi_gmem0  | dataIn   | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:152:21 | read      | Fail         |        | VITIS_LOOP_140_1 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:140:21 | 214-229    | Could not analyze pattern |
+| m_axi_gmem0  | dataIn   | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:152:21 | read      | Inferred     | 16     | VITIS_LOOP_150_3 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:150:25 |            |                           |
+| m_axi_gmem1  | U        | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:200:24 | write     | Widened      | 64     | VITIS_LOOP_198_2 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:198:23 |            |                           |
+| m_axi_gmem1  | U        | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:200:24 | write     | Inferred     | 256    | VITIS_LOOP_197_1 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:197:21 |            |                           |
+| m_axi_gmem2  | S        | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:203:10 | write     | Widened      | 2      | VITIS_LOOP_197_1 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:197:21 |            |                           |
+| m_axi_gmem2  | S        | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:203:10 | write     | Inferred     | 32     | VITIS_LOOP_197_1 | /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/SVD1test/pl/TopPL.cpp:197:21 |            |                           |
++--------------+----------+-------------------------------------------------------------------------------+-----------+--------------+--------+------------------+-------------------------------------------------------------------------------+------------+---------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------------+-----+--------+-----------+-----+--------+---------+
+| Name                                          | DSP | Pragma | Variable  | Op  | Impl   | Latency |
++-----------------------------------------------+-----+--------+-----------+-----+--------+---------+
+| + TopPL                                       | 0   |        |           |     |        |         |
+|  + SystemControl                              | 0   |        |           |     |        |         |
+|    add_ln313_fu_201_p2                        |     |        | add_ln313 | add | fabric | 0       |
+|    add_ln311_fu_223_p2                        |     |        | add_ln311 | add | fabric | 0       |
+|   + SystemControl_Pipeline_VITIS_LOOP_295_1   | 0   |        |           |     |        |         |
+|     add_ln295_fu_88_p2                        |     |        | add_ln295 | add | fabric | 0       |
+|   + SystemControl_Pipeline_VITIS_LOOP_304_3   | 0   |        |           |     |        |         |
+|     i_11_fu_141_p2                            |     |        | i_11      | add | fabric | 0       |
+|   + SystemControl_Pipeline_VITIS_LOOP_321_5   | 0   |        |           |     |        |         |
+|     add_ln321_fu_88_p2                        |     |        | add_ln321 | add | fabric | 0       |
+|   + SystemControl_Pipeline_VITIS_LOOP_315_4   | 0   |        |           |     |        |         |
+|     add_ln315_fu_88_p2                        |     |        | add_ln315 | add | fabric | 0       |
+|  + Send                                       | 0   |        |           |     |        |         |
+|    i_14_fu_153_p2                             |     |        | i_14      | add | fabric | 0       |
+|   + dataflow_parent_loop_proc                 | 0   |        |           |     |        |         |
+|    + dataflow_in_loop_VITIS_LOOP_172_2        | 0   |        |           |     |        |         |
+|     + send2AIE                                | 0   |        |           |     |        |         |
+|       i_6_fu_182_p2                           |     |        | i_6       | add | fabric | 0       |
+|      + send2AIE_Pipeline_VITIS_LOOP_112_2     | 0   |        |           |     |        |         |
+|        j_2_fu_157_p2                          |     |        | j_2       | add | fabric | 0       |
+|     + send2AIE_2                              | 0   |        |           |     |        |         |
+|       i_4_fu_182_p2                           |     |        | i_4       | add | fabric | 0       |
+|      + send2AIE_2_Pipeline_VITIS_LOOP_112_2   | 0   |        |           |     |        |         |
+|        j_6_fu_157_p2                          |     |        | j_6       | add | fabric | 0       |
+|   + send2AIE_3                                | 0   |        |           |     |        |         |
+|     i_2_fu_182_p2                             |     |        | i_2       | add | fabric | 0       |
+|    + send2AIE_3_Pipeline_VITIS_LOOP_112_2     | 0   |        |           |     |        |         |
+|      j_4_fu_157_p2                            |     |        | j_4       | add | fabric | 0       |
+|  + RoundRobin                                 | 0   |        |           |     |        |         |
+|    add_ln140_fu_338_p2                        |     |        | add_ln140 | add | fabric | 0       |
+|    add_ln141_fu_366_p2                        |     |        | add_ln141 | add | fabric | 0       |
+|    i_16_fu_467_p2                             |     |        | i_16      | add | fabric | 0       |
+|    add_ln197_fu_482_p2                        |     |        | add_ln197 | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_150_3      | 0   |        |           |     |        |         |
+|     add_ln150_fu_142_p2                       |     |        | add_ln150 | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_142_2      | 0   |        |           |     |        |         |
+|     add_ln142_fu_142_p2                       |     |        | add_ln142 | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_256_3      | 0   |        |           |     |        |         |
+|     j_15_fu_82_p2                             |     |        | j_15      | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_261_4      | 0   |        |           |     |        |         |
+|     j_14_fu_82_p2                             |     |        | j_14      | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_267_5      | 0   |        |           |     |        |         |
+|     j_13_fu_100_p2                            |     |        | j_13      | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_275_6      | 0   |        |           |     |        |         |
+|     j_12_fu_82_p2                             |     |        | j_12      | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_280_7      | 0   |        |           |     |        |         |
+|     j_11_fu_82_p2                             |     |        | j_11      | add | fabric | 0       |
+|   + RoundRobin_Pipeline_VITIS_LOOP_198_2      | 0   |        |           |     |        |         |
+|     add_ln198_fu_138_p2                       |     |        | add_ln198 | add | fabric | 0       |
+|  + Receive                                    | 0   |        |           |     |        |         |
+|    i_19_fu_162_p2                             |     |        | i_19      | add | fabric | 0       |
+|   + dataflow_parent_loop_proc10               | 0   |        |           |     |        |         |
+|    + dataflow_in_loop_VITIS_LOOP_220_2_1      | 0   |        |           |     |        |         |
+|     + receive4AIE_1                           | 0   |        |           |     |        |         |
+|       i_9_fu_260_p2                           |     |        | i_9       | add | fabric | 0       |
+|      + receive4AIE_1_Pipeline_VITIS_LOOP_76_2 | 0   |        |           |     |        |         |
+|        j_9_fu_198_p2                          |     |        | j_9       | add | fabric | 0       |
+|     + receive4AIE                             | 0   |        |           |     |        |         |
+|       i_10_fu_260_p2                          |     |        | i_10      | add | fabric | 0       |
+|      + receive4AIE_Pipeline_VITIS_LOOP_76_2   | 0   |        |           |     |        |         |
+|        j_8_fu_198_p2                          |     |        | j_8       | add | fabric | 0       |
+|   + receive4DDR                               | 0   |        |           |     |        |         |
+|     i_8_fu_188_p2                             |     |        | i_8       | add | fabric | 0       |
+|    + receive4DDR_Pipeline_VITIS_LOOP_39_2     | 0   |        |           |     |        |         |
+|      j_7_fu_198_p2                            |     |        | j_7       | add | fabric | 0       |
++-----------------------------------------------+-----+--------+-----------+-----+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++------------------------------------------+---------------+------------+------+------+--------+----------------+------+---------+------------------+
+| Name                                     | Usage         | Type       | BRAM | URAM | Pragma | Variable       | Impl | Latency | Bitwidth, Depth, |
+|                                          |               |            |      |      |        |                |      |         | Banks            |
++------------------------------------------+---------------+------------+------+------+--------+----------------+------+---------+------------------+
+| + TopPL                                  |               |            | 198  | 4    |        |                |      |         |                  |
+|   control_s_axi_U                        | interface     | s_axilite  |      |      |        |                |      |         |                  |
+|   gmem0_m_axi_U                          | interface     | m_axi      | 58   |      |        |                |      |         |                  |
+|   gmem1_m_axi_U                          | interface     | m_axi      | 58   |      |        |                |      |         |                  |
+|   gmem2_m_axi_U                          | interface     | m_axi      | 58   |      |        |                |      |         |                  |
+|   gmem3_m_axi_U                          | interface     | m_axi      | 4    |      |        |                |      |         |                  |
+|   syscontrol_U                           | fifo channel  | stream     |      |      |        | syscontrol     | srl  | 0       | 1, 4, 1          |
+|   syscontrol_1_U                         | fifo channel  | stream     |      |      |        | syscontrol_1   | srl  | 0       | 1, 4, 1          |
+|   syscontrol_2_U                         | fifo channel  | stream     |      |      |        | syscontrol_2   | srl  | 0       | 1, 4, 1          |
+|   convSet_U                              | fifo channel  | stream     |      |      |        | convSet        | srl  | 0       | 32, 4, 1         |
+|   convSet_1_U                            | fifo channel  | stream     |      |      |        | convSet_1      | srl  | 0       | 32, 4, 1         |
+|   send_fifo_U                            | fifo channel  | stream     | 4    |      |        | send_fifo      | bram | 0       | 128, 32, 1       |
+|   send_fifo_1_U                          | fifo channel  | stream     | 4    |      |        | send_fifo_1    | bram | 0       | 128, 32, 1       |
+|   receive_fifo_U                         | fifo channel  | stream     |      | 2    |        | receive_fifo   | uram | 0       | 128, 256, 1      |
+|   receive_fifo_1_U                       | fifo channel  | stream     |      | 2    |        | receive_fifo_1 | uram | 0       | 128, 256, 1      |
+|  + Send                                  |               |            | 12   | 0    |        |                |      |         |                  |
+|   + dataflow_parent_loop_proc            |               |            | 8    | 0    |        |                |      |         |                  |
+|    + dataflow_in_loop_VITIS_LOOP_172_2   |               |            | 8    | 0    |        |                |      |         |                  |
+|     + send2AIE                           |               |            | 4    | 0    |        |                |      |         |                  |
+|       data_temp_U                        | ram_s2p array |            | 4    |      |        | data_temp      | auto | 1       | 128, 2, 1        |
+|     + send2AIE_2                         |               |            | 4    | 0    |        |                |      |         |                  |
+|       data_temp_U                        | ram_s2p array |            | 4    |      |        | data_temp      | auto | 1       | 128, 2, 1        |
+|   + send2AIE_3                           |               |            | 4    | 0    |        |                |      |         |                  |
+|     data_temp_U                          | ram_s2p array |            | 4    |      |        | data_temp      | auto | 1       | 128, 2, 1        |
+|  + Receive                               |               |            | 0    | 0    |        |                |      |         |                  |
+|   + dataflow_parent_loop_proc10          |               |            | 0    | 0    |        |                |      |         |                  |
+|    + dataflow_in_loop_VITIS_LOOP_220_2_1 |               |            | 0    | 0    |        |                |      |         |                  |
+|      conv0_channel_U                     | fifo channel  | task level |      |      |        | conv0_channel  | srl  | 0       | 32, 2, 1         |
+|      conv1_channel_U                     | fifo channel  | task level |      |      |        | conv1_channel  | srl  | 0       | 32, 2, 1         |
+|      empty_92_U                          | fifo channel  | task level |      |      |        | empty_92       | srl  | 0       | 32, 2, 1         |
+|      empty_U                             | fifo channel  | task level |      |      |        | empty          | srl  | 0       | 32, 2, 1         |
++------------------------------------------+---------------+------------+------+------+--------+----------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| Type                 | Options                                                                                                                                                                                    | Location                                    |
++----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+| inline               |                                                                                                                                                                                            | pl/TopPL.cpp:6 in generateheader            |
+| inline               |                                                                                                                                                                                            | pl/TopPL.cpp:20 in getpacketid              |
+| inline               | off                                                                                                                                                                                        | pl/TopPL.cpp:28 in receive4ddr              |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:40 in receive4ddr              |
+| function_instantiate | variable=fromAIEstrm                                                                                                                                                                       | pl/TopPL.cpp:61 in receive4aie, fromAIEstrm |
+| inline               | off                                                                                                                                                                                        | pl/TopPL.cpp:62 in receive4aie              |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:77 in receive4aie              |
+| inline               | off                                                                                                                                                                                        | pl/TopPL.cpp:97 in send2aie                 |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:113 in send2aie                |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:143 in ddr2fifo                |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:151 in ddr2fifo                |
+| bind_storage         | variable=fifo type=fifo impl=bram                                                                                                                                                          | pl/TopPL.cpp:163 in send, fifo              |
+| inline               | off                                                                                                                                                                                        | pl/TopPL.cpp:165 in send                    |
+| dataflow             |                                                                                                                                                                                            | pl/TopPL.cpp:173 in send                    |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:199 in fifo2ddr                |
+| bind_storage         | variable=fifo type=fifo impl=uram                                                                                                                                                          | pl/TopPL.cpp:211 in receive, fifo           |
+| inline               | off                                                                                                                                                                                        | pl/TopPL.cpp:212 in receive                 |
+| dataflow             |                                                                                                                                                                                            | pl/TopPL.cpp:221 in receive                 |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:257 in roundrobin              |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:262 in roundrobin              |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:268 in roundrobin              |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:276 in roundrobin              |
+| pipeline             | II = 1                                                                                                                                                                                     | pl/TopPL.cpp:281 in roundrobin              |
+| interface            | m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = 16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = dataIn depth = 8192    | pl/TopPL.cpp:337 in toppl                   |
+| interface            | m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = 16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem1 port = U depth = 8192         | pl/TopPL.cpp:339 in toppl                   |
+| interface            | m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = 16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem2 port = S depth = 8192         | pl/TopPL.cpp:341 in toppl                   |
+| interface            | m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = 16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem3 port = ConvArray depth = 8192 | pl/TopPL.cpp:343 in toppl                   |
+| interface            | s_axilite port = dataIn bundle = control                                                                                                                                                   | pl/TopPL.cpp:345 in toppl                   |
+| interface            | s_axilite port = U bundle = control                                                                                                                                                        | pl/TopPL.cpp:346 in toppl                   |
+| interface            | s_axilite port = S bundle = control                                                                                                                                                        | pl/TopPL.cpp:347 in toppl                   |
+| interface            | s_axilite port = ITER bundle = control                                                                                                                                                     | pl/TopPL.cpp:348 in toppl                   |
+| interface            | s_axilite port = ConvArray bundle = control                                                                                                                                                | pl/TopPL.cpp:349 in toppl                   |
+| interface            | s_axilite port = return bundle = control                                                                                                                                                   | pl/TopPL.cpp:350 in toppl                   |
+| interface            | axis port = sweep_tx0_0                                                                                                                                                                    | pl/TopPL.cpp:352 in toppl                   |
+| interface            | axis port = sweep_tx0_1                                                                                                                                                                    | pl/TopPL.cpp:353 in toppl                   |
+| interface            | axis port = sweep_rx0_0                                                                                                                                                                    | pl/TopPL.cpp:354 in toppl                   |
+| interface            | axis port = sweep_rx0_1                                                                                                                                                                    | pl/TopPL.cpp:355 in toppl                   |
+| interface            | axis port = norm_tx0                                                                                                                                                                       | pl/TopPL.cpp:357 in toppl                   |
+| interface            | axis port = norm_rx0                                                                                                                                                                       | pl/TopPL.cpp:358 in toppl                   |
+| dataflow             |                                                                                                                                                                                            | pl/TopPL.cpp:360 in toppl                   |
++----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
+
+* Inferred Pragmas
++--------------------------+-----------------+-----------------------------------------+-----------------------------------+
+| Source Pragma            | Inferred Pragma | Options                                 | Location                          |
++--------------------------+-----------------+-----------------------------------------+-----------------------------------+
+| pipeline pl/TopPL.cpp:40 | array_partition | dim=1 type=complete  variable=data_temp | variable data_temp in receive4ddr |
+| pipeline pl/TopPL.cpp:77 | array_partition | dim=1 type=complete  variable=data_temp | variable data_temp in receive4aie |
++--------------------------+-----------------+-----------------------------------------+-----------------------------------+
+
+

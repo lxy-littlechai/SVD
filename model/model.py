@@ -145,7 +145,7 @@ class SVD_Model:
         svd_pl = SVD_PL(self.COL, self.ROW)
         config.uram = svd_pl.getRAM(config.graph_num)
         config.Frequency = freq
-        config.estimated_time = self.predict(config)
+        # config.estimated_time = self.predict(config)
         print("Current Config!")
         self.print(config)
         return dict(config)
