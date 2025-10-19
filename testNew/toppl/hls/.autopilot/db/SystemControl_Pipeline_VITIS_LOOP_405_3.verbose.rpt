@@ -1,0 +1,1600 @@
+
+
+================================================================
+== Vitis HLS Report for 'SystemControl_Pipeline_VITIS_LOOP_405_3'
+================================================================
+* Date:           Sun Oct 19 23:23:13 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        toppl
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.345 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      542|      542|  2.710 us|  2.710 us|  542|  542|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                 |                       |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |             Instance            |         Module        |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +---------------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_generic_fmax_double_s_fu_85  |generic_fmax_double_s  |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+        +---------------------------------+-----------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_405_3  |      540|      540|        10|          9|          1|    60|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+---------+--------+-----+
+|       Name      | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++-----------------+---------+------+---------+--------+-----+
+|DSP              |        -|     -|        -|       -|    -|
+|Expression       |        -|     -|        0|      18|    -|
+|FIFO             |        -|     -|        -|       -|    -|
+|Instance         |        -|     -|        0|     580|    -|
+|Memory           |        -|     -|        -|       -|    -|
+|Multiplexer      |        -|     -|        -|     260|    -|
+|Register         |        -|     -|      473|       -|    -|
++-----------------+---------+------+---------+--------+-----+
+|Total            |        0|     0|      473|     858|    0|
++-----------------+---------+------+---------+--------+-----+
+|Available        |     1934|  1968|  1799680|  899840|  463|
++-----------------+---------+------+---------+--------+-----+
+|Utilization (%)  |        0|     0|       ~0|      ~0|    0|
++-----------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------+----------------------------+---------+----+---+-----+-----+
+    |             Instance            |           Module           | BRAM_18K| DSP| FF| LUT | URAM|
+    +---------------------------------+----------------------------+---------+----+---+-----+-----+
+    |fpext_32ns_64_1_no_dsp_1_U7      |fpext_32ns_64_1_no_dsp_1    |        0|   0|  0|    0|    0|
+    |fpext_32ns_64_1_no_dsp_1_U8      |fpext_32ns_64_1_no_dsp_1    |        0|   0|  0|    0|    0|
+    |fptrunc_64ns_32_1_no_dsp_1_U6    |fptrunc_64ns_32_1_no_dsp_1  |        0|   0|  0|    0|    0|
+    |grp_generic_fmax_double_s_fu_85  |generic_fmax_double_s       |        0|   0|  0|  580|    0|
+    +---------------------------------+----------------------------+---------+----+---+-----+-----+
+    |Total                            |                            |        0|   0|  0|  580|    0|
+    +---------------------------------+----------------------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |i_16_fu_155_p2                    |         +|   0|  0|   6|           6|           1|
+    |ap_block_pp0_stage1_11001         |       and|   0|  0|   2|           1|           1|
+    |icmp_ln405_fu_161_p2              |      icmp|   0|  0|   6|           6|           4|
+    |ap_block_state2_pp0_stage1_iter0  |        or|   0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  18|          15|           9|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------+----+-----------+-----+-----------+
+    |                Name               | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                          |  10|         10|    1|         10|
+    |ap_done_int                        |   2|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0            |   2|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0_reg        |   2|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1            |   2|          2|    1|          2|
+    |ap_sig_allocacmp_i                 |   5|          2|    6|         12|
+    |conv32_lcssa11_fu_50               |  32|          2|   32|         64|
+    |convSet_L_0_blk_n                  |   2|          2|    1|          2|
+    |convSet_L_1_blk_n                  |   2|          2|    1|          2|
+    |convSet_R_0_blk_n                  |   2|          2|    1|          2|
+    |convSet_R_1_blk_n                  |   2|          2|    1|          2|
+    |grp_fu_94_p0                       |  32|          4|   32|        128|
+    |grp_fu_97_p0                       |  32|          4|   32|        128|
+    |grp_generic_fmax_double_s_fu_85_x  |  64|          3|   64|        192|
+    |grp_generic_fmax_double_s_fu_85_y  |  64|          4|   64|        256|
+    |i_6_fu_46                          |   5|          2|    6|         12|
+    +-----------------------------------+----+-----------+-----+-----------+
+    |Total                              | 260|         47|  245|        818|
+    +-----------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+----+----+-----+-----------+
+    |             Name            | FF | LUT| Bits| Const Bits|
+    +-----------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                    |   9|   0|    9|          0|
+    |ap_done_reg                  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0_reg  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1      |   1|   0|    1|          0|
+    |conv32_lcssa11_fu_50         |  32|   0|   32|          0|
+    |convSet_L_1_read_reg_285     |  32|   0|   32|          0|
+    |convSet_R_0_read_reg_280     |  32|   0|   32|          0|
+    |convSet_R_1_read_reg_290     |  32|   0|   32|          0|
+    |i_16_reg_270                 |   6|   0|    6|          0|
+    |i_6_fu_46                    |   6|   0|    6|          0|
+    |icmp_ln405_reg_276           |   1|   0|    1|          0|
+    |reg_105                      |  64|   0|   64|          0|
+    |reg_111                      |  64|   0|   64|          0|
+    |reg_116                      |  64|   0|   64|          0|
+    |x_assign_1_reg_295           |  64|   0|   64|          0|
+    |y_assign_3_reg_300           |  64|   0|   64|          0|
+    +-----------------------------+----+----+-----+-----------+
+    |Total                        | 473|   0|  473|          0|
+    +-----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-----------------------------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |              Source Object              |    C Type    |
++----------------------------+-----+-----+------------+-----------------------------------------+--------------+
+|ap_clk                      |   in|    1|  ap_ctrl_hs|  SystemControl_Pipeline_VITIS_LOOP_405_3|  return value|
+|ap_rst                      |   in|    1|  ap_ctrl_hs|  SystemControl_Pipeline_VITIS_LOOP_405_3|  return value|
+|ap_start                    |   in|    1|  ap_ctrl_hs|  SystemControl_Pipeline_VITIS_LOOP_405_3|  return value|
+|ap_done                     |  out|    1|  ap_ctrl_hs|  SystemControl_Pipeline_VITIS_LOOP_405_3|  return value|
+|ap_idle                     |  out|    1|  ap_ctrl_hs|  SystemControl_Pipeline_VITIS_LOOP_405_3|  return value|
+|ap_ready                    |  out|    1|  ap_ctrl_hs|  SystemControl_Pipeline_VITIS_LOOP_405_3|  return value|
+|convSet_L_0_dout            |   in|   32|     ap_fifo|                              convSet_L_0|       pointer|
+|convSet_L_0_num_data_valid  |   in|    3|     ap_fifo|                              convSet_L_0|       pointer|
+|convSet_L_0_fifo_cap        |   in|    3|     ap_fifo|                              convSet_L_0|       pointer|
+|convSet_L_0_empty_n         |   in|    1|     ap_fifo|                              convSet_L_0|       pointer|
+|convSet_L_0_read            |  out|    1|     ap_fifo|                              convSet_L_0|       pointer|
+|convSet_R_0_dout            |   in|   32|     ap_fifo|                              convSet_R_0|       pointer|
+|convSet_R_0_num_data_valid  |   in|    3|     ap_fifo|                              convSet_R_0|       pointer|
+|convSet_R_0_fifo_cap        |   in|    3|     ap_fifo|                              convSet_R_0|       pointer|
+|convSet_R_0_empty_n         |   in|    1|     ap_fifo|                              convSet_R_0|       pointer|
+|convSet_R_0_read            |  out|    1|     ap_fifo|                              convSet_R_0|       pointer|
+|convSet_L_1_dout            |   in|   32|     ap_fifo|                              convSet_L_1|       pointer|
+|convSet_L_1_num_data_valid  |   in|    3|     ap_fifo|                              convSet_L_1|       pointer|
+|convSet_L_1_fifo_cap        |   in|    3|     ap_fifo|                              convSet_L_1|       pointer|
+|convSet_L_1_empty_n         |   in|    1|     ap_fifo|                              convSet_L_1|       pointer|
+|convSet_L_1_read            |  out|    1|     ap_fifo|                              convSet_L_1|       pointer|
+|convSet_R_1_dout            |   in|   32|     ap_fifo|                              convSet_R_1|       pointer|
+|convSet_R_1_num_data_valid  |   in|    3|     ap_fifo|                              convSet_R_1|       pointer|
+|convSet_R_1_fifo_cap        |   in|    3|     ap_fifo|                              convSet_R_1|       pointer|
+|convSet_R_1_empty_n         |   in|    1|     ap_fifo|                              convSet_R_1|       pointer|
+|convSet_R_1_read            |  out|    1|     ap_fifo|                              convSet_R_1|       pointer|
+|conv32_lcssa11_out          |  out|   32|      ap_vld|                       conv32_lcssa11_out|       pointer|
+|conv32_lcssa11_out_ap_vld   |  out|    1|      ap_vld|                       conv32_lcssa11_out|       pointer|
++----------------------------+-----+-----+------------+-----------------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 9, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 1
+  Pipeline-0 : II = 9, D = 10, States = { 1 2 3 4 5 6 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.10>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%i_6 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 13 'alloca' 'i_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%conv32_lcssa11 = alloca i32 1"   --->   Operation 14 'alloca' 'conv32_lcssa11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_0, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_1, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_0, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_1, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln0 = muxlogic i32 0"   --->   Operation 19 'muxlogic' 'muxLogicData_to_store_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln0 = muxlogic i32 %conv32_lcssa11"   --->   Operation 20 'muxlogic' 'muxLogicAddr_to_store_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.46ns)   --->   "%store_ln0 = store i32 0, i32 %conv32_lcssa11"   --->   Operation 21 'store' 'store_ln0' <Predicate = true> <Delay = 0.46>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln405 = muxlogic i6 0"   --->   Operation 22 'muxlogic' 'muxLogicData_to_store_ln405' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln405 = muxlogic i6 %i_6"   --->   Operation 23 'muxlogic' 'muxLogicAddr_to_store_ln405' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.39ns)   --->   "%store_ln405 = store i6 0, i6 %i_6" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 24 'store' 'store_ln405' <Predicate = true> <Delay = 0.39>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_407_4"   --->   Operation 25 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_i = muxlogic i6 %i_6"   --->   Operation 26 'muxlogic' 'MuxLogicAddr_to_i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%i = load i6 %i_6" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 27 'load' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.71ns)   --->   "%i_16 = add i6 %i, i6 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 28 'add' 'i_16' <Predicate = true> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.71ns)   --->   "%icmp_ln405 = icmp_eq  i6 %i, i6 60" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 29 'icmp' 'icmp_ln405' <Predicate = true> <Delay = 0.71> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%br_ln405 = br i1 %icmp_ln405, void %VITIS_LOOP_407_4.split, void %for.end39.exitStub" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 30 'br' 'br_ln405' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_conv32_lcssa11_load = muxlogic i32 %conv32_lcssa11"   --->   Operation 83 'muxlogic' 'MuxLogicAddr_to_conv32_lcssa11_load' <Predicate = (icmp_ln405)> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%conv32_lcssa11_load = load i32 %conv32_lcssa11"   --->   Operation 84 'load' 'conv32_lcssa11_load' <Predicate = (icmp_ln405)> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln0 = muxlogic i32 %conv32_lcssa11_load"   --->   Operation 85 'muxlogic' 'muxLogicData_to_write_ln0' <Predicate = (icmp_ln405)> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %conv32_lcssa11_out, i32 %conv32_lcssa11_load"   --->   Operation 86 'write' 'write_ln0' <Predicate = (icmp_ln405)> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 87 'ret' 'ret_ln0' <Predicate = (icmp_ln405)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.23>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_conv32_lcssa11_load_1 = muxlogic i32 %conv32_lcssa11"   --->   Operation 31 'muxlogic' 'MuxLogicAddr_to_conv32_lcssa11_load_1' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%conv32_lcssa11_load_1 = load i32 %conv32_lcssa11" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 32 'load' 'conv32_lcssa11_load_1' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%muxLogicCE_to_convSet_L_0_read = muxlogic"   --->   Operation 33 'muxlogic' 'muxLogicCE_to_convSet_L_0_read' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.84ns)   --->   "%convSet_L_0_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %convSet_L_0" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:408]   --->   Operation 34 'read' 'convSet_L_0_read' <Predicate = (!icmp_ln405)> <Delay = 0.84> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.84> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 4> <FIFO>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%bitcast_ln408 = bitcast i32 %convSet_L_0_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:408]   --->   Operation 35 'bitcast' 'bitcast_ln408' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%muxLogicCE_to_convSet_R_0_read = muxlogic"   --->   Operation 36 'muxlogic' 'muxLogicCE_to_convSet_R_0_read' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.84ns)   --->   "%convSet_R_0_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %convSet_R_0" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:409]   --->   Operation 37 'read' 'convSet_R_0_read' <Predicate = (!icmp_ln405)> <Delay = 0.84> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.84> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 4> <FIFO>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%muxLogicCE_to_convSet_L_1_read = muxlogic"   --->   Operation 38 'muxlogic' 'muxLogicCE_to_convSet_L_1_read' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.84ns)   --->   "%convSet_L_1_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %convSet_L_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:408]   --->   Operation 39 'read' 'convSet_L_1_read' <Predicate = (!icmp_ln405)> <Delay = 0.84> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.84> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 4> <FIFO>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%muxLogicCE_to_convSet_R_1_read = muxlogic"   --->   Operation 40 'muxlogic' 'muxLogicCE_to_convSet_R_1_read' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.84ns)   --->   "%convSet_R_1_read = read i32 @_ssdm_op_Read.ap_fifo.volatile.i32P0A, i32 %convSet_R_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:409]   --->   Operation 41 'read' 'convSet_R_1_read' <Predicate = (!icmp_ln405)> <Delay = 0.84> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.84> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 4> <FIFO>
+ST_2 : Operation 42 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_x_assign = muxlogic i32 %conv32_lcssa11_load_1"   --->   Operation 42 'muxlogic' 'muxLogicI0_to_x_assign' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_2 : Operation 43 [1/1] (0.36ns)   --->   "%x_assign = fpext i32 %conv32_lcssa11_load_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 43 'fpext' 'x_assign' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_y_assign = muxlogic i32 %bitcast_ln408"   --->   Operation 44 'muxlogic' 'muxLogicI0_to_y_assign' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_2 : Operation 45 [1/1] (0.36ns)   --->   "%y_assign = fpext i32 %bitcast_ln408" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 45 'fpext' 'y_assign' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln405 = muxlogic i6 %i_16"   --->   Operation 46 'muxlogic' 'muxLogicData_to_store_ln405' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln405 = muxlogic i6 %i_6"   --->   Operation 47 'muxlogic' 'muxLogicAddr_to_store_ln405' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.39ns)   --->   "%store_ln405 = store i6 %i_16, i6 %i_6" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 48 'store' 'store_ln405' <Predicate = (!icmp_ln405)> <Delay = 0.39>
+
+State 3 <SV = 2> <Delay = 3.34>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%bitcast_ln409 = bitcast i32 %convSet_R_0_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:409]   --->   Operation 49 'bitcast' 'bitcast_ln409' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%bitcast_ln408_1 = bitcast i32 %convSet_L_1_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:408]   --->   Operation 50 'bitcast' 'bitcast_ln408_1' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (3.34ns)   --->   "%tmp_s = call i64 @generic_fmax<double>, i64 %x_assign, i64 %y_assign" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 51 'call' 'tmp_s' <Predicate = (!icmp_ln405)> <Delay = 3.34> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 52 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_y_assign_1 = muxlogic i32 %bitcast_ln409"   --->   Operation 52 'muxlogic' 'muxLogicI0_to_y_assign_1' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_3 : Operation 53 [1/1] (0.36ns)   --->   "%y_assign_1 = fpext i32 %bitcast_ln409" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 53 'fpext' 'y_assign_1' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_y_assign_2 = muxlogic i32 %bitcast_ln408_1"   --->   Operation 54 'muxlogic' 'muxLogicI0_to_y_assign_2' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_3 : Operation 55 [1/1] (0.36ns)   --->   "%y_assign_2 = fpext i32 %bitcast_ln408_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 55 'fpext' 'y_assign_2' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 2.34>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%bitcast_ln409_1 = bitcast i32 %convSet_R_1_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:409]   --->   Operation 56 'bitcast' 'bitcast_ln409_1' <Predicate = (!icmp_ln405)> <Delay = 0.00>
+ST_4 : Operation 57 [1/1] (0.50ns) (share mux size 4)   --->   "%muxLogicI0_to_maxConv = muxlogic i64 %tmp_s"   --->   Operation 57 'muxlogic' 'muxLogicI0_to_maxConv' <Predicate = (!icmp_ln405)> <Delay = 0.50>
+ST_4 : Operation 58 [1/1] (0.45ns)   --->   "%maxConv = fptrunc i64 %tmp_s" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 58 'fptrunc' 'maxConv' <Predicate = (!icmp_ln405)> <Delay = 0.45> <CoreInst = "Double2Float">   --->   Core 71 'Double2Float' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_4 : Operation 59 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_x_assign_1 = muxlogic i32 %maxConv"   --->   Operation 59 'muxlogic' 'muxLogicI0_to_x_assign_1' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_4 : Operation 60 [1/1] (0.36ns)   --->   "%x_assign_1 = fpext i32 %maxConv" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 60 'fpext' 'x_assign_1' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_4 : Operation 61 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_y_assign_3 = muxlogic i32 %bitcast_ln409_1"   --->   Operation 61 'muxlogic' 'muxLogicI0_to_y_assign_3' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_4 : Operation 62 [1/1] (0.36ns)   --->   "%y_assign_3 = fpext i32 %bitcast_ln409_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 62 'fpext' 'y_assign_3' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 3.34>
+ST_5 : Operation 63 [1/1] (3.34ns)   --->   "%tmp_7 = call i64 @generic_fmax<double>, i64 %x_assign_1, i64 %y_assign_1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 63 'call' 'tmp_7' <Predicate = (!icmp_ln405)> <Delay = 3.34> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 2.34>
+ST_6 : Operation 64 [1/1] (0.50ns) (share mux size 4)   --->   "%muxLogicI0_to_conv32_1 = muxlogic i64 %tmp_7"   --->   Operation 64 'muxlogic' 'muxLogicI0_to_conv32_1' <Predicate = (!icmp_ln405)> <Delay = 0.50>
+ST_6 : Operation 65 [1/1] (0.45ns)   --->   "%conv32_1 = fptrunc i64 %tmp_7" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 65 'fptrunc' 'conv32_1' <Predicate = (!icmp_ln405)> <Delay = 0.45> <CoreInst = "Double2Float">   --->   Core 71 'Double2Float' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 66 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_x_assign_2 = muxlogic i32 %conv32_1"   --->   Operation 66 'muxlogic' 'muxLogicI0_to_x_assign_2' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_6 : Operation 67 [1/1] (0.36ns)   --->   "%x_assign_2 = fpext i32 %conv32_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 67 'fpext' 'x_assign_2' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 3.34>
+ST_7 : Operation 68 [1/1] (3.34ns)   --->   "%tmp_8 = call i64 @generic_fmax<double>, i64 %x_assign_2, i64 %y_assign_2" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 68 'call' 'tmp_8' <Predicate = (!icmp_ln405)> <Delay = 3.34> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 2.34>
+ST_8 : Operation 69 [1/1] (0.50ns) (share mux size 4)   --->   "%muxLogicI0_to_conv32_2 = muxlogic i64 %tmp_8"   --->   Operation 69 'muxlogic' 'muxLogicI0_to_conv32_2' <Predicate = (!icmp_ln405)> <Delay = 0.50>
+ST_8 : Operation 70 [1/1] (0.45ns)   --->   "%conv32_2 = fptrunc i64 %tmp_8" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 70 'fptrunc' 'conv32_2' <Predicate = (!icmp_ln405)> <Delay = 0.45> <CoreInst = "Double2Float">   --->   Core 71 'Double2Float' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_8 : Operation 71 [1/1] (1.01ns) (share mux size 9)   --->   "%muxLogicI0_to_x_assign_3 = muxlogic i32 %conv32_2"   --->   Operation 71 'muxlogic' 'muxLogicI0_to_x_assign_3' <Predicate = (!icmp_ln405)> <Delay = 1.01>
+ST_8 : Operation 72 [1/1] (0.36ns)   --->   "%x_assign_3 = fpext i32 %conv32_2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 72 'fpext' 'x_assign_3' <Predicate = (!icmp_ln405)> <Delay = 0.36> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 3.34>
+ST_9 : Operation 73 [1/1] (3.34ns)   --->   "%tmp_9 = call i64 @generic_fmax<double>, i64 %x_assign_3, i64 %y_assign_3" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 73 'call' 'tmp_9' <Predicate = (!icmp_ln405)> <Delay = 3.34> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 1.42>
+ST_10 : Operation 74 [1/1] (0.00ns)   --->   "%specpipeline_ln405 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 74 'specpipeline' 'specpipeline_ln405' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 75 [1/1] (0.00ns)   --->   "%speclooptripcount_ln405 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 60, i64 60, i64 60" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 75 'speclooptripcount' 'speclooptripcount_ln405' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 76 [1/1] (0.00ns)   --->   "%specloopname_ln405 = specloopname void @_ssdm_op_SpecLoopName, void @empty_34" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 76 'specloopname' 'specloopname_ln405' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 77 [1/1] (0.50ns) (share mux size 4)   --->   "%muxLogicI0_to_conv32_3 = muxlogic i64 %tmp_9"   --->   Operation 77 'muxlogic' 'muxLogicI0_to_conv32_3' <Predicate = true> <Delay = 0.50>
+ST_10 : Operation 78 [1/1] (0.45ns)   --->   "%conv32_3 = fptrunc i64 %tmp_9" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 78 'fptrunc' 'conv32_3' <Predicate = true> <Delay = 0.45> <CoreInst = "Double2Float">   --->   Core 71 'Double2Float' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_10 : Operation 79 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln412 = muxlogic i32 %conv32_3"   --->   Operation 79 'muxlogic' 'muxLogicData_to_store_ln412' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 80 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln412 = muxlogic i32 %conv32_lcssa11"   --->   Operation 80 'muxlogic' 'muxLogicAddr_to_store_ln412' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 81 [1/1] (0.46ns)   --->   "%store_ln412 = store i32 %conv32_3, i32 %conv32_lcssa11" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:412]   --->   Operation 81 'store' 'store_ln412' <Predicate = true> <Delay = 0.46>
+ST_10 : Operation 82 [1/1] (0.00ns)   --->   "%br_ln405 = br void %VITIS_LOOP_407_4" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405]   --->   Operation 82 'br' 'br_ln405' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ convSet_L_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ convSet_R_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ convSet_L_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ convSet_R_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ conv32_lcssa11_out]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_vld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+i_6                                   (alloca           ) [ 01100000000]
+conv32_lcssa11                        (alloca           ) [ 01111111111]
+specinterface_ln0                     (specinterface    ) [ 00000000000]
+specinterface_ln0                     (specinterface    ) [ 00000000000]
+specinterface_ln0                     (specinterface    ) [ 00000000000]
+specinterface_ln0                     (specinterface    ) [ 00000000000]
+muxLogicData_to_store_ln0             (muxlogic         ) [ 00000000000]
+muxLogicAddr_to_store_ln0             (muxlogic         ) [ 00000000000]
+store_ln0                             (store            ) [ 00000000000]
+muxLogicData_to_store_ln405           (muxlogic         ) [ 00000000000]
+muxLogicAddr_to_store_ln405           (muxlogic         ) [ 00000000000]
+store_ln405                           (store            ) [ 00000000000]
+br_ln0                                (br               ) [ 00000000000]
+MuxLogicAddr_to_i                     (muxlogic         ) [ 00000000000]
+i                                     (load             ) [ 00000000000]
+i_16                                  (add              ) [ 00100000000]
+icmp_ln405                            (icmp             ) [ 01111111110]
+br_ln405                              (br               ) [ 00000000000]
+MuxLogicAddr_to_conv32_lcssa11_load_1 (muxlogic         ) [ 00000000000]
+conv32_lcssa11_load_1                 (load             ) [ 00000000000]
+muxLogicCE_to_convSet_L_0_read        (muxlogic         ) [ 00000000000]
+convSet_L_0_read                      (read             ) [ 00000000000]
+bitcast_ln408                         (bitcast          ) [ 00000000000]
+muxLogicCE_to_convSet_R_0_read        (muxlogic         ) [ 00000000000]
+convSet_R_0_read                      (read             ) [ 00010000000]
+muxLogicCE_to_convSet_L_1_read        (muxlogic         ) [ 00000000000]
+convSet_L_1_read                      (read             ) [ 00010000000]
+muxLogicCE_to_convSet_R_1_read        (muxlogic         ) [ 00000000000]
+convSet_R_1_read                      (read             ) [ 00011000000]
+muxLogicI0_to_x_assign                (muxlogic         ) [ 00000000000]
+x_assign                              (fpext            ) [ 00010000000]
+muxLogicI0_to_y_assign                (muxlogic         ) [ 00000000000]
+y_assign                              (fpext            ) [ 00010000000]
+muxLogicData_to_store_ln405           (muxlogic         ) [ 00000000000]
+muxLogicAddr_to_store_ln405           (muxlogic         ) [ 00000000000]
+store_ln405                           (store            ) [ 00000000000]
+bitcast_ln409                         (bitcast          ) [ 00000000000]
+bitcast_ln408_1                       (bitcast          ) [ 00000000000]
+tmp_s                                 (call             ) [ 00001000000]
+muxLogicI0_to_y_assign_1              (muxlogic         ) [ 00000000000]
+y_assign_1                            (fpext            ) [ 00001100000]
+muxLogicI0_to_y_assign_2              (muxlogic         ) [ 00000000000]
+y_assign_2                            (fpext            ) [ 00001111000]
+bitcast_ln409_1                       (bitcast          ) [ 00000000000]
+muxLogicI0_to_maxConv                 (muxlogic         ) [ 00000000000]
+maxConv                               (fptrunc          ) [ 00000000000]
+muxLogicI0_to_x_assign_1              (muxlogic         ) [ 00000000000]
+x_assign_1                            (fpext            ) [ 00000100000]
+muxLogicI0_to_y_assign_3              (muxlogic         ) [ 00000000000]
+y_assign_3                            (fpext            ) [ 00000111110]
+tmp_7                                 (call             ) [ 00000010000]
+muxLogicI0_to_conv32_1                (muxlogic         ) [ 00000000000]
+conv32_1                              (fptrunc          ) [ 00000000000]
+muxLogicI0_to_x_assign_2              (muxlogic         ) [ 00000000000]
+x_assign_2                            (fpext            ) [ 00000001000]
+tmp_8                                 (call             ) [ 00000000100]
+muxLogicI0_to_conv32_2                (muxlogic         ) [ 00000000000]
+conv32_2                              (fptrunc          ) [ 00000000000]
+muxLogicI0_to_x_assign_3              (muxlogic         ) [ 00000000000]
+x_assign_3                            (fpext            ) [ 00000000010]
+tmp_9                                 (call             ) [ 01000000001]
+specpipeline_ln405                    (specpipeline     ) [ 00000000000]
+speclooptripcount_ln405               (speclooptripcount) [ 00000000000]
+specloopname_ln405                    (specloopname     ) [ 00000000000]
+muxLogicI0_to_conv32_3                (muxlogic         ) [ 00000000000]
+conv32_3                              (fptrunc          ) [ 00000000000]
+muxLogicData_to_store_ln412           (muxlogic         ) [ 00000000000]
+muxLogicAddr_to_store_ln412           (muxlogic         ) [ 00000000000]
+store_ln412                           (store            ) [ 00000000000]
+br_ln405                              (br               ) [ 00000000000]
+MuxLogicAddr_to_conv32_lcssa11_load   (muxlogic         ) [ 00000000000]
+conv32_lcssa11_load                   (load             ) [ 00000000000]
+muxLogicData_to_write_ln0             (muxlogic         ) [ 00000000000]
+write_ln0                             (write            ) [ 00000000000]
+ret_ln0                               (ret              ) [ 00000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="convSet_L_0">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="convSet_L_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="convSet_R_0">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="convSet_R_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="convSet_L_1">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="convSet_L_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="convSet_R_1">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="convSet_R_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="conv32_lcssa11_out">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="conv32_lcssa11_out"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i32P0A"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="generic_fmax<double>"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_34"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_auto.floatP0A"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1004" name="i_6_fu_46">
+<pin_list>
+<pin id="47" dir="0" index="0" bw="1" slack="0"/>
+<pin id="48" dir="1" index="1" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="i_6/1 "/>
+</bind>
+</comp>
+
+<comp id="50" class="1004" name="conv32_lcssa11_fu_50">
+<pin_list>
+<pin id="51" dir="0" index="0" bw="1" slack="0"/>
+<pin id="52" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="conv32_lcssa11/1 "/>
+</bind>
+</comp>
+
+<comp id="54" class="1004" name="convSet_L_0_read_read_fu_54">
+<pin_list>
+<pin id="55" dir="0" index="0" bw="32" slack="0"/>
+<pin id="56" dir="0" index="1" bw="32" slack="0"/>
+<pin id="57" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="convSet_L_0_read/2 "/>
+</bind>
+</comp>
+
+<comp id="60" class="1004" name="convSet_R_0_read_read_fu_60">
+<pin_list>
+<pin id="61" dir="0" index="0" bw="32" slack="0"/>
+<pin id="62" dir="0" index="1" bw="32" slack="0"/>
+<pin id="63" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="convSet_R_0_read/2 "/>
+</bind>
+</comp>
+
+<comp id="66" class="1004" name="convSet_L_1_read_read_fu_66">
+<pin_list>
+<pin id="67" dir="0" index="0" bw="32" slack="0"/>
+<pin id="68" dir="0" index="1" bw="32" slack="0"/>
+<pin id="69" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="convSet_L_1_read/2 "/>
+</bind>
+</comp>
+
+<comp id="72" class="1004" name="convSet_R_1_read_read_fu_72">
+<pin_list>
+<pin id="73" dir="0" index="0" bw="32" slack="0"/>
+<pin id="74" dir="0" index="1" bw="32" slack="0"/>
+<pin id="75" dir="1" index="2" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="convSet_R_1_read/2 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="write_ln0_write_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="0" slack="0"/>
+<pin id="80" dir="0" index="1" bw="32" slack="0"/>
+<pin id="81" dir="0" index="2" bw="32" slack="0"/>
+<pin id="82" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="85" class="1004" name="grp_generic_fmax_double_s_fu_85">
+<pin_list>
+<pin id="86" dir="0" index="0" bw="64" slack="0"/>
+<pin id="87" dir="0" index="1" bw="64" slack="1"/>
+<pin id="88" dir="0" index="2" bw="64" slack="1"/>
+<pin id="89" dir="1" index="3" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="tmp_s/3 tmp_7/5 tmp_8/7 tmp_9/9 "/>
+</bind>
+</comp>
+
+<comp id="91" class="1004" name="grp_fu_91">
+<pin_list>
+<pin id="92" dir="0" index="0" bw="64" slack="1"/>
+<pin id="93" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="fptrunc(40) " fcode="fptrunc"/>
+<opset="maxConv/4 conv32_1/6 conv32_2/8 conv32_3/10 "/>
+</bind>
+</comp>
+
+<comp id="94" class="1004" name="grp_fu_94">
+<pin_list>
+<pin id="95" dir="0" index="0" bw="32" slack="0"/>
+<pin id="96" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="fpext(41) " fcode="fpext"/>
+<opset="x_assign/2 y_assign_1/3 x_assign_1/4 x_assign_2/6 x_assign_3/8 "/>
+</bind>
+</comp>
+
+<comp id="97" class="1004" name="grp_fu_97">
+<pin_list>
+<pin id="98" dir="0" index="0" bw="32" slack="0"/>
+<pin id="99" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="fpext(41) " fcode="fpext"/>
+<opset="y_assign/2 y_assign_2/3 y_assign_3/4 "/>
+</bind>
+</comp>
+
+<comp id="101" class="1004" name="grp_fu_101">
+<pin_list>
+<pin id="102" dir="0" index="0" bw="32" slack="0"/>
+<pin id="103" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicI0_to_x_assign_1/4 muxLogicI0_to_x_assign_2/6 muxLogicI0_to_x_assign_3/8 muxLogicData_to_store_ln412/10 "/>
+</bind>
+</comp>
+
+<comp id="105" class="1005" name="reg_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="64" slack="1"/>
+<pin id="107" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="x_assign y_assign_1 x_assign_2 x_assign_3 "/>
+</bind>
+</comp>
+
+<comp id="111" class="1005" name="reg_111">
+<pin_list>
+<pin id="112" dir="0" index="0" bw="64" slack="1"/>
+<pin id="113" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="y_assign y_assign_2 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1005" name="reg_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="64" slack="1"/>
+<pin id="118" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_s tmp_7 tmp_8 tmp_9 "/>
+</bind>
+</comp>
+
+<comp id="121" class="1004" name="grp_fu_121">
+<pin_list>
+<pin id="122" dir="0" index="0" bw="64" slack="1"/>
+<pin id="123" dir="1" index="1" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicI0_to_maxConv/4 muxLogicI0_to_conv32_1/6 muxLogicI0_to_conv32_2/8 muxLogicI0_to_conv32_3/10 "/>
+</bind>
+</comp>
+
+<comp id="125" class="1004" name="muxLogicData_to_store_ln0_fu_125">
+<pin_list>
+<pin id="126" dir="0" index="0" bw="32" slack="0"/>
+<pin id="127" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicData_to_store_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="129" class="1004" name="muxLogicAddr_to_store_ln0_fu_129">
+<pin_list>
+<pin id="130" dir="0" index="0" bw="32" slack="0"/>
+<pin id="131" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicAddr_to_store_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="132" class="1004" name="store_ln0_store_fu_132">
+<pin_list>
+<pin id="133" dir="0" index="0" bw="32" slack="0"/>
+<pin id="134" dir="0" index="1" bw="32" slack="0"/>
+<pin id="135" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="137" class="1004" name="muxLogicData_to_store_ln405_fu_137">
+<pin_list>
+<pin id="138" dir="0" index="0" bw="1" slack="0"/>
+<pin id="139" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicData_to_store_ln405/1 "/>
+</bind>
+</comp>
+
+<comp id="141" class="1004" name="muxLogicAddr_to_store_ln405_fu_141">
+<pin_list>
+<pin id="142" dir="0" index="0" bw="6" slack="0"/>
+<pin id="143" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicAddr_to_store_ln405/1 "/>
+</bind>
+</comp>
+
+<comp id="144" class="1004" name="store_ln405_store_fu_144">
+<pin_list>
+<pin id="145" dir="0" index="0" bw="1" slack="0"/>
+<pin id="146" dir="0" index="1" bw="6" slack="0"/>
+<pin id="147" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln405/1 "/>
+</bind>
+</comp>
+
+<comp id="149" class="1004" name="MuxLogicAddr_to_i_fu_149">
+<pin_list>
+<pin id="150" dir="0" index="0" bw="6" slack="0"/>
+<pin id="151" dir="1" index="1" bw="6" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="MuxLogicAddr_to_i/1 "/>
+</bind>
+</comp>
+
+<comp id="152" class="1004" name="i_load_fu_152">
+<pin_list>
+<pin id="153" dir="0" index="0" bw="6" slack="0"/>
+<pin id="154" dir="1" index="1" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="i/1 "/>
+</bind>
+</comp>
+
+<comp id="155" class="1004" name="i_16_fu_155">
+<pin_list>
+<pin id="156" dir="0" index="0" bw="6" slack="0"/>
+<pin id="157" dir="0" index="1" bw="1" slack="0"/>
+<pin id="158" dir="1" index="2" bw="6" slack="1"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="i_16/1 "/>
+</bind>
+</comp>
+
+<comp id="161" class="1004" name="icmp_ln405_fu_161">
+<pin_list>
+<pin id="162" dir="0" index="0" bw="6" slack="0"/>
+<pin id="163" dir="0" index="1" bw="6" slack="0"/>
+<pin id="164" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln405/1 "/>
+</bind>
+</comp>
+
+<comp id="167" class="1004" name="MuxLogicAddr_to_conv32_lcssa11_load_1_fu_167">
+<pin_list>
+<pin id="168" dir="0" index="0" bw="32" slack="1"/>
+<pin id="169" dir="1" index="1" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="MuxLogicAddr_to_conv32_lcssa11_load_1/2 "/>
+</bind>
+</comp>
+
+<comp id="170" class="1004" name="conv32_lcssa11_load_1_load_fu_170">
+<pin_list>
+<pin id="171" dir="0" index="0" bw="32" slack="1"/>
+<pin id="172" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="conv32_lcssa11_load_1/2 "/>
+</bind>
+</comp>
+
+<comp id="174" class="1004" name="muxLogicCE_to_convSet_L_0_read_fu_174">
+<pin_list>
+<pin id="175" dir="1" index="0" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicCE_to_convSet_L_0_read/2 "/>
+</bind>
+</comp>
+
+<comp id="176" class="1004" name="bitcast_ln408_fu_176">
+<pin_list>
+<pin id="177" dir="0" index="0" bw="32" slack="0"/>
+<pin id="178" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="bitcast_ln408/2 "/>
+</bind>
+</comp>
+
+<comp id="181" class="1004" name="muxLogicCE_to_convSet_R_0_read_fu_181">
+<pin_list>
+<pin id="182" dir="1" index="0" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicCE_to_convSet_R_0_read/2 "/>
+</bind>
+</comp>
+
+<comp id="183" class="1004" name="muxLogicCE_to_convSet_L_1_read_fu_183">
+<pin_list>
+<pin id="184" dir="1" index="0" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicCE_to_convSet_L_1_read/2 "/>
+</bind>
+</comp>
+
+<comp id="185" class="1004" name="muxLogicCE_to_convSet_R_1_read_fu_185">
+<pin_list>
+<pin id="186" dir="1" index="0" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicCE_to_convSet_R_1_read/2 "/>
+</bind>
+</comp>
+
+<comp id="187" class="1004" name="muxLogicI0_to_x_assign_fu_187">
+<pin_list>
+<pin id="188" dir="0" index="0" bw="32" slack="0"/>
+<pin id="189" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicI0_to_x_assign/2 "/>
+</bind>
+</comp>
+
+<comp id="191" class="1004" name="muxLogicI0_to_y_assign_fu_191">
+<pin_list>
+<pin id="192" dir="0" index="0" bw="32" slack="0"/>
+<pin id="193" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicI0_to_y_assign/2 "/>
+</bind>
+</comp>
+
+<comp id="195" class="1004" name="muxLogicData_to_store_ln405_fu_195">
+<pin_list>
+<pin id="196" dir="0" index="0" bw="6" slack="1"/>
+<pin id="197" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicData_to_store_ln405/2 "/>
+</bind>
+</comp>
+
+<comp id="198" class="1004" name="muxLogicAddr_to_store_ln405_fu_198">
+<pin_list>
+<pin id="199" dir="0" index="0" bw="6" slack="1"/>
+<pin id="200" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicAddr_to_store_ln405/2 "/>
+</bind>
+</comp>
+
+<comp id="201" class="1004" name="store_ln405_store_fu_201">
+<pin_list>
+<pin id="202" dir="0" index="0" bw="6" slack="1"/>
+<pin id="203" dir="0" index="1" bw="6" slack="1"/>
+<pin id="204" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln405/2 "/>
+</bind>
+</comp>
+
+<comp id="205" class="1004" name="bitcast_ln409_fu_205">
+<pin_list>
+<pin id="206" dir="0" index="0" bw="32" slack="1"/>
+<pin id="207" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="bitcast_ln409/3 "/>
+</bind>
+</comp>
+
+<comp id="209" class="1004" name="bitcast_ln408_1_fu_209">
+<pin_list>
+<pin id="210" dir="0" index="0" bw="32" slack="1"/>
+<pin id="211" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="bitcast_ln408_1/3 "/>
+</bind>
+</comp>
+
+<comp id="213" class="1004" name="muxLogicI0_to_y_assign_1_fu_213">
+<pin_list>
+<pin id="214" dir="0" index="0" bw="32" slack="0"/>
+<pin id="215" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicI0_to_y_assign_1/3 "/>
+</bind>
+</comp>
+
+<comp id="217" class="1004" name="muxLogicI0_to_y_assign_2_fu_217">
+<pin_list>
+<pin id="218" dir="0" index="0" bw="32" slack="0"/>
+<pin id="219" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicI0_to_y_assign_2/3 "/>
+</bind>
+</comp>
+
+<comp id="221" class="1004" name="bitcast_ln409_1_fu_221">
+<pin_list>
+<pin id="222" dir="0" index="0" bw="32" slack="2"/>
+<pin id="223" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitcast(44) " fcode="bitcast"/>
+<opset="bitcast_ln409_1/4 "/>
+</bind>
+</comp>
+
+<comp id="225" class="1004" name="muxLogicI0_to_y_assign_3_fu_225">
+<pin_list>
+<pin id="226" dir="0" index="0" bw="32" slack="0"/>
+<pin id="227" dir="1" index="1" bw="64" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicI0_to_y_assign_3/4 "/>
+</bind>
+</comp>
+
+<comp id="229" class="1004" name="muxLogicAddr_to_store_ln412_fu_229">
+<pin_list>
+<pin id="230" dir="0" index="0" bw="32" slack="9"/>
+<pin id="231" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicAddr_to_store_ln412/10 "/>
+</bind>
+</comp>
+
+<comp id="232" class="1004" name="store_ln412_store_fu_232">
+<pin_list>
+<pin id="233" dir="0" index="0" bw="32" slack="0"/>
+<pin id="234" dir="0" index="1" bw="32" slack="9"/>
+<pin id="235" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln412/10 "/>
+</bind>
+</comp>
+
+<comp id="237" class="1004" name="MuxLogicAddr_to_conv32_lcssa11_load_fu_237">
+<pin_list>
+<pin id="238" dir="0" index="0" bw="32" slack="0"/>
+<pin id="239" dir="1" index="1" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="MuxLogicAddr_to_conv32_lcssa11_load/1 "/>
+</bind>
+</comp>
+
+<comp id="240" class="1004" name="conv32_lcssa11_load_load_fu_240">
+<pin_list>
+<pin id="241" dir="0" index="0" bw="32" slack="0"/>
+<pin id="242" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="conv32_lcssa11_load/1 "/>
+</bind>
+</comp>
+
+<comp id="244" class="1004" name="muxLogicData_to_write_ln0_fu_244">
+<pin_list>
+<pin id="245" dir="0" index="0" bw="32" slack="0"/>
+<pin id="246" dir="1" index="1" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="muxlogic(592) " fcode="muxlogic"/>
+<opset="muxLogicData_to_write_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="248" class="1005" name="i_6_reg_248">
+<pin_list>
+<pin id="249" dir="0" index="0" bw="6" slack="0"/>
+<pin id="250" dir="1" index="1" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opset="i_6 "/>
+</bind>
+</comp>
+
+<comp id="258" class="1005" name="conv32_lcssa11_reg_258">
+<pin_list>
+<pin id="259" dir="0" index="0" bw="32" slack="0"/>
+<pin id="260" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="conv32_lcssa11 "/>
+</bind>
+</comp>
+
+<comp id="270" class="1005" name="i_16_reg_270">
+<pin_list>
+<pin id="271" dir="0" index="0" bw="6" slack="1"/>
+<pin id="272" dir="1" index="1" bw="6" slack="1"/>
+</pin_list>
+<bind>
+<opset="i_16 "/>
+</bind>
+</comp>
+
+<comp id="276" class="1005" name="icmp_ln405_reg_276">
+<pin_list>
+<pin id="277" dir="0" index="0" bw="1" slack="1"/>
+<pin id="278" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln405 "/>
+</bind>
+</comp>
+
+<comp id="280" class="1005" name="convSet_R_0_read_reg_280">
+<pin_list>
+<pin id="281" dir="0" index="0" bw="32" slack="1"/>
+<pin id="282" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="convSet_R_0_read "/>
+</bind>
+</comp>
+
+<comp id="285" class="1005" name="convSet_L_1_read_reg_285">
+<pin_list>
+<pin id="286" dir="0" index="0" bw="32" slack="1"/>
+<pin id="287" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="convSet_L_1_read "/>
+</bind>
+</comp>
+
+<comp id="290" class="1005" name="convSet_R_1_read_reg_290">
+<pin_list>
+<pin id="291" dir="0" index="0" bw="32" slack="2"/>
+<pin id="292" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opset="convSet_R_1_read "/>
+</bind>
+</comp>
+
+<comp id="295" class="1005" name="x_assign_1_reg_295">
+<pin_list>
+<pin id="296" dir="0" index="0" bw="64" slack="1"/>
+<pin id="297" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="x_assign_1 "/>
+</bind>
+</comp>
+
+<comp id="300" class="1005" name="y_assign_3_reg_300">
+<pin_list>
+<pin id="301" dir="0" index="0" bw="64" slack="5"/>
+<pin id="302" dir="1" index="1" bw="64" slack="5"/>
+</pin_list>
+<bind>
+<opset="y_assign_3 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="49"><net_src comp="10" pin="0"/><net_sink comp="46" pin=0"/></net>
+
+<net id="53"><net_src comp="10" pin="0"/><net_sink comp="50" pin=0"/></net>
+
+<net id="58"><net_src comp="30" pin="0"/><net_sink comp="54" pin=0"/></net>
+
+<net id="59"><net_src comp="0" pin="0"/><net_sink comp="54" pin=1"/></net>
+
+<net id="64"><net_src comp="30" pin="0"/><net_sink comp="60" pin=0"/></net>
+
+<net id="65"><net_src comp="2" pin="0"/><net_sink comp="60" pin=1"/></net>
+
+<net id="70"><net_src comp="30" pin="0"/><net_sink comp="66" pin=0"/></net>
+
+<net id="71"><net_src comp="4" pin="0"/><net_sink comp="66" pin=1"/></net>
+
+<net id="76"><net_src comp="30" pin="0"/><net_sink comp="72" pin=0"/></net>
+
+<net id="77"><net_src comp="6" pin="0"/><net_sink comp="72" pin=1"/></net>
+
+<net id="83"><net_src comp="44" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="84"><net_src comp="8" pin="0"/><net_sink comp="78" pin=1"/></net>
+
+<net id="90"><net_src comp="32" pin="0"/><net_sink comp="85" pin=0"/></net>
+
+<net id="100"><net_src comp="91" pin="1"/><net_sink comp="94" pin=0"/></net>
+
+<net id="104"><net_src comp="91" pin="1"/><net_sink comp="101" pin=0"/></net>
+
+<net id="108"><net_src comp="94" pin="1"/><net_sink comp="105" pin=0"/></net>
+
+<net id="109"><net_src comp="105" pin="1"/><net_sink comp="85" pin=1"/></net>
+
+<net id="110"><net_src comp="105" pin="1"/><net_sink comp="85" pin=2"/></net>
+
+<net id="114"><net_src comp="97" pin="1"/><net_sink comp="111" pin=0"/></net>
+
+<net id="115"><net_src comp="111" pin="1"/><net_sink comp="85" pin=2"/></net>
+
+<net id="119"><net_src comp="85" pin="3"/><net_sink comp="116" pin=0"/></net>
+
+<net id="120"><net_src comp="116" pin="1"/><net_sink comp="91" pin=0"/></net>
+
+<net id="124"><net_src comp="116" pin="1"/><net_sink comp="121" pin=0"/></net>
+
+<net id="128"><net_src comp="22" pin="0"/><net_sink comp="125" pin=0"/></net>
+
+<net id="136"><net_src comp="22" pin="0"/><net_sink comp="132" pin=0"/></net>
+
+<net id="140"><net_src comp="24" pin="0"/><net_sink comp="137" pin=0"/></net>
+
+<net id="148"><net_src comp="24" pin="0"/><net_sink comp="144" pin=0"/></net>
+
+<net id="159"><net_src comp="152" pin="1"/><net_sink comp="155" pin=0"/></net>
+
+<net id="160"><net_src comp="26" pin="0"/><net_sink comp="155" pin=1"/></net>
+
+<net id="165"><net_src comp="152" pin="1"/><net_sink comp="161" pin=0"/></net>
+
+<net id="166"><net_src comp="28" pin="0"/><net_sink comp="161" pin=1"/></net>
+
+<net id="173"><net_src comp="170" pin="1"/><net_sink comp="94" pin=0"/></net>
+
+<net id="179"><net_src comp="54" pin="2"/><net_sink comp="176" pin=0"/></net>
+
+<net id="180"><net_src comp="176" pin="1"/><net_sink comp="97" pin=0"/></net>
+
+<net id="190"><net_src comp="170" pin="1"/><net_sink comp="187" pin=0"/></net>
+
+<net id="194"><net_src comp="176" pin="1"/><net_sink comp="191" pin=0"/></net>
+
+<net id="208"><net_src comp="205" pin="1"/><net_sink comp="94" pin=0"/></net>
+
+<net id="212"><net_src comp="209" pin="1"/><net_sink comp="97" pin=0"/></net>
+
+<net id="216"><net_src comp="205" pin="1"/><net_sink comp="213" pin=0"/></net>
+
+<net id="220"><net_src comp="209" pin="1"/><net_sink comp="217" pin=0"/></net>
+
+<net id="224"><net_src comp="221" pin="1"/><net_sink comp="97" pin=0"/></net>
+
+<net id="228"><net_src comp="221" pin="1"/><net_sink comp="225" pin=0"/></net>
+
+<net id="236"><net_src comp="91" pin="1"/><net_sink comp="232" pin=0"/></net>
+
+<net id="243"><net_src comp="240" pin="1"/><net_sink comp="78" pin=2"/></net>
+
+<net id="247"><net_src comp="240" pin="1"/><net_sink comp="244" pin=0"/></net>
+
+<net id="251"><net_src comp="46" pin="1"/><net_sink comp="248" pin=0"/></net>
+
+<net id="252"><net_src comp="248" pin="1"/><net_sink comp="141" pin=0"/></net>
+
+<net id="253"><net_src comp="248" pin="1"/><net_sink comp="144" pin=1"/></net>
+
+<net id="254"><net_src comp="248" pin="1"/><net_sink comp="149" pin=0"/></net>
+
+<net id="255"><net_src comp="248" pin="1"/><net_sink comp="152" pin=0"/></net>
+
+<net id="256"><net_src comp="248" pin="1"/><net_sink comp="198" pin=0"/></net>
+
+<net id="257"><net_src comp="248" pin="1"/><net_sink comp="201" pin=1"/></net>
+
+<net id="261"><net_src comp="50" pin="1"/><net_sink comp="258" pin=0"/></net>
+
+<net id="262"><net_src comp="258" pin="1"/><net_sink comp="129" pin=0"/></net>
+
+<net id="263"><net_src comp="258" pin="1"/><net_sink comp="132" pin=1"/></net>
+
+<net id="264"><net_src comp="258" pin="1"/><net_sink comp="167" pin=0"/></net>
+
+<net id="265"><net_src comp="258" pin="1"/><net_sink comp="170" pin=0"/></net>
+
+<net id="266"><net_src comp="258" pin="1"/><net_sink comp="229" pin=0"/></net>
+
+<net id="267"><net_src comp="258" pin="1"/><net_sink comp="232" pin=1"/></net>
+
+<net id="268"><net_src comp="258" pin="1"/><net_sink comp="237" pin=0"/></net>
+
+<net id="269"><net_src comp="258" pin="1"/><net_sink comp="240" pin=0"/></net>
+
+<net id="273"><net_src comp="155" pin="2"/><net_sink comp="270" pin=0"/></net>
+
+<net id="274"><net_src comp="270" pin="1"/><net_sink comp="195" pin=0"/></net>
+
+<net id="275"><net_src comp="270" pin="1"/><net_sink comp="201" pin=0"/></net>
+
+<net id="279"><net_src comp="161" pin="2"/><net_sink comp="276" pin=0"/></net>
+
+<net id="283"><net_src comp="60" pin="2"/><net_sink comp="280" pin=0"/></net>
+
+<net id="284"><net_src comp="280" pin="1"/><net_sink comp="205" pin=0"/></net>
+
+<net id="288"><net_src comp="66" pin="2"/><net_sink comp="285" pin=0"/></net>
+
+<net id="289"><net_src comp="285" pin="1"/><net_sink comp="209" pin=0"/></net>
+
+<net id="293"><net_src comp="72" pin="2"/><net_sink comp="290" pin=0"/></net>
+
+<net id="294"><net_src comp="290" pin="1"/><net_sink comp="221" pin=0"/></net>
+
+<net id="298"><net_src comp="94" pin="1"/><net_sink comp="295" pin=0"/></net>
+
+<net id="299"><net_src comp="295" pin="1"/><net_sink comp="85" pin=1"/></net>
+
+<net id="303"><net_src comp="97" pin="1"/><net_sink comp="300" pin=0"/></net>
+
+<net id="304"><net_src comp="300" pin="1"/><net_sink comp="85" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: convSet_L_0 | {}
+	Port: convSet_R_0 | {}
+	Port: convSet_L_1 | {}
+	Port: convSet_R_1 | {}
+	Port: conv32_lcssa11_out | {1 }
+ - Input state : 
+	Port: SystemControl_Pipeline_VITIS_LOOP_405_3 : convSet_L_0 | {2 }
+	Port: SystemControl_Pipeline_VITIS_LOOP_405_3 : convSet_R_0 | {2 }
+	Port: SystemControl_Pipeline_VITIS_LOOP_405_3 : convSet_L_1 | {2 }
+	Port: SystemControl_Pipeline_VITIS_LOOP_405_3 : convSet_R_1 | {2 }
+  - Chain level:
+	State 1
+		muxLogicAddr_to_store_ln0 : 1
+		store_ln0 : 1
+		muxLogicAddr_to_store_ln405 : 1
+		store_ln405 : 1
+		MuxLogicAddr_to_i : 1
+		i : 1
+		i_16 : 2
+		icmp_ln405 : 2
+		br_ln405 : 3
+		MuxLogicAddr_to_conv32_lcssa11_load : 1
+		conv32_lcssa11_load : 1
+		muxLogicData_to_write_ln0 : 2
+		write_ln0 : 2
+	State 2
+		muxLogicI0_to_x_assign : 1
+		x_assign : 1
+		muxLogicI0_to_y_assign : 1
+		y_assign : 1
+	State 3
+		muxLogicI0_to_y_assign_1 : 1
+		y_assign_1 : 1
+		muxLogicI0_to_y_assign_2 : 1
+		y_assign_2 : 1
+	State 4
+		muxLogicI0_to_x_assign_1 : 1
+		x_assign_1 : 1
+		muxLogicI0_to_y_assign_3 : 1
+		y_assign_3 : 1
+	State 5
+	State 6
+		muxLogicI0_to_x_assign_2 : 1
+		x_assign_2 : 1
+	State 7
+	State 8
+		muxLogicI0_to_x_assign_3 : 1
+		x_assign_3 : 1
+	State 9
+	State 10
+		muxLogicData_to_store_ln412 : 1
+		store_ln412 : 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|----------------------------------------------|---------|---------|
+| Operation|                Functional Unit               |    FF   |   LUT   |
+|----------|----------------------------------------------|---------|---------|
+|   call   |        grp_generic_fmax_double_s_fu_85       |    0    |   580   |
+|----------|----------------------------------------------|---------|---------|
+|    add   |                  i_16_fu_155                 |    0    |    6    |
+|----------|----------------------------------------------|---------|---------|
+|   icmp   |               icmp_ln405_fu_161              |    0    |    6    |
+|----------|----------------------------------------------|---------|---------|
+|          |          convSet_L_0_read_read_fu_54         |    0    |    0    |
+|   read   |          convSet_R_0_read_read_fu_60         |    0    |    0    |
+|          |          convSet_L_1_read_read_fu_66         |    0    |    0    |
+|          |          convSet_R_1_read_read_fu_72         |    0    |    0    |
+|----------|----------------------------------------------|---------|---------|
+|   write  |             write_ln0_write_fu_78            |    0    |    0    |
+|----------|----------------------------------------------|---------|---------|
+|  fptrunc |                   grp_fu_91                  |    0    |    0    |
+|----------|----------------------------------------------|---------|---------|
+|   fpext  |                   grp_fu_94                  |    0    |    0    |
+|          |                   grp_fu_97                  |    0    |    0    |
+|----------|----------------------------------------------|---------|---------|
+|          |                  grp_fu_101                  |    0    |    0    |
+|          |                  grp_fu_121                  |    0    |    0    |
+|          |       muxLogicData_to_store_ln0_fu_125       |    0    |    0    |
+|          |       muxLogicAddr_to_store_ln0_fu_129       |    0    |    0    |
+|          |      muxLogicData_to_store_ln405_fu_137      |    0    |    0    |
+|          |      muxLogicAddr_to_store_ln405_fu_141      |    0    |    0    |
+|          |           MuxLogicAddr_to_i_fu_149           |    0    |    0    |
+|          | MuxLogicAddr_to_conv32_lcssa11_load_1_fu_167 |    0    |    0    |
+|          |     muxLogicCE_to_convSet_L_0_read_fu_174    |    0    |    0    |
+|          |     muxLogicCE_to_convSet_R_0_read_fu_181    |    0    |    0    |
+| muxlogic |     muxLogicCE_to_convSet_L_1_read_fu_183    |    0    |    0    |
+|          |     muxLogicCE_to_convSet_R_1_read_fu_185    |    0    |    0    |
+|          |         muxLogicI0_to_x_assign_fu_187        |    0    |    0    |
+|          |         muxLogicI0_to_y_assign_fu_191        |    0    |    0    |
+|          |      muxLogicData_to_store_ln405_fu_195      |    0    |    0    |
+|          |      muxLogicAddr_to_store_ln405_fu_198      |    0    |    0    |
+|          |        muxLogicI0_to_y_assign_1_fu_213       |    0    |    0    |
+|          |        muxLogicI0_to_y_assign_2_fu_217       |    0    |    0    |
+|          |        muxLogicI0_to_y_assign_3_fu_225       |    0    |    0    |
+|          |      muxLogicAddr_to_store_ln412_fu_229      |    0    |    0    |
+|          |  MuxLogicAddr_to_conv32_lcssa11_load_fu_237  |    0    |    0    |
+|          |       muxLogicData_to_write_ln0_fu_244       |    0    |    0    |
+|----------|----------------------------------------------|---------|---------|
+|   Total  |                                              |    0    |   592   |
+|----------|----------------------------------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++------------------------+--------+
+|                        |   FF   |
++------------------------+--------+
+| conv32_lcssa11_reg_258 |   32   |
+|convSet_L_1_read_reg_285|   32   |
+|convSet_R_0_read_reg_280|   32   |
+|convSet_R_1_read_reg_290|   32   |
+|      i_16_reg_270      |    6   |
+|       i_6_reg_248      |    6   |
+|   icmp_ln405_reg_276   |    1   |
+|         reg_105        |   64   |
+|         reg_111        |   64   |
+|         reg_116        |   64   |
+|   x_assign_1_reg_295   |   64   |
+|   y_assign_3_reg_300   |   64   |
++------------------------+--------+
+|          Total         |   461  |
++------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|---------------------------------|------|------|------|--------||---------||---------|
+|               Comp              |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|---------------------------------|------|------|------|--------||---------||---------|
+| grp_generic_fmax_double_s_fu_85 |  p1  |   2  |  64  |   128  ||    58   |
+| grp_generic_fmax_double_s_fu_85 |  p2  |   3  |  64  |   192  ||    64   |
+|            grp_fu_94            |  p0  |   3  |  32  |   96   ||    32   |
+|            grp_fu_97            |  p0  |   3  |  32  |   96   ||    32   |
+|---------------------------------|------|------|------|--------||---------||---------|
+|              Total              |      |      |      |   512  ||  2.018  ||   186   |
+|---------------------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    0   |   592  |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    2   |    -   |   186  |
+|  Register |    -   |   461  |    -   |
++-----------+--------+--------+--------+
+|   Total   |    2   |   461  |   778  |
++-----------+--------+--------+--------+

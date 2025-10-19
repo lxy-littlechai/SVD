@@ -91,17 +91,21 @@ int main(int argc, char** argv) {
     std::vector<xrt::graph> topNormGraph;
 
     for(int i = 0;i < 1;i ++) {
-      string topSweepGraphName = "topSweepGraph" + to_string(i+1);
+      for(int j = 0;j < 2;j ++) {
+        string topSweepGraphName = "topSweepGraph" + to_string(i+1) + "_" + to_string(j+1);
+        auto SweepGraph = xrt::graph(device, xclbin_uuid, topSweepGraphName.c_str());
+        topSweepGraph.emplace_back(SweepGraph);
+      }
       string topNormGraphName = "topNormGraph" + to_string(i+1);
-      auto SweepGraph = xrt::graph(device, xclbin_uuid, topSweepGraphName.c_str());
       auto NormGraph = xrt::graph(device, xclbin_uuid, topNormGraphName.c_str());
-
-      topSweepGraph.emplace_back(SweepGraph);
       topNormGraph.emplace_back(NormGraph);
     }
 
-    for(int i = 0;i < 1;i ++) {
+    for(int i = 0;i < 2;i ++) {
       topSweepGraph[i].run();
+    }
+
+    for(int i = 0;i < 1;i ++) {
       topNormGraph[i].run();
     }
     

@@ -1,0 +1,86 @@
+================================================================
+== Design Size Report
+================================================================
+
+* Total Instructions per Compilation Phase
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Phase         | Step                        | Instructions | Description                                                                            |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Compile/Link  |                             | 37,065       | After all functions are compiled and linked into a single design                       |
+|               |                             |              |                                                                                        |
+| Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
+|               | (1) unroll                  |  5,254       | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |  3,999       | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |  4,055       | user inline pragmas are applied                                                        |
+|               | (4) simplification          |  3,309       | simplification of applied user inline pragmas                                          |
+|               |                             |              |                                                                                        |
+| Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
+|               | (1) array partition         |  3,392       | user array partition pragmas are applied                                               |
+|               | (2) simplification          |  3,328       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  |  3,328       | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           |  3,326       | apply array reshape pragmas                                                            |
+|               | (5) access patterns         |  3,927       | array access pattern optmizations                                                      |
+|               |                             |              |                                                                                        |
+| Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
+|               | (1) loop simplification     |  3,957       | loop and instruction simplification                                                    |
+|               | (2) parallelization         |  4,060       | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         |  3,883       | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          |  3,733       | simplification of design after performance transformations                             |
+|               |                             |              |                                                                                        |
+| HW Transforms |                             |              | After hardware transfomations                                                          |
+|               | (1) lowering                |  3,445       | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           |  3,692       | high level synthesis optimizations                                                     |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+
+* Instructions per Function for each Compilation Phase
++------------------------------+-------------------+------------------+-----------------+-----------------+-----------------+-----------------+
+| Function                     | Location          | Compile/Link     | Unroll/Inline   | Array/Struct    | Performance     | HW Transforms   |
++------------------------------+-------------------+------------------+-----------------+-----------------+-----------------+-----------------+
+| + TopPL                      | TopPL.cpp:435     | 37,065           | 3,309           | 3,927           | 3,733           | 3,692           |
+|  + SystemControl             | TopPL.cpp:393     | 3,147            |  127            |  157            |  303            |  333            |
+|   + fmax                     | fmaxdouble.cpp:6  | 2,875            |                 |                 |                 |                 |
+|    + generic_fmax<double>    | hls_fmax.h:19     | 2,873            |                 |                 |                 |                 |
+|       fp_struct              | x_hls_utils.h:456 |   624 (2 calls)  |                 |                 |                 |                 |
+|     + generic_isnan<double>  | hls_isnan.h:16    | 1,149 (3 calls)  |                 |                 |                 |                 |
+|        fp_struct             | x_hls_utils.h:456 |   936 (3 calls)  |                 |                 |                 |                 |
+|     + to_ieee                | x_hls_utils.h:509 |   294            |                 |                 |                 |                 |
+|      + to_double             | x_hls_utils.h:494 |   292            |                 |                 |                 |                 |
+|         data                 | x_hls_utils.h:475 |   274            |                 |                 |                 |                 |
+|     + to_int                 | x_hls_utils.h:482 |   566 (2 calls)  |                 |                 |                 |                 |
+|        data                  | x_hls_utils.h:475 |   548 (2 calls)  |                 |                 |                 |                 |
+|     print                    | hls_print.h:35    |    12            |                 |                 |                 |                 |
+|     generic_fmax<double>     | hls_fmax.h:19     |                  |   52            |   47            |  188 (4 calls)  |  188 (4 calls)  |
+|  + Send                      | TopPL.cpp:180     | 15,136           | 2,003           | 2,569           | 2,353           | 2,127           |
+|   + send2AIE                 | TopPL.cpp:94      | 15,040 (8 calls) | 1,968 (8 calls) | 2,544 (8 calls) | 2,328 (8 calls) | 1,044 (4 calls) |
+|      generateHeader          | TopPL.cpp:5       | 3,912 (8 calls)  |                 |                 |                 |                 |
+|  + RoundRobin                | TopPL.cpp:290     |   709            |  174            |  254            |  259            |  398            |
+|     DDR2FIFO                 | TopPL.cpp:137     |   148            |                 |                 |                 |                 |
+|     print<ap_uint<1> >       | hls_print.h:25    |    10            |                 |                 |                 |                 |
+|     FIFO2DDR                 | TopPL.cpp:228     |   119            |                 |                 |                 |                 |
+|  + Receive                   | TopPL.cpp:242     | 17,873           |  902            |  784            |  655            |  673            |
+|     print<int>               | hls_print.h:25    |     2            |    2            |    2            |    2            |                 |
+|   + receive4AIE              | TopPL.cpp:59      | 16,400 (4 calls) |  728 (4 calls)  |  648 (4 calls)  |  544 (4 calls)  |                 |
+|    + fmax                    | fmaxdouble.cpp:6  | 11,500 (4 calls) |                 |                 |                 |                 |
+|     + generic_fmax<double>   | hls_fmax.h:19     | 11,492 (4 calls) |                 |                 |                 |                 |
+|        fp_struct             | x_hls_utils.h:456 | 2,496 (8 calls)  |                 |                 |                 |                 |
+|      + generic_isnan<double> | hls_isnan.h:16    | 4,596 (12 calls) |                 |                 |                 |                 |
+|         fp_struct            | x_hls_utils.h:456 | 3,744 (12 calls) |                 |                 |                 |                 |
+|      + to_ieee               | x_hls_utils.h:509 | 1,176 (4 calls)  |                 |                 |                 |                 |
+|       + to_double            | x_hls_utils.h:494 | 1,168 (4 calls)  |                 |                 |                 |                 |
+|          data                | x_hls_utils.h:475 | 1,096 (4 calls)  |                 |                 |                 |                 |
+|      + to_int                | x_hls_utils.h:482 | 2,264 (8 calls)  |                 |                 |                 |                 |
+|         data                 | x_hls_utils.h:475 | 2,192 (8 calls)  |                 |                 |                 |                 |
+|      generic_fmax<double>    | hls_fmax.h:19     |                  |  208 (4 calls)  |  188 (4 calls)  |  188 (4 calls)  |                 |
+|   + NormReceive              | TopPL.cpp:222     | 1,327            |                 |                 |                 |                 |
+|      receive4DDR             | TopPL.cpp:26      | 1,316            |                 |                 |                 |                 |
+|     receive4DDR              | TopPL.cpp:26      |                  |  123            |  107            |   82            |   82            |
++------------------------------+-------------------+------------------+-----------------+-----------------+-----------------+-----------------+
+
+* Design Size Message Settings
++---------------------------------------------+--------+------------------------------------------------------------------+
+| Message Setting                             | Value  | Description                                                      |
++---------------------------------------------+--------+------------------------------------------------------------------+
+| config_compile -design_size_maximum_warning | 100000 | Show a warning when total design instructions exceeds this value |
++---------------------------------------------+--------+------------------------------------------------------------------+
+
+

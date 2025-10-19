@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sun Oct 19 23:23:37 2025
+# Process ID: 913944
+# Current directory: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/toppl/hls/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/toppl/hls/impl/ip/vivado.log
+# Journal file: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/toppl/hls/impl/ip/vivado.jou
+# Running On: beiyou-SYS-420GP-TNR, OS: Linux, CPU Frequency: 2200.396 MHz, CPU Physical cores: 32, Host memory: 540637 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

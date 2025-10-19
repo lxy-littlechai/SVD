@@ -1,0 +1,1288 @@
+<ENTRY>
+{
+ "thisFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/TopGraph.aiecompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Oct 19 23:21:22 2025",
+ "timestampMillis": "1760887282492",
+ "buildStep": {
+  "cmdId": "c7f836ea-c6b4-4a67-82f0-6848303d7323",
+  "name": "aiecompiler",
+  "logFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/AIECompiler.log",
+  "commandLine": "/usr/xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler --config /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie_hw.cfg ",
+  "args": [
+   "/usr/xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler",
+   "--config",
+   "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie_hw.cfg"
+  ],
+  "iniFiles": [
+   {
+    "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie_hw.cfg",
+    "content": "--include=/usr/xilinx/Vitis/2023.2/aietools/include\n--include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./aie\n--include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./\n/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/aie/TopGraph.cpp\n--platform=/usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm\n--target=hw\n--pl-freq=200.000000\n--workdir=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work\n--Xchess=main:backend.mist2.xargs=-ggraph\n--runtime-opt=1\n--verbose=1\n--xlopt=0\n--enable-partition=0:50\n\n"
+   }
+  ],
+  "cwd": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Oct 19 23:21:22 2025",
+ "timestampMillis": "1760887282493",
+ "status": {
+  "cmdId": "c7f836ea-c6b4-4a67-82f0-6848303d7323",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Oct 19 23:21:22 2025",
+ "timestampMillis": "1760887282493",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_UNKNOWN",
+  "target": "TT_UNKNOWN",
+  "kernels": [],
+  "toolVersion": "Vitis AI Engine Compiler Release 2023.2. SW Build 4023990 on 2023-10-12-17:44:32"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:22 2025",
+ "timestampMillis": "1760887282494",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:22 2025",
+ "timestampMillis": "1760887282494",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:22 2025",
+ "timestampMillis": "1760887282494",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Oct 19 23:21:27 2025",
+ "timestampMillis": "1760887287921",
+ "buildStep": {
+  "cmdId": "5d83184c-5b6d-4015-8f30-1cdbcab997aa",
+  "name": "aieir_be",
+  "logFile": "",
+  "commandLine": "/usr/xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be --time-passes=0 --disable-om-fifo-insertion=false --logcfg-file= --trace-plio-width=64 --aie2ipu-base-addr=1073741824 --pl-freq=200 --enable-light-cdo=false --show-loggers=false --fast-nonlinearfloats=false --broadcast-enable-core=true --high-performance=false --multi-layer-opt=0 --kernel-address-location=false --target=hw --swfifo-threshold=40 --single-mm2s-channel=false --workdir=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work --multi-layer-enable-shared-channel-opt=true --exit-after=complete --event-trace-config= --test-iterations=-1 --stacksize=1024 --known-tripcount=false --enable-core-processor-bus=false --platform=/usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --large-program-memory=false --event-trace-custom-config= --disable-dma-cmd-alignment=false --enable-ecc-scrubbing=true --float-accuracy=fast --output-archive=libadf.a --write-partitioned-file=true --print-timer-multi-layer-ctrl=false --schemafile=AIEGraphSchema.json --disable-multirate=false --multi-layer-controller-parallel=false --include=/usr/xilinx/Vitis/2023.2/aietools/include --include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./aie --include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./ --verify-switchconfig=true --enable-peano-flow=false --partition-isolation=true --disable-multirate-analysis=false --fastmath=false --multi-layer-ctrl-pkt=false --cpp-std=-std=c++17 --max-layer-ctrl-param-size=256 --enable-mapper-hints-constraints=false --multi-layer-auto-phase=false --event-trace-advanced-mapping=0 --multi-layer-plc-constraints= --lock-fence-mode=1 --enable-reconfig=false --compute-heapsize=false --log-level=2 --aiesim-xrt-api=false --evaluate-fifo-depth=false --gen-graph-cleanup=false --use-canonical-net-names=false --event-trace-port=gmio --use-phy-shim=true --print-timer-multi-layer-core=false --xlopt=0 --graph-iterator-event=false --pre-compile-kernels=false --gen-elf-ctrl-pkts=false --trace-aiesim-option=0 --mapped-soln-udm= --optimize-pktids=false --no-init=false --adf-api-log-level=2 --num-trace-streams=16 --aie-heat-map=false --enable-partition=0:50 --multi-layer-enable-tct=false --fast-floats=true --quiet=false --enable-multi-layer=false --multi-layer-pipelining=false --llvmRelease=15 --exec-timed=0 --Xchess=main:backend.mist2.xargs=-ggraph --pl-auto-restart=false --routed-soln-udm= --large-kernel-program=false --read-mem-multi-layer=false --enable-profiling=false --runtime-opt=true --part= --disable-transform-merge-broadcast=false --multi-layer-ext-buf-file= --verbose=true --use-async-rtp-locks=true --repo-path= --genArchive=false --kernel-compile-replacement= --pl-axi-lite=false --event-trace-bounding-box= --multi-layer-shim-dma-bandwidth=0 --heapsize=1024 --logical-arch= --enable-reconfig-dma-autostart=false --nodot-graph=false --use-core-control-api=false --enable-txn-bin=false --debug-runtime-opt=false --disable-dma-autostart=false --include-mem-tile= --disable-transform-broadcast-split=true --json=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work/temp/TopGraph.json --aiearch aie --frontend-warning=0 --frontend-critical-warning=0 --frontend-summary-name=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work/TopGraph.aiecompile_summary --frontend-files-to-report=Guidance:/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work/reports/guidance.html --sdf-graph=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/aie/TopGraph.cpp ",
+  "args": [
+   "/usr/xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be",
+   "--time-passes=0",
+   "--disable-om-fifo-insertion=false",
+   "--logcfg-file=",
+   "--trace-plio-width=64",
+   "--aie2ipu-base-addr=1073741824",
+   "--pl-freq=200",
+   "--enable-light-cdo=false",
+   "--show-loggers=false",
+   "--fast-nonlinearfloats=false",
+   "--broadcast-enable-core=true",
+   "--high-performance=false",
+   "--multi-layer-opt=0",
+   "--kernel-address-location=false",
+   "--target=hw",
+   "--swfifo-threshold=40",
+   "--single-mm2s-channel=false",
+   "--workdir=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work",
+   "--multi-layer-enable-shared-channel-opt=true",
+   "--exit-after=complete",
+   "--event-trace-config=",
+   "--test-iterations=-1",
+   "--stacksize=1024",
+   "--known-tripcount=false",
+   "--enable-core-processor-bus=false",
+   "--platform=/usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm",
+   "--large-program-memory=false",
+   "--event-trace-custom-config=",
+   "--disable-dma-cmd-alignment=false",
+   "--enable-ecc-scrubbing=true",
+   "--float-accuracy=fast",
+   "--output-archive=libadf.a",
+   "--write-partitioned-file=true",
+   "--print-timer-multi-layer-ctrl=false",
+   "--schemafile=AIEGraphSchema.json",
+   "--disable-multirate=false",
+   "--multi-layer-controller-parallel=false",
+   "--include=/usr/xilinx/Vitis/2023.2/aietools/include",
+   "--include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./aie",
+   "--include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./",
+   "--verify-switchconfig=true",
+   "--enable-peano-flow=false",
+   "--partition-isolation=true",
+   "--disable-multirate-analysis=false",
+   "--fastmath=false",
+   "--multi-layer-ctrl-pkt=false",
+   "--cpp-std=-std=c++17",
+   "--max-layer-ctrl-param-size=256",
+   "--enable-mapper-hints-constraints=false",
+   "--multi-layer-auto-phase=false",
+   "--event-trace-advanced-mapping=0",
+   "--multi-layer-plc-constraints=",
+   "--lock-fence-mode=1",
+   "--enable-reconfig=false",
+   "--compute-heapsize=false",
+   "--log-level=2",
+   "--aiesim-xrt-api=false",
+   "--evaluate-fifo-depth=false",
+   "--gen-graph-cleanup=false",
+   "--use-canonical-net-names=false",
+   "--event-trace-port=gmio",
+   "--use-phy-shim=true",
+   "--print-timer-multi-layer-core=false",
+   "--xlopt=0",
+   "--graph-iterator-event=false",
+   "--pre-compile-kernels=false",
+   "--gen-elf-ctrl-pkts=false",
+   "--trace-aiesim-option=0",
+   "--mapped-soln-udm=",
+   "--optimize-pktids=false",
+   "--no-init=false",
+   "--adf-api-log-level=2",
+   "--num-trace-streams=16",
+   "--aie-heat-map=false",
+   "--enable-partition=0:50",
+   "--multi-layer-enable-tct=false",
+   "--fast-floats=true",
+   "--quiet=false",
+   "--enable-multi-layer=false",
+   "--multi-layer-pipelining=false",
+   "--llvmRelease=15",
+   "--exec-timed=0",
+   "--Xchess=main:backend.mist2.xargs=-ggraph",
+   "--pl-auto-restart=false",
+   "--routed-soln-udm=",
+   "--large-kernel-program=false",
+   "--read-mem-multi-layer=false",
+   "--enable-profiling=false",
+   "--runtime-opt=true",
+   "--part=",
+   "--disable-transform-merge-broadcast=false",
+   "--multi-layer-ext-buf-file=",
+   "--verbose=true",
+   "--use-async-rtp-locks=true",
+   "--repo-path=",
+   "--genArchive=false",
+   "--kernel-compile-replacement=",
+   "--pl-axi-lite=false",
+   "--event-trace-bounding-box=",
+   "--multi-layer-shim-dma-bandwidth=0",
+   "--heapsize=1024",
+   "--logical-arch=",
+   "--enable-reconfig-dma-autostart=false",
+   "--nodot-graph=false",
+   "--use-core-control-api=false",
+   "--enable-txn-bin=false",
+   "--debug-runtime-opt=false",
+   "--disable-dma-autostart=false",
+   "--include-mem-tile=",
+   "--disable-transform-broadcast-split=true",
+   "--json=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work/temp/TopGraph.json",
+   "--aiearch",
+   "aie",
+   "--frontend-warning=0",
+   "--frontend-critical-warning=0",
+   "--frontend-summary-name=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work/TopGraph.aiecompile_summary",
+   "--frontend-files-to-report=Guidance:/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/./Work/reports/guidance.html",
+   "--sdf-graph=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/aie/TopGraph.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Oct 19 23:21:27 2025",
+ "timestampMillis": "1760887287923",
+ "status": {
+  "cmdId": "5d83184c-5b6d-4015-8f30-1cdbcab997aa",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:41 2025",
+ "timestampMillis": "1760887301922",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:41 2025",
+ "timestampMillis": "1760887301995",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/debug_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DEBUG_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Oct 19 23:21:41 2025",
+ "timestampMillis": "1760887301997",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/TopGraph.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/aie/TopGraph.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:42 2025",
+ "timestampMillis": "1760887302003",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/TopGraph.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:42 2025",
+ "timestampMillis": "1760887302177",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/TopGraph.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_LOGICAL_VIEW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:42 2025",
+ "timestampMillis": "1760887302220",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/TopGraph_partition.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_PARTITION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:43 2025",
+ "timestampMillis": "1760887303172",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/TopGraph_aie_constraints_for_placer.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_PLACER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306167",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/TopGraph_aie_mapped.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306168",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/TopGraph_mapped.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306174",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/TopGraph_mapping_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306175",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/sync_buffer_address.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SYNC_BUFFER_ADDRESS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306176",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/Interposer_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INTERPOSER_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306177",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/lock_allocation_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_LOCK_ALLOCATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306178",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/Lock_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306178",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/Stream_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_STREAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306180",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/DMA_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:46 2025",
+ "timestampMillis": "1760887306180",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/dma_lock_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:54 2025",
+ "timestampMillis": "1760887314320",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/DMA_FIFO_info_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_FIFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:55 2025",
+ "timestampMillis": "1760887315547",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/router_soln.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:55 2025",
+ "timestampMillis": "1760887315628",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/router_soln.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316016",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/TopGraph_mapped_post.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316022",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/PacketSwitching_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_PACKET_SWITCHING",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316023",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/PacketSwitching_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_PACKET_SWITCHING",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316028",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/packet_switching_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_PACKET_SWITCHING",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316044",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/TopGraph.xpe",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_POWER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316047",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/0_0/scripts/0_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316048",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/0_0/src/0_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316055",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/0_1/scripts/0_1.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316056",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/0_1/src/0_1.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316063",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_0/scripts/1_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316063",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_0/src/1_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316068",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_1/scripts/1_1.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316069",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_1/src/1_1.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316073",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_2/scripts/1_2.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316073",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_2/src/1_2.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316077",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_0/scripts/2_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316078",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_0/src/2_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316081",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_1/scripts/2_1.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316082",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_1/src/2_1.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316086",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_2/scripts/2_2.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316086",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_2/src/2_2.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316090",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_0/scripts/6_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316091",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_0/src/6_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316095",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_1/scripts/6_1.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316096",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_1/src/6_1.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316099",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_2/scripts/6_2.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316100",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_2/src/6_2.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316104",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_0/scripts/7_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316105",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_0/src/7_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316108",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_1/scripts/7_1.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316109",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_1/src/7_1.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316113",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_2/scripts/7_2.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316113",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_2/src/7_2.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316120",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/0_0/0_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316120",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/0_1/0_1.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316121",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_0/1_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316122",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_1/1_1.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316122",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/1_2/1_2.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316123",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_0/2_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316123",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_1/2_1.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316124",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/2_2/2_2.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316125",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_0/6_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316125",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_1/6_1.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316126",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/6_2/6_2.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316127",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_0/7_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316127",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_1/7_1.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:21:56 2025",
+ "timestampMillis": "1760887316128",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/aie/7_2/7_2.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:22:38 2025",
+ "timestampMillis": "1760887358803",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/ps/c_rts/aie_control.cpp",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CONTROL_SOURCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:22:44 2025",
+ "timestampMillis": "1760887364185",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/ps/c_rts/aie_control_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONTROL_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:22:44 2025",
+ "timestampMillis": "1760887364188",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/reports/compiler_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_COMPILER_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Oct 19 23:22:44 2025",
+ "timestampMillis": "1760887364226",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/Work/temp/TopGraph_aie_constraints.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Oct 19 23:22:44 2025",
+ "timestampMillis": "1760887364405",
+ "status": {
+  "cmdId": "5d83184c-5b6d-4015-8f30-1cdbcab997aa",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Oct 19 23:22:45 2025",
+ "timestampMillis": "1760887365208",
+ "status": {
+  "cmdId": "c7f836ea-c6b4-4a67-82f0-6848303d7323",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

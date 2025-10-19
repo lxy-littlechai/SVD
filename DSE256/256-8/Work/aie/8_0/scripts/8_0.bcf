@@ -1,0 +1,36 @@
+_reserved DMb 0x0 0x20000
+
+_entry_point _main_init
+_symbol      _main _after _main_init
+_symbol      _main_init 0x0
+_symbol buf20 0x2a000
+_symbol buf20d 0x2c000
+_symbol buf23 0x3c000
+_symbol buf23d 0x3a420
+_symbol buf36 0x30420
+_symbol buf36d 0x32420
+_symbol buf39 0x34000
+_symbol buf39d 0x36000
+_symbol _ZL11sync_buffer  0x38000  //synchronization buffer 
+_stack DM_stack 0x38020  0x400 //stack for core 
+//space for synopsys compiler  at  0x38420  0x400//heap for core  
+_reserved DMb 0x20000 0xa000
+
+_reserved DMb 0x2a410 0x1bf0
+
+_reserved DMb 0x2c410 0x4010
+
+_reserved DMb 0x30830 0x1bf0
+
+_reserved DMb 0x32830 0x17d0
+
+_reserved DMb 0x34410 0x1bf0
+
+_reserved DMb 0x36410 0x1bf0
+
+_reserved DMb 0x38820 0x1c00
+
+_reserved DMb 0x3a830 0x17d0
+
+ _reserved DMb 0x3c410 0x3bf0
+_reserved DMb 0x40000 0xc0000 // And everything else the core can't see

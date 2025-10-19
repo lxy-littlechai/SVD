@@ -1,0 +1,358 @@
+Mapping Analysis Report
+
+
+Acronym List
+    * CR(x,y)    - Core <column, row>
+    * MG(x,y):b  - MemoryGroup <column, row> : Bank
+    * MT(x,y):b  - MemoryTile <column, row> : Bank
+
+
+===============================================
+Block Mapping Report:
+===============================================
+
+Block:Function Name    CR(x,y)/IO(x)  Schedule  Utilization  Variable Name  Graph Name
+---------------------  -------------  --------  -----------  -------------  ----------------
+i0:orthogonalize<32>   CR(1,0)               0        0.900  orth[0][0]     topSweepGraph1_1
+i1:orthogonalize<32>   CR(2,0)               0        0.900  orth[1][0]     topSweepGraph1_1
+i10:PLIO               IO(6)                                 in[1]          topSweepGraph1_1
+i11:PLIO               IO(6)                                 out[1]         topSweepGraph1_1
+i14:orthogonalize<32>  CR(6,0)               0        0.900  orth[0][0]     topSweepGraph1_2
+i15:orthogonalize<32>  CR(7,0)               0        0.900  orth[1][0]     topSweepGraph1_2
+i16:orthogonalize<32>  CR(6,1)               0        0.900  orth[0][1]     topSweepGraph1_2
+i17:orthogonalize<32>  CR(7,1)               0        0.900  orth[1][1]     topSweepGraph1_2
+i18:orthogonalize<32>  CR(6,2)               0        0.900  orth[0][2]     topSweepGraph1_2
+i19:orthogonalize<32>  CR(7,2)               0        0.900  orth[1][2]     topSweepGraph1_2
+i2:orthogonalize<32>   CR(1,1)               0        0.900  orth[0][1]     topSweepGraph1_1
+i20:PLIO               IO(7)                                 in[0]          topSweepGraph1_2
+i21:PLIO               IO(7)                                 out[0]         topSweepGraph1_2
+i24:PLIO               IO(8)                                 in[1]          topSweepGraph1_2
+i25:PLIO               IO(7)                                 out[1]         topSweepGraph1_2
+i28:normalize<32>      CR(0,0)               0        0.900  norm[0]        topNormGraph1
+i29:normalize<32>      CR(0,1)               0        0.900  norm[1]        topNormGraph1
+i3:orthogonalize<32>   CR(2,1)               0        0.900  orth[1][1]     topSweepGraph1_1
+i30:PLIO               IO(7)                                 in[0]          topNormGraph1
+i31:PLIO               IO(8)                                 out[0]         topNormGraph1
+i4:orthogonalize<32>   CR(1,2)               0        0.900  orth[0][2]     topSweepGraph1_1
+i5:orthogonalize<32>   CR(2,2)               0        0.900  orth[1][2]     topSweepGraph1_1
+i6:PLIO                IO(6)                                 in[0]          topSweepGraph1_1
+i7:PLIO                IO(6)                                 out[0]         topSweepGraph1_1
+
+
+===============================================
+Port Mapping Report:
+===============================================
+
+PortName  Dir  PrtType    BufType  Buffer Name  MG(x,y):b     Addr  Size  Variable Name      Graph Name
+--------  ---  ---------  -------  -----------  ---------  -------  ----  -----------------  ----------------
+i0_po1    out  buffer     mem      buf5         MG(1,1):2  0x04000   144  orth[0][0].out[1]  topSweepGraph1_1
+i0_po1    out  buffer     mem      buf5d        MG(1,1):3  0x06000   144  orth[0][0].out[1]  topSweepGraph1_1
+i1_pi1    in   buffer     mem      buf3         MG(2,0):3  0x06000   144  orth[1][0].in[1]   topSweepGraph1_1
+i1_pi1    in   buffer     mem      buf3d        MG(2,0):1  0x03f60   144  orth[1][0].in[1]   topSweepGraph1_1
+i1_pi0    in   buffer     mem      buf2         MG(2,0):2  0x04000   144  orth[1][0].in[0]   topSweepGraph1_1
+i1_pi0    in   buffer     mem      buf2d        MG(2,0):0  0x01f60   144  orth[1][0].in[0]   topSweepGraph1_1
+i0_pi1    in   buffer     mem      buf1         MG(1,0):0  0x01f60   144  orth[0][0].in[1]   topSweepGraph1_1
+i0_pi1    in   buffer     mem      buf1d        MG(1,0):3  0x06000   144  orth[0][0].in[1]   topSweepGraph1_1
+i0_po0    out  buffer     mem      buf4         MG(1,1):0  0x000a0   144  orth[0][0].out[0]  topSweepGraph1_1
+i0_po0    out  buffer     mem      buf4d        MG(1,1):1  0x02140   144  orth[0][0].out[0]  topSweepGraph1_1
+i1_po0    out  buffer     mem      buf6         MG(2,1):0  0x01f60   144  orth[1][0].out[0]  topSweepGraph1_1
+i1_po0    out  buffer     mem      buf6d        MG(2,1):1  0x02000   144  orth[1][0].out[0]  topSweepGraph1_1
+i1_po1    out  buffer     mem      buf7         MG(2,1):2  0x04000   144  orth[1][0].out[1]  topSweepGraph1_1
+i1_po1    out  buffer     mem      buf7d        MG(2,1):3  0x06000   144  orth[1][0].out[1]  topSweepGraph1_1
+i2_pi0    in   buffer     mem      buf4         MG(1,1):0  0x000a0   144  orth[0][1].in[0]   topSweepGraph1_1
+i2_pi0    in   buffer     mem      buf4d        MG(1,1):1  0x02140   144  orth[0][1].in[0]   topSweepGraph1_1
+i2_pi1    in   buffer     mem      buf6         MG(2,1):0  0x01f60   144  orth[0][1].in[1]   topSweepGraph1_1
+i2_pi1    in   buffer     mem      buf6d        MG(2,1):1  0x02000   144  orth[0][1].in[1]   topSweepGraph1_1
+i2_po0    out  buffer     mem      buf8         MG(1,2):0  0x00000   144  orth[0][1].out[0]  topSweepGraph1_1
+i2_po0    out  buffer     mem      buf8d        MG(1,2):1  0x02000   144  orth[0][1].out[0]  topSweepGraph1_1
+i2_po1    out  buffer     mem      buf10        MG(1,2):2  0x04000   144  orth[0][1].out[1]  topSweepGraph1_1
+i2_po1    out  buffer     mem      buf10d       MG(1,2):3  0x06000   144  orth[0][1].out[1]  topSweepGraph1_1
+i3_pi0    in   buffer     mem      buf7         MG(2,1):2  0x04000   144  orth[1][1].in[0]   topSweepGraph1_1
+i3_pi0    in   buffer     mem      buf7d        MG(2,1):3  0x06000   144  orth[1][1].in[0]   topSweepGraph1_1
+i3_pi1    in   buffer     mem      buf5r        MG(3,1):2  0x04000   144  orth[1][1].in[1]   topSweepGraph1_1
+i3_pi1    in   buffer     mem      buf5dr       MG(3,1):3  0x06000   144  orth[1][1].in[1]   topSweepGraph1_1
+i3_po0    out  buffer     mem      buf11        MG(2,2):0  0x01f60   144  orth[1][1].out[0]  topSweepGraph1_1
+i3_po0    out  buffer     mem      buf11d       MG(2,2):1  0x02000   144  orth[1][1].out[0]  topSweepGraph1_1
+i3_po1    out  buffer     mem      buf9         MG(2,2):2  0x04000   144  orth[1][1].out[1]  topSweepGraph1_1
+i3_po1    out  buffer     mem      buf9d        MG(2,2):3  0x06000   144  orth[1][1].out[1]  topSweepGraph1_1
+i4_pi0    in   buffer     mem      buf9r        MG(1,1):1  0x02000   144  orth[0][2].in[0]   topSweepGraph1_1
+i4_pi0    in   buffer     mem      buf9dr       MG(1,1):0  0x001e0   144  orth[0][2].in[0]   topSweepGraph1_1
+i4_pi1    in   buffer     mem      buf10        MG(1,2):2  0x04000   144  orth[0][2].in[1]   topSweepGraph1_1
+i4_pi1    in   buffer     mem      buf10d       MG(1,2):3  0x06000   144  orth[0][2].in[1]   topSweepGraph1_1
+i4_po0    out  buffer     mem      buf13        MG(1,3):0  0x00000   144  orth[0][2].out[0]  topSweepGraph1_1
+i4_po0    out  buffer     mem      buf13d       MG(1,3):1  0x02000   144  orth[0][2].out[0]  topSweepGraph1_1
+i4_po1    out  buffer     mem      buf14        MG(1,3):2  0x04000   144  orth[0][2].out[1]  topSweepGraph1_1
+i4_po1    out  buffer     mem      buf14d       MG(1,3):3  0x06000   144  orth[0][2].out[1]  topSweepGraph1_1
+i5_pi0    in   buffer     mem      buf8         MG(1,2):0  0x00000   144  orth[1][2].in[0]   topSweepGraph1_1
+i5_pi0    in   buffer     mem      buf8d        MG(1,2):1  0x02000   144  orth[1][2].in[0]   topSweepGraph1_1
+i5_pi1    in   buffer     mem      buf11        MG(2,2):0  0x01f60   144  orth[1][2].in[1]   topSweepGraph1_1
+i5_pi1    in   buffer     mem      buf11d       MG(2,2):1  0x02000   144  orth[1][2].in[1]   topSweepGraph1_1
+i5_po0    out  buffer     mem      buf12        MG(2,3):0  0x01f60   144  orth[1][2].out[0]  topSweepGraph1_1
+i5_po0    out  buffer     mem      buf12d       MG(2,3):1  0x02000   144  orth[1][2].out[0]  topSweepGraph1_1
+i5_po1    out  buffer     mem      buf15        MG(2,3):2  0x04000   144  orth[1][2].out[1]  topSweepGraph1_1
+i5_po1    out  buffer     mem      buf15d       MG(2,3):3  0x06000   144  orth[1][2].out[1]  topSweepGraph1_1
+i8_po0    out  pktstream  mem      buf0         MG(1,0):2  0x04000   144  sp[0].out[0]       topSweepGraph1_1
+i8_po0    out  pktstream  mem      buf0d        MG(1,0):1  0x02000   144  sp[0].out[0]       topSweepGraph1_1
+i8_po1    out  pktstream  mem      buf2         MG(2,0):2  0x04000   144  sp[0].out[1]       topSweepGraph1_1
+i8_po1    out  pktstream  mem      buf2d        MG(2,0):0  0x01f60   144  sp[0].out[1]       topSweepGraph1_1
+i9_pi0    in   pktstream  mem      buf12        MG(2,3):0  0x01f60   144  mg[0].in[0]        topSweepGraph1_1
+i9_pi0    in   pktstream  mem      buf12d       MG(2,3):1  0x02000   144  mg[0].in[0]        topSweepGraph1_1
+i9_pi1    in   pktstream  mem      buf14        MG(1,3):2  0x04000   144  mg[0].in[1]        topSweepGraph1_1
+i9_pi1    in   pktstream  mem      buf14d       MG(1,3):3  0x06000   144  mg[0].in[1]        topSweepGraph1_1
+i12_po0   out  pktstream  mem      buf1         MG(1,0):0  0x01f60   144  sp[1].out[0]       topSweepGraph1_1
+i12_po0   out  pktstream  mem      buf1d        MG(1,0):3  0x06000   144  sp[1].out[0]       topSweepGraph1_1
+i12_po1   out  pktstream  mem      buf3         MG(2,0):3  0x06000   144  sp[1].out[1]       topSweepGraph1_1
+i12_po1   out  pktstream  mem      buf3d        MG(2,0):1  0x03f60   144  sp[1].out[1]       topSweepGraph1_1
+i13_pi0   in   pktstream  mem      buf13        MG(1,3):0  0x00000   144  mg[1].in[0]        topSweepGraph1_1
+i13_pi0   in   pktstream  mem      buf13d       MG(1,3):1  0x02000   144  mg[1].in[0]        topSweepGraph1_1
+i13_pi1   in   pktstream  mem      buf15        MG(2,3):2  0x04000   144  mg[1].in[1]        topSweepGraph1_1
+i13_pi1   in   pktstream  mem      buf15d       MG(2,3):3  0x06000   144  mg[1].in[1]        topSweepGraph1_1
+i14_pi0   in   buffer     mem      buf16        MG(5,0):2  0x04000   144  orth[0][0].in[0]   topSweepGraph1_2
+i14_pi0   in   buffer     mem      buf16d       MG(5,0):0  0x01f60   144  orth[0][0].in[0]   topSweepGraph1_2
+i14_pi1   in   buffer     mem      buf17        MG(5,0):3  0x06000   144  orth[0][0].in[1]   topSweepGraph1_2
+i14_pi1   in   buffer     mem      buf17d       MG(5,0):1  0x03f60   144  orth[0][0].in[1]   topSweepGraph1_2
+i14_po0   out  buffer     mem      buf20        MG(6,1):0  0x00f60   144  orth[0][0].out[0]  topSweepGraph1_2
+i14_po0   out  buffer     mem      buf20d       MG(6,1):1  0x02820   144  orth[0][0].out[0]  topSweepGraph1_2
+i14_po1   out  buffer     mem      buf21        MG(6,1):2  0x04000   144  orth[0][0].out[1]  topSweepGraph1_2
+i14_po1   out  buffer     mem      buf21d       MG(6,1):3  0x06000   144  orth[0][0].out[1]  topSweepGraph1_2
+i15_pi0   in   buffer     mem      buf18        MG(7,0):0  0x00000   144  orth[1][0].in[0]   topSweepGraph1_2
+i15_pi0   in   buffer     mem      buf18d       MG(7,0):1  0x02000   144  orth[1][0].in[0]   topSweepGraph1_2
+i15_pi1   in   buffer     mem      buf19        MG(6,0):1  0x02000   144  orth[1][0].in[1]   topSweepGraph1_2
+i15_pi1   in   buffer     mem      buf19d       MG(6,0):2  0x04000   144  orth[1][0].in[1]   topSweepGraph1_2
+i15_po0   out  buffer     mem      buf22        MG(7,1):0  0x010a0   144  orth[1][0].out[0]  topSweepGraph1_2
+i15_po0   out  buffer     mem      buf22d       MG(7,1):1  0x03f60   144  orth[1][0].out[0]  topSweepGraph1_2
+i15_po1   out  buffer     mem      buf23        MG(7,1):2  0x05f60   144  orth[1][0].out[1]  topSweepGraph1_2
+i15_po1   out  buffer     mem      buf23d       MG(7,1):3  0x060a0   144  orth[1][0].out[1]  topSweepGraph1_2
+i16_pi0   in   buffer     mem      buf20        MG(6,1):0  0x00f60   144  orth[0][1].in[0]   topSweepGraph1_2
+i16_pi0   in   buffer     mem      buf20d       MG(6,1):1  0x02820   144  orth[0][1].in[0]   topSweepGraph1_2
+i16_pi1   in   buffer     mem      buf22        MG(7,1):0  0x010a0   144  orth[0][1].in[1]   topSweepGraph1_2
+i16_pi1   in   buffer     mem      buf22d       MG(7,1):1  0x03f60   144  orth[0][1].in[1]   topSweepGraph1_2
+i16_po0   out  buffer     mem      buf24        MG(6,2):0  0x01f60   144  orth[0][1].out[0]  topSweepGraph1_2
+i16_po0   out  buffer     mem      buf24d       MG(6,2):1  0x02000   144  orth[0][1].out[0]  topSweepGraph1_2
+i16_po1   out  buffer     mem      buf26        MG(6,2):2  0x04000   144  orth[0][1].out[1]  topSweepGraph1_2
+i16_po1   out  buffer     mem      buf26d       MG(6,2):3  0x06000   144  orth[0][1].out[1]  topSweepGraph1_2
+i17_pi0   in   buffer     mem      buf23        MG(7,1):2  0x05f60   144  orth[1][1].in[0]   topSweepGraph1_2
+i17_pi0   in   buffer     mem      buf23d       MG(7,1):3  0x060a0   144  orth[1][1].in[0]   topSweepGraph1_2
+i17_pi1   in   buffer     mem      buf21r       MG(8,1):0  0x00000   144  orth[1][1].in[1]   topSweepGraph1_2
+i17_pi1   in   buffer     mem      buf21dr      MG(8,1):1  0x02000   144  orth[1][1].in[1]   topSweepGraph1_2
+i17_po0   out  buffer     mem      buf27        MG(7,2):0  0x00000   144  orth[1][1].out[0]  topSweepGraph1_2
+i17_po0   out  buffer     mem      buf27d       MG(7,2):1  0x02000   144  orth[1][1].out[0]  topSweepGraph1_2
+i17_po1   out  buffer     mem      buf25        MG(7,2):2  0x04000   144  orth[1][1].out[1]  topSweepGraph1_2
+i17_po1   out  buffer     mem      buf25d       MG(7,2):3  0x06000   144  orth[1][1].out[1]  topSweepGraph1_2
+i18_pi0   in   buffer     mem      buf25r       MG(5,2):0  0x00000   144  orth[0][2].in[0]   topSweepGraph1_2
+i18_pi0   in   buffer     mem      buf25dr      MG(5,2):1  0x02000   144  orth[0][2].in[0]   topSweepGraph1_2
+i18_pi1   in   buffer     mem      buf26        MG(6,2):2  0x04000   144  orth[0][2].in[1]   topSweepGraph1_2
+i18_pi1   in   buffer     mem      buf26d       MG(6,2):3  0x06000   144  orth[0][2].in[1]   topSweepGraph1_2
+i19_pi1   in   buffer     mem      buf27        MG(7,2):0  0x00000   144  orth[1][2].in[1]   topSweepGraph1_2
+i19_pi1   in   buffer     mem      buf27d       MG(7,2):1  0x02000   144  orth[1][2].in[1]   topSweepGraph1_2
+i19_po0   out  buffer     mem      buf28        MG(7,3):0  0x00000   144  orth[1][2].out[0]  topSweepGraph1_2
+i19_po0   out  buffer     mem      buf28d       MG(7,3):1  0x02000   144  orth[1][2].out[0]  topSweepGraph1_2
+i19_po1   out  buffer     mem      buf31        MG(7,3):2  0x04000   144  orth[1][2].out[1]  topSweepGraph1_2
+i19_po1   out  buffer     mem      buf31d       MG(7,3):3  0x06000   144  orth[1][2].out[1]  topSweepGraph1_2
+i18_po0   out  buffer     mem      buf29        MG(6,3):0  0x01f60   144  orth[0][2].out[0]  topSweepGraph1_2
+i18_po0   out  buffer     mem      buf29d       MG(6,3):1  0x02000   144  orth[0][2].out[0]  topSweepGraph1_2
+i18_po1   out  buffer     mem      buf30        MG(6,3):2  0x04000   144  orth[0][2].out[1]  topSweepGraph1_2
+i18_po1   out  buffer     mem      buf30d       MG(6,3):3  0x06000   144  orth[0][2].out[1]  topSweepGraph1_2
+i19_pi0   in   buffer     mem      buf24        MG(6,2):0  0x01f60   144  orth[1][2].in[0]   topSweepGraph1_2
+i19_pi0   in   buffer     mem      buf24d       MG(6,2):1  0x02000   144  orth[1][2].in[0]   topSweepGraph1_2
+i22_po0   out  pktstream  mem      buf16        MG(5,0):2  0x04000   144  sp[0].out[0]       topSweepGraph1_2
+i22_po0   out  pktstream  mem      buf16d       MG(5,0):0  0x01f60   144  sp[0].out[0]       topSweepGraph1_2
+i22_po1   out  pktstream  mem      buf18        MG(7,0):0  0x00000   144  sp[0].out[1]       topSweepGraph1_2
+i22_po1   out  pktstream  mem      buf18d       MG(7,0):1  0x02000   144  sp[0].out[1]       topSweepGraph1_2
+i23_pi0   in   pktstream  mem      buf28        MG(7,3):0  0x00000   144  mg[0].in[0]        topSweepGraph1_2
+i23_pi0   in   pktstream  mem      buf28d       MG(7,3):1  0x02000   144  mg[0].in[0]        topSweepGraph1_2
+i23_pi1   in   pktstream  mem      buf30        MG(6,3):2  0x04000   144  mg[0].in[1]        topSweepGraph1_2
+i23_pi1   in   pktstream  mem      buf30d       MG(6,3):3  0x06000   144  mg[0].in[1]        topSweepGraph1_2
+i26_po0   out  pktstream  mem      buf17        MG(5,0):3  0x06000   144  sp[1].out[0]       topSweepGraph1_2
+i26_po0   out  pktstream  mem      buf17d       MG(5,0):1  0x03f60   144  sp[1].out[0]       topSweepGraph1_2
+i26_po1   out  pktstream  mem      buf19        MG(6,0):1  0x02000   144  sp[1].out[1]       topSweepGraph1_2
+i26_po1   out  pktstream  mem      buf19d       MG(6,0):2  0x04000   144  sp[1].out[1]       topSweepGraph1_2
+i27_pi0   in   pktstream  mem      buf29        MG(6,3):0  0x01f60   144  mg[1].in[0]        topSweepGraph1_2
+i27_pi0   in   pktstream  mem      buf29d       MG(6,3):1  0x02000   144  mg[1].in[0]        topSweepGraph1_2
+i27_pi1   in   pktstream  mem      buf31        MG(7,3):2  0x04000   144  mg[1].in[1]        topSweepGraph1_2
+i27_pi1   in   pktstream  mem      buf31d       MG(7,3):3  0x06000   144  mg[1].in[1]        topSweepGraph1_2
+i28_pi0   in   buffer     mem      buf32        MG(0,1):0  0x01ec0   144  norm[0].in[0]      topNormGraph1
+i28_pi0   in   buffer     mem      buf32d       MG(0,1):1  0x03f60   144  norm[0].in[0]      topNormGraph1
+i28_po0   out  buffer     mem      buf33        MG(0,1):3  0x06000   144  norm[0].out[0]     topNormGraph1
+i28_po0   out  buffer     mem      buf33d       MG(0,1):2  0x04000   144  norm[0].out[0]     topNormGraph1
+i29_pi0   in   buffer     mem      buf34        MG(0,0):1  0x02000   144  norm[1].in[0]      topNormGraph1
+i29_pi0   in   buffer     mem      buf34d       MG(0,0):2  0x04000   144  norm[1].in[0]      topNormGraph1
+i29_po0   out  buffer     mem      buf35        MG(0,2):1  0x02000   144  norm[1].out[0]     topNormGraph1
+i29_po0   out  buffer     mem      buf35d       MG(0,2):2  0x04000   144  norm[1].out[0]     topNormGraph1
+i32_po0   out  pktstream  mem      buf32        MG(0,1):0  0x01ec0   144  sp[0].out[0]       topNormGraph1
+i32_po0   out  pktstream  mem      buf32d       MG(0,1):1  0x03f60   144  sp[0].out[0]       topNormGraph1
+i32_po1   out  pktstream  mem      buf34        MG(0,0):1  0x02000   144  sp[0].out[1]       topNormGraph1
+i32_po1   out  pktstream  mem      buf34d       MG(0,0):2  0x04000   144  sp[0].out[1]       topNormGraph1
+i33_pi0   in   pktstream  mem      buf33        MG(0,1):3  0x06000   144  mg[0].in[0]        topNormGraph1
+i33_pi0   in   pktstream  mem      buf33d       MG(0,1):2  0x04000   144  mg[0].in[0]        topNormGraph1
+i33_pi1   in   pktstream  mem      buf35        MG(0,2):1  0x02000   144  mg[0].in[1]        topNormGraph1
+i33_pi1   in   pktstream  mem      buf35d       MG(0,2):2  0x04000   144  mg[0].in[1]        topNormGraph1
+i0_pi0    in   buffer     mem      buf0         MG(1,0):2  0x04000   144  orth[0][0].in[0]   topSweepGraph1_1
+i0_pi0    in   buffer     mem      buf0d        MG(1,0):1  0x02000   144  orth[0][0].in[0]   topSweepGraph1_1
+
+
+===============================================
+Memory Bank Report:
+===============================================
+
+MG(x,y):b  Buffer Name     Addr  Size  Accessing Block        CR(x,y)/IO(x)
+---------  -----------  -------  ----  ---------------------  -------------
+MG(0,0):0  sysmem45     0x00000  2080  main                   CR(0,0)
+MG(0,0):1  buf34        0x02000   144  i32                    SPLIT
+MG(0,0):1  buf34        0x02000   144  i29:normalize<32>      CR(0,1)
+MG(0,0):2  buf34d       0x04000   144  i32                    SPLIT
+MG(0,0):2  buf34d       0x04000   144  i29:normalize<32>      CR(0,1)
+MG(0,1):0  buf32        0x01ec0   144  i28:normalize<32>      CR(0,0)
+MG(0,1):0  buf32        0x01ec0   144  i32                    SPLIT
+MG(0,1):1  buf32d       0x03f60   144  i32                    SPLIT
+MG(0,1):1  buf32d       0x03f60   144  i28:normalize<32>      CR(0,0)
+MG(0,1):2  buf33d       0x04000   144  i28:normalize<32>      CR(0,0)
+MG(0,1):2  buf33d       0x04000   144  i33                    MERGE
+MG(0,1):3  buf33        0x06000   144  i28:normalize<32>      CR(0,0)
+MG(0,1):3  buf33        0x06000   144  i33                    MERGE
+MG(0,2):0  sysmem46     0x017e0  2080  main                   CR(0,1)
+MG(0,2):1  buf35        0x02000   144  i29:normalize<32>      CR(0,1)
+MG(0,2):1  buf35        0x02000   144  i33                    MERGE
+MG(0,2):2  buf35d       0x04000   144  i29:normalize<32>      CR(0,1)
+MG(0,2):2  buf35d       0x04000   144  i33                    MERGE
+MG(1,0):0  sysmem36     0x01740  2080  main                   CR(1,0)
+MG(1,0):0  buf1         0x01f60   144  i12                    SPLIT
+MG(1,0):0  buf1         0x01f60   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,0):1  buf0d        0x02000   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,0):1  buf0d        0x02000   144  i8                     SPLIT
+MG(1,0):1  sysmem44     0x02c80  2080  main                   CR(1,1)
+MG(1,0):2  buf0         0x04000   144  i8                     SPLIT
+MG(1,0):2  buf0         0x04000   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,0):3  buf1d        0x06000   144  i12                    SPLIT
+MG(1,0):3  buf1d        0x06000   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,1):0  buf4         0x000a0   144  i2:orthogonalize<32>   CR(1,1)
+MG(1,1):0  buf4         0x000a0   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,1):0  buf9dr       0x001e0   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,1):1  buf9r        0x02000   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,1):1  buf4d        0x02140   144  i2:orthogonalize<32>   CR(1,1)
+MG(1,1):1  buf4d        0x02140   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,1):2  buf5         0x04000   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,1):3  buf5d        0x06000   144  i0:orthogonalize<32>   CR(1,0)
+MG(1,2):0  buf8         0x00000   144  i5:orthogonalize<32>   CR(2,2)
+MG(1,2):0  buf8         0x00000   144  i2:orthogonalize<32>   CR(1,1)
+MG(1,2):0  sysmem49     0x000a0  2080  main                   CR(2,2)
+MG(1,2):1  buf8d        0x02000   144  i5:orthogonalize<32>   CR(2,2)
+MG(1,2):1  buf8d        0x02000   144  i2:orthogonalize<32>   CR(1,1)
+MG(1,2):2  buf10        0x04000   144  i2:orthogonalize<32>   CR(1,1)
+MG(1,2):2  buf10        0x04000   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,2):3  buf10d       0x06000   144  i2:orthogonalize<32>   CR(1,1)
+MG(1,2):3  buf10d       0x06000   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,3):0  buf13        0x00000   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,3):0  buf13        0x00000   144  i13                    MERGE
+MG(1,3):0  sysmem48     0x000a0  2080  main                   CR(1,2)
+MG(1,3):1  buf13d       0x02000   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,3):1  buf13d       0x02000   144  i13                    MERGE
+MG(1,3):2  buf14        0x04000   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,3):2  buf14        0x04000   144  i9                     MERGE
+MG(1,3):3  buf14d       0x06000   144  i4:orthogonalize<32>   CR(1,2)
+MG(1,3):3  buf14d       0x06000   144  i9                     MERGE
+MG(2,0):0  buf2d        0x01f60   144  i8                     SPLIT
+MG(2,0):0  buf2d        0x01f60   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,0):1  sysmem37     0x02260  2080  main                   CR(2,0)
+MG(2,0):1  buf3d        0x03f60   144  i12                    SPLIT
+MG(2,0):1  buf3d        0x03f60   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,0):2  buf2         0x04000   144  i8                     SPLIT
+MG(2,0):2  buf2         0x04000   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,0):3  buf3         0x06000   144  i12                    SPLIT
+MG(2,0):3  buf3         0x06000   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,1):0  buf6         0x01f60   144  i2:orthogonalize<32>   CR(1,1)
+MG(2,1):0  buf6         0x01f60   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,1):1  buf6d        0x02000   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,1):1  buf6d        0x02000   144  i2:orthogonalize<32>   CR(1,1)
+MG(2,1):2  buf7         0x04000   144  i3:orthogonalize<32>   CR(2,1)
+MG(2,1):2  buf7         0x04000   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,1):3  buf7d        0x06000   144  i1:orthogonalize<32>   CR(2,0)
+MG(2,1):3  buf7d        0x06000   144  i3:orthogonalize<32>   CR(2,1)
+MG(2,2):0  buf11        0x01f60   144  i5:orthogonalize<32>   CR(2,2)
+MG(2,2):0  buf11        0x01f60   144  i3:orthogonalize<32>   CR(2,1)
+MG(2,2):1  buf11d       0x02000   144  i5:orthogonalize<32>   CR(2,2)
+MG(2,2):1  buf11d       0x02000   144  i3:orthogonalize<32>   CR(2,1)
+MG(2,2):2  buf9         0x04000   144  i3:orthogonalize<32>   CR(2,1)
+MG(2,2):3  buf9d        0x06000   144  i3:orthogonalize<32>   CR(2,1)
+MG(2,3):0  buf12        0x01f60   144  i9                     MERGE
+MG(2,3):0  buf12        0x01f60   144  i5:orthogonalize<32>   CR(2,2)
+MG(2,3):1  buf12d       0x02000   144  i9                     MERGE
+MG(2,3):1  buf12d       0x02000   144  i5:orthogonalize<32>   CR(2,2)
+MG(2,3):2  buf15        0x04000   144  i13                    MERGE
+MG(2,3):2  buf15        0x04000   144  i5:orthogonalize<32>   CR(2,2)
+MG(2,3):3  buf15d       0x06000   144  i13                    MERGE
+MG(2,3):3  buf15d       0x06000   144  i5:orthogonalize<32>   CR(2,2)
+MG(3,1):1  sysmem47     0x022e0  2080  main                   CR(2,1)
+MG(3,1):2  buf5r        0x04000   144  i3:orthogonalize<32>   CR(2,1)
+MG(3,1):3  buf5dr       0x06000   144  i3:orthogonalize<32>   CR(2,1)
+MG(5,0):0  buf16d       0x01f60   144  i14:orthogonalize<32>  CR(6,0)
+MG(5,0):0  buf16d       0x01f60   144  i22                    SPLIT
+MG(5,0):1  sysmem38     0x02260  2080  main                   CR(6,0)
+MG(5,0):1  buf17d       0x03f60   144  i14:orthogonalize<32>  CR(6,0)
+MG(5,0):1  buf17d       0x03f60   144  i26                    SPLIT
+MG(5,0):2  buf16        0x04000   144  i22                    SPLIT
+MG(5,0):2  buf16        0x04000   144  i14:orthogonalize<32>  CR(6,0)
+MG(5,0):3  buf17        0x06000   144  i26                    SPLIT
+MG(5,0):3  buf17        0x06000   144  i14:orthogonalize<32>  CR(6,0)
+MG(5,2):0  buf25r       0x00000   144  i18:orthogonalize<32>  CR(6,2)
+MG(5,2):1  buf25dr      0x02000   144  i18:orthogonalize<32>  CR(6,2)
+MG(6,0):0  sysmem39     0x00000  2080  main                   CR(7,0)
+MG(6,0):1  buf19        0x02000   144  i15:orthogonalize<32>  CR(7,0)
+MG(6,0):1  buf19        0x02000   144  i26                    SPLIT
+MG(6,0):2  buf19d       0x04000   144  i15:orthogonalize<32>  CR(7,0)
+MG(6,0):2  buf19d       0x04000   144  i26                    SPLIT
+MG(6,1):0  sysmem40     0x00000  2080  main                   CR(6,1)
+MG(6,1):0  buf20        0x00f60   144  i16:orthogonalize<32>  CR(6,1)
+MG(6,1):0  buf20        0x00f60   144  i14:orthogonalize<32>  CR(6,0)
+MG(6,1):1  sysmem42     0x02000  2080  main                   CR(6,2)
+MG(6,1):1  buf20d       0x02820   144  i16:orthogonalize<32>  CR(6,1)
+MG(6,1):1  buf20d       0x02820   144  i14:orthogonalize<32>  CR(6,0)
+MG(6,1):2  buf21        0x04000   144  i14:orthogonalize<32>  CR(6,0)
+MG(6,1):3  buf21d       0x06000   144  i14:orthogonalize<32>  CR(6,0)
+MG(6,2):0  buf24        0x01f60   144  i19:orthogonalize<32>  CR(7,2)
+MG(6,2):0  buf24        0x01f60   144  i16:orthogonalize<32>  CR(6,1)
+MG(6,2):1  buf24d       0x02000   144  i19:orthogonalize<32>  CR(7,2)
+MG(6,2):1  buf24d       0x02000   144  i16:orthogonalize<32>  CR(6,1)
+MG(6,2):2  buf26        0x04000   144  i18:orthogonalize<32>  CR(6,2)
+MG(6,2):2  buf26        0x04000   144  i16:orthogonalize<32>  CR(6,1)
+MG(6,2):3  buf26d       0x06000   144  i18:orthogonalize<32>  CR(6,2)
+MG(6,2):3  buf26d       0x06000   144  i16:orthogonalize<32>  CR(6,1)
+MG(6,3):0  buf29        0x01f60   144  i18:orthogonalize<32>  CR(6,2)
+MG(6,3):0  buf29        0x01f60   144  i27                    MERGE
+MG(6,3):1  buf29d       0x02000   144  i27                    MERGE
+MG(6,3):1  buf29d       0x02000   144  i18:orthogonalize<32>  CR(6,2)
+MG(6,3):2  buf30        0x04000   144  i18:orthogonalize<32>  CR(6,2)
+MG(6,3):2  buf30        0x04000   144  i23                    MERGE
+MG(6,3):3  buf30d       0x06000   144  i18:orthogonalize<32>  CR(6,2)
+MG(6,3):3  buf30d       0x06000   144  i23                    MERGE
+MG(7,0):0  buf18        0x00000   144  i15:orthogonalize<32>  CR(7,0)
+MG(7,0):0  buf18        0x00000   144  i22                    SPLIT
+MG(7,0):1  buf18d       0x02000   144  i22                    SPLIT
+MG(7,0):1  buf18d       0x02000   144  i15:orthogonalize<32>  CR(7,0)
+MG(7,1):0  buf22        0x010a0   144  i16:orthogonalize<32>  CR(6,1)
+MG(7,1):0  buf22        0x010a0   144  i15:orthogonalize<32>  CR(7,0)
+MG(7,1):1  buf22d       0x03f60   144  i15:orthogonalize<32>  CR(7,0)
+MG(7,1):1  buf22d       0x03f60   144  i16:orthogonalize<32>  CR(6,1)
+MG(7,1):2  buf23        0x05f60   144  i15:orthogonalize<32>  CR(7,0)
+MG(7,1):2  buf23        0x05f60   144  i17:orthogonalize<32>  CR(7,1)
+MG(7,1):3  buf23d       0x060a0   144  i15:orthogonalize<32>  CR(7,0)
+MG(7,1):3  buf23d       0x060a0   144  i17:orthogonalize<32>  CR(7,1)
+MG(7,2):0  buf27        0x00000   144  i19:orthogonalize<32>  CR(7,2)
+MG(7,2):0  buf27        0x00000   144  i17:orthogonalize<32>  CR(7,1)
+MG(7,2):0  sysmem41     0x000a0  2080  main                   CR(7,1)
+MG(7,2):1  buf27d       0x02000   144  i17:orthogonalize<32>  CR(7,1)
+MG(7,2):1  buf27d       0x02000   144  i19:orthogonalize<32>  CR(7,2)
+MG(7,2):2  buf25        0x04000   144  i17:orthogonalize<32>  CR(7,1)
+MG(7,2):3  buf25d       0x06000   144  i17:orthogonalize<32>  CR(7,1)
+MG(7,3):0  buf28        0x00000   144  i19:orthogonalize<32>  CR(7,2)
+MG(7,3):0  buf28        0x00000   144  i23                    MERGE
+MG(7,3):0  sysmem43     0x000a0  2080  main                   CR(7,2)
+MG(7,3):1  buf28d       0x02000   144  i19:orthogonalize<32>  CR(7,2)
+MG(7,3):1  buf28d       0x02000   144  i23                    MERGE
+MG(7,3):2  buf31        0x04000   144  i19:orthogonalize<32>  CR(7,2)
+MG(7,3):2  buf31        0x04000   144  i27                    MERGE
+MG(7,3):3  buf31d       0x06000   144  i27                    MERGE
+MG(7,3):3  buf31d       0x06000   144  i19:orthogonalize<32>  CR(7,2)
+MG(8,1):0  buf21r       0x00000   144  i17:orthogonalize<32>  CR(7,1)
+MG(8,1):1  buf21dr      0x02000   144  i17:orthogonalize<32>  CR(7,1)
+

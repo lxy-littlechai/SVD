@@ -1,6 +1,7 @@
 #include "adf.h"
 #include "ProcessGraph/RingGraph.hpp"
 #include <cstring>
+#include <string>
 using namespace adf;
 
 template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION>
@@ -13,13 +14,12 @@ public:
     pktsplit<GraphSize> sp[1];
     pktmerge<GraphSize> mg[1];
 
-    TopNormGraph(int graphID) {
-        std::string ID = std::to_string(graphID);
+    TopNormGraph(std::string graphID) {
         for(int j = 0;j < 1;j ++) {
-            std::string fileIn = "aie/data/" + ID + "_norm_in_" + std::to_string(j) + ".txt";
-            std::string fileOut = "aie/data/" + ID + "_norm_out_" + std::to_string(j) +".txt";
-            std::string plIn = ID + "_norm_in_" + std::to_string(j);
-            std::string plout = ID + "_norm_out_" + std::to_string(j);
+            std::string fileIn = "aie/data/" + graphID + "_norm_in_" + std::to_string(j) + ".txt";
+            std::string fileOut = "aie/data/" + graphID + "_norm_out_" + std::to_string(j) +".txt";
+            std::string plIn = graphID + "_norm_in_" + std::to_string(j);
+            std::string plout = graphID + "_norm_out_" + std::to_string(j);
             in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
             out[j] = output_plio::create(plout, plio_128_bits, fileOut);
             sp[j] = pktsplit<GraphSize>::create();
@@ -53,13 +53,12 @@ public:
     pktsplit<GraphSize> sp[2];
     pktmerge<GraphSize> mg[2];
 
-    TopSweepGraph(int graphID) {
-        std::string ID = std::to_string(graphID);
+    TopSweepGraph(std::string graphID) {
         for(int j = 0;j < 2;j ++) {
-            std::string fileIn = "aie/data/" + ID + "_sweep_in_" + std::to_string(j) + ".txt";
-            std::string fileOut = "aie/data/" + ID + "_sweep_out_" + std::to_string(j) +".txt";
-            std::string plIn = ID + "_sweep_in_" + std::to_string(j);
-            std::string plout = ID + "_sweep_out_" + std::to_string(j);
+            std::string fileIn = "aie/data/" + graphID + "_sweep_in_" + std::to_string(j) + ".txt";
+            std::string fileOut = "aie/data/" + graphID + "_sweep_out_" + std::to_string(j) +".txt";
+            std::string plIn = graphID + "_sweep_in_" + std::to_string(j);
+            std::string plout = graphID + "_sweep_out_" + std::to_string(j);
             in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
             out[j] = output_plio::create(plout, plio_128_bits, fileOut);
             sp[j] = pktsplit<GraphSize>::create();

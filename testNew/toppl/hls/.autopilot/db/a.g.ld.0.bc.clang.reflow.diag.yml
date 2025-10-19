@@ -1,0 +1,1937 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 103, Column: 16 }
+Function:        _Z8send2AIERN3hls6streamI7ap_uintILi128EELi32EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'generateHeader(unsigned int, unsigned int)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 5, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'send2AIE(hls::stream<ap_uint<128>, 32>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 95, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 95, Column: 0 }
+Function:        _Z8send2AIERN3hls6streamI7ap_uintILi128EELi32EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_704_1
+  - String:          ''' ('
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:15:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          send2AIE
+  - String:          ''' completely with a factor of '
+  - Factor:          '30'
+...
+--- !Passed
+Pass:            reflow-function-instantiate
+Name:            FunctionInstantiate
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 265, Column: 17 }
+Function:        _Z7ReceiveRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IfLi4EEES6_PNS0_IS1_ILi128EELi256EEES9_RNS0_INS_4axisIS7_Lm0ELm0ELm0ELh56ELb0EEELi0EEESD_SD_SD_SD_
+Args:            
+  - String:          'Instantiating function '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+  - String:          ''' to '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+  - String:          ''' by setting '
+  - String:          '''fromAIEstrm'' to ''sweep_rx0_0'''
+...
+--- !Passed
+Pass:            reflow-function-instantiate
+Name:            FunctionInstantiate
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 268, Column: 24 }
+Function:        _Z7ReceiveRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IfLi4EEES6_PNS0_IS1_ILi128EELi256EEES9_RNS0_INS_4axisIS7_Lm0ELm0ELm0ELh56ELb0EEELi0EEESD_SD_SD_SD_
+Args:            
+  - String:          'Instantiating function '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+  - String:          ''' to '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&) (.139)'
+  - String:          ''' by setting '
+  - String:          '''fromAIEstrm'' to ''sweep_rx1_0'''
+...
+--- !Passed
+Pass:            reflow-function-instantiate
+Name:            FunctionInstantiate
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 269, Column: 24 }
+Function:        _Z7ReceiveRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IfLi4EEES6_PNS0_IS1_ILi128EELi256EEES9_RNS0_INS_4axisIS7_Lm0ELm0ELm0ELh56ELb0EEELi0EEESD_SD_SD_SD_
+Args:            
+  - String:          'Instantiating function '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+  - String:          ''' to '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&) (.140)'
+  - String:          ''' by setting '
+  - String:          '''fromAIEstrm'' to ''sweep_rx1_1'''
+...
+--- !Passed
+Pass:            reflow-function-instantiate
+Name:            FunctionInstantiate
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 266, Column: 24 }
+Function:        _Z7ReceiveRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IfLi4EEES6_PNS0_IS1_ILi128EELi256EEES9_RNS0_INS_4axisIS7_Lm0ELm0ELm0ELh56ELb0EEELi0EEESD_SD_SD_SD_
+Args:            
+  - String:          'Instantiating function '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+  - String:          ''' to '''
+  - Name:            'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&) (.141)'
+  - String:          ''' by setting '
+  - String:          '''fromAIEstrm'' to ''sweep_rx0_1'''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h, 
+                   Line: 16, Column: 0 }
+Function:        _Z13generic_isnanIdEiT_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::fp_struct(double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 456, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_isnan<double>(double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h, 
+                       Line: 16, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                   Line: 494, Column: 0 }
+Function:        _ZNK9fp_structIdE9to_doubleEv
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::data() const (.26.33.39.47)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 475, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'fp_struct<double>::to_double() const'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 494, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                   Line: 509, Column: 0 }
+Function:        _ZNK9fp_structIdE7to_ieeeEv
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::to_double() const'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 494, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 509, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                   Line: 482, Column: 0 }
+Function:        _ZNK9fp_structIdE6to_intEv
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::data() const (.26.33.39.47)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 475, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'fp_struct<double>::to_int() const'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 482, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                   Line: 20, Column: 0 }
+Function:        _Z12generic_fmaxIdET_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::fp_struct(double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 456, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'double generic_fmax<double>(double, double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                       Line: 20, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                   Line: 20, Column: 0 }
+Function:        _Z12generic_fmaxIdET_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'int generic_isnan<double>(double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h, 
+                       Line: 16, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'double generic_fmax<double>(double, double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                       Line: 20, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                   Line: 20, Column: 0 }
+Function:        _Z12generic_fmaxIdET_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 509, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'double generic_fmax<double>(double, double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                       Line: 20, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                   Line: 20, Column: 0 }
+Function:        _Z12generic_fmaxIdET_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::to_int() const'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h, 
+                       Line: 482, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'double generic_fmax<double>(double, double)'
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h, 
+                       Line: 20, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 393, Column: 0 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          fmax
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'SystemControl(int, ap_uint<32>*, hls::stream<ap_uint<1>, 4>*, hls::stream<float, 4>*, hls::stream<float, 4>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 393, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 393, Column: 0 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'hls::print(char const*, float)'
+    DebugLoc:        { File: /usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h, 
+                       Line: 35, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'SystemControl(int, ap_uint<32>*, hls::stream<ap_uint<1>, 4>*, hls::stream<float, 4>*, hls::stream<float, 4>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 393, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 293, Column: 0 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'DDR2FIFO(ap_uint<128>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 137, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 293, Column: 0 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void hls::print<ap_uint<1> >(char const*, ap_uint<1>)'
+    DebugLoc:        { File: /usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h, 
+                       Line: 25, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 293, Column: 0 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FIFO2DDR(ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 256>&)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 228, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 60, Column: 0 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          fmax
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 60, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 60, Column: 0 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.141
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          fmax
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&) (.141)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 60, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 60, Column: 0 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.139
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          fmax
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&) (.139)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 60, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 60, Column: 0 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.140
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          fmax
+    DebugLoc:        { File: /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'receive4AIE(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&) (.140)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 60, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 249, Column: 0 }
+Function:        _Z7ReceiveRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IfLi4EEES6_PNS0_IS1_ILi128EELi256EEES9_RNS0_INS_4axisIS7_Lm0ELm0ELm0ELh56ELb0EEELi0EEESD_SD_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'NormReceive(hls::stream<ap_uint<128>, 256>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 222, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'Receive(hls::stream<ap_uint<1>, 4>&, hls::stream<float, 4>*, hls::stream<float, 4>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 249, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 478, Column: 20 }
+Function:        _Z5TopPLP7ap_uintILi128EES1_PS_ILi32EES3_iRN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEES9_S9_S9_S9_S9_S9_S9_S9_S9_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          convSet_L
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 478, Column: 45 }
+Function:        _Z5TopPLP7ap_uintILi128EES1_PS_ILi32EES3_iRN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEES9_S9_S9_S9_S9_S9_S9_S9_S9_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          convSet_R
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 479, Column: 21 }
+Function:        _Z5TopPLP7ap_uintILi128EES1_PS_ILi32EES3_iRN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEES9_S9_S9_S9_S9_S9_S9_S9_S9_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          syscontrol
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 480, Column: 21 }
+Function:        _Z5TopPLP7ap_uintILi128EES1_PS_ILi32EES3_iRN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEES9_S9_S9_S9_S9_S9_S9_S9_S9_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          send_fifo_L
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 480, Column: 48 }
+Function:        _Z5TopPLP7ap_uintILi128EES1_PS_ILi32EES3_iRN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEES9_S9_S9_S9_S9_S9_S9_S9_S9_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          send_fifo_R
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 481, Column: 26 }
+Function:        _Z5TopPLP7ap_uintILi128EES1_PS_ILi32EES3_iRN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEES9_S9_S9_S9_S9_S9_S9_S9_S9_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          receive_fifo_L
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 481, Column: 56 }
+Function:        _Z5TopPLP7ap_uintILi128EES1_PS_ILi32EES3_iRN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0ELh56ELb0EEELi0EEES9_S9_S9_S9_S9_S9_S9_S9_S9_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          receive_fifo_R
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 401, Column: 21 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_401_2
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:401:21'
+  - String:          ' '
+  - Function:        'SystemControl(int, ap_uint<32>*, hls::stream<ap_uint<1>, 4>*, hls::stream<float, 4>*, hls::stream<float, 4>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 393, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 194, Column: 23 }
+Function:        _Z4SendRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IS1_ILi128EELi32EEES7_RNS0_INS_4axisIS5_Lm0ELm0ELm0ELh56ELb0EEELi0EEESB_SB_SB_SB_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_194_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:194:23'
+  - String:          ' '
+  - Function:        'Send(hls::stream<ap_uint<1>, 4>&, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 187, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 144, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_144_2
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:144:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 146, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.i.load.5
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 151, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep13seq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_151_3
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:151:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 153, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          for.inc24.i.load.5
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 161, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep14seq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_161_4
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:161:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 163, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          for.inc51.i.load.5
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 168, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep15seq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_168_5
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:168:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 170, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          for.inc66.i.load.5
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        U16seq
+  - ArrayName:       U
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_232_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:232:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 235, Column: 24 }
+  - OrigDirection:   write
+  - OrigID:          for.inc.i25.store.7
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '32'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        S17seq
+  - ArrayName:       S
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_232_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:232:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 238, Column: 10 }
+  - OrigDirection:   write
+  - OrigID:          for.inc10.i.store.5
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 302, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_302_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:302:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 151, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 151, Column: 29 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 151, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgep13seq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_140_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:140:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 144, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 144, Column: 29 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 144, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_140_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:140:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 168, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 168, Column: 29 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 168, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgep15seq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_140_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:140:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 161, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 161, Column: 29 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 161, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgep14seq
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_140_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:140:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 257, Column: 23 }
+Function:        _Z7ReceiveRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IfLi4EEES6_PNS0_IS1_ILi128EELi256EEES9_RNS0_INS_4axisIS7_Lm0ELm0ELm0ELh56ELb0EEELi0EEESD_SD_SD_SD_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_257_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:257:23'
+  - String:          ' '
+  - Function:        'Receive(hls::stream<ap_uint<1>, 4>&, hls::stream<float, 4>*, hls::stream<float, 4>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<128>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 249, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - OrigLength:      '32'
+  - String:          ' x '
+  - OrigWords:       '32'
+  - String:          'bit words has been widened by '
+  - Factor:          '16'
+  - String:          ': '
+  - Length:          '2'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 232, Column: 21 }
+  - OrigDirection:   write
+  - OrigID:          S17seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq
+  - ArrayName:       S
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_232_1
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:232:21'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - OrigLength:      '256'
+  - String:          ' x '
+  - OrigWords:       '128'
+  - String:          'bit words has been widened by '
+  - Factor:          '4'
+  - String:          ': '
+  - Length:          '64'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 232, Column: 21 }
+  - OrigDirection:   write
+  - OrigID:          U16seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq18
+  - ArrayName:       U
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_233_2
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:233:23'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 161, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '16'
+  - String:          ' x '
+  - OrigWords:       '128'
+  - String:          'bit words has been widened by '
+  - Factor:          '4'
+  - String:          ': '
+  - Length:          '4'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 161, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgep14seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq20
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_161_4
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:161:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 168, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '16'
+  - String:          ' x '
+  - OrigWords:       '128'
+  - String:          'bit words has been widened by '
+  - Factor:          '4'
+  - String:          ': '
+  - Length:          '4'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 168, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgep15seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq22
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_168_5
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:168:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 144, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '16'
+  - String:          ' x '
+  - OrigWords:       '128'
+  - String:          'bit words has been widened by '
+  - Factor:          '4'
+  - String:          ': '
+  - Length:          '4'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 144, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq24
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_144_2
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:144:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-widen
+Name:            BurstWidened
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 151, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - OrigLength:      '16'
+  - String:          ' x '
+  - OrigWords:       '128'
+  - String:          'bit words has been widened by '
+  - Factor:          '4'
+  - String:          ': '
+  - Length:          '4'
+  - String:          ' x '
+  - Words:           '512'
+  - String:          bit words
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 151, Column: 29 }
+  - OrigDirection:   read
+  - OrigID:          scevgep13seq
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        wseq26
+  - ArrayName:       dataIn
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_151_3
+  - String:          ' '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:151:29'
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 194, Column: 23 }
+Function:        _Z4SendRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IS1_ILi128EELi32EEES7_RNS0_INS_4axisIS5_Lm0ELm0ELm0ELh56ELb0EEELi0EEESB_SB_SB_SB_
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        VITIS_LOOP_194_1
+  - String:          '''('
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:194:23'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 302, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        VITIS_LOOP_302_1
+  - String:          '''('
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:302:21'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 257, Column: 23 }
+Function:        _Z7ReceiveRN3hls6streamI7ap_uintILi1EELi4EEEPNS0_IfLi4EEES6_PNS0_IS1_ILi128EELi256EEES9_RNS0_INS_4axisIS7_Lm0ELm0ELm0ELh56ELb0EEELi0EEESD_SD_SD_SD_
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        VITIS_LOOP_257_1
+  - String:          '''('
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:257:23'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_395_1
+  - String:          '> at '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:395:21'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_405_3
+  - String:          '> at '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:405:23'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_425_7
+  - String:          '> at '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:425:25'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_419_6
+  - String:          '> at '
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:419:25'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 407, Column: 25 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_407_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 411, Column: 25 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_411_5
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 393, Column: 0 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_407_4
+  - String:          ''' ('
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:407:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          SystemControl
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 393, Column: 0 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_411_5
+  - String:          ''' ('
+  - LoopLoc:         '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:411:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          SystemControl
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 31, Column: 23 }
+Function:        _Z11receive4DDRRN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=data_temp'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  receive4DDR
+  - String:          ' '
+  - varLoc:          '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31:23'
+  - String:          ' '
+  - PragmaSrcLoc:    '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:40:9'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 40, Column: 9 }
+  - VarName:         data_temp
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 40, Column: 9 }
+Function:        _Z11receive4DDRRN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            data_temp
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.140
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=data_temp'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  receive4AIE
+  - String:          ' '
+  - varLoc:          '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65:15'
+  - String:          ' '
+  - PragmaSrcLoc:    '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:77:9'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 77, Column: 9 }
+  - VarName:         data_temp
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 77, Column: 9 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.140
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            data_temp
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.141
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=data_temp'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  receive4AIE
+  - String:          ' '
+  - varLoc:          '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65:15'
+  - String:          ' '
+  - PragmaSrcLoc:    '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:77:9'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 77, Column: 9 }
+  - VarName:         data_temp
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 77, Column: 9 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.141
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            data_temp
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=data_temp'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  receive4AIE
+  - String:          ' '
+  - varLoc:          '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65:15'
+  - String:          ' '
+  - PragmaSrcLoc:    '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:77:9'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 77, Column: 9 }
+  - VarName:         data_temp
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 77, Column: 9 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            data_temp
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.139
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=data_temp'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  receive4AIE
+  - String:          ' '
+  - varLoc:          '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65:15'
+  - String:          ' '
+  - PragmaSrcLoc:    '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:77:9'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 77, Column: 9 }
+  - VarName:         data_temp
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 77, Column: 9 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.139
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            data_temp
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 403, Column: 11 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=all_conv'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  SystemControl
+  - String:          ' '
+  - varLoc:          '/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:403:11'
+  - String:          ' '
+  - VarName:         all_conv
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 403, Column: 11 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            all_conv
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 403, Column: 11 }
+Function:        _Z13SystemControliP7ap_uintILi32EEPN3hls6streamIS_ILi1EELi4EEEPNS3_IfLi4EEES8_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          all_conv
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          data_temp
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.141
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          data_temp
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.139
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          data_temp
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 65, Column: 15 }
+Function:        _Z11receive4AIERN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE.140
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          data_temp
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 31, Column: 23 }
+Function:        _Z11receive4DDRRN3hls6streamI7ap_uintILi128EELi256EEERNS0_INS_4axisIS2_Lm0ELm0ELm0ELh56ELb0EEELi0EEE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          data_temp
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 144, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*) (.1)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 144, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 151, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*) (.1)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 151, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 161, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq3
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*) (.1)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 161, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 168, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*) (.1)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 168, Column: 29 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '4'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq4
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*) (.1)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq5
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - Function:        'RoundRobin(hls::stream<ap_uint<1>, 4>&, ap_uint<128>*, ap_uint<128>*, ap_uint<32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 32>*, hls::stream<ap_uint<128>, 256>*, hls::stream<ap_uint<128>, 256>*) (.1)'
+    DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                       Line: 293, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp, 
+                   Line: 232, Column: 21 }
+Function:        _Z10RoundRobinRN3hls6streamI7ap_uintILi1EELi4EEEPS1_ILi128EES6_PS1_ILi32EEPNS0_IS5_Li32EEESA_PNS0_IS5_Li256EEESC_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' and bit width '
+  - Width:           '512'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

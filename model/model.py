@@ -19,9 +19,9 @@ class SysConfig:
         self.BLOCK_SIZE = 0
         self.Frequency = 0
         self.aie_num = 0
-        self.graph_num = 0
+        self.graph_num = 0 # graph_num means the task-level parallel num
         self.graph_list = [] #row, col, direction
-        self.PARALLEL_NUM = 0
+        self.PARALLEL_NUM = 0 # parallel_num means the parallel num in single graph
         self.plio_num = 0
         self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
 
