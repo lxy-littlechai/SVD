@@ -38,7 +38,7 @@ attribute shreg_extract : string;
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
     signal ap_block_state1 : BOOLEAN;
-    signal bitcast_ln272_fu_23_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal bitcast_ln332_fu_23_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal empty_preg : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     signal ap_NS_fsm : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
@@ -85,7 +85,7 @@ begin
                 empty_preg <= ap_const_lv32_0;
             else
                 if (((ap_const_boolean_0 = ap_block_state1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                    empty_preg <= bitcast_ln272_fu_23_p1;
+                    empty_preg <= bitcast_ln332_fu_23_p1;
                 end if; 
             end if;
         end if;
@@ -148,12 +148,12 @@ begin
         end if; 
     end process;
 
-    bitcast_ln272_fu_23_p1 <= convL0;
+    bitcast_ln332_fu_23_p1 <= convL0;
 
-    empty_assign_proc : process(ap_CS_fsm_state1, ap_block_state1, bitcast_ln272_fu_23_p1, empty_preg)
+    empty_assign_proc : process(ap_CS_fsm_state1, ap_block_state1, bitcast_ln332_fu_23_p1, empty_preg)
     begin
         if (((ap_const_boolean_0 = ap_block_state1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-            empty <= bitcast_ln272_fu_23_p1;
+            empty <= bitcast_ln332_fu_23_p1;
         else 
             empty <= empty_preg;
         end if; 

@@ -1,0 +1,239 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_parent_loop_proc28'
+================================================================
+* Date:           Mon Oct 20 21:15:08 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        toppl
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.148 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      963|      963|  4.815 us|  4.815 us|  963|  963|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------+-------------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |                                        |                                     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |                Instance                |                Module               |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +----------------------------------------+-------------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |dataflow_in_loop_VITIS_LOOP_315_2_1_U0  |dataflow_in_loop_VITIS_LOOP_315_2_1  |       33|       33|  0.165 us|  0.165 us|   32|   32|  dataflow|
+        +----------------------------------------+-------------------------------------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_315_2  |      962|      962|        35|          -|          -|    30|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+---------+--------+-----+
+|       Name      | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++-----------------+---------+------+---------+--------+-----+
+|DSP              |        -|     -|        -|       -|    -|
+|Expression       |        -|     -|       65|      32|    -|
+|FIFO             |        -|     -|        -|       -|    -|
+|Instance         |        -|     -|     8931|   15410|    -|
+|Memory           |        -|     -|        -|       -|    -|
+|Multiplexer      |        -|     -|        -|      10|    -|
+|Register         |        -|     -|       10|       -|    -|
++-----------------+---------+------+---------+--------+-----+
+|Total            |        0|     0|     9006|   15452|    0|
++-----------------+---------+------+---------+--------+-----+
+|Available        |     1934|  1968|  1799680|  899840|  463|
++-----------------+---------+------+---------+--------+-----+
+|Utilization (%)  |        0|     0|       ~0|       1|    0|
++-----------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------+-------------------------------------+---------+----+------+-------+-----+
+    |                Instance                |                Module               | BRAM_18K| DSP|  FF  |  LUT  | URAM|
+    +----------------------------------------+-------------------------------------+---------+----+------+-------+-----+
+    |dataflow_in_loop_VITIS_LOOP_315_2_1_U0  |dataflow_in_loop_VITIS_LOOP_315_2_1  |        0|   0|  8931|  15410|    0|
+    +----------------------------------------+-------------------------------------+---------+----+------+-------+-----+
+    |Total                                   |                                     |        0|   0|  8931|  15410|    0|
+    +----------------------------------------+-------------------------------------+---------+----+------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+----+----+----+------------+------------+
+    |        Variable Name       | Operation| DSP| FF | LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+----+----+----+------------+------------+
+    |loop_dataflow_input_count   |         +|   0|  23|  12|           5|           1|
+    |loop_dataflow_output_count  |         +|   0|  23|  12|           5|           1|
+    |bound_minus_1               |         -|   0|  19|   8|           3|           1|
+    +----------------------------+----------+----+----+----+------------+------------+
+    |Total                       |          |   0|  65|  32|          13|           3|
+    +----------------------------+----------+----+----+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |loop_dataflow_input_count   |   5|          2|    5|         10|
+    |loop_dataflow_output_count  |   5|          2|    5|         10|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  10|          4|   10|         20|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+---+----+-----+-----------+
+    |            Name            | FF| LUT| Bits| Const Bits|
+    +----------------------------+---+----+-----+-----------+
+    |loop_dataflow_input_count   |  5|   0|    5|          0|
+    |loop_dataflow_output_count  |  5|   0|    5|          0|
+    +----------------------------+---+----+-----+-----------+
+    |Total                       | 10|   0|   10|          0|
+    +----------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+-----------------------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |        Source Object        |    C Type    |
++-------------------------+-----+-----+------------+-----------------------------+--------------+
+|receive_fifo_L_0_din     |  out|  128|     ap_fifo|             receive_fifo_L_0|       pointer|
+|receive_fifo_L_0_full_n  |   in|    1|     ap_fifo|             receive_fifo_L_0|       pointer|
+|receive_fifo_L_0_write   |  out|    1|     ap_fifo|             receive_fifo_L_0|       pointer|
+|sweep_rx1_0_TDATA        |   in|  128|        axis|         sweep_rx1_0_V_data_V|       pointer|
+|sweep_rx1_0_TKEEP        |   in|   16|        axis|         sweep_rx1_0_V_keep_V|       pointer|
+|sweep_rx1_0_TSTRB        |   in|   16|        axis|         sweep_rx1_0_V_strb_V|       pointer|
+|sweep_rx1_0_TLAST        |   in|    1|        axis|         sweep_rx1_0_V_last_V|       pointer|
+|sweep_rx1_0_TVALID       |   in|    1|        axis|         sweep_rx1_0_V_last_V|       pointer|
+|sweep_rx1_0_TREADY       |  out|    1|        axis|         sweep_rx1_0_V_last_V|       pointer|
+|receive_fifo_R_0_din     |  out|  128|     ap_fifo|             receive_fifo_R_0|       pointer|
+|receive_fifo_R_0_full_n  |   in|    1|     ap_fifo|             receive_fifo_R_0|       pointer|
+|receive_fifo_R_0_write   |  out|    1|     ap_fifo|             receive_fifo_R_0|       pointer|
+|sweep_rx1_1_TDATA        |   in|  128|        axis|         sweep_rx1_1_V_data_V|       pointer|
+|sweep_rx1_1_TKEEP        |   in|   16|        axis|         sweep_rx1_1_V_keep_V|       pointer|
+|sweep_rx1_1_TSTRB        |   in|   16|        axis|         sweep_rx1_1_V_strb_V|       pointer|
+|sweep_rx1_1_TLAST        |   in|    1|        axis|         sweep_rx1_1_V_last_V|       pointer|
+|sweep_rx1_1_TVALID       |   in|    1|        axis|         sweep_rx1_1_V_last_V|       pointer|
+|sweep_rx1_1_TREADY       |  out|    1|        axis|         sweep_rx1_1_V_last_V|       pointer|
+|receive_fifo_L_1_din     |  out|  128|     ap_fifo|             receive_fifo_L_1|       pointer|
+|receive_fifo_L_1_full_n  |   in|    1|     ap_fifo|             receive_fifo_L_1|       pointer|
+|receive_fifo_L_1_write   |  out|    1|     ap_fifo|             receive_fifo_L_1|       pointer|
+|sweep_rx2_0_TDATA        |   in|  128|        axis|         sweep_rx2_0_V_data_V|       pointer|
+|sweep_rx2_0_TKEEP        |   in|   16|        axis|         sweep_rx2_0_V_keep_V|       pointer|
+|sweep_rx2_0_TSTRB        |   in|   16|        axis|         sweep_rx2_0_V_strb_V|       pointer|
+|sweep_rx2_0_TLAST        |   in|    1|        axis|         sweep_rx2_0_V_last_V|       pointer|
+|sweep_rx2_0_TVALID       |   in|    1|        axis|         sweep_rx2_0_V_last_V|       pointer|
+|sweep_rx2_0_TREADY       |  out|    1|        axis|         sweep_rx2_0_V_last_V|       pointer|
+|receive_fifo_R_1_din     |  out|  128|     ap_fifo|             receive_fifo_R_1|       pointer|
+|receive_fifo_R_1_full_n  |   in|    1|     ap_fifo|             receive_fifo_R_1|       pointer|
+|receive_fifo_R_1_write   |  out|    1|     ap_fifo|             receive_fifo_R_1|       pointer|
+|sweep_rx2_1_TDATA        |   in|  128|        axis|         sweep_rx2_1_V_data_V|       pointer|
+|sweep_rx2_1_TKEEP        |   in|   16|        axis|         sweep_rx2_1_V_keep_V|       pointer|
+|sweep_rx2_1_TSTRB        |   in|   16|        axis|         sweep_rx2_1_V_strb_V|       pointer|
+|sweep_rx2_1_TLAST        |   in|    1|        axis|         sweep_rx2_1_V_last_V|       pointer|
+|sweep_rx2_1_TVALID       |   in|    1|        axis|         sweep_rx2_1_V_last_V|       pointer|
+|sweep_rx2_1_TREADY       |  out|    1|        axis|         sweep_rx2_1_V_last_V|       pointer|
+|receive_fifo_L_2_din     |  out|  128|     ap_fifo|             receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_full_n  |   in|    1|     ap_fifo|             receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_write   |  out|    1|     ap_fifo|             receive_fifo_L_2|       pointer|
+|sweep_rx3_0_TDATA        |   in|  128|        axis|         sweep_rx3_0_V_data_V|       pointer|
+|sweep_rx3_0_TKEEP        |   in|   16|        axis|         sweep_rx3_0_V_keep_V|       pointer|
+|sweep_rx3_0_TSTRB        |   in|   16|        axis|         sweep_rx3_0_V_strb_V|       pointer|
+|sweep_rx3_0_TLAST        |   in|    1|        axis|         sweep_rx3_0_V_last_V|       pointer|
+|sweep_rx3_0_TVALID       |   in|    1|        axis|         sweep_rx3_0_V_last_V|       pointer|
+|sweep_rx3_0_TREADY       |  out|    1|        axis|         sweep_rx3_0_V_last_V|       pointer|
+|receive_fifo_R_2_din     |  out|  128|     ap_fifo|             receive_fifo_R_2|       pointer|
+|receive_fifo_R_2_full_n  |   in|    1|     ap_fifo|             receive_fifo_R_2|       pointer|
+|receive_fifo_R_2_write   |  out|    1|     ap_fifo|             receive_fifo_R_2|       pointer|
+|sweep_rx3_1_TDATA        |   in|  128|        axis|         sweep_rx3_1_V_data_V|       pointer|
+|sweep_rx3_1_TKEEP        |   in|   16|        axis|         sweep_rx3_1_V_keep_V|       pointer|
+|sweep_rx3_1_TSTRB        |   in|   16|        axis|         sweep_rx3_1_V_strb_V|       pointer|
+|sweep_rx3_1_TLAST        |   in|    1|        axis|         sweep_rx3_1_V_last_V|       pointer|
+|sweep_rx3_1_TVALID       |   in|    1|        axis|         sweep_rx3_1_V_last_V|       pointer|
+|sweep_rx3_1_TREADY       |  out|    1|        axis|         sweep_rx3_1_V_last_V|       pointer|
+|receive_fifo_L_3_din     |  out|  128|     ap_fifo|             receive_fifo_L_3|       pointer|
+|receive_fifo_L_3_full_n  |   in|    1|     ap_fifo|             receive_fifo_L_3|       pointer|
+|receive_fifo_L_3_write   |  out|    1|     ap_fifo|             receive_fifo_L_3|       pointer|
+|sweep_rx4_0_TDATA        |   in|  128|        axis|         sweep_rx4_0_V_data_V|       pointer|
+|sweep_rx4_0_TKEEP        |   in|   16|        axis|         sweep_rx4_0_V_keep_V|       pointer|
+|sweep_rx4_0_TSTRB        |   in|   16|        axis|         sweep_rx4_0_V_strb_V|       pointer|
+|sweep_rx4_0_TLAST        |   in|    1|        axis|         sweep_rx4_0_V_last_V|       pointer|
+|sweep_rx4_0_TVALID       |   in|    1|        axis|         sweep_rx4_0_V_last_V|       pointer|
+|sweep_rx4_0_TREADY       |  out|    1|        axis|         sweep_rx4_0_V_last_V|       pointer|
+|receive_fifo_R_3_din     |  out|  128|     ap_fifo|             receive_fifo_R_3|       pointer|
+|receive_fifo_R_3_full_n  |   in|    1|     ap_fifo|             receive_fifo_R_3|       pointer|
+|receive_fifo_R_3_write   |  out|    1|     ap_fifo|             receive_fifo_R_3|       pointer|
+|sweep_rx4_1_TDATA        |   in|  128|        axis|         sweep_rx4_1_V_data_V|       pointer|
+|sweep_rx4_1_TKEEP        |   in|   16|        axis|         sweep_rx4_1_V_keep_V|       pointer|
+|sweep_rx4_1_TSTRB        |   in|   16|        axis|         sweep_rx4_1_V_strb_V|       pointer|
+|sweep_rx4_1_TLAST        |   in|    1|        axis|         sweep_rx4_1_V_last_V|       pointer|
+|sweep_rx4_1_TVALID       |   in|    1|        axis|         sweep_rx4_1_V_last_V|       pointer|
+|sweep_rx4_1_TREADY       |  out|    1|        axis|         sweep_rx4_1_V_last_V|       pointer|
+|convSet_L_0_din          |  out|   32|     ap_fifo|                  convSet_L_0|       pointer|
+|convSet_L_0_full_n       |   in|    1|     ap_fifo|                  convSet_L_0|       pointer|
+|convSet_L_0_write        |  out|    1|     ap_fifo|                  convSet_L_0|       pointer|
+|convSet_R_0_din          |  out|   32|     ap_fifo|                  convSet_R_0|       pointer|
+|convSet_R_0_full_n       |   in|    1|     ap_fifo|                  convSet_R_0|       pointer|
+|convSet_R_0_write        |  out|    1|     ap_fifo|                  convSet_R_0|       pointer|
+|convSet_L_1_din          |  out|   32|     ap_fifo|                  convSet_L_1|       pointer|
+|convSet_L_1_full_n       |   in|    1|     ap_fifo|                  convSet_L_1|       pointer|
+|convSet_L_1_write        |  out|    1|     ap_fifo|                  convSet_L_1|       pointer|
+|convSet_R_1_din          |  out|   32|     ap_fifo|                  convSet_R_1|       pointer|
+|convSet_R_1_full_n       |   in|    1|     ap_fifo|                  convSet_R_1|       pointer|
+|convSet_R_1_write        |  out|    1|     ap_fifo|                  convSet_R_1|       pointer|
+|convSet_L_2_din          |  out|   32|     ap_fifo|                  convSet_L_2|       pointer|
+|convSet_L_2_full_n       |   in|    1|     ap_fifo|                  convSet_L_2|       pointer|
+|convSet_L_2_write        |  out|    1|     ap_fifo|                  convSet_L_2|       pointer|
+|convSet_R_2_din          |  out|   32|     ap_fifo|                  convSet_R_2|       pointer|
+|convSet_R_2_full_n       |   in|    1|     ap_fifo|                  convSet_R_2|       pointer|
+|convSet_R_2_write        |  out|    1|     ap_fifo|                  convSet_R_2|       pointer|
+|convSet_L_3_din          |  out|   32|     ap_fifo|                  convSet_L_3|       pointer|
+|convSet_L_3_full_n       |   in|    1|     ap_fifo|                  convSet_L_3|       pointer|
+|convSet_L_3_write        |  out|    1|     ap_fifo|                  convSet_L_3|       pointer|
+|convSet_R_3_din          |  out|   32|     ap_fifo|                  convSet_R_3|       pointer|
+|convSet_R_3_full_n       |   in|    1|     ap_fifo|                  convSet_R_3|       pointer|
+|convSet_R_3_write        |  out|    1|     ap_fifo|                  convSet_R_3|       pointer|
+|ap_clk                   |   in|    1|  ap_ctrl_hs|  dataflow_parent_loop_proc28|  return value|
+|ap_rst                   |   in|    1|  ap_ctrl_hs|  dataflow_parent_loop_proc28|  return value|
+|ap_start                 |   in|    1|  ap_ctrl_hs|  dataflow_parent_loop_proc28|  return value|
+|ap_done                  |  out|    1|  ap_ctrl_hs|  dataflow_parent_loop_proc28|  return value|
+|ap_ready                 |  out|    1|  ap_ctrl_hs|  dataflow_parent_loop_proc28|  return value|
+|ap_idle                  |  out|    1|  ap_ctrl_hs|  dataflow_parent_loop_proc28|  return value|
+|ap_continue              |   in|    1|  ap_ctrl_hs|  dataflow_parent_loop_proc28|  return value|
++-------------------------+-----+-----+------------+-----------------------------+--------------+
+

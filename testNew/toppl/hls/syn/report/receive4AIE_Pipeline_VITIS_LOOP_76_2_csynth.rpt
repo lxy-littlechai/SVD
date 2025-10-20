@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'receive4AIE_Pipeline_VITIS_LOOP_76_2'
 ================================================================
-* Date:           Sun Oct 19 23:23:18 2025
+* Date:           Mon Oct 20 21:15:03 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -85,7 +85,7 @@
     +----------------------------------+----------+----+---+-----+------------+------------+
     |           Variable Name          | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
     +----------------------------------+----------+----+---+-----+------------+------------+
-    |j_12_fu_198_p2                    |         +|   0|  0|    5|           4|           1|
+    |j_16_fu_198_p2                    |         +|   0|  0|    5|           4|           1|
     |ap_block_state2_pp0_stage0_iter1  |       and|   0|  0|    2|           1|           1|
     |icmp_ln76_fu_181_p2               |      icmp|   0|  0|    5|           4|           5|
     |ap_block_pp0_stage0_01001         |        or|   0|  0|    2|           1|           1|
@@ -105,7 +105,7 @@
     |ap_done_int              |    2|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |    2|          2|    1|          2|
     |ap_enable_reg_pp0_iter2  |    2|          2|    1|          2|
-    |data_temp_36_out_o       |  128|          3|  128|        384|
+    |data_temp_68_out_o       |  128|          3|  128|        384|
     |data_temp_fu_88          |  121|          2|  128|        256|
     |j_02_fu_84               |    4|          2|    4|          8|
     |receive_fifo_L_0_blk_n   |    2|          2|    1|          2|
@@ -151,16 +151,16 @@
 |receive_fifo_L_0_fifo_cap        |   in|    9|     ap_fifo|                      receive_fifo_L_0|       pointer|
 |receive_fifo_L_0_full_n          |   in|    1|     ap_fifo|                      receive_fifo_L_0|       pointer|
 |receive_fifo_L_0_write           |  out|    1|     ap_fifo|                      receive_fifo_L_0|       pointer|
-|data_temp_33                     |   in|  128|     ap_none|                          data_temp_33|        scalar|
-|data_temp_34                     |   in|  128|     ap_none|                          data_temp_34|        scalar|
+|data_temp_65                     |   in|  128|     ap_none|                          data_temp_65|        scalar|
+|data_temp_66                     |   in|  128|     ap_none|                          data_temp_66|        scalar|
 |sweep_rx1_0_TREADY               |  out|    1|        axis|                  sweep_rx1_0_V_last_V|       pointer|
 |sweep_rx1_0_TLAST                |   in|    1|        axis|                  sweep_rx1_0_V_last_V|       pointer|
 |sweep_rx1_0_TKEEP                |   in|   16|        axis|                  sweep_rx1_0_V_keep_V|       pointer|
 |sweep_rx1_0_TSTRB                |   in|   16|        axis|                  sweep_rx1_0_V_strb_V|       pointer|
-|data_temp_37_out                 |  out|  128|      ap_vld|                      data_temp_37_out|       pointer|
-|data_temp_37_out_ap_vld          |  out|    1|      ap_vld|                      data_temp_37_out|       pointer|
-|data_temp_36_out_i               |   in|  128|     ap_ovld|                      data_temp_36_out|       pointer|
-|data_temp_36_out_o               |  out|  128|     ap_ovld|                      data_temp_36_out|       pointer|
-|data_temp_36_out_o_ap_vld        |  out|    1|     ap_ovld|                      data_temp_36_out|       pointer|
+|data_temp_69_out                 |  out|  128|      ap_vld|                      data_temp_69_out|       pointer|
+|data_temp_69_out_ap_vld          |  out|    1|      ap_vld|                      data_temp_69_out|       pointer|
+|data_temp_68_out_i               |   in|  128|     ap_ovld|                      data_temp_68_out|       pointer|
+|data_temp_68_out_o               |  out|  128|     ap_ovld|                      data_temp_68_out|       pointer|
+|data_temp_68_out_o_ap_vld        |  out|    1|     ap_ovld|                      data_temp_68_out|       pointer|
 +---------------------------------+-----+-----+------------+--------------------------------------+--------------+
 

@@ -82,12 +82,52 @@
           <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
         </hw>
       </arg>
-      <arg id="13" access_type="w" src_name="norm_tx0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+      <arg id="13" access_type="w" src_name="sweep_tx3_0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_tx3_0" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="14" access_type="r" src_name="sweep_rx3_0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_rx3_0" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="15" access_type="w" src_name="sweep_tx3_1" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_tx3_1" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="16" access_type="r" src_name="sweep_rx3_1" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_rx3_1" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="17" access_type="w" src_name="sweep_tx4_0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_tx4_0" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="18" access_type="r" src_name="sweep_rx4_0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_rx4_0" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="19" access_type="w" src_name="sweep_tx4_1" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_tx4_1" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="20" access_type="r" src_name="sweep_rx4_1" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="sweep_rx4_1" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="21" access_type="w" src_name="norm_tx0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="norm_tx0" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
         </hw>
       </arg>
-      <arg id="14" access_type="r" src_name="norm_rx0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
+      <arg id="22" access_type="r" src_name="norm_rx0" src_type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="256" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="norm_rx0" hw_bitwidth="128" hw_size_or_depth="1" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
         </hw>

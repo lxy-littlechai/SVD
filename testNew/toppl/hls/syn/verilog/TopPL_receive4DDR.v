@@ -85,7 +85,7 @@ wire    ap_CS_fsm_state3;
 wire    ap_CS_fsm_state4;
 reg   [127:0] data_temp_fu_88;
 reg   [1:0] i_04_fu_84;
-wire   [1:0] i_11_fu_188_p2;
+wire   [1:0] i_19_fu_188_p2;
 reg    ap_block_state2;
 reg   [127:0] data_temp_1_fu_92;
 wire   [127:0] data_temp_6_fu_254_p5;
@@ -178,7 +178,7 @@ always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
         i_04_fu_84 <= 2'd0;
     end else if (((icmp_ln32_fu_194_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2) & (1'b0 == ap_block_state2))) begin
-        i_04_fu_84 <= i_11_fu_188_p2;
+        i_04_fu_84 <= i_19_fu_188_p2;
     end
 end
 
@@ -382,7 +382,7 @@ assign data_temp_6_fu_254_p5 = {{trunc_ln50_fu_250_p1}, {grp_receive4DDR_Pipelin
 
 assign grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start = grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start_reg;
 
-assign i_11_fu_188_p2 = (i_04_fu_84 + 2'd1);
+assign i_19_fu_188_p2 = (i_04_fu_84 + 2'd1);
 
 assign icmp_ln32_fu_194_p2 = ((i_04_fu_84 == 2'd2) ? 1'b1 : 1'b0);
 

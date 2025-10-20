@@ -13,6 +13,14 @@
             <port name="SWEEP_RX2_0" mode="read_only" dataWidth="128" portType="stream"/>
             <port name="SWEEP_TX2_1" mode="write_only" dataWidth="128" portType="stream"/>
             <port name="SWEEP_RX2_1" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_TX3_0" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_RX3_0" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_TX3_1" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_RX3_1" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_TX4_0" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_RX4_0" mode="read_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_TX4_1" mode="write_only" dataWidth="128" portType="stream"/>
+            <port name="SWEEP_RX4_1" mode="read_only" dataWidth="128" portType="stream"/>
             <port name="NORM_TX0" mode="write_only" dataWidth="128" portType="stream"/>
             <port name="NORM_RX0" mode="read_only" dataWidth="128" portType="stream"/>
             <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x48" dataWidth="32"/>
@@ -31,8 +39,16 @@
             <arg id="10" name="sweep_rx2_0" addressQualifier="4" port="SWEEP_RX2_0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_rx2_0" origUse="variable"/>
             <arg id="11" name="sweep_tx2_1" addressQualifier="4" port="SWEEP_TX2_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_tx2_1" origUse="variable"/>
             <arg id="12" name="sweep_rx2_1" addressQualifier="4" port="SWEEP_RX2_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_rx2_1" origUse="variable"/>
-            <arg id="13" name="norm_tx0" addressQualifier="4" port="NORM_TX0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="norm_tx0" origUse="variable"/>
-            <arg id="14" name="norm_rx0" addressQualifier="4" port="NORM_RX0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="norm_rx0" origUse="variable"/>
+            <arg id="13" name="sweep_tx3_0" addressQualifier="4" port="SWEEP_TX3_0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_tx3_0" origUse="variable"/>
+            <arg id="14" name="sweep_rx3_0" addressQualifier="4" port="SWEEP_RX3_0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_rx3_0" origUse="variable"/>
+            <arg id="15" name="sweep_tx3_1" addressQualifier="4" port="SWEEP_TX3_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_tx3_1" origUse="variable"/>
+            <arg id="16" name="sweep_rx3_1" addressQualifier="4" port="SWEEP_RX3_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_rx3_1" origUse="variable"/>
+            <arg id="17" name="sweep_tx4_0" addressQualifier="4" port="SWEEP_TX4_0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_tx4_0" origUse="variable"/>
+            <arg id="18" name="sweep_rx4_0" addressQualifier="4" port="SWEEP_RX4_0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_rx4_0" origUse="variable"/>
+            <arg id="19" name="sweep_tx4_1" addressQualifier="4" port="SWEEP_TX4_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_tx4_1" origUse="variable"/>
+            <arg id="20" name="sweep_rx4_1" addressQualifier="4" port="SWEEP_RX4_1" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="sweep_rx4_1" origUse="variable"/>
+            <arg id="21" name="norm_tx0" addressQualifier="4" port="NORM_TX0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="norm_tx0" origUse="variable"/>
+            <arg id="22" name="norm_rx0" addressQualifier="4" port="NORM_RX0" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;hls::axis&lt;ap_uint&lt;128&gt;, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" memSize="0x10" origName="norm_rx0" origUse="variable"/>
         </args>
         <compileWorkGroupSize x="1" y="1" z="1"/>
         <maxWorkGroupSize x="1" y="1" z="1"/>

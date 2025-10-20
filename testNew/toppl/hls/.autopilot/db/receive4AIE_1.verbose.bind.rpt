@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'receive4AIE_1'
 ================================================================
-* Date:           Sun Oct 19 23:23:11 2025
+* Date:           Mon Oct 20 21:14:48 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -91,18 +91,18 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.53>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%conv_3 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:66]   --->   Operation 8 'alloca' 'conv_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%conv_03 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:66]   --->   Operation 8 'alloca' 'conv_03' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_04 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 9 'alloca' 'i_04' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%data_temp = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 10 'alloca' 'data_temp' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%data_temp_25 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 11 'alloca' 'data_temp_25' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%data_temp_29_loc = alloca i64 1"   --->   Operation 12 'alloca' 'data_temp_29_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 0, i1 %sweep_rx2_0_V_last_V, i1 0, i1 0, void @empty_12"   --->   Operation 13 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%data_temp_51 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 11 'alloca' 'data_temp_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%data_temp_61_loc = alloca i64 1"   --->   Operation 12 'alloca' 'data_temp_61_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 0, i1 %sweep_rx2_0_V_last_V, i1 0, i1 0, void @empty_8"   --->   Operation 13 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_L_1, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 14 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_1, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %sweep_rx2_0_V_last_V, i16 %sweep_rx2_0_V_strb_V, i16 %sweep_rx2_0_V_keep_V, i128 %sweep_rx2_0_V_data_V, void @empty_4, i32 0, i32 0, void @empty_31, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_1, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %sweep_rx2_0_V_last_V, i16 %sweep_rx2_0_V_strb_V, i16 %sweep_rx2_0_V_keep_V, i128 %sweep_rx2_0_V_data_V, void @empty_82, i32 0, i32 0, void @empty_81, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln65 = muxlogic i128 0"   --->   Operation 17 'muxlogic' 'muxLogicData_to_store_ln65' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_25"   --->   Operation 18 'muxlogic' 'muxLogicAddr_to_store_ln65' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 19 [1/1] (0.53ns)   --->   "%store_ln65 = store i128 0, i128 %data_temp_25" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 19 'store' 'store_ln65' <Predicate = true> <Delay = 0.53>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_51"   --->   Operation 18 'muxlogic' 'muxLogicAddr_to_store_ln65' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.53ns)   --->   "%store_ln65 = store i128 0, i128 %data_temp_51" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 19 'store' 'store_ln65' <Predicate = true> <Delay = 0.53>
 ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln65 = muxlogic i128 0"   --->   Operation 20 'muxlogic' 'muxLogicData_to_store_ln65' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp"   --->   Operation 21 'muxlogic' 'muxLogicAddr_to_store_ln65' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%store_ln65 = store i128 0, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 22 'store' 'store_ln65' <Predicate = true> <Delay = 0.00>
@@ -110,14 +110,14 @@ ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln69 = muxlo
 ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln69 = muxlogic i2 %i_04"   --->   Operation 24 'muxlogic' 'muxLogicAddr_to_store_ln69' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 25 [1/1] (0.33ns)   --->   "%store_ln69 = store i2 0, i2 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 25 'store' 'store_ln69' <Predicate = true> <Delay = 0.33>
 ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln66 = muxlogic i32 0"   --->   Operation 26 'muxlogic' 'muxLogicData_to_store_ln66' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln66 = muxlogic i32 %conv_3"   --->   Operation 27 'muxlogic' 'muxLogicAddr_to_store_ln66' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 28 [1/1] (0.46ns)   --->   "%store_ln66 = store i32 0, i32 %conv_3" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:66]   --->   Operation 28 'store' 'store_ln66' <Predicate = true> <Delay = 0.46>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln66 = muxlogic i32 %conv_03"   --->   Operation 27 'muxlogic' 'muxLogicAddr_to_store_ln66' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.46ns)   --->   "%store_ln66 = store i32 0, i32 %conv_03" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:66]   --->   Operation 28 'store' 'store_ln66' <Predicate = true> <Delay = 0.46>
 ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln69 = br void %VITIS_LOOP_76_2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 29 'br' 'br_ln69' <Predicate = true> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 1.53>
 ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_i = muxlogic i2 %i_04"   --->   Operation 30 'muxlogic' 'MuxLogicAddr_to_i' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%i = load i2 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 31 'load' 'i' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 32 [1/1] (0.53ns)   --->   "%i_14 = add i2 %i, i2 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 32 'add' 'i_14' <Predicate = true> <Delay = 0.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.53ns)   --->   "%i_26 = add i2 %i, i2 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 32 'add' 'i_26' <Predicate = true> <Delay = 0.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 33 [1/1] (0.53ns)   --->   "%icmp_ln69 = icmp_eq  i2 %i, i2 2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 33 'icmp' 'icmp_ln69' <Predicate = true> <Delay = 0.53> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln69 = br i1 %icmp_ln69, void %VITIS_LOOP_76_2.split, void %for.end72" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 34 'br' 'br_ln69' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_load = muxlogic i128 %data_temp"   --->   Operation 35 'muxlogic' 'MuxLogicAddr_to_data_temp_load' <Predicate = (!icmp_ln69)> <Delay = 0.00>
@@ -126,102 +126,102 @@ ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty = muxlogic"   
 ST_2 : Operation 38 [1/1] (1.00ns)   --->   "%empty = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:70]   --->   Operation 38 'read' 'empty' <Predicate = (!icmp_ln69)> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
 ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_data = extractvalue i161 %empty" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:70]   --->   Operation 39 'extractvalue' 'tmp_data' <Predicate = (!icmp_ln69)> <Delay = 0.00>
 ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%tmp = partselect i96 @_ssdm_op_PartSelect.i96.i128.i32.i32, i128 %tmp_data, i32 32, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:74]   --->   Operation 40 'partselect' 'tmp' <Predicate = (!icmp_ln69)> <Delay = 0.00>
-ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%data_temp_28 = partset i128 @_ssdm_op_PartSet.i128.i128.i96.i32.i32, i128 %data_temp_load, i96 %tmp, i32 0, i32 95" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:74]   --->   Operation 41 'partset' 'data_temp_28' <Predicate = (!icmp_ln69)> <Delay = 0.00>
-ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln69 = muxlogic i2 %i_14"   --->   Operation 42 'muxlogic' 'muxLogicData_to_store_ln69' <Predicate = (!icmp_ln69)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%data_temp_52 = partset i128 @_ssdm_op_PartSet.i128.i128.i96.i32.i32, i128 %data_temp_load, i96 %tmp, i32 0, i32 95" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:74]   --->   Operation 41 'partset' 'data_temp_52' <Predicate = (!icmp_ln69)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln69 = muxlogic i2 %i_26"   --->   Operation 42 'muxlogic' 'muxLogicData_to_store_ln69' <Predicate = (!icmp_ln69)> <Delay = 0.00>
 ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln69 = muxlogic i2 %i_04"   --->   Operation 43 'muxlogic' 'muxLogicAddr_to_store_ln69' <Predicate = (!icmp_ln69)> <Delay = 0.00>
-ST_2 : Operation 44 [1/1] (0.33ns)   --->   "%store_ln69 = store i2 %i_14, i2 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 44 'store' 'store_ln69' <Predicate = (!icmp_ln69)> <Delay = 0.33>
-ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_conv_3_load = muxlogic i32 %conv_3"   --->   Operation 45 'muxlogic' 'MuxLogicAddr_to_conv_3_load' <Predicate = (icmp_ln69)> <Delay = 0.00>
-ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%conv_3_load = load i32 %conv_3"   --->   Operation 46 'load' 'conv_3_load' <Predicate = (icmp_ln69)> <Delay = 0.00>
-ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln0 = muxlogic i32 %conv_3_load"   --->   Operation 47 'muxlogic' 'muxLogicData_to_write_ln0' <Predicate = (icmp_ln69)> <Delay = 0.00>
-ST_2 : Operation 48 [1/1] (0.83ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.volatile.floatP0A, i32 %return_r, i32 %conv_3_load"   --->   Operation 48 'write' 'write_ln0' <Predicate = (icmp_ln69)> <Delay = 0.83> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_2 : Operation 44 [1/1] (0.33ns)   --->   "%store_ln69 = store i2 %i_26, i2 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 44 'store' 'store_ln69' <Predicate = (!icmp_ln69)> <Delay = 0.33>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_conv_03_load = muxlogic i32 %conv_03"   --->   Operation 45 'muxlogic' 'MuxLogicAddr_to_conv_03_load' <Predicate = (icmp_ln69)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%conv_03_load = load i32 %conv_03"   --->   Operation 46 'load' 'conv_03_load' <Predicate = (icmp_ln69)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln0 = muxlogic i32 %conv_03_load"   --->   Operation 47 'muxlogic' 'muxLogicData_to_write_ln0' <Predicate = (icmp_ln69)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.83ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.volatile.floatP0A, i32 %return_r, i32 %conv_03_load"   --->   Operation 48 'write' 'write_ln0' <Predicate = (icmp_ln69)> <Delay = 0.83> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
 ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%ret_ln91 = ret" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:91]   --->   Operation 49 'ret' 'ret_ln91' <Predicate = (icmp_ln69)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 2.04>
-ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_25_load = muxlogic i128 %data_temp_25"   --->   Operation 50 'muxlogic' 'MuxLogicAddr_to_data_temp_25_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%data_temp_25_load = load i128 %data_temp_25"   --->   Operation 51 'load' 'data_temp_25_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%empty_104 = wait i32 @_ssdm_op_Wait"   --->   Operation 52 'wait' 'empty_104' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 53 [2/2] (2.04ns)   --->   "%call_ln74 = call void @receive4AIE.1_Pipeline_VITIS_LOOP_76_2, i128 %data_temp_25_load, i128 %data_temp_28, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V, i128 %receive_fifo_L_1, i128 %data_temp_29_loc, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:74]   --->   Operation 53 'call' 'call_ln74' <Predicate = true> <Delay = 2.04> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_51_load = muxlogic i128 %data_temp_51"   --->   Operation 50 'muxlogic' 'MuxLogicAddr_to_data_temp_51_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%data_temp_51_load = load i128 %data_temp_51"   --->   Operation 51 'load' 'data_temp_51_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%empty_141 = wait i32 @_ssdm_op_Wait"   --->   Operation 52 'wait' 'empty_141' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 53 [2/2] (2.04ns)   --->   "%call_ln74 = call void @receive4AIE.1_Pipeline_VITIS_LOOP_76_2, i128 %data_temp_51_load, i128 %data_temp_52, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V, i128 %receive_fifo_L_1, i128 %data_temp_61_loc, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:74]   --->   Operation 53 'call' 'call_ln74' <Predicate = true> <Delay = 2.04> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 4 <SV = 3> <Delay = 0.53>
-ST_4 : Operation 54 [1/2] (0.53ns)   --->   "%call_ln74 = call void @receive4AIE.1_Pipeline_VITIS_LOOP_76_2, i128 %data_temp_25_load, i128 %data_temp_28, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V, i128 %receive_fifo_L_1, i128 %data_temp_29_loc, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:74]   --->   Operation 54 'call' 'call_ln74' <Predicate = true> <Delay = 0.53> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 54 [1/2] (0.53ns)   --->   "%call_ln74 = call void @receive4AIE.1_Pipeline_VITIS_LOOP_76_2, i128 %data_temp_51_load, i128 %data_temp_52, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V, i128 %receive_fifo_L_1, i128 %data_temp_61_loc, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:74]   --->   Operation 54 'call' 'call_ln74' <Predicate = true> <Delay = 0.53> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 5 <SV = 4> <Delay = 2.03>
-ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_29_loc_load = muxlogic i128 %data_temp_29_loc"   --->   Operation 55 'muxlogic' 'MuxLogicAddr_to_data_temp_29_loc_load' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%data_temp_29_loc_load = load i128 %data_temp_29_loc"   --->   Operation 56 'load' 'data_temp_29_loc_load' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%empty_105 = wait i32 @_ssdm_op_Wait"   --->   Operation 57 'wait' 'empty_105' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty_106 = muxlogic"   --->   Operation 58 'muxlogic' 'muxLogicCE_to_empty_106' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 59 [1/1] (1.00ns)   --->   "%empty_106 = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:85]   --->   Operation 59 'read' 'empty_106' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_data_9 = extractvalue i161 %empty_106" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:85]   --->   Operation 60 'extractvalue' 'tmp_data_9' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%trunc_ln86 = trunc i128 %tmp_data_9" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:86]   --->   Operation 61 'trunc' 'trunc_ln86' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%data_temp_29 = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i32.i32, i128 %data_temp_29_loc_load, i32 %trunc_ln86, i32 96, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:86]   --->   Operation 62 'partset' 'data_temp_29' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%fp_uint_tmp = partselect i32 @_ssdm_op_PartSelect.i32.i128.i32.i32, i128 %tmp_data_9, i32 32, i32 63" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:87]   --->   Operation 63 'partselect' 'fp_uint_tmp' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln89 = muxlogic i128 %data_temp_29"   --->   Operation 64 'muxlogic' 'muxLogicData_to_write_ln89' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 65 [1/1] (1.03ns)   --->   "%write_ln89 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_1, i128 %data_temp_29" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:89]   --->   Operation 65 'write' 'write_ln89' <Predicate = true> <Delay = 1.03> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.03> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 256> <FIFO>
-ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_29"   --->   Operation 66 'muxlogic' 'muxLogicData_to_store_ln65' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_25"   --->   Operation 67 'muxlogic' 'muxLogicAddr_to_store_ln65' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 68 [1/1] (0.53ns)   --->   "%store_ln65 = store i128 %data_temp_29, i128 %data_temp_25" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 68 'store' 'store_ln65' <Predicate = true> <Delay = 0.53>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_61_loc_load = muxlogic i128 %data_temp_61_loc"   --->   Operation 55 'muxlogic' 'MuxLogicAddr_to_data_temp_61_loc_load' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%data_temp_61_loc_load = load i128 %data_temp_61_loc"   --->   Operation 56 'load' 'data_temp_61_loc_load' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%empty_142 = wait i32 @_ssdm_op_Wait"   --->   Operation 57 'wait' 'empty_142' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty_143 = muxlogic"   --->   Operation 58 'muxlogic' 'muxLogicCE_to_empty_143' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 59 [1/1] (1.00ns)   --->   "%empty_143 = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:85]   --->   Operation 59 'read' 'empty_143' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_data_17 = extractvalue i161 %empty_143" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:85]   --->   Operation 60 'extractvalue' 'tmp_data_17' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%trunc_ln86 = trunc i128 %tmp_data_17" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:86]   --->   Operation 61 'trunc' 'trunc_ln86' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%data_temp_53 = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i32.i32, i128 %data_temp_61_loc_load, i32 %trunc_ln86, i32 96, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:86]   --->   Operation 62 'partset' 'data_temp_53' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%fp_uint_tmp = partselect i32 @_ssdm_op_PartSelect.i32.i128.i32.i32, i128 %tmp_data_17, i32 32, i32 63" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:87]   --->   Operation 63 'partselect' 'fp_uint_tmp' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln89 = muxlogic i128 %data_temp_53"   --->   Operation 64 'muxlogic' 'muxLogicData_to_write_ln89' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (1.03ns)   --->   "%write_ln89 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_1, i128 %data_temp_53" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:89]   --->   Operation 65 'write' 'write_ln89' <Predicate = true> <Delay = 1.03> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.03> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 256> <FIFO>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_53"   --->   Operation 66 'muxlogic' 'muxLogicData_to_store_ln65' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_51"   --->   Operation 67 'muxlogic' 'muxLogicAddr_to_store_ln65' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.53ns)   --->   "%store_ln65 = store i128 %data_temp_53, i128 %data_temp_51" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 68 'store' 'store_ln65' <Predicate = true> <Delay = 0.53>
 
 State 6 <SV = 5> <Delay = 3.14>
-ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_conv_3_load_1 = muxlogic i32 %conv_3"   --->   Operation 69 'muxlogic' 'MuxLogicAddr_to_conv_3_load_1' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%conv_3_load_1 = load i32 %conv_3" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 70 'load' 'conv_3_load_1' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 71 [1/1] (0.49ns) (share mux size 2)   --->   "%muxLogicI0_to_dc = muxlogic i32 %conv_3_load_1"   --->   Operation 71 'muxlogic' 'muxLogicI0_to_dc' <Predicate = true> <Delay = 0.49>
-ST_6 : Operation 72 [1/1] (1.26ns)   --->   "%dc = fpext i32 %conv_3_load_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 72 'fpext' 'dc' <Predicate = true> <Delay = 1.26> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 69 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_conv_03_load_4 = muxlogic i32 %conv_03"   --->   Operation 69 'muxlogic' 'MuxLogicAddr_to_conv_03_load_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%conv_03_load_4 = load i32 %conv_03" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 70 'load' 'conv_03_load_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.49ns) (share mux size 2)   --->   "%muxLogicI0_to_dc = muxlogic i32 %conv_03_load_4"   --->   Operation 71 'muxlogic' 'muxLogicI0_to_dc' <Predicate = true> <Delay = 0.49>
+ST_6 : Operation 72 [1/1] (1.26ns)   --->   "%dc = fpext i32 %conv_03_load_4" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 72 'fpext' 'dc' <Predicate = true> <Delay = 1.26> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
 ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%bitcast_ln88 = bitcast i32 %fp_uint_tmp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 73 'bitcast' 'bitcast_ln88' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 74 [1/1] (0.49ns) (share mux size 2)   --->   "%muxLogicI0_to_dc_9 = muxlogic i32 %bitcast_ln88"   --->   Operation 74 'muxlogic' 'muxLogicI0_to_dc_9' <Predicate = true> <Delay = 0.49>
-ST_6 : Operation 75 [1/1] (1.26ns)   --->   "%dc_9 = fpext i32 %bitcast_ln88" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 75 'fpext' 'dc_9' <Predicate = true> <Delay = 1.26> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_6 : Operation 74 [1/1] (0.49ns) (share mux size 2)   --->   "%muxLogicI0_to_dc_21 = muxlogic i32 %bitcast_ln88"   --->   Operation 74 'muxlogic' 'muxLogicI0_to_dc_21' <Predicate = true> <Delay = 0.49>
+ST_6 : Operation 75 [1/1] (1.26ns)   --->   "%dc_21 = fpext i32 %bitcast_ln88" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 75 'fpext' 'dc_21' <Predicate = true> <Delay = 1.26> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
 ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%data = bitcast i64 %dc" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:459->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:21->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 76 'bitcast' 'data' <Predicate = true> <Delay = 0.00>
 ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%x_fp_sign = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %data, i32 63" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:460->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:21->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 77 'bitselect' 'x_fp_sign' <Predicate = true> <Delay = 0.00>
 ST_6 : Operation 78 [1/1] (0.00ns)   --->   "%x_fp_exp = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data, i32 52, i32 62" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:461->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:21->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 78 'partselect' 'x_fp_exp' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%x_fp_sig_3 = trunc i64 %data" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:462->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:21->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 79 'trunc' 'x_fp_sig_3' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%data_6 = bitcast i64 %dc_9" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:459->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 80 'bitcast' 'data_6' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node ymaggreater_3)   --->   "%y_fp_sign = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %data_6, i32 63" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:460->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 81 'bitselect' 'y_fp_sign' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%y_fp_exp = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data_6, i32 52, i32 62" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:461->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 82 'partselect' 'y_fp_exp' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%y_fp_sig = trunc i64 %data_6" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:462->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 83 'trunc' 'y_fp_sig' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%x_fp_sig_7 = trunc i64 %data" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:462->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:21->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 79 'trunc' 'x_fp_sig_7' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 80 [1/1] (0.00ns)   --->   "%data_14 = bitcast i64 %dc_21" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:459->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 80 'bitcast' 'data_14' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node ymaggreater_7)   --->   "%y_fp_sign = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %data_14, i32 63" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:460->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 81 'bitselect' 'y_fp_sign' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%y_fp_exp = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data_14, i32 52, i32 62" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:461->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 82 'partselect' 'y_fp_exp' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%y_fp_sig = trunc i64 %data_14" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:462->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 83 'trunc' 'y_fp_sig' <Predicate = true> <Delay = 0.00>
 ST_6 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln25)   --->   "%or_ln25 = or i11 %y_fp_exp, i11 %x_fp_exp" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 84 'or' 'or_ln25' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_6 : Operation 85 [1/1] (0.80ns) (out node of the LUT)   --->   "%icmp_ln25 = icmp_eq  i11 %or_ln25, i11 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 85 'icmp' 'icmp_ln25' <Predicate = true> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln25_3)   --->   "%or_ln25_3 = or i52 %y_fp_sig, i52 %x_fp_sig_3" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 86 'or' 'or_ln25_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.42> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 87 [1/1] (0.97ns) (out node of the LUT)   --->   "%icmp_ln25_3 = icmp_eq  i52 %or_ln25_3, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 87 'icmp' 'icmp_ln25_3' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln25_7)   --->   "%or_ln25_7 = or i52 %y_fp_sig, i52 %x_fp_sig_7" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 86 'or' 'or_ln25_7' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.42> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 87 [1/1] (0.97ns) (out node of the LUT)   --->   "%icmp_ln25_7 = icmp_eq  i52 %or_ln25_7, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 87 'icmp' 'icmp_ln25_7' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_6 : Operation 88 [1/1] (0.80ns)   --->   "%icmp_ln18 = icmp_eq  i11 %x_fp_exp, i11 2047" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:27->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 88 'icmp' 'icmp_ln18' <Predicate = true> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 89 [1/1] (0.80ns)   --->   "%icmp_ln18_7 = icmp_eq  i11 %y_fp_exp, i11 2047" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 89 'icmp' 'icmp_ln18_7' <Predicate = true> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 90 [1/1] (0.97ns)   --->   "%icmp_ln18_8 = icmp_ne  i52 %y_fp_sig, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 90 'icmp' 'icmp_ln18_8' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 91 [1/1] (0.97ns)   --->   "%icmp_ln18_9 = icmp_eq  i52 %x_fp_sig_3, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:27->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 91 'icmp' 'icmp_ln18_9' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 92 [1/1] (1.05ns)   --->   "%ymaggreater = icmp_slt  i64 %data, i64 %data_6" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:38->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 92 'icmp' 'ymaggreater' <Predicate = true> <Delay = 1.05> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.05> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node ymaggreater_3)   --->   "%xor_ln39 = xor i1 %ymaggreater, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:39->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 93 'xor' 'xor_ln39' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_6 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node ymaggreater_3)   --->   "%select_ln39 = select i1 %x_fp_sign, i1 %xor_ln39, i1 %ymaggreater" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:39->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 94 'select' 'select_ln39' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_6 : Operation 95 [1/1] (0.33ns) (out node of the LUT)   --->   "%ymaggreater_3 = select i1 %y_fp_sign, i1 %select_ln39, i1 %ymaggreater" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:39->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 95 'select' 'ymaggreater_3' <Predicate = true> <Delay = 0.33> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 89 [1/1] (0.80ns)   --->   "%icmp_ln18_19 = icmp_eq  i11 %y_fp_exp, i11 2047" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 89 'icmp' 'icmp_ln18_19' <Predicate = true> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 90 [1/1] (0.97ns)   --->   "%icmp_ln18_20 = icmp_ne  i52 %y_fp_sig, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 90 'icmp' 'icmp_ln18_20' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 91 [1/1] (0.97ns)   --->   "%icmp_ln18_21 = icmp_eq  i52 %x_fp_sig_7, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:27->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 91 'icmp' 'icmp_ln18_21' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 92 [1/1] (1.05ns)   --->   "%ymaggreater = icmp_slt  i64 %data, i64 %data_14" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:38->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 92 'icmp' 'ymaggreater' <Predicate = true> <Delay = 1.05> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.05> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node ymaggreater_7)   --->   "%xor_ln39 = xor i1 %ymaggreater, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:39->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 93 'xor' 'xor_ln39' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node ymaggreater_7)   --->   "%select_ln39 = select i1 %x_fp_sign, i1 %xor_ln39, i1 %ymaggreater" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:39->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 94 'select' 'select_ln39' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 95 [1/1] (0.33ns) (out node of the LUT)   --->   "%ymaggreater_7 = select i1 %y_fp_sign, i1 %select_ln39, i1 %ymaggreater" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:39->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 95 'select' 'ymaggreater_7' <Predicate = true> <Delay = 0.33> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.33> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 
 State 7 <SV = 6> <Delay = 2.88>
 ST_7 : Operation 96 [1/1] (0.00ns)   --->   "%speclooptripcount_ln65 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2, i64 2, i64 2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:65]   --->   Operation 96 'speclooptripcount' 'speclooptripcount_ln65' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 97 [1/1] (0.00ns)   --->   "%specloopname_ln69 = specloopname void @_ssdm_op_SpecLoopName, void @empty_43" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 97 'specloopname' 'specloopname_ln69' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln25 = and i1 %icmp_ln25_3, i1 %icmp_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 98 'and' 'and_ln25' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 99 [1/1] (0.30ns)   --->   "%and_ln18 = and i1 %icmp_ln18_7, i1 %icmp_ln18_8" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 99 'and' 'and_ln18' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 100 [1/1] (0.49ns) (out node of the LUT)   --->   "%res = select i1 %ymaggreater_3, i64 %dc_9, i64 %dc" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:40->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 100 'select' 'res' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_7 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node res_10)   --->   "%x_fp_sig = bitset i52 @_ssdm_op_BitSet.i52.i52.i32.i1, i52 %x_fp_sig_3, i32 51, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:29->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 101 'bitset' 'x_fp_sig' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node res_10)   --->   "%t = bitconcatenate i64 @_ssdm_op_BitConcatenate.i64.i1.i11.i52, i1 %x_fp_sign, i11 2047, i52 %x_fp_sig" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:479->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:496->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:510->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:30->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 102 'bitconcatenate' 't' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node res_10)   --->   "%res_9 = bitcast i64 %t" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:497->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:510->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:30->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 103 'bitcast' 'res_9' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node xor_ln25)   --->   "%and_ln25_3 = and i1 %icmp_ln25_3, i1 %icmp_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 104 'and' 'and_ln25_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 105 [1/1] (0.30ns) (out node of the LUT)   --->   "%xor_ln25 = xor i1 %and_ln25_3, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 105 'xor' 'xor_ln25' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 106 [1/1] (0.30ns)   --->   "%xor_ln18 = xor i1 %icmp_ln18_9, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:27->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 106 'xor' 'xor_ln18' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node res_10)   --->   "%and_ln18_17 = and i1 %icmp_ln18, i1 %xor_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 107 'and' 'and_ln18_17' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node res_10)   --->   "%and_ln18_18 = and i1 %and_ln18, i1 %xor_ln18" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 108 'and' 'and_ln18_18' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node res_10)   --->   "%and_ln18_19 = and i1 %and_ln18_18, i1 %and_ln18_17" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 109 'and' 'and_ln18_19' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 110 [1/1] (0.49ns) (out node of the LUT)   --->   "%res_10 = select i1 %and_ln18_19, i64 %res_9, i64 %res" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 110 'select' 'res_10' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_7 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_20 = and i1 %icmp_ln18_7, i1 %icmp_ln18_8" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 111 'and' 'and_ln18_20' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%xor_ln18_5 = xor i1 %and_ln18_20, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 112 'xor' 'xor_ln18_5' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_21 = and i1 %xor_ln18, i1 %xor_ln18_5" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 113 'and' 'and_ln18_21' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_22 = and i1 %and_ln18_21, i1 %icmp_ln18" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 114 'and' 'and_ln18_22' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 115 [1/1] (0.30ns) (out node of the LUT)   --->   "%or_ln18 = or i1 %and_ln25, i1 %and_ln18_22" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 115 'or' 'or_ln18' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 116 [1/1] (0.49ns) (out node of the LUT)   --->   "%res_11 = select i1 %or_ln18, i64 %dc_9, i64 %res_10" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 116 'select' 'res_11' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_7 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node res_12)   --->   "%xor_ln18_6 = xor i1 %icmp_ln18, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:27->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 117 'xor' 'xor_ln18_6' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node res_12)   --->   "%or_ln18_3 = or i1 %icmp_ln18_9, i1 %xor_ln18_6" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 118 'or' 'or_ln18_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node res_12)   --->   "%and_ln18_23 = and i1 %or_ln18_3, i1 %xor_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 119 'and' 'and_ln18_23' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 120 [1/1] (0.00ns) (grouped into LUT with out node res_12)   --->   "%and_ln18_24 = and i1 %and_ln18_23, i1 %and_ln18" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 120 'and' 'and_ln18_24' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_7 : Operation 121 [1/1] (0.49ns) (out node of the LUT)   --->   "%res_12 = select i1 %and_ln18_24, i64 %dc, i64 %res_11" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 121 'select' 'res_12' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_7 : Operation 122 [1/1] (0.00ns)   --->   "%muxLogicI0_to_conv = muxlogic i64 %res_12"   --->   Operation 122 'muxlogic' 'muxLogicI0_to_conv' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 123 [1/1] (0.45ns)   --->   "%conv = fptrunc i64 %res_12" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 123 'fptrunc' 'conv' <Predicate = true> <Delay = 0.45> <CoreInst = "Double2Float">   --->   Core 71 'Double2Float' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_7 : Operation 97 [1/1] (0.00ns)   --->   "%specloopname_ln69 = specloopname void @_ssdm_op_SpecLoopName, void @empty_74" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 97 'specloopname' 'specloopname_ln69' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln25 = and i1 %icmp_ln25_7, i1 %icmp_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 98 'and' 'and_ln25' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 99 [1/1] (0.30ns)   --->   "%and_ln18 = and i1 %icmp_ln18_19, i1 %icmp_ln18_20" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 99 'and' 'and_ln18' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 100 [1/1] (0.49ns) (out node of the LUT)   --->   "%res = select i1 %ymaggreater_7, i64 %dc_21, i64 %dc" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:40->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 100 'select' 'res' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node res_26)   --->   "%x_fp_sig = bitset i52 @_ssdm_op_BitSet.i52.i52.i32.i1, i52 %x_fp_sig_7, i32 51, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:29->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 101 'bitset' 'x_fp_sig' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node res_26)   --->   "%t = bitconcatenate i64 @_ssdm_op_BitConcatenate.i64.i1.i11.i52, i1 %x_fp_sign, i11 2047, i52 %x_fp_sig" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:479->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:496->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:510->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:30->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 102 'bitconcatenate' 't' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node res_26)   --->   "%res_25 = bitcast i64 %t" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:497->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:510->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:30->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 103 'bitcast' 'res_25' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node xor_ln25)   --->   "%and_ln25_7 = and i1 %icmp_ln25_7, i1 %icmp_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 104 'and' 'and_ln25_7' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 105 [1/1] (0.30ns) (out node of the LUT)   --->   "%xor_ln25 = xor i1 %and_ln25_7, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 105 'xor' 'xor_ln25' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 106 [1/1] (0.30ns)   --->   "%xor_ln18 = xor i1 %icmp_ln18_21, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:27->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 106 'xor' 'xor_ln18' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node res_26)   --->   "%and_ln18_49 = and i1 %icmp_ln18, i1 %xor_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 107 'and' 'and_ln18_49' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node res_26)   --->   "%and_ln18_50 = and i1 %and_ln18, i1 %xor_ln18" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 108 'and' 'and_ln18_50' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node res_26)   --->   "%and_ln18_51 = and i1 %and_ln18_50, i1 %and_ln18_49" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 109 'and' 'and_ln18_51' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 110 [1/1] (0.49ns) (out node of the LUT)   --->   "%res_26 = select i1 %and_ln18_51, i64 %res_25, i64 %res" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 110 'select' 'res_26' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_52 = and i1 %icmp_ln18_19, i1 %icmp_ln18_20" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 111 'and' 'and_ln18_52' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%xor_ln18_13 = xor i1 %and_ln18_52, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 112 'xor' 'xor_ln18_13' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_53 = and i1 %xor_ln18, i1 %xor_ln18_13" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 113 'and' 'and_ln18_53' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_54 = and i1 %and_ln18_53, i1 %icmp_ln18" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 114 'and' 'and_ln18_54' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 115 [1/1] (0.30ns) (out node of the LUT)   --->   "%or_ln18 = or i1 %and_ln25, i1 %and_ln18_54" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 115 'or' 'or_ln18' <Predicate = true> <Delay = 0.30> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 116 [1/1] (0.49ns) (out node of the LUT)   --->   "%res_27 = select i1 %or_ln18, i64 %dc_21, i64 %res_26" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 116 'select' 'res_27' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node res_28)   --->   "%xor_ln18_14 = xor i1 %icmp_ln18, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:27->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 117 'xor' 'xor_ln18_14' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node res_28)   --->   "%or_ln18_7 = or i1 %icmp_ln18_21, i1 %xor_ln18_14" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 118 'or' 'or_ln18_7' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node res_28)   --->   "%and_ln18_55 = and i1 %or_ln18_7, i1 %xor_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 119 'and' 'and_ln18_55' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 120 [1/1] (0.00ns) (grouped into LUT with out node res_28)   --->   "%and_ln18_56 = and i1 %and_ln18_55, i1 %and_ln18" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 120 'and' 'and_ln18_56' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 121 [1/1] (0.49ns) (out node of the LUT)   --->   "%res_28 = select i1 %and_ln18_56, i64 %dc, i64 %res_27" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 121 'select' 'res_28' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 122 [1/1] (0.00ns)   --->   "%muxLogicI0_to_conv = muxlogic i64 %res_28"   --->   Operation 122 'muxlogic' 'muxLogicI0_to_conv' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 123 [1/1] (0.45ns)   --->   "%conv = fptrunc i64 %res_28" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:88]   --->   Operation 123 'fptrunc' 'conv' <Predicate = true> <Delay = 0.45> <CoreInst = "Double2Float">   --->   Core 71 'Double2Float' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
 ST_7 : Operation 124 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln66 = muxlogic i32 %conv"   --->   Operation 124 'muxlogic' 'muxLogicData_to_store_ln66' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 125 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln66 = muxlogic i32 %conv_3"   --->   Operation 125 'muxlogic' 'muxLogicAddr_to_store_ln66' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 126 [1/1] (0.46ns)   --->   "%store_ln66 = store i32 %conv, i32 %conv_3" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:66]   --->   Operation 126 'store' 'store_ln66' <Predicate = true> <Delay = 0.46>
+ST_7 : Operation 125 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln66 = muxlogic i32 %conv_03"   --->   Operation 125 'muxlogic' 'muxLogicAddr_to_store_ln66' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 126 [1/1] (0.46ns)   --->   "%store_ln66 = store i32 %conv, i32 %conv_03" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:66]   --->   Operation 126 'store' 'store_ln66' <Predicate = true> <Delay = 0.46>
 ST_7 : Operation 127 [1/1] (0.00ns)   --->   "%br_ln69 = br void %VITIS_LOOP_76_2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:69]   --->   Operation 127 'br' 'br_ln69' <Predicate = true> <Delay = 0.00>
 
 
@@ -248,11 +248,11 @@ Port [ sweep_rx2_0_V_last_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0;
 
 <LifeTime>
 <method=bitvector/>
-conv_3                                (alloca             ) [ 01111111]
+conv_03                               (alloca             ) [ 01111111]
 i_04                                  (alloca             ) [ 01111111]
 data_temp                             (alloca             ) [ 01111111]
-data_temp_25                          (alloca             ) [ 01111111]
-data_temp_29_loc                      (alloca             ) [ 00111111]
+data_temp_51                          (alloca             ) [ 01111111]
+data_temp_61_loc                      (alloca             ) [ 00111111]
 specaxissidechannel_ln0               (specaxissidechannel) [ 00000000]
 specmemcore_ln0                       (specmemcore        ) [ 00000000]
 specinterface_ln0                     (specinterface      ) [ 00000000]
@@ -272,7 +272,7 @@ store_ln66                            (store              ) [ 00000000]
 br_ln69                               (br                 ) [ 00000000]
 MuxLogicAddr_to_i                     (muxlogic           ) [ 00000000]
 i                                     (load               ) [ 00000000]
-i_14                                  (add                ) [ 00000000]
+i_26                                  (add                ) [ 00000000]
 icmp_ln69                             (icmp               ) [ 00111111]
 br_ln69                               (br                 ) [ 00000000]
 MuxLogicAddr_to_data_temp_load        (muxlogic           ) [ 00000000]
@@ -281,60 +281,60 @@ muxLogicCE_to_empty                   (muxlogic           ) [ 00000000]
 empty                                 (read               ) [ 00000000]
 tmp_data                              (extractvalue       ) [ 00000000]
 tmp                                   (partselect         ) [ 00000000]
-data_temp_28                          (partset            ) [ 00011000]
+data_temp_52                          (partset            ) [ 00011000]
 muxLogicData_to_store_ln69            (muxlogic           ) [ 00000000]
 muxLogicAddr_to_store_ln69            (muxlogic           ) [ 00000000]
 store_ln69                            (store              ) [ 00000000]
-MuxLogicAddr_to_conv_3_load           (muxlogic           ) [ 00000000]
-conv_3_load                           (load               ) [ 00000000]
+MuxLogicAddr_to_conv_03_load          (muxlogic           ) [ 00000000]
+conv_03_load                          (load               ) [ 00000000]
 muxLogicData_to_write_ln0             (muxlogic           ) [ 00000000]
 write_ln0                             (write              ) [ 00000000]
 ret_ln91                              (ret                ) [ 00000000]
-MuxLogicAddr_to_data_temp_25_load     (muxlogic           ) [ 00000000]
-data_temp_25_load                     (load               ) [ 00001000]
-empty_104                             (wait               ) [ 00000000]
+MuxLogicAddr_to_data_temp_51_load     (muxlogic           ) [ 00000000]
+data_temp_51_load                     (load               ) [ 00001000]
+empty_141                             (wait               ) [ 00000000]
 call_ln74                             (call               ) [ 00000000]
-MuxLogicAddr_to_data_temp_29_loc_load (muxlogic           ) [ 00000000]
-data_temp_29_loc_load                 (load               ) [ 00000000]
-empty_105                             (wait               ) [ 00000000]
-muxLogicCE_to_empty_106               (muxlogic           ) [ 00000000]
-empty_106                             (read               ) [ 00000000]
-tmp_data_9                            (extractvalue       ) [ 00000000]
+MuxLogicAddr_to_data_temp_61_loc_load (muxlogic           ) [ 00000000]
+data_temp_61_loc_load                 (load               ) [ 00000000]
+empty_142                             (wait               ) [ 00000000]
+muxLogicCE_to_empty_143               (muxlogic           ) [ 00000000]
+empty_143                             (read               ) [ 00000000]
+tmp_data_17                           (extractvalue       ) [ 00000000]
 trunc_ln86                            (trunc              ) [ 00000000]
-data_temp_29                          (partset            ) [ 00000000]
+data_temp_53                          (partset            ) [ 00000000]
 fp_uint_tmp                           (partselect         ) [ 00000010]
 muxLogicData_to_write_ln89            (muxlogic           ) [ 00000000]
 write_ln89                            (write              ) [ 00000000]
 muxLogicData_to_store_ln65            (muxlogic           ) [ 00000000]
 muxLogicAddr_to_store_ln65            (muxlogic           ) [ 00000000]
 store_ln65                            (store              ) [ 00000000]
-MuxLogicAddr_to_conv_3_load_1         (muxlogic           ) [ 00000000]
-conv_3_load_1                         (load               ) [ 00000000]
+MuxLogicAddr_to_conv_03_load_4        (muxlogic           ) [ 00000000]
+conv_03_load_4                        (load               ) [ 00000000]
 muxLogicI0_to_dc                      (muxlogic           ) [ 00000000]
 dc                                    (fpext              ) [ 00000001]
 bitcast_ln88                          (bitcast            ) [ 00000000]
-muxLogicI0_to_dc_9                    (muxlogic           ) [ 00000000]
-dc_9                                  (fpext              ) [ 00000001]
+muxLogicI0_to_dc_21                   (muxlogic           ) [ 00000000]
+dc_21                                 (fpext              ) [ 00000001]
 data                                  (bitcast            ) [ 00000000]
 x_fp_sign                             (bitselect          ) [ 00000001]
 x_fp_exp                              (partselect         ) [ 00000000]
-x_fp_sig_3                            (trunc              ) [ 00000001]
-data_6                                (bitcast            ) [ 00000000]
+x_fp_sig_7                            (trunc              ) [ 00000001]
+data_14                               (bitcast            ) [ 00000000]
 y_fp_sign                             (bitselect          ) [ 00000000]
 y_fp_exp                              (partselect         ) [ 00000000]
 y_fp_sig                              (trunc              ) [ 00000000]
 or_ln25                               (or                 ) [ 00000000]
 icmp_ln25                             (icmp               ) [ 00000001]
-or_ln25_3                             (or                 ) [ 00000000]
-icmp_ln25_3                           (icmp               ) [ 00000001]
+or_ln25_7                             (or                 ) [ 00000000]
+icmp_ln25_7                           (icmp               ) [ 00000001]
 icmp_ln18                             (icmp               ) [ 00000001]
-icmp_ln18_7                           (icmp               ) [ 00000001]
-icmp_ln18_8                           (icmp               ) [ 00000001]
-icmp_ln18_9                           (icmp               ) [ 00000001]
+icmp_ln18_19                          (icmp               ) [ 00000001]
+icmp_ln18_20                          (icmp               ) [ 00000001]
+icmp_ln18_21                          (icmp               ) [ 00000001]
 ymaggreater                           (icmp               ) [ 00000000]
 xor_ln39                              (xor                ) [ 00000000]
 select_ln39                           (select             ) [ 00000000]
-ymaggreater_3                         (select             ) [ 00000001]
+ymaggreater_7                         (select             ) [ 00000001]
 speclooptripcount_ln65                (speclooptripcount  ) [ 00000000]
 specloopname_ln69                     (specloopname       ) [ 00000000]
 and_ln25                              (and                ) [ 00000000]
@@ -342,25 +342,25 @@ and_ln18                              (and                ) [ 00000000]
 res                                   (select             ) [ 00000000]
 x_fp_sig                              (bitset             ) [ 00000000]
 t                                     (bitconcatenate     ) [ 00000000]
-res_9                                 (bitcast            ) [ 00000000]
-and_ln25_3                            (and                ) [ 00000000]
+res_25                                (bitcast            ) [ 00000000]
+and_ln25_7                            (and                ) [ 00000000]
 xor_ln25                              (xor                ) [ 00000000]
 xor_ln18                              (xor                ) [ 00000000]
-and_ln18_17                           (and                ) [ 00000000]
-and_ln18_18                           (and                ) [ 00000000]
-and_ln18_19                           (and                ) [ 00000000]
-res_10                                (select             ) [ 00000000]
-and_ln18_20                           (and                ) [ 00000000]
-xor_ln18_5                            (xor                ) [ 00000000]
-and_ln18_21                           (and                ) [ 00000000]
-and_ln18_22                           (and                ) [ 00000000]
+and_ln18_49                           (and                ) [ 00000000]
+and_ln18_50                           (and                ) [ 00000000]
+and_ln18_51                           (and                ) [ 00000000]
+res_26                                (select             ) [ 00000000]
+and_ln18_52                           (and                ) [ 00000000]
+xor_ln18_13                           (xor                ) [ 00000000]
+and_ln18_53                           (and                ) [ 00000000]
+and_ln18_54                           (and                ) [ 00000000]
 or_ln18                               (or                 ) [ 00000000]
-res_11                                (select             ) [ 00000000]
-xor_ln18_6                            (xor                ) [ 00000000]
-or_ln18_3                             (or                 ) [ 00000000]
-and_ln18_23                           (and                ) [ 00000000]
-and_ln18_24                           (and                ) [ 00000000]
-res_12                                (select             ) [ 00000000]
+res_27                                (select             ) [ 00000000]
+xor_ln18_14                           (xor                ) [ 00000000]
+or_ln18_7                             (or                 ) [ 00000000]
+and_ln18_55                           (and                ) [ 00000000]
+and_ln18_56                           (and                ) [ 00000000]
+res_28                                (select             ) [ 00000000]
 muxLogicI0_to_conv                    (muxlogic           ) [ 00000000]
 conv                                  (fptrunc            ) [ 00000000]
 muxLogicData_to_store_ln66            (muxlogic           ) [ 00000000]
@@ -467,7 +467,7 @@ br_ln69                               (br                 ) [ 00000000]
 <pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_12"/></StgValue>
+<StgValue><ssdm name="empty_8"/></StgValue>
 </bind>
 </comp>
 
@@ -521,7 +521,7 @@ br_ln69                               (br                 ) [ 00000000]
 <pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_2"/></StgValue>
+<StgValue><ssdm name="empty_80"/></StgValue>
 </bind>
 </comp>
 
@@ -539,7 +539,7 @@ br_ln69                               (br                 ) [ 00000000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_1"/></StgValue>
+<StgValue><ssdm name="empty_70"/></StgValue>
 </bind>
 </comp>
 
@@ -557,7 +557,7 @@ br_ln69                               (br                 ) [ 00000000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_4"/></StgValue>
+<StgValue><ssdm name="empty_82"/></StgValue>
 </bind>
 </comp>
 
@@ -566,7 +566,7 @@ br_ln69                               (br                 ) [ 00000000]
 <pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_31"/></StgValue>
+<StgValue><ssdm name="empty_81"/></StgValue>
 </bind>
 </comp>
 
@@ -845,7 +845,7 @@ br_ln69                               (br                 ) [ 00000000]
 <pin id="105" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_43"/></StgValue>
+<StgValue><ssdm name="empty_74"/></StgValue>
 </bind>
 </comp>
 
@@ -876,14 +876,14 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="112" class="1004" name="conv_3_fu_112">
+<comp id="112" class="1004" name="conv_03_fu_112">
 <pin_list>
 <pin id="113" dir="0" index="0" bw="1" slack="0"/>
 <pin id="114" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="conv_3/1 "/>
+<opset="conv_03/1 "/>
 </bind>
 </comp>
 
@@ -909,25 +909,25 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="124" class="1004" name="data_temp_25_fu_124">
+<comp id="124" class="1004" name="data_temp_51_fu_124">
 <pin_list>
 <pin id="125" dir="0" index="0" bw="1" slack="0"/>
 <pin id="126" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="data_temp_25/1 "/>
+<opset="data_temp_51/1 "/>
 </bind>
 </comp>
 
-<comp id="128" class="1004" name="data_temp_29_loc_fu_128">
+<comp id="128" class="1004" name="data_temp_61_loc_fu_128">
 <pin_list>
 <pin id="129" dir="0" index="0" bw="1" slack="0"/>
 <pin id="130" dir="1" index="1" bw="128" slack="2"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="data_temp_29_loc/1 "/>
+<opset="data_temp_61_loc/1 "/>
 </bind>
 </comp>
 
@@ -942,7 +942,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="empty/2 empty_106/5 "/>
+<opset="empty/2 empty_143/5 "/>
 </bind>
 </comp>
 
@@ -1014,14 +1014,14 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="182" class="1004" name="dc_9_fu_182">
+<comp id="182" class="1004" name="dc_21_fu_182">
 <pin_list>
 <pin id="183" dir="0" index="0" bw="32" slack="0"/>
 <pin id="184" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="fpext(41) " fcode="fpext"/>
-<opset="dc_9/6 "/>
+<opset="dc_21/6 "/>
 </bind>
 </comp>
 
@@ -1031,7 +1031,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicCE_to_empty/2 muxLogicCE_to_empty_106/5 "/>
+<opset="muxLogicCE_to_empty/2 muxLogicCE_to_empty_143/5 "/>
 </bind>
 </comp>
 
@@ -1042,7 +1042,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="extractvalue(56) " fcode="extractvalue"/>
-<opset="tmp_data/2 tmp_data_9/5 "/>
+<opset="tmp_data/2 tmp_data_17/5 "/>
 </bind>
 </comp>
 
@@ -1053,7 +1053,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="MuxLogicAddr_to_conv_3_load/2 MuxLogicAddr_to_conv_3_load_1/6 muxLogicAddr_to_store_ln66/7 "/>
+<opset="MuxLogicAddr_to_conv_03_load/2 MuxLogicAddr_to_conv_03_load_4/6 muxLogicAddr_to_store_ln66/7 "/>
 </bind>
 </comp>
 
@@ -1064,7 +1064,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="conv_3_load/2 conv_3_load_1/6 "/>
+<opset="conv_03_load/2 conv_03_load_4/6 "/>
 </bind>
 </comp>
 
@@ -1086,7 +1086,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="MuxLogicAddr_to_data_temp_25_load/3 muxLogicAddr_to_store_ln65/5 "/>
+<opset="MuxLogicAddr_to_data_temp_51_load/3 muxLogicAddr_to_store_ln65/5 "/>
 </bind>
 </comp>
 
@@ -1248,7 +1248,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="260" class="1004" name="i_14_fu_260">
+<comp id="260" class="1004" name="i_26_fu_260">
 <pin_list>
 <pin id="261" dir="0" index="0" bw="2" slack="0"/>
 <pin id="262" dir="0" index="1" bw="1" slack="0"/>
@@ -1256,7 +1256,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="i_14/2 "/>
+<opset="i_26/2 "/>
 </bind>
 </comp>
 
@@ -1308,7 +1308,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="288" class="1004" name="data_temp_28_fu_288">
+<comp id="288" class="1004" name="data_temp_52_fu_288">
 <pin_list>
 <pin id="289" dir="0" index="0" bw="128" slack="0"/>
 <pin id="290" dir="0" index="1" bw="128" slack="0"/>
@@ -1319,7 +1319,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="data_temp_28/2 "/>
+<opset="data_temp_52/2 "/>
 </bind>
 </comp>
 
@@ -1357,36 +1357,36 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="312" class="1004" name="data_temp_25_load_load_fu_312">
+<comp id="312" class="1004" name="data_temp_51_load_load_fu_312">
 <pin_list>
 <pin id="313" dir="0" index="0" bw="128" slack="2"/>
 <pin id="314" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="data_temp_25_load/3 "/>
+<opset="data_temp_51_load/3 "/>
 </bind>
 </comp>
 
-<comp id="316" class="1004" name="MuxLogicAddr_to_data_temp_29_loc_load_fu_316">
+<comp id="316" class="1004" name="MuxLogicAddr_to_data_temp_61_loc_load_fu_316">
 <pin_list>
 <pin id="317" dir="0" index="0" bw="128" slack="4"/>
 <pin id="318" dir="1" index="1" bw="128" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="MuxLogicAddr_to_data_temp_29_loc_load/5 "/>
+<opset="MuxLogicAddr_to_data_temp_61_loc_load/5 "/>
 </bind>
 </comp>
 
-<comp id="319" class="1004" name="data_temp_29_loc_load_load_fu_319">
+<comp id="319" class="1004" name="data_temp_61_loc_load_load_fu_319">
 <pin_list>
 <pin id="320" dir="0" index="0" bw="128" slack="4"/>
 <pin id="321" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="data_temp_29_loc_load/5 "/>
+<opset="data_temp_61_loc_load/5 "/>
 </bind>
 </comp>
 
@@ -1401,7 +1401,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="326" class="1004" name="data_temp_29_fu_326">
+<comp id="326" class="1004" name="data_temp_53_fu_326">
 <pin_list>
 <pin id="327" dir="0" index="0" bw="128" slack="0"/>
 <pin id="328" dir="0" index="1" bw="128" slack="0"/>
@@ -1412,7 +1412,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="data_temp_29/5 "/>
+<opset="data_temp_53/5 "/>
 </bind>
 </comp>
 
@@ -1475,14 +1475,14 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="366" class="1004" name="muxLogicI0_to_dc_9_fu_366">
+<comp id="366" class="1004" name="muxLogicI0_to_dc_21_fu_366">
 <pin_list>
 <pin id="367" dir="0" index="0" bw="32" slack="0"/>
 <pin id="368" dir="1" index="1" bw="64" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicI0_to_dc_9/6 "/>
+<opset="muxLogicI0_to_dc_21/6 "/>
 </bind>
 </comp>
 
@@ -1524,25 +1524,25 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="392" class="1004" name="x_fp_sig_3_fu_392">
+<comp id="392" class="1004" name="x_fp_sig_7_fu_392">
 <pin_list>
 <pin id="393" dir="0" index="0" bw="64" slack="0"/>
 <pin id="394" dir="1" index="1" bw="52" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="x_fp_sig_3/6 "/>
+<opset="x_fp_sig_7/6 "/>
 </bind>
 </comp>
 
-<comp id="396" class="1004" name="data_6_fu_396">
+<comp id="396" class="1004" name="data_14_fu_396">
 <pin_list>
 <pin id="397" dir="0" index="0" bw="64" slack="0"/>
 <pin id="398" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="data_6/6 "/>
+<opset="data_14/6 "/>
 </bind>
 </comp>
 
@@ -1608,7 +1608,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="434" class="1004" name="or_ln25_3_fu_434">
+<comp id="434" class="1004" name="or_ln25_7_fu_434">
 <pin_list>
 <pin id="435" dir="0" index="0" bw="52" slack="0"/>
 <pin id="436" dir="0" index="1" bw="52" slack="0"/>
@@ -1616,11 +1616,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="or(24) " fcode="or"/>
-<opset="or_ln25_3/6 "/>
+<opset="or_ln25_7/6 "/>
 </bind>
 </comp>
 
-<comp id="440" class="1004" name="icmp_ln25_3_fu_440">
+<comp id="440" class="1004" name="icmp_ln25_7_fu_440">
 <pin_list>
 <pin id="441" dir="0" index="0" bw="52" slack="0"/>
 <pin id="442" dir="0" index="1" bw="1" slack="0"/>
@@ -1628,7 +1628,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln25_3/6 "/>
+<opset="icmp_ln25_7/6 "/>
 </bind>
 </comp>
 
@@ -1644,7 +1644,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="452" class="1004" name="icmp_ln18_7_fu_452">
+<comp id="452" class="1004" name="icmp_ln18_19_fu_452">
 <pin_list>
 <pin id="453" dir="0" index="0" bw="11" slack="0"/>
 <pin id="454" dir="0" index="1" bw="1" slack="0"/>
@@ -1652,11 +1652,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln18_7/6 "/>
+<opset="icmp_ln18_19/6 "/>
 </bind>
 </comp>
 
-<comp id="458" class="1004" name="icmp_ln18_8_fu_458">
+<comp id="458" class="1004" name="icmp_ln18_20_fu_458">
 <pin_list>
 <pin id="459" dir="0" index="0" bw="52" slack="0"/>
 <pin id="460" dir="0" index="1" bw="1" slack="0"/>
@@ -1664,11 +1664,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln18_8/6 "/>
+<opset="icmp_ln18_20/6 "/>
 </bind>
 </comp>
 
-<comp id="464" class="1004" name="icmp_ln18_9_fu_464">
+<comp id="464" class="1004" name="icmp_ln18_21_fu_464">
 <pin_list>
 <pin id="465" dir="0" index="0" bw="52" slack="0"/>
 <pin id="466" dir="0" index="1" bw="1" slack="0"/>
@@ -1676,7 +1676,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln18_9/6 "/>
+<opset="icmp_ln18_21/6 "/>
 </bind>
 </comp>
 
@@ -1717,7 +1717,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="490" class="1004" name="ymaggreater_3_fu_490">
+<comp id="490" class="1004" name="ymaggreater_7_fu_490">
 <pin_list>
 <pin id="491" dir="0" index="0" bw="1" slack="0"/>
 <pin id="492" dir="0" index="1" bw="1" slack="0"/>
@@ -1726,7 +1726,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="ymaggreater_3/6 "/>
+<opset="ymaggreater_7/6 "/>
 </bind>
 </comp>
 
@@ -1795,18 +1795,18 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="529" class="1004" name="res_9_fu_529">
+<comp id="529" class="1004" name="res_25_fu_529">
 <pin_list>
 <pin id="530" dir="0" index="0" bw="64" slack="0"/>
 <pin id="531" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="res_9/7 "/>
+<opset="res_25/7 "/>
 </bind>
 </comp>
 
-<comp id="533" class="1004" name="and_ln25_3_fu_533">
+<comp id="533" class="1004" name="and_ln25_7_fu_533">
 <pin_list>
 <pin id="534" dir="0" index="0" bw="1" slack="1"/>
 <pin id="535" dir="0" index="1" bw="1" slack="1"/>
@@ -1814,7 +1814,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln25_3/7 "/>
+<opset="and_ln25_7/7 "/>
 </bind>
 </comp>
 
@@ -1842,7 +1842,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="548" class="1004" name="and_ln18_17_fu_548">
+<comp id="548" class="1004" name="and_ln18_49_fu_548">
 <pin_list>
 <pin id="549" dir="0" index="0" bw="1" slack="1"/>
 <pin id="550" dir="0" index="1" bw="1" slack="0"/>
@@ -1850,11 +1850,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_17/7 "/>
+<opset="and_ln18_49/7 "/>
 </bind>
 </comp>
 
-<comp id="553" class="1004" name="and_ln18_18_fu_553">
+<comp id="553" class="1004" name="and_ln18_50_fu_553">
 <pin_list>
 <pin id="554" dir="0" index="0" bw="1" slack="0"/>
 <pin id="555" dir="0" index="1" bw="1" slack="0"/>
@@ -1862,11 +1862,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_18/7 "/>
+<opset="and_ln18_50/7 "/>
 </bind>
 </comp>
 
-<comp id="559" class="1004" name="and_ln18_19_fu_559">
+<comp id="559" class="1004" name="and_ln18_51_fu_559">
 <pin_list>
 <pin id="560" dir="0" index="0" bw="1" slack="0"/>
 <pin id="561" dir="0" index="1" bw="1" slack="0"/>
@@ -1874,11 +1874,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_19/7 "/>
+<opset="and_ln18_51/7 "/>
 </bind>
 </comp>
 
-<comp id="565" class="1004" name="res_10_fu_565">
+<comp id="565" class="1004" name="res_26_fu_565">
 <pin_list>
 <pin id="566" dir="0" index="0" bw="1" slack="0"/>
 <pin id="567" dir="0" index="1" bw="64" slack="0"/>
@@ -1887,11 +1887,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="res_10/7 "/>
+<opset="res_26/7 "/>
 </bind>
 </comp>
 
-<comp id="573" class="1004" name="and_ln18_20_fu_573">
+<comp id="573" class="1004" name="and_ln18_52_fu_573">
 <pin_list>
 <pin id="574" dir="0" index="0" bw="1" slack="1"/>
 <pin id="575" dir="0" index="1" bw="1" slack="1"/>
@@ -1899,11 +1899,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_20/7 "/>
+<opset="and_ln18_52/7 "/>
 </bind>
 </comp>
 
-<comp id="577" class="1004" name="xor_ln18_5_fu_577">
+<comp id="577" class="1004" name="xor_ln18_13_fu_577">
 <pin_list>
 <pin id="578" dir="0" index="0" bw="1" slack="0"/>
 <pin id="579" dir="0" index="1" bw="1" slack="0"/>
@@ -1911,11 +1911,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="xor(25) " fcode="xor"/>
-<opset="xor_ln18_5/7 "/>
+<opset="xor_ln18_13/7 "/>
 </bind>
 </comp>
 
-<comp id="583" class="1004" name="and_ln18_21_fu_583">
+<comp id="583" class="1004" name="and_ln18_53_fu_583">
 <pin_list>
 <pin id="584" dir="0" index="0" bw="1" slack="0"/>
 <pin id="585" dir="0" index="1" bw="1" slack="0"/>
@@ -1923,11 +1923,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_21/7 "/>
+<opset="and_ln18_53/7 "/>
 </bind>
 </comp>
 
-<comp id="589" class="1004" name="and_ln18_22_fu_589">
+<comp id="589" class="1004" name="and_ln18_54_fu_589">
 <pin_list>
 <pin id="590" dir="0" index="0" bw="1" slack="0"/>
 <pin id="591" dir="0" index="1" bw="1" slack="1"/>
@@ -1935,7 +1935,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_22/7 "/>
+<opset="and_ln18_54/7 "/>
 </bind>
 </comp>
 
@@ -1951,7 +1951,7 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="600" class="1004" name="res_11_fu_600">
+<comp id="600" class="1004" name="res_27_fu_600">
 <pin_list>
 <pin id="601" dir="0" index="0" bw="1" slack="0"/>
 <pin id="602" dir="0" index="1" bw="64" slack="1"/>
@@ -1960,11 +1960,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="res_11/7 "/>
+<opset="res_27/7 "/>
 </bind>
 </comp>
 
-<comp id="607" class="1004" name="xor_ln18_6_fu_607">
+<comp id="607" class="1004" name="xor_ln18_14_fu_607">
 <pin_list>
 <pin id="608" dir="0" index="0" bw="1" slack="1"/>
 <pin id="609" dir="0" index="1" bw="1" slack="0"/>
@@ -1972,11 +1972,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="xor(25) " fcode="xor"/>
-<opset="xor_ln18_6/7 "/>
+<opset="xor_ln18_14/7 "/>
 </bind>
 </comp>
 
-<comp id="612" class="1004" name="or_ln18_3_fu_612">
+<comp id="612" class="1004" name="or_ln18_7_fu_612">
 <pin_list>
 <pin id="613" dir="0" index="0" bw="1" slack="1"/>
 <pin id="614" dir="0" index="1" bw="1" slack="0"/>
@@ -1984,11 +1984,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="or(24) " fcode="or"/>
-<opset="or_ln18_3/7 "/>
+<opset="or_ln18_7/7 "/>
 </bind>
 </comp>
 
-<comp id="617" class="1004" name="and_ln18_23_fu_617">
+<comp id="617" class="1004" name="and_ln18_55_fu_617">
 <pin_list>
 <pin id="618" dir="0" index="0" bw="1" slack="0"/>
 <pin id="619" dir="0" index="1" bw="1" slack="0"/>
@@ -1996,11 +1996,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_23/7 "/>
+<opset="and_ln18_55/7 "/>
 </bind>
 </comp>
 
-<comp id="623" class="1004" name="and_ln18_24_fu_623">
+<comp id="623" class="1004" name="and_ln18_56_fu_623">
 <pin_list>
 <pin id="624" dir="0" index="0" bw="1" slack="0"/>
 <pin id="625" dir="0" index="1" bw="1" slack="0"/>
@@ -2008,11 +2008,11 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="and_ln18_24/7 "/>
+<opset="and_ln18_56/7 "/>
 </bind>
 </comp>
 
-<comp id="629" class="1004" name="res_12_fu_629">
+<comp id="629" class="1004" name="res_28_fu_629">
 <pin_list>
 <pin id="630" dir="0" index="0" bw="1" slack="0"/>
 <pin id="631" dir="0" index="1" bw="64" slack="1"/>
@@ -2021,7 +2021,7 @@ br_ln69                               (br                 ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="res_12/7 "/>
+<opset="res_28/7 "/>
 </bind>
 </comp>
 
@@ -2059,13 +2059,13 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="650" class="1005" name="conv_3_reg_650">
+<comp id="650" class="1005" name="conv_03_reg_650">
 <pin_list>
 <pin id="651" dir="0" index="0" bw="32" slack="0"/>
 <pin id="652" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
-<opset="conv_3 "/>
+<opset="conv_03 "/>
 </bind>
 </comp>
 
@@ -2089,33 +2089,33 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="678" class="1005" name="data_temp_25_reg_678">
+<comp id="678" class="1005" name="data_temp_51_reg_678">
 <pin_list>
 <pin id="679" dir="0" index="0" bw="128" slack="0"/>
 <pin id="680" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="data_temp_25 "/>
+<opset="data_temp_51 "/>
 </bind>
 </comp>
 
-<comp id="687" class="1005" name="data_temp_29_loc_reg_687">
+<comp id="687" class="1005" name="data_temp_61_loc_reg_687">
 <pin_list>
 <pin id="688" dir="0" index="0" bw="128" slack="2"/>
 <pin id="689" dir="1" index="1" bw="128" slack="2"/>
 </pin_list>
 <bind>
-<opset="data_temp_29_loc "/>
+<opset="data_temp_61_loc "/>
 </bind>
 </comp>
 
-<comp id="697" class="1005" name="data_temp_28_reg_697">
+<comp id="697" class="1005" name="data_temp_52_reg_697">
 <pin_list>
 <pin id="698" dir="0" index="0" bw="128" slack="1"/>
 <pin id="699" dir="1" index="1" bw="128" slack="1"/>
 </pin_list>
 <bind>
-<opset="data_temp_28 "/>
+<opset="data_temp_52 "/>
 </bind>
 </comp>
 
@@ -2139,13 +2139,13 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="716" class="1005" name="dc_9_reg_716">
+<comp id="716" class="1005" name="dc_21_reg_716">
 <pin_list>
 <pin id="717" dir="0" index="0" bw="64" slack="1"/>
 <pin id="718" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="dc_9 "/>
+<opset="dc_21 "/>
 </bind>
 </comp>
 
@@ -2159,13 +2159,13 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="727" class="1005" name="x_fp_sig_3_reg_727">
+<comp id="727" class="1005" name="x_fp_sig_7_reg_727">
 <pin_list>
 <pin id="728" dir="0" index="0" bw="52" slack="1"/>
 <pin id="729" dir="1" index="1" bw="52" slack="1"/>
 </pin_list>
 <bind>
-<opset="x_fp_sig_3 "/>
+<opset="x_fp_sig_7 "/>
 </bind>
 </comp>
 
@@ -2179,13 +2179,13 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="738" class="1005" name="icmp_ln25_3_reg_738">
+<comp id="738" class="1005" name="icmp_ln25_7_reg_738">
 <pin_list>
 <pin id="739" dir="0" index="0" bw="1" slack="1"/>
 <pin id="740" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="icmp_ln25_3 "/>
+<opset="icmp_ln25_7 "/>
 </bind>
 </comp>
 
@@ -2199,43 +2199,43 @@ br_ln69                               (br                 ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="751" class="1005" name="icmp_ln18_7_reg_751">
+<comp id="751" class="1005" name="icmp_ln18_19_reg_751">
 <pin_list>
 <pin id="752" dir="0" index="0" bw="1" slack="1"/>
 <pin id="753" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="icmp_ln18_7 "/>
+<opset="icmp_ln18_19 "/>
 </bind>
 </comp>
 
-<comp id="757" class="1005" name="icmp_ln18_8_reg_757">
+<comp id="757" class="1005" name="icmp_ln18_20_reg_757">
 <pin_list>
 <pin id="758" dir="0" index="0" bw="1" slack="1"/>
 <pin id="759" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="icmp_ln18_8 "/>
+<opset="icmp_ln18_20 "/>
 </bind>
 </comp>
 
-<comp id="763" class="1005" name="icmp_ln18_9_reg_763">
+<comp id="763" class="1005" name="icmp_ln18_21_reg_763">
 <pin_list>
 <pin id="764" dir="0" index="0" bw="1" slack="1"/>
 <pin id="765" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="icmp_ln18_9 "/>
+<opset="icmp_ln18_21 "/>
 </bind>
 </comp>
 
-<comp id="769" class="1005" name="ymaggreater_3_reg_769">
+<comp id="769" class="1005" name="ymaggreater_7_reg_769">
 <pin_list>
 <pin id="770" dir="0" index="0" bw="1" slack="1"/>
 <pin id="771" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
-<opset="ymaggreater_3 "/>
+<opset="ymaggreater_7 "/>
 </bind>
 </comp>
 
@@ -2689,11 +2689,11 @@ br_ln69                               (br                 ) [ 00000000]
 		muxLogicAddr_to_store_ln66 : 1
 		store_ln66 : 1
 	State 2
-		i_14 : 1
+		i_26 : 1
 		icmp_ln69 : 1
 		br_ln69 : 2
 		tmp : 1
-		data_temp_28 : 2
+		data_temp_52 : 2
 		muxLogicData_to_store_ln69 : 2
 		store_ln69 : 2
 		muxLogicData_to_write_ln0 : 1
@@ -2703,7 +2703,7 @@ br_ln69                               (br                 ) [ 00000000]
 	State 4
 	State 5
 		trunc_ln86 : 1
-		data_temp_29 : 2
+		data_temp_53 : 2
 		fp_uint_tmp : 1
 		muxLogicData_to_write_ln89 : 3
 		write_ln89 : 3
@@ -2712,32 +2712,32 @@ br_ln69                               (br                 ) [ 00000000]
 	State 6
 		muxLogicI0_to_dc : 1
 		dc : 1
-		muxLogicI0_to_dc_9 : 1
-		dc_9 : 1
+		muxLogicI0_to_dc_21 : 1
+		dc_21 : 1
 		data : 2
 		x_fp_sign : 3
 		x_fp_exp : 3
-		x_fp_sig_3 : 3
-		data_6 : 2
+		x_fp_sig_7 : 3
+		data_14 : 2
 		y_fp_sign : 3
 		y_fp_exp : 3
 		y_fp_sig : 3
 		or_ln25 : 4
 		icmp_ln25 : 4
-		or_ln25_3 : 4
-		icmp_ln25_3 : 4
+		or_ln25_7 : 4
+		icmp_ln25_7 : 4
 		icmp_ln18 : 4
-		icmp_ln18_7 : 4
-		icmp_ln18_8 : 4
-		icmp_ln18_9 : 4
+		icmp_ln18_19 : 4
+		icmp_ln18_20 : 4
+		icmp_ln18_21 : 4
 		ymaggreater : 3
 		xor_ln39 : 4
 		select_ln39 : 4
-		ymaggreater_3 : 5
+		ymaggreater_7 : 5
 	State 7
 		t : 1
-		res_9 : 2
-		res_12 : 1
+		res_25 : 2
+		res_28 : 1
 		muxLogicI0_to_conv : 2
 		conv : 2
 		muxLogicData_to_store_ln66 : 3
@@ -2756,44 +2756,44 @@ br_ln69                               (br                 ) [ 00000000]
 |----------|---------------------------------------------------|---------|---------|
 |          |                  icmp_ln69_fu_266                 |    0    |    5    |
 |          |                  icmp_ln25_fu_428                 |    0    |    11   |
-|          |                 icmp_ln25_3_fu_440                |    0    |    52   |
+|          |                 icmp_ln25_7_fu_440                |    0    |    52   |
 |   icmp   |                  icmp_ln18_fu_446                 |    0    |    11   |
-|          |                 icmp_ln18_7_fu_452                |    0    |    11   |
-|          |                 icmp_ln18_8_fu_458                |    0    |    52   |
-|          |                 icmp_ln18_9_fu_464                |    0    |    52   |
+|          |                icmp_ln18_19_fu_452                |    0    |    11   |
+|          |                icmp_ln18_20_fu_458                |    0    |    52   |
+|          |                icmp_ln18_21_fu_464                |    0    |    52   |
 |          |                 ymaggreater_fu_470                |    0    |    64   |
 |----------|---------------------------------------------------|---------|---------|
 |          |                 select_ln39_fu_482                |    0    |    2    |
-|          |                ymaggreater_3_fu_490               |    0    |    2    |
+|          |                ymaggreater_7_fu_490               |    0    |    2    |
 |  select  |                     res_fu_506                    |    0    |    58   |
-|          |                   res_10_fu_565                   |    0    |    58   |
-|          |                   res_11_fu_600                   |    0    |    58   |
-|          |                   res_12_fu_629                   |    0    |    58   |
+|          |                   res_26_fu_565                   |    0    |    58   |
+|          |                   res_27_fu_600                   |    0    |    58   |
+|          |                   res_28_fu_629                   |    0    |    58   |
 |----------|---------------------------------------------------|---------|---------|
 |          |                   or_ln25_fu_422                  |    0    |    10   |
-|    or    |                  or_ln25_3_fu_434                 |    0    |    45   |
+|    or    |                  or_ln25_7_fu_434                 |    0    |    45   |
 |          |                   or_ln18_fu_594                  |    0    |    2    |
-|          |                  or_ln18_3_fu_612                 |    0    |    2    |
+|          |                  or_ln18_7_fu_612                 |    0    |    2    |
 |----------|---------------------------------------------------|---------|---------|
 |          |                  and_ln25_fu_498                  |    0    |    2    |
 |          |                  and_ln18_fu_502                  |    0    |    2    |
-|          |                 and_ln25_3_fu_533                 |    0    |    2    |
-|          |                 and_ln18_17_fu_548                |    0    |    2    |
-|          |                 and_ln18_18_fu_553                |    0    |    2    |
-|    and   |                 and_ln18_19_fu_559                |    0    |    2    |
-|          |                 and_ln18_20_fu_573                |    0    |    2    |
-|          |                 and_ln18_21_fu_583                |    0    |    2    |
-|          |                 and_ln18_22_fu_589                |    0    |    2    |
-|          |                 and_ln18_23_fu_617                |    0    |    2    |
-|          |                 and_ln18_24_fu_623                |    0    |    2    |
+|          |                 and_ln25_7_fu_533                 |    0    |    2    |
+|          |                 and_ln18_49_fu_548                |    0    |    2    |
+|          |                 and_ln18_50_fu_553                |    0    |    2    |
+|    and   |                 and_ln18_51_fu_559                |    0    |    2    |
+|          |                 and_ln18_52_fu_573                |    0    |    2    |
+|          |                 and_ln18_53_fu_583                |    0    |    2    |
+|          |                 and_ln18_54_fu_589                |    0    |    2    |
+|          |                 and_ln18_55_fu_617                |    0    |    2    |
+|          |                 and_ln18_56_fu_623                |    0    |    2    |
 |----------|---------------------------------------------------|---------|---------|
 |          |                  xor_ln39_fu_476                  |    0    |    2    |
 |          |                  xor_ln25_fu_537                  |    0    |    2    |
 |    xor   |                  xor_ln18_fu_543                  |    0    |    2    |
-|          |                 xor_ln18_5_fu_577                 |    0    |    2    |
-|          |                 xor_ln18_6_fu_607                 |    0    |    2    |
+|          |                 xor_ln18_13_fu_577                |    0    |    2    |
+|          |                 xor_ln18_14_fu_607                |    0    |    2    |
 |----------|---------------------------------------------------|---------|---------|
-|    add   |                    i_14_fu_260                    |    0    |    5    |
+|    add   |                    i_26_fu_260                    |    0    |    5    |
 |----------|---------------------------------------------------|---------|---------|
 |   read   |                  grp_read_fu_132                  |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|
@@ -2803,7 +2803,7 @@ br_ln69                               (br                 ) [ 00000000]
 |  fptrunc |                    conv_fu_176                    |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|
 |   fpext  |                     dc_fu_179                     |    0    |    0    |
-|          |                    dc_9_fu_182                    |    0    |    0    |
+|          |                    dc_21_fu_182                   |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|
 |          |                     grp_fu_185                    |    0    |    0    |
 |          |                     grp_fu_191                    |    0    |    0    |
@@ -2821,10 +2821,10 @@ br_ln69                               (br                 ) [ 00000000]
 |          |       MuxLogicAddr_to_data_temp_load_fu_272       |    0    |    0    |
 |          |         muxLogicData_to_store_ln69_fu_300         |    0    |    0    |
 |          |         muxLogicAddr_to_store_ln69_fu_304         |    0    |    0    |
-|          |    MuxLogicAddr_to_data_temp_29_loc_load_fu_316   |    0    |    0    |
+|          |    MuxLogicAddr_to_data_temp_61_loc_load_fu_316   |    0    |    0    |
 |          |         muxLogicData_to_write_ln89_fu_349         |    0    |    0    |
 |          |         muxLogicData_to_store_ln65_fu_353         |    0    |    0    |
-|          |             muxLogicI0_to_dc_9_fu_366             |    0    |    0    |
+|          |             muxLogicI0_to_dc_21_fu_366            |    0    |    0    |
 |          |             muxLogicI0_to_conv_fu_637             |    0    |    0    |
 |          |         muxLogicData_to_store_ln66_fu_641         |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|
@@ -2835,11 +2835,11 @@ br_ln69                               (br                 ) [ 00000000]
 |          |                  x_fp_exp_fu_382                  |    0    |    0    |
 |          |                  y_fp_exp_fu_408                  |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|
-|  partset |                data_temp_28_fu_288                |    0    |    0    |
-|          |                data_temp_29_fu_326                |    0    |    0    |
+|  partset |                data_temp_52_fu_288                |    0    |    0    |
+|          |                data_temp_53_fu_326                |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|
 |          |                 trunc_ln86_fu_322                 |    0    |    0    |
-|   trunc  |                 x_fp_sig_3_fu_392                 |    0    |    0    |
+|   trunc  |                 x_fp_sig_7_fu_392                 |    0    |    0    |
 |          |                  y_fp_sig_fu_418                  |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|
 | bitselect|                  x_fp_sign_fu_374                 |    0    |    0    |
@@ -2859,24 +2859,24 @@ N/A
 +------------------------+--------+
 |                        |   FF   |
 +------------------------+--------+
-|     conv_3_reg_650     |   32   |
-|  data_temp_25_reg_678  |   128  |
-|  data_temp_28_reg_697  |   128  |
-|data_temp_29_loc_reg_687|   128  |
+|     conv_03_reg_650    |   32   |
+|  data_temp_51_reg_678  |   128  |
+|  data_temp_52_reg_697  |   128  |
+|data_temp_61_loc_reg_687|   128  |
 |    data_temp_reg_669   |   128  |
-|      dc_9_reg_716      |   64   |
+|      dc_21_reg_716     |   64   |
 |       dc_reg_710       |   64   |
 |   fp_uint_tmp_reg_705  |   32   |
 |      i_04_reg_659      |    2   |
-|   icmp_ln18_7_reg_751  |    1   |
-|   icmp_ln18_8_reg_757  |    1   |
-|   icmp_ln18_9_reg_763  |    1   |
+|  icmp_ln18_19_reg_751  |    1   |
+|  icmp_ln18_20_reg_757  |    1   |
+|  icmp_ln18_21_reg_763  |    1   |
 |    icmp_ln18_reg_744   |    1   |
-|   icmp_ln25_3_reg_738  |    1   |
+|   icmp_ln25_7_reg_738  |    1   |
 |    icmp_ln25_reg_732   |    1   |
-|   x_fp_sig_3_reg_727   |   52   |
+|   x_fp_sig_7_reg_727   |   52   |
 |    x_fp_sign_reg_722   |    1   |
-|  ymaggreater_3_reg_769 |    1   |
+|  ymaggreater_7_reg_769 |    1   |
 +------------------------+--------+
 |          Total         |   766  |
 +------------------------+--------+

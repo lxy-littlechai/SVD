@@ -26,7 +26,7 @@ output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
-input  [5:0] v;
+input  [4:0] v;
 
 reg ap_done;
 reg ap_idle;
@@ -48,7 +48,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 end
 
-TopPL_printint printint_U245(
+TopPL_printint printint_U400(
     .ap_clk(ap_clk),
     .ap_rst(1'b0),
     .fmt(32'd0),

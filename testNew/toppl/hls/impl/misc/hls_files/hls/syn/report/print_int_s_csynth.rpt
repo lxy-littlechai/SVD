@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'print_int_s'
 ================================================================
-* Date:           Sun Oct 19 23:23:17 2025
+* Date:           Mon Oct 20 21:15:03 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -68,7 +68,7 @@
     +---------------+----------+---------+----+---+----+-----+
     |    Instance   |  Module  | BRAM_18K| DSP| FF| LUT| URAM|
     +---------------+----------+---------+----+---+----+-----+
-    |printint_U245  |printint  |        0|   0|  0|   0|    0|
+    |printint_U400  |printint  |        0|   0|  0|   0|    0|
     +---------------+----------+---------+----+---+----+-----+
     |Total          |          |        0|   0|  0|   0|    0|
     +---------------+----------+---------+----+---+----+-----+
@@ -126,6 +126,6 @@
 |ap_continue  |   in|    1|  ap_ctrl_hs|    print<int>|  return value|
 |ap_idle      |  out|    1|  ap_ctrl_hs|    print<int>|  return value|
 |ap_ready     |  out|    1|  ap_ctrl_hs|    print<int>|  return value|
-|v            |   in|    6|     ap_none|             v|        scalar|
+|v            |   in|    5|     ap_none|             v|        scalar|
 +-------------+-----+-----+------------+--------------+--------------+
 

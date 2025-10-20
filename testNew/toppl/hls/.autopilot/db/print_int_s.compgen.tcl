@@ -10,7 +10,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 246 \
+    id 401 \
     name v \
     type other \
     dir I \
@@ -18,7 +18,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_v \
     op interface \
-    ports { v { I 6 vector } } \
+    ports { v { I 5 vector } } \
 } "
 }
 

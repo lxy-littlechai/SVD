@@ -61,7 +61,7 @@ newFuncRoot:1 %data_temp = alloca i32 1
 
 <Node id="12" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="16" op_3_bw="16" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-newFuncRoot:2 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 0, i1 %sweep_rx2_0_V_last_V, i1 0, i1 0, void @empty_12
+newFuncRoot:2 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 0, i1 %sweep_rx2_0_V_last_V, i1 0, i1 0, void @empty_8
 
 ]]></Node>
 <StgValue><ssdm name="specaxissidechannel_ln0"/></StgValue>
@@ -91,7 +91,7 @@ newFuncRoot:3 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %r
 
 <Node id="14" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="16" op_3_bw="16" op_4_bw="1" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="32" op_10_bw="32" op_11_bw="0" op_12_bw="0" op_13_bw="0" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="0" op_19_bw="0" op_20_bw="32" op_21_bw="32">
 <![CDATA[
-newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V, void @empty_4, i32 0, i32 0, void @empty_31, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0
+newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_rx2_0_V_data_V, i16 %sweep_rx2_0_V_keep_V, i16 %sweep_rx2_0_V_strb_V, i1 %sweep_rx2_0_V_last_V, void @empty_82, i32 0, i32 0, void @empty_81, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -106,7 +106,7 @@ newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 
 <Node id="15" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-newFuncRoot:5 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_1, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0
+newFuncRoot:5 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_1, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -121,10 +121,10 @@ newFuncRoot:5 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 
 <Node id="16" bw="128">
 <![CDATA[
-newFuncRoot:6 %muxLogicCE_to_data_temp_26_read = muxlogic
+newFuncRoot:6 %muxLogicCE_to_data_temp_58_read = muxlogic
 
 ]]></Node>
-<StgValue><ssdm name="muxLogicCE_to_data_temp_26_read"/></StgValue>
+<StgValue><ssdm name="muxLogicCE_to_data_temp_58_read"/></StgValue>
 </operation>
 
 <operation id="12" st_id="1" stage="1" lat="1">
@@ -136,10 +136,10 @@ newFuncRoot:6 %muxLogicCE_to_data_temp_26_read = muxlogic
 
 <Node id="17" bw="128" op_0_bw="128" op_1_bw="128" op_2_bw="1">
 <![CDATA[
-newFuncRoot:7 %data_temp_26_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %data_temp_26
+newFuncRoot:7 %data_temp_58_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %data_temp_58
 
 ]]></Node>
-<StgValue><ssdm name="data_temp_26_read"/></StgValue>
+<StgValue><ssdm name="data_temp_58_read"/></StgValue>
 </operation>
 
 <operation id="13" st_id="1" stage="1" lat="1">
@@ -151,10 +151,10 @@ newFuncRoot:7 %data_temp_26_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %
 
 <Node id="18" bw="128">
 <![CDATA[
-newFuncRoot:8 %muxLogicCE_to_data_temp_25_read = muxlogic
+newFuncRoot:8 %muxLogicCE_to_data_temp_57_read = muxlogic
 
 ]]></Node>
-<StgValue><ssdm name="muxLogicCE_to_data_temp_25_read"/></StgValue>
+<StgValue><ssdm name="muxLogicCE_to_data_temp_57_read"/></StgValue>
 </operation>
 
 <operation id="14" st_id="1" stage="1" lat="1">
@@ -166,10 +166,10 @@ newFuncRoot:8 %muxLogicCE_to_data_temp_25_read = muxlogic
 
 <Node id="19" bw="128" op_0_bw="128" op_1_bw="128" op_2_bw="1">
 <![CDATA[
-newFuncRoot:9 %data_temp_25_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %data_temp_25
+newFuncRoot:9 %data_temp_57_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %data_temp_57
 
 ]]></Node>
-<StgValue><ssdm name="data_temp_25_read"/></StgValue>
+<StgValue><ssdm name="data_temp_57_read"/></StgValue>
 </operation>
 
 <operation id="15" st_id="1" stage="1" lat="1">
@@ -181,7 +181,7 @@ newFuncRoot:9 %data_temp_25_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %
 
 <Node id="20" bw="0" op_0_bw="128">
 <![CDATA[
-newFuncRoot:10 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_25_read
+newFuncRoot:10 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_57_read
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln65"/></StgValue>
@@ -211,7 +211,7 @@ newFuncRoot:11 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp
 
 <Node id="22" bw="0" op_0_bw="128" op_1_bw="128">
 <![CDATA[
-newFuncRoot:12 %store_ln65 = store i128 %data_temp_25_read, i128 %data_temp
+newFuncRoot:12 %store_ln65 = store i128 %data_temp_57_read, i128 %data_temp
 
 ]]></Node>
 <StgValue><ssdm name="store_ln65"/></StgValue>
@@ -226,7 +226,7 @@ newFuncRoot:12 %store_ln65 = store i128 %data_temp_25_read, i128 %data_temp
 
 <Node id="23" bw="0" op_0_bw="128">
 <![CDATA[
-newFuncRoot:13 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_26_read
+newFuncRoot:13 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_58_read
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln65"/></StgValue>
@@ -241,7 +241,7 @@ newFuncRoot:13 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_26_read
 
 <Node id="24" bw="0" op_0_bw="128">
 <![CDATA[
-newFuncRoot:14 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_28_out
+newFuncRoot:14 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_60_out
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicAddr_to_store_ln65"/></StgValue>
@@ -256,7 +256,7 @@ newFuncRoot:14 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_28_out
 
 <Node id="25" bw="0" op_0_bw="128" op_1_bw="128">
 <![CDATA[
-newFuncRoot:15 %store_ln65 = store i128 %data_temp_26_read, i128 %data_temp_28_out
+newFuncRoot:15 %store_ln65 = store i128 %data_temp_58_read, i128 %data_temp_60_out
 
 ]]></Node>
 <StgValue><ssdm name="store_ln65"/></StgValue>
@@ -395,10 +395,10 @@ for.inc:3 %br_ln76 = br i1 %icmp_ln76, void %for.inc.split, void %for.inc70.exit
 
 <Node id="36" bw="128" op_0_bw="128">
 <![CDATA[
-for.inc.split:0 %MuxLogicAddr_to_data_temp_28_out_load = muxlogic i128 %data_temp_28_out
+for.inc.split:0 %MuxLogicAddr_to_data_temp_60_out_load = muxlogic i128 %data_temp_60_out
 
 ]]></Node>
-<StgValue><ssdm name="MuxLogicAddr_to_data_temp_28_out_load"/></StgValue>
+<StgValue><ssdm name="MuxLogicAddr_to_data_temp_60_out_load"/></StgValue>
 </operation>
 
 <operation id="30" st_id="2" stage="1" lat="1">
@@ -411,10 +411,10 @@ for.inc.split:0 %MuxLogicAddr_to_data_temp_28_out_load = muxlogic i128 %data_tem
 
 <Node id="37" bw="128" op_0_bw="128" op_1_bw="0">
 <![CDATA[
-for.inc.split:1 %data_temp_28_out_load = load i128 %data_temp_28_out
+for.inc.split:1 %data_temp_60_out_load = load i128 %data_temp_60_out
 
 ]]></Node>
-<StgValue><ssdm name="data_temp_28_out_load"/></StgValue>
+<StgValue><ssdm name="data_temp_60_out_load"/></StgValue>
 </operation>
 
 <operation id="31" st_id="2" stage="1" lat="1">
@@ -427,10 +427,10 @@ for.inc.split:1 %data_temp_28_out_load = load i128 %data_temp_28_out
 
 <Node id="38" bw="128" op_0_bw="128">
 <![CDATA[
-for.inc.split:2 %MuxLogicAddr_to_data_temp_load_5 = muxlogic i128 %data_temp
+for.inc.split:2 %MuxLogicAddr_to_data_temp_load_9 = muxlogic i128 %data_temp
 
 ]]></Node>
-<StgValue><ssdm name="MuxLogicAddr_to_data_temp_load_5"/></StgValue>
+<StgValue><ssdm name="MuxLogicAddr_to_data_temp_load_9"/></StgValue>
 </operation>
 
 <operation id="32" st_id="2" stage="1" lat="1">
@@ -443,10 +443,10 @@ for.inc.split:2 %MuxLogicAddr_to_data_temp_load_5 = muxlogic i128 %data_temp
 
 <Node id="39" bw="128" op_0_bw="128" op_1_bw="0">
 <![CDATA[
-for.inc.split:3 %data_temp_load_5 = load i128 %data_temp
+for.inc.split:3 %data_temp_load_9 = load i128 %data_temp
 
 ]]></Node>
-<StgValue><ssdm name="data_temp_load_5"/></StgValue>
+<StgValue><ssdm name="data_temp_load_9"/></StgValue>
 </operation>
 
 <operation id="33" st_id="2" stage="1" lat="1">
@@ -459,10 +459,10 @@ for.inc.split:3 %data_temp_load_5 = load i128 %data_temp
 
 <Node id="40" bw="4" op_0_bw="4" op_1_bw="4">
 <![CDATA[
-for.inc.split:4 %j_15 = add i4 %j, i4 1
+for.inc.split:4 %j_23 = add i4 %j, i4 1
 
 ]]></Node>
-<StgValue><ssdm name="j_15"/></StgValue>
+<StgValue><ssdm name="j_23"/></StgValue>
 </operation>
 
 <operation id="34" st_id="2" stage="1" lat="1">
@@ -555,7 +555,7 @@ for.inc.split:12 %trunc_ln79 = trunc i128 %tmp_data
 
 <Node id="49" bw="128" op_0_bw="1" op_1_bw="128" op_2_bw="128">
 <![CDATA[
-for.inc.split:13 %select_ln79 = select i1 %trunc_ln76, i128 %data_temp_28_out_load, i128 %data_temp_load_5
+for.inc.split:13 %select_ln79 = select i1 %trunc_ln76, i128 %data_temp_60_out_load, i128 %data_temp_load_9
 
 ]]></Node>
 <StgValue><ssdm name="select_ln79"/></StgValue>
@@ -571,10 +571,10 @@ for.inc.split:13 %select_ln79 = select i1 %trunc_ln76, i128 %data_temp_28_out_lo
 
 <Node id="50" bw="128" op_0_bw="128" op_1_bw="128" op_2_bw="32" op_3_bw="32" op_4_bw="32">
 <![CDATA[
-for.inc.split:14 %data_temp_23 = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i32.i32, i128 %select_ln79, i32 %trunc_ln79, i32 96, i32 127
+for.inc.split:14 %data_temp_48 = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i32.i32, i128 %select_ln79, i32 %trunc_ln79, i32 96, i32 127
 
 ]]></Node>
-<StgValue><ssdm name="data_temp_23"/></StgValue>
+<StgValue><ssdm name="data_temp_48"/></StgValue>
 </operation>
 
 <operation id="41" st_id="2" stage="1" lat="1">
@@ -587,7 +587,7 @@ for.inc.split:14 %data_temp_23 = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i3
 
 <Node id="51" bw="128" op_0_bw="1" op_1_bw="128" op_2_bw="128">
 <![CDATA[
-for.inc.split:15 %select_ln80 = select i1 %trunc_ln76, i128 %data_temp_load_5, i128 %data_temp_28_out_load
+for.inc.split:15 %select_ln80 = select i1 %trunc_ln76, i128 %data_temp_load_9, i128 %data_temp_60_out_load
 
 ]]></Node>
 <StgValue><ssdm name="select_ln80"/></StgValue>
@@ -603,10 +603,10 @@ for.inc.split:15 %select_ln80 = select i1 %trunc_ln76, i128 %data_temp_load_5, i
 
 <Node id="52" bw="96" op_0_bw="96" op_1_bw="128" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.inc.split:16 %tmp_2 = partselect i96 @_ssdm_op_PartSelect.i96.i128.i32.i32, i128 %tmp_data, i32 32, i32 127
+for.inc.split:16 %tmp_9 = partselect i96 @_ssdm_op_PartSelect.i96.i128.i32.i32, i128 %tmp_data, i32 32, i32 127
 
 ]]></Node>
-<StgValue><ssdm name="tmp_2"/></StgValue>
+<StgValue><ssdm name="tmp_9"/></StgValue>
 </operation>
 
 <operation id="43" st_id="2" stage="1" lat="1">
@@ -619,10 +619,10 @@ for.inc.split:16 %tmp_2 = partselect i96 @_ssdm_op_PartSelect.i96.i128.i32.i32, 
 
 <Node id="53" bw="128" op_0_bw="128" op_1_bw="128" op_2_bw="96" op_3_bw="32" op_4_bw="32">
 <![CDATA[
-for.inc.split:17 %tmp_3 = partset i128 @_ssdm_op_PartSet.i128.i128.i96.i32.i32, i128 %select_ln80, i96 %tmp_2, i32 0, i32 95
+for.inc.split:17 %tmp_s = partset i128 @_ssdm_op_PartSet.i128.i128.i96.i32.i32, i128 %select_ln80, i96 %tmp_9, i32 0, i32 95
 
 ]]></Node>
-<StgValue><ssdm name="tmp_3"/></StgValue>
+<StgValue><ssdm name="tmp_s"/></StgValue>
 </operation>
 
 <operation id="44" st_id="2" stage="1" lat="1">
@@ -635,10 +635,10 @@ for.inc.split:17 %tmp_3 = partset i128 @_ssdm_op_PartSet.i128.i128.i96.i32.i32, 
 
 <Node id="54" bw="128" op_0_bw="1" op_1_bw="128" op_2_bw="128">
 <![CDATA[
-for.inc.split:18 %data_temp_27 = select i1 %trunc_ln76, i128 %tmp_3, i128 %data_temp_23
+for.inc.split:18 %data_temp_50 = select i1 %trunc_ln76, i128 %tmp_s, i128 %data_temp_48
 
 ]]></Node>
-<StgValue><ssdm name="data_temp_27"/></StgValue>
+<StgValue><ssdm name="data_temp_50"/></StgValue>
 </operation>
 
 <operation id="45" st_id="2" stage="1" lat="1">
@@ -651,10 +651,10 @@ for.inc.split:18 %data_temp_27 = select i1 %trunc_ln76, i128 %tmp_3, i128 %data_
 
 <Node id="55" bw="128" op_0_bw="1" op_1_bw="128" op_2_bw="128">
 <![CDATA[
-for.inc.split:19 %data_temp_24 = select i1 %trunc_ln76, i128 %data_temp_23, i128 %tmp_3
+for.inc.split:19 %data_temp_49 = select i1 %trunc_ln76, i128 %data_temp_48, i128 %tmp_s
 
 ]]></Node>
-<StgValue><ssdm name="data_temp_24"/></StgValue>
+<StgValue><ssdm name="data_temp_49"/></StgValue>
 </operation>
 
 <operation id="46" st_id="2" stage="1" lat="1">
@@ -667,7 +667,7 @@ for.inc.split:19 %data_temp_24 = select i1 %trunc_ln76, i128 %data_temp_23, i128
 
 <Node id="58" bw="0" op_0_bw="128">
 <![CDATA[
-for.inc.split:22 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_27
+for.inc.split:22 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_50
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln65"/></StgValue>
@@ -699,7 +699,7 @@ for.inc.split:23 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp
 
 <Node id="60" bw="0" op_0_bw="128" op_1_bw="128" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.inc.split:24 %store_ln65 = store i128 %data_temp_27, i128 %data_temp
+for.inc.split:24 %store_ln65 = store i128 %data_temp_50, i128 %data_temp
 
 ]]></Node>
 <StgValue><ssdm name="store_ln65"/></StgValue>
@@ -715,7 +715,7 @@ for.inc.split:24 %store_ln65 = store i128 %data_temp_27, i128 %data_temp
 
 <Node id="61" bw="0" op_0_bw="128">
 <![CDATA[
-for.inc.split:25 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_24
+for.inc.split:25 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_49
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln65"/></StgValue>
@@ -731,7 +731,7 @@ for.inc.split:25 %muxLogicData_to_store_ln65 = muxlogic i128 %data_temp_24
 
 <Node id="62" bw="0" op_0_bw="128">
 <![CDATA[
-for.inc.split:26 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_28_out
+for.inc.split:26 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_60_out
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicAddr_to_store_ln65"/></StgValue>
@@ -747,7 +747,7 @@ for.inc.split:26 %muxLogicAddr_to_store_ln65 = muxlogic i128 %data_temp_28_out
 
 <Node id="63" bw="0" op_0_bw="128" op_1_bw="128" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.inc.split:27 %store_ln65 = store i128 %data_temp_24, i128 %data_temp_28_out
+for.inc.split:27 %store_ln65 = store i128 %data_temp_49, i128 %data_temp_60_out
 
 ]]></Node>
 <StgValue><ssdm name="store_ln65"/></StgValue>
@@ -763,7 +763,7 @@ for.inc.split:27 %store_ln65 = store i128 %data_temp_24, i128 %data_temp_28_out
 
 <Node id="64" bw="0" op_0_bw="4">
 <![CDATA[
-for.inc.split:28 %muxLogicData_to_store_ln76 = muxlogic i4 %j_15
+for.inc.split:28 %muxLogicData_to_store_ln76 = muxlogic i4 %j_23
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln76"/></StgValue>
@@ -795,7 +795,7 @@ for.inc.split:29 %muxLogicAddr_to_store_ln76 = muxlogic i4 %j_02
 
 <Node id="66" bw="0" op_0_bw="4" op_1_bw="4" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.inc.split:30 %store_ln76 = store i4 %j_15, i4 %j_02
+for.inc.split:30 %store_ln76 = store i4 %j_23, i4 %j_02
 
 ]]></Node>
 <StgValue><ssdm name="store_ln76"/></StgValue>
@@ -859,7 +859,7 @@ for.inc70.exitStub:2 %muxLogicData_to_write_ln0 = muxlogic i128 %data_temp_load
 
 <Node id="72" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="128">
 <![CDATA[
-for.inc70.exitStub:3 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i128P0A, i128 %data_temp_29_out, i128 %data_temp_load
+for.inc70.exitStub:3 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i128P0A, i128 %data_temp_61_out, i128 %data_temp_load
 
 ]]></Node>
 <StgValue><ssdm name="write_ln0"/></StgValue>
@@ -893,7 +893,7 @@ for.inc70.exitStub:4 %ret_ln0 = ret
 
 <Node id="42" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.inc.split:6 %specpipeline_ln77 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_1
+for.inc.split:6 %specpipeline_ln77 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_70
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln77"/></StgValue>
@@ -923,7 +923,7 @@ for.inc.split:7 %speclooptripcount_ln65 = speclooptripcount void @_ssdm_op_SpecL
 
 <Node id="44" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.inc.split:8 %specloopname_ln76 = specloopname void @_ssdm_op_SpecLoopName, void @empty_33
+for.inc.split:8 %specloopname_ln76 = specloopname void @_ssdm_op_SpecLoopName, void @empty_59
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln76"/></StgValue>
@@ -938,7 +938,7 @@ for.inc.split:8 %specloopname_ln76 = specloopname void @_ssdm_op_SpecLoopName, v
 
 <Node id="56" bw="0" op_0_bw="128">
 <![CDATA[
-for.inc.split:20 %muxLogicData_to_write_ln83 = muxlogic i128 %data_temp_23
+for.inc.split:20 %muxLogicData_to_write_ln83 = muxlogic i128 %data_temp_48
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_write_ln83"/></StgValue>
@@ -953,7 +953,7 @@ for.inc.split:20 %muxLogicData_to_write_ln83 = muxlogic i128 %data_temp_23
 
 <Node id="57" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="128">
 <![CDATA[
-for.inc.split:21 %write_ln83 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_1, i128 %data_temp_23
+for.inc.split:21 %write_ln83 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_1, i128 %data_temp_48
 
 ]]></Node>
 <StgValue><ssdm name="write_ln83"/></StgValue>

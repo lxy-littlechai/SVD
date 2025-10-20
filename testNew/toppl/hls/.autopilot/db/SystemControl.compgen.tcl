@@ -22,7 +22,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 27 \
+    id 31 \
     name ITER \
     type other \
     dir I \
@@ -37,7 +37,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 28 \
+    id 32 \
     name gmem3 \
     type other \
     dir O \
@@ -52,7 +52,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 29 \
+    id 33 \
     name ConvArray \
     type other \
     dir I \
@@ -67,7 +67,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 30 \
+    id 34 \
     name syscontrol_0 \
     type fifo \
     dir O \
@@ -82,7 +82,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 31 \
+    id 35 \
     name syscontrol_1 \
     type fifo \
     dir O \
@@ -97,7 +97,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 32 \
+    id 36 \
     name syscontrol_2 \
     type fifo \
     dir O \
@@ -112,7 +112,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 33 \
+    id 37 \
     name convSet_L_0 \
     type fifo \
     dir I \
@@ -127,7 +127,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 34 \
+    id 38 \
     name convSet_L_1 \
     type fifo \
     dir I \
@@ -142,7 +142,37 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 35 \
+    id 39 \
+    name convSet_L_2 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_convSet_L_2 \
+    op interface \
+    ports { convSet_L_2_dout { I 32 vector } convSet_L_2_num_data_valid { I 3 vector } convSet_L_2_fifo_cap { I 3 vector } convSet_L_2_empty_n { I 1 bit } convSet_L_2_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 40 \
+    name convSet_L_3 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_convSet_L_3 \
+    op interface \
+    ports { convSet_L_3_dout { I 32 vector } convSet_L_3_num_data_valid { I 3 vector } convSet_L_3_fifo_cap { I 3 vector } convSet_L_3_empty_n { I 1 bit } convSet_L_3_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 41 \
     name convSet_R_0 \
     type fifo \
     dir I \
@@ -157,7 +187,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 36 \
+    id 42 \
     name convSet_R_1 \
     type fifo \
     dir I \
@@ -166,6 +196,36 @@ eval "cg_default_interface_gen_dc { \
     corename dc_convSet_R_1 \
     op interface \
     ports { convSet_R_1_dout { I 32 vector } convSet_R_1_num_data_valid { I 3 vector } convSet_R_1_fifo_cap { I 3 vector } convSet_R_1_empty_n { I 1 bit } convSet_R_1_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 43 \
+    name convSet_R_2 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_convSet_R_2 \
+    op interface \
+    ports { convSet_R_2_dout { I 32 vector } convSet_R_2_num_data_valid { I 3 vector } convSet_R_2_fifo_cap { I 3 vector } convSet_R_2_empty_n { I 1 bit } convSet_R_2_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 44 \
+    name convSet_R_3 \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_convSet_R_3 \
+    op interface \
+    ports { convSet_R_3_dout { I 32 vector } convSet_R_3_num_data_valid { I 3 vector } convSet_R_3_fifo_cap { I 3 vector } convSet_R_3_empty_n { I 1 bit } convSet_R_3_read { O 1 bit } } \
 } "
 }
 

@@ -217,7 +217,71 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>188</integer>
+      <integer>179</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DDR2FIFO_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>186</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DDR2FIFO_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>196</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DDR2FIFO_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>203</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DDR2FIFO_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>226</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -233,7 +297,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>189</integer>
+      <integer>227</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -249,7 +313,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>191</integer>
+      <integer>229</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -265,7 +329,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>198</integer>
+      <integer>236</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -281,7 +345,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>234</integer>
+      <integer>284</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -297,7 +361,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>250</integer>
+      <integer>304</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -313,7 +377,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>251</integer>
+      <integer>305</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -329,7 +393,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>253</integer>
+      <integer>307</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -345,7 +409,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>263</integer>
+      <integer>317</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -361,7 +425,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>312</integer>
+      <integer>378</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -377,7 +441,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>318</integer>
+      <integer>384</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -393,7 +457,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>325</integer>
+      <integer>390</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -409,7 +473,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>332</integer>
+      <integer>396</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -425,7 +489,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>342</integer>
+      <integer>403</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -441,7 +505,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>359</integer>
+      <integer>410</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -457,7 +521,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>366</integer>
+      <integer>416</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -473,7 +537,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>373</integer>
+      <integer>422</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -489,7 +553,135 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>380</integer>
+      <integer>432</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>459</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>465</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>471</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>478</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>485</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>491</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>497</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RoundRobin_XLX_SEP_ PragmaOptions=II = 1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>504</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -521,7 +713,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>446</integer>
+      <integer>576</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -537,7 +729,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>448</integer>
+      <integer>578</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -553,7 +745,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>450</integer>
+      <integer>580</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -569,7 +761,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>452</integer>
+      <integer>582</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -585,7 +777,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>454</integer>
+      <integer>584</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -601,7 +793,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>455</integer>
+      <integer>585</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -617,7 +809,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>456</integer>
+      <integer>586</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -633,7 +825,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>457</integer>
+      <integer>587</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -649,7 +841,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>458</integer>
+      <integer>588</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -665,7 +857,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>459</integer>
+      <integer>589</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -681,7 +873,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>462</integer>
+      <integer>592</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -697,7 +889,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>463</integer>
+      <integer>593</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -713,7 +905,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>464</integer>
+      <integer>594</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -729,7 +921,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>465</integer>
+      <integer>595</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -745,7 +937,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>467</integer>
+      <integer>597</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -761,7 +953,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>468</integer>
+      <integer>598</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -777,7 +969,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>469</integer>
+      <integer>599</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -793,7 +985,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>470</integer>
+      <integer>600</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -809,7 +1001,135 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>473</integer>
+      <integer>602</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_tx3_0_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>603</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_tx3_1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>604</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_rx3_0_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>605</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_rx3_1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>607</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_tx4_0_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>608</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_tx4_1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>609</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_rx4_0_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>610</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=TopPL_XLX_SEP_ PragmaOptions=axis port = sweep_rx4_1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
+      <key>line</key>
+      <integer>613</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -825,7 +1145,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>474</integer>
+      <integer>614</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -841,7 +1161,7 @@
       <key>filename</key>
       <string>/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp</string>
       <key>line</key>
-      <integer>476</integer>
+      <integer>616</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

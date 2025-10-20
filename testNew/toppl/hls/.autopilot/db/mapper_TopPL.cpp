@@ -305,6 +305,70 @@ unsigned int ap_apatb_sweep_rx2_1_V_strb_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_sweep_rx2_1_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx2_1_V_strb_V.dat");
 unsigned int ap_apatb_sweep_rx2_1_V_last_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_sweep_rx2_1_V_last_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx2_1_V_last_V.dat");
+unsigned int ap_apatb_sweep_tx3_0_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_0_V_data_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_0_V_data_V.dat");
+unsigned int ap_apatb_sweep_tx3_0_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_0_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_0_V_keep_V.dat");
+unsigned int ap_apatb_sweep_tx3_0_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_0_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_0_V_strb_V.dat");
+unsigned int ap_apatb_sweep_tx3_0_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_0_V_last_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_0_V_last_V.dat");
+unsigned int ap_apatb_sweep_rx3_0_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_0_V_data_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_0_V_data_V.dat");
+unsigned int ap_apatb_sweep_rx3_0_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_0_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_0_V_keep_V.dat");
+unsigned int ap_apatb_sweep_rx3_0_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_0_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_0_V_strb_V.dat");
+unsigned int ap_apatb_sweep_rx3_0_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_0_V_last_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_0_V_last_V.dat");
+unsigned int ap_apatb_sweep_tx3_1_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_1_V_data_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_1_V_data_V.dat");
+unsigned int ap_apatb_sweep_tx3_1_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_1_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_1_V_keep_V.dat");
+unsigned int ap_apatb_sweep_tx3_1_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_1_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_1_V_strb_V.dat");
+unsigned int ap_apatb_sweep_tx3_1_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx3_1_V_last_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx3_1_V_last_V.dat");
+unsigned int ap_apatb_sweep_rx3_1_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_1_V_data_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_1_V_data_V.dat");
+unsigned int ap_apatb_sweep_rx3_1_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_1_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_1_V_keep_V.dat");
+unsigned int ap_apatb_sweep_rx3_1_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_1_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_1_V_strb_V.dat");
+unsigned int ap_apatb_sweep_rx3_1_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx3_1_V_last_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx3_1_V_last_V.dat");
+unsigned int ap_apatb_sweep_tx4_0_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_0_V_data_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_0_V_data_V.dat");
+unsigned int ap_apatb_sweep_tx4_0_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_0_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_0_V_keep_V.dat");
+unsigned int ap_apatb_sweep_tx4_0_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_0_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_0_V_strb_V.dat");
+unsigned int ap_apatb_sweep_tx4_0_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_0_V_last_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_0_V_last_V.dat");
+unsigned int ap_apatb_sweep_rx4_0_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_0_V_data_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_0_V_data_V.dat");
+unsigned int ap_apatb_sweep_rx4_0_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_0_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_0_V_keep_V.dat");
+unsigned int ap_apatb_sweep_rx4_0_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_0_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_0_V_strb_V.dat");
+unsigned int ap_apatb_sweep_rx4_0_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_0_V_last_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_0_V_last_V.dat");
+unsigned int ap_apatb_sweep_tx4_1_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_1_V_data_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_1_V_data_V.dat");
+unsigned int ap_apatb_sweep_tx4_1_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_1_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_1_V_keep_V.dat");
+unsigned int ap_apatb_sweep_tx4_1_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_1_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_1_V_strb_V.dat");
+unsigned int ap_apatb_sweep_tx4_1_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_tx4_1_V_last_V_V_size_Reader("../tv/stream_size/stream_size_out_sweep_tx4_1_V_last_V.dat");
+unsigned int ap_apatb_sweep_rx4_1_V_data_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_1_V_data_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_1_V_data_V.dat");
+unsigned int ap_apatb_sweep_rx4_1_V_keep_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_1_V_keep_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_1_V_keep_V.dat");
+unsigned int ap_apatb_sweep_rx4_1_V_strb_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_1_V_strb_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_1_V_strb_V.dat");
+unsigned int ap_apatb_sweep_rx4_1_V_last_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_sweep_rx4_1_V_last_V_V_size_Reader("../tv/stream_size/stream_size_in_sweep_rx4_1_V_last_V.dat");
 unsigned int ap_apatb_norm_tx0_V_data_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_norm_tx0_V_data_V_V_size_Reader("../tv/stream_size/stream_size_out_norm_tx0_V_data_V.dat");
 unsigned int ap_apatb_norm_tx0_V_keep_V_cap_bc;
@@ -324,8 +388,8 @@ static AESL_RUNTIME_BC __xlx_norm_rx0_V_last_V_V_size_Reader("../tv/stream_size/
 using hls::sim::Byte;
 struct __cosim_s16__ { char data[16]; };
 struct __cosim_s64__ { char data[64]; };
-extern "C" void TopPL(Byte<64>*, Byte<64>*, Byte<64>*, Byte<4>*, int, int, int, int, int, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
-extern "C" void apatb_TopPL_hw(volatile void * __xlx_apatb_param_dataIn, volatile void * __xlx_apatb_param_U, volatile void * __xlx_apatb_param_S, volatile void * __xlx_apatb_param_ConvArray, int __xlx_apatb_param_ITER, volatile void * __xlx_apatb_param_sweep_tx1_0_V_data_V, volatile void * __xlx_apatb_param_sweep_tx1_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx1_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx1_0_V_last_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_data_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_last_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_data_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_last_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_data_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_last_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_data_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_last_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_data_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_last_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_data_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_last_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_data_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_last_V, volatile void * __xlx_apatb_param_norm_tx0_V_data_V, volatile void * __xlx_apatb_param_norm_tx0_V_keep_V, volatile void * __xlx_apatb_param_norm_tx0_V_strb_V, volatile void * __xlx_apatb_param_norm_tx0_V_last_V, volatile void * __xlx_apatb_param_norm_rx0_V_data_V, volatile void * __xlx_apatb_param_norm_rx0_V_keep_V, volatile void * __xlx_apatb_param_norm_rx0_V_strb_V, volatile void * __xlx_apatb_param_norm_rx0_V_last_V) {
+extern "C" void TopPL(Byte<64>*, Byte<64>*, Byte<64>*, Byte<4>*, int, int, int, int, int, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
+extern "C" void apatb_TopPL_hw(volatile void * __xlx_apatb_param_dataIn, volatile void * __xlx_apatb_param_U, volatile void * __xlx_apatb_param_S, volatile void * __xlx_apatb_param_ConvArray, int __xlx_apatb_param_ITER, volatile void * __xlx_apatb_param_sweep_tx1_0_V_data_V, volatile void * __xlx_apatb_param_sweep_tx1_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx1_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx1_0_V_last_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_data_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx1_0_V_last_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_data_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx1_1_V_last_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_data_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx1_1_V_last_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_data_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx2_0_V_last_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_data_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx2_0_V_last_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_data_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx2_1_V_last_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_data_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx2_1_V_last_V, volatile void * __xlx_apatb_param_sweep_tx3_0_V_data_V, volatile void * __xlx_apatb_param_sweep_tx3_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx3_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx3_0_V_last_V, volatile void * __xlx_apatb_param_sweep_rx3_0_V_data_V, volatile void * __xlx_apatb_param_sweep_rx3_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx3_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx3_0_V_last_V, volatile void * __xlx_apatb_param_sweep_tx3_1_V_data_V, volatile void * __xlx_apatb_param_sweep_tx3_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx3_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx3_1_V_last_V, volatile void * __xlx_apatb_param_sweep_rx3_1_V_data_V, volatile void * __xlx_apatb_param_sweep_rx3_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx3_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx3_1_V_last_V, volatile void * __xlx_apatb_param_sweep_tx4_0_V_data_V, volatile void * __xlx_apatb_param_sweep_tx4_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx4_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx4_0_V_last_V, volatile void * __xlx_apatb_param_sweep_rx4_0_V_data_V, volatile void * __xlx_apatb_param_sweep_rx4_0_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx4_0_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx4_0_V_last_V, volatile void * __xlx_apatb_param_sweep_tx4_1_V_data_V, volatile void * __xlx_apatb_param_sweep_tx4_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_tx4_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_tx4_1_V_last_V, volatile void * __xlx_apatb_param_sweep_rx4_1_V_data_V, volatile void * __xlx_apatb_param_sweep_rx4_1_V_keep_V, volatile void * __xlx_apatb_param_sweep_rx4_1_V_strb_V, volatile void * __xlx_apatb_param_sweep_rx4_1_V_last_V, volatile void * __xlx_apatb_param_norm_tx0_V_data_V, volatile void * __xlx_apatb_param_norm_tx0_V_keep_V, volatile void * __xlx_apatb_param_norm_tx0_V_strb_V, volatile void * __xlx_apatb_param_norm_tx0_V_last_V, volatile void * __xlx_apatb_param_norm_rx0_V_data_V, volatile void * __xlx_apatb_param_norm_rx0_V_keep_V, volatile void * __xlx_apatb_param_norm_rx0_V_strb_V, volatile void * __xlx_apatb_param_norm_rx0_V_last_V) {
 using hls::sim::createStream;
   // Collect __xlx_dataIn__tmp_vec
 std::vector<Byte<64>> __xlx_dataIn__tmp_vec;
@@ -439,6 +503,86 @@ auto* ssweep_rx2_1_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_ap
 auto* ssweep_rx2_1_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx2_1_V_keep_V);
 auto* ssweep_rx2_1_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx2_1_V_strb_V);
 auto* ssweep_rx2_1_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_rx2_1_V_last_V);
+  //Create input buffer for sweep_tx3_0_V_data_V
+  ap_apatb_sweep_tx3_0_V_data_V_cap_bc = __xlx_sweep_tx3_0_V_data_V_V_size_Reader.read_size();
+  __cosim_s16__* __xlx_sweep_tx3_0_V_data_V_input_buffer= new __cosim_s16__[ap_apatb_sweep_tx3_0_V_data_V_cap_bc];
+auto* ssweep_tx3_0_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx3_0_V_data_V);
+  //Create input buffer for sweep_tx3_0_V_keep_V
+  ap_apatb_sweep_tx3_0_V_keep_V_cap_bc = __xlx_sweep_tx3_0_V_keep_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx3_0_V_keep_V_input_buffer= new short[ap_apatb_sweep_tx3_0_V_keep_V_cap_bc];
+auto* ssweep_tx3_0_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_0_V_keep_V);
+  //Create input buffer for sweep_tx3_0_V_strb_V
+  ap_apatb_sweep_tx3_0_V_strb_V_cap_bc = __xlx_sweep_tx3_0_V_strb_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx3_0_V_strb_V_input_buffer= new short[ap_apatb_sweep_tx3_0_V_strb_V_cap_bc];
+auto* ssweep_tx3_0_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_0_V_strb_V);
+  //Create input buffer for sweep_tx3_0_V_last_V
+  ap_apatb_sweep_tx3_0_V_last_V_cap_bc = __xlx_sweep_tx3_0_V_last_V_V_size_Reader.read_size();
+  char* __xlx_sweep_tx3_0_V_last_V_input_buffer= new char[ap_apatb_sweep_tx3_0_V_last_V_cap_bc];
+auto* ssweep_tx3_0_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_tx3_0_V_last_V);
+auto* ssweep_rx3_0_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx3_0_V_data_V);
+auto* ssweep_rx3_0_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_0_V_keep_V);
+auto* ssweep_rx3_0_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_0_V_strb_V);
+auto* ssweep_rx3_0_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_rx3_0_V_last_V);
+  //Create input buffer for sweep_tx3_1_V_data_V
+  ap_apatb_sweep_tx3_1_V_data_V_cap_bc = __xlx_sweep_tx3_1_V_data_V_V_size_Reader.read_size();
+  __cosim_s16__* __xlx_sweep_tx3_1_V_data_V_input_buffer= new __cosim_s16__[ap_apatb_sweep_tx3_1_V_data_V_cap_bc];
+auto* ssweep_tx3_1_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx3_1_V_data_V);
+  //Create input buffer for sweep_tx3_1_V_keep_V
+  ap_apatb_sweep_tx3_1_V_keep_V_cap_bc = __xlx_sweep_tx3_1_V_keep_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx3_1_V_keep_V_input_buffer= new short[ap_apatb_sweep_tx3_1_V_keep_V_cap_bc];
+auto* ssweep_tx3_1_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_1_V_keep_V);
+  //Create input buffer for sweep_tx3_1_V_strb_V
+  ap_apatb_sweep_tx3_1_V_strb_V_cap_bc = __xlx_sweep_tx3_1_V_strb_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx3_1_V_strb_V_input_buffer= new short[ap_apatb_sweep_tx3_1_V_strb_V_cap_bc];
+auto* ssweep_tx3_1_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_1_V_strb_V);
+  //Create input buffer for sweep_tx3_1_V_last_V
+  ap_apatb_sweep_tx3_1_V_last_V_cap_bc = __xlx_sweep_tx3_1_V_last_V_V_size_Reader.read_size();
+  char* __xlx_sweep_tx3_1_V_last_V_input_buffer= new char[ap_apatb_sweep_tx3_1_V_last_V_cap_bc];
+auto* ssweep_tx3_1_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_tx3_1_V_last_V);
+auto* ssweep_rx3_1_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx3_1_V_data_V);
+auto* ssweep_rx3_1_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_1_V_keep_V);
+auto* ssweep_rx3_1_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_1_V_strb_V);
+auto* ssweep_rx3_1_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_rx3_1_V_last_V);
+  //Create input buffer for sweep_tx4_0_V_data_V
+  ap_apatb_sweep_tx4_0_V_data_V_cap_bc = __xlx_sweep_tx4_0_V_data_V_V_size_Reader.read_size();
+  __cosim_s16__* __xlx_sweep_tx4_0_V_data_V_input_buffer= new __cosim_s16__[ap_apatb_sweep_tx4_0_V_data_V_cap_bc];
+auto* ssweep_tx4_0_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx4_0_V_data_V);
+  //Create input buffer for sweep_tx4_0_V_keep_V
+  ap_apatb_sweep_tx4_0_V_keep_V_cap_bc = __xlx_sweep_tx4_0_V_keep_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx4_0_V_keep_V_input_buffer= new short[ap_apatb_sweep_tx4_0_V_keep_V_cap_bc];
+auto* ssweep_tx4_0_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_0_V_keep_V);
+  //Create input buffer for sweep_tx4_0_V_strb_V
+  ap_apatb_sweep_tx4_0_V_strb_V_cap_bc = __xlx_sweep_tx4_0_V_strb_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx4_0_V_strb_V_input_buffer= new short[ap_apatb_sweep_tx4_0_V_strb_V_cap_bc];
+auto* ssweep_tx4_0_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_0_V_strb_V);
+  //Create input buffer for sweep_tx4_0_V_last_V
+  ap_apatb_sweep_tx4_0_V_last_V_cap_bc = __xlx_sweep_tx4_0_V_last_V_V_size_Reader.read_size();
+  char* __xlx_sweep_tx4_0_V_last_V_input_buffer= new char[ap_apatb_sweep_tx4_0_V_last_V_cap_bc];
+auto* ssweep_tx4_0_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_tx4_0_V_last_V);
+auto* ssweep_rx4_0_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx4_0_V_data_V);
+auto* ssweep_rx4_0_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_0_V_keep_V);
+auto* ssweep_rx4_0_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_0_V_strb_V);
+auto* ssweep_rx4_0_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_rx4_0_V_last_V);
+  //Create input buffer for sweep_tx4_1_V_data_V
+  ap_apatb_sweep_tx4_1_V_data_V_cap_bc = __xlx_sweep_tx4_1_V_data_V_V_size_Reader.read_size();
+  __cosim_s16__* __xlx_sweep_tx4_1_V_data_V_input_buffer= new __cosim_s16__[ap_apatb_sweep_tx4_1_V_data_V_cap_bc];
+auto* ssweep_tx4_1_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx4_1_V_data_V);
+  //Create input buffer for sweep_tx4_1_V_keep_V
+  ap_apatb_sweep_tx4_1_V_keep_V_cap_bc = __xlx_sweep_tx4_1_V_keep_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx4_1_V_keep_V_input_buffer= new short[ap_apatb_sweep_tx4_1_V_keep_V_cap_bc];
+auto* ssweep_tx4_1_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_1_V_keep_V);
+  //Create input buffer for sweep_tx4_1_V_strb_V
+  ap_apatb_sweep_tx4_1_V_strb_V_cap_bc = __xlx_sweep_tx4_1_V_strb_V_V_size_Reader.read_size();
+  short* __xlx_sweep_tx4_1_V_strb_V_input_buffer= new short[ap_apatb_sweep_tx4_1_V_strb_V_cap_bc];
+auto* ssweep_tx4_1_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_1_V_strb_V);
+  //Create input buffer for sweep_tx4_1_V_last_V
+  ap_apatb_sweep_tx4_1_V_last_V_cap_bc = __xlx_sweep_tx4_1_V_last_V_V_size_Reader.read_size();
+  char* __xlx_sweep_tx4_1_V_last_V_input_buffer= new char[ap_apatb_sweep_tx4_1_V_last_V_cap_bc];
+auto* ssweep_tx4_1_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_tx4_1_V_last_V);
+auto* ssweep_rx4_1_V_data_V = createStream((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx4_1_V_data_V);
+auto* ssweep_rx4_1_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_1_V_keep_V);
+auto* ssweep_rx4_1_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_1_V_strb_V);
+auto* ssweep_rx4_1_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_sweep_rx4_1_V_last_V);
   //Create input buffer for norm_tx0_V_data_V
   ap_apatb_norm_tx0_V_data_V_cap_bc = __xlx_norm_tx0_V_data_V_V_size_Reader.read_size();
   __cosim_s16__* __xlx_norm_tx0_V_data_V_input_buffer= new __cosim_s16__[ap_apatb_norm_tx0_V_data_V_cap_bc];
@@ -460,7 +604,7 @@ auto* snorm_rx0_V_keep_V = createStream((hls::stream<short>*)__xlx_apatb_param_n
 auto* snorm_rx0_V_strb_V = createStream((hls::stream<short>*)__xlx_apatb_param_norm_rx0_V_strb_V);
 auto* snorm_rx0_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_norm_rx0_V_last_V);
   // DUT call
-  TopPL(__xlx_dataIn__tmp_vec.data(), __xlx_U__tmp_vec.data(), __xlx_S__tmp_vec.data(), __xlx_ConvArray__tmp_vec.data(), __xlx_offset_byte_param_dataIn, __xlx_offset_byte_param_U, __xlx_offset_byte_param_S, __xlx_offset_byte_param_ConvArray, __xlx_apatb_param_ITER, ssweep_tx1_0_V_data_V->data<__cosim_s16__>(), ssweep_tx1_0_V_keep_V->data<short>(), ssweep_tx1_0_V_strb_V->data<short>(), ssweep_tx1_0_V_last_V->data<char>(), ssweep_rx1_0_V_data_V->data<__cosim_s16__>(), ssweep_rx1_0_V_keep_V->data<short>(), ssweep_rx1_0_V_strb_V->data<short>(), ssweep_rx1_0_V_last_V->data<char>(), ssweep_tx1_1_V_data_V->data<__cosim_s16__>(), ssweep_tx1_1_V_keep_V->data<short>(), ssweep_tx1_1_V_strb_V->data<short>(), ssweep_tx1_1_V_last_V->data<char>(), ssweep_rx1_1_V_data_V->data<__cosim_s16__>(), ssweep_rx1_1_V_keep_V->data<short>(), ssweep_rx1_1_V_strb_V->data<short>(), ssweep_rx1_1_V_last_V->data<char>(), ssweep_tx2_0_V_data_V->data<__cosim_s16__>(), ssweep_tx2_0_V_keep_V->data<short>(), ssweep_tx2_0_V_strb_V->data<short>(), ssweep_tx2_0_V_last_V->data<char>(), ssweep_rx2_0_V_data_V->data<__cosim_s16__>(), ssweep_rx2_0_V_keep_V->data<short>(), ssweep_rx2_0_V_strb_V->data<short>(), ssweep_rx2_0_V_last_V->data<char>(), ssweep_tx2_1_V_data_V->data<__cosim_s16__>(), ssweep_tx2_1_V_keep_V->data<short>(), ssweep_tx2_1_V_strb_V->data<short>(), ssweep_tx2_1_V_last_V->data<char>(), ssweep_rx2_1_V_data_V->data<__cosim_s16__>(), ssweep_rx2_1_V_keep_V->data<short>(), ssweep_rx2_1_V_strb_V->data<short>(), ssweep_rx2_1_V_last_V->data<char>(), snorm_tx0_V_data_V->data<__cosim_s16__>(), snorm_tx0_V_keep_V->data<short>(), snorm_tx0_V_strb_V->data<short>(), snorm_tx0_V_last_V->data<char>(), snorm_rx0_V_data_V->data<__cosim_s16__>(), snorm_rx0_V_keep_V->data<short>(), snorm_rx0_V_strb_V->data<short>(), snorm_rx0_V_last_V->data<char>());
+  TopPL(__xlx_dataIn__tmp_vec.data(), __xlx_U__tmp_vec.data(), __xlx_S__tmp_vec.data(), __xlx_ConvArray__tmp_vec.data(), __xlx_offset_byte_param_dataIn, __xlx_offset_byte_param_U, __xlx_offset_byte_param_S, __xlx_offset_byte_param_ConvArray, __xlx_apatb_param_ITER, ssweep_tx1_0_V_data_V->data<__cosim_s16__>(), ssweep_tx1_0_V_keep_V->data<short>(), ssweep_tx1_0_V_strb_V->data<short>(), ssweep_tx1_0_V_last_V->data<char>(), ssweep_rx1_0_V_data_V->data<__cosim_s16__>(), ssweep_rx1_0_V_keep_V->data<short>(), ssweep_rx1_0_V_strb_V->data<short>(), ssweep_rx1_0_V_last_V->data<char>(), ssweep_tx1_1_V_data_V->data<__cosim_s16__>(), ssweep_tx1_1_V_keep_V->data<short>(), ssweep_tx1_1_V_strb_V->data<short>(), ssweep_tx1_1_V_last_V->data<char>(), ssweep_rx1_1_V_data_V->data<__cosim_s16__>(), ssweep_rx1_1_V_keep_V->data<short>(), ssweep_rx1_1_V_strb_V->data<short>(), ssweep_rx1_1_V_last_V->data<char>(), ssweep_tx2_0_V_data_V->data<__cosim_s16__>(), ssweep_tx2_0_V_keep_V->data<short>(), ssweep_tx2_0_V_strb_V->data<short>(), ssweep_tx2_0_V_last_V->data<char>(), ssweep_rx2_0_V_data_V->data<__cosim_s16__>(), ssweep_rx2_0_V_keep_V->data<short>(), ssweep_rx2_0_V_strb_V->data<short>(), ssweep_rx2_0_V_last_V->data<char>(), ssweep_tx2_1_V_data_V->data<__cosim_s16__>(), ssweep_tx2_1_V_keep_V->data<short>(), ssweep_tx2_1_V_strb_V->data<short>(), ssweep_tx2_1_V_last_V->data<char>(), ssweep_rx2_1_V_data_V->data<__cosim_s16__>(), ssweep_rx2_1_V_keep_V->data<short>(), ssweep_rx2_1_V_strb_V->data<short>(), ssweep_rx2_1_V_last_V->data<char>(), ssweep_tx3_0_V_data_V->data<__cosim_s16__>(), ssweep_tx3_0_V_keep_V->data<short>(), ssweep_tx3_0_V_strb_V->data<short>(), ssweep_tx3_0_V_last_V->data<char>(), ssweep_rx3_0_V_data_V->data<__cosim_s16__>(), ssweep_rx3_0_V_keep_V->data<short>(), ssweep_rx3_0_V_strb_V->data<short>(), ssweep_rx3_0_V_last_V->data<char>(), ssweep_tx3_1_V_data_V->data<__cosim_s16__>(), ssweep_tx3_1_V_keep_V->data<short>(), ssweep_tx3_1_V_strb_V->data<short>(), ssweep_tx3_1_V_last_V->data<char>(), ssweep_rx3_1_V_data_V->data<__cosim_s16__>(), ssweep_rx3_1_V_keep_V->data<short>(), ssweep_rx3_1_V_strb_V->data<short>(), ssweep_rx3_1_V_last_V->data<char>(), ssweep_tx4_0_V_data_V->data<__cosim_s16__>(), ssweep_tx4_0_V_keep_V->data<short>(), ssweep_tx4_0_V_strb_V->data<short>(), ssweep_tx4_0_V_last_V->data<char>(), ssweep_rx4_0_V_data_V->data<__cosim_s16__>(), ssweep_rx4_0_V_keep_V->data<short>(), ssweep_rx4_0_V_strb_V->data<short>(), ssweep_rx4_0_V_last_V->data<char>(), ssweep_tx4_1_V_data_V->data<__cosim_s16__>(), ssweep_tx4_1_V_keep_V->data<short>(), ssweep_tx4_1_V_strb_V->data<short>(), ssweep_tx4_1_V_last_V->data<char>(), ssweep_rx4_1_V_data_V->data<__cosim_s16__>(), ssweep_rx4_1_V_keep_V->data<short>(), ssweep_rx4_1_V_strb_V->data<short>(), ssweep_rx4_1_V_last_V->data<char>(), snorm_tx0_V_data_V->data<__cosim_s16__>(), snorm_tx0_V_keep_V->data<short>(), snorm_tx0_V_strb_V->data<short>(), snorm_tx0_V_last_V->data<char>(), snorm_rx0_V_data_V->data<__cosim_s16__>(), snorm_rx0_V_keep_V->data<short>(), snorm_rx0_V_strb_V->data<short>(), snorm_rx0_V_last_V->data<char>());
 // print __xlx_apatb_param_dataIn
 for (size_t i = 0; i < __xlx_size_param_dataIn; ++i) {
 ((Byte<64>*)__xlx_apatb_param_dataIn)[i] = __xlx_dataIn__tmp_vec[__xlx_offset_param_dataIn+i];
@@ -509,6 +653,38 @@ ssweep_rx2_1_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_s
 ssweep_rx2_1_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx2_1_V_keep_V);
 ssweep_rx2_1_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx2_1_V_strb_V);
 ssweep_rx2_1_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_rx2_1_V_last_V);
+ssweep_tx3_0_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx3_0_V_data_V);
+ssweep_tx3_0_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_0_V_keep_V);
+ssweep_tx3_0_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_0_V_strb_V);
+ssweep_tx3_0_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_tx3_0_V_last_V);
+ssweep_rx3_0_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx3_0_V_data_V);
+ssweep_rx3_0_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_0_V_keep_V);
+ssweep_rx3_0_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_0_V_strb_V);
+ssweep_rx3_0_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_rx3_0_V_last_V);
+ssweep_tx3_1_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx3_1_V_data_V);
+ssweep_tx3_1_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_1_V_keep_V);
+ssweep_tx3_1_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx3_1_V_strb_V);
+ssweep_tx3_1_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_tx3_1_V_last_V);
+ssweep_rx3_1_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx3_1_V_data_V);
+ssweep_rx3_1_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_1_V_keep_V);
+ssweep_rx3_1_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx3_1_V_strb_V);
+ssweep_rx3_1_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_rx3_1_V_last_V);
+ssweep_tx4_0_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx4_0_V_data_V);
+ssweep_tx4_0_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_0_V_keep_V);
+ssweep_tx4_0_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_0_V_strb_V);
+ssweep_tx4_0_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_tx4_0_V_last_V);
+ssweep_rx4_0_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx4_0_V_data_V);
+ssweep_rx4_0_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_0_V_keep_V);
+ssweep_rx4_0_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_0_V_strb_V);
+ssweep_rx4_0_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_rx4_0_V_last_V);
+ssweep_tx4_1_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_tx4_1_V_data_V);
+ssweep_tx4_1_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_1_V_keep_V);
+ssweep_tx4_1_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_tx4_1_V_strb_V);
+ssweep_tx4_1_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_tx4_1_V_last_V);
+ssweep_rx4_1_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_sweep_rx4_1_V_data_V);
+ssweep_rx4_1_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_1_V_keep_V);
+ssweep_rx4_1_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_sweep_rx4_1_V_strb_V);
+ssweep_rx4_1_V_last_V->transfer((hls::stream<char>*)__xlx_apatb_param_sweep_rx4_1_V_last_V);
 snorm_tx0_V_data_V->transfer((hls::stream<__cosim_s16__>*)__xlx_apatb_param_norm_tx0_V_data_V);
 snorm_tx0_V_keep_V->transfer((hls::stream<short>*)__xlx_apatb_param_norm_tx0_V_keep_V);
 snorm_tx0_V_strb_V->transfer((hls::stream<short>*)__xlx_apatb_param_norm_tx0_V_strb_V);

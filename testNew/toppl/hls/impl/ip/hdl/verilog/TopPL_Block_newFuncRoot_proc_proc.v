@@ -39,7 +39,7 @@ reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_block_state1;
-wire   [31:0] bitcast_ln272_fu_23_p1;
+wire   [31:0] bitcast_ln332_fu_23_p1;
 reg   [31:0] empty_preg;
 reg   [0:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
@@ -77,7 +77,7 @@ always @ (posedge ap_clk) begin
         empty_preg <= 32'd0;
     end else begin
         if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
-            empty_preg <= bitcast_ln272_fu_23_p1;
+            empty_preg <= bitcast_ln332_fu_23_p1;
         end
     end
 end
@@ -116,7 +116,7 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
-        empty = bitcast_ln272_fu_23_p1;
+        empty = bitcast_ln332_fu_23_p1;
     end else begin
         empty = empty_preg;
     end
@@ -139,6 +139,6 @@ always @ (*) begin
     ap_block_state1 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
 end
 
-assign bitcast_ln272_fu_23_p1 = convL0;
+assign bitcast_ln332_fu_23_p1 = convL0;
 
 endmodule //TopPL_Block_newFuncRoot_proc_proc

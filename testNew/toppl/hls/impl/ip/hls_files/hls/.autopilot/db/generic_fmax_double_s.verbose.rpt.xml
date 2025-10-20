@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'generic_fmax_double_s'" level="0">
-<item name = "Date">Sun Oct 19 23:23:13 2025
+<item name = "Date">Mon Oct 20 21:14:53 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -77,16 +77,16 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="and_ln18_33_fu_236_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_34_fu_242_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_35_fu_248_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_36_fu_262_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_37_fu_274_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_38_fu_280_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_39_fu_312_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_40_fu_318_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_65_fu_236_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_66_fu_242_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_67_fu_248_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_68_fu_262_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_69_fu_274_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_70_fu_280_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_71_fu_312_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_72_fu_318_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln18_fu_146_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln25_5_fu_218_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln25_9_fu_218_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln25_fu_122_p2">and, 0, 0, 2, 1, 1</column>
 <column name="icmp_ln18_1_fu_134_p2">icmp, 0, 0, 11, 11, 2</column>
 <column name="icmp_ln18_2_fu_140_p2">icmp, 0, 0, 52, 52, 1</column>
@@ -95,18 +95,18 @@
 <column name="icmp_ln25_1_fu_116_p2">icmp, 0, 0, 52, 52, 1</column>
 <column name="icmp_ln25_fu_104_p2">icmp, 0, 0, 11, 11, 1</column>
 <column name="ymaggreater_fu_158_p2">icmp, 0, 0, 64, 64, 64</column>
-<column name="or_ln18_5_fu_306_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln18_9_fu_306_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln18_fu_286_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln25_1_fu_110_p2">or, 0, 0, 45, 52, 52</column>
 <column name="or_ln25_fu_98_p2">or, 0, 0, 10, 11, 11</column>
 <column name="ap_return">select, 0, 0, 58, 1, 64</column>
-<column name="res_18_fu_254_p3">select, 0, 0, 58, 1, 64</column>
-<column name="res_19_fu_292_p3">select, 0, 0, 58, 1, 64</column>
+<column name="res_34_fu_254_p3">select, 0, 0, 58, 1, 64</column>
+<column name="res_35_fu_292_p3">select, 0, 0, 58, 1, 64</column>
 <column name="res_fu_186_p3">select, 0, 0, 58, 1, 64</column>
 <column name="select_ln39_fu_170_p3">select, 0, 0, 2, 1, 1</column>
-<column name="ymaggreater_5_fu_178_p3">select, 0, 0, 2, 1, 1</column>
-<column name="xor_ln18_10_fu_300_p2">xor, 0, 0, 2, 1, 2</column>
-<column name="xor_ln18_9_fu_268_p2">xor, 0, 0, 2, 2, 1</column>
+<column name="ymaggreater_9_fu_178_p3">select, 0, 0, 2, 1, 1</column>
+<column name="xor_ln18_17_fu_268_p2">xor, 0, 0, 2, 2, 1</column>
+<column name="xor_ln18_18_fu_300_p2">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln18_fu_230_p2">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln25_fu_224_p2">xor, 0, 0, 2, 2, 1</column>
 <column name="xor_ln39_fu_164_p2">xor, 0, 0, 2, 1, 2</column>

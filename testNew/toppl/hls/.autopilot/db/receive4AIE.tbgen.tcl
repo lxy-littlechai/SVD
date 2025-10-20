@@ -129,8 +129,8 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "data_temp_33", "Type" : "None", "Direction" : "I"},
-			{"Name" : "data_temp_34", "Type" : "None", "Direction" : "I"},
+			{"Name" : "data_temp_65", "Type" : "None", "Direction" : "I"},
+			{"Name" : "data_temp_66", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sweep_rx1_0_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "sweep_rx1_0",
 				"BlockSignal" : [
 					{"Name" : "sweep_rx1_0_TDATA_blk_n", "Type" : "RtlSignal"}]},
@@ -140,15 +140,15 @@ set RtlHierarchyInfo {[
 			{"Name" : "receive_fifo_L_0", "Type" : "Fifo", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "receive_fifo_L_0_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "data_temp_37_out", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "data_temp_36_out", "Type" : "OVld", "Direction" : "IO"}],
+			{"Name" : "data_temp_69_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "data_temp_68_out", "Type" : "OVld", "Direction" : "IO"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_76_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_receive4AIE_Pipeline_VITIS_LOOP_76_2_fu_158.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fptrunc_64ns_32_1_no_dsp_1_U256", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U257", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U258", "Parent" : "0"}]}
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fptrunc_64ns_32_1_no_dsp_1_U411", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U412", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U413", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -160,15 +160,15 @@ set ArgLastReadFirstWriteLatency {
 		sweep_rx1_0_V_strb_V {Type I LastRead 4 FirstWrite -1}
 		sweep_rx1_0_V_last_V {Type I LastRead 4 FirstWrite -1}}
 	receive4AIE_Pipeline_VITIS_LOOP_76_2 {
-		data_temp_33 {Type I LastRead 0 FirstWrite -1}
-		data_temp_34 {Type I LastRead 0 FirstWrite -1}
+		data_temp_65 {Type I LastRead 0 FirstWrite -1}
+		data_temp_66 {Type I LastRead 0 FirstWrite -1}
 		sweep_rx1_0_V_data_V {Type I LastRead 1 FirstWrite -1}
 		sweep_rx1_0_V_keep_V {Type I LastRead 1 FirstWrite -1}
 		sweep_rx1_0_V_strb_V {Type I LastRead 1 FirstWrite -1}
 		sweep_rx1_0_V_last_V {Type I LastRead 1 FirstWrite -1}
 		receive_fifo_L_0 {Type O LastRead -1 FirstWrite 2}
-		data_temp_37_out {Type O LastRead -1 FirstWrite 1}
-		data_temp_36_out {Type IO LastRead 1 FirstWrite 0}}}
+		data_temp_69_out {Type O LastRead -1 FirstWrite 1}
+		data_temp_68_out {Type IO LastRead 1 FirstWrite 0}}}
 
 set hasDtUnsupportedChannel 0
 

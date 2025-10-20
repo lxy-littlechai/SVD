@@ -13,24 +13,24 @@ module TopPL_receive4AIE_3_Pipeline_VITIS_LOOP_76_2 (
         ap_done,
         ap_idle,
         ap_ready,
-        sweep_rx1_1_TVALID,
-        receive_fifo_R_0_din,
-        receive_fifo_R_0_num_data_valid,
-        receive_fifo_R_0_fifo_cap,
-        receive_fifo_R_0_full_n,
-        receive_fifo_R_0_write,
-        data_temp_9,
-        data_temp_10,
-        sweep_rx1_1_TDATA,
-        sweep_rx1_1_TREADY,
-        sweep_rx1_1_TKEEP,
-        sweep_rx1_1_TSTRB,
-        sweep_rx1_1_TLAST,
-        data_temp_13_out,
-        data_temp_13_out_ap_vld,
-        data_temp_12_out_i,
-        data_temp_12_out_o,
-        data_temp_12_out_o_ap_vld
+        sweep_rx4_0_TVALID,
+        receive_fifo_L_3_din,
+        receive_fifo_L_3_num_data_valid,
+        receive_fifo_L_3_fifo_cap,
+        receive_fifo_L_3_full_n,
+        receive_fifo_L_3_write,
+        data_temp_41,
+        data_temp_42,
+        sweep_rx4_0_TDATA,
+        sweep_rx4_0_TREADY,
+        sweep_rx4_0_TKEEP,
+        sweep_rx4_0_TSTRB,
+        sweep_rx4_0_TLAST,
+        data_temp_45_out,
+        data_temp_45_out_ap_vld,
+        data_temp_44_out_i,
+        data_temp_44_out_o,
+        data_temp_44_out_o_ap_vld
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -41,31 +41,31 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input   sweep_rx1_1_TVALID;
-output  [127:0] receive_fifo_R_0_din;
-input  [8:0] receive_fifo_R_0_num_data_valid;
-input  [8:0] receive_fifo_R_0_fifo_cap;
-input   receive_fifo_R_0_full_n;
-output   receive_fifo_R_0_write;
-input  [127:0] data_temp_9;
-input  [127:0] data_temp_10;
-input  [127:0] sweep_rx1_1_TDATA;
-output   sweep_rx1_1_TREADY;
-input  [15:0] sweep_rx1_1_TKEEP;
-input  [15:0] sweep_rx1_1_TSTRB;
-input  [0:0] sweep_rx1_1_TLAST;
-output  [127:0] data_temp_13_out;
-output   data_temp_13_out_ap_vld;
-input  [127:0] data_temp_12_out_i;
-output  [127:0] data_temp_12_out_o;
-output   data_temp_12_out_o_ap_vld;
+input   sweep_rx4_0_TVALID;
+output  [127:0] receive_fifo_L_3_din;
+input  [8:0] receive_fifo_L_3_num_data_valid;
+input  [8:0] receive_fifo_L_3_fifo_cap;
+input   receive_fifo_L_3_full_n;
+output   receive_fifo_L_3_write;
+input  [127:0] data_temp_41;
+input  [127:0] data_temp_42;
+input  [127:0] sweep_rx4_0_TDATA;
+output   sweep_rx4_0_TREADY;
+input  [15:0] sweep_rx4_0_TKEEP;
+input  [15:0] sweep_rx4_0_TSTRB;
+input  [0:0] sweep_rx4_0_TLAST;
+output  [127:0] data_temp_45_out;
+output   data_temp_45_out_ap_vld;
+input  [127:0] data_temp_44_out_i;
+output  [127:0] data_temp_44_out_o;
+output   data_temp_44_out_o_ap_vld;
 
 reg ap_idle;
-reg receive_fifo_R_0_write;
-reg sweep_rx1_1_TREADY;
-reg data_temp_13_out_ap_vld;
-reg[127:0] data_temp_12_out_o;
-reg data_temp_12_out_o_ap_vld;
+reg receive_fifo_L_3_write;
+reg sweep_rx4_0_TREADY;
+reg data_temp_45_out_ap_vld;
+reg[127:0] data_temp_44_out_o;
+reg data_temp_44_out_o_ap_vld;
 
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
@@ -80,25 +80,25 @@ reg    ap_block_pp0_stage0_subdone;
 reg    ap_condition_exit_pp0_iter1_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
-reg    sweep_rx1_1_TDATA_blk_n;
+reg    sweep_rx4_0_TDATA_blk_n;
 wire    ap_block_pp0_stage0;
-reg    receive_fifo_R_0_blk_n;
-wire   [127:0] data_temp_11_fu_226_p5;
-reg   [127:0] data_temp_11_reg_357;
+reg    receive_fifo_L_3_blk_n;
+wire   [127:0] data_temp_36_fu_226_p5;
+reg   [127:0] data_temp_36_reg_357;
 reg    ap_block_pp0_stage0_11001;
-wire   [127:0] data_temp_12_fu_276_p3;
+wire   [127:0] data_temp_37_fu_276_p3;
 wire    ap_loop_init;
 reg   [3:0] j_02_fu_84;
-wire   [3:0] j_13_fu_198_p2;
+wire   [3:0] j_21_fu_198_p2;
 reg   [127:0] data_temp_fu_88;
-wire   [127:0] data_temp_13_fu_268_p3;
+wire   [127:0] data_temp_38_fu_268_p3;
 reg    ap_block_pp0_stage0_01001;
 wire   [0:0] trunc_ln76_fu_204_p1;
 wire   [127:0] select_ln79_fu_218_p3;
 wire   [31:0] trunc_ln79_fu_214_p1;
 wire   [127:0] select_ln80_fu_238_p3;
-wire   [95:0] tmp_6_fu_246_p4;
-wire   [127:0] tmp_5_fu_256_p5;
+wire   [95:0] tmp_3_fu_246_p4;
+wire   [127:0] tmp_4_fu_256_p5;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -179,9 +179,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            data_temp_fu_88 <= data_temp_9;
+            data_temp_fu_88 <= data_temp_41;
         end else if (((icmp_ln76_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            data_temp_fu_88 <= data_temp_13_fu_268_p3;
+            data_temp_fu_88 <= data_temp_38_fu_268_p3;
         end
     end
 end
@@ -191,14 +191,14 @@ always @ (posedge ap_clk) begin
         if ((ap_loop_init == 1'b1)) begin
             j_02_fu_84 <= 4'd1;
         end else if (((icmp_ln76_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            j_02_fu_84 <= j_13_fu_198_p2;
+            j_02_fu_84 <= j_21_fu_198_p2;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        data_temp_11_reg_357 <= data_temp_11_fu_226_p5;
+        data_temp_36_reg_357 <= data_temp_36_fu_226_p5;
     end
 end
 
@@ -245,62 +245,62 @@ end
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            data_temp_12_out_o = data_temp_10;
+            data_temp_44_out_o = data_temp_42;
         end else if (((icmp_ln76_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            data_temp_12_out_o = data_temp_12_fu_276_p3;
+            data_temp_44_out_o = data_temp_37_fu_276_p3;
         end else begin
-            data_temp_12_out_o = data_temp_12_out_i;
+            data_temp_44_out_o = data_temp_44_out_i;
         end
     end else begin
-        data_temp_12_out_o = data_temp_12_out_i;
+        data_temp_44_out_o = data_temp_44_out_i;
     end
 end
 
 always @ (*) begin
     if ((((1'b0 == ap_block_pp0_stage0_11001) & (icmp_ln76_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0)) | ((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1)))) begin
-        data_temp_12_out_o_ap_vld = 1'b1;
+        data_temp_44_out_o_ap_vld = 1'b1;
     end else begin
-        data_temp_12_out_o_ap_vld = 1'b0;
+        data_temp_44_out_o_ap_vld = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (icmp_ln76_fu_181_p2 == 1'd1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        data_temp_13_out_ap_vld = 1'b1;
+        data_temp_45_out_ap_vld = 1'b1;
     end else begin
-        data_temp_13_out_ap_vld = 1'b0;
+        data_temp_45_out_ap_vld = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
-        receive_fifo_R_0_blk_n = receive_fifo_R_0_full_n;
+        receive_fifo_L_3_blk_n = receive_fifo_L_3_full_n;
     end else begin
-        receive_fifo_R_0_blk_n = 1'b1;
+        receive_fifo_L_3_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
-        receive_fifo_R_0_write = 1'b1;
+        receive_fifo_L_3_write = 1'b1;
     end else begin
-        receive_fifo_R_0_write = 1'b0;
+        receive_fifo_L_3_write = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (icmp_ln76_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        sweep_rx1_1_TDATA_blk_n = sweep_rx1_1_TVALID;
+        sweep_rx4_0_TDATA_blk_n = sweep_rx4_0_TVALID;
     end else begin
-        sweep_rx1_1_TDATA_blk_n = 1'b1;
+        sweep_rx4_0_TDATA_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (icmp_ln76_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        sweep_rx1_1_TREADY = 1'b1;
+        sweep_rx4_0_TREADY = 1'b1;
     end else begin
-        sweep_rx1_1_TREADY = 1'b0;
+        sweep_rx4_0_TREADY = 1'b0;
     end
 end
 
@@ -332,11 +332,11 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    ap_block_state2_pp0_stage0_iter1 = ((icmp_ln76_fu_181_p2 == 1'd0) & (sweep_rx1_1_TVALID == 1'b0));
+    ap_block_state2_pp0_stage0_iter1 = ((icmp_ln76_fu_181_p2 == 1'd0) & (sweep_rx4_0_TVALID == 1'b0));
 end
 
 always @ (*) begin
-    ap_block_state3_pp0_stage0_iter2 = (receive_fifo_R_0_full_n == 1'b0);
+    ap_block_state3_pp0_stage0_iter2 = (receive_fifo_L_3_full_n == 1'b0);
 end
 
 assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
@@ -345,30 +345,30 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter1_stage0;
 
-assign data_temp_11_fu_226_p5 = {{trunc_ln79_fu_214_p1}, {select_ln79_fu_218_p3[95:0]}};
+assign data_temp_36_fu_226_p5 = {{trunc_ln79_fu_214_p1}, {select_ln79_fu_218_p3[95:0]}};
 
-assign data_temp_12_fu_276_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? data_temp_11_fu_226_p5 : tmp_5_fu_256_p5);
+assign data_temp_37_fu_276_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? data_temp_36_fu_226_p5 : tmp_4_fu_256_p5);
 
-assign data_temp_13_fu_268_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? tmp_5_fu_256_p5 : data_temp_11_fu_226_p5);
+assign data_temp_38_fu_268_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? tmp_4_fu_256_p5 : data_temp_36_fu_226_p5);
 
-assign data_temp_13_out = data_temp_fu_88;
+assign data_temp_45_out = data_temp_fu_88;
 
 assign icmp_ln76_fu_181_p2 = ((j_02_fu_84 == 4'd8) ? 1'b1 : 1'b0);
 
-assign j_13_fu_198_p2 = (j_02_fu_84 + 4'd1);
+assign j_21_fu_198_p2 = (j_02_fu_84 + 4'd1);
 
-assign receive_fifo_R_0_din = data_temp_11_reg_357;
+assign receive_fifo_L_3_din = data_temp_36_reg_357;
 
-assign select_ln79_fu_218_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? data_temp_12_out_i : data_temp_fu_88);
+assign select_ln79_fu_218_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? data_temp_44_out_i : data_temp_fu_88);
 
-assign select_ln80_fu_238_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? data_temp_fu_88 : data_temp_12_out_i);
+assign select_ln80_fu_238_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? data_temp_fu_88 : data_temp_44_out_i);
 
-assign tmp_5_fu_256_p5 = {{select_ln80_fu_238_p3[127:96]}, {tmp_6_fu_246_p4}};
+assign tmp_3_fu_246_p4 = {{sweep_rx4_0_TDATA[127:32]}};
 
-assign tmp_6_fu_246_p4 = {{sweep_rx1_1_TDATA[127:32]}};
+assign tmp_4_fu_256_p5 = {{select_ln80_fu_238_p3[127:96]}, {tmp_3_fu_246_p4}};
 
 assign trunc_ln76_fu_204_p1 = j_02_fu_84[0:0];
 
-assign trunc_ln79_fu_214_p1 = sweep_rx1_1_TDATA[31:0];
+assign trunc_ln79_fu_214_p1 = sweep_rx4_0_TDATA[31:0];
 
 endmodule //TopPL_receive4AIE_3_Pipeline_VITIS_LOOP_76_2

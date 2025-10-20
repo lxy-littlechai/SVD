@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'Block_newFuncRoot_proc_proc'
 ================================================================
-* Date:           Sun Oct 19 23:23:12 2025
+* Date:           Mon Oct 20 21:14:50 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -76,11 +76,11 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.67>
 ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%muxLogicCE_to_convL0_read = muxlogic"   --->   Operation 2 'muxlogic' 'muxLogicCE_to_convL0_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 3 [1/1] (0.83ns)   --->   "%convL0_read = read i32 @_ssdm_op_Read.ap_auto.volatile.floatP0A, i32 %convL0" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:272]   --->   Operation 3 'read' 'convL0_read' <Predicate = true> <Delay = 0.83> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%bitcast_ln272 = bitcast i32 %convL0_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:272]   --->   Operation 4 'bitcast' 'bitcast_ln272' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln272 = muxlogic i32 %bitcast_ln272"   --->   Operation 5 'muxlogic' 'muxLogicData_to_write_ln272' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.83ns)   --->   "%write_ln272 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %empty, i32 %bitcast_ln272" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:272]   --->   Operation 6 'write' 'write_ln272' <Predicate = true> <Delay = 0.83> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ret_ln272 = ret" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:272]   --->   Operation 7 'ret' 'ret_ln272' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.83ns)   --->   "%convL0_read = read i32 @_ssdm_op_Read.ap_auto.volatile.floatP0A, i32 %convL0" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:332]   --->   Operation 3 'read' 'convL0_read' <Predicate = true> <Delay = 0.83> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%bitcast_ln332 = bitcast i32 %convL0_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:332]   --->   Operation 4 'bitcast' 'bitcast_ln332' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln332 = muxlogic i32 %bitcast_ln332"   --->   Operation 5 'muxlogic' 'muxLogicData_to_write_ln332' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.83ns)   --->   "%write_ln332 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %empty, i32 %bitcast_ln332" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:332]   --->   Operation 6 'write' 'write_ln332' <Predicate = true> <Delay = 0.83> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ret_ln332 = ret" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:332]   --->   Operation 7 'ret' 'ret_ln332' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -104,10 +104,10 @@ Port [ empty]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; exte
 <method=bitvector/>
 muxLogicCE_to_convL0_read   (muxlogic) [ 00]
 convL0_read                 (read    ) [ 00]
-bitcast_ln272               (bitcast ) [ 00]
-muxLogicData_to_write_ln272 (muxlogic) [ 00]
-write_ln272                 (write   ) [ 00]
-ret_ln272                   (ret     ) [ 00]
+bitcast_ln332               (bitcast ) [ 00]
+muxLogicData_to_write_ln332 (muxlogic) [ 00]
+write_ln332                 (write   ) [ 00]
+ret_ln332                   (ret     ) [ 00]
 </LifeTime>
 
 <model>
@@ -161,7 +161,7 @@ ret_ln272                   (ret     ) [ 00]
 </bind>
 </comp>
 
-<comp id="14" class="1004" name="write_ln272_write_fu_14">
+<comp id="14" class="1004" name="write_ln332_write_fu_14">
 <pin_list>
 <pin id="15" dir="0" index="0" bw="0" slack="0"/>
 <pin id="16" dir="0" index="1" bw="32" slack="0"/>
@@ -170,7 +170,7 @@ ret_ln272                   (ret     ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln272/1 "/>
+<opset="write_ln332/1 "/>
 </bind>
 </comp>
 
@@ -184,25 +184,25 @@ ret_ln272                   (ret     ) [ 00]
 </bind>
 </comp>
 
-<comp id="23" class="1004" name="bitcast_ln272_fu_23">
+<comp id="23" class="1004" name="bitcast_ln332_fu_23">
 <pin_list>
 <pin id="24" dir="0" index="0" bw="32" slack="0"/>
 <pin id="25" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitcast(44) " fcode="bitcast"/>
-<opset="bitcast_ln272/1 "/>
+<opset="bitcast_ln332/1 "/>
 </bind>
 </comp>
 
-<comp id="28" class="1004" name="muxLogicData_to_write_ln272_fu_28">
+<comp id="28" class="1004" name="muxLogicData_to_write_ln332_fu_28">
 <pin_list>
 <pin id="29" dir="0" index="0" bw="32" slack="0"/>
 <pin id="30" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicData_to_write_ln272/1 "/>
+<opset="muxLogicData_to_write_ln332/1 "/>
 </bind>
 </comp>
 
@@ -235,8 +235,8 @@ ret_ln272                   (ret     ) [ 00]
 	Port: Block_newFuncRoot_proc_proc : convL0 | {1 }
   - Chain level:
 	State 1
-		muxLogicData_to_write_ln272 : 1
-		write_ln272 : 1
+		muxLogicData_to_write_ln332 : 1
+		write_ln332 : 1
 
 
 ============================================================
@@ -249,10 +249,10 @@ ret_ln272                   (ret     ) [ 00]
 |----------|-----------------------------------|
 |   read   |       convL0_read_read_fu_8       |
 |----------|-----------------------------------|
-|   write  |      write_ln272_write_fu_14      |
+|   write  |      write_ln332_write_fu_14      |
 |----------|-----------------------------------|
 | muxlogic |  muxLogicCE_to_convL0_read_fu_21  |
-|          | muxLogicData_to_write_ln272_fu_28 |
+|          | muxLogicData_to_write_ln332_fu_28 |
 |----------|-----------------------------------|
 |   Total  |                                   |
 |----------|-----------------------------------|

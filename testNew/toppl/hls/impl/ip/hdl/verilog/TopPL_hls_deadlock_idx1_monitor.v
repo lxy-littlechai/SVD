@@ -3,16 +3,16 @@
 module TopPL_hls_deadlock_idx1_monitor ( // for module TopPL_TopPL_inst.Send_U0
     input wire clock,
     input wire reset,
-    input wire [19:0] axis_block_sigs,
-    input wire [49:0] inst_idle_sigs,
-    input wire [22:0] inst_block_sigs,
+    input wire [35:0] axis_block_sigs,
+    input wire [81:0] inst_idle_sigs,
+    input wire [38:0] inst_block_sigs,
     output wire block
 );
 
 // signal declare
 reg monitor_find_block;
 wire idx2_block;
-wire idx12_block;
+wire idx20_block;
 wire sub_parallel_block;
 wire all_sub_parallel_has_block;
 wire all_sub_single_has_block;
@@ -21,7 +21,7 @@ wire seq_is_axis_block;
 
 assign block = monitor_find_block;
 assign all_sub_parallel_has_block = 1'b0;
-assign all_sub_single_has_block = 1'b0 | (idx2_block & (axis_block_sigs[1] | axis_block_sigs[0] | axis_block_sigs[3] | axis_block_sigs[2] | axis_block_sigs[5] | axis_block_sigs[4] | axis_block_sigs[7] | axis_block_sigs[6])) | (idx12_block & (axis_block_sigs[8] | axis_block_sigs[9]));
+assign all_sub_single_has_block = 1'b0 | (idx2_block & (axis_block_sigs[1] | axis_block_sigs[0] | axis_block_sigs[3] | axis_block_sigs[2] | axis_block_sigs[5] | axis_block_sigs[4] | axis_block_sigs[7] | axis_block_sigs[6] | axis_block_sigs[9] | axis_block_sigs[8] | axis_block_sigs[11] | axis_block_sigs[10] | axis_block_sigs[13] | axis_block_sigs[12] | axis_block_sigs[15] | axis_block_sigs[14])) | (idx20_block & (axis_block_sigs[16] | axis_block_sigs[17]));
 assign cur_axis_has_block = 1'b0;
 assign seq_is_axis_block = all_sub_parallel_has_block | all_sub_single_has_block | cur_axis_has_block;
 
@@ -45,13 +45,13 @@ end
     .block(idx2_block)
 );
 
- TopPL_hls_deadlock_idx12_monitor TopPL_hls_deadlock_idx12_monitor_U (
+ TopPL_hls_deadlock_idx20_monitor TopPL_hls_deadlock_idx20_monitor_U (
     .clock(clock),
     .reset(reset),
     .axis_block_sigs(axis_block_sigs),
     .inst_idle_sigs(inst_idle_sigs),
     .inst_block_sigs(inst_block_sigs),
-    .block(idx12_block)
+    .block(idx20_block)
 );
 
 endmodule

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'receive4AIE'" level="0">
-<item name = "Date">Sun Oct 19 23:23:18 2025
+<item name = "Date">Mon Oct 20 21:15:03 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -63,9 +63,9 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="fpext_32ns_64_1_no_dsp_1_U257">fpext_32ns_64_1_no_dsp_1, 0, 0, 0, 0, 0</column>
-<column name="fpext_32ns_64_1_no_dsp_1_U258">fpext_32ns_64_1_no_dsp_1, 0, 0, 0, 0, 0</column>
-<column name="fptrunc_64ns_32_1_no_dsp_1_U256">fptrunc_64ns_32_1_no_dsp_1, 0, 0, 0, 0, 0</column>
+<column name="fpext_32ns_64_1_no_dsp_1_U412">fpext_32ns_64_1_no_dsp_1, 0, 0, 0, 0, 0</column>
+<column name="fpext_32ns_64_1_no_dsp_1_U413">fpext_32ns_64_1_no_dsp_1, 0, 0, 0, 0, 0</column>
+<column name="fptrunc_64ns_32_1_no_dsp_1_U411">fptrunc_64ns_32_1_no_dsp_1, 0, 0, 0, 0, 0</column>
 <column name="grp_receive4AIE_Pipeline_VITIS_LOOP_76_2_fu_158">receive4AIE_Pipeline_VITIS_LOOP_76_2, 0, 0, 264, 787, 0</column>
 </table>
 </item>
@@ -83,41 +83,41 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_15_fu_260_p2">+, 0, 0, 5, 2, 1</column>
-<column name="and_ln18_25_fu_548_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_26_fu_553_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_27_fu_559_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_28_fu_573_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_29_fu_583_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_30_fu_589_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_31_fu_617_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln18_32_fu_623_p2">and, 0, 0, 2, 1, 1</column>
+<column name="i_27_fu_260_p2">+, 0, 0, 5, 2, 1</column>
+<column name="and_ln18_57_fu_548_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_58_fu_553_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_59_fu_559_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_60_fu_573_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_61_fu_583_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_62_fu_589_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_63_fu_617_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln18_64_fu_623_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln18_fu_502_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln25_4_fu_533_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln25_8_fu_533_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln25_fu_498_p2">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state2">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln18_10_fu_452_p2">icmp, 0, 0, 11, 11, 2</column>
-<column name="icmp_ln18_11_fu_458_p2">icmp, 0, 0, 52, 52, 1</column>
-<column name="icmp_ln18_12_fu_464_p2">icmp, 0, 0, 52, 52, 1</column>
+<column name="icmp_ln18_22_fu_452_p2">icmp, 0, 0, 11, 11, 2</column>
+<column name="icmp_ln18_23_fu_458_p2">icmp, 0, 0, 52, 52, 1</column>
+<column name="icmp_ln18_24_fu_464_p2">icmp, 0, 0, 52, 52, 1</column>
 <column name="icmp_ln18_fu_446_p2">icmp, 0, 0, 11, 11, 2</column>
-<column name="icmp_ln25_4_fu_440_p2">icmp, 0, 0, 52, 52, 1</column>
+<column name="icmp_ln25_8_fu_440_p2">icmp, 0, 0, 52, 52, 1</column>
 <column name="icmp_ln25_fu_428_p2">icmp, 0, 0, 11, 11, 1</column>
 <column name="icmp_ln69_fu_266_p2">icmp, 0, 0, 5, 2, 3</column>
 <column name="ymaggreater_fu_470_p2">icmp, 0, 0, 64, 64, 64</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state5">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln18_4_fu_612_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln18_8_fu_612_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln18_fu_594_p2">or, 0, 0, 2, 1, 1</column>
-<column name="or_ln25_4_fu_434_p2">or, 0, 0, 45, 52, 52</column>
+<column name="or_ln25_8_fu_434_p2">or, 0, 0, 45, 52, 52</column>
 <column name="or_ln25_fu_422_p2">or, 0, 0, 10, 11, 11</column>
 <column name="conv_fu_176_p0">select, 0, 0, 58, 1, 64</column>
-<column name="res_14_fu_565_p3">select, 0, 0, 58, 1, 64</column>
-<column name="res_15_fu_600_p3">select, 0, 0, 58, 1, 64</column>
+<column name="res_30_fu_565_p3">select, 0, 0, 58, 1, 64</column>
+<column name="res_31_fu_600_p3">select, 0, 0, 58, 1, 64</column>
 <column name="res_fu_506_p3">select, 0, 0, 58, 1, 64</column>
 <column name="select_ln39_fu_482_p3">select, 0, 0, 2, 1, 1</column>
-<column name="ymaggreater_4_fu_490_p3">select, 0, 0, 2, 1, 1</column>
-<column name="xor_ln18_7_fu_577_p2">xor, 0, 0, 2, 2, 1</column>
-<column name="xor_ln18_8_fu_607_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="ymaggreater_8_fu_490_p3">select, 0, 0, 2, 1, 1</column>
+<column name="xor_ln18_15_fu_577_p2">xor, 0, 0, 2, 2, 1</column>
+<column name="xor_ln18_16_fu_607_p2">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln18_fu_543_p2">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln25_fu_537_p2">xor, 0, 0, 2, 2, 1</column>
 <column name="xor_ln39_fu_476_p2">xor, 0, 0, 2, 1, 2</column>
@@ -128,7 +128,7 @@
 <column name="ap_NS_fsm">6, 8, 1, 8</column>
 <column name="ap_done">2, 2, 1, 2</column>
 <column name="conv_03_fu_112">32, 2, 32, 64</column>
-<column name="data_temp_30_fu_124">121, 2, 128, 256</column>
+<column name="data_temp_54_fu_124">121, 2, 128, 256</column>
 <column name="data_temp_fu_120">121, 2, 128, 256</column>
 <column name="i_04_fu_116">2, 2, 2, 4</column>
 <column name="receive_fifo_L_0_blk_n">2, 2, 1, 2</column>
@@ -144,24 +144,24 @@
 <column name="ap_CS_fsm">7, 0, 7, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="conv_03_fu_112">32, 0, 32, 0</column>
-<column name="data_temp_30_fu_124">128, 0, 128, 0</column>
-<column name="data_temp_31_reg_697">128, 0, 128, 0</column>
+<column name="data_temp_54_fu_124">128, 0, 128, 0</column>
+<column name="data_temp_55_reg_697">128, 0, 128, 0</column>
 <column name="data_temp_fu_120">128, 0, 128, 0</column>
-<column name="dc_12_reg_716">64, 0, 64, 0</column>
+<column name="dc_24_reg_716">64, 0, 64, 0</column>
 <column name="dc_reg_710">64, 0, 64, 0</column>
 <column name="fp_uint_tmp_reg_705">32, 0, 32, 0</column>
 <column name="grp_receive4AIE_Pipeline_VITIS_LOOP_76_2_fu_158_ap_start_reg">1, 0, 1, 0</column>
 <column name="i_04_fu_116">2, 0, 2, 0</column>
-<column name="icmp_ln18_10_reg_751">1, 0, 1, 0</column>
-<column name="icmp_ln18_11_reg_757">1, 0, 1, 0</column>
-<column name="icmp_ln18_12_reg_763">1, 0, 1, 0</column>
+<column name="icmp_ln18_22_reg_751">1, 0, 1, 0</column>
+<column name="icmp_ln18_23_reg_757">1, 0, 1, 0</column>
+<column name="icmp_ln18_24_reg_763">1, 0, 1, 0</column>
 <column name="icmp_ln18_reg_744">1, 0, 1, 0</column>
-<column name="icmp_ln25_4_reg_738">1, 0, 1, 0</column>
+<column name="icmp_ln25_8_reg_738">1, 0, 1, 0</column>
 <column name="icmp_ln25_reg_732">1, 0, 1, 0</column>
 <column name="return_r_preg">32, 0, 32, 0</column>
-<column name="x_fp_sig_4_reg_727">52, 0, 52, 0</column>
+<column name="x_fp_sig_8_reg_727">52, 0, 52, 0</column>
 <column name="x_fp_sign_reg_722">1, 0, 1, 0</column>
-<column name="ymaggreater_4_reg_769">1, 0, 1, 0</column>
+<column name="ymaggreater_8_reg_769">1, 0, 1, 0</column>
 </table>
 </item>
 </section>

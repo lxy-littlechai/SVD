@@ -79,7 +79,7 @@ attribute shreg_extract : string;
     signal data_temp_4_fu_276_p3 : STD_LOGIC_VECTOR (127 downto 0);
     signal ap_loop_init : STD_LOGIC;
     signal j_03_fu_84 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    signal j_11_fu_198_p2 : STD_LOGIC_VECTOR (3 downto 0);
+    signal j_15_fu_198_p2 : STD_LOGIC_VECTOR (3 downto 0);
     signal data_temp_fu_88 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     signal data_temp_5_fu_268_p3 : STD_LOGIC_VECTOR (127 downto 0);
     signal ap_block_pp0_stage0_01001 : BOOLEAN;
@@ -87,8 +87,8 @@ attribute shreg_extract : string;
     signal select_ln42_fu_218_p3 : STD_LOGIC_VECTOR (127 downto 0);
     signal trunc_ln42_fu_214_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal select_ln43_fu_238_p3 : STD_LOGIC_VECTOR (127 downto 0);
-    signal tmp_4_fu_246_p4 : STD_LOGIC_VECTOR (95 downto 0);
-    signal tmp_2_fu_256_p5 : STD_LOGIC_VECTOR (127 downto 0);
+    signal tmp_8_fu_246_p4 : STD_LOGIC_VECTOR (95 downto 0);
+    signal tmp_6_fu_256_p5 : STD_LOGIC_VECTOR (127 downto 0);
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
     signal ap_done_int : STD_LOGIC;
@@ -215,7 +215,7 @@ begin
                 if ((ap_loop_init = ap_const_logic_1)) then 
                     j_03_fu_84 <= ap_const_lv4_1;
                 elsif (((icmp_ln39_fu_181_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
-                    j_03_fu_84 <= j_11_fu_198_p2;
+                    j_03_fu_84 <= j_15_fu_198_p2;
                 end if;
             end if; 
         end if;
@@ -326,7 +326,7 @@ begin
     data_temp_3_fu_226_p5 <= (trunc_ln42_fu_214_p1 & select_ln42_fu_218_p3(95 downto 0));
     data_temp_4_fu_276_p3 <= 
         data_temp_3_fu_226_p5 when (trunc_ln39_fu_204_p1(0) = '1') else 
-        tmp_2_fu_256_p5;
+        tmp_6_fu_256_p5;
 
     data_temp_4_out_o_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, icmp_ln39_fu_181_p2, data_temp_2, data_temp_4_out_i, ap_block_pp0_stage0, data_temp_4_fu_276_p3, ap_loop_init)
     begin
@@ -354,7 +354,7 @@ begin
     end process;
 
     data_temp_5_fu_268_p3 <= 
-        tmp_2_fu_256_p5 when (trunc_ln39_fu_204_p1(0) = '1') else 
+        tmp_6_fu_256_p5 when (trunc_ln39_fu_204_p1(0) = '1') else 
         data_temp_3_fu_226_p5;
     data_temp_5_out <= data_temp_fu_88;
 
@@ -368,7 +368,7 @@ begin
     end process;
 
     icmp_ln39_fu_181_p2 <= "1" when (j_03_fu_84 = ap_const_lv4_8) else "0";
-    j_11_fu_198_p2 <= std_logic_vector(unsigned(j_03_fu_84) + unsigned(ap_const_lv4_1));
+    j_15_fu_198_p2 <= std_logic_vector(unsigned(j_03_fu_84) + unsigned(ap_const_lv4_1));
 
     norm_rx0_TDATA_blk_n_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, norm_rx0_TVALID, icmp_ln39_fu_181_p2, ap_block_pp0_stage0)
     begin
@@ -416,8 +416,8 @@ begin
     select_ln43_fu_238_p3 <= 
         data_temp_fu_88 when (trunc_ln39_fu_204_p1(0) = '1') else 
         data_temp_4_out_i;
-    tmp_2_fu_256_p5 <= (select_ln43_fu_238_p3(127 downto 96) & tmp_4_fu_246_p4);
-    tmp_4_fu_246_p4 <= norm_rx0_TDATA(127 downto 32);
+    tmp_6_fu_256_p5 <= (select_ln43_fu_238_p3(127 downto 96) & tmp_8_fu_246_p4);
+    tmp_8_fu_246_p4 <= norm_rx0_TDATA(127 downto 32);
     trunc_ln39_fu_204_p1 <= j_03_fu_84(1 - 1 downto 0);
     trunc_ln42_fu_214_p1 <= norm_rx0_TDATA(32 - 1 downto 0);
 end behav;

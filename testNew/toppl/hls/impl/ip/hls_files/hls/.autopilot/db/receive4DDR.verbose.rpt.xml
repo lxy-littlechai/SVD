@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'receive4DDR'" level="0">
-<item name = "Date">Sun Oct 19 23:23:19 2025
+<item name = "Date">Mon Oct 20 21:15:09 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -80,7 +80,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_11_fu_188_p2">+, 0, 0, 5, 2, 1</column>
+<column name="i_19_fu_188_p2">+, 0, 0, 5, 2, 1</column>
 <column name="ap_block_state2">and, 0, 0, 2, 1, 1</column>
 <column name="icmp_ln32_fu_194_p2">icmp, 0, 0, 5, 2, 3</column>
 <column name="ap_block_state5">or, 0, 0, 2, 1, 1</column>

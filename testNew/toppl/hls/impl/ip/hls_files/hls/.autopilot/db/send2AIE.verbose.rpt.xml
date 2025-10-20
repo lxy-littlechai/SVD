@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'send2AIE'" level="0">
-<item name = "Date">Sun Oct 19 23:23:14 2025
+<item name = "Date">Mon Oct 20 21:14:54 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -81,7 +81,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_10_fu_182_p2">+, 0, 0, 5, 2, 1</column>
+<column name="i_18_fu_182_p2">+, 0, 0, 5, 2, 1</column>
 <column name="ap_block_state2_io">and, 0, 0, 2, 1, 1</column>
 <column name="grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145_sweep_tx1_0_TREADY">and, 0, 0, 2, 1, 1</column>
 <column name="icmp_ln102_fu_188_p2">icmp, 0, 0, 5, 2, 3</column>

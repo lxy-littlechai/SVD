@@ -32,6 +32,16 @@ port (
     convSet_L_1_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
     convSet_L_1_full_n : IN STD_LOGIC;
     convSet_L_1_write : OUT STD_LOGIC;
+    convSet_L_2_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+    convSet_L_2_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_L_2_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_L_2_full_n : IN STD_LOGIC;
+    convSet_L_2_write : OUT STD_LOGIC;
+    convSet_L_3_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+    convSet_L_3_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_L_3_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_L_3_full_n : IN STD_LOGIC;
+    convSet_L_3_write : OUT STD_LOGIC;
     convSet_R_0_din : OUT STD_LOGIC_VECTOR (31 downto 0);
     convSet_R_0_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
     convSet_R_0_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
@@ -42,6 +52,16 @@ port (
     convSet_R_1_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
     convSet_R_1_full_n : IN STD_LOGIC;
     convSet_R_1_write : OUT STD_LOGIC;
+    convSet_R_2_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+    convSet_R_2_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_R_2_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_R_2_full_n : IN STD_LOGIC;
+    convSet_R_2_write : OUT STD_LOGIC;
+    convSet_R_3_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+    convSet_R_3_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_R_3_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+    convSet_R_3_full_n : IN STD_LOGIC;
+    convSet_R_3_write : OUT STD_LOGIC;
     receive_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
     receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
     receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -52,6 +72,16 @@ port (
     receive_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
     receive_fifo_L_1_full_n : IN STD_LOGIC;
     receive_fifo_L_1_write : OUT STD_LOGIC;
+    receive_fifo_L_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+    receive_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_2_full_n : IN STD_LOGIC;
+    receive_fifo_L_2_write : OUT STD_LOGIC;
+    receive_fifo_L_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+    receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_3_full_n : IN STD_LOGIC;
+    receive_fifo_L_3_write : OUT STD_LOGIC;
     receive_fifo_R_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
     receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
     receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
@@ -62,6 +92,16 @@ port (
     receive_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
     receive_fifo_R_1_full_n : IN STD_LOGIC;
     receive_fifo_R_1_write : OUT STD_LOGIC;
+    receive_fifo_R_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+    receive_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_2_full_n : IN STD_LOGIC;
+    receive_fifo_R_2_write : OUT STD_LOGIC;
+    receive_fifo_R_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+    receive_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_3_full_n : IN STD_LOGIC;
+    receive_fifo_R_3_write : OUT STD_LOGIC;
     sweep_rx1_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
     sweep_rx1_0_TVALID : IN STD_LOGIC;
     sweep_rx1_0_TREADY : OUT STD_LOGIC;
@@ -86,6 +126,30 @@ port (
     sweep_rx2_1_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
     sweep_rx2_1_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
     sweep_rx2_1_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+    sweep_rx3_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+    sweep_rx3_0_TVALID : IN STD_LOGIC;
+    sweep_rx3_0_TREADY : OUT STD_LOGIC;
+    sweep_rx3_0_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx3_0_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx3_0_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+    sweep_rx3_1_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+    sweep_rx3_1_TVALID : IN STD_LOGIC;
+    sweep_rx3_1_TREADY : OUT STD_LOGIC;
+    sweep_rx3_1_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx3_1_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx3_1_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+    sweep_rx4_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+    sweep_rx4_0_TVALID : IN STD_LOGIC;
+    sweep_rx4_0_TREADY : OUT STD_LOGIC;
+    sweep_rx4_0_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx4_0_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx4_0_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+    sweep_rx4_1_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+    sweep_rx4_1_TVALID : IN STD_LOGIC;
+    sweep_rx4_1_TREADY : OUT STD_LOGIC;
+    sweep_rx4_1_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx4_1_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+    sweep_rx4_1_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
     norm_rx0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
     norm_rx0_TVALID : IN STD_LOGIC;
     norm_rx0_TREADY : OUT STD_LOGIC;
@@ -127,55 +191,75 @@ attribute shreg_extract : string;
     signal syscontrol_2_blk_n : STD_LOGIC;
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_din : STD_LOGIC_VECTOR (127 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_0_din : STD_LOGIC_VECTOR (127 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_0_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_1_din : STD_LOGIC_VECTOR (127 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_1_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_1_din : STD_LOGIC_VECTOR (127 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_1_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_L_0_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_L_0_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_R_0_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_R_0_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_L_1_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_L_1_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_R_1_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_dataflow_parent_loop_proc16_fu_128_convSet_R_1_write : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_0_TREADY : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_1_TREADY : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_0_TREADY : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_1_TREADY : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_ap_start : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_ap_done : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_ap_ready : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_ap_idle : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_ap_continue : STD_LOGIC;
-    signal grp_receive4DDR_fu_180_ap_start : STD_LOGIC;
-    signal grp_receive4DDR_fu_180_ap_done : STD_LOGIC;
-    signal grp_receive4DDR_fu_180_ap_idle : STD_LOGIC;
-    signal grp_receive4DDR_fu_180_ap_ready : STD_LOGIC;
-    signal grp_receive4DDR_fu_180_receive_fifo_L_0_din : STD_LOGIC_VECTOR (127 downto 0);
-    signal grp_receive4DDR_fu_180_receive_fifo_L_0_write : STD_LOGIC;
-    signal grp_receive4DDR_fu_180_norm_rx0_TREADY : STD_LOGIC;
-    signal grp_dataflow_parent_loop_proc16_fu_128_ap_start_reg : STD_LOGIC := '0';
-    signal sig_read_fu_122_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_0_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_0_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_1_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_1_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_1_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_1_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_2_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_2_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_2_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_2_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_3_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_3_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_3_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_3_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_0_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_0_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_0_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_0_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_1_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_1_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_1_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_1_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_2_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_2_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_2_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_2_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_3_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_L_3_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_3_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_dataflow_parent_loop_proc28_fu_184_convSet_R_3_write : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_0_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_1_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_0_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_1_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_0_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_1_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_0_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_1_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_ap_start : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_ap_done : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_ap_ready : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_ap_idle : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_ap_continue : STD_LOGIC;
+    signal grp_receive4DDR_fu_284_ap_start : STD_LOGIC;
+    signal grp_receive4DDR_fu_284_ap_done : STD_LOGIC;
+    signal grp_receive4DDR_fu_284_ap_idle : STD_LOGIC;
+    signal grp_receive4DDR_fu_284_ap_ready : STD_LOGIC;
+    signal grp_receive4DDR_fu_284_receive_fifo_L_0_din : STD_LOGIC_VECTOR (127 downto 0);
+    signal grp_receive4DDR_fu_284_receive_fifo_L_0_write : STD_LOGIC;
+    signal grp_receive4DDR_fu_284_norm_rx0_TREADY : STD_LOGIC;
+    signal grp_dataflow_parent_loop_proc28_fu_184_ap_start_reg : STD_LOGIC := '0';
+    signal sig_read_fu_178_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_ready : STD_LOGIC;
-    signal ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_done : STD_LOGIC;
+    signal ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_ready : STD_LOGIC;
+    signal ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_done : STD_LOGIC;
     signal ap_block_state3_on_subcall_done : BOOLEAN;
-    signal ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_ready : STD_LOGIC := '0';
-    signal ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_done : STD_LOGIC := '0';
-    signal grp_receive4DDR_fu_180_ap_start_reg : STD_LOGIC := '0';
+    signal ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_ready : STD_LOGIC := '0';
+    signal ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_done : STD_LOGIC := '0';
+    signal grp_receive4DDR_fu_284_ap_start_reg : STD_LOGIC := '0';
     signal ap_CS_fsm_state4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
-    signal icmp_ln223_fu_220_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal icmp_ln273_fu_324_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state5 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
-    signal i_fu_118 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
-    signal i_24_fu_214_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal i_fu_174 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
+    signal i_35_fu_318_p2 : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_block_state1 : BOOLEAN;
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
@@ -251,6 +335,74 @@ attribute shreg_extract : string;
     signal sweep_rx2_1_TLAST_int_regslice : STD_LOGIC_VECTOR (0 downto 0);
     signal regslice_both_sweep_rx2_1_V_last_V_U_vld_out : STD_LOGIC;
     signal regslice_both_sweep_rx2_1_V_last_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_data_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_0_TDATA_int_regslice : STD_LOGIC_VECTOR (127 downto 0);
+    signal sweep_rx3_0_TVALID_int_regslice : STD_LOGIC;
+    signal sweep_rx3_0_TREADY_int_regslice : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_data_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_keep_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_0_TKEEP_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx3_0_V_keep_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_keep_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_strb_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_0_TSTRB_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx3_0_V_strb_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_strb_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_last_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_0_TLAST_int_regslice : STD_LOGIC_VECTOR (0 downto 0);
+    signal regslice_both_sweep_rx3_0_V_last_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx3_0_V_last_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_data_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_1_TDATA_int_regslice : STD_LOGIC_VECTOR (127 downto 0);
+    signal sweep_rx3_1_TVALID_int_regslice : STD_LOGIC;
+    signal sweep_rx3_1_TREADY_int_regslice : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_data_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_keep_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_1_TKEEP_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx3_1_V_keep_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_keep_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_strb_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_1_TSTRB_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx3_1_V_strb_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_strb_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_last_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx3_1_TLAST_int_regslice : STD_LOGIC_VECTOR (0 downto 0);
+    signal regslice_both_sweep_rx3_1_V_last_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx3_1_V_last_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_data_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_0_TDATA_int_regslice : STD_LOGIC_VECTOR (127 downto 0);
+    signal sweep_rx4_0_TVALID_int_regslice : STD_LOGIC;
+    signal sweep_rx4_0_TREADY_int_regslice : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_data_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_keep_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_0_TKEEP_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx4_0_V_keep_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_keep_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_strb_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_0_TSTRB_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx4_0_V_strb_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_strb_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_last_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_0_TLAST_int_regslice : STD_LOGIC_VECTOR (0 downto 0);
+    signal regslice_both_sweep_rx4_0_V_last_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx4_0_V_last_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_data_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_1_TDATA_int_regslice : STD_LOGIC_VECTOR (127 downto 0);
+    signal sweep_rx4_1_TVALID_int_regslice : STD_LOGIC;
+    signal sweep_rx4_1_TREADY_int_regslice : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_data_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_keep_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_1_TKEEP_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx4_1_V_keep_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_keep_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_strb_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_1_TSTRB_int_regslice : STD_LOGIC_VECTOR (15 downto 0);
+    signal regslice_both_sweep_rx4_1_V_strb_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_strb_V_U_ack_in : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_last_V_U_apdone_blk : STD_LOGIC;
+    signal sweep_rx4_1_TLAST_int_regslice : STD_LOGIC_VECTOR (0 downto 0);
+    signal regslice_both_sweep_rx4_1_V_last_V_U_vld_out : STD_LOGIC;
+    signal regslice_both_sweep_rx4_1_V_last_V_U_ack_in : STD_LOGIC;
     signal regslice_both_norm_rx0_V_data_V_U_apdone_blk : STD_LOGIC;
     signal norm_rx0_TDATA_int_regslice : STD_LOGIC_VECTOR (127 downto 0);
     signal norm_rx0_TVALID_int_regslice : STD_LOGIC;
@@ -270,7 +422,7 @@ attribute shreg_extract : string;
     signal regslice_both_norm_rx0_V_last_V_U_ack_in : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
-    component TopPL_dataflow_parent_loop_proc16 IS
+    component TopPL_dataflow_parent_loop_proc28 IS
     port (
         receive_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
         receive_fifo_L_0_full_n : IN STD_LOGIC;
@@ -300,6 +452,34 @@ attribute shreg_extract : string;
         sweep_rx2_1_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
         sweep_rx2_1_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
         sweep_rx2_1_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+        receive_fifo_L_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+        receive_fifo_L_2_full_n : IN STD_LOGIC;
+        receive_fifo_L_2_write : OUT STD_LOGIC;
+        sweep_rx3_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        sweep_rx3_0_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx3_0_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx3_0_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+        receive_fifo_R_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+        receive_fifo_R_2_full_n : IN STD_LOGIC;
+        receive_fifo_R_2_write : OUT STD_LOGIC;
+        sweep_rx3_1_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        sweep_rx3_1_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx3_1_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx3_1_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+        receive_fifo_L_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+        receive_fifo_L_3_full_n : IN STD_LOGIC;
+        receive_fifo_L_3_write : OUT STD_LOGIC;
+        sweep_rx4_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        sweep_rx4_0_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx4_0_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx4_0_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
+        receive_fifo_R_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
+        receive_fifo_R_3_full_n : IN STD_LOGIC;
+        receive_fifo_R_3_write : OUT STD_LOGIC;
+        sweep_rx4_1_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
+        sweep_rx4_1_TKEEP : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx4_1_TSTRB : IN STD_LOGIC_VECTOR (15 downto 0);
+        sweep_rx4_1_TLAST : IN STD_LOGIC_VECTOR (0 downto 0);
         convSet_L_0_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         convSet_L_0_full_n : IN STD_LOGIC;
         convSet_L_0_write : OUT STD_LOGIC;
@@ -312,6 +492,18 @@ attribute shreg_extract : string;
         convSet_R_1_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         convSet_R_1_full_n : IN STD_LOGIC;
         convSet_R_1_write : OUT STD_LOGIC;
+        convSet_L_2_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        convSet_L_2_full_n : IN STD_LOGIC;
+        convSet_L_2_write : OUT STD_LOGIC;
+        convSet_R_2_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        convSet_R_2_full_n : IN STD_LOGIC;
+        convSet_R_2_write : OUT STD_LOGIC;
+        convSet_L_3_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        convSet_L_3_full_n : IN STD_LOGIC;
+        convSet_L_3_write : OUT STD_LOGIC;
+        convSet_R_3_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        convSet_R_3_full_n : IN STD_LOGIC;
+        convSet_R_3_write : OUT STD_LOGIC;
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
         sweep_rx1_0_TVALID : IN STD_LOGIC;
@@ -322,6 +514,14 @@ attribute shreg_extract : string;
         sweep_rx2_0_TREADY : OUT STD_LOGIC;
         sweep_rx2_1_TVALID : IN STD_LOGIC;
         sweep_rx2_1_TREADY : OUT STD_LOGIC;
+        sweep_rx3_0_TVALID : IN STD_LOGIC;
+        sweep_rx3_0_TREADY : OUT STD_LOGIC;
+        sweep_rx3_1_TVALID : IN STD_LOGIC;
+        sweep_rx3_1_TREADY : OUT STD_LOGIC;
+        sweep_rx4_0_TVALID : IN STD_LOGIC;
+        sweep_rx4_0_TREADY : OUT STD_LOGIC;
+        sweep_rx4_1_TVALID : IN STD_LOGIC;
+        sweep_rx4_1_TREADY : OUT STD_LOGIC;
         ap_start : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
@@ -370,80 +570,128 @@ attribute shreg_extract : string;
 
 
 begin
-    grp_dataflow_parent_loop_proc16_fu_128 : component TopPL_dataflow_parent_loop_proc16
+    grp_dataflow_parent_loop_proc28_fu_184 : component TopPL_dataflow_parent_loop_proc28
     port map (
-        receive_fifo_L_0_din => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_din,
+        receive_fifo_L_0_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_din,
         receive_fifo_L_0_full_n => receive_fifo_L_0_full_n,
-        receive_fifo_L_0_write => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_write,
+        receive_fifo_L_0_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_write,
         sweep_rx1_0_TDATA => sweep_rx1_0_TDATA_int_regslice,
         sweep_rx1_0_TKEEP => sweep_rx1_0_TKEEP_int_regslice,
         sweep_rx1_0_TSTRB => sweep_rx1_0_TSTRB_int_regslice,
         sweep_rx1_0_TLAST => sweep_rx1_0_TLAST_int_regslice,
-        receive_fifo_R_0_din => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_0_din,
+        receive_fifo_R_0_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_0_din,
         receive_fifo_R_0_full_n => receive_fifo_R_0_full_n,
-        receive_fifo_R_0_write => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_0_write,
+        receive_fifo_R_0_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_0_write,
         sweep_rx1_1_TDATA => sweep_rx1_1_TDATA_int_regslice,
         sweep_rx1_1_TKEEP => sweep_rx1_1_TKEEP_int_regslice,
         sweep_rx1_1_TSTRB => sweep_rx1_1_TSTRB_int_regslice,
         sweep_rx1_1_TLAST => sweep_rx1_1_TLAST_int_regslice,
-        receive_fifo_L_1_din => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_1_din,
+        receive_fifo_L_1_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_1_din,
         receive_fifo_L_1_full_n => receive_fifo_L_1_full_n,
-        receive_fifo_L_1_write => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_1_write,
+        receive_fifo_L_1_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_1_write,
         sweep_rx2_0_TDATA => sweep_rx2_0_TDATA_int_regslice,
         sweep_rx2_0_TKEEP => sweep_rx2_0_TKEEP_int_regslice,
         sweep_rx2_0_TSTRB => sweep_rx2_0_TSTRB_int_regslice,
         sweep_rx2_0_TLAST => sweep_rx2_0_TLAST_int_regslice,
-        receive_fifo_R_1_din => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_1_din,
+        receive_fifo_R_1_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_1_din,
         receive_fifo_R_1_full_n => receive_fifo_R_1_full_n,
-        receive_fifo_R_1_write => grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_1_write,
+        receive_fifo_R_1_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_1_write,
         sweep_rx2_1_TDATA => sweep_rx2_1_TDATA_int_regslice,
         sweep_rx2_1_TKEEP => sweep_rx2_1_TKEEP_int_regslice,
         sweep_rx2_1_TSTRB => sweep_rx2_1_TSTRB_int_regslice,
         sweep_rx2_1_TLAST => sweep_rx2_1_TLAST_int_regslice,
-        convSet_L_0_din => grp_dataflow_parent_loop_proc16_fu_128_convSet_L_0_din,
+        receive_fifo_L_2_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_2_din,
+        receive_fifo_L_2_full_n => receive_fifo_L_2_full_n,
+        receive_fifo_L_2_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_2_write,
+        sweep_rx3_0_TDATA => sweep_rx3_0_TDATA_int_regslice,
+        sweep_rx3_0_TKEEP => sweep_rx3_0_TKEEP_int_regslice,
+        sweep_rx3_0_TSTRB => sweep_rx3_0_TSTRB_int_regslice,
+        sweep_rx3_0_TLAST => sweep_rx3_0_TLAST_int_regslice,
+        receive_fifo_R_2_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_2_din,
+        receive_fifo_R_2_full_n => receive_fifo_R_2_full_n,
+        receive_fifo_R_2_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_2_write,
+        sweep_rx3_1_TDATA => sweep_rx3_1_TDATA_int_regslice,
+        sweep_rx3_1_TKEEP => sweep_rx3_1_TKEEP_int_regslice,
+        sweep_rx3_1_TSTRB => sweep_rx3_1_TSTRB_int_regslice,
+        sweep_rx3_1_TLAST => sweep_rx3_1_TLAST_int_regslice,
+        receive_fifo_L_3_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_3_din,
+        receive_fifo_L_3_full_n => receive_fifo_L_3_full_n,
+        receive_fifo_L_3_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_3_write,
+        sweep_rx4_0_TDATA => sweep_rx4_0_TDATA_int_regslice,
+        sweep_rx4_0_TKEEP => sweep_rx4_0_TKEEP_int_regslice,
+        sweep_rx4_0_TSTRB => sweep_rx4_0_TSTRB_int_regslice,
+        sweep_rx4_0_TLAST => sweep_rx4_0_TLAST_int_regslice,
+        receive_fifo_R_3_din => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_3_din,
+        receive_fifo_R_3_full_n => receive_fifo_R_3_full_n,
+        receive_fifo_R_3_write => grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_3_write,
+        sweep_rx4_1_TDATA => sweep_rx4_1_TDATA_int_regslice,
+        sweep_rx4_1_TKEEP => sweep_rx4_1_TKEEP_int_regslice,
+        sweep_rx4_1_TSTRB => sweep_rx4_1_TSTRB_int_regslice,
+        sweep_rx4_1_TLAST => sweep_rx4_1_TLAST_int_regslice,
+        convSet_L_0_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_0_din,
         convSet_L_0_full_n => convSet_L_0_full_n,
-        convSet_L_0_write => grp_dataflow_parent_loop_proc16_fu_128_convSet_L_0_write,
-        convSet_R_0_din => grp_dataflow_parent_loop_proc16_fu_128_convSet_R_0_din,
+        convSet_L_0_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_0_write,
+        convSet_R_0_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_0_din,
         convSet_R_0_full_n => convSet_R_0_full_n,
-        convSet_R_0_write => grp_dataflow_parent_loop_proc16_fu_128_convSet_R_0_write,
-        convSet_L_1_din => grp_dataflow_parent_loop_proc16_fu_128_convSet_L_1_din,
+        convSet_R_0_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_0_write,
+        convSet_L_1_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_1_din,
         convSet_L_1_full_n => convSet_L_1_full_n,
-        convSet_L_1_write => grp_dataflow_parent_loop_proc16_fu_128_convSet_L_1_write,
-        convSet_R_1_din => grp_dataflow_parent_loop_proc16_fu_128_convSet_R_1_din,
+        convSet_L_1_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_1_write,
+        convSet_R_1_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_1_din,
         convSet_R_1_full_n => convSet_R_1_full_n,
-        convSet_R_1_write => grp_dataflow_parent_loop_proc16_fu_128_convSet_R_1_write,
+        convSet_R_1_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_1_write,
+        convSet_L_2_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_2_din,
+        convSet_L_2_full_n => convSet_L_2_full_n,
+        convSet_L_2_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_2_write,
+        convSet_R_2_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_2_din,
+        convSet_R_2_full_n => convSet_R_2_full_n,
+        convSet_R_2_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_2_write,
+        convSet_L_3_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_3_din,
+        convSet_L_3_full_n => convSet_L_3_full_n,
+        convSet_L_3_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_L_3_write,
+        convSet_R_3_din => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_3_din,
+        convSet_R_3_full_n => convSet_R_3_full_n,
+        convSet_R_3_write => grp_dataflow_parent_loop_proc28_fu_184_convSet_R_3_write,
         ap_clk => ap_clk,
         ap_rst => ap_rst,
         sweep_rx1_0_TVALID => sweep_rx1_0_TVALID_int_regslice,
-        sweep_rx1_0_TREADY => grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_0_TREADY,
+        sweep_rx1_0_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_0_TREADY,
         sweep_rx1_1_TVALID => sweep_rx1_1_TVALID_int_regslice,
-        sweep_rx1_1_TREADY => grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_1_TREADY,
+        sweep_rx1_1_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_1_TREADY,
         sweep_rx2_0_TVALID => sweep_rx2_0_TVALID_int_regslice,
-        sweep_rx2_0_TREADY => grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_0_TREADY,
+        sweep_rx2_0_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_0_TREADY,
         sweep_rx2_1_TVALID => sweep_rx2_1_TVALID_int_regslice,
-        sweep_rx2_1_TREADY => grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_1_TREADY,
-        ap_start => grp_dataflow_parent_loop_proc16_fu_128_ap_start,
-        ap_done => grp_dataflow_parent_loop_proc16_fu_128_ap_done,
-        ap_ready => grp_dataflow_parent_loop_proc16_fu_128_ap_ready,
-        ap_idle => grp_dataflow_parent_loop_proc16_fu_128_ap_idle,
-        ap_continue => grp_dataflow_parent_loop_proc16_fu_128_ap_continue);
+        sweep_rx2_1_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_1_TREADY,
+        sweep_rx3_0_TVALID => sweep_rx3_0_TVALID_int_regslice,
+        sweep_rx3_0_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_0_TREADY,
+        sweep_rx3_1_TVALID => sweep_rx3_1_TVALID_int_regslice,
+        sweep_rx3_1_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_1_TREADY,
+        sweep_rx4_0_TVALID => sweep_rx4_0_TVALID_int_regslice,
+        sweep_rx4_0_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_0_TREADY,
+        sweep_rx4_1_TVALID => sweep_rx4_1_TVALID_int_regslice,
+        sweep_rx4_1_TREADY => grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_1_TREADY,
+        ap_start => grp_dataflow_parent_loop_proc28_fu_184_ap_start,
+        ap_done => grp_dataflow_parent_loop_proc28_fu_184_ap_done,
+        ap_ready => grp_dataflow_parent_loop_proc28_fu_184_ap_ready,
+        ap_idle => grp_dataflow_parent_loop_proc28_fu_184_ap_idle,
+        ap_continue => grp_dataflow_parent_loop_proc28_fu_184_ap_continue);
 
-    grp_receive4DDR_fu_180 : component TopPL_receive4DDR
+    grp_receive4DDR_fu_284 : component TopPL_receive4DDR
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst,
-        ap_start => grp_receive4DDR_fu_180_ap_start,
-        ap_done => grp_receive4DDR_fu_180_ap_done,
-        ap_idle => grp_receive4DDR_fu_180_ap_idle,
-        ap_ready => grp_receive4DDR_fu_180_ap_ready,
-        receive_fifo_L_0_din => grp_receive4DDR_fu_180_receive_fifo_L_0_din,
+        ap_start => grp_receive4DDR_fu_284_ap_start,
+        ap_done => grp_receive4DDR_fu_284_ap_done,
+        ap_idle => grp_receive4DDR_fu_284_ap_idle,
+        ap_ready => grp_receive4DDR_fu_284_ap_ready,
+        receive_fifo_L_0_din => grp_receive4DDR_fu_284_receive_fifo_L_0_din,
         receive_fifo_L_0_num_data_valid => ap_const_lv9_0,
         receive_fifo_L_0_fifo_cap => ap_const_lv9_0,
         receive_fifo_L_0_full_n => receive_fifo_L_0_full_n,
-        receive_fifo_L_0_write => grp_receive4DDR_fu_180_receive_fifo_L_0_write,
+        receive_fifo_L_0_write => grp_receive4DDR_fu_284_receive_fifo_L_0_write,
         norm_rx0_TDATA => norm_rx0_TDATA_int_regslice,
         norm_rx0_TVALID => norm_rx0_TVALID_int_regslice,
-        norm_rx0_TREADY => grp_receive4DDR_fu_180_norm_rx0_TREADY,
+        norm_rx0_TREADY => grp_receive4DDR_fu_284_norm_rx0_TREADY,
         norm_rx0_TKEEP => norm_rx0_TKEEP_int_regslice,
         norm_rx0_TSTRB => norm_rx0_TSTRB_int_regslice,
         norm_rx0_TLAST => norm_rx0_TLAST_int_regslice);
@@ -672,6 +920,230 @@ begin
         ack_out => sweep_rx2_1_TREADY_int_regslice,
         apdone_blk => regslice_both_sweep_rx2_1_V_last_V_U_apdone_blk);
 
+    regslice_both_sweep_rx3_0_V_data_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 128)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_0_TDATA,
+        vld_in => sweep_rx3_0_TVALID,
+        ack_in => regslice_both_sweep_rx3_0_V_data_V_U_ack_in,
+        data_out => sweep_rx3_0_TDATA_int_regslice,
+        vld_out => sweep_rx3_0_TVALID_int_regslice,
+        ack_out => sweep_rx3_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_0_V_data_V_U_apdone_blk);
+
+    regslice_both_sweep_rx3_0_V_keep_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_0_TKEEP,
+        vld_in => sweep_rx3_0_TVALID,
+        ack_in => regslice_both_sweep_rx3_0_V_keep_V_U_ack_in,
+        data_out => sweep_rx3_0_TKEEP_int_regslice,
+        vld_out => regslice_both_sweep_rx3_0_V_keep_V_U_vld_out,
+        ack_out => sweep_rx3_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_0_V_keep_V_U_apdone_blk);
+
+    regslice_both_sweep_rx3_0_V_strb_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_0_TSTRB,
+        vld_in => sweep_rx3_0_TVALID,
+        ack_in => regslice_both_sweep_rx3_0_V_strb_V_U_ack_in,
+        data_out => sweep_rx3_0_TSTRB_int_regslice,
+        vld_out => regslice_both_sweep_rx3_0_V_strb_V_U_vld_out,
+        ack_out => sweep_rx3_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_0_V_strb_V_U_apdone_blk);
+
+    regslice_both_sweep_rx3_0_V_last_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 1)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_0_TLAST,
+        vld_in => sweep_rx3_0_TVALID,
+        ack_in => regslice_both_sweep_rx3_0_V_last_V_U_ack_in,
+        data_out => sweep_rx3_0_TLAST_int_regslice,
+        vld_out => regslice_both_sweep_rx3_0_V_last_V_U_vld_out,
+        ack_out => sweep_rx3_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_0_V_last_V_U_apdone_blk);
+
+    regslice_both_sweep_rx3_1_V_data_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 128)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_1_TDATA,
+        vld_in => sweep_rx3_1_TVALID,
+        ack_in => regslice_both_sweep_rx3_1_V_data_V_U_ack_in,
+        data_out => sweep_rx3_1_TDATA_int_regslice,
+        vld_out => sweep_rx3_1_TVALID_int_regslice,
+        ack_out => sweep_rx3_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_1_V_data_V_U_apdone_blk);
+
+    regslice_both_sweep_rx3_1_V_keep_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_1_TKEEP,
+        vld_in => sweep_rx3_1_TVALID,
+        ack_in => regslice_both_sweep_rx3_1_V_keep_V_U_ack_in,
+        data_out => sweep_rx3_1_TKEEP_int_regslice,
+        vld_out => regslice_both_sweep_rx3_1_V_keep_V_U_vld_out,
+        ack_out => sweep_rx3_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_1_V_keep_V_U_apdone_blk);
+
+    regslice_both_sweep_rx3_1_V_strb_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_1_TSTRB,
+        vld_in => sweep_rx3_1_TVALID,
+        ack_in => regslice_both_sweep_rx3_1_V_strb_V_U_ack_in,
+        data_out => sweep_rx3_1_TSTRB_int_regslice,
+        vld_out => regslice_both_sweep_rx3_1_V_strb_V_U_vld_out,
+        ack_out => sweep_rx3_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_1_V_strb_V_U_apdone_blk);
+
+    regslice_both_sweep_rx3_1_V_last_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 1)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx3_1_TLAST,
+        vld_in => sweep_rx3_1_TVALID,
+        ack_in => regslice_both_sweep_rx3_1_V_last_V_U_ack_in,
+        data_out => sweep_rx3_1_TLAST_int_regslice,
+        vld_out => regslice_both_sweep_rx3_1_V_last_V_U_vld_out,
+        ack_out => sweep_rx3_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx3_1_V_last_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_0_V_data_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 128)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_0_TDATA,
+        vld_in => sweep_rx4_0_TVALID,
+        ack_in => regslice_both_sweep_rx4_0_V_data_V_U_ack_in,
+        data_out => sweep_rx4_0_TDATA_int_regslice,
+        vld_out => sweep_rx4_0_TVALID_int_regslice,
+        ack_out => sweep_rx4_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_0_V_data_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_0_V_keep_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_0_TKEEP,
+        vld_in => sweep_rx4_0_TVALID,
+        ack_in => regslice_both_sweep_rx4_0_V_keep_V_U_ack_in,
+        data_out => sweep_rx4_0_TKEEP_int_regslice,
+        vld_out => regslice_both_sweep_rx4_0_V_keep_V_U_vld_out,
+        ack_out => sweep_rx4_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_0_V_keep_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_0_V_strb_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_0_TSTRB,
+        vld_in => sweep_rx4_0_TVALID,
+        ack_in => regslice_both_sweep_rx4_0_V_strb_V_U_ack_in,
+        data_out => sweep_rx4_0_TSTRB_int_regslice,
+        vld_out => regslice_both_sweep_rx4_0_V_strb_V_U_vld_out,
+        ack_out => sweep_rx4_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_0_V_strb_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_0_V_last_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 1)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_0_TLAST,
+        vld_in => sweep_rx4_0_TVALID,
+        ack_in => regslice_both_sweep_rx4_0_V_last_V_U_ack_in,
+        data_out => sweep_rx4_0_TLAST_int_regslice,
+        vld_out => regslice_both_sweep_rx4_0_V_last_V_U_vld_out,
+        ack_out => sweep_rx4_0_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_0_V_last_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_1_V_data_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 128)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_1_TDATA,
+        vld_in => sweep_rx4_1_TVALID,
+        ack_in => regslice_both_sweep_rx4_1_V_data_V_U_ack_in,
+        data_out => sweep_rx4_1_TDATA_int_regslice,
+        vld_out => sweep_rx4_1_TVALID_int_regslice,
+        ack_out => sweep_rx4_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_1_V_data_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_1_V_keep_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_1_TKEEP,
+        vld_in => sweep_rx4_1_TVALID,
+        ack_in => regslice_both_sweep_rx4_1_V_keep_V_U_ack_in,
+        data_out => sweep_rx4_1_TKEEP_int_regslice,
+        vld_out => regslice_both_sweep_rx4_1_V_keep_V_U_vld_out,
+        ack_out => sweep_rx4_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_1_V_keep_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_1_V_strb_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 16)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_1_TSTRB,
+        vld_in => sweep_rx4_1_TVALID,
+        ack_in => regslice_both_sweep_rx4_1_V_strb_V_U_ack_in,
+        data_out => sweep_rx4_1_TSTRB_int_regslice,
+        vld_out => regslice_both_sweep_rx4_1_V_strb_V_U_vld_out,
+        ack_out => sweep_rx4_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_1_V_strb_V_U_apdone_blk);
+
+    regslice_both_sweep_rx4_1_V_last_V_U : component TopPL_regslice_both
+    generic map (
+        DataWidth => 1)
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
+        data_in => sweep_rx4_1_TLAST,
+        vld_in => sweep_rx4_1_TVALID,
+        ack_in => regslice_both_sweep_rx4_1_V_last_V_U_ack_in,
+        data_out => sweep_rx4_1_TLAST_int_regslice,
+        vld_out => regslice_both_sweep_rx4_1_V_last_V_U_vld_out,
+        ack_out => sweep_rx4_1_TREADY_int_regslice,
+        apdone_blk => regslice_both_sweep_rx4_1_V_last_V_U_apdone_blk);
+
     regslice_both_norm_rx0_V_data_V_U : component TopPL_regslice_both
     generic map (
         DataWidth => 128)
@@ -752,7 +1224,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif (((icmp_ln223_fu_220_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+                elsif (((icmp_ln273_fu_324_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -760,82 +1232,82 @@ begin
     end process;
 
 
-    ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_done_assign_proc : process(ap_clk)
+    ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_done_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_done <= ap_const_logic_0;
+                ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_done <= ap_const_logic_0;
             else
                 if (((ap_const_boolean_0 = ap_block_state3_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
-                    ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_done <= ap_const_logic_0;
-                elsif ((grp_dataflow_parent_loop_proc16_fu_128_ap_done = ap_const_logic_1)) then 
-                    ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_done <= ap_const_logic_1;
+                    ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_done <= ap_const_logic_0;
+                elsif ((grp_dataflow_parent_loop_proc28_fu_184_ap_done = ap_const_logic_1)) then 
+                    ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_done <= ap_const_logic_1;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_ready_assign_proc : process(ap_clk)
+    ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_ready_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_ready <= ap_const_logic_0;
+                ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_ready <= ap_const_logic_0;
             else
                 if (((ap_const_boolean_0 = ap_block_state3_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
-                    ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_ready <= ap_const_logic_0;
-                elsif ((grp_dataflow_parent_loop_proc16_fu_128_ap_ready = ap_const_logic_1)) then 
-                    ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_ready <= ap_const_logic_1;
+                    ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_ready <= ap_const_logic_0;
+                elsif ((grp_dataflow_parent_loop_proc28_fu_184_ap_ready = ap_const_logic_1)) then 
+                    ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_ready <= ap_const_logic_1;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_dataflow_parent_loop_proc16_fu_128_ap_start_reg_assign_proc : process(ap_clk)
+    grp_dataflow_parent_loop_proc28_fu_184_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                grp_dataflow_parent_loop_proc16_fu_128_ap_start_reg <= ap_const_logic_0;
+                grp_dataflow_parent_loop_proc28_fu_184_ap_start_reg <= ap_const_logic_0;
             else
-                if ((((ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_ready = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state3)) or ((syscontrol_2_empty_n = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2) and (sig_read_fu_122_p2 = ap_const_lv1_1)))) then 
-                    grp_dataflow_parent_loop_proc16_fu_128_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_dataflow_parent_loop_proc16_fu_128_ap_ready = ap_const_logic_1)) then 
-                    grp_dataflow_parent_loop_proc16_fu_128_ap_start_reg <= ap_const_logic_0;
+                if ((((ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_ready = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state3)) or ((syscontrol_2_empty_n = ap_const_logic_1) and (sig_read_fu_178_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2)))) then 
+                    grp_dataflow_parent_loop_proc28_fu_184_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_dataflow_parent_loop_proc28_fu_184_ap_ready = ap_const_logic_1)) then 
+                    grp_dataflow_parent_loop_proc28_fu_184_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    grp_receive4DDR_fu_180_ap_start_reg_assign_proc : process(ap_clk)
+    grp_receive4DDR_fu_284_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                grp_receive4DDR_fu_180_ap_start_reg <= ap_const_logic_0;
+                grp_receive4DDR_fu_284_ap_start_reg <= ap_const_logic_0;
             else
-                if (((icmp_ln223_fu_220_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
-                    grp_receive4DDR_fu_180_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_receive4DDR_fu_180_ap_ready = ap_const_logic_1)) then 
-                    grp_receive4DDR_fu_180_ap_start_reg <= ap_const_logic_0;
+                if (((icmp_ln273_fu_324_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+                    grp_receive4DDR_fu_284_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_receive4DDR_fu_284_ap_ready = ap_const_logic_1)) then 
+                    grp_receive4DDR_fu_284_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    i_fu_118_assign_proc : process (ap_clk)
+    i_fu_174_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((syscontrol_2_empty_n = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2) and (sig_read_fu_122_p2 = ap_const_lv1_0))) then 
-                i_fu_118 <= ap_const_lv5_0;
-            elsif (((icmp_ln223_fu_220_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
-                i_fu_118 <= i_24_fu_214_p2;
+            if (((syscontrol_2_empty_n = ap_const_logic_1) and (sig_read_fu_178_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                i_fu_174 <= ap_const_lv5_0;
+            elsif (((icmp_ln273_fu_324_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+                i_fu_174 <= i_35_fu_318_p2;
             end if; 
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_CS_fsm, ap_CS_fsm_state1, syscontrol_2_empty_n, ap_CS_fsm_state2, grp_receive4DDR_fu_180_ap_done, sig_read_fu_122_p2, ap_CS_fsm_state3, ap_block_state3_on_subcall_done, ap_CS_fsm_state4, icmp_ln223_fu_220_p2, ap_CS_fsm_state5, ap_block_state1)
+    ap_NS_fsm_assign_proc : process (ap_CS_fsm, ap_CS_fsm_state1, syscontrol_2_empty_n, ap_CS_fsm_state2, grp_receive4DDR_fu_284_ap_done, sig_read_fu_178_p2, ap_CS_fsm_state3, ap_block_state3_on_subcall_done, ap_CS_fsm_state4, icmp_ln273_fu_324_p2, ap_CS_fsm_state5, ap_block_state1)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -845,9 +1317,9 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                if (((syscontrol_2_empty_n = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2) and (sig_read_fu_122_p2 = ap_const_lv1_0))) then
+                if (((syscontrol_2_empty_n = ap_const_logic_1) and (sig_read_fu_178_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state4;
-                elsif (((syscontrol_2_empty_n = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2) and (sig_read_fu_122_p2 = ap_const_lv1_1))) then
+                elsif (((syscontrol_2_empty_n = ap_const_logic_1) and (sig_read_fu_178_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state3;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state2;
@@ -859,13 +1331,13 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state3;
                 end if;
             when ap_ST_fsm_state4 => 
-                if (((icmp_ln223_fu_220_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then
+                if (((icmp_ln273_fu_324_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state5;
                 end if;
             when ap_ST_fsm_state5 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state5) and (grp_receive4DDR_fu_180_ap_done = ap_const_logic_1))) then
+                if (((grp_receive4DDR_fu_284_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
                     ap_NS_fsm <= ap_ST_fsm_state4;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state5;
@@ -911,9 +1383,9 @@ begin
 
     ap_ST_fsm_state4_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state5_blk_assign_proc : process(grp_receive4DDR_fu_180_ap_done)
+    ap_ST_fsm_state5_blk_assign_proc : process(grp_receive4DDR_fu_284_ap_done)
     begin
-        if ((grp_receive4DDR_fu_180_ap_done = ap_const_logic_0)) then 
+        if ((grp_receive4DDR_fu_284_ap_done = ap_const_logic_0)) then 
             ap_ST_fsm_state5_blk <= ap_const_logic_1;
         else 
             ap_ST_fsm_state5_blk <= ap_const_logic_0;
@@ -927,15 +1399,15 @@ begin
     end process;
 
 
-    ap_block_state3_on_subcall_done_assign_proc : process(ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_ready, ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_done)
+    ap_block_state3_on_subcall_done_assign_proc : process(ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_ready, ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_done)
     begin
-                ap_block_state3_on_subcall_done <= ((ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_ready and ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_done) = ap_const_logic_0);
+                ap_block_state3_on_subcall_done <= ((ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_ready and ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_done) = ap_const_logic_0);
     end process;
 
 
-    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state4, icmp_ln223_fu_220_p2)
+    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state4, icmp_ln273_fu_324_p2)
     begin
-        if (((icmp_ln223_fu_220_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+        if (((icmp_ln273_fu_324_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -953,150 +1425,238 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state4, icmp_ln223_fu_220_p2)
+    ap_ready_assign_proc : process(ap_CS_fsm_state4, icmp_ln273_fu_324_p2)
     begin
-        if (((icmp_ln223_fu_220_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+        if (((icmp_ln273_fu_324_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
         end if; 
     end process;
 
-    ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_done <= (grp_dataflow_parent_loop_proc16_fu_128_ap_done or ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_done);
-    ap_sync_grp_dataflow_parent_loop_proc16_fu_128_ap_ready <= (grp_dataflow_parent_loop_proc16_fu_128_ap_ready or ap_sync_reg_grp_dataflow_parent_loop_proc16_fu_128_ap_ready);
-    convSet_L_0_din <= grp_dataflow_parent_loop_proc16_fu_128_convSet_L_0_din;
+    ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_done <= (grp_dataflow_parent_loop_proc28_fu_184_ap_done or ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_done);
+    ap_sync_grp_dataflow_parent_loop_proc28_fu_184_ap_ready <= (grp_dataflow_parent_loop_proc28_fu_184_ap_ready or ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_ready);
+    convSet_L_0_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_0_din;
 
-    convSet_L_0_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_convSet_L_0_write, ap_CS_fsm_state3)
+    convSet_L_0_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_L_0_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            convSet_L_0_write <= grp_dataflow_parent_loop_proc16_fu_128_convSet_L_0_write;
+            convSet_L_0_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_0_write;
         else 
             convSet_L_0_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    convSet_L_1_din <= grp_dataflow_parent_loop_proc16_fu_128_convSet_L_1_din;
+    convSet_L_1_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_1_din;
 
-    convSet_L_1_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_convSet_L_1_write, ap_CS_fsm_state3)
+    convSet_L_1_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_L_1_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            convSet_L_1_write <= grp_dataflow_parent_loop_proc16_fu_128_convSet_L_1_write;
+            convSet_L_1_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_1_write;
         else 
             convSet_L_1_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    convSet_R_0_din <= grp_dataflow_parent_loop_proc16_fu_128_convSet_R_0_din;
+    convSet_L_2_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_2_din;
 
-    convSet_R_0_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_convSet_R_0_write, ap_CS_fsm_state3)
+    convSet_L_2_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_L_2_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            convSet_R_0_write <= grp_dataflow_parent_loop_proc16_fu_128_convSet_R_0_write;
+            convSet_L_2_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_2_write;
+        else 
+            convSet_L_2_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    convSet_L_3_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_3_din;
+
+    convSet_L_3_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_L_3_write, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            convSet_L_3_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_L_3_write;
+        else 
+            convSet_L_3_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    convSet_R_0_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_0_din;
+
+    convSet_R_0_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_R_0_write, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            convSet_R_0_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_0_write;
         else 
             convSet_R_0_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    convSet_R_1_din <= grp_dataflow_parent_loop_proc16_fu_128_convSet_R_1_din;
+    convSet_R_1_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_1_din;
 
-    convSet_R_1_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_convSet_R_1_write, ap_CS_fsm_state3)
+    convSet_R_1_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_R_1_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            convSet_R_1_write <= grp_dataflow_parent_loop_proc16_fu_128_convSet_R_1_write;
+            convSet_R_1_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_1_write;
         else 
             convSet_R_1_write <= ap_const_logic_0;
         end if; 
     end process;
 
+    convSet_R_2_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_2_din;
 
-    grp_dataflow_parent_loop_proc16_fu_128_ap_continue_assign_proc : process(ap_CS_fsm_state3, ap_block_state3_on_subcall_done)
+    convSet_R_2_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_R_2_write, ap_CS_fsm_state3)
     begin
-        if (((ap_const_boolean_0 = ap_block_state3_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
-            grp_dataflow_parent_loop_proc16_fu_128_ap_continue <= ap_const_logic_1;
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            convSet_R_2_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_2_write;
         else 
-            grp_dataflow_parent_loop_proc16_fu_128_ap_continue <= ap_const_logic_0;
+            convSet_R_2_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    grp_dataflow_parent_loop_proc16_fu_128_ap_start <= grp_dataflow_parent_loop_proc16_fu_128_ap_start_reg;
-    grp_receive4DDR_fu_180_ap_start <= grp_receive4DDR_fu_180_ap_start_reg;
-    i_24_fu_214_p2 <= std_logic_vector(unsigned(i_fu_118) + unsigned(ap_const_lv5_1));
-    icmp_ln223_fu_220_p2 <= "1" when (i_fu_118 = ap_const_lv5_10) else "0";
+    convSet_R_3_din <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_3_din;
+
+    convSet_R_3_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_convSet_R_3_write, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            convSet_R_3_write <= grp_dataflow_parent_loop_proc28_fu_184_convSet_R_3_write;
+        else 
+            convSet_R_3_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    grp_dataflow_parent_loop_proc28_fu_184_ap_continue_assign_proc : process(ap_CS_fsm_state3, ap_block_state3_on_subcall_done)
+    begin
+        if (((ap_const_boolean_0 = ap_block_state3_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
+            grp_dataflow_parent_loop_proc28_fu_184_ap_continue <= ap_const_logic_1;
+        else 
+            grp_dataflow_parent_loop_proc28_fu_184_ap_continue <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    grp_dataflow_parent_loop_proc28_fu_184_ap_start <= grp_dataflow_parent_loop_proc28_fu_184_ap_start_reg;
+    grp_receive4DDR_fu_284_ap_start <= grp_receive4DDR_fu_284_ap_start_reg;
+    i_35_fu_318_p2 <= std_logic_vector(unsigned(i_fu_174) + unsigned(ap_const_lv5_1));
+    icmp_ln273_fu_324_p2 <= "1" when (i_fu_174 = ap_const_lv5_10) else "0";
     norm_rx0_TREADY <= regslice_both_norm_rx0_V_data_V_U_ack_in;
 
-    norm_rx0_TREADY_int_regslice_assign_proc : process(grp_receive4DDR_fu_180_norm_rx0_TREADY, ap_CS_fsm_state5)
+    norm_rx0_TREADY_int_regslice_assign_proc : process(grp_receive4DDR_fu_284_norm_rx0_TREADY, ap_CS_fsm_state5)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            norm_rx0_TREADY_int_regslice <= grp_receive4DDR_fu_180_norm_rx0_TREADY;
+            norm_rx0_TREADY_int_regslice <= grp_receive4DDR_fu_284_norm_rx0_TREADY;
         else 
             norm_rx0_TREADY_int_regslice <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    receive_fifo_L_0_din_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_din, grp_receive4DDR_fu_180_receive_fifo_L_0_din, ap_CS_fsm_state3, ap_CS_fsm_state5)
+    receive_fifo_L_0_din_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_din, grp_receive4DDR_fu_284_receive_fifo_L_0_din, ap_CS_fsm_state3, ap_CS_fsm_state5)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            receive_fifo_L_0_din <= grp_receive4DDR_fu_180_receive_fifo_L_0_din;
+            receive_fifo_L_0_din <= grp_receive4DDR_fu_284_receive_fifo_L_0_din;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            receive_fifo_L_0_din <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_din;
+            receive_fifo_L_0_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_din;
         else 
-            receive_fifo_L_0_din <= grp_receive4DDR_fu_180_receive_fifo_L_0_din;
+            receive_fifo_L_0_din <= grp_receive4DDR_fu_284_receive_fifo_L_0_din;
         end if; 
     end process;
 
 
-    receive_fifo_L_0_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_write, grp_receive4DDR_fu_180_receive_fifo_L_0_write, ap_CS_fsm_state3, ap_CS_fsm_state5)
+    receive_fifo_L_0_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_write, grp_receive4DDR_fu_284_receive_fifo_L_0_write, ap_CS_fsm_state3, ap_CS_fsm_state5)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            receive_fifo_L_0_write <= grp_receive4DDR_fu_180_receive_fifo_L_0_write;
+            receive_fifo_L_0_write <= grp_receive4DDR_fu_284_receive_fifo_L_0_write;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            receive_fifo_L_0_write <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_0_write;
+            receive_fifo_L_0_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_0_write;
         else 
             receive_fifo_L_0_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    receive_fifo_L_1_din <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_1_din;
+    receive_fifo_L_1_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_1_din;
 
-    receive_fifo_L_1_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_1_write, ap_CS_fsm_state3)
+    receive_fifo_L_1_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_1_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            receive_fifo_L_1_write <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_L_1_write;
+            receive_fifo_L_1_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_1_write;
         else 
             receive_fifo_L_1_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    receive_fifo_R_0_din <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_0_din;
+    receive_fifo_L_2_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_2_din;
 
-    receive_fifo_R_0_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_0_write, ap_CS_fsm_state3)
+    receive_fifo_L_2_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_2_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            receive_fifo_R_0_write <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_0_write;
+            receive_fifo_L_2_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_2_write;
+        else 
+            receive_fifo_L_2_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    receive_fifo_L_3_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_3_din;
+
+    receive_fifo_L_3_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_3_write, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            receive_fifo_L_3_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_L_3_write;
+        else 
+            receive_fifo_L_3_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    receive_fifo_R_0_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_0_din;
+
+    receive_fifo_R_0_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_0_write, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            receive_fifo_R_0_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_0_write;
         else 
             receive_fifo_R_0_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    receive_fifo_R_1_din <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_1_din;
+    receive_fifo_R_1_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_1_din;
 
-    receive_fifo_R_1_write_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_1_write, ap_CS_fsm_state3)
+    receive_fifo_R_1_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_1_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            receive_fifo_R_1_write <= grp_dataflow_parent_loop_proc16_fu_128_receive_fifo_R_1_write;
+            receive_fifo_R_1_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_1_write;
         else 
             receive_fifo_R_1_write <= ap_const_logic_0;
         end if; 
     end process;
 
-    sig_read_fu_122_p2 <= syscontrol_2_dout;
-    sweep_rx1_0_TREADY <= regslice_both_sweep_rx1_0_V_data_V_U_ack_in;
+    receive_fifo_R_2_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_2_din;
 
-    sweep_rx1_0_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_0_TREADY, ap_CS_fsm_state3)
+    receive_fifo_R_2_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_2_write, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            sweep_rx1_0_TREADY_int_regslice <= grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_0_TREADY;
+            receive_fifo_R_2_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_2_write;
+        else 
+            receive_fifo_R_2_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    receive_fifo_R_3_din <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_3_din;
+
+    receive_fifo_R_3_write_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_3_write, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            receive_fifo_R_3_write <= grp_dataflow_parent_loop_proc28_fu_184_receive_fifo_R_3_write;
+        else 
+            receive_fifo_R_3_write <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    sig_read_fu_178_p2 <= syscontrol_2_dout;
+    sweep_rx1_0_TREADY <= regslice_both_sweep_rx1_0_V_data_V_U_ack_in;
+
+    sweep_rx1_0_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_0_TREADY, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            sweep_rx1_0_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_0_TREADY;
         else 
             sweep_rx1_0_TREADY_int_regslice <= ap_const_logic_0;
         end if; 
@@ -1104,10 +1664,10 @@ begin
 
     sweep_rx1_1_TREADY <= regslice_both_sweep_rx1_1_V_data_V_U_ack_in;
 
-    sweep_rx1_1_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_1_TREADY, ap_CS_fsm_state3)
+    sweep_rx1_1_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_1_TREADY, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            sweep_rx1_1_TREADY_int_regslice <= grp_dataflow_parent_loop_proc16_fu_128_sweep_rx1_1_TREADY;
+            sweep_rx1_1_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx1_1_TREADY;
         else 
             sweep_rx1_1_TREADY_int_regslice <= ap_const_logic_0;
         end if; 
@@ -1115,10 +1675,10 @@ begin
 
     sweep_rx2_0_TREADY <= regslice_both_sweep_rx2_0_V_data_V_U_ack_in;
 
-    sweep_rx2_0_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_0_TREADY, ap_CS_fsm_state3)
+    sweep_rx2_0_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_0_TREADY, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            sweep_rx2_0_TREADY_int_regslice <= grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_0_TREADY;
+            sweep_rx2_0_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_0_TREADY;
         else 
             sweep_rx2_0_TREADY_int_regslice <= ap_const_logic_0;
         end if; 
@@ -1126,12 +1686,56 @@ begin
 
     sweep_rx2_1_TREADY <= regslice_both_sweep_rx2_1_V_data_V_U_ack_in;
 
-    sweep_rx2_1_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_1_TREADY, ap_CS_fsm_state3)
+    sweep_rx2_1_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_1_TREADY, ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            sweep_rx2_1_TREADY_int_regslice <= grp_dataflow_parent_loop_proc16_fu_128_sweep_rx2_1_TREADY;
+            sweep_rx2_1_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx2_1_TREADY;
         else 
             sweep_rx2_1_TREADY_int_regslice <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    sweep_rx3_0_TREADY <= regslice_both_sweep_rx3_0_V_data_V_U_ack_in;
+
+    sweep_rx3_0_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_0_TREADY, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            sweep_rx3_0_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_0_TREADY;
+        else 
+            sweep_rx3_0_TREADY_int_regslice <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    sweep_rx3_1_TREADY <= regslice_both_sweep_rx3_1_V_data_V_U_ack_in;
+
+    sweep_rx3_1_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_1_TREADY, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            sweep_rx3_1_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx3_1_TREADY;
+        else 
+            sweep_rx3_1_TREADY_int_regslice <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    sweep_rx4_0_TREADY <= regslice_both_sweep_rx4_0_V_data_V_U_ack_in;
+
+    sweep_rx4_0_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_0_TREADY, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            sweep_rx4_0_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_0_TREADY;
+        else 
+            sweep_rx4_0_TREADY_int_regslice <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    sweep_rx4_1_TREADY <= regslice_both_sweep_rx4_1_V_data_V_U_ack_in;
+
+    sweep_rx4_1_TREADY_int_regslice_assign_proc : process(grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_1_TREADY, ap_CS_fsm_state3)
+    begin
+        if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
+            sweep_rx4_1_TREADY_int_regslice <= grp_dataflow_parent_loop_proc28_fu_184_sweep_rx4_1_TREADY;
+        else 
+            sweep_rx4_1_TREADY_int_regslice <= ap_const_logic_0;
         end if; 
     end process;
 

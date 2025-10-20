@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'receive4AIE_1_Pipeline_VITIS_LOOP_76_2'" level="0">
-<item name = "Date">Sun Oct 19 23:23:18 2025
+<item name = "Date">Mon Oct 20 21:15:04 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -78,12 +78,12 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="j_15_fu_198_p2">+, 0, 0, 5, 4, 1</column>
+<column name="j_23_fu_198_p2">+, 0, 0, 5, 4, 1</column>
 <column name="ap_block_state2_pp0_stage0_iter1">and, 0, 0, 2, 1, 1</column>
 <column name="icmp_ln76_fu_181_p2">icmp, 0, 0, 5, 4, 5</column>
 <column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
-<column name="data_temp_24_fu_276_p3">select, 0, 0, 127, 1, 128</column>
-<column name="data_temp_27_fu_268_p3">select, 0, 0, 127, 1, 128</column>
+<column name="data_temp_49_fu_276_p3">select, 0, 0, 127, 1, 128</column>
+<column name="data_temp_50_fu_268_p3">select, 0, 0, 127, 1, 128</column>
 <column name="select_ln79_fu_218_p3">select, 0, 0, 127, 1, 128</column>
 <column name="select_ln80_fu_238_p3">select, 0, 0, 127, 1, 128</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
@@ -94,7 +94,7 @@
 <column name="ap_done_int">2, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">2, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter2">2, 2, 1, 2</column>
-<column name="data_temp_28_out_o">128, 3, 128, 384</column>
+<column name="data_temp_60_out_o">128, 3, 128, 384</column>
 <column name="data_temp_fu_88">121, 2, 128, 256</column>
 <column name="j_02_fu_84">4, 2, 4, 8</column>
 <column name="receive_fifo_L_1_blk_n">2, 2, 1, 2</column>
@@ -107,7 +107,7 @@
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
-<column name="data_temp_23_reg_357">128, 0, 128, 0</column>
+<column name="data_temp_48_reg_357">128, 0, 128, 0</column>
 <column name="data_temp_fu_88">128, 0, 128, 0</column>
 <column name="j_02_fu_84">4, 0, 4, 0</column>
 </table>
@@ -132,17 +132,17 @@
 <column name="receive_fifo_L_1_fifo_cap">in, 9, ap_fifo, receive_fifo_L_1, pointer</column>
 <column name="receive_fifo_L_1_full_n">in, 1, ap_fifo, receive_fifo_L_1, pointer</column>
 <column name="receive_fifo_L_1_write">out, 1, ap_fifo, receive_fifo_L_1, pointer</column>
-<column name="data_temp_25">in, 128, ap_none, data_temp_25, scalar</column>
-<column name="data_temp_26">in, 128, ap_none, data_temp_26, scalar</column>
+<column name="data_temp_57">in, 128, ap_none, data_temp_57, scalar</column>
+<column name="data_temp_58">in, 128, ap_none, data_temp_58, scalar</column>
 <column name="sweep_rx2_0_TREADY">out, 1, axis, sweep_rx2_0_V_last_V, pointer</column>
 <column name="sweep_rx2_0_TLAST">in, 1, axis, sweep_rx2_0_V_last_V, pointer</column>
 <column name="sweep_rx2_0_TKEEP">in, 16, axis, sweep_rx2_0_V_keep_V, pointer</column>
 <column name="sweep_rx2_0_TSTRB">in, 16, axis, sweep_rx2_0_V_strb_V, pointer</column>
-<column name="data_temp_29_out">out, 128, ap_vld, data_temp_29_out, pointer</column>
-<column name="data_temp_29_out_ap_vld">out, 1, ap_vld, data_temp_29_out, pointer</column>
-<column name="data_temp_28_out_i">in, 128, ap_ovld, data_temp_28_out, pointer</column>
-<column name="data_temp_28_out_o">out, 128, ap_ovld, data_temp_28_out, pointer</column>
-<column name="data_temp_28_out_o_ap_vld">out, 1, ap_ovld, data_temp_28_out, pointer</column>
+<column name="data_temp_61_out">out, 128, ap_vld, data_temp_61_out, pointer</column>
+<column name="data_temp_61_out_ap_vld">out, 1, ap_vld, data_temp_61_out, pointer</column>
+<column name="data_temp_60_out_i">in, 128, ap_ovld, data_temp_60_out, pointer</column>
+<column name="data_temp_60_out_o">out, 128, ap_ovld, data_temp_60_out, pointer</column>
+<column name="data_temp_60_out_o_ap_vld">out, 1, ap_ovld, data_temp_60_out, pointer</column>
 </table>
 </item>
 </section>

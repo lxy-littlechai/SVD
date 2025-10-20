@@ -89,7 +89,7 @@ reg    ap_block_pp0_stage0_11001;
 wire   [127:0] data_temp_4_fu_276_p3;
 wire    ap_loop_init;
 reg   [3:0] j_03_fu_84;
-wire   [3:0] j_11_fu_198_p2;
+wire   [3:0] j_15_fu_198_p2;
 reg   [127:0] data_temp_fu_88;
 wire   [127:0] data_temp_5_fu_268_p3;
 reg    ap_block_pp0_stage0_01001;
@@ -97,8 +97,8 @@ wire   [0:0] trunc_ln39_fu_204_p1;
 wire   [127:0] select_ln42_fu_218_p3;
 wire   [31:0] trunc_ln42_fu_214_p1;
 wire   [127:0] select_ln43_fu_238_p3;
-wire   [95:0] tmp_4_fu_246_p4;
-wire   [127:0] tmp_2_fu_256_p5;
+wire   [95:0] tmp_8_fu_246_p4;
+wire   [127:0] tmp_6_fu_256_p5;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -191,7 +191,7 @@ always @ (posedge ap_clk) begin
         if ((ap_loop_init == 1'b1)) begin
             j_03_fu_84 <= 4'd1;
         end else if (((icmp_ln39_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            j_03_fu_84 <= j_11_fu_198_p2;
+            j_03_fu_84 <= j_15_fu_198_p2;
         end
     end
 end
@@ -347,15 +347,15 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter1_stage0;
 
 assign data_temp_3_fu_226_p5 = {{trunc_ln42_fu_214_p1}, {select_ln42_fu_218_p3[95:0]}};
 
-assign data_temp_4_fu_276_p3 = ((trunc_ln39_fu_204_p1[0:0] == 1'b1) ? data_temp_3_fu_226_p5 : tmp_2_fu_256_p5);
+assign data_temp_4_fu_276_p3 = ((trunc_ln39_fu_204_p1[0:0] == 1'b1) ? data_temp_3_fu_226_p5 : tmp_6_fu_256_p5);
 
-assign data_temp_5_fu_268_p3 = ((trunc_ln39_fu_204_p1[0:0] == 1'b1) ? tmp_2_fu_256_p5 : data_temp_3_fu_226_p5);
+assign data_temp_5_fu_268_p3 = ((trunc_ln39_fu_204_p1[0:0] == 1'b1) ? tmp_6_fu_256_p5 : data_temp_3_fu_226_p5);
 
 assign data_temp_5_out = data_temp_fu_88;
 
 assign icmp_ln39_fu_181_p2 = ((j_03_fu_84 == 4'd8) ? 1'b1 : 1'b0);
 
-assign j_11_fu_198_p2 = (j_03_fu_84 + 4'd1);
+assign j_15_fu_198_p2 = (j_03_fu_84 + 4'd1);
 
 assign receive_fifo_L_0_din = data_temp_3_reg_357;
 
@@ -363,9 +363,9 @@ assign select_ln42_fu_218_p3 = ((trunc_ln39_fu_204_p1[0:0] == 1'b1) ? data_temp_
 
 assign select_ln43_fu_238_p3 = ((trunc_ln39_fu_204_p1[0:0] == 1'b1) ? data_temp_fu_88 : data_temp_4_out_i);
 
-assign tmp_2_fu_256_p5 = {{select_ln43_fu_238_p3[127:96]}, {tmp_4_fu_246_p4}};
+assign tmp_6_fu_256_p5 = {{select_ln43_fu_238_p3[127:96]}, {tmp_8_fu_246_p4}};
 
-assign tmp_4_fu_246_p4 = {{norm_rx0_TDATA[127:32]}};
+assign tmp_8_fu_246_p4 = {{norm_rx0_TDATA[127:32]}};
 
 assign trunc_ln39_fu_204_p1 = j_03_fu_84[0:0];
 

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'RoundRobin'
 ================================================================
-* Date:           Sun Oct 19 23:23:17 2025
+* Date:           Mon Oct 20 21:15:02 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -34,35 +34,38 @@
 
     + Detail: 
         * Instance: 
-        +--------------------------------------------------+---------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |                                                  |                                       |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-        |                     Instance                     |                 Module                |   min   |   max   |    min    |    max    | min | max |   Type  |
-        +--------------------------------------------------+---------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_151_3_fu_262   |RoundRobin_Pipeline_VITIS_LOOP_151_3   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_144_2_fu_271   |RoundRobin_Pipeline_VITIS_LOOP_144_2   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_168_5_fu_280   |RoundRobin_Pipeline_VITIS_LOOP_168_5   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_161_4_fu_289   |RoundRobin_Pipeline_VITIS_LOOP_161_4   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_311_3_fu_298   |RoundRobin_Pipeline_VITIS_LOOP_311_3   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_317_4_fu_309   |RoundRobin_Pipeline_VITIS_LOOP_317_4   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_324_5_fu_320   |RoundRobin_Pipeline_VITIS_LOOP_324_5   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_331_6_fu_328   |RoundRobin_Pipeline_VITIS_LOOP_331_6   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_341_7_fu_339   |RoundRobin_Pipeline_VITIS_LOOP_341_7   |       66|       66|   0.330 us|   0.330 us|   66|   66|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_358_8_fu_360   |RoundRobin_Pipeline_VITIS_LOOP_358_8   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_365_9_fu_371   |RoundRobin_Pipeline_VITIS_LOOP_365_9   |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_372_10_fu_379  |RoundRobin_Pipeline_VITIS_LOOP_372_10  |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_379_11_fu_390  |RoundRobin_Pipeline_VITIS_LOOP_379_11  |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-        |grp_RoundRobin_Pipeline_VITIS_LOOP_233_2_fu_398   |RoundRobin_Pipeline_VITIS_LOOP_233_2   |       10|       10|  50.000 ns|  50.000 ns|   10|   10|       no|
-        +--------------------------------------------------+---------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        +--------------------------------------------------+---------------------------------------+---------+---------+-----------+-----------+-----+------+---------+
+        |                                                  |                                       |  Latency (cycles) |   Latency (absolute)  |  Interval  | Pipeline|
+        |                     Instance                     |                 Module                |   min   |   max   |    min    |    max    | min |  max |   Type  |
+        +--------------------------------------------------+---------------------------------------+---------+---------+-----------+-----------+-----+------+---------+
+        |grp_DDR2FIFO_fu_255                               |DDR2FIFO                               |       81|     5825|   0.405 us|  29.125 us|   81|  5825|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_377_3_fu_279   |RoundRobin_Pipeline_VITIS_LOOP_377_3   |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_383_4_fu_287   |RoundRobin_Pipeline_VITIS_LOOP_383_4   |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_389_5_fu_295   |RoundRobin_Pipeline_VITIS_LOOP_389_5   |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_395_6_fu_303   |RoundRobin_Pipeline_VITIS_LOOP_395_6   |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_402_7_fu_311   |RoundRobin_Pipeline_VITIS_LOOP_402_7   |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_409_8_fu_319   |RoundRobin_Pipeline_VITIS_LOOP_409_8   |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_415_9_fu_327   |RoundRobin_Pipeline_VITIS_LOOP_415_9   |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_421_10_fu_335  |RoundRobin_Pipeline_VITIS_LOOP_421_10  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_458_12_fu_343  |RoundRobin_Pipeline_VITIS_LOOP_458_12  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_464_13_fu_351  |RoundRobin_Pipeline_VITIS_LOOP_464_13  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_470_14_fu_359  |RoundRobin_Pipeline_VITIS_LOOP_470_14  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_477_15_fu_367  |RoundRobin_Pipeline_VITIS_LOOP_477_15  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_484_16_fu_375  |RoundRobin_Pipeline_VITIS_LOOP_484_16  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_490_17_fu_383  |RoundRobin_Pipeline_VITIS_LOOP_490_17  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_496_18_fu_391  |RoundRobin_Pipeline_VITIS_LOOP_496_18  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_503_19_fu_399  |RoundRobin_Pipeline_VITIS_LOOP_503_19  |       18|       18|  90.000 ns|  90.000 ns|   18|    18|       no|
+        |grp_RoundRobin_Pipeline_VITIS_LOOP_283_2_fu_407   |RoundRobin_Pipeline_VITIS_LOOP_283_2   |       10|       10|  50.000 ns|  50.000 ns|   10|    10|       no|
+        +--------------------------------------------------+---------------------------------------+---------+---------+-----------+-----------+-----+------+---------+
 
         * Loop: 
         +---------------------+---------+---------+----------+-----------+-----------+------+----------+
         |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +---------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_140_1   |       32|     2912|   2 ~ 182|          -|          -|    16|        no|
-        |- VITIS_LOOP_302_1   |        ?|        ?|      3542|          -|          -|     ?|        no|
-        | + VITIS_LOOP_307_2  |     3540|     3540|       236|          -|          -|    15|        no|
-        |- VITIS_LOOP_232_1   |      416|      416|        13|          -|          -|    32|        no|
+        |- VITIS_LOOP_368_1   |        ?|        ?|      5027|          -|          -|     ?|        no|
+        | + VITIS_LOOP_373_2  |     5025|     5025|       335|          -|          -|    15|        no|
+        |- VITIS_LOOP_282_1   |      416|      416|        13|          -|          -|    32|        no|
         +---------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -75,14 +78,14 @@
 |       Name      | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
 +-----------------+---------+------+---------+--------+-----+
 |DSP              |        -|     -|        -|       -|    -|
-|Expression       |        -|     -|        0|     387|    -|
+|Expression       |        -|     -|        0|     281|    -|
 |FIFO             |        -|     -|        -|       -|    -|
-|Instance         |        -|     -|     2305|    2450|    -|
+|Instance         |        -|     -|     4174|    4403|    -|
 |Memory           |        -|     -|        -|       -|    -|
-|Multiplexer      |        -|     -|        -|    2333|    -|
-|Register         |        -|     -|      954|       -|    -|
+|Multiplexer      |        -|     -|        -|    1424|    -|
+|Register         |        -|     -|      698|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |        0|     0|     3259|    5170|    0|
+|Total            |        0|     0|     4872|    6108|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -91,27 +94,31 @@
 
 + Detail: 
     * Instance: 
-    +--------------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
-    |                     Instance                     |                 Module                | BRAM_18K| DSP|  FF | LUT | URAM|
-    +--------------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_144_2_fu_271   |RoundRobin_Pipeline_VITIS_LOOP_144_2   |        0|   0|  394|  291|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_151_3_fu_262   |RoundRobin_Pipeline_VITIS_LOOP_151_3   |        0|   0|  394|  291|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_161_4_fu_289   |RoundRobin_Pipeline_VITIS_LOOP_161_4   |        0|   0|  394|  291|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_168_5_fu_280   |RoundRobin_Pipeline_VITIS_LOOP_168_5   |        0|   0|  394|  291|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_233_2_fu_398   |RoundRobin_Pipeline_VITIS_LOOP_233_2   |        0|   0|  392|  405|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_311_3_fu_298   |RoundRobin_Pipeline_VITIS_LOOP_311_3   |        0|   0|    8|   37|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_317_4_fu_309   |RoundRobin_Pipeline_VITIS_LOOP_317_4   |        0|   0|    8|   37|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_324_5_fu_320   |RoundRobin_Pipeline_VITIS_LOOP_324_5   |        0|   0|    8|   35|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_331_6_fu_328   |RoundRobin_Pipeline_VITIS_LOOP_331_6   |        0|   0|    8|   37|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_341_7_fu_339   |RoundRobin_Pipeline_VITIS_LOOP_341_7   |        0|   0|  273|  591|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_358_8_fu_360   |RoundRobin_Pipeline_VITIS_LOOP_358_8   |        0|   0|    8|   37|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_365_9_fu_371   |RoundRobin_Pipeline_VITIS_LOOP_365_9   |        0|   0|    8|   35|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_372_10_fu_379  |RoundRobin_Pipeline_VITIS_LOOP_372_10  |        0|   0|    8|   37|    0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_379_11_fu_390  |RoundRobin_Pipeline_VITIS_LOOP_379_11  |        0|   0|    8|   35|    0|
-    |printint_U228                                     |printint                               |        0|   0|    0|    0|    0|
-    +--------------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
-    |Total                                             |                                       |        0|   0| 2305| 2450|    0|
-    +--------------------------------------------------+---------------------------------------+---------+----+-----+-----+-----+
+    +--------------------------------------------------+---------------------------------------+---------+----+------+------+-----+
+    |                     Instance                     |                 Module                | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------------------+---------------------------------------+---------+----+------+------+-----+
+    |grp_DDR2FIFO_fu_255                               |DDR2FIFO                               |        0|   0|  3654|  3438|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_283_2_fu_407   |RoundRobin_Pipeline_VITIS_LOOP_283_2   |        0|   0|   392|   405|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_377_3_fu_279   |RoundRobin_Pipeline_VITIS_LOOP_377_3   |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_383_4_fu_287   |RoundRobin_Pipeline_VITIS_LOOP_383_4   |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_389_5_fu_295   |RoundRobin_Pipeline_VITIS_LOOP_389_5   |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_395_6_fu_303   |RoundRobin_Pipeline_VITIS_LOOP_395_6   |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_402_7_fu_311   |RoundRobin_Pipeline_VITIS_LOOP_402_7   |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_409_8_fu_319   |RoundRobin_Pipeline_VITIS_LOOP_409_8   |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_415_9_fu_327   |RoundRobin_Pipeline_VITIS_LOOP_415_9   |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_421_10_fu_335  |RoundRobin_Pipeline_VITIS_LOOP_421_10  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_458_12_fu_343  |RoundRobin_Pipeline_VITIS_LOOP_458_12  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_464_13_fu_351  |RoundRobin_Pipeline_VITIS_LOOP_464_13  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_470_14_fu_359  |RoundRobin_Pipeline_VITIS_LOOP_470_14  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_477_15_fu_367  |RoundRobin_Pipeline_VITIS_LOOP_477_15  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_484_16_fu_375  |RoundRobin_Pipeline_VITIS_LOOP_484_16  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_490_17_fu_383  |RoundRobin_Pipeline_VITIS_LOOP_490_17  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_496_18_fu_391  |RoundRobin_Pipeline_VITIS_LOOP_496_18  |        0|   0|     8|    35|    0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_503_19_fu_399  |RoundRobin_Pipeline_VITIS_LOOP_503_19  |        0|   0|     8|    35|    0|
+    |printint_U375                                     |printint                               |        0|   0|     0|     0|    0|
+    +--------------------------------------------------+---------------------------------------+---------+----+------+------+-----+
+    |Total                                             |                                       |        0|   0|  4174|  4403|    0|
+    +--------------------------------------------------+---------------------------------------+---------+----+------+------+-----+
 
     * DSP: 
     N/A
@@ -123,65 +130,38 @@
     N/A
 
     * Expression: 
-    +-----------------------------------+----------+----+---+-----+------------+------------+
-    |           Variable Name           | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
-    +-----------------------------------+----------+----+---+-----+------------+------------+
-    |add_ln140_fu_434_p2                |         +|   0|  0|    5|           5|           1|
-    |add_ln142_fu_462_p2                |         +|   0|  0|   64|          64|          64|
-    |add_ln232_fu_643_p2                |         +|   0|  0|    6|           6|           1|
-    |i_21_fu_623_p2                     |         +|   0|  0|    5|           4|           1|
-    |and_ln142_fu_515_p2                |       and|   0|  0|    2|           1|           1|
-    |ap_block_state178_io               |       and|   0|  0|    2|           1|           1|
-    |ap_block_state2_io                 |       and|   0|  0|    2|           1|           1|
-    |ap_predicate_op302_readreq_state2  |       and|   0|  0|    2|           1|           1|
-    |ap_predicate_op459_call_state148   |       and|   0|  0|    2|           1|           1|
-    |ap_predicate_op461_call_state148   |       and|   0|  0|    2|           1|           1|
-    |icmp_ln140_fu_440_p2               |      icmp|   0|  0|    6|           5|           6|
-    |icmp_ln142_1_fu_503_p2             |      icmp|   0|  0|    5|           5|           5|
-    |icmp_ln142_fu_485_p2               |      icmp|   0|  0|    5|           5|           5|
-    |icmp_ln232_fu_649_p2               |      icmp|   0|  0|    7|           6|           7|
-    |icmp_ln238_fu_659_p2               |      icmp|   0|  0|    5|           4|           2|
-    |icmp_ln307_fu_629_p2               |      icmp|   0|  0|    5|           4|           2|
-    |ap_block_state1                    |        or|   0|  0|    2|           1|           1|
-    |ap_block_state148_on_subcall_done  |        or|   0|  0|    2|           1|           1|
-    |ap_block_state149_io               |        or|   0|  0|    2|           1|           1|
-    |ap_block_state245                  |        or|   0|  0|    2|           1|           1|
-    |or_ln142_fu_497_p2                 |        or|   0|  0|    5|           5|           1|
-    |select_ln238_fu_712_p3             |    select|   0|  0|  245|           1|           1|
-    |xor_ln142_1_fu_509_p2              |       xor|   0|  0|    2|           1|           2|
-    |xor_ln142_fu_491_p2                |       xor|   0|  0|    2|           1|           2|
-    +-----------------------------------+----------+----+---+-----+------------+------------+
-    |Total                              |          |   0|  0|  387|         126|         110|
-    +-----------------------------------+----------+----+---+-----+------------+------------+
+    +------------------------+----------+----+---+-----+------------+------------+
+    |      Variable Name     | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+----+---+-----+------------+------------+
+    |add_ln282_fu_512_p2     |         +|   0|  0|    6|           6|           1|
+    |i_32_fu_497_p2          |         +|   0|  0|    5|           4|           1|
+    |ap_block_state53_io     |       and|   0|  0|    2|           1|           1|
+    |icmp_ln282_fu_518_p2    |      icmp|   0|  0|    7|           6|           7|
+    |icmp_ln288_fu_528_p2    |      icmp|   0|  0|    5|           4|           2|
+    |icmp_ln373_fu_503_p2    |      icmp|   0|  0|    5|           4|           2|
+    |ap_block_state1         |        or|   0|  0|    2|           1|           1|
+    |ap_block_state120       |        or|   0|  0|    2|           1|           1|
+    |ap_block_state3_io      |        or|   0|  0|    2|           1|           1|
+    |select_ln288_fu_581_p3  |    select|   0|  0|  245|           1|           1|
+    +------------------------+----------+----+---+-----+------------+------------+
+    |Total                   |          |   0|  0|  281|          29|          18|
+    +------------------------+----------+----+---+-----+------------+------------+
 
     * Multiplexer: 
     +------------------------+-----+-----------+-----+-----------+
     |          Name          | LUT | Input Size| Bits| Total Bits|
     +------------------------+-----+-----------+-----+-----------+
-    |ap_NS_fsm               |  170|        246|    1|        246|
+    |ap_NS_fsm               |   86|        121|    1|        121|
     |ap_done                 |    2|          2|    1|          2|
-    |gmem0_blk_n_AR          |    2|          2|    1|          2|
     |gmem1_blk_n_AW          |    2|          2|    1|          2|
     |gmem1_blk_n_B           |    2|          2|    1|          2|
     |gmem2_blk_n_AW          |    2|          2|    1|          2|
     |gmem2_blk_n_B           |    2|          2|    1|          2|
     |gmem2_blk_n_W           |    2|          2|    1|          2|
-    |i_010_reg_251           |    4|          2|    4|          8|
-    |i_11_fu_186             |    5|          2|    6|         12|
-    |i_fu_178                |    5|          2|    5|         10|
-    |m_axi_gmem0_ARADDR      |  186|          7|   64|        448|
-    |m_axi_gmem0_ARBURST     |    6|          5|    2|         10|
-    |m_axi_gmem0_ARCACHE     |   11|          5|    4|         20|
-    |m_axi_gmem0_ARID        |    6|          5|    1|          5|
-    |m_axi_gmem0_ARLEN       |   93|          6|   32|        192|
-    |m_axi_gmem0_ARLOCK      |    6|          5|    2|         10|
-    |m_axi_gmem0_ARPROT      |    9|          5|    3|         15|
-    |m_axi_gmem0_ARQOS       |   11|          5|    4|         20|
-    |m_axi_gmem0_ARREGION    |   11|          5|    4|         20|
-    |m_axi_gmem0_ARSIZE      |    9|          5|    3|         15|
-    |m_axi_gmem0_ARUSER      |    6|          5|    1|          5|
-    |m_axi_gmem0_ARVALID     |    6|          6|    1|          6|
-    |m_axi_gmem0_RREADY      |    6|          5|    1|          5|
+    |i_15_fu_186             |    5|          2|    6|         12|
+    |i_reg_244               |    4|          2|    4|          8|
+    |m_axi_gmem0_ARVALID     |    2|          2|    1|          2|
+    |m_axi_gmem0_RREADY      |    2|          2|    1|          2|
     |m_axi_gmem1_AWADDR      |   64|          3|   64|        192|
     |m_axi_gmem1_AWBURST     |    2|          2|    2|          4|
     |m_axi_gmem1_AWCACHE     |    4|          2|    4|          8|
@@ -196,61 +176,70 @@
     |m_axi_gmem1_AWVALID     |    2|          3|    1|          3|
     |m_axi_gmem1_BREADY      |    2|          3|    1|          3|
     |m_axi_gmem1_WVALID      |    2|          2|    1|          2|
-    |phi_ln238_fu_182        |  121|          2|  480|        960|
+    |phi_ln288_fu_182        |  121|          2|  480|        960|
     |receive_fifo_L_0_blk_n  |    2|          2|    1|          2|
-    |receive_fifo_L_0_read   |    6|          6|    1|          6|
-    |receive_fifo_L_1_read   |    2|          4|    1|          4|
-    |receive_fifo_R_0_read   |    2|          4|    1|          4|
-    |receive_fifo_R_1_read   |    2|          4|    1|          4|
-    |send_fifo_L_0_din       |  370|          6|  128|        768|
-    |send_fifo_L_0_write     |    6|          7|    1|          7|
-    |send_fifo_L_1_din       |  370|          5|  128|        640|
-    |send_fifo_L_1_write     |    6|          6|    1|          6|
-    |send_fifo_R_0_din       |  370|          5|  128|        640|
-    |send_fifo_R_0_write     |    6|          6|    1|          6|
-    |send_fifo_R_1_din       |  370|          5|  128|        640|
-    |send_fifo_R_1_write     |    6|          6|    1|          6|
+    |receive_fifo_L_0_read   |    6|          5|    1|          5|
+    |receive_fifo_L_1_read   |    2|          3|    1|          3|
+    |receive_fifo_L_2_read   |    2|          3|    1|          3|
+    |receive_fifo_L_3_read   |    2|          3|    1|          3|
+    |receive_fifo_R_0_read   |    2|          3|    1|          3|
+    |receive_fifo_R_1_read   |    2|          3|    1|          3|
+    |receive_fifo_R_2_read   |    2|          3|    1|          3|
+    |receive_fifo_R_3_read   |    2|          3|    1|          3|
+    |send_fifo_L_0_din       |  128|          3|  128|        384|
+    |send_fifo_L_0_write     |    2|          4|    1|          4|
+    |send_fifo_L_1_din       |  128|          3|  128|        384|
+    |send_fifo_L_1_write     |    2|          4|    1|          4|
+    |send_fifo_L_2_din       |  128|          3|  128|        384|
+    |send_fifo_L_2_write     |    2|          4|    1|          4|
+    |send_fifo_L_3_din       |  128|          3|  128|        384|
+    |send_fifo_L_3_write     |    2|          4|    1|          4|
+    |send_fifo_R_0_din       |  128|          3|  128|        384|
+    |send_fifo_R_0_write     |    2|          4|    1|          4|
+    |send_fifo_R_1_din       |  128|          3|  128|        384|
+    |send_fifo_R_1_write     |    2|          4|    1|          4|
+    |send_fifo_R_2_din       |  128|          3|  128|        384|
+    |send_fifo_R_2_write     |    2|          4|    1|          4|
+    |send_fifo_R_3_din       |  128|          3|  128|        384|
+    |send_fifo_R_3_write     |    2|          4|    1|          4|
     |syscontrol_1_blk_n      |    2|          2|    1|          2|
     +------------------------+-----+-----------+-----+-----------+
-    |Total                   | 2333|        437| 1270|       5100|
+    |Total                   | 1424|        261| 1664|       4595|
     +------------------------+-----+-----------+-----+-----------+
 
     * Register: 
     +---------------------------------------------------------------+-----+----+-----+-----------+
     |                              Name                             |  FF | LUT| Bits| Const Bits|
     +---------------------------------------------------------------+-----+----+-----+-----------+
-    |add_ln140_reg_762                                              |    5|   0|    5|          0|
-    |add_ln232_reg_850                                              |    6|   0|    6|          0|
-    |and_ln142_reg_775                                              |    1|   0|    1|          0|
-    |ap_CS_fsm                                                      |  245|   0|  245|          0|
+    |add_ln282_reg_670                                              |    6|   0|    6|          0|
+    |ap_CS_fsm                                                      |  120|   0|  120|          0|
     |ap_done_reg                                                    |    1|   0|    1|          0|
-    |empty_196_reg_771                                              |    1|   0|    1|          0|
-    |gmem0_addr_reg_787                                             |   64|   0|   64|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_144_2_fu_271_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_151_3_fu_262_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_161_4_fu_289_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_168_5_fu_280_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_233_2_fu_398_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_311_3_fu_298_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_317_4_fu_309_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_324_5_fu_320_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_331_6_fu_328_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_341_7_fu_339_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_358_8_fu_360_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_365_9_fu_371_ap_start_reg   |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_372_10_fu_379_ap_start_reg  |    1|   0|    1|          0|
-    |grp_RoundRobin_Pipeline_VITIS_LOOP_379_11_fu_390_ap_start_reg  |    1|   0|    1|          0|
-    |i_010_reg_251                                                  |    4|   0|    4|          0|
-    |i_11_fu_186                                                    |    6|   0|    6|          0|
-    |i_21_reg_832                                                   |    4|   0|    4|          0|
-    |i_fu_178                                                       |    5|   0|    5|          0|
-    |icmp_ln238_reg_859                                             |    1|   0|    1|          0|
-    |phi_ln238_fu_182                                               |  480|   0|  480|          0|
-    |trunc_ln2_reg_816                                              |   58|   0|   58|          0|
-    |trunc_ln307_reg_840                                            |    1|   0|    1|          0|
-    |trunc_ln_reg_779                                               |   58|   0|   58|          0|
+    |grp_DDR2FIFO_fu_255_ap_start_reg                               |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_283_2_fu_407_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_377_3_fu_279_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_383_4_fu_287_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_389_5_fu_295_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_395_6_fu_303_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_402_7_fu_311_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_409_8_fu_319_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_415_9_fu_327_ap_start_reg   |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_421_10_fu_335_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_458_12_fu_343_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_464_13_fu_351_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_470_14_fu_359_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_477_15_fu_367_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_484_16_fu_375_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_490_17_fu_383_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_496_18_fu_391_ap_start_reg  |    1|   0|    1|          0|
+    |grp_RoundRobin_Pipeline_VITIS_LOOP_503_19_fu_399_ap_start_reg  |    1|   0|    1|          0|
+    |i_15_fu_186                                                    |    6|   0|    6|          0|
+    |i_32_reg_662                                                   |    4|   0|    4|          0|
+    |i_reg_244                                                      |    4|   0|    4|          0|
+    |icmp_ln288_reg_679                                             |    1|   0|    1|          0|
+    |phi_ln288_fu_182                                               |  480|   0|  480|          0|
+    |trunc_ln_reg_646                                               |   58|   0|   58|          0|
     +---------------------------------------------------------------+-----+----+-----+-----------+
-    |Total                                                          |  954|   0|  954|          0|
+    |Total                                                          |  698|   0|  698|          0|
     +---------------------------------------------------------------+-----+----+-----+-----------+
 
 
@@ -416,29 +405,45 @@
 |m_axi_gmem2_BUSER                |   in|    1|       m_axi|             gmem2|       pointer|
 |S                                |   in|   64|     ap_none|                 S|        scalar|
 |send_fifo_L_0_din                |  out|  128|     ap_fifo|     send_fifo_L_0|       pointer|
-|send_fifo_L_0_num_data_valid     |   in|    7|     ap_fifo|     send_fifo_L_0|       pointer|
-|send_fifo_L_0_fifo_cap           |   in|    7|     ap_fifo|     send_fifo_L_0|       pointer|
+|send_fifo_L_0_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_L_0|       pointer|
+|send_fifo_L_0_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_L_0|       pointer|
 |send_fifo_L_0_full_n             |   in|    1|     ap_fifo|     send_fifo_L_0|       pointer|
-|send_fifo_L_0_almost_full_n      |   in|    1|     ap_fifo|     send_fifo_L_0|       pointer|
 |send_fifo_L_0_write              |  out|    1|     ap_fifo|     send_fifo_L_0|       pointer|
 |send_fifo_L_1_din                |  out|  128|     ap_fifo|     send_fifo_L_1|       pointer|
-|send_fifo_L_1_num_data_valid     |   in|    7|     ap_fifo|     send_fifo_L_1|       pointer|
-|send_fifo_L_1_fifo_cap           |   in|    7|     ap_fifo|     send_fifo_L_1|       pointer|
+|send_fifo_L_1_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_L_1|       pointer|
+|send_fifo_L_1_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_L_1|       pointer|
 |send_fifo_L_1_full_n             |   in|    1|     ap_fifo|     send_fifo_L_1|       pointer|
-|send_fifo_L_1_almost_full_n      |   in|    1|     ap_fifo|     send_fifo_L_1|       pointer|
 |send_fifo_L_1_write              |  out|    1|     ap_fifo|     send_fifo_L_1|       pointer|
+|send_fifo_L_2_din                |  out|  128|     ap_fifo|     send_fifo_L_2|       pointer|
+|send_fifo_L_2_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_L_2|       pointer|
+|send_fifo_L_2_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_L_2|       pointer|
+|send_fifo_L_2_full_n             |   in|    1|     ap_fifo|     send_fifo_L_2|       pointer|
+|send_fifo_L_2_write              |  out|    1|     ap_fifo|     send_fifo_L_2|       pointer|
+|send_fifo_L_3_din                |  out|  128|     ap_fifo|     send_fifo_L_3|       pointer|
+|send_fifo_L_3_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_L_3|       pointer|
+|send_fifo_L_3_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_L_3|       pointer|
+|send_fifo_L_3_full_n             |   in|    1|     ap_fifo|     send_fifo_L_3|       pointer|
+|send_fifo_L_3_write              |  out|    1|     ap_fifo|     send_fifo_L_3|       pointer|
 |send_fifo_R_0_din                |  out|  128|     ap_fifo|     send_fifo_R_0|       pointer|
-|send_fifo_R_0_num_data_valid     |   in|    7|     ap_fifo|     send_fifo_R_0|       pointer|
-|send_fifo_R_0_fifo_cap           |   in|    7|     ap_fifo|     send_fifo_R_0|       pointer|
+|send_fifo_R_0_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_R_0|       pointer|
+|send_fifo_R_0_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_R_0|       pointer|
 |send_fifo_R_0_full_n             |   in|    1|     ap_fifo|     send_fifo_R_0|       pointer|
-|send_fifo_R_0_almost_full_n      |   in|    1|     ap_fifo|     send_fifo_R_0|       pointer|
 |send_fifo_R_0_write              |  out|    1|     ap_fifo|     send_fifo_R_0|       pointer|
 |send_fifo_R_1_din                |  out|  128|     ap_fifo|     send_fifo_R_1|       pointer|
-|send_fifo_R_1_num_data_valid     |   in|    7|     ap_fifo|     send_fifo_R_1|       pointer|
-|send_fifo_R_1_fifo_cap           |   in|    7|     ap_fifo|     send_fifo_R_1|       pointer|
+|send_fifo_R_1_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_R_1|       pointer|
+|send_fifo_R_1_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_R_1|       pointer|
 |send_fifo_R_1_full_n             |   in|    1|     ap_fifo|     send_fifo_R_1|       pointer|
-|send_fifo_R_1_almost_full_n      |   in|    1|     ap_fifo|     send_fifo_R_1|       pointer|
 |send_fifo_R_1_write              |  out|    1|     ap_fifo|     send_fifo_R_1|       pointer|
+|send_fifo_R_2_din                |  out|  128|     ap_fifo|     send_fifo_R_2|       pointer|
+|send_fifo_R_2_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_R_2|       pointer|
+|send_fifo_R_2_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_R_2|       pointer|
+|send_fifo_R_2_full_n             |   in|    1|     ap_fifo|     send_fifo_R_2|       pointer|
+|send_fifo_R_2_write              |  out|    1|     ap_fifo|     send_fifo_R_2|       pointer|
+|send_fifo_R_3_din                |  out|  128|     ap_fifo|     send_fifo_R_3|       pointer|
+|send_fifo_R_3_num_data_valid     |   in|    6|     ap_fifo|     send_fifo_R_3|       pointer|
+|send_fifo_R_3_fifo_cap           |   in|    6|     ap_fifo|     send_fifo_R_3|       pointer|
+|send_fifo_R_3_full_n             |   in|    1|     ap_fifo|     send_fifo_R_3|       pointer|
+|send_fifo_R_3_write              |  out|    1|     ap_fifo|     send_fifo_R_3|       pointer|
 |receive_fifo_L_0_dout            |   in|  128|     ap_fifo|  receive_fifo_L_0|       pointer|
 |receive_fifo_L_0_num_data_valid  |   in|    9|     ap_fifo|  receive_fifo_L_0|       pointer|
 |receive_fifo_L_0_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_L_0|       pointer|
@@ -449,6 +454,16 @@
 |receive_fifo_L_1_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_L_1|       pointer|
 |receive_fifo_L_1_empty_n         |   in|    1|     ap_fifo|  receive_fifo_L_1|       pointer|
 |receive_fifo_L_1_read            |  out|    1|     ap_fifo|  receive_fifo_L_1|       pointer|
+|receive_fifo_L_2_dout            |   in|  128|     ap_fifo|  receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_num_data_valid  |   in|    9|     ap_fifo|  receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_empty_n         |   in|    1|     ap_fifo|  receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_read            |  out|    1|     ap_fifo|  receive_fifo_L_2|       pointer|
+|receive_fifo_L_3_dout            |   in|  128|     ap_fifo|  receive_fifo_L_3|       pointer|
+|receive_fifo_L_3_num_data_valid  |   in|    9|     ap_fifo|  receive_fifo_L_3|       pointer|
+|receive_fifo_L_3_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_L_3|       pointer|
+|receive_fifo_L_3_empty_n         |   in|    1|     ap_fifo|  receive_fifo_L_3|       pointer|
+|receive_fifo_L_3_read            |  out|    1|     ap_fifo|  receive_fifo_L_3|       pointer|
 |receive_fifo_R_0_dout            |   in|  128|     ap_fifo|  receive_fifo_R_0|       pointer|
 |receive_fifo_R_0_num_data_valid  |   in|    9|     ap_fifo|  receive_fifo_R_0|       pointer|
 |receive_fifo_R_0_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_R_0|       pointer|
@@ -459,5 +474,15 @@
 |receive_fifo_R_1_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_R_1|       pointer|
 |receive_fifo_R_1_empty_n         |   in|    1|     ap_fifo|  receive_fifo_R_1|       pointer|
 |receive_fifo_R_1_read            |  out|    1|     ap_fifo|  receive_fifo_R_1|       pointer|
+|receive_fifo_R_2_dout            |   in|  128|     ap_fifo|  receive_fifo_R_2|       pointer|
+|receive_fifo_R_2_num_data_valid  |   in|    9|     ap_fifo|  receive_fifo_R_2|       pointer|
+|receive_fifo_R_2_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_R_2|       pointer|
+|receive_fifo_R_2_empty_n         |   in|    1|     ap_fifo|  receive_fifo_R_2|       pointer|
+|receive_fifo_R_2_read            |  out|    1|     ap_fifo|  receive_fifo_R_2|       pointer|
+|receive_fifo_R_3_dout            |   in|  128|     ap_fifo|  receive_fifo_R_3|       pointer|
+|receive_fifo_R_3_num_data_valid  |   in|    9|     ap_fifo|  receive_fifo_R_3|       pointer|
+|receive_fifo_R_3_fifo_cap        |   in|    9|     ap_fifo|  receive_fifo_R_3|       pointer|
+|receive_fifo_R_3_empty_n         |   in|    1|     ap_fifo|  receive_fifo_R_3|       pointer|
+|receive_fifo_R_3_read            |  out|    1|     ap_fifo|  receive_fifo_R_3|       pointer|
 +---------------------------------+-----+-----+------------+------------------+--------------+
 

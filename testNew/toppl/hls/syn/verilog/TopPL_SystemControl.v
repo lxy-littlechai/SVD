@@ -90,6 +90,16 @@ module TopPL_SystemControl (
         convSet_L_1_fifo_cap,
         convSet_L_1_empty_n,
         convSet_L_1_read,
+        convSet_L_2_dout,
+        convSet_L_2_num_data_valid,
+        convSet_L_2_fifo_cap,
+        convSet_L_2_empty_n,
+        convSet_L_2_read,
+        convSet_L_3_dout,
+        convSet_L_3_num_data_valid,
+        convSet_L_3_fifo_cap,
+        convSet_L_3_empty_n,
+        convSet_L_3_read,
         convSet_R_0_dout,
         convSet_R_0_num_data_valid,
         convSet_R_0_fifo_cap,
@@ -99,7 +109,17 @@ module TopPL_SystemControl (
         convSet_R_1_num_data_valid,
         convSet_R_1_fifo_cap,
         convSet_R_1_empty_n,
-        convSet_R_1_read
+        convSet_R_1_read,
+        convSet_R_2_dout,
+        convSet_R_2_num_data_valid,
+        convSet_R_2_fifo_cap,
+        convSet_R_2_empty_n,
+        convSet_R_2_read,
+        convSet_R_3_dout,
+        convSet_R_3_num_data_valid,
+        convSet_R_3_fifo_cap,
+        convSet_R_3_empty_n,
+        convSet_R_3_read
 );
 
 parameter    ap_ST_fsm_state1 = 78'd1;
@@ -264,6 +284,16 @@ input  [2:0] convSet_L_1_num_data_valid;
 input  [2:0] convSet_L_1_fifo_cap;
 input   convSet_L_1_empty_n;
 output   convSet_L_1_read;
+input  [31:0] convSet_L_2_dout;
+input  [2:0] convSet_L_2_num_data_valid;
+input  [2:0] convSet_L_2_fifo_cap;
+input   convSet_L_2_empty_n;
+output   convSet_L_2_read;
+input  [31:0] convSet_L_3_dout;
+input  [2:0] convSet_L_3_num_data_valid;
+input  [2:0] convSet_L_3_fifo_cap;
+input   convSet_L_3_empty_n;
+output   convSet_L_3_read;
 input  [31:0] convSet_R_0_dout;
 input  [2:0] convSet_R_0_num_data_valid;
 input  [2:0] convSet_R_0_fifo_cap;
@@ -274,6 +304,16 @@ input  [2:0] convSet_R_1_num_data_valid;
 input  [2:0] convSet_R_1_fifo_cap;
 input   convSet_R_1_empty_n;
 output   convSet_R_1_read;
+input  [31:0] convSet_R_2_dout;
+input  [2:0] convSet_R_2_num_data_valid;
+input  [2:0] convSet_R_2_fifo_cap;
+input   convSet_R_2_empty_n;
+output   convSet_R_2_read;
+input  [31:0] convSet_R_3_dout;
+input  [2:0] convSet_R_3_num_data_valid;
+input  [2:0] convSet_R_3_fifo_cap;
+input   convSet_R_3_empty_n;
+output   convSet_R_3_read;
 
 reg ap_done;
 reg ap_idle;
@@ -289,8 +329,12 @@ reg[0:0] syscontrol_2_din;
 reg syscontrol_2_write;
 reg convSet_L_0_read;
 reg convSet_L_1_read;
+reg convSet_L_2_read;
+reg convSet_L_3_read;
 reg convSet_R_0_read;
 reg convSet_R_1_read;
+reg convSet_R_2_read;
+reg convSet_R_3_read;
 
 reg    real_start;
 reg    start_once_reg;
@@ -305,82 +349,86 @@ wire    ap_CS_fsm_state8;
 reg    gmem3_blk_n_B;
 wire    ap_CS_fsm_state76;
 reg    ap_block_state1;
-wire   [30:0] add_ln417_fu_209_p2;
-reg   [30:0] add_ln417_reg_382;
+wire   [30:0] add_ln541_fu_225_p2;
+reg   [30:0] add_ln541_reg_398;
 wire    ap_CS_fsm_state5;
-reg   [63:0] gmem3_addr_reg_388;
-wire   [0:0] icmp_ln418_2_fu_256_p2;
-reg   [0:0] icmp_ln418_2_reg_394;
-wire   [0:0] or_ln418_fu_343_p2;
-reg   [0:0] or_ln418_reg_399;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_done;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_idle;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_ready;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_1_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_1_write;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_0_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_0_write;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_2_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_2_write;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_done;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_idle;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_ready;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_L_0_read;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_R_0_read;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_L_1_read;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_R_1_read;
-wire   [31:0] grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_conv32_lcssa11_out;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_conv32_lcssa11_out_ap_vld;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_done;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_idle;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_ready;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_1_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_1_write;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_0_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_0_write;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_2_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_2_write;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_done;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_idle;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_ready;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_1_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_1_write;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_0_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_0_write;
-wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_2_din;
-wire    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_2_write;
-reg    grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start_reg;
+reg   [63:0] gmem3_addr_reg_404;
+wire   [0:0] icmp_ln542_2_fu_272_p2;
+reg   [0:0] icmp_ln542_2_reg_410;
+wire   [0:0] or_ln542_fu_359_p2;
+reg   [0:0] or_ln542_reg_415;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_done;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_idle;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_ready;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_1_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_1_write;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_0_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_0_write;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_2_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_2_write;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_done;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_idle;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_ready;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_0_read;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_0_read;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_1_read;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_1_read;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_2_read;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_2_read;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_3_read;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_3_read;
+wire   [31:0] grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_conv32_lcssa11_out;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_conv32_lcssa11_out_ap_vld;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_done;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_idle;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_ready;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_1_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_1_write;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_0_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_0_write;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_2_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_2_write;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_done;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_idle;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_ready;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_1_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_1_write;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_0_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_0_write;
+wire   [0:0] grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_2_din;
+wire    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_2_write;
+reg    grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start_reg;
 wire    ap_CS_fsm_state2;
 wire    ap_CS_fsm_state3;
-reg    grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start_reg;
+reg    grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start_reg;
 wire    ap_CS_fsm_state6;
-reg    grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start_reg;
+reg    grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start_reg;
 wire    ap_CS_fsm_state77;
-reg    grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start_reg;
+reg    grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start_reg;
 wire    ap_CS_fsm_state78;
-wire  signed [63:0] sext_ln415_fu_246_p1;
-wire   [31:0] bitcast_ln415_fu_269_p1;
-reg   [30:0] iter_fu_100;
-wire   [32:0] tmp_13_fu_219_p3;
-wire   [63:0] zext_ln415_fu_227_p1;
-wire   [63:0] add_ln415_fu_231_p2;
-wire   [61:0] trunc_ln_fu_236_p4;
-wire   [31:0] zext_ln405_fu_215_p1;
-wire   [63:0] tmp_fu_179_p1;
-wire   [63:0] printdouble_ln39_fu_286_p1;
-wire   [7:0] tmp_1_fu_292_p4;
-wire   [22:0] trunc_ln418_fu_302_p1;
-wire   [0:0] icmp_ln418_1_fu_312_p2;
-wire   [0:0] icmp_ln418_fu_306_p2;
-wire   [0:0] or_ln418_1_fu_318_p2;
-wire   [0:0] tmp_2_fu_182_p2;
-wire   [0:0] and_ln418_fu_332_p2;
-wire   [0:0] xor_ln418_fu_338_p2;
-reg    printdouble_ln39_fu_286_ap_ce;
+wire  signed [63:0] sext_ln539_fu_262_p1;
+wire   [31:0] bitcast_ln539_fu_285_p1;
+reg   [30:0] iter_fu_108;
+wire   [32:0] tmp_25_fu_235_p3;
+wire   [63:0] zext_ln539_fu_243_p1;
+wire   [63:0] add_ln539_fu_247_p2;
+wire   [61:0] trunc_ln_fu_252_p4;
+wire   [31:0] zext_ln529_fu_231_p1;
+wire   [63:0] tmp_fu_195_p1;
+wire   [63:0] printdouble_ln39_fu_302_p1;
+wire   [7:0] tmp_1_fu_308_p4;
+wire   [22:0] trunc_ln542_fu_318_p1;
+wire   [0:0] icmp_ln542_1_fu_328_p2;
+wire   [0:0] icmp_ln542_fu_322_p2;
+wire   [0:0] or_ln542_1_fu_334_p2;
+wire   [0:0] tmp_2_fu_198_p2;
+wire   [0:0] and_ln542_fu_348_p2;
+wire   [0:0] xor_ln542_fu_354_p2;
+reg    printdouble_ln39_fu_302_ap_ce;
 reg   [77:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
@@ -467,114 +515,134 @@ initial begin
 #0 start_once_reg = 1'b0;
 #0 ap_done_reg = 1'b0;
 #0 ap_CS_fsm = 78'd1;
-#0 grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start_reg = 1'b0;
-#0 grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start_reg = 1'b0;
-#0 grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start_reg = 1'b0;
-#0 grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start_reg = 1'b0;
-#0 iter_fu_100 = 31'd0;
+#0 grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start_reg = 1'b0;
+#0 grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start_reg = 1'b0;
+#0 grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start_reg = 1'b0;
+#0 grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start_reg = 1'b0;
+#0 iter_fu_108 = 31'd0;
 end
 
-TopPL_SystemControl_Pipeline_VITIS_LOOP_395_1 grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136(
+TopPL_SystemControl_Pipeline_VITIS_LOOP_519_1 grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start),
-    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_done),
-    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_idle),
-    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_ready),
-    .syscontrol_1_din(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_1_din),
+    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start),
+    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_done),
+    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_idle),
+    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_ready),
+    .syscontrol_1_din(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_1_din),
     .syscontrol_1_num_data_valid(3'd0),
     .syscontrol_1_fifo_cap(3'd0),
     .syscontrol_1_full_n(syscontrol_1_full_n),
-    .syscontrol_1_write(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_1_write),
-    .syscontrol_0_din(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_0_din),
+    .syscontrol_1_write(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_1_write),
+    .syscontrol_0_din(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_0_din),
     .syscontrol_0_num_data_valid(3'd0),
     .syscontrol_0_fifo_cap(3'd0),
     .syscontrol_0_full_n(syscontrol_0_full_n),
-    .syscontrol_0_write(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_0_write),
-    .syscontrol_2_din(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_2_din),
+    .syscontrol_0_write(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_0_write),
+    .syscontrol_2_din(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_2_din),
     .syscontrol_2_num_data_valid(3'd0),
     .syscontrol_2_fifo_cap(3'd0),
     .syscontrol_2_full_n(syscontrol_2_full_n),
-    .syscontrol_2_write(grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_2_write)
+    .syscontrol_2_write(grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_2_write)
 );
 
-TopPL_SystemControl_Pipeline_VITIS_LOOP_405_3 grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146(
+TopPL_SystemControl_Pipeline_VITIS_LOOP_529_3 grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start),
-    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_done),
-    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_idle),
-    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_ready),
+    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start),
+    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_done),
+    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_idle),
+    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_ready),
     .convSet_L_0_dout(convSet_L_0_dout),
     .convSet_L_0_num_data_valid(3'd0),
     .convSet_L_0_fifo_cap(3'd0),
     .convSet_L_0_empty_n(convSet_L_0_empty_n),
-    .convSet_L_0_read(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_L_0_read),
+    .convSet_L_0_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_0_read),
     .convSet_R_0_dout(convSet_R_0_dout),
     .convSet_R_0_num_data_valid(3'd0),
     .convSet_R_0_fifo_cap(3'd0),
     .convSet_R_0_empty_n(convSet_R_0_empty_n),
-    .convSet_R_0_read(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_R_0_read),
+    .convSet_R_0_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_0_read),
     .convSet_L_1_dout(convSet_L_1_dout),
     .convSet_L_1_num_data_valid(3'd0),
     .convSet_L_1_fifo_cap(3'd0),
     .convSet_L_1_empty_n(convSet_L_1_empty_n),
-    .convSet_L_1_read(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_L_1_read),
+    .convSet_L_1_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_1_read),
     .convSet_R_1_dout(convSet_R_1_dout),
     .convSet_R_1_num_data_valid(3'd0),
     .convSet_R_1_fifo_cap(3'd0),
     .convSet_R_1_empty_n(convSet_R_1_empty_n),
-    .convSet_R_1_read(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_R_1_read),
-    .conv32_lcssa11_out(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_conv32_lcssa11_out),
-    .conv32_lcssa11_out_ap_vld(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_conv32_lcssa11_out_ap_vld)
+    .convSet_R_1_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_1_read),
+    .convSet_L_2_dout(convSet_L_2_dout),
+    .convSet_L_2_num_data_valid(3'd0),
+    .convSet_L_2_fifo_cap(3'd0),
+    .convSet_L_2_empty_n(convSet_L_2_empty_n),
+    .convSet_L_2_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_2_read),
+    .convSet_R_2_dout(convSet_R_2_dout),
+    .convSet_R_2_num_data_valid(3'd0),
+    .convSet_R_2_fifo_cap(3'd0),
+    .convSet_R_2_empty_n(convSet_R_2_empty_n),
+    .convSet_R_2_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_2_read),
+    .convSet_L_3_dout(convSet_L_3_dout),
+    .convSet_L_3_num_data_valid(3'd0),
+    .convSet_L_3_fifo_cap(3'd0),
+    .convSet_L_3_empty_n(convSet_L_3_empty_n),
+    .convSet_L_3_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_3_read),
+    .convSet_R_3_dout(convSet_R_3_dout),
+    .convSet_R_3_num_data_valid(3'd0),
+    .convSet_R_3_fifo_cap(3'd0),
+    .convSet_R_3_empty_n(convSet_R_3_empty_n),
+    .convSet_R_3_read(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_3_read),
+    .conv32_lcssa11_out(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_conv32_lcssa11_out),
+    .conv32_lcssa11_out_ap_vld(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_conv32_lcssa11_out_ap_vld)
 );
 
-TopPL_SystemControl_Pipeline_VITIS_LOOP_425_7 grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159(
+TopPL_SystemControl_Pipeline_VITIS_LOOP_549_7 grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start),
-    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_done),
-    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_idle),
-    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_ready),
-    .syscontrol_1_din(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_1_din),
+    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start),
+    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_done),
+    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_idle),
+    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_ready),
+    .syscontrol_1_din(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_1_din),
     .syscontrol_1_num_data_valid(3'd0),
     .syscontrol_1_fifo_cap(3'd0),
     .syscontrol_1_full_n(syscontrol_1_full_n),
-    .syscontrol_1_write(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_1_write),
-    .syscontrol_0_din(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_0_din),
+    .syscontrol_1_write(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_1_write),
+    .syscontrol_0_din(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_0_din),
     .syscontrol_0_num_data_valid(3'd0),
     .syscontrol_0_fifo_cap(3'd0),
     .syscontrol_0_full_n(syscontrol_0_full_n),
-    .syscontrol_0_write(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_0_write),
-    .syscontrol_2_din(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_2_din),
+    .syscontrol_0_write(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_0_write),
+    .syscontrol_2_din(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_2_din),
     .syscontrol_2_num_data_valid(3'd0),
     .syscontrol_2_fifo_cap(3'd0),
     .syscontrol_2_full_n(syscontrol_2_full_n),
-    .syscontrol_2_write(grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_2_write)
+    .syscontrol_2_write(grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_2_write)
 );
 
-TopPL_SystemControl_Pipeline_VITIS_LOOP_419_6 grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169(
+TopPL_SystemControl_Pipeline_VITIS_LOOP_543_6 grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start),
-    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_done),
-    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_idle),
-    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_ready),
-    .syscontrol_1_din(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_1_din),
+    .ap_start(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start),
+    .ap_done(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_done),
+    .ap_idle(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_idle),
+    .ap_ready(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_ready),
+    .syscontrol_1_din(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_1_din),
     .syscontrol_1_num_data_valid(3'd0),
     .syscontrol_1_fifo_cap(3'd0),
     .syscontrol_1_full_n(syscontrol_1_full_n),
-    .syscontrol_1_write(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_1_write),
-    .syscontrol_0_din(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_0_din),
+    .syscontrol_1_write(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_1_write),
+    .syscontrol_0_din(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_0_din),
     .syscontrol_0_num_data_valid(3'd0),
     .syscontrol_0_fifo_cap(3'd0),
     .syscontrol_0_full_n(syscontrol_0_full_n),
-    .syscontrol_0_write(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_0_write),
-    .syscontrol_2_din(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_2_din),
+    .syscontrol_0_write(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_0_write),
+    .syscontrol_2_din(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_2_din),
     .syscontrol_2_num_data_valid(3'd0),
     .syscontrol_2_fifo_cap(3'd0),
     .syscontrol_2_full_n(syscontrol_2_full_n),
-    .syscontrol_2_write(grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_2_write)
+    .syscontrol_2_write(grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_2_write)
 );
 
 TopPL_fpext_32ns_64_1_no_dsp_1 #(
@@ -582,9 +650,9 @@ TopPL_fpext_32ns_64_1_no_dsp_1 #(
     .NUM_STAGE( 1 ),
     .din0_WIDTH( 32 ),
     .dout_WIDTH( 64 ))
-fpext_32ns_64_1_no_dsp_1_U22(
-    .din0(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_conv32_lcssa11_out),
-    .dout(tmp_fu_179_p1)
+fpext_32ns_64_1_no_dsp_1_U26(
+    .din0(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_conv32_lcssa11_out),
+    .dout(tmp_fu_195_p1)
 );
 
 TopPL_fcmp_32ns_32ns_1_1_no_dsp_1 #(
@@ -593,19 +661,19 @@ TopPL_fcmp_32ns_32ns_1_1_no_dsp_1 #(
     .din0_WIDTH( 32 ),
     .din1_WIDTH( 32 ),
     .dout_WIDTH( 1 ))
-fcmp_32ns_32ns_1_1_no_dsp_1_U23(
-    .din0(grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_conv32_lcssa11_out),
+fcmp_32ns_32ns_1_1_no_dsp_1_U27(
+    .din0(grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_conv32_lcssa11_out),
     .din1(32'd897988541),
     .opcode(5'd4),
-    .dout(tmp_2_fu_182_p2)
+    .dout(tmp_2_fu_198_p2)
 );
 
-TopPL_printdouble printdouble_U24(
+TopPL_printdouble printdouble_U28(
     .ap_clk(ap_clk),
     .ap_rst(1'b0),
     .fmt(32'd2),
-    .v(printdouble_ln39_fu_286_p1),
-    .ap_ce(printdouble_ln39_fu_286_ap_ce)
+    .v(printdouble_ln39_fu_302_p1),
+    .ap_ce(printdouble_ln39_fu_302_ap_ce)
 );
 
 always @ (posedge ap_clk) begin
@@ -622,7 +690,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
+        end else if (((grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -630,48 +698,48 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start_reg <= 1'b0;
+        grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start_reg <= 1'b1;
-        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_ready == 1'b1)) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start_reg <= 1'b0;
+            grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start_reg <= 1'b1;
+        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_ready == 1'b1)) begin
+            grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start_reg <= 1'b0;
+        grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state5)) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start_reg <= 1'b1;
-        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_ready == 1'b1)) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start_reg <= 1'b0;
+            grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start_reg <= 1'b1;
+        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_ready == 1'b1)) begin
+            grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start_reg <= 1'b0;
+        grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start_reg <= 1'b0;
     end else begin
-        if (((or_ln418_reg_399 == 1'd1) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start_reg <= 1'b1;
-        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_ready == 1'b1)) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start_reg <= 1'b0;
+        if (((or_ln542_reg_415 == 1'd1) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
+            grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start_reg <= 1'b1;
+        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_ready == 1'b1)) begin
+            grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start_reg <= 1'b0;
+        grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start_reg <= 1'b0;
     end else begin
-        if (((or_ln418_reg_399 == 1'd0) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start_reg <= 1'b1;
-        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_ready == 1'b1)) begin
-            grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start_reg <= 1'b0;
+        if (((or_ln542_reg_415 == 1'd0) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
+            grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start_reg <= 1'b1;
+        end else if ((grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_ready == 1'b1)) begin
+            grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start_reg <= 1'b0;
         end
     end
 end
@@ -690,23 +758,23 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
-        iter_fu_100 <= 31'd0;
-    end else if (((or_ln418_reg_399 == 1'd0) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
-        iter_fu_100 <= add_ln417_reg_382;
+        iter_fu_108 <= 31'd0;
+    end else if (((or_ln542_reg_415 == 1'd0) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
+        iter_fu_108 <= add_ln541_reg_398;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        add_ln417_reg_382 <= add_ln417_fu_209_p2;
-        gmem3_addr_reg_388 <= sext_ln415_fu_246_p1;
-        icmp_ln418_2_reg_394 <= icmp_ln418_2_fu_256_p2;
+        add_ln541_reg_398 <= add_ln541_fu_225_p2;
+        gmem3_addr_reg_404 <= sext_ln539_fu_262_p1;
+        icmp_ln542_2_reg_410 <= icmp_ln542_2_fu_272_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state8) & (m_axi_gmem3_WREADY == 1'b1))) begin
-        or_ln418_reg_399 <= or_ln418_fu_343_p2;
+        or_ln542_reg_415 <= or_ln542_fu_359_p2;
     end
 end
 
@@ -781,7 +849,7 @@ assign ap_ST_fsm_state38_blk = 1'b0;
 assign ap_ST_fsm_state39_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_done == 1'b0)) begin
+    if ((grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_done == 1'b0)) begin
         ap_ST_fsm_state3_blk = 1'b1;
     end else begin
         ap_ST_fsm_state3_blk = 1'b0;
@@ -853,7 +921,7 @@ assign ap_ST_fsm_state68_blk = 1'b0;
 assign ap_ST_fsm_state69_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_done == 1'b0)) begin
+    if ((grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_done == 1'b0)) begin
         ap_ST_fsm_state6_blk = 1'b1;
     end else begin
         ap_ST_fsm_state6_blk = 1'b0;
@@ -881,7 +949,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_done == 1'b0)) begin
+    if ((grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_done == 1'b0)) begin
         ap_ST_fsm_state77_blk = 1'b1;
     end else begin
         ap_ST_fsm_state77_blk = 1'b0;
@@ -889,7 +957,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_done == 1'b0)) begin
+    if ((grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_done == 1'b0)) begin
         ap_ST_fsm_state78_blk = 1'b1;
     end else begin
         ap_ST_fsm_state78_blk = 1'b0;
@@ -915,7 +983,7 @@ end
 assign ap_ST_fsm_state9_blk = 1'b0;
 
 always @ (*) begin
-    if (((grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
+    if (((grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -932,7 +1000,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        convSet_L_0_read = grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_L_0_read;
+        convSet_L_0_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_0_read;
     end else begin
         convSet_L_0_read = 1'b0;
     end
@@ -940,7 +1008,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        convSet_L_1_read = grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_L_1_read;
+        convSet_L_1_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_1_read;
     end else begin
         convSet_L_1_read = 1'b0;
     end
@@ -948,7 +1016,23 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        convSet_R_0_read = grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_R_0_read;
+        convSet_L_2_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_2_read;
+    end else begin
+        convSet_L_2_read = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        convSet_L_3_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_L_3_read;
+    end else begin
+        convSet_L_3_read = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        convSet_R_0_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_0_read;
     end else begin
         convSet_R_0_read = 1'b0;
     end
@@ -956,9 +1040,25 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        convSet_R_1_read = grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_convSet_R_1_read;
+        convSet_R_1_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_1_read;
     end else begin
         convSet_R_1_read = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        convSet_R_2_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_2_read;
+    end else begin
+        convSet_R_2_read = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        convSet_R_3_read = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_convSet_R_3_read;
+    end else begin
+        convSet_R_3_read = 1'b0;
     end
 end
 
@@ -987,7 +1087,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
+    if (((grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
         internal_ap_ready = 1'b1;
     end else begin
         internal_ap_ready = 1'b0;
@@ -1020,9 +1120,9 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state8) & (m_axi_gmem3_WREADY == 1'b1))) begin
-        printdouble_ln39_fu_286_ap_ce = 1'b1;
+        printdouble_ln39_fu_302_ap_ce = 1'b1;
     end else begin
-        printdouble_ln39_fu_286_ap_ce = 1'b0;
+        printdouble_ln39_fu_302_ap_ce = 1'b0;
     end
 end
 
@@ -1044,23 +1144,23 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state78)) begin
-        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_0_din;
+        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_0_din;
     end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_0_din;
+        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_0_din;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_0_din;
+        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_0_din;
     end else begin
-        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_0_din;
+        syscontrol_0_din = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_0_din;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state78)) begin
-        syscontrol_0_write = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_0_write;
+        syscontrol_0_write = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_0_write;
     end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        syscontrol_0_write = grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_0_write;
+        syscontrol_0_write = grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_0_write;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        syscontrol_0_write = grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_0_write;
+        syscontrol_0_write = grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_0_write;
     end else begin
         syscontrol_0_write = 1'b0;
     end
@@ -1068,23 +1168,23 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state78)) begin
-        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_1_din;
+        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_1_din;
     end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_1_din;
+        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_1_din;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_1_din;
+        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_1_din;
     end else begin
-        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_1_din;
+        syscontrol_1_din = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_1_din;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state78)) begin
-        syscontrol_1_write = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_1_write;
+        syscontrol_1_write = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_1_write;
     end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        syscontrol_1_write = grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_1_write;
+        syscontrol_1_write = grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_1_write;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        syscontrol_1_write = grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_1_write;
+        syscontrol_1_write = grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_1_write;
     end else begin
         syscontrol_1_write = 1'b0;
     end
@@ -1092,23 +1192,23 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state78)) begin
-        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_2_din;
+        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_2_din;
     end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_2_din;
+        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_2_din;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_2_din;
+        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_2_din;
     end else begin
-        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_2_din;
+        syscontrol_2_din = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_2_din;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state78)) begin
-        syscontrol_2_write = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_syscontrol_2_write;
+        syscontrol_2_write = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_syscontrol_2_write;
     end else if ((1'b1 == ap_CS_fsm_state77)) begin
-        syscontrol_2_write = grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_syscontrol_2_write;
+        syscontrol_2_write = grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_syscontrol_2_write;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        syscontrol_2_write = grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_syscontrol_2_write;
+        syscontrol_2_write = grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_syscontrol_2_write;
     end else begin
         syscontrol_2_write = 1'b0;
     end
@@ -1127,7 +1227,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
-            if (((grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+            if (((grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
                 ap_NS_fsm = ap_ST_fsm_state4;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -1140,7 +1240,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state6;
         end
         ap_ST_fsm_state6 : begin
-            if (((grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+            if (((grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
                 ap_NS_fsm = ap_ST_fsm_state7;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state6;
@@ -1362,23 +1462,23 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state76;
         end
         ap_ST_fsm_state76 : begin
-            if (((or_ln418_reg_399 == 1'd1) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
+            if (((or_ln542_reg_415 == 1'd1) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state78;
-            end else if (((or_ln418_reg_399 == 1'd0) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
+            end else if (((or_ln542_reg_415 == 1'd0) & (1'b1 == ap_CS_fsm_state76) & (m_axi_gmem3_BVALID == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state77;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state76;
             end
         end
         ap_ST_fsm_state77 : begin
-            if (((grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state77))) begin
+            if (((grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state77))) begin
                 ap_NS_fsm = ap_ST_fsm_state5;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state77;
             end
         end
         ap_ST_fsm_state78 : begin
-            if (((grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
+            if (((grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state78))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state78;
@@ -1390,11 +1490,11 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln415_fu_231_p2 = (zext_ln415_fu_227_p1 + ConvArray);
+assign add_ln539_fu_247_p2 = (zext_ln539_fu_243_p1 + ConvArray);
 
-assign add_ln417_fu_209_p2 = (iter_fu_100 + 31'd1);
+assign add_ln541_fu_225_p2 = (iter_fu_108 + 31'd1);
 
-assign and_ln418_fu_332_p2 = (tmp_2_fu_182_p2 & or_ln418_1_fu_318_p2);
+assign and_ln542_fu_348_p2 = (tmp_2_fu_198_p2 & or_ln542_1_fu_334_p2);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -1422,21 +1522,21 @@ end
 
 assign ap_ready = internal_ap_ready;
 
-assign bitcast_ln415_fu_269_p1 = grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_conv32_lcssa11_out;
+assign bitcast_ln539_fu_285_p1 = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_conv32_lcssa11_out;
 
-assign grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_395_1_fu_136_ap_start_reg;
+assign grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144_ap_start_reg;
 
-assign grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_405_3_fu_146_ap_start_reg;
+assign grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154_ap_start_reg;
 
-assign grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_419_6_fu_169_ap_start_reg;
+assign grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185_ap_start_reg;
 
-assign grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_425_7_fu_159_ap_start_reg;
+assign grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start = grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175_ap_start_reg;
 
-assign icmp_ln418_1_fu_312_p2 = ((trunc_ln418_fu_302_p1 == 23'd0) ? 1'b1 : 1'b0);
+assign icmp_ln542_1_fu_328_p2 = ((trunc_ln542_fu_318_p1 == 23'd0) ? 1'b1 : 1'b0);
 
-assign icmp_ln418_2_fu_256_p2 = (($signed(zext_ln405_fu_215_p1) < $signed(ITER)) ? 1'b1 : 1'b0);
+assign icmp_ln542_2_fu_272_p2 = (($signed(zext_ln529_fu_231_p1) < $signed(ITER)) ? 1'b1 : 1'b0);
 
-assign icmp_ln418_fu_306_p2 = ((tmp_1_fu_292_p4 != 8'd255) ? 1'b1 : 1'b0);
+assign icmp_ln542_fu_322_p2 = ((tmp_1_fu_308_p4 != 8'd255) ? 1'b1 : 1'b0);
 
 assign m_axi_gmem3_ARADDR = 64'd0;
 
@@ -1462,7 +1562,7 @@ assign m_axi_gmem3_ARUSER = 1'd0;
 
 assign m_axi_gmem3_ARVALID = 1'b0;
 
-assign m_axi_gmem3_AWADDR = gmem3_addr_reg_388;
+assign m_axi_gmem3_AWADDR = gmem3_addr_reg_404;
 
 assign m_axi_gmem3_AWBURST = 2'd0;
 
@@ -1486,7 +1586,7 @@ assign m_axi_gmem3_AWUSER = 1'd0;
 
 assign m_axi_gmem3_RREADY = 1'b0;
 
-assign m_axi_gmem3_WDATA = bitcast_ln415_fu_269_p1;
+assign m_axi_gmem3_WDATA = bitcast_ln539_fu_285_p1;
 
 assign m_axi_gmem3_WID = 1'd0;
 
@@ -1496,28 +1596,28 @@ assign m_axi_gmem3_WSTRB = 4'd15;
 
 assign m_axi_gmem3_WUSER = 1'd0;
 
-assign or_ln418_1_fu_318_p2 = (icmp_ln418_fu_306_p2 | icmp_ln418_1_fu_312_p2);
+assign or_ln542_1_fu_334_p2 = (icmp_ln542_fu_322_p2 | icmp_ln542_1_fu_328_p2);
 
-assign or_ln418_fu_343_p2 = (xor_ln418_fu_338_p2 | and_ln418_fu_332_p2);
+assign or_ln542_fu_359_p2 = (xor_ln542_fu_354_p2 | and_ln542_fu_348_p2);
 
-assign printdouble_ln39_fu_286_p1 = tmp_fu_179_p1;
+assign printdouble_ln39_fu_302_p1 = tmp_fu_195_p1;
 
-assign sext_ln415_fu_246_p1 = $signed(trunc_ln_fu_236_p4);
+assign sext_ln539_fu_262_p1 = $signed(trunc_ln_fu_252_p4);
 
 assign start_out = real_start;
 
-assign tmp_13_fu_219_p3 = {{iter_fu_100}, {2'd0}};
+assign tmp_1_fu_308_p4 = {{bitcast_ln539_fu_285_p1[30:23]}};
 
-assign tmp_1_fu_292_p4 = {{bitcast_ln415_fu_269_p1[30:23]}};
+assign tmp_25_fu_235_p3 = {{iter_fu_108}, {2'd0}};
 
-assign trunc_ln418_fu_302_p1 = bitcast_ln415_fu_269_p1[22:0];
+assign trunc_ln542_fu_318_p1 = bitcast_ln539_fu_285_p1[22:0];
 
-assign trunc_ln_fu_236_p4 = {{add_ln415_fu_231_p2[63:2]}};
+assign trunc_ln_fu_252_p4 = {{add_ln539_fu_247_p2[63:2]}};
 
-assign xor_ln418_fu_338_p2 = (icmp_ln418_2_reg_394 ^ 1'd1);
+assign xor_ln542_fu_354_p2 = (icmp_ln542_2_reg_410 ^ 1'd1);
 
-assign zext_ln405_fu_215_p1 = add_ln417_fu_209_p2;
+assign zext_ln529_fu_231_p1 = add_ln541_fu_225_p2;
 
-assign zext_ln415_fu_227_p1 = tmp_13_fu_219_p3;
+assign zext_ln539_fu_243_p1 = tmp_25_fu_235_p3;
 
 endmodule //TopPL_SystemControl

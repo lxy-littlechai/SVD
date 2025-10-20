@@ -1,18 +1,17 @@
 `timescale 1 ns / 1 ps
 
-module TopPL_hls_deadlock_idx14_monitor ( // for module TopPL_TopPL_inst.Receive_U0
+module TopPL_hls_deadlock_idx14_monitor ( // for module TopPL_TopPL_inst.Send_U0.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0
     input wire clock,
     input wire reset,
-    input wire [19:0] axis_block_sigs,
-    input wire [49:0] inst_idle_sigs,
-    input wire [22:0] inst_block_sigs,
+    input wire [35:0] axis_block_sigs,
+    input wire [81:0] inst_idle_sigs,
+    input wire [38:0] inst_block_sigs,
     output wire block
 );
 
 // signal declare
 reg monitor_find_block;
 wire idx15_block;
-wire idx25_block;
 wire sub_parallel_block;
 wire all_sub_parallel_has_block;
 wire all_sub_single_has_block;
@@ -20,9 +19,10 @@ wire cur_axis_has_block;
 wire seq_is_axis_block;
 
 assign block = monitor_find_block;
+assign idx15_block = axis_block_sigs[11];
 assign all_sub_parallel_has_block = 1'b0;
-assign all_sub_single_has_block = 1'b0 | (idx15_block & (axis_block_sigs[11] | axis_block_sigs[10] | axis_block_sigs[13] | axis_block_sigs[12] | axis_block_sigs[15] | axis_block_sigs[14] | axis_block_sigs[17] | axis_block_sigs[16])) | (idx25_block & (axis_block_sigs[18] | axis_block_sigs[19]));
-assign cur_axis_has_block = 1'b0;
+assign all_sub_single_has_block = 1'b0 | (idx15_block & (axis_block_sigs[11]));
+assign cur_axis_has_block = 1'b0 | axis_block_sigs[10];
 assign seq_is_axis_block = all_sub_parallel_has_block | all_sub_single_has_block | cur_axis_has_block;
 
 always @(posedge clock) begin
@@ -36,22 +36,4 @@ end
 
 
 // instant sub module
- TopPL_hls_deadlock_idx15_monitor TopPL_hls_deadlock_idx15_monitor_U (
-    .clock(clock),
-    .reset(reset),
-    .axis_block_sigs(axis_block_sigs),
-    .inst_idle_sigs(inst_idle_sigs),
-    .inst_block_sigs(inst_block_sigs),
-    .block(idx15_block)
-);
-
- TopPL_hls_deadlock_idx25_monitor TopPL_hls_deadlock_idx25_monitor_U (
-    .clock(clock),
-    .reset(reset),
-    .axis_block_sigs(axis_block_sigs),
-    .inst_idle_sigs(inst_idle_sigs),
-    .inst_block_sigs(inst_block_sigs),
-    .block(idx25_block)
-);
-
 endmodule

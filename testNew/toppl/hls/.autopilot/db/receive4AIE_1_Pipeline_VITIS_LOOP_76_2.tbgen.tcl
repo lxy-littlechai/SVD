@@ -15,28 +15,28 @@ set DLRegItemOffset 0
 set C_modelName {receive4AIE.1_Pipeline_VITIS_LOOP_76_2}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ data_temp_25 int 128 regular  }
-	{ data_temp_26 int 128 regular  }
+	{ data_temp_57 int 128 regular  }
+	{ data_temp_58 int 128 regular  }
 	{ sweep_rx2_0_V_data_V int 128 regular {axi_s 0 volatile  { sweep_rx2_0 Data } }  }
 	{ sweep_rx2_0_V_keep_V int 16 regular {axi_s 0 volatile  { sweep_rx2_0 Keep } }  }
 	{ sweep_rx2_0_V_strb_V int 16 regular {axi_s 0 volatile  { sweep_rx2_0 Strb } }  }
 	{ sweep_rx2_0_V_last_V int 1 regular {axi_s 0 volatile  { sweep_rx2_0 Last } }  }
 	{ receive_fifo_L_1 int 128 regular {fifo 1 volatile }  }
-	{ data_temp_29_out int 128 regular {pointer 1}  }
-	{ data_temp_28_out int 128 regular {pointer 2}  }
+	{ data_temp_61_out int 128 regular {pointer 1}  }
+	{ data_temp_60_out int 128 regular {pointer 2}  }
 }
 set hasAXIMCache 0
 set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
-	{ "Name" : "data_temp_25", "interface" : "wire", "bitwidth" : 128, "direction" : "READONLY"} , 
- 	{ "Name" : "data_temp_26", "interface" : "wire", "bitwidth" : 128, "direction" : "READONLY"} , 
+	{ "Name" : "data_temp_57", "interface" : "wire", "bitwidth" : 128, "direction" : "READONLY"} , 
+ 	{ "Name" : "data_temp_58", "interface" : "wire", "bitwidth" : 128, "direction" : "READONLY"} , 
  	{ "Name" : "sweep_rx2_0_V_data_V", "interface" : "axis", "bitwidth" : 128, "direction" : "READONLY"} , 
  	{ "Name" : "sweep_rx2_0_V_keep_V", "interface" : "axis", "bitwidth" : 16, "direction" : "READONLY"} , 
  	{ "Name" : "sweep_rx2_0_V_strb_V", "interface" : "axis", "bitwidth" : 16, "direction" : "READONLY"} , 
  	{ "Name" : "sweep_rx2_0_V_last_V", "interface" : "axis", "bitwidth" : 1, "direction" : "READONLY"} , 
  	{ "Name" : "receive_fifo_L_1", "interface" : "fifo", "bitwidth" : 128, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "data_temp_29_out", "interface" : "wire", "bitwidth" : 128, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "data_temp_28_out", "interface" : "wire", "bitwidth" : 128, "direction" : "READWRITE"} ]}
+ 	{ "Name" : "data_temp_61_out", "interface" : "wire", "bitwidth" : 128, "direction" : "WRITEONLY"} , 
+ 	{ "Name" : "data_temp_60_out", "interface" : "wire", "bitwidth" : 128, "direction" : "READWRITE"} ]}
 # RTL Port declarations: 
 set portNum 24
 set portList { 
@@ -52,18 +52,18 @@ set portList {
 	{ receive_fifo_L_1_fifo_cap sc_in sc_lv 9 signal 6 } 
 	{ receive_fifo_L_1_full_n sc_in sc_logic 1 signal 6 } 
 	{ receive_fifo_L_1_write sc_out sc_logic 1 signal 6 } 
-	{ data_temp_25 sc_in sc_lv 128 signal 0 } 
-	{ data_temp_26 sc_in sc_lv 128 signal 1 } 
+	{ data_temp_57 sc_in sc_lv 128 signal 0 } 
+	{ data_temp_58 sc_in sc_lv 128 signal 1 } 
 	{ sweep_rx2_0_TDATA sc_in sc_lv 128 signal 2 } 
 	{ sweep_rx2_0_TREADY sc_out sc_logic 1 inacc 5 } 
 	{ sweep_rx2_0_TKEEP sc_in sc_lv 16 signal 3 } 
 	{ sweep_rx2_0_TSTRB sc_in sc_lv 16 signal 4 } 
 	{ sweep_rx2_0_TLAST sc_in sc_lv 1 signal 5 } 
-	{ data_temp_29_out sc_out sc_lv 128 signal 7 } 
-	{ data_temp_29_out_ap_vld sc_out sc_logic 1 outvld 7 } 
-	{ data_temp_28_out_i sc_in sc_lv 128 signal 8 } 
-	{ data_temp_28_out_o sc_out sc_lv 128 signal 8 } 
-	{ data_temp_28_out_o_ap_vld sc_out sc_logic 1 outvld 8 } 
+	{ data_temp_61_out sc_out sc_lv 128 signal 7 } 
+	{ data_temp_61_out_ap_vld sc_out sc_logic 1 outvld 7 } 
+	{ data_temp_60_out_i sc_in sc_lv 128 signal 8 } 
+	{ data_temp_60_out_o sc_out sc_lv 128 signal 8 } 
+	{ data_temp_60_out_o_ap_vld sc_out sc_logic 1 outvld 8 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -78,18 +78,18 @@ set NewPortList {[
  	{ "name": "receive_fifo_L_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "fifo_cap" }} , 
  	{ "name": "receive_fifo_L_1_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "full_n" }} , 
  	{ "name": "receive_fifo_L_1_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "write" }} , 
- 	{ "name": "data_temp_25", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_25", "role": "default" }} , 
- 	{ "name": "data_temp_26", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_26", "role": "default" }} , 
+ 	{ "name": "data_temp_57", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_57", "role": "default" }} , 
+ 	{ "name": "data_temp_58", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_58", "role": "default" }} , 
  	{ "name": "sweep_rx2_0_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "sweep_rx2_0_V_data_V", "role": "default" }} , 
  	{ "name": "sweep_rx2_0_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "sweep_rx2_0_V_last_V", "role": "default" }} , 
  	{ "name": "sweep_rx2_0_TKEEP", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "sweep_rx2_0_V_keep_V", "role": "default" }} , 
  	{ "name": "sweep_rx2_0_TSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "sweep_rx2_0_V_strb_V", "role": "default" }} , 
  	{ "name": "sweep_rx2_0_TLAST", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "sweep_rx2_0_V_last_V", "role": "default" }} , 
- 	{ "name": "data_temp_29_out", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_29_out", "role": "default" }} , 
- 	{ "name": "data_temp_29_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "data_temp_29_out", "role": "ap_vld" }} , 
- 	{ "name": "data_temp_28_out_i", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_28_out", "role": "i" }} , 
- 	{ "name": "data_temp_28_out_o", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_28_out", "role": "o" }} , 
- 	{ "name": "data_temp_28_out_o_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "data_temp_28_out", "role": "o_ap_vld" }}  ]}
+ 	{ "name": "data_temp_61_out", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_61_out", "role": "default" }} , 
+ 	{ "name": "data_temp_61_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "data_temp_61_out", "role": "ap_vld" }} , 
+ 	{ "name": "data_temp_60_out_i", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_60_out", "role": "i" }} , 
+ 	{ "name": "data_temp_60_out_o", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "data_temp_60_out", "role": "o" }} , 
+ 	{ "name": "data_temp_60_out_o_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "data_temp_60_out", "role": "o_ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -107,8 +107,8 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "data_temp_25", "Type" : "None", "Direction" : "I"},
-			{"Name" : "data_temp_26", "Type" : "None", "Direction" : "I"},
+			{"Name" : "data_temp_57", "Type" : "None", "Direction" : "I"},
+			{"Name" : "data_temp_58", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sweep_rx2_0_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "sweep_rx2_0",
 				"BlockSignal" : [
 					{"Name" : "sweep_rx2_0_TDATA_blk_n", "Type" : "RtlSignal"}]},
@@ -118,8 +118,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "receive_fifo_L_1", "Type" : "Fifo", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "receive_fifo_L_1_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "data_temp_29_out", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "data_temp_28_out", "Type" : "OVld", "Direction" : "IO"}],
+			{"Name" : "data_temp_61_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "data_temp_60_out", "Type" : "OVld", "Direction" : "IO"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_76_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -128,15 +128,15 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	receive4AIE_1_Pipeline_VITIS_LOOP_76_2 {
-		data_temp_25 {Type I LastRead 0 FirstWrite -1}
-		data_temp_26 {Type I LastRead 0 FirstWrite -1}
+		data_temp_57 {Type I LastRead 0 FirstWrite -1}
+		data_temp_58 {Type I LastRead 0 FirstWrite -1}
 		sweep_rx2_0_V_data_V {Type I LastRead 1 FirstWrite -1}
 		sweep_rx2_0_V_keep_V {Type I LastRead 1 FirstWrite -1}
 		sweep_rx2_0_V_strb_V {Type I LastRead 1 FirstWrite -1}
 		sweep_rx2_0_V_last_V {Type I LastRead 1 FirstWrite -1}
 		receive_fifo_L_1 {Type O LastRead -1 FirstWrite 2}
-		data_temp_29_out {Type O LastRead -1 FirstWrite 1}
-		data_temp_28_out {Type IO LastRead 1 FirstWrite 0}}}
+		data_temp_61_out {Type O LastRead -1 FirstWrite 1}
+		data_temp_60_out {Type IO LastRead 1 FirstWrite 0}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -150,13 +150,13 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	data_temp_25 { ap_none {  { data_temp_25 in_data 0 128 } } }
-	data_temp_26 { ap_none {  { data_temp_26 in_data 0 128 } } }
+	data_temp_57 { ap_none {  { data_temp_57 in_data 0 128 } } }
+	data_temp_58 { ap_none {  { data_temp_58 in_data 0 128 } } }
 	sweep_rx2_0_V_data_V { axis {  { sweep_rx2_0_TVALID in_vld 0 1 }  { sweep_rx2_0_TDATA in_data 0 128 } } }
 	sweep_rx2_0_V_keep_V { axis {  { sweep_rx2_0_TKEEP in_data 0 16 } } }
 	sweep_rx2_0_V_strb_V { axis {  { sweep_rx2_0_TSTRB in_data 0 16 } } }
 	sweep_rx2_0_V_last_V { axis {  { sweep_rx2_0_TREADY in_acc 1 1 }  { sweep_rx2_0_TLAST in_data 0 1 } } }
 	receive_fifo_L_1 { ap_fifo {  { receive_fifo_L_1_din fifo_data_in 1 128 }  { receive_fifo_L_1_num_data_valid fifo_status_num_data_valid 0 9 }  { receive_fifo_L_1_fifo_cap fifo_update 0 9 }  { receive_fifo_L_1_full_n fifo_status 0 1 }  { receive_fifo_L_1_write fifo_port_we 1 1 } } }
-	data_temp_29_out { ap_vld {  { data_temp_29_out out_data 1 128 }  { data_temp_29_out_ap_vld out_vld 1 1 } } }
-	data_temp_28_out { ap_ovld {  { data_temp_28_out_i in_data 0 128 }  { data_temp_28_out_o out_data 1 128 }  { data_temp_28_out_o_ap_vld out_vld 1 1 } } }
+	data_temp_61_out { ap_vld {  { data_temp_61_out out_data 1 128 }  { data_temp_61_out_ap_vld out_vld 1 1 } } }
+	data_temp_60_out { ap_ovld {  { data_temp_60_out_i in_data 0 128 }  { data_temp_60_out_o out_data 1 128 }  { data_temp_60_out_o_ap_vld out_vld 1 1 } } }
 }

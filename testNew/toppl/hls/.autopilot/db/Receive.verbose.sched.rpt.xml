@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Receive'" level="0">
-<item name = "Date">Sun Oct 19 23:23:13 2025
+<item name = "Date">Mon Oct 20 21:14:52 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_257_1">?, ?, 1925, -, -, ?, no</column>
-<column name="- VITIS_LOOP_223_1">496, 496, 31, -, -, 16, no</column>
+<column name="- VITIS_LOOP_311_1">?, ?, 965, -, -, ?, no</column>
+<column name="- VITIS_LOOP_273_1">496, 496, 31, -, -, 16, no</column>
 </table>
 </item>
 </section>

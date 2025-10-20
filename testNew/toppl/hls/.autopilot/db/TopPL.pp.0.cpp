@@ -6791,7 +6791,7 @@ const int COL = 32;
 const int BLOCK_SIZE = 2;
 const int BLOCK_NUM = COL/BLOCK_SIZE;
 const int BLOCK_PAIR_NUM = BLOCK_NUM/2;
-const int PARALLEL_NUM = 2;
+const int PARALLEL_NUM = 4;
 const float EPS = 1e-6;
 # 3 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/config.h" 2
 # 1 "/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_int.h" 1
@@ -15578,7 +15578,7 @@ void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 send_fifo_L[PARALLEL_N
   const int BLOCK_DATA_SIZE = BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   VITIS_LOOP_140_1: for(int i = 0;i < BLOCK_NUM;i ++) {
 
-      if(2*i <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= 2*i+1) {
+      if(0 <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= 1) {
         if(i&1) {
           VITIS_LOOP_144_2: for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
@@ -15595,7 +15595,7 @@ void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 send_fifo_L[PARALLEL_N
         }
       }
 
-      if(2*i <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= 2*i+1) {
+      if(2 <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= 3) {
         if(i&1) {
           VITIS_LOOP_161_4: for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
@@ -15612,6 +15612,40 @@ void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 send_fifo_L[PARALLEL_N
         }
       }
 
+      if(4 <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= 5) {
+        if(i&1) {
+          VITIS_LOOP_178_6: for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
+            send_fifo_R[2].write(tmp);
+          }
+        }
+        else {
+          VITIS_LOOP_185_7: for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
+            send_fifo_L[2].write(tmp);
+          }
+        }
+      }
+
+      if(6 <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= 7) {
+        if(i&1) {
+          VITIS_LOOP_195_8: for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
+            send_fifo_R[3].write(tmp);
+          }
+        }
+        else {
+          VITIS_LOOP_202_9: for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
+            send_fifo_L[3].write(tmp);
+          }
+        }
+      }
+
 
   }
 }
@@ -15623,6 +15657,10 @@ void Send(axis_stream_sys& syscontrol,
 
                     axis_pkt_stream& sweep_tx1_0, axis_pkt_stream& sweep_tx1_1,
 
+                    axis_pkt_stream& sweep_tx2_0, axis_pkt_stream& sweep_tx2_1,
+
+                    axis_pkt_stream& sweep_tx3_0, axis_pkt_stream& sweep_tx3_1,
+
                     axis_pkt_stream& norm_tx0) {
 #pragma HLS bind_storage variable=fifo_L type=fifo impl=bram
 #pragma HLS bind_storage variable=fifo_R type=fifo impl=bram
@@ -15630,10 +15668,10 @@ void Send(axis_stream_sys& syscontrol,
 #pragma HLS INLINE off
  const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / PARALLEL_NUM;
 
-    VITIS_LOOP_194_1: while(true) {
+    VITIS_LOOP_232_1: while(true) {
       ap_uint<1> sig = syscontrol.read();
       if(sig == END) break;
-      VITIS_LOOP_197_2: for(int i = 0;i < SWEEP_STEP;i ++) {
+      VITIS_LOOP_235_2: for(int i = 0;i < SWEEP_STEP;i ++) {
 #pragma HLS dataflow
 
  send2AIE(fifo_L[0], sweep_tx0_0);
@@ -15642,10 +15680,16 @@ void Send(axis_stream_sys& syscontrol,
         send2AIE(fifo_L[1], sweep_tx1_0);
         send2AIE(fifo_R[1], sweep_tx1_1);
 
+        send2AIE(fifo_L[2], sweep_tx2_0);
+        send2AIE(fifo_R[2], sweep_tx2_1);
+
+        send2AIE(fifo_L[3], sweep_tx3_0);
+        send2AIE(fifo_R[3], sweep_tx3_1);
+
       }
     }
 
-    VITIS_LOOP_209_3: for(int i = 0;i < BLOCK_PAIR_NUM/PARALLEL_NUM;i ++) {
+    VITIS_LOOP_253_3: for(int i = 0;i < BLOCK_PAIR_NUM/PARALLEL_NUM;i ++) {
 
       send2AIE(fifo_L[0], norm_tx0);
       send2AIE(fifo_R[0], norm_tx0);
@@ -15653,13 +15697,19 @@ void Send(axis_stream_sys& syscontrol,
       send2AIE(fifo_L[1], norm_tx0);
       send2AIE(fifo_R[1], norm_tx0);
 
+      send2AIE(fifo_L[2], norm_tx0);
+      send2AIE(fifo_R[2], norm_tx0);
+
+      send2AIE(fifo_L[3], norm_tx0);
+      send2AIE(fifo_R[3], norm_tx0);
+
     }
 
 
 }
 
 void NormReceive(axis_stream_deep_128& receive_ddr_fifo, axis_pkt_stream& norm_rx0) {
-  VITIS_LOOP_223_1: for(int i = 0;i < BLOCK_NUM;i ++) {
+  VITIS_LOOP_273_1: for(int i = 0;i < BLOCK_NUM;i ++) {
     receive4DDR(receive_ddr_fifo, norm_rx0);
   }
 }
@@ -15668,8 +15718,8 @@ void FIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_stream_deep_128& recei
   ap_uint<W> sigma;
   ap_uint<W> data_temp;
 
-  VITIS_LOOP_232_1: for(int i = 0;i < COL;i ++) {
-    VITIS_LOOP_233_2: for(int j = 0;j < ROW/ELEM_NUM;j ++) {
+  VITIS_LOOP_282_1: for(int i = 0;i < COL;i ++) {
+    VITIS_LOOP_283_2: for(int j = 0;j < ROW/ELEM_NUM;j ++) {
 #pragma HLS PIPELINE II = 1
  U[i*ROW/ELEM_NUM + j] = receive_ddr_fifo.read();
     }
@@ -15685,6 +15735,10 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[PARALLEL_N
 
                        axis_pkt_stream& sweep_rx1_0, axis_pkt_stream& sweep_rx1_1,
 
+                       axis_pkt_stream& sweep_rx2_0, axis_pkt_stream& sweep_rx2_1,
+
+                       axis_pkt_stream& sweep_rx3_0, axis_pkt_stream& sweep_rx3_1,
+
                        axis_pkt_stream& norm_rx0) {
 #pragma HLS bind_storage variable=fifo_L type=fifo impl=uram
 #pragma HLS bind_storage variable=fifo_R type=fifo impl=uram
@@ -15693,11 +15747,11 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[PARALLEL_N
 
  const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / PARALLEL_NUM;
 
-    VITIS_LOOP_257_1: while(true) {
+    VITIS_LOOP_311_1: while(true) {
       ap_uint<1> sig = syscontrol.read();
       if(sig == END) break;
 
-      VITIS_LOOP_261_2: for(int i = 0;i < SWEEP_STEP;i ++) {
+      VITIS_LOOP_315_2: for(int i = 0;i < SWEEP_STEP;i ++) {
         hls::print("Receive i: %d\n", i);
 #pragma HLS dataflow
 
@@ -15707,12 +15761,24 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[PARALLEL_N
         float convL1 = receive4AIE(fifo_L[1], sweep_rx1_0);
         float convR1 = receive4AIE(fifo_R[1], sweep_rx1_1);
 
+        float convL2 = receive4AIE(fifo_L[2], sweep_rx2_0);
+        float convR2 = receive4AIE(fifo_R[2], sweep_rx2_1);
+
+        float convL3 = receive4AIE(fifo_L[3], sweep_rx3_0);
+        float convR3 = receive4AIE(fifo_R[3], sweep_rx3_1);
+
 
         convSet_L[0].write(convL0);
         convSet_R[0].write(convR0);
 
         convSet_L[1].write(convL1);
         convSet_R[1].write(convR1);
+
+        convSet_L[2].write(convL2);
+        convSet_R[2].write(convR2);
+
+        convSet_L[3].write(convL3);
+        convSet_R[3].write(convR3);
 
       }
 
@@ -15738,87 +15804,145 @@ void RoundRobin(axis_stream_sys& syscontrol,
 
   const int SINGLE_SWEEP_TIMES = (BLOCK_NUM-1);
 
-  VITIS_LOOP_302_1: while(true) {
+  VITIS_LOOP_368_1: while(true) {
     ap_uint<1> sig = syscontrol.read();
     hls::print("sig: %d\n", sig);
     if(sig == END) break;
 
-    VITIS_LOOP_307_2: for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
+    VITIS_LOOP_373_2: for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
 
       const int STAGE1_SIZE = BLOCK_SIZE*ROW/ELEM_NUM;
 
-        VITIS_LOOP_311_3: for(int j = 0;j < STAGE1_SIZE;j ++) {
+        VITIS_LOOP_377_3: for(int j = 0;j < STAGE1_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
  ap_uint<W> tmp_L0 = receive_fifo_L[0].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L0);
+          send_fifo_L[1].write(tmp_L0);
         }
 
-        VITIS_LOOP_317_4: for(int j = 0;j < STAGE1_SIZE;j ++) {
+        VITIS_LOOP_383_4: for(int j = 0;j < STAGE1_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
  ap_uint<W> tmp_L1 = receive_fifo_L[1].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L1);
+          send_fifo_L[2].write(tmp_L1);
+        }
+
+        VITIS_LOOP_389_5: for(int j = 0;j < STAGE1_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_L2 = receive_fifo_L[2].read();
+          send_fifo_L[3].write(tmp_L2);
+        }
+
+        VITIS_LOOP_395_6: for(int j = 0;j < STAGE1_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_L3 = receive_fifo_L[3].read();
+          send_fifo_L[0].write(tmp_L3);
         }
 
 
-      VITIS_LOOP_324_5: for(int j = 0;j < STAGE1_SIZE;j ++) {
+      VITIS_LOOP_402_7: for(int j = 0;j < STAGE1_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
  ap_uint<W> tmp_R0 = receive_fifo_R[0].read();
         send_fifo_L[0].write(tmp_R0);
       }
 
 
-        VITIS_LOOP_331_6: for(int j = 0;j < STAGE1_SIZE;j ++) {
+        VITIS_LOOP_409_8: for(int j = 0;j < STAGE1_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
  ap_uint<W> tmp_R1 = receive_fifo_R[1].read();
-          send_fifo_R[(i-1+PARALLEL_NUM)%PARALLEL_NUM].write(tmp_R1);
+          send_fifo_R[0].write(tmp_R1);
+        }
+
+        VITIS_LOOP_415_9: for(int j = 0;j < STAGE1_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_R2 = receive_fifo_R[2].read();
+          send_fifo_R[1].write(tmp_R2);
+        }
+
+        VITIS_LOOP_421_10: for(int j = 0;j < STAGE1_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_R3 = receive_fifo_R[3].read();
+          send_fifo_R[2].write(tmp_R3);
         }
 
 
 
       const int STAGE2_SIZE = (BLOCK_PAIR_NUM-2*PARALLEL_NUM)/PARALLEL_NUM*BLOCK_SIZE*ROW/ELEM_NUM;
 
-      VITIS_LOOP_341_7: for(int j = 0;j < STAGE2_SIZE;j ++) {
+      VITIS_LOOP_431_11: for(int j = 0;j < STAGE2_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
 
  ap_uint<W> tmp_L0 = receive_fifo_L[0].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L0);
+          send_fifo_L[1].write(tmp_L0);
           ap_uint<W> tmp_R0 = receive_fifo_R[0].read();
-          send_fifo_R[(i-1+PARALLEL_NUM)%PARALLEL_NUM].write(tmp_R0);
+          send_fifo_R[3].write(tmp_R0);
 
           ap_uint<W> tmp_L1 = receive_fifo_L[1].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L1);
+          send_fifo_L[2].write(tmp_L1);
           ap_uint<W> tmp_R1 = receive_fifo_R[1].read();
-          send_fifo_R[(i-1+PARALLEL_NUM)%PARALLEL_NUM].write(tmp_R1);
+          send_fifo_R[0].write(tmp_R1);
+
+          ap_uint<W> tmp_L2 = receive_fifo_L[2].read();
+          send_fifo_L[3].write(tmp_L2);
+          ap_uint<W> tmp_R2 = receive_fifo_R[2].read();
+          send_fifo_R[1].write(tmp_R2);
+
+          ap_uint<W> tmp_L3 = receive_fifo_L[3].read();
+          send_fifo_L[0].write(tmp_L3);
+          ap_uint<W> tmp_R3 = receive_fifo_R[3].read();
+          send_fifo_R[2].write(tmp_R3);
 
       }
 
       const int STAGE3_SIZE = BLOCK_SIZE*ROW/ELEM_NUM;
 
-        VITIS_LOOP_358_8: for(int j = 0;j < STAGE1_SIZE;j ++) {
+        VITIS_LOOP_458_12: for(int j = 0;j < STAGE3_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
  ap_uint<W> tmp_L0 = receive_fifo_L[0].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L0);
+          send_fifo_L[1].write(tmp_L0);
+        }
+
+        VITIS_LOOP_464_13: for(int j = 0;j < STAGE3_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_L1 = receive_fifo_L[1].read();
+          send_fifo_L[2].write(tmp_L1);
+        }
+
+        VITIS_LOOP_470_14: for(int j = 0;j < STAGE3_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_L2 = receive_fifo_L[2].read();
+          send_fifo_L[3].write(tmp_L2);
         }
 
 
-      VITIS_LOOP_365_9: for(int j = 0;j < STAGE1_SIZE;j ++) {
+      VITIS_LOOP_477_15: for(int j = 0;j < STAGE3_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
- ap_uint<W> tmp_L1 = receive_fifo_L[1].read();
-        send_fifo_R[PARALLEL_NUM-2].write(tmp_L1);
+ ap_uint<W> tmp_L3 = receive_fifo_L[3].read();
+        send_fifo_R[2].write(tmp_L3);
       }
 
 
-        VITIS_LOOP_372_10: for(int j = 0;j < STAGE1_SIZE;j ++) {
+        VITIS_LOOP_484_16: for(int j = 0;j < STAGE3_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
  ap_uint<W> tmp_R0 = receive_fifo_R[0].read();
-          send_fifo_R[(i-1+PARALLEL_NUM)%PARALLEL_NUM].write(tmp_R0);
+          send_fifo_R[3].write(tmp_R0);
+        }
+
+        VITIS_LOOP_490_17: for(int j = 0;j < STAGE3_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_R1 = receive_fifo_R[1].read();
+          send_fifo_R[0].write(tmp_R1);
+        }
+
+        VITIS_LOOP_496_18: for(int j = 0;j < STAGE3_SIZE;j ++) {
+#pragma HLS PIPELINE II = 1
+ ap_uint<W> tmp_R2 = receive_fifo_R[2].read();
+          send_fifo_R[1].write(tmp_R2);
         }
 
 
-      VITIS_LOOP_379_11: for(int j = 0;j < STAGE1_SIZE;j ++) {
+      VITIS_LOOP_503_19: for(int j = 0;j < STAGE3_SIZE;j ++) {
 #pragma HLS PIPELINE II = 1
- ap_uint<W> tmp_R1 = receive_fifo_R[1].read();
-        send_fifo_R[PARALLEL_NUM-1].write(tmp_R1);
+ ap_uint<W> tmp_R3 = receive_fifo_R[3].read();
+        send_fifo_R[3].write(tmp_R3);
       }
 
 
@@ -15831,23 +15955,23 @@ void RoundRobin(axis_stream_sys& syscontrol,
 
 void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sys syscontrol[3], axis_stream_float convSet_L[PARALLEL_NUM], axis_stream_float convSet_R[PARALLEL_NUM]) {
   const int FUNCNUM = 3;
-  VITIS_LOOP_395_1: for(int i = 0;i < FUNCNUM;i ++) {
+  VITIS_LOOP_519_1: for(int i = 0;i < FUNCNUM;i ++) {
     syscontrol[i].write(START);
   }
 
   int iter = 0;
   const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / PARALLEL_NUM;
-  VITIS_LOOP_401_2: while(true) {
+  VITIS_LOOP_525_2: while(true) {
     fp_uint maxConv;
     float all_conv[PARALLEL_NUM*2];
     maxConv.data_float = 0;
-    VITIS_LOOP_405_3: for(int i = 0;i < SWEEP_STEP;i ++) {
+    VITIS_LOOP_529_3: for(int i = 0;i < SWEEP_STEP;i ++) {
 
-      VITIS_LOOP_407_4: for(int k = 0; k < PARALLEL_NUM; ++k) {
+      VITIS_LOOP_531_4: for(int k = 0; k < PARALLEL_NUM; ++k) {
         all_conv[k*2] = convSet_L[k].read();
         all_conv[k*2+1] = convSet_R[k].read();
       }
-      VITIS_LOOP_411_5: for(int k = 0; k < PARALLEL_NUM*2; ++k) {
+      VITIS_LOOP_535_5: for(int k = 0; k < PARALLEL_NUM*2; ++k) {
         maxConv.data_float = fmax(maxConv.data_float, all_conv[k]);
       }
     }
@@ -15855,13 +15979,13 @@ void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sys sysco
     hls::print("maxConv: %f\n", maxConv.data_float);
     iter ++;
     if(maxConv.data_float < EPS || iter >= ITER) {
-      VITIS_LOOP_419_6: for(int i = 0;i < FUNCNUM;i ++) {
+      VITIS_LOOP_543_6: for(int i = 0;i < FUNCNUM;i ++) {
         syscontrol[i].write(END);
       }
       break;
     }
     else {
-      VITIS_LOOP_425_7: for(int i = 0;i < FUNCNUM;i ++) {
+      VITIS_LOOP_549_7: for(int i = 0;i < FUNCNUM;i ++) {
         syscontrol[i].write(START);
       }
     }
@@ -15880,11 +16004,17 @@ __attribute__((sdx_kernel("TopPL", 0))) void TopPL(ap_uint<DDR_WIDTH>* dataIn, a
                 axis_pkt_stream& sweep_tx2_0, axis_pkt_stream& sweep_rx2_0,
                 axis_pkt_stream& sweep_tx2_1, axis_pkt_stream& sweep_rx2_1,
 
+                axis_pkt_stream& sweep_tx3_0, axis_pkt_stream& sweep_rx3_0,
+                axis_pkt_stream& sweep_tx3_1, axis_pkt_stream& sweep_rx3_1,
+
+                axis_pkt_stream& sweep_tx4_0, axis_pkt_stream& sweep_rx4_0,
+                axis_pkt_stream& sweep_tx4_1, axis_pkt_stream& sweep_rx4_1,
+
                 axis_pkt_stream& norm_tx0, axis_pkt_stream& norm_rx0
                 ) {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=TopPL
-# 445 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp"
+# 575 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp"
 
 #pragma HLS INTERFACE m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = 16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = dataIn depth = 8192
 
@@ -15912,6 +16042,16 @@ __attribute__((sdx_kernel("TopPL", 0))) void TopPL(ap_uint<DDR_WIDTH>* dataIn, a
 #pragma HLS INTERFACE axis port = sweep_rx2_0
 #pragma HLS INTERFACE axis port = sweep_rx2_1
 
+#pragma HLS INTERFACE axis port = sweep_tx3_0
+#pragma HLS INTERFACE axis port = sweep_tx3_1
+#pragma HLS INTERFACE axis port = sweep_rx3_0
+#pragma HLS INTERFACE axis port = sweep_rx3_1
+
+#pragma HLS INTERFACE axis port = sweep_tx4_0
+#pragma HLS INTERFACE axis port = sweep_tx4_1
+#pragma HLS INTERFACE axis port = sweep_rx4_0
+#pragma HLS INTERFACE axis port = sweep_rx4_1
+
 
 #pragma HLS INTERFACE axis port = norm_tx0
 #pragma HLS INTERFACE axis port = norm_rx0
@@ -15931,6 +16071,10 @@ __attribute__((sdx_kernel("TopPL", 0))) void TopPL(ap_uint<DDR_WIDTH>* dataIn, a
 
                    sweep_tx2_0, sweep_tx2_1,
 
+                   sweep_tx3_0, sweep_tx3_1,
+
+                   sweep_tx4_0, sweep_tx4_1,
+
                    norm_tx0);
     RoundRobin(syscontrol[1],
                 dataIn, U, S,
@@ -15941,6 +16085,10 @@ __attribute__((sdx_kernel("TopPL", 0))) void TopPL(ap_uint<DDR_WIDTH>* dataIn, a
                      sweep_rx1_0, sweep_rx1_1,
 
                      sweep_rx2_0, sweep_rx2_1,
+
+                     sweep_rx3_0, sweep_rx3_1,
+
+                     sweep_rx4_0, sweep_rx4_1,
 
                      norm_rx0);
 }

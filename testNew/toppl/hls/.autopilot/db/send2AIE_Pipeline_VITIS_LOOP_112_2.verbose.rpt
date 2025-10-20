@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'send2AIE_Pipeline_VITIS_LOOP_112_2'
 ================================================================
-* Date:           Sun Oct 19 23:23:14 2025
+* Date:           Mon Oct 20 21:14:54 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -203,10 +203,10 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.31>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%j_1 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 6 'alloca' 'j_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_tx1_0_V_data_V, i16 %sweep_tx1_0_V_keep_V, i16 %sweep_tx1_0_V_strb_V, i1 0, i1 %sweep_tx1_0_V_last_V, i1 0, i1 0, void @empty_54"   --->   Operation 7 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_tx1_0_V_data_V, i16 %sweep_tx1_0_V_keep_V, i16 %sweep_tx1_0_V_strb_V, i1 0, i1 %sweep_tx1_0_V_last_V, i1 0, i1 0, void @empty_11"   --->   Operation 7 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %send_fifo_L_0, i64 666, i64 8, i64 18446744073709551615"   --->   Operation 8 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_tx1_0_V_data_V, i16 %sweep_tx1_0_V_keep_V, i16 %sweep_tx1_0_V_strb_V, i1 %sweep_tx1_0_V_last_V, void @empty_4, i32 0, i32 0, void @empty_31, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_L_0, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_tx1_0_V_data_V, i16 %sweep_tx1_0_V_keep_V, i16 %sweep_tx1_0_V_strb_V, i1 %sweep_tx1_0_V_last_V, void @empty_82, i32 0, i32 0, void @empty_81, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_L_0, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln112 = muxlogic i4 1"   --->   Operation 11 'muxlogic' 'muxLogicData_to_store_ln112' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln112 = muxlogic i4 %j_1"   --->   Operation 12 'muxlogic' 'muxLogicAddr_to_store_ln112' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.39ns)   --->   "%store_ln112 = store i4 1, i4 %j_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 13 'store' 'store_ln112' <Predicate = true> <Delay = 0.39>
@@ -238,9 +238,9 @@ ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln118 = trunc i128 %send_fif
 ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 46 'ret' 'ret_ln0' <Predicate = (icmp_ln112)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 1.88>
-ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:113]   --->   Operation 37 'specpipeline' 'specpipeline_ln113' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_70" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:113]   --->   Operation 37 'specpipeline' 'specpipeline_ln113' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 7, i64 7, i64 7" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 38 'speclooptripcount' 'speclooptripcount_ln112' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%specloopname_ln112 = specloopname void @_ssdm_op_SpecLoopName, void @empty_60" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 39 'specloopname' 'specloopname_ln112' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%specloopname_ln112 = specloopname void @_ssdm_op_SpecLoopName, void @empty_50" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 39 'specloopname' 'specloopname_ln112' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 40 [1/2] (0.88ns) (share mux size 4)   --->   "%data_temp_load = load i1 %data_temp_addr_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:115]   --->   Operation 40 'load' 'data_temp_load' <Predicate = true> <Delay = 0.88> <CoreInst = "RAM">   --->   Core 87 'RAM' <Latency = 1> <II = 1> <Delay = 1.10> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 2> <RAM>
 ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_s = partselect i32 @_ssdm_op_PartSelect.i32.i128.i32.i32, i128 %data_temp_load, i32 96, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:115]   --->   Operation 41 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_data = bitconcatenate i128 @_ssdm_op_BitConcatenate.i128.i96.i32, i96 %trunc_ln118, i32 %tmp_s" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:118]   --->   Operation 42 'bitconcatenate' 'tmp_data' <Predicate = true> <Delay = 0.00>
@@ -404,7 +404,7 @@ ret_ln0                          (ret                ) [ 0000]
 <pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_54"/></StgValue>
+<StgValue><ssdm name="empty_11"/></StgValue>
 </bind>
 </comp>
 
@@ -458,7 +458,7 @@ ret_ln0                          (ret                ) [ 0000]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_4"/></StgValue>
+<StgValue><ssdm name="empty_82"/></StgValue>
 </bind>
 </comp>
 
@@ -476,7 +476,7 @@ ret_ln0                          (ret                ) [ 0000]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_31"/></StgValue>
+<StgValue><ssdm name="empty_81"/></StgValue>
 </bind>
 </comp>
 
@@ -485,7 +485,7 @@ ret_ln0                          (ret                ) [ 0000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_1"/></StgValue>
+<StgValue><ssdm name="empty_70"/></StgValue>
 </bind>
 </comp>
 
@@ -503,7 +503,7 @@ ret_ln0                          (ret                ) [ 0000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_2"/></StgValue>
+<StgValue><ssdm name="empty_80"/></StgValue>
 </bind>
 </comp>
 
@@ -593,7 +593,7 @@ ret_ln0                          (ret                ) [ 0000]
 <pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_60"/></StgValue>
+<StgValue><ssdm name="empty_50"/></StgValue>
 </bind>
 </comp>
 

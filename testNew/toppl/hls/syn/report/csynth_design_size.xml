@@ -2,92 +2,92 @@
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">, 37065, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">, 69040, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll,  5254, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,  3999, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline,  4055, user inline pragmas are applied</column>
-            <column name="">(4) simplification,  3309, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll,  9616, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  7377, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  7493, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  6175, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
             <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(1) array partition,  3392, user array partition pragmas are applied</column>
-            <column name="">(2) simplification,  3328, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
-            <column name="">(3) aggregate/disaggregate ,  3328, user struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(4) array reshape,  3326, apply array reshape pragmas</column>
-            <column name="">(5) access patterns,  3927, array access pattern optmizations</column>
+            <column name="">(1) array partition,  6178, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,  6168, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,  6168, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,  6167, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,  7351, array access pattern optmizations</column>
             <column name="">, , </column>
             <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
-            <column name="">(1) loop simplification,  3957, loop and instruction simplification</column>
-            <column name="">(2) parallelization,  4060, loops are unrolled or pipelined to meet performance targets</column>
-            <column name="">(3) array partition,  3883, arrays are partitioned to meet performance targets</column>
-            <column name="">(4) simplification,  3733, simplification of design after performance transformations</column>
+            <column name="">(1) loop simplification,  7409, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  7701, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  7348, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  7078, simplification of design after performance transformations</column>
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
-            <column name="">(1) lowering,  3445, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations,  3692, high level synthesis optimizations</column>
+            <column name="">(1) lowering,  6495, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  6832, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="TopPL" col1="TopPL.cpp:435" col2="37065" col3="3309" col4="3927" col5="3733" col6="3692">
-                    <row id="20" col0="SystemControl" col1="TopPL.cpp:393" col2="3147" col3="127" col4="157" col5="303" col6="333">
-                        <row id="18" col0="fmax" col1="fmaxdouble.cpp:6" col2="2875" col3="" col4="" col5="" col6="">
-                            <row id="19" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="2873" col3="" col4="" col5="" col6="">
-                                <row id="22" col0="fp_struct" col1="x_hls_utils.h:456" col2="624" col2_disp="  624 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                <row id="14" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="1149" col2_disp="1,149 (3 calls)" col3="" col4="" col5="" col6="">
-                                    <row id="22" col0="fp_struct" col1="x_hls_utils.h:456" col2="936" col2_disp="  936 (3 calls)" col3="" col4="" col5="" col6=""/>
+                <row id="0" col0="TopPL" col1="TopPL.cpp:559" col2="69040" col3="6175" col4="7351" col5="7078" col6="6832">
+                    <row id="17" col0="SystemControl" col1="TopPL.cpp:517" col2="3147" col3="127" col4="161" col5="539" col6="561">
+                        <row id="20" col0="fmax" col1="fmaxdouble.cpp:6" col2="2875" col3="" col4="" col5="" col6="">
+                            <row id="6" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="2873" col3="" col4="" col5="" col6="">
+                                <row id="10" col0="fp_struct" col1="x_hls_utils.h:456" col2="624" col2_disp="  624 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                <row id="16" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="1149" col2_disp="1,149 (3 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="10" col0="fp_struct" col1="x_hls_utils.h:456" col2="936" col2_disp="  936 (3 calls)" col3="" col4="" col5="" col6=""/>
                                 </row>
-                                <row id="3" col0="to_ieee" col1="x_hls_utils.h:509" col2="294" col3="" col4="" col5="" col6="">
-                                    <row id="16" col0="to_double" col1="x_hls_utils.h:494" col2="292" col3="" col4="" col5="" col6="">
-                                        <row id="12" col0="data" col1="x_hls_utils.h:475" col2="274" col3="" col4="" col5="" col6=""/>
+                                <row id="11" col0="to_ieee" col1="x_hls_utils.h:509" col2="294" col3="" col4="" col5="" col6="">
+                                    <row id="19" col0="to_double" col1="x_hls_utils.h:494" col2="292" col3="" col4="" col5="" col6="">
+                                        <row id="2" col0="data" col1="x_hls_utils.h:475" col2="274" col3="" col4="" col5="" col6=""/>
                                     </row>
                                 </row>
-                                <row id="1" col0="to_int" col1="x_hls_utils.h:482" col2="566" col2_disp="  566 (2 calls)" col3="" col4="" col5="" col6="">
-                                    <row id="12" col0="data" col1="x_hls_utils.h:475" col2="548" col2_disp="  548 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                <row id="14" col0="to_int" col1="x_hls_utils.h:482" col2="566" col2_disp="  566 (2 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="2" col0="data" col1="x_hls_utils.h:475" col2="548" col2_disp="  548 (2 calls)" col3="" col4="" col5="" col6=""/>
                                 </row>
                             </row>
                         </row>
-                        <row id="5" col0="print" col1="hls_print.h:35" col2="12" col3="" col4="" col5="" col6=""/>
-                        <row id="19" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="" col3="52" col4="47" col5="188" col5_disp=" 188 (4 calls)" col6="188" col6_disp=" 188 (4 calls)"/>
+                        <row id="18" col0="print" col1="hls_print.h:35" col2="12" col3="" col4="" col5="" col6=""/>
+                        <row id="6" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="" col3="52" col4="47" col5="376" col5_disp=" 376 (8 calls)" col6="376" col6_disp=" 376 (8 calls)"/>
                     </row>
-                    <row id="13" col0="Send" col1="TopPL.cpp:180" col2="15136" col3="2003" col4="2569" col5="2353" col6="2127">
-                        <row id="17" col0="send2AIE" col1="TopPL.cpp:94" col2="15040" col2_disp="15,040 (8 calls)" col3="1968" col3_disp="1,968 (8 calls)" col4="2544" col4_disp="2,544 (8 calls)" col5="2328" col5_disp="2,328 (8 calls)" col6="1044" col6_disp="1,044 (4 calls)">
-                            <row id="2" col0="generateHeader" col1="TopPL.cpp:5" col2="3912" col2_disp="3,912 (8 calls)" col3="" col4="" col5="" col6=""/>
+                    <row id="21" col0="Send" col1="TopPL.cpp:214" col2="30200" col3="3991" col4="5121" col5="4689" col6="4223">
+                        <row id="8" col0="send2AIE" col1="TopPL.cpp:94" col2="30080" col2_disp="30,080 (16 calls)" col3="3936" col3_disp="3,936 (16 calls)" col4="5088" col4_disp="5,088 (16 calls)" col5="4656" col5_disp="4,656 (16 calls)" col6="2088" col6_disp="2,088 (8 calls)">
+                            <row id="9" col0="generateHeader" col1="TopPL.cpp:5" col2="7824" col2_disp="7,824 (16 calls)" col3="" col4="" col5="" col6=""/>
                         </row>
                     </row>
-                    <row id="9" col0="RoundRobin" col1="TopPL.cpp:290" col2="709" col3="174" col4="254" col5="259" col6="398">
-                        <row id="11" col0="DDR2FIFO" col1="TopPL.cpp:137" col2="148" col3="" col4="" col5="" col6=""/>
-                        <row id="15" col0="print&lt;ap_uint&lt;1&gt; &gt;" col1="hls_print.h:25" col2="10" col3="" col4="" col5="" col6=""/>
-                        <row id="6" col0="FIFO2DDR" col1="TopPL.cpp:228" col2="119" col3="" col4="" col5="" col6=""/>
+                    <row id="7" col0="RoundRobin" col1="TopPL.cpp:356" col2="1128" col3="284" col4="352" col5="366" col6="550">
+                        <row id="22" col0="DDR2FIFO" col1="TopPL.cpp:137" col2="274" col3="126" col4="182" col5="194" col6="234"/>
+                        <row id="12" col0="print&lt;ap_uint&lt;1&gt; &gt;" col1="hls_print.h:25" col2="10" col3="" col4="" col5="" col6=""/>
+                        <row id="1" col0="FIFO2DDR" col1="TopPL.cpp:278" col2="119" col3="" col4="" col5="" col6=""/>
                     </row>
-                    <row id="7" col0="Receive" col1="TopPL.cpp:242" col2="17873" col3="902" col4="784" col5="655" col6="673">
-                        <row id="21" col0="print&lt;int&gt;" col1="hls_print.h:25" col2="2" col3="2" col4="2" col5="2" col6=""/>
-                        <row id="8" col0="receive4AIE" col1="TopPL.cpp:59" col2="16400" col2_disp="16,400 (4 calls)" col3="728" col3_disp=" 728 (4 calls)" col4="648" col4_disp=" 648 (4 calls)" col5="544" col5_disp=" 544 (4 calls)" col6="">
-                            <row id="18" col0="fmax" col1="fmaxdouble.cpp:6" col2="11500" col2_disp="11,500 (4 calls)" col3="" col4="" col5="" col6="">
-                                <row id="19" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="11492" col2_disp="11,492 (4 calls)" col3="" col4="" col5="" col6="">
-                                    <row id="22" col0="fp_struct" col1="x_hls_utils.h:456" col2="2496" col2_disp="2,496 (8 calls)" col3="" col4="" col5="" col6=""/>
-                                    <row id="14" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="4596" col2_disp="4,596 (12 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="22" col0="fp_struct" col1="x_hls_utils.h:456" col2="3744" col2_disp="3,744 (12 calls)" col3="" col4="" col5="" col6=""/>
+                    <row id="13" col0="Receive" col1="TopPL.cpp:292" col2="34349" col3="1662" col4="1440" col5="1207" col6="1229">
+                        <row id="15" col0="print&lt;int&gt;" col1="hls_print.h:25" col2="2" col3="2" col4="2" col5="2" col6=""/>
+                        <row id="3" col0="receive4AIE" col1="TopPL.cpp:59" col2="32800" col2_disp="32,800 (8 calls)" col3="1456" col3_disp="1,456 (8 calls)" col4="1296" col4_disp="1,296 (8 calls)" col5="1088" col5_disp="1,088 (8 calls)" col6="">
+                            <row id="20" col0="fmax" col1="fmaxdouble.cpp:6" col2="23000" col2_disp="23,000 (8 calls)" col3="" col4="" col5="" col6="">
+                                <row id="6" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="22984" col2_disp="22,984 (8 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="10" col0="fp_struct" col1="x_hls_utils.h:456" col2="4992" col2_disp="4,992 (16 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="16" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="9192" col2_disp="9,192 (24 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="10" col0="fp_struct" col1="x_hls_utils.h:456" col2="7488" col2_disp="7,488 (24 calls)" col3="" col4="" col5="" col6=""/>
                                     </row>
-                                    <row id="3" col0="to_ieee" col1="x_hls_utils.h:509" col2="1176" col2_disp="1,176 (4 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="16" col0="to_double" col1="x_hls_utils.h:494" col2="1168" col2_disp="1,168 (4 calls)" col3="" col4="" col5="" col6="">
-                                            <row id="12" col0="data" col1="x_hls_utils.h:475" col2="1096" col2_disp="1,096 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="11" col0="to_ieee" col1="x_hls_utils.h:509" col2="2352" col2_disp="2,352 (8 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="19" col0="to_double" col1="x_hls_utils.h:494" col2="2336" col2_disp="2,336 (8 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="2" col0="data" col1="x_hls_utils.h:475" col2="2192" col2_disp="2,192 (8 calls)" col3="" col4="" col5="" col6=""/>
                                         </row>
                                     </row>
-                                    <row id="1" col0="to_int" col1="x_hls_utils.h:482" col2="2264" col2_disp="2,264 (8 calls)" col3="" col4="" col5="" col6="">
-                                        <row id="12" col0="data" col1="x_hls_utils.h:475" col2="2192" col2_disp="2,192 (8 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="14" col0="to_int" col1="x_hls_utils.h:482" col2="4528" col2_disp="4,528 (16 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="2" col0="data" col1="x_hls_utils.h:475" col2="4384" col2_disp="4,384 (16 calls)" col3="" col4="" col5="" col6=""/>
                                     </row>
                                 </row>
                             </row>
-                            <row id="19" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="" col3="208" col3_disp=" 208 (4 calls)" col4="188" col4_disp=" 188 (4 calls)" col5="188" col5_disp=" 188 (4 calls)" col6=""/>
+                            <row id="6" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="" col3="416" col3_disp=" 416 (8 calls)" col4="376" col4_disp=" 376 (8 calls)" col5="376" col5_disp=" 376 (8 calls)" col6=""/>
                         </row>
-                        <row id="4" col0="NormReceive" col1="TopPL.cpp:222" col2="1327" col3="" col4="" col5="" col6="">
-                            <row id="10" col0="receive4DDR" col1="TopPL.cpp:26" col2="1316" col3="" col4="" col5="" col6=""/>
+                        <row id="4" col0="NormReceive" col1="TopPL.cpp:272" col2="1327" col3="" col4="" col5="" col6="">
+                            <row id="5" col0="receive4DDR" col1="TopPL.cpp:26" col2="1316" col3="" col4="" col5="" col6=""/>
                         </row>
-                        <row id="10" col0="receive4DDR" col1="TopPL.cpp:26" col2="" col3="123" col4="107" col5="82" col6="82"/>
+                        <row id="5" col0="receive4DDR" col1="TopPL.cpp:26" col2="" col3="123" col4="107" col5="82" col6="82"/>
                     </row>
                 </row>
             </rows>

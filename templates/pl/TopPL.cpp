@@ -138,20 +138,20 @@ void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 send_fifo_L[PARALLEL_N
 
   const int BLOCK_DATA_SIZE = BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   for(int i = 0;i < BLOCK_NUM;i ++) {
-    {% for j in range(0, PARALLEL_NUM) %}
-      if({{2*j <= i%2*PARALLEL_NUM && i%2*PARALLEL_NUM <= 2*j+1}}) {
+    {% for k in range(0, PARALLEL_NUM) %}
+      if({{2*k}} <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= {{2*k+1}}) {
         if(i&1) {
           for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
             #pragma HLS PIPELINE II = 1
             ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
-            send_fifo_R[{{i}}].write(tmp); 
+            send_fifo_R[{{k}}].write(tmp); 
           }
         }
         else {
           for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
             #pragma HLS PIPELINE II = 1
             ap_uint<128> tmp = dataIn[i*BLOCK_DATA_SIZE + j];
-            send_fifo_L[{{i}}].write(tmp); 
+            send_fifo_L[{{k}}].write(tmp); 
           }
         }
       }
@@ -274,11 +274,11 @@ void RoundRobin(axis_stream_sys& syscontrol,
     for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
 
       const int STAGE1_SIZE = BLOCK_SIZE*ROW/ELEM_NUM;
-      {% for i in range(0, PARALLEL_NUM) %}
+      {% for k in range(0, PARALLEL_NUM) %}
         for(int j = 0;j < STAGE1_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
-          ap_uint<W> tmp_L{{i}} = receive_fifo_L[{{i}}].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L{{i}});
+          ap_uint<W> tmp_L{{k}} = receive_fifo_L[{{k}}].read();
+          send_fifo_L[{{(k+1)%PARALLEL_NUM}}].write(tmp_L{{k}});
         }
       {% endfor %}
 
@@ -288,11 +288,11 @@ void RoundRobin(axis_stream_sys& syscontrol,
         send_fifo_L[0].write(tmp_R0);
       }
 
-      {% for i in range(1, PARALLEL_NUM) %}
+      {% for k in range(1, PARALLEL_NUM) %}
         for(int j = 0;j < STAGE1_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
-          ap_uint<W> tmp_R{{i}} = receive_fifo_R[{{i}}].read();
-          send_fifo_R[(i-1+PARALLEL_NUM)%PARALLEL_NUM].write(tmp_R{{i}});
+          ap_uint<W> tmp_R{{k}} = receive_fifo_R[{{k}}].read();
+          send_fifo_R[{{(k-1+PARALLEL_NUM)%PARALLEL_NUM}}].write(tmp_R{{k}});
         }
       {% endfor %}
 
@@ -301,41 +301,41 @@ void RoundRobin(axis_stream_sys& syscontrol,
       
       for(int j = 0;j < STAGE2_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
-        {% for i in range(0, PARALLEL_NUM) %}
-          ap_uint<W> tmp_L{{i}} = receive_fifo_L[{{i}}].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L{{i}});
-          ap_uint<W> tmp_R{{i}} = receive_fifo_R[{{i}}].read();
-          send_fifo_R[(i-1+PARALLEL_NUM)%PARALLEL_NUM].write(tmp_R{{i}});
+        {% for k in range(0, PARALLEL_NUM) %}
+          ap_uint<W> tmp_L{{k}} = receive_fifo_L[{{k}}].read();
+          send_fifo_L[{{(k+1)%PARALLEL_NUM}}].write(tmp_L{{k}});
+          ap_uint<W> tmp_R{{k}} = receive_fifo_R[{{k}}].read();
+          send_fifo_R[{{(k-1+PARALLEL_NUM)%PARALLEL_NUM}}].write(tmp_R{{k}});
         {% endfor %}
       }
 
       const int STAGE3_SIZE = BLOCK_SIZE*ROW/ELEM_NUM;
-      {% for i in range(0, PARALLEL_NUM-1) %}
-        for(int j = 0;j < STAGE1_SIZE;j ++) {
+      {% for k in range(0, PARALLEL_NUM-1) %}
+        for(int j = 0;j < STAGE3_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
-          ap_uint<W> tmp_L{{i}} = receive_fifo_L[{{i}}].read();
-          send_fifo_L[(i+1)%PARALLEL_NUM].write(tmp_L{{i}});
+          ap_uint<W> tmp_L{{k}} = receive_fifo_L[{{k}}].read();
+          send_fifo_L[{{(k+1)%PARALLEL_NUM}}].write(tmp_L{{k}});
         }
       {% endfor %}
 
-      for(int j = 0;j < STAGE1_SIZE;j ++) {
+      for(int j = 0;j < STAGE3_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
         ap_uint<W> tmp_L{{PARALLEL_NUM-1}} = receive_fifo_L[{{PARALLEL_NUM-1}}].read();
-        send_fifo_R[PARALLEL_NUM-2].write(tmp_L{{PARALLEL_NUM-1}});
+        send_fifo_R[{{PARALLEL_NUM-2}}].write(tmp_L{{PARALLEL_NUM-1}});
       }
 
-      {% for i in range(0, PARALLEL_NUM-1) %}
-        for(int j = 0;j < STAGE1_SIZE;j ++) {
+      {% for k in range(0, PARALLEL_NUM-1) %}
+        for(int j = 0;j < STAGE3_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
-          ap_uint<W> tmp_R{{i}} = receive_fifo_R[{{i}}].read();
-          send_fifo_R[(i-1+PARALLEL_NUM)%PARALLEL_NUM].write(tmp_R{{i}});
+          ap_uint<W> tmp_R{{k}} = receive_fifo_R[{{k}}].read();
+          send_fifo_R[{{(k-1+PARALLEL_NUM)%PARALLEL_NUM}}].write(tmp_R{{k}});
         }
       {% endfor %}
 
-      for(int j = 0;j < STAGE1_SIZE;j ++) {
+      for(int j = 0;j < STAGE3_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
         ap_uint<W> tmp_R{{PARALLEL_NUM-1}} = receive_fifo_R[{{PARALLEL_NUM-1}}].read();
-        send_fifo_R[PARALLEL_NUM-1].write(tmp_R{{PARALLEL_NUM-1}});
+        send_fifo_R[{{PARALLEL_NUM-1}}].write(tmp_R{{PARALLEL_NUM-1}});
       }
 
       

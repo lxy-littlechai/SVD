@@ -1,11 +1,11 @@
 `timescale 1 ns / 1 ps
 
-module TopPL_hls_deadlock_idx2_monitor ( // for module TopPL_TopPL_inst.Send_U0.grp_dataflow_parent_loop_proc_fu_120
+module TopPL_hls_deadlock_idx2_monitor ( // for module TopPL_TopPL_inst.Send_U0.grp_dataflow_parent_loop_proc_fu_168
     input wire clock,
     input wire reset,
-    input wire [19:0] axis_block_sigs,
-    input wire [49:0] inst_idle_sigs,
-    input wire [22:0] inst_block_sigs,
+    input wire [35:0] axis_block_sigs,
+    input wire [81:0] inst_idle_sigs,
+    input wire [38:0] inst_block_sigs,
     output wire block
 );
 
@@ -19,7 +19,7 @@ wire df_has_axis_block;
 wire all_process_stop;
 
 assign block = monitor_find_block;
-assign process_axis_block_vec[0] = idx3_block & (1'b0 | axis_block_sigs[1] | axis_block_sigs[0] | axis_block_sigs[3] | axis_block_sigs[2] | axis_block_sigs[5] | axis_block_sigs[4] | axis_block_sigs[7] | axis_block_sigs[6]);
+assign process_axis_block_vec[0] = idx3_block & (1'b0 | axis_block_sigs[1] | axis_block_sigs[0] | axis_block_sigs[3] | axis_block_sigs[2] | axis_block_sigs[5] | axis_block_sigs[4] | axis_block_sigs[7] | axis_block_sigs[6] | axis_block_sigs[9] | axis_block_sigs[8] | axis_block_sigs[11] | axis_block_sigs[10] | axis_block_sigs[13] | axis_block_sigs[12] | axis_block_sigs[15] | axis_block_sigs[14]);
 assign process_idle_vec[0] = inst_idle_sigs[4];
 assign process_chan_block_vec[0] = inst_block_sigs[4];
 assign df_has_axis_block = |{process_axis_block_vec};

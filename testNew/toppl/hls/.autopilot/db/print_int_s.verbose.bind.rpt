@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'print_int_s'
 ================================================================
-* Date:           Sun Oct 19 23:23:11 2025
+* Date:           Mon Oct 20 21:14:47 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -76,8 +76,8 @@ IsGatedGlobalClock: 0
 
 State 1 <SV = 0> <Delay = 1.00>
 ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%muxLogicCE_to_v_read = muxlogic"   --->   Operation 2 'muxlogic' 'muxLogicCE_to_v_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%v_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %v" [/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h:27]   --->   Operation 3 'read' 'v_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i6 %v_read" [/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h:27]   --->   Operation 4 'zext' 'zext_ln27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%v_read = read i5 @_ssdm_op_Read.ap_auto.i5, i5 %v" [/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h:27]   --->   Operation 3 'read' 'v_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i5 %v_read" [/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h:27]   --->   Operation 4 'zext' 'zext_ln27' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 5 [1/1] (1.00ns)   --->   "%printint_ln27 = printint i32 0, i32 %zext_ln27" [/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h:27]   --->   Operation 5 'printint' 'printint_ln27' <Predicate = true> <Delay = 1.00> <CoreInst = "hlsPrintInt">   --->   Core 144 'hlsPrintInt' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'printint'> <InPorts = 0> <OutPorts = 0>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%ret_ln28 = ret" [/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/hls_print.h:28]   --->   Operation 6 'ret' 'ret_ln28' <Predicate = true> <Delay = 0.00>
 
@@ -124,7 +124,7 @@ ret_ln28             (ret     ) [ 00]
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i6"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i5"/></StgValue>
 </bind>
 </comp>
 
@@ -139,9 +139,9 @@ ret_ln28             (ret     ) [ 00]
 
 <comp id="6" class="1004" name="v_read_read_fu_6">
 <pin_list>
-<pin id="7" dir="0" index="0" bw="6" slack="0"/>
-<pin id="8" dir="0" index="1" bw="6" slack="0"/>
-<pin id="9" dir="1" index="2" bw="6" slack="0"/>
+<pin id="7" dir="0" index="0" bw="5" slack="0"/>
+<pin id="8" dir="0" index="1" bw="5" slack="0"/>
+<pin id="9" dir="1" index="2" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -151,7 +151,7 @@ ret_ln28             (ret     ) [ 00]
 
 <comp id="12" class="1004" name="muxLogicCE_to_v_read_fu_12">
 <pin_list>
-<pin id="13" dir="1" index="0" bw="6" slack="2147483647"/>
+<pin id="13" dir="1" index="0" bw="5" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
@@ -161,7 +161,7 @@ ret_ln28             (ret     ) [ 00]
 
 <comp id="14" class="1004" name="zext_ln27_fu_14">
 <pin_list>
-<pin id="15" dir="0" index="0" bw="6" slack="0"/>
+<pin id="15" dir="0" index="0" bw="5" slack="0"/>
 <pin id="16" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
@@ -173,7 +173,7 @@ ret_ln28             (ret     ) [ 00]
 <comp id="18" class="1004" name="printint_ln27_fu_18">
 <pin_list>
 <pin id="19" dir="0" index="0" bw="1" slack="0"/>
-<pin id="20" dir="0" index="1" bw="6" slack="0"/>
+<pin id="20" dir="0" index="1" bw="5" slack="0"/>
 <pin id="21" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>

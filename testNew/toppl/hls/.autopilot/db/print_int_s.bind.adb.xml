@@ -17,7 +17,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="2" bw="6">
+<Node id="2" bw="5">
 <![CDATA[
 entry:0 %muxLogicCE_to_v_read = muxlogic
 
@@ -32,9 +32,9 @@ entry:0 %muxLogicCE_to_v_read = muxlogic
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="3" bw="6" op_0_bw="6" op_1_bw="6" op_2_bw="1">
+<Node id="3" bw="5" op_0_bw="5" op_1_bw="5" op_2_bw="1">
 <![CDATA[
-entry:1 %v_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %v
+entry:1 %v_read = read i5 @_ssdm_op_Read.ap_auto.i5, i5 %v
 
 ]]></Node>
 <StgValue><ssdm name="v_read"/></StgValue>
@@ -47,9 +47,9 @@ entry:1 %v_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %v
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="4" bw="32" op_0_bw="6">
+<Node id="4" bw="32" op_0_bw="5">
 <![CDATA[
-entry:2 %zext_ln27 = zext i6 %v_read
+entry:2 %zext_ln27 = zext i5 %v_read
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln27"/></StgValue>
@@ -96,7 +96,7 @@ entry:4 %ret_ln28 = ret
 
 
 <dataflows>
-<dataflow id="9" from="_ssdm_op_Read.ap_auto.i6" to="v_read" fromId="8" toId="3">
+<dataflow id="9" from="_ssdm_op_Read.ap_auto.i5" to="v_read" fromId="8" toId="3">
 </dataflow>
 <dataflow id="10" from="v" to="v_read" fromId="7" toId="3">
 </dataflow>
