@@ -17,8 +17,8 @@ port (
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     send_fifo_R_1_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-    send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-    send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+    send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+    send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
     send_fifo_R_1_empty_n : IN STD_LOGIC;
     send_fifo_R_1_read : OUT STD_LOGIC;
     sweep_tx2_1_TREADY : IN STD_LOGIC;
@@ -45,10 +45,10 @@ architecture behav of TopPL_send2AIE_10_Pipeline_VITIS_LOOP_112_2 is
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_boolean_0 : BOOLEAN := false;
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
-    constant ap_const_lv4_1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
+    constant ap_const_lv7_1 : STD_LOGIC_VECTOR (6 downto 0) := "0000001";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv16_FFFF : STD_LOGIC_VECTOR (15 downto 0) := "1111111111111111";
-    constant ap_const_lv4_8 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
+    constant ap_const_lv7_40 : STD_LOGIC_VECTOR (6 downto 0) := "1000000";
     constant ap_const_lv32_60 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001100000";
     constant ap_const_lv32_7F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001111111";
 
@@ -79,10 +79,10 @@ attribute shreg_extract : string;
     signal trunc_ln118_reg_258 : STD_LOGIC_VECTOR (95 downto 0);
     signal zext_ln114_fu_181_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal zext_ln115_fu_198_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal j_04_fu_78 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    signal j_14_fu_157_p2 : STD_LOGIC_VECTOR (3 downto 0);
+    signal j_04_fu_78 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    signal j_14_fu_157_p2 : STD_LOGIC_VECTOR (6 downto 0);
     signal ap_loop_init : STD_LOGIC;
-    signal ap_sig_allocacmp_j : STD_LOGIC_VECTOR (3 downto 0);
+    signal ap_sig_allocacmp_j : STD_LOGIC_VECTOR (6 downto 0);
     signal ap_block_pp0_stage0_01001 : BOOLEAN;
     signal rem27_urem_fu_193_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal tmp_s_fu_211_p4 : STD_LOGIC_VECTOR (31 downto 0);
@@ -198,7 +198,7 @@ begin
                 if (((icmp_ln112_fu_151_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter0 = ap_const_logic_1))) then 
                     j_04_fu_78 <= j_14_fu_157_p2;
                 elsif ((ap_loop_init = ap_const_logic_1)) then 
-                    j_04_fu_78 <= ap_const_lv4_1;
+                    j_04_fu_78 <= ap_const_lv7_1;
                 end if;
             end if; 
         end if;
@@ -312,7 +312,7 @@ begin
     ap_sig_allocacmp_j_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_block_pp0_stage0, j_04_fu_78, ap_loop_init)
     begin
         if (((ap_const_boolean_0 = ap_block_pp0_stage0) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (ap_loop_init = ap_const_logic_1))) then 
-            ap_sig_allocacmp_j <= ap_const_lv4_1;
+            ap_sig_allocacmp_j <= ap_const_lv7_1;
         else 
             ap_sig_allocacmp_j <= j_04_fu_78;
         end if; 
@@ -351,8 +351,8 @@ begin
         end if; 
     end process;
 
-    icmp_ln112_fu_151_p2 <= "1" when (ap_sig_allocacmp_j = ap_const_lv4_8) else "0";
-    j_14_fu_157_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_j) + unsigned(ap_const_lv4_1));
+    icmp_ln112_fu_151_p2 <= "1" when (ap_sig_allocacmp_j = ap_const_lv7_40) else "0";
+    j_14_fu_157_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_j) + unsigned(ap_const_lv7_1));
     rem27_urem_fu_193_p2 <= (trunc_ln112_reg_247 xor ap_const_lv1_1);
 
     send_fifo_R_1_blk_n_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, send_fifo_R_1_empty_n, ap_block_pp0_stage0)

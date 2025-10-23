@@ -96,43 +96,43 @@ set portList {
 	{ m_axi_gmem0_BUSER sc_in sc_lv 1 signal 0 } 
 	{ dataIn sc_in sc_lv 64 signal 1 } 
 	{ send_fifo_L_0_din sc_out sc_lv 128 signal 2 } 
-	{ send_fifo_L_0_num_data_valid sc_in sc_lv 6 signal 2 } 
-	{ send_fifo_L_0_fifo_cap sc_in sc_lv 6 signal 2 } 
+	{ send_fifo_L_0_num_data_valid sc_in sc_lv 10 signal 2 } 
+	{ send_fifo_L_0_fifo_cap sc_in sc_lv 10 signal 2 } 
 	{ send_fifo_L_0_full_n sc_in sc_logic 1 signal 2 } 
 	{ send_fifo_L_0_write sc_out sc_logic 1 signal 2 } 
 	{ send_fifo_L_1_din sc_out sc_lv 128 signal 3 } 
-	{ send_fifo_L_1_num_data_valid sc_in sc_lv 6 signal 3 } 
-	{ send_fifo_L_1_fifo_cap sc_in sc_lv 6 signal 3 } 
+	{ send_fifo_L_1_num_data_valid sc_in sc_lv 10 signal 3 } 
+	{ send_fifo_L_1_fifo_cap sc_in sc_lv 10 signal 3 } 
 	{ send_fifo_L_1_full_n sc_in sc_logic 1 signal 3 } 
 	{ send_fifo_L_1_write sc_out sc_logic 1 signal 3 } 
 	{ send_fifo_L_2_din sc_out sc_lv 128 signal 4 } 
-	{ send_fifo_L_2_num_data_valid sc_in sc_lv 6 signal 4 } 
-	{ send_fifo_L_2_fifo_cap sc_in sc_lv 6 signal 4 } 
+	{ send_fifo_L_2_num_data_valid sc_in sc_lv 10 signal 4 } 
+	{ send_fifo_L_2_fifo_cap sc_in sc_lv 10 signal 4 } 
 	{ send_fifo_L_2_full_n sc_in sc_logic 1 signal 4 } 
 	{ send_fifo_L_2_write sc_out sc_logic 1 signal 4 } 
 	{ send_fifo_L_3_din sc_out sc_lv 128 signal 5 } 
-	{ send_fifo_L_3_num_data_valid sc_in sc_lv 6 signal 5 } 
-	{ send_fifo_L_3_fifo_cap sc_in sc_lv 6 signal 5 } 
+	{ send_fifo_L_3_num_data_valid sc_in sc_lv 10 signal 5 } 
+	{ send_fifo_L_3_fifo_cap sc_in sc_lv 10 signal 5 } 
 	{ send_fifo_L_3_full_n sc_in sc_logic 1 signal 5 } 
 	{ send_fifo_L_3_write sc_out sc_logic 1 signal 5 } 
 	{ send_fifo_R_0_din sc_out sc_lv 128 signal 6 } 
-	{ send_fifo_R_0_num_data_valid sc_in sc_lv 6 signal 6 } 
-	{ send_fifo_R_0_fifo_cap sc_in sc_lv 6 signal 6 } 
+	{ send_fifo_R_0_num_data_valid sc_in sc_lv 10 signal 6 } 
+	{ send_fifo_R_0_fifo_cap sc_in sc_lv 10 signal 6 } 
 	{ send_fifo_R_0_full_n sc_in sc_logic 1 signal 6 } 
 	{ send_fifo_R_0_write sc_out sc_logic 1 signal 6 } 
 	{ send_fifo_R_1_din sc_out sc_lv 128 signal 7 } 
-	{ send_fifo_R_1_num_data_valid sc_in sc_lv 6 signal 7 } 
-	{ send_fifo_R_1_fifo_cap sc_in sc_lv 6 signal 7 } 
+	{ send_fifo_R_1_num_data_valid sc_in sc_lv 10 signal 7 } 
+	{ send_fifo_R_1_fifo_cap sc_in sc_lv 10 signal 7 } 
 	{ send_fifo_R_1_full_n sc_in sc_logic 1 signal 7 } 
 	{ send_fifo_R_1_write sc_out sc_logic 1 signal 7 } 
 	{ send_fifo_R_2_din sc_out sc_lv 128 signal 8 } 
-	{ send_fifo_R_2_num_data_valid sc_in sc_lv 6 signal 8 } 
-	{ send_fifo_R_2_fifo_cap sc_in sc_lv 6 signal 8 } 
+	{ send_fifo_R_2_num_data_valid sc_in sc_lv 10 signal 8 } 
+	{ send_fifo_R_2_fifo_cap sc_in sc_lv 10 signal 8 } 
 	{ send_fifo_R_2_full_n sc_in sc_logic 1 signal 8 } 
 	{ send_fifo_R_2_write sc_out sc_logic 1 signal 8 } 
 	{ send_fifo_R_3_din sc_out sc_lv 128 signal 9 } 
-	{ send_fifo_R_3_num_data_valid sc_in sc_lv 6 signal 9 } 
-	{ send_fifo_R_3_fifo_cap sc_in sc_lv 6 signal 9 } 
+	{ send_fifo_R_3_num_data_valid sc_in sc_lv 10 signal 9 } 
+	{ send_fifo_R_3_fifo_cap sc_in sc_lv 10 signal 9 } 
 	{ send_fifo_R_3_full_n sc_in sc_logic 1 signal 9 } 
 	{ send_fifo_R_3_write sc_out sc_logic 1 signal 9 } 
 }
@@ -191,43 +191,43 @@ set NewPortList {[
  	{ "name": "m_axi_gmem0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "BUSER" }} , 
  	{ "name": "dataIn", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "dataIn", "role": "default" }} , 
  	{ "name": "send_fifo_L_0_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "din" }} , 
- 	{ "name": "send_fifo_L_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_0_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "full_n" }} , 
  	{ "name": "send_fifo_L_0_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "write" }} , 
  	{ "name": "send_fifo_L_1_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "din" }} , 
- 	{ "name": "send_fifo_L_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_1_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "full_n" }} , 
  	{ "name": "send_fifo_L_1_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "write" }} , 
  	{ "name": "send_fifo_L_2_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "din" }} , 
- 	{ "name": "send_fifo_L_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_2_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "full_n" }} , 
  	{ "name": "send_fifo_L_2_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "write" }} , 
  	{ "name": "send_fifo_L_3_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "din" }} , 
- 	{ "name": "send_fifo_L_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_3_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "full_n" }} , 
  	{ "name": "send_fifo_L_3_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "write" }} , 
  	{ "name": "send_fifo_R_0_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "din" }} , 
- 	{ "name": "send_fifo_R_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_0_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "full_n" }} , 
  	{ "name": "send_fifo_R_0_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "write" }} , 
  	{ "name": "send_fifo_R_1_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "din" }} , 
- 	{ "name": "send_fifo_R_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_1_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "full_n" }} , 
  	{ "name": "send_fifo_R_1_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "write" }} , 
  	{ "name": "send_fifo_R_2_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "din" }} , 
- 	{ "name": "send_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_2_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "full_n" }} , 
  	{ "name": "send_fifo_R_2_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "write" }} , 
  	{ "name": "send_fifo_R_3_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "din" }} , 
- 	{ "name": "send_fifo_R_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_3_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "full_n" }} , 
  	{ "name": "send_fifo_R_3_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "write" }}  ]}
 
@@ -238,7 +238,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "81", "EstimateLatencyMax" : "5825",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "321", "EstimateLatencyMax" : "84737",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -251,49 +251,49 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem0_blk_n_AR", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_177", "Port" : "gmem0", "Inst_start_state" : "147", "Inst_end_state" : "150"},
-					{"ID" : "15", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_213", "Port" : "gmem0", "Inst_start_state" : "295", "Inst_end_state" : "296"},
-					{"ID" : "11", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_195", "Port" : "gmem0", "Inst_start_state" : "221", "Inst_end_state" : "224"},
-					{"ID" : "13", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_204", "Port" : "gmem0", "Inst_start_state" : "295", "Inst_end_state" : "296"},
-					{"ID" : "5", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_168", "Port" : "gmem0", "Inst_start_state" : "147", "Inst_end_state" : "148"},
-					{"ID" : "9", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_186", "Port" : "gmem0", "Inst_start_state" : "221", "Inst_end_state" : "222"},
-					{"ID" : "3", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_159", "Port" : "gmem0", "Inst_start_state" : "73", "Inst_end_state" : "76"},
-					{"ID" : "1", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_150", "Port" : "gmem0", "Inst_start_state" : "73", "Inst_end_state" : "74"}]},
+					{"ID" : "1", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_148", "Port" : "gmem0", "Inst_start_state" : "73", "Inst_end_state" : "74"},
+					{"ID" : "13", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_202", "Port" : "gmem0", "Inst_start_state" : "295", "Inst_end_state" : "296"},
+					{"ID" : "15", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_211", "Port" : "gmem0", "Inst_start_state" : "295", "Inst_end_state" : "296"},
+					{"ID" : "5", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_166", "Port" : "gmem0", "Inst_start_state" : "147", "Inst_end_state" : "148"},
+					{"ID" : "3", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_157", "Port" : "gmem0", "Inst_start_state" : "73", "Inst_end_state" : "76"},
+					{"ID" : "9", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_184", "Port" : "gmem0", "Inst_start_state" : "221", "Inst_end_state" : "222"},
+					{"ID" : "11", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_193", "Port" : "gmem0", "Inst_start_state" : "221", "Inst_end_state" : "224"},
+					{"ID" : "7", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_175", "Port" : "gmem0", "Inst_start_state" : "147", "Inst_end_state" : "150"}]},
 			{"Name" : "dataIn", "Type" : "None", "Direction" : "I"},
 			{"Name" : "send_fifo_L_0", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_150", "Port" : "send_fifo_L_0", "Inst_start_state" : "73", "Inst_end_state" : "74"}]},
+					{"ID" : "1", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_148", "Port" : "send_fifo_L_0", "Inst_start_state" : "73", "Inst_end_state" : "74"}]},
 			{"Name" : "send_fifo_L_1", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_168", "Port" : "send_fifo_L_1", "Inst_start_state" : "147", "Inst_end_state" : "148"}]},
+					{"ID" : "5", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_166", "Port" : "send_fifo_L_1", "Inst_start_state" : "147", "Inst_end_state" : "148"}]},
 			{"Name" : "send_fifo_L_2", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_186", "Port" : "send_fifo_L_2", "Inst_start_state" : "221", "Inst_end_state" : "222"}]},
+					{"ID" : "9", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_184", "Port" : "send_fifo_L_2", "Inst_start_state" : "221", "Inst_end_state" : "222"}]},
 			{"Name" : "send_fifo_L_3", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_204", "Port" : "send_fifo_L_3", "Inst_start_state" : "295", "Inst_end_state" : "296"}]},
+					{"ID" : "13", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_202", "Port" : "send_fifo_L_3", "Inst_start_state" : "295", "Inst_end_state" : "296"}]},
 			{"Name" : "send_fifo_R_0", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_159", "Port" : "send_fifo_R_0", "Inst_start_state" : "73", "Inst_end_state" : "76"}]},
+					{"ID" : "3", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_157", "Port" : "send_fifo_R_0", "Inst_start_state" : "73", "Inst_end_state" : "76"}]},
 			{"Name" : "send_fifo_R_1", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "7", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_177", "Port" : "send_fifo_R_1", "Inst_start_state" : "147", "Inst_end_state" : "150"}]},
+					{"ID" : "7", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_175", "Port" : "send_fifo_R_1", "Inst_start_state" : "147", "Inst_end_state" : "150"}]},
 			{"Name" : "send_fifo_R_2", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "11", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_195", "Port" : "send_fifo_R_2", "Inst_start_state" : "221", "Inst_end_state" : "224"}]},
+					{"ID" : "11", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_193", "Port" : "send_fifo_R_2", "Inst_start_state" : "221", "Inst_end_state" : "224"}]},
 			{"Name" : "send_fifo_R_3", "Type" : "Fifo", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "15", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_213", "Port" : "send_fifo_R_3", "Inst_start_state" : "295", "Inst_end_state" : "296"}]}],
+					{"ID" : "15", "SubInstance" : "grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_211", "Port" : "send_fifo_R_3", "Inst_start_state" : "295", "Inst_end_state" : "296"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_140_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "296", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state296"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_150", "Parent" : "0", "Child" : ["2"],
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_148", "Parent" : "0", "Child" : ["2"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_151_3",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -312,14 +312,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_151_3", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_150.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_159", "Parent" : "0", "Child" : ["4"],
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_151_3_fu_148.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_157", "Parent" : "0", "Child" : ["4"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_144_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -338,14 +338,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_144_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_159.flow_control_loop_pipe_sequential_init_U", "Parent" : "3"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_168", "Parent" : "0", "Child" : ["6"],
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_144_2_fu_157.flow_control_loop_pipe_sequential_init_U", "Parent" : "3"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_166", "Parent" : "0", "Child" : ["6"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_168_5",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -364,14 +364,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_168_5", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_168.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_177", "Parent" : "0", "Child" : ["8"],
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_168_5_fu_166.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_175", "Parent" : "0", "Child" : ["8"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_161_4",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -390,14 +390,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_161_4", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_177.flow_control_loop_pipe_sequential_init_U", "Parent" : "7"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_186", "Parent" : "0", "Child" : ["10"],
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_161_4_fu_175.flow_control_loop_pipe_sequential_init_U", "Parent" : "7"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_184", "Parent" : "0", "Child" : ["10"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_185_7",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -416,14 +416,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_185_7", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_186.flow_control_loop_pipe_sequential_init_U", "Parent" : "9"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_195", "Parent" : "0", "Child" : ["12"],
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_185_7_fu_184.flow_control_loop_pipe_sequential_init_U", "Parent" : "9"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_193", "Parent" : "0", "Child" : ["12"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_178_6",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -442,14 +442,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_178_6", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_195.flow_control_loop_pipe_sequential_init_U", "Parent" : "11"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_204", "Parent" : "0", "Child" : ["14"],
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_178_6_fu_193.flow_control_loop_pipe_sequential_init_U", "Parent" : "11"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_202", "Parent" : "0", "Child" : ["14"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_202_9",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -468,14 +468,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_202_9", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_204.flow_control_loop_pipe_sequential_init_U", "Parent" : "13"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_213", "Parent" : "0", "Child" : ["16"],
+	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_202_9_fu_202.flow_control_loop_pipe_sequential_init_U", "Parent" : "13"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_211", "Parent" : "0", "Child" : ["16"],
 		"CDFG" : "DDR2FIFO_Pipeline_VITIS_LOOP_195_8",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -494,7 +494,7 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_195_8", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_213.flow_control_loop_pipe_sequential_init_U", "Parent" : "15"}]}
+	{"ID" : "16", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_DDR2FIFO_Pipeline_VITIS_LOOP_195_8_fu_211.flow_control_loop_pipe_sequential_init_U", "Parent" : "15"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -545,8 +545,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "81", "Max" : "5825"}
-	, {"Name" : "Interval", "Min" : "81", "Max" : "5825"}
+	{"Name" : "Latency", "Min" : "321", "Max" : "84737"}
+	, {"Name" : "Interval", "Min" : "321", "Max" : "84737"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -555,12 +555,12 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_gmem0_AWVALID VALID 1 1 }  { m_axi_gmem0_AWREADY READY 0 1 }  { m_axi_gmem0_AWADDR ADDR 1 64 }  { m_axi_gmem0_AWID ID 1 1 }  { m_axi_gmem0_AWLEN SIZE 1 32 }  { m_axi_gmem0_AWSIZE BURST 1 3 }  { m_axi_gmem0_AWBURST LOCK 1 2 }  { m_axi_gmem0_AWLOCK CACHE 1 2 }  { m_axi_gmem0_AWCACHE PROT 1 4 }  { m_axi_gmem0_AWPROT QOS 1 3 }  { m_axi_gmem0_AWQOS REGION 1 4 }  { m_axi_gmem0_AWREGION USER 1 4 }  { m_axi_gmem0_AWUSER DATA 1 1 }  { m_axi_gmem0_WVALID VALID 1 1 }  { m_axi_gmem0_WREADY READY 0 1 }  { m_axi_gmem0_WDATA FIFONUM 1 512 }  { m_axi_gmem0_WSTRB STRB 1 64 }  { m_axi_gmem0_WLAST LAST 1 1 }  { m_axi_gmem0_WID ID 1 1 }  { m_axi_gmem0_WUSER DATA 1 1 }  { m_axi_gmem0_ARVALID VALID 1 1 }  { m_axi_gmem0_ARREADY READY 0 1 }  { m_axi_gmem0_ARADDR ADDR 1 64 }  { m_axi_gmem0_ARID ID 1 1 }  { m_axi_gmem0_ARLEN SIZE 1 32 }  { m_axi_gmem0_ARSIZE BURST 1 3 }  { m_axi_gmem0_ARBURST LOCK 1 2 }  { m_axi_gmem0_ARLOCK CACHE 1 2 }  { m_axi_gmem0_ARCACHE PROT 1 4 }  { m_axi_gmem0_ARPROT QOS 1 3 }  { m_axi_gmem0_ARQOS REGION 1 4 }  { m_axi_gmem0_ARREGION USER 1 4 }  { m_axi_gmem0_ARUSER DATA 1 1 }  { m_axi_gmem0_RVALID VALID 0 1 }  { m_axi_gmem0_RREADY READY 1 1 }  { m_axi_gmem0_RDATA FIFONUM 0 512 }  { m_axi_gmem0_RLAST LAST 0 1 }  { m_axi_gmem0_RID ID 0 1 }  { m_axi_gmem0_RFIFONUM LEN 0 11 }  { m_axi_gmem0_RUSER DATA 0 1 }  { m_axi_gmem0_RRESP RESP 0 2 }  { m_axi_gmem0_BVALID VALID 0 1 }  { m_axi_gmem0_BREADY READY 1 1 }  { m_axi_gmem0_BRESP RESP 0 2 }  { m_axi_gmem0_BID ID 0 1 }  { m_axi_gmem0_BUSER DATA 0 1 } } }
 	dataIn { ap_none {  { dataIn in_data 0 64 } } }
-	send_fifo_L_0 { ap_fifo {  { send_fifo_L_0_din fifo_data_in 1 128 }  { send_fifo_L_0_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_0_fifo_cap fifo_update 0 6 }  { send_fifo_L_0_full_n fifo_status 0 1 }  { send_fifo_L_0_write fifo_port_we 1 1 } } }
-	send_fifo_L_1 { ap_fifo {  { send_fifo_L_1_din fifo_data_in 1 128 }  { send_fifo_L_1_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_1_fifo_cap fifo_update 0 6 }  { send_fifo_L_1_full_n fifo_status 0 1 }  { send_fifo_L_1_write fifo_port_we 1 1 } } }
-	send_fifo_L_2 { ap_fifo {  { send_fifo_L_2_din fifo_data_in 1 128 }  { send_fifo_L_2_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_2_fifo_cap fifo_update 0 6 }  { send_fifo_L_2_full_n fifo_status 0 1 }  { send_fifo_L_2_write fifo_port_we 1 1 } } }
-	send_fifo_L_3 { ap_fifo {  { send_fifo_L_3_din fifo_data_in 1 128 }  { send_fifo_L_3_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_3_fifo_cap fifo_update 0 6 }  { send_fifo_L_3_full_n fifo_status 0 1 }  { send_fifo_L_3_write fifo_port_we 1 1 } } }
-	send_fifo_R_0 { ap_fifo {  { send_fifo_R_0_din fifo_data_in 1 128 }  { send_fifo_R_0_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_0_fifo_cap fifo_update 0 6 }  { send_fifo_R_0_full_n fifo_status 0 1 }  { send_fifo_R_0_write fifo_port_we 1 1 } } }
-	send_fifo_R_1 { ap_fifo {  { send_fifo_R_1_din fifo_data_in 1 128 }  { send_fifo_R_1_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_1_fifo_cap fifo_update 0 6 }  { send_fifo_R_1_full_n fifo_status 0 1 }  { send_fifo_R_1_write fifo_port_we 1 1 } } }
-	send_fifo_R_2 { ap_fifo {  { send_fifo_R_2_din fifo_data_in 1 128 }  { send_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_2_fifo_cap fifo_update 0 6 }  { send_fifo_R_2_full_n fifo_status 0 1 }  { send_fifo_R_2_write fifo_port_we 1 1 } } }
-	send_fifo_R_3 { ap_fifo {  { send_fifo_R_3_din fifo_data_in 1 128 }  { send_fifo_R_3_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_3_fifo_cap fifo_update 0 6 }  { send_fifo_R_3_full_n fifo_status 0 1 }  { send_fifo_R_3_write fifo_port_we 1 1 } } }
+	send_fifo_L_0 { ap_fifo {  { send_fifo_L_0_din fifo_data_in 1 128 }  { send_fifo_L_0_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_0_fifo_cap fifo_update 0 10 }  { send_fifo_L_0_full_n fifo_status 0 1 }  { send_fifo_L_0_write fifo_port_we 1 1 } } }
+	send_fifo_L_1 { ap_fifo {  { send_fifo_L_1_din fifo_data_in 1 128 }  { send_fifo_L_1_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_1_fifo_cap fifo_update 0 10 }  { send_fifo_L_1_full_n fifo_status 0 1 }  { send_fifo_L_1_write fifo_port_we 1 1 } } }
+	send_fifo_L_2 { ap_fifo {  { send_fifo_L_2_din fifo_data_in 1 128 }  { send_fifo_L_2_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_2_fifo_cap fifo_update 0 10 }  { send_fifo_L_2_full_n fifo_status 0 1 }  { send_fifo_L_2_write fifo_port_we 1 1 } } }
+	send_fifo_L_3 { ap_fifo {  { send_fifo_L_3_din fifo_data_in 1 128 }  { send_fifo_L_3_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_3_fifo_cap fifo_update 0 10 }  { send_fifo_L_3_full_n fifo_status 0 1 }  { send_fifo_L_3_write fifo_port_we 1 1 } } }
+	send_fifo_R_0 { ap_fifo {  { send_fifo_R_0_din fifo_data_in 1 128 }  { send_fifo_R_0_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_0_fifo_cap fifo_update 0 10 }  { send_fifo_R_0_full_n fifo_status 0 1 }  { send_fifo_R_0_write fifo_port_we 1 1 } } }
+	send_fifo_R_1 { ap_fifo {  { send_fifo_R_1_din fifo_data_in 1 128 }  { send_fifo_R_1_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_1_fifo_cap fifo_update 0 10 }  { send_fifo_R_1_full_n fifo_status 0 1 }  { send_fifo_R_1_write fifo_port_we 1 1 } } }
+	send_fifo_R_2 { ap_fifo {  { send_fifo_R_2_din fifo_data_in 1 128 }  { send_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_2_fifo_cap fifo_update 0 10 }  { send_fifo_R_2_full_n fifo_status 0 1 }  { send_fifo_R_2_write fifo_port_we 1 1 } } }
+	send_fifo_R_3 { ap_fifo {  { send_fifo_R_3_din fifo_data_in 1 128 }  { send_fifo_R_3_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_3_fifo_cap fifo_update 0 10 }  { send_fifo_R_3_full_n fifo_status 0 1 }  { send_fifo_R_3_write fifo_port_we 1 1 } } }
 }

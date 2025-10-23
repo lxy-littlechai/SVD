@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_315_2_1'" level="0">
-<item name = "Date">Mon Oct 20 21:15:08 2025
+<item name = "Date">Mon Oct 20 22:10:36 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">33, 33, 0.165 us, 0.165 us, 32, 32, dataflow</column>
+<column name="">287, 287, 1.435 us, 1.435 us, 286, 286, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -32,14 +32,14 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="print_int_U0">print_int_s, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
-<column name="receive4AIE_U0">receive4AIE, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="receive4AIE_7_U0">receive4AIE_7, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="receive4AIE_1_U0">receive4AIE_1, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="receive4AIE_6_U0">receive4AIE_6, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="receive4AIE_2_U0">receive4AIE_2, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="receive4AIE_5_U0">receive4AIE_5, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="receive4AIE_3_U0">receive4AIE_3, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="receive4AIE_4_U0">receive4AIE_4, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
+<column name="receive4AIE_U0">receive4AIE, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="receive4AIE_7_U0">receive4AIE_7, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="receive4AIE_1_U0">receive4AIE_1, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="receive4AIE_6_U0">receive4AIE_6, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="receive4AIE_2_U0">receive4AIE_2, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="receive4AIE_5_U0">receive4AIE_5, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="receive4AIE_3_U0">receive4AIE_3, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="receive4AIE_4_U0">receive4AIE_4, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
 <column name="Block_newFuncRoot_proc_proc_U0">Block_newFuncRoot_proc_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 <column name="Block_newFuncRoot_proc_proc30_U0">Block_newFuncRoot_proc_proc30, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 <column name="Block_newFuncRoot_proc_proc32_U0">Block_newFuncRoot_proc_proc32, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
@@ -74,7 +74,7 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 44, -</column>
 <column name="FIFO">-, -, 1088, 384, -</column>
-<column name="Instance">-, -, 7834, 14964, -</column>
+<column name="Instance">-, -, 7866, 15036, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 18, -</column>
 <column name="Register">-, -, 9, -, -</column>
@@ -103,14 +103,14 @@
 <column name="Block_newFuncRoot_proc_proc42_U0">Block_newFuncRoot_proc_proc42, 0, 0, 34, 36, 0</column>
 <column name="Block_newFuncRoot_proc_proc43_U0">Block_newFuncRoot_proc_proc43, 0, 0, 2, 6, 0</column>
 <column name="print_int_U0">print_int_s, 0, 0, 2, 4, 0</column>
-<column name="receive4AIE_U0">receive4AIE, 0, 0, 943, 1828, 0</column>
-<column name="receive4AIE_1_U0">receive4AIE_1, 0, 0, 943, 1828, 0</column>
-<column name="receive4AIE_2_U0">receive4AIE_2, 0, 0, 943, 1828, 0</column>
-<column name="receive4AIE_3_U0">receive4AIE_3, 0, 0, 943, 1828, 0</column>
-<column name="receive4AIE_4_U0">receive4AIE_4, 0, 0, 943, 1828, 0</column>
-<column name="receive4AIE_5_U0">receive4AIE_5, 0, 0, 943, 1828, 0</column>
-<column name="receive4AIE_6_U0">receive4AIE_6, 0, 0, 943, 1828, 0</column>
-<column name="receive4AIE_7_U0">receive4AIE_7, 0, 0, 943, 1828, 0</column>
+<column name="receive4AIE_U0">receive4AIE, 0, 0, 947, 1837, 0</column>
+<column name="receive4AIE_1_U0">receive4AIE_1, 0, 0, 947, 1837, 0</column>
+<column name="receive4AIE_2_U0">receive4AIE_2, 0, 0, 947, 1837, 0</column>
+<column name="receive4AIE_3_U0">receive4AIE_3, 0, 0, 947, 1837, 0</column>
+<column name="receive4AIE_4_U0">receive4AIE_4, 0, 0, 947, 1837, 0</column>
+<column name="receive4AIE_5_U0">receive4AIE_5, 0, 0, 947, 1837, 0</column>
+<column name="receive4AIE_6_U0">receive4AIE_6, 0, 0, 947, 1837, 0</column>
+<column name="receive4AIE_7_U0">receive4AIE_7, 0, 0, 947, 1837, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -131,13 +131,13 @@
 <column name="convR1_channel_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="convR2_channel_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="convR3_channel_U">0, 68, 0, -, 2, 32, 64</column>
-<column name="empty_147_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="empty_148_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="empty_149_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="empty_150_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="empty_151_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="empty_152_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="empty_153_U">0, 68, 0, -, 2, 32, 64</column>
+<column name="empty_154_U">0, 68, 0, -, 2, 32, 64</column>
 <column name="empty_U">0, 68, 0, -, 2, 32, 64</column>
 </table>
 </item>
@@ -200,7 +200,7 @@
 <section name = "Interface" level="0">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
-<column name="i_0">in, 5, ap_none, i_0, scalar</column>
+<column name="i_0">in, 9, ap_none, i_0, scalar</column>
 <column name="i_0_ap_vld">in, 1, ap_none, i_0, scalar</column>
 <column name="receive_fifo_L_0_din">out, 128, ap_fifo, receive_fifo_L_0, pointer</column>
 <column name="receive_fifo_L_0_full_n">in, 1, ap_fifo, receive_fifo_L_0, pointer</column>

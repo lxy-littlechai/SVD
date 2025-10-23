@@ -34,13 +34,13 @@ output   ap_done;
 output   ap_idle;
 output   ap_ready;
 input  [127:0] receive_fifo_R_0_dout;
-input  [8:0] receive_fifo_R_0_num_data_valid;
-input  [8:0] receive_fifo_R_0_fifo_cap;
+input  [14:0] receive_fifo_R_0_num_data_valid;
+input  [14:0] receive_fifo_R_0_fifo_cap;
 input   receive_fifo_R_0_empty_n;
 output   receive_fifo_R_0_read;
 output  [127:0] send_fifo_R_3_din;
-input  [5:0] send_fifo_R_3_num_data_valid;
-input  [5:0] send_fifo_R_3_fifo_cap;
+input  [9:0] send_fifo_R_3_num_data_valid;
+input  [9:0] send_fifo_R_3_fifo_cap;
 input   send_fifo_R_3_full_n;
 output   send_fifo_R_3_write;
 
@@ -62,11 +62,11 @@ reg    ap_ready_int;
 reg    receive_fifo_R_0_blk_n;
 wire    ap_block_pp0_stage0;
 reg    send_fifo_R_3_blk_n;
-reg   [4:0] j_28_fu_46;
-wire   [4:0] j_30_fu_82_p2;
+reg   [8:0] j_fu_46;
+wire   [8:0] j_31_fu_82_p2;
 wire    ap_loop_init;
 reg    ap_block_pp0_stage0_11001;
-reg   [4:0] ap_sig_allocacmp_j;
+reg   [8:0] ap_sig_allocacmp_j_30;
 reg    ap_block_pp0_stage0_01001;
 reg    ap_done_reg;
 wire    ap_continue_int;
@@ -80,7 +80,7 @@ wire    ap_ce_reg;
 initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
-#0 j_28_fu_46 = 5'd0;
+#0 j_fu_46 = 9'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -134,9 +134,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if (((icmp_ln484_fu_88_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            j_28_fu_46 <= j_30_fu_82_p2;
+            j_fu_46 <= j_31_fu_82_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            j_28_fu_46 <= 5'd0;
+            j_fu_46 <= 9'd0;
         end
     end
 end
@@ -183,9 +183,9 @@ end
 
 always @ (*) begin
     if (((ap_loop_init == 1'b1) & (1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_sig_allocacmp_j = 5'd0;
+        ap_sig_allocacmp_j_30 = 9'd0;
     end else begin
-        ap_sig_allocacmp_j = j_28_fu_46;
+        ap_sig_allocacmp_j_30 = j_fu_46;
     end
 end
 
@@ -258,9 +258,9 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign icmp_ln484_fu_88_p2 = ((ap_sig_allocacmp_j == 5'd16) ? 1'b1 : 1'b0);
+assign icmp_ln484_fu_88_p2 = ((ap_sig_allocacmp_j_30 == 9'd256) ? 1'b1 : 1'b0);
 
-assign j_30_fu_82_p2 = (ap_sig_allocacmp_j + 5'd1);
+assign j_31_fu_82_p2 = (ap_sig_allocacmp_j_30 + 9'd1);
 
 assign send_fifo_R_3_din = receive_fifo_R_0_dout;
 

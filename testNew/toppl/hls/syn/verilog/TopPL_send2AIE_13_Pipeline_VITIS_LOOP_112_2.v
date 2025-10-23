@@ -42,8 +42,8 @@ output   ap_done;
 output   ap_idle;
 output   ap_ready;
 input  [127:0] send_fifo_L_3_dout;
-input  [5:0] send_fifo_L_3_num_data_valid;
-input  [5:0] send_fifo_L_3_fifo_cap;
+input  [9:0] send_fifo_L_3_num_data_valid;
+input  [9:0] send_fifo_L_3_fifo_cap;
 input   send_fifo_L_3_empty_n;
 output   send_fifo_L_3_read;
 input   sweep_tx4_0_TREADY;
@@ -90,10 +90,10 @@ wire   [95:0] trunc_ln118_fu_207_p1;
 reg   [95:0] trunc_ln118_reg_258;
 wire   [63:0] zext_ln114_fu_181_p1;
 wire   [63:0] zext_ln115_fu_198_p1;
-reg   [3:0] j_04_fu_78;
-wire   [3:0] j_11_fu_157_p2;
+reg   [6:0] j_04_fu_78;
+wire   [6:0] j_11_fu_157_p2;
 wire    ap_loop_init;
-reg   [3:0] ap_sig_allocacmp_j;
+reg   [6:0] ap_sig_allocacmp_j;
 reg    ap_block_pp0_stage0_01001;
 wire   [0:0] rem27_urem_fu_193_p2;
 wire   [31:0] tmp_s_fu_211_p4;
@@ -111,7 +111,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
-#0 j_04_fu_78 = 4'd0;
+#0 j_04_fu_78 = 7'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -177,7 +177,7 @@ always @ (posedge ap_clk) begin
         if (((icmp_ln112_fu_151_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
             j_04_fu_78 <= j_11_fu_157_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            j_04_fu_78 <= 4'd1;
+            j_04_fu_78 <= 7'd1;
         end
     end
 end
@@ -232,7 +232,7 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
-        ap_sig_allocacmp_j = 4'd1;
+        ap_sig_allocacmp_j = 7'd1;
     end else begin
         ap_sig_allocacmp_j = j_04_fu_78;
     end
@@ -341,9 +341,9 @@ assign data_temp_address1 = zext_ln115_fu_198_p1;
 
 assign data_temp_d0 = send_fifo_L_3_dout;
 
-assign icmp_ln112_fu_151_p2 = ((ap_sig_allocacmp_j == 4'd8) ? 1'b1 : 1'b0);
+assign icmp_ln112_fu_151_p2 = ((ap_sig_allocacmp_j == 7'd64) ? 1'b1 : 1'b0);
 
-assign j_11_fu_157_p2 = (ap_sig_allocacmp_j + 4'd1);
+assign j_11_fu_157_p2 = (ap_sig_allocacmp_j + 7'd1);
 
 assign rem27_urem_fu_193_p2 = (trunc_ln112_reg_247 ^ 1'd1);
 

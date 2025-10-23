@@ -1,0 +1,9 @@
+{
+  "name": "test32_4_1",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": ["pl\/TopPL.cfg"],
+    "work_dir": "toppl"
+  }
+}

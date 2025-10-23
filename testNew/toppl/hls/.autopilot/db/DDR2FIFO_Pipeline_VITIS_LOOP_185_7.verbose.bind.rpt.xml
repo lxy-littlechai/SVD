@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'DDR2FIFO_Pipeline_VITIS_LOOP_185_7'" level="0">
-<item name = "Date">Mon Oct 20 21:14:44 2025
+<item name = "Date">Mon Oct 20 22:10:15 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 2.543 ns, 1.35 ns</column>
+<column name="ap_clk">5.00 ns, 2.478 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">18, 18, 90.000 ns, 90.000 ns, 18, 18, no</column>
+<column name="">258, 258, 1.290 us, 1.290 us, 258, 258, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_185_7">16, 16, 2, 1, 1, 16, yes</column>
+<column name="- VITIS_LOOP_185_7">256, 256, 2, 1, 1, 256, yes</column>
 </table>
 </item>
 </section>

@@ -18,9 +18,9 @@
 <pragma file="/usr/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_common.h" line="523" pragmaType="inline" parentfunction="ssdm_int<128, false>::ssdm_int(unsigned __int128)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<128, false>::ap_int_base<128, false>(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="get_user_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="range" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::ap_int_base<128, false>(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
-<pragma file="" line="0" pragmaType="inline" parentfunction="get" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="range" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>::ap_range_ref(ap_int_base<128, false>*, int, int)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="get_data_ptr" off="0" region="0" recursive="0"/>
@@ -104,7 +104,6 @@
 <pragma file="/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp" line="113" pragmaType="pipeline" parentfunction="send2AIE" off="0" ii="1" rewind="0" style=""/>
 <pragma file="/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp" line="6" pragmaType="inline" parentfunction="generateHeader" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
-<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>::operator=(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>::operator=(int)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<16>::ap_uint(int)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<1>::ap_uint(int)" off="0" region="0" recursive="0"/>
@@ -214,11 +213,12 @@
 <pragma file="" line="0" pragmaType="stream" parentfunction="hls::stream<float, 4>::stream()" depth="4" type="fifo" variable="this"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<ap_uint<1>, 4>::stream()" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="stream" parentfunction="hls::stream<ap_uint<1>, 4>::stream()" depth="4" type="fifo" variable="this"/>
-<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<ap_uint<128>, 32>::stream()" off="0" region="0" recursive="0"/>
-<pragma file="" line="0" pragmaType="stream" parentfunction="hls::stream<ap_uint<128>, 32>::stream()" depth="32" type="fifo" variable="this"/>
-<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<ap_uint<128>, 256>::stream()" off="0" region="0" recursive="0"/>
-<pragma file="" line="0" pragmaType="stream" parentfunction="hls::stream<ap_uint<128>, 256>::stream()" depth="256" type="fifo" variable="this"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<ap_uint<128>, 512>::stream()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="stream" parentfunction="hls::stream<ap_uint<128>, 512>::stream()" depth="512" type="fifo" variable="this"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="hls::stream<ap_uint<128>, 16384>::stream()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="stream" parentfunction="hls::stream<ap_uint<128>, 16384>::stream()" depth="16384" type="fifo" variable="this"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="get_id_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_range_ref<128, false>::operator=(ap_range_ref<128, false> const&)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="get_dest_ptr" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
 </pragmas>

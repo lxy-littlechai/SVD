@@ -63,43 +63,43 @@ port (
     convSet_R_3_full_n : IN STD_LOGIC;
     convSet_R_3_write : OUT STD_LOGIC;
     receive_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_0_full_n : IN STD_LOGIC;
     receive_fifo_L_0_write : OUT STD_LOGIC;
     receive_fifo_L_1_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_1_full_n : IN STD_LOGIC;
     receive_fifo_L_1_write : OUT STD_LOGIC;
     receive_fifo_L_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_2_full_n : IN STD_LOGIC;
     receive_fifo_L_2_write : OUT STD_LOGIC;
     receive_fifo_L_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_3_full_n : IN STD_LOGIC;
     receive_fifo_L_3_write : OUT STD_LOGIC;
     receive_fifo_R_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_R_0_full_n : IN STD_LOGIC;
     receive_fifo_R_0_write : OUT STD_LOGIC;
     receive_fifo_R_1_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_R_1_full_n : IN STD_LOGIC;
     receive_fifo_R_1_write : OUT STD_LOGIC;
     receive_fifo_R_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_R_2_full_n : IN STD_LOGIC;
     receive_fifo_R_2_write : OUT STD_LOGIC;
     receive_fifo_R_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_R_3_full_n : IN STD_LOGIC;
     receive_fifo_R_3_write : OUT STD_LOGIC;
     sweep_rx1_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -176,10 +176,10 @@ architecture behav of TopPL_Receive is
     constant ap_const_lv32_3 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000011";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv32_4 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000100";
-    constant ap_const_lv5_0 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
-    constant ap_const_lv5_1 : STD_LOGIC_VECTOR (4 downto 0) := "00001";
-    constant ap_const_lv5_10 : STD_LOGIC_VECTOR (4 downto 0) := "10000";
-    constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    constant ap_const_lv7_0 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    constant ap_const_lv7_1 : STD_LOGIC_VECTOR (6 downto 0) := "0000001";
+    constant ap_const_lv7_40 : STD_LOGIC_VECTOR (6 downto 0) := "1000000";
+    constant ap_const_lv15_0 : STD_LOGIC_VECTOR (14 downto 0) := "000000000000000";
 
 attribute shreg_extract : string;
     signal ap_done_reg : STD_LOGIC := '0';
@@ -258,8 +258,8 @@ attribute shreg_extract : string;
     signal icmp_ln273_fu_324_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state5 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
-    signal i_fu_174 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
-    signal i_35_fu_318_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal i_fu_174 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    signal i_35_fu_318_p2 : STD_LOGIC_VECTOR (6 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_block_state1 : BOOLEAN;
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
@@ -539,8 +539,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         receive_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_0_full_n : IN STD_LOGIC;
         receive_fifo_L_0_write : OUT STD_LOGIC;
         norm_rx0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -685,8 +685,8 @@ begin
         ap_idle => grp_receive4DDR_fu_284_ap_idle,
         ap_ready => grp_receive4DDR_fu_284_ap_ready,
         receive_fifo_L_0_din => grp_receive4DDR_fu_284_receive_fifo_L_0_din,
-        receive_fifo_L_0_num_data_valid => ap_const_lv9_0,
-        receive_fifo_L_0_fifo_cap => ap_const_lv9_0,
+        receive_fifo_L_0_num_data_valid => ap_const_lv15_0,
+        receive_fifo_L_0_fifo_cap => ap_const_lv15_0,
         receive_fifo_L_0_full_n => receive_fifo_L_0_full_n,
         receive_fifo_L_0_write => grp_receive4DDR_fu_284_receive_fifo_L_0_write,
         norm_rx0_TDATA => norm_rx0_TDATA_int_regslice,
@@ -1300,7 +1300,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((syscontrol_2_empty_n = ap_const_logic_1) and (sig_read_fu_178_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
-                i_fu_174 <= ap_const_lv5_0;
+                i_fu_174 <= ap_const_lv7_0;
             elsif (((icmp_ln273_fu_324_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
                 i_fu_174 <= i_35_fu_318_p2;
             end if; 
@@ -1536,8 +1536,8 @@ begin
 
     grp_dataflow_parent_loop_proc28_fu_184_ap_start <= grp_dataflow_parent_loop_proc28_fu_184_ap_start_reg;
     grp_receive4DDR_fu_284_ap_start <= grp_receive4DDR_fu_284_ap_start_reg;
-    i_35_fu_318_p2 <= std_logic_vector(unsigned(i_fu_174) + unsigned(ap_const_lv5_1));
-    icmp_ln273_fu_324_p2 <= "1" when (i_fu_174 = ap_const_lv5_10) else "0";
+    i_35_fu_318_p2 <= std_logic_vector(unsigned(i_fu_174) + unsigned(ap_const_lv7_1));
+    icmp_ln273_fu_324_p2 <= "1" when (i_fu_174 = ap_const_lv7_40) else "0";
     norm_rx0_TREADY <= regslice_both_norm_rx0_V_data_V_U_ack_in;
 
     norm_rx0_TREADY_int_regslice_assign_proc : process(grp_receive4DDR_fu_284_norm_rx0_TREADY, ap_CS_fsm_state5)

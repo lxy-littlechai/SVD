@@ -38,12 +38,12 @@ newFuncRoot:0 %shiftreg = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="5" bw="5" op_0_bw="32">
+<Node id="5" bw="9" op_0_bw="32">
 <![CDATA[
-newFuncRoot:1 %j_42 = alloca i32 1
+newFuncRoot:1 %j_44 = alloca i32 1
 
 ]]></Node>
-<StgValue><ssdm name="j_42"/></StgValue>
+<StgValue><ssdm name="j_44"/></StgValue>
 </operation>
 
 <operation id="7" st_id="1" stage="1" lat="1">
@@ -115,7 +115,7 @@ newFuncRoot:5 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %s
 
 <Node id="10" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-newFuncRoot:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_R_3, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0
+newFuncRoot:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_R_3, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -130,7 +130,7 @@ newFuncRoot:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 
 <Node id="11" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-newFuncRoot:7 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem0, void @empty_65, i32 0, i32 0, void @empty_70, i32 64, i32 2048, void @empty_69, void @empty_45, void @empty_70, i32 16, i32 16, i32 64, i32 64, void @empty_70, void @empty_70, i32 4294967295, i32 0
+newFuncRoot:7 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %gmem0, void @empty_64, i32 0, i32 0, void @empty_62, i32 64, i32 2048, void @empty_82, void @empty_15, void @empty_62, i32 16, i32 16, i32 64, i32 64, void @empty_62, void @empty_62, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -143,9 +143,9 @@ newFuncRoot:7 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="12" bw="0" op_0_bw="5">
+<Node id="12" bw="0" op_0_bw="9">
 <![CDATA[
-newFuncRoot:8 %muxLogicData_to_store_ln195 = muxlogic i5 0
+newFuncRoot:8 %muxLogicData_to_store_ln195 = muxlogic i9 0
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln195"/></StgValue>
@@ -158,9 +158,9 @@ newFuncRoot:8 %muxLogicData_to_store_ln195 = muxlogic i5 0
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="13" bw="0" op_0_bw="5">
+<Node id="13" bw="0" op_0_bw="9">
 <![CDATA[
-newFuncRoot:9 %muxLogicAddr_to_store_ln195 = muxlogic i5 %j_42
+newFuncRoot:9 %muxLogicAddr_to_store_ln195 = muxlogic i9 %j_44
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicAddr_to_store_ln195"/></StgValue>
@@ -173,9 +173,9 @@ newFuncRoot:9 %muxLogicAddr_to_store_ln195 = muxlogic i5 %j_42
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="0" op_0_bw="5" op_1_bw="5">
+<Node id="14" bw="0" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-newFuncRoot:10 %store_ln195 = store i5 0, i5 %j_42
+newFuncRoot:10 %store_ln195 = store i9 0, i9 %j_44
 
 ]]></Node>
 <StgValue><ssdm name="store_ln195"/></StgValue>
@@ -248,9 +248,9 @@ newFuncRoot:14 %br_ln0 = br void %for.inc125
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="20" bw="5" op_0_bw="5">
+<Node id="20" bw="9" op_0_bw="9">
 <![CDATA[
-for.inc125:0 %MuxLogicAddr_to_j = muxlogic i5 %j_42
+for.inc125:0 %MuxLogicAddr_to_j = muxlogic i9 %j_44
 
 ]]></Node>
 <StgValue><ssdm name="MuxLogicAddr_to_j"/></StgValue>
@@ -263,9 +263,9 @@ for.inc125:0 %MuxLogicAddr_to_j = muxlogic i5 %j_42
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="21" bw="5" op_0_bw="5" op_1_bw="0">
+<Node id="21" bw="9" op_0_bw="9" op_1_bw="0">
 <![CDATA[
-for.inc125:1 %j = load i5 %j_42
+for.inc125:1 %j = load i9 %j_44
 
 ]]></Node>
 <StgValue><ssdm name="j"/></StgValue>
@@ -278,9 +278,9 @@ for.inc125:1 %j = load i5 %j_42
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="22" bw="5" op_0_bw="5" op_1_bw="5">
+<Node id="22" bw="9" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.inc125:2 %add_ln195 = add i5 %j, i5 1
+for.inc125:2 %add_ln195 = add i9 %j, i9 1
 
 ]]></Node>
 <StgValue><ssdm name="add_ln195"/></StgValue>
@@ -293,9 +293,9 @@ for.inc125:2 %add_ln195 = add i5 %j, i5 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="23" bw="1" op_0_bw="5" op_1_bw="5">
+<Node id="23" bw="1" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.inc125:3 %icmp_ln195 = icmp_eq  i5 %j, i5 16
+for.inc125:3 %icmp_ln195 = icmp_eq  i9 %j, i9 256
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln195"/></StgValue>
@@ -324,9 +324,9 @@ for.inc125:4 %br_ln195 = br i1 %icmp_ln195, void %for.inc125.split, void %if.end
 </and_exp></or_exp>
 </condition>
 
-<Node id="30" bw="2" op_0_bw="5">
+<Node id="30" bw="2" op_0_bw="9">
 <![CDATA[
-for.inc125.split:4 %trunc_ln195 = trunc i5 %j
+for.inc125.split:4 %trunc_ln195 = trunc i9 %j
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln195"/></StgValue>
@@ -356,9 +356,9 @@ for.inc125.split:8 %icmp_ln197 = icmp_eq  i2 %trunc_ln195, i2 0
 </and_exp></or_exp>
 </condition>
 
-<Node id="46" bw="0" op_0_bw="5">
+<Node id="46" bw="0" op_0_bw="9">
 <![CDATA[
-for.inc125.split._crit_edge:5 %muxLogicData_to_store_ln195 = muxlogic i5 %add_ln195
+for.inc125.split._crit_edge:5 %muxLogicData_to_store_ln195 = muxlogic i9 %add_ln195
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln195"/></StgValue>
@@ -372,9 +372,9 @@ for.inc125.split._crit_edge:5 %muxLogicData_to_store_ln195 = muxlogic i5 %add_ln
 </and_exp></or_exp>
 </condition>
 
-<Node id="47" bw="0" op_0_bw="5">
+<Node id="47" bw="0" op_0_bw="9">
 <![CDATA[
-for.inc125.split._crit_edge:6 %muxLogicAddr_to_store_ln195 = muxlogic i5 %j_42
+for.inc125.split._crit_edge:6 %muxLogicAddr_to_store_ln195 = muxlogic i9 %j_44
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicAddr_to_store_ln195"/></StgValue>
@@ -388,9 +388,9 @@ for.inc125.split._crit_edge:6 %muxLogicAddr_to_store_ln195 = muxlogic i5 %j_42
 </and_exp></or_exp>
 </condition>
 
-<Node id="48" bw="0" op_0_bw="5" op_1_bw="5" op_2_bw="0" op_3_bw="0">
+<Node id="48" bw="0" op_0_bw="9" op_1_bw="9" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.inc125.split._crit_edge:7 %store_ln195 = store i5 %add_ln195, i5 %j_42
+for.inc125.split._crit_edge:7 %store_ln195 = store i9 %add_ln195, i9 %j_44
 
 ]]></Node>
 <StgValue><ssdm name="store_ln195"/></StgValue>
@@ -489,7 +489,7 @@ for.inc125.split:3 %zext_ln195 = zext i384 %shiftreg_load
 
 <Node id="31" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.inc125.split:5 %specpipeline_ln196 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_70
+for.inc125.split:5 %specpipeline_ln196 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_62
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln196"/></StgValue>
@@ -505,7 +505,7 @@ for.inc125.split:5 %specpipeline_ln196 = specpipeline void @_ssdm_op_SpecPipelin
 
 <Node id="32" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-for.inc125.split:6 %speclooptripcount_ln195 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16
+for.inc125.split:6 %speclooptripcount_ln195 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256
 
 ]]></Node>
 <StgValue><ssdm name="speclooptripcount_ln195"/></StgValue>
@@ -748,7 +748,7 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 <dataflows>
 <dataflow id="65" from="StgValue_64" to="shiftreg" fromId="64" toId="5">
 </dataflow>
-<dataflow id="66" from="StgValue_64" to="j_42" fromId="64" toId="6">
+<dataflow id="66" from="StgValue_64" to="j_44" fromId="64" toId="6">
 </dataflow>
 <dataflow id="68" from="_ssdm_op_Read.ap_auto.i58" to="sext_ln202_read" fromId="67" toId="8">
 </dataflow>
@@ -770,23 +770,23 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="82" from="send_fifo_R_3" to="specinterface_ln0" fromId="61" toId="11">
 </dataflow>
-<dataflow id="84" from="empty_80" to="specinterface_ln0" fromId="83" toId="11">
+<dataflow id="84" from="empty_84" to="specinterface_ln0" fromId="83" toId="11">
 </dataflow>
 <dataflow id="86" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="11">
 </dataflow>
 <dataflow id="87" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="11">
 </dataflow>
-<dataflow id="89" from="empty_70" to="specinterface_ln0" fromId="88" toId="11">
+<dataflow id="89" from="empty_62" to="specinterface_ln0" fromId="88" toId="11">
 </dataflow>
 <dataflow id="90" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="11">
 </dataflow>
 <dataflow id="91" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="11">
 </dataflow>
-<dataflow id="92" from="empty_70" to="specinterface_ln0" fromId="88" toId="11">
+<dataflow id="92" from="empty_62" to="specinterface_ln0" fromId="88" toId="11">
 </dataflow>
-<dataflow id="93" from="empty_70" to="specinterface_ln0" fromId="88" toId="11">
+<dataflow id="93" from="empty_62" to="specinterface_ln0" fromId="88" toId="11">
 </dataflow>
-<dataflow id="94" from="empty_70" to="specinterface_ln0" fromId="88" toId="11">
+<dataflow id="94" from="empty_62" to="specinterface_ln0" fromId="88" toId="11">
 </dataflow>
 <dataflow id="95" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="11">
 </dataflow>
@@ -796,9 +796,9 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="98" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="11">
 </dataflow>
-<dataflow id="99" from="empty_70" to="specinterface_ln0" fromId="88" toId="11">
+<dataflow id="99" from="empty_62" to="specinterface_ln0" fromId="88" toId="11">
 </dataflow>
-<dataflow id="100" from="empty_70" to="specinterface_ln0" fromId="88" toId="11">
+<dataflow id="100" from="empty_62" to="specinterface_ln0" fromId="88" toId="11">
 </dataflow>
 <dataflow id="102" from="StgValue_101" to="specinterface_ln0" fromId="101" toId="11">
 </dataflow>
@@ -808,23 +808,23 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="105" from="gmem0" to="specinterface_ln0" fromId="62" toId="12">
 </dataflow>
-<dataflow id="107" from="empty_65" to="specinterface_ln0" fromId="106" toId="12">
+<dataflow id="107" from="empty_64" to="specinterface_ln0" fromId="106" toId="12">
 </dataflow>
 <dataflow id="108" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="12">
 </dataflow>
 <dataflow id="109" from="StgValue_85" to="specinterface_ln0" fromId="85" toId="12">
 </dataflow>
-<dataflow id="110" from="empty_70" to="specinterface_ln0" fromId="88" toId="12">
+<dataflow id="110" from="empty_62" to="specinterface_ln0" fromId="88" toId="12">
 </dataflow>
 <dataflow id="112" from="StgValue_111" to="specinterface_ln0" fromId="111" toId="12">
 </dataflow>
 <dataflow id="114" from="StgValue_113" to="specinterface_ln0" fromId="113" toId="12">
 </dataflow>
-<dataflow id="116" from="empty_69" to="specinterface_ln0" fromId="115" toId="12">
+<dataflow id="116" from="empty_82" to="specinterface_ln0" fromId="115" toId="12">
 </dataflow>
-<dataflow id="118" from="empty_45" to="specinterface_ln0" fromId="117" toId="12">
+<dataflow id="118" from="empty_15" to="specinterface_ln0" fromId="117" toId="12">
 </dataflow>
-<dataflow id="119" from="empty_70" to="specinterface_ln0" fromId="88" toId="12">
+<dataflow id="119" from="empty_62" to="specinterface_ln0" fromId="88" toId="12">
 </dataflow>
 <dataflow id="121" from="StgValue_120" to="specinterface_ln0" fromId="120" toId="12">
 </dataflow>
@@ -834,9 +834,9 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="124" from="StgValue_111" to="specinterface_ln0" fromId="111" toId="12">
 </dataflow>
-<dataflow id="125" from="empty_70" to="specinterface_ln0" fromId="88" toId="12">
+<dataflow id="125" from="empty_62" to="specinterface_ln0" fromId="88" toId="12">
 </dataflow>
-<dataflow id="126" from="empty_70" to="specinterface_ln0" fromId="88" toId="12">
+<dataflow id="126" from="empty_62" to="specinterface_ln0" fromId="88" toId="12">
 </dataflow>
 <dataflow id="127" from="StgValue_101" to="specinterface_ln0" fromId="101" toId="12">
 </dataflow>
@@ -844,11 +844,11 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="130" from="StgValue_129" to="muxLogicData_to_store_ln195" fromId="129" toId="13">
 </dataflow>
-<dataflow id="131" from="j_42" to="muxLogicAddr_to_store_ln195" fromId="6" toId="14">
+<dataflow id="131" from="j_44" to="muxLogicAddr_to_store_ln195" fromId="6" toId="14">
 </dataflow>
 <dataflow id="132" from="StgValue_129" to="store_ln195" fromId="129" toId="15">
 </dataflow>
-<dataflow id="133" from="j_42" to="store_ln195" fromId="6" toId="15">
+<dataflow id="133" from="j_44" to="store_ln195" fromId="6" toId="15">
 </dataflow>
 <dataflow id="135" from="StgValue_134" to="muxLogicData_to_store_ln0" fromId="134" toId="16">
 </dataflow>
@@ -858,9 +858,9 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="138" from="shiftreg" to="store_ln0" fromId="5" toId="18">
 </dataflow>
-<dataflow id="139" from="j_42" to="MuxLogicAddr_to_j" fromId="6" toId="20">
+<dataflow id="139" from="j_44" to="MuxLogicAddr_to_j" fromId="6" toId="20">
 </dataflow>
-<dataflow id="140" from="j_42" to="j" fromId="6" toId="21">
+<dataflow id="140" from="j_44" to="j" fromId="6" toId="21">
 </dataflow>
 <dataflow id="141" from="j" to="add_ln195" fromId="21" toId="22">
 </dataflow>
@@ -880,11 +880,11 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="152" from="add_ln195" to="muxLogicData_to_store_ln195" fromId="22" toId="27">
 </dataflow>
-<dataflow id="153" from="j_42" to="muxLogicAddr_to_store_ln195" fromId="6" toId="28">
+<dataflow id="153" from="j_44" to="muxLogicAddr_to_store_ln195" fromId="6" toId="28">
 </dataflow>
 <dataflow id="154" from="add_ln195" to="store_ln195" fromId="22" toId="29">
 </dataflow>
-<dataflow id="155" from="j_42" to="store_ln195" fromId="6" toId="29">
+<dataflow id="155" from="j_44" to="store_ln195" fromId="6" toId="29">
 </dataflow>
 <dataflow id="156" from="shiftreg" to="MuxLogicAddr_to_shiftreg_load" fromId="5" toId="30">
 </dataflow>
@@ -906,7 +906,7 @@ for.inc125.split._crit_edge:11 %br_ln195 = br void %for.inc125
 </dataflow>
 <dataflow id="166" from="StgValue_85" to="specpipeline_ln196" fromId="85" toId="34">
 </dataflow>
-<dataflow id="167" from="empty_70" to="specpipeline_ln196" fromId="88" toId="34">
+<dataflow id="167" from="empty_62" to="specpipeline_ln196" fromId="88" toId="34">
 </dataflow>
 <dataflow id="169" from="_ssdm_op_SpecLoopTripCount" to="speclooptripcount_ln195" fromId="168" toId="35">
 </dataflow>

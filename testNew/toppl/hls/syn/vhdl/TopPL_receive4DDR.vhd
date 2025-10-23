@@ -17,8 +17,8 @@ port (
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     receive_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_0_full_n : IN STD_LOGIC;
     receive_fifo_L_0_write : OUT STD_LOGIC;
     norm_rx0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -47,18 +47,18 @@ architecture behav of TopPL_receive4DDR is
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
     constant ap_const_lv32_3 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000011";
-    constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_boolean_0 : BOOLEAN := false;
     constant ap_const_lv128_lc_1 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_const_lv2_1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
-    constant ap_const_lv2_2 : STD_LOGIC_VECTOR (1 downto 0) := "10";
+    constant ap_const_lv3_1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
+    constant ap_const_lv3_4 : STD_LOGIC_VECTOR (2 downto 0) := "100";
     constant ap_const_lv32_20 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100000";
     constant ap_const_lv32_7F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001111111";
     constant ap_const_lv32_5F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001011111";
     constant ap_const_lv32_60 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001100000";
     constant ap_const_lv32_3F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111111";
-    constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    constant ap_const_lv15_0 : STD_LOGIC_VECTOR (14 downto 0) := "000000000000000";
 
 attribute shreg_extract : string;
     signal ap_CS_fsm : STD_LOGIC_VECTOR (5 downto 0) := "000001";
@@ -95,8 +95,8 @@ attribute shreg_extract : string;
     signal ap_CS_fsm_state4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
     signal data_temp_fu_88 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-    signal i_04_fu_84 : STD_LOGIC_VECTOR (1 downto 0) := "00";
-    signal i_19_fu_188_p2 : STD_LOGIC_VECTOR (1 downto 0);
+    signal i_04_fu_84 : STD_LOGIC_VECTOR (2 downto 0) := "000";
+    signal i_19_fu_188_p2 : STD_LOGIC_VECTOR (2 downto 0);
     signal ap_block_state2 : BOOLEAN;
     signal data_temp_1_fu_92 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     signal data_temp_6_fu_254_p5 : STD_LOGIC_VECTOR (127 downto 0);
@@ -123,8 +123,8 @@ attribute shreg_extract : string;
         ap_ready : OUT STD_LOGIC;
         norm_rx0_TVALID : IN STD_LOGIC;
         receive_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_0_full_n : IN STD_LOGIC;
         receive_fifo_L_0_write : OUT STD_LOGIC;
         data_temp_1 : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -154,8 +154,8 @@ begin
         ap_ready => grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_ready,
         norm_rx0_TVALID => norm_rx0_TVALID,
         receive_fifo_L_0_din => grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_receive_fifo_L_0_din,
-        receive_fifo_L_0_num_data_valid => ap_const_lv9_0,
-        receive_fifo_L_0_fifo_cap => ap_const_lv9_0,
+        receive_fifo_L_0_num_data_valid => ap_const_lv15_0,
+        receive_fifo_L_0_fifo_cap => ap_const_lv15_0,
         receive_fifo_L_0_full_n => receive_fifo_L_0_full_n,
         receive_fifo_L_0_write => grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_receive_fifo_L_0_write,
         data_temp_1 => data_temp_1_fu_92,
@@ -229,7 +229,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then 
-                i_04_fu_84 <= ap_const_lv2_0;
+                i_04_fu_84 <= ap_const_lv3_0;
             elsif (((icmp_ln32_fu_194_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2) and (ap_const_boolean_0 = ap_block_state2))) then 
                 i_04_fu_84 <= i_19_fu_188_p2;
             end if; 
@@ -395,8 +395,8 @@ begin
     data_temp_2_fu_216_p5 <= (data_temp_fu_88(127 downto 96) & tmp_fu_206_p4);
     data_temp_6_fu_254_p5 <= (trunc_ln50_fu_250_p1 & grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_data_temp_5_out(95 downto 0));
     grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start <= grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start_reg;
-    i_19_fu_188_p2 <= std_logic_vector(unsigned(i_04_fu_84) + unsigned(ap_const_lv2_1));
-    icmp_ln32_fu_194_p2 <= "1" when (i_04_fu_84 = ap_const_lv2_2) else "0";
+    i_19_fu_188_p2 <= std_logic_vector(unsigned(i_04_fu_84) + unsigned(ap_const_lv3_1));
+    icmp_ln32_fu_194_p2 <= "1" when (i_04_fu_84 = ap_const_lv3_4) else "0";
 
     norm_rx0_TDATA_blk_n_assign_proc : process(norm_rx0_TVALID, ap_CS_fsm_state5, ap_CS_fsm_state2, icmp_ln32_fu_194_p2)
     begin

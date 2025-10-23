@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ps
 
-module TopPL_hls_deadlock_idx14_monitor ( // for module TopPL_TopPL_inst.Send_U0.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0
+module TopPL_hls_deadlock_idx14_monitor ( // for module TopPL_TopPL_inst.Send_U0.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0
     input wire clock,
     input wire reset,
     input wire [35:0] axis_block_sigs,

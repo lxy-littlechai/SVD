@@ -304,18 +304,18 @@ set RtlHierarchyInfo {[
 			{"Name" : "ConvArray", "Type" : "None", "Direction" : "I"},
 			{"Name" : "syscontrol_0", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "4", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144", "Port" : "syscontrol_0", "Inst_start_state" : "2", "Inst_end_state" : "3"},
 					{"ID" : "9", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175", "Port" : "syscontrol_0", "Inst_start_state" : "76", "Inst_end_state" : "77"},
+					{"ID" : "1", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144", "Port" : "syscontrol_0", "Inst_start_state" : "2", "Inst_end_state" : "3"},
 					{"ID" : "11", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185", "Port" : "syscontrol_0", "Inst_start_state" : "76", "Inst_end_state" : "78"}]},
 			{"Name" : "syscontrol_1", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "4", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144", "Port" : "syscontrol_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
 					{"ID" : "9", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175", "Port" : "syscontrol_1", "Inst_start_state" : "76", "Inst_end_state" : "77"},
+					{"ID" : "1", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144", "Port" : "syscontrol_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
 					{"ID" : "11", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185", "Port" : "syscontrol_1", "Inst_start_state" : "76", "Inst_end_state" : "78"}]},
 			{"Name" : "syscontrol_2", "Type" : "Fifo", "Direction" : "O", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "4", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144", "Port" : "syscontrol_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
 					{"ID" : "9", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175", "Port" : "syscontrol_2", "Inst_start_state" : "76", "Inst_end_state" : "77"},
+					{"ID" : "1", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144", "Port" : "syscontrol_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
 					{"ID" : "11", "SubInstance" : "grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185", "Port" : "syscontrol_2", "Inst_start_state" : "76", "Inst_end_state" : "78"}]},
 			{"Name" : "convSet_L_0", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "4", "DependentChanType" : "0",
 				"SubConnect" : [
@@ -378,7 +378,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "722", "EstimateLatencyMax" : "722",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "12098", "EstimateLatencyMax" : "12098",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",

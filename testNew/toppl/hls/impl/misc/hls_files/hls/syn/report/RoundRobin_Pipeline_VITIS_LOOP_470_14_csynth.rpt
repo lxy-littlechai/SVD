@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'RoundRobin_Pipeline_VITIS_LOOP_470_14'
 ================================================================
-* Date:           Mon Oct 20 21:15:01 2025
+* Date:           Mon Oct 20 22:10:30 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -20,17 +20,17 @@
     +--------+---------+----------+------------+
     |  Clock |  Target | Estimated| Uncertainty|
     +--------+---------+----------+------------+
-    |ap_clk  |  5.00 ns|  2.043 ns|     1.35 ns|
+    |ap_clk  |  5.00 ns|  2.247 ns|     1.35 ns|
     +--------+---------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-    |   min   |   max   |    min    |    max    | min | max |   Type  |
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |       18|       18|  90.000 ns|  90.000 ns|   18|   18|       no|
-    +---------+---------+-----------+-----------+-----+-----+---------+
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      258|      258|  1.290 us|  1.290 us|  258|  258|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
         * Instance: 
@@ -41,7 +41,7 @@
         |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +---------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_470_14  |       16|       16|         2|          1|          1|    16|       yes|
+        |- VITIS_LOOP_470_14  |      256|      256|         2|          1|          1|   256|       yes|
         +---------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -54,14 +54,14 @@
 |       Name      | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
 +-----------------+---------+------+---------+--------+-----+
 |DSP              |        -|     -|        -|       -|    -|
-|Expression       |        -|     -|        0|      17|    -|
+|Expression       |        -|     -|        0|      25|    -|
 |FIFO             |        -|     -|        -|       -|    -|
 |Instance         |        -|     -|        -|       -|    -|
 |Memory           |        -|     -|        -|       -|    -|
-|Multiplexer      |        -|     -|        -|      18|    -|
-|Register         |        -|     -|        8|       -|    -|
+|Multiplexer      |        -|     -|        -|      24|    -|
+|Register         |        -|     -|       12|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |        0|     0|        8|      35|    0|
+|Total            |        0|     0|       12|      49|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -85,13 +85,13 @@
     +----------------------------------+----------+----+---+----+------------+------------+
     |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------------------+----------+----+---+----+------------+------------+
-    |j_32_fu_82_p2                     |         +|   0|  0|   5|           5|           1|
+    |j_33_fu_82_p2                     |         +|   0|  0|   9|           9|           1|
     |ap_block_pp0_stage0_01001         |       and|   0|  0|   2|           1|           1|
-    |icmp_ln470_fu_88_p2               |      icmp|   0|  0|   6|           5|           6|
+    |icmp_ln470_fu_88_p2               |      icmp|   0|  0|  10|           9|          10|
     |ap_block_state2_pp0_stage0_iter1  |        or|   0|  0|   2|           1|           1|
     |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
     +----------------------------------+----------+----+---+----+------------+------------+
-    |Total                             |          |   0|  0|  17|          13|          11|
+    |Total                             |          |   0|  0|  25|          21|          15|
     +----------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -100,12 +100,12 @@
     +-------------------------+----+-----------+-----+-----------+
     |ap_done_int              |   2|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   2|          2|    1|          2|
-    |ap_sig_allocacmp_j       |   5|          2|    5|         10|
-    |j_24_fu_46               |   5|          2|    5|         10|
+    |ap_sig_allocacmp_j       |   8|          2|    9|         18|
+    |j_26_fu_46               |   8|          2|    9|         18|
     |receive_fifo_L_2_blk_n   |   2|          2|    1|          2|
     |send_fifo_L_3_blk_n      |   2|          2|    1|          2|
     +-------------------------+----+-----------+-----+-----------+
-    |Total                    |  18|         12|   14|         28|
+    |Total                    |  24|         12|   22|         44|
     +-------------------------+----+-----------+-----+-----------+
 
     * Register: 
@@ -115,9 +115,9 @@
     |ap_CS_fsm                |  1|   0|    1|          0|
     |ap_done_reg              |  1|   0|    1|          0|
     |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
-    |j_24_fu_46               |  5|   0|    5|          0|
+    |j_26_fu_46               |  9|   0|    9|          0|
     +-------------------------+---+----+-----+-----------+
-    |Total                    |  8|   0|    8|          0|
+    |Total                    | 12|   0|   12|          0|
     +-------------------------+---+----+-----+-----------+
 
 
@@ -136,13 +136,13 @@
 |ap_idle                          |  out|    1|  ap_ctrl_hs|  RoundRobin_Pipeline_VITIS_LOOP_470_14|  return value|
 |ap_ready                         |  out|    1|  ap_ctrl_hs|  RoundRobin_Pipeline_VITIS_LOOP_470_14|  return value|
 |receive_fifo_L_2_dout            |   in|  128|     ap_fifo|                       receive_fifo_L_2|       pointer|
-|receive_fifo_L_2_num_data_valid  |   in|    9|     ap_fifo|                       receive_fifo_L_2|       pointer|
-|receive_fifo_L_2_fifo_cap        |   in|    9|     ap_fifo|                       receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_num_data_valid  |   in|   15|     ap_fifo|                       receive_fifo_L_2|       pointer|
+|receive_fifo_L_2_fifo_cap        |   in|   15|     ap_fifo|                       receive_fifo_L_2|       pointer|
 |receive_fifo_L_2_empty_n         |   in|    1|     ap_fifo|                       receive_fifo_L_2|       pointer|
 |receive_fifo_L_2_read            |  out|    1|     ap_fifo|                       receive_fifo_L_2|       pointer|
 |send_fifo_L_3_din                |  out|  128|     ap_fifo|                          send_fifo_L_3|       pointer|
-|send_fifo_L_3_num_data_valid     |   in|    6|     ap_fifo|                          send_fifo_L_3|       pointer|
-|send_fifo_L_3_fifo_cap           |   in|    6|     ap_fifo|                          send_fifo_L_3|       pointer|
+|send_fifo_L_3_num_data_valid     |   in|   10|     ap_fifo|                          send_fifo_L_3|       pointer|
+|send_fifo_L_3_fifo_cap           |   in|   10|     ap_fifo|                          send_fifo_L_3|       pointer|
 |send_fifo_L_3_full_n             |   in|    1|     ap_fifo|                          send_fifo_L_3|       pointer|
 |send_fifo_L_3_write              |  out|    1|     ap_fifo|                          send_fifo_L_3|       pointer|
 +---------------------------------+-----+-----+------------+---------------------------------------+--------------+

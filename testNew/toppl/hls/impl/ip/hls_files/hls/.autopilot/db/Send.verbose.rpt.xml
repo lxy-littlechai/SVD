@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Send'" level="0">
-<item name = "Date">Mon Oct 20 21:14:57 2025
+<item name = "Date">Mon Oct 20 22:10:27 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 2.538 ns, 1.35 ns</column>
+<column name="ap_clk">5.00 ns, 2.473 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -31,14 +31,14 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dataflow_parent_loop_proc_fu_168">dataflow_parent_loop_proc, 991, 991, 4.955 us, 4.955 us, 991, 991, no</column>
-<column name="grp_send2AIE_15_fu_252">send2AIE_15, 32, 32, 0.160 us, 0.160 us, 32, 32, no</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166">dataflow_parent_loop_proc, 144649, 144649, 0.723 ms, 0.723 ms, 144649, 144649, no</column>
+<column name="grp_send2AIE_15_fu_250">send2AIE_15, 286, 286, 1.430 us, 1.430 us, 286, 286, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_232_1">?, ?, 993, -, -, ?, no</column>
-<column name="- VITIS_LOOP_253_3">544, 544, 272, -, -, 2, no</column>
+<column name="- VITIS_LOOP_232_1">?, ?, 144651, -, -, ?, no</column>
+<column name="- VITIS_LOOP_253_3">18432, 18432, 2304, -, -, 8, no</column>
 </table>
 </item>
 </section>
@@ -53,10 +53,10 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 36, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">36, -, 1135, 3415, 0</column>
+<column name="Instance">36, -, 1211, 3561, 0</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 422, -</column>
-<column name="Register">-, -, 27, -, -</column>
+<column name="Multiplexer">-, -, -, 424, -</column>
+<column name="Register">-, -, 29, -, -</column>
 <specialColumn name="Available">1934, 1968, 1799680, 899840, 463</specialColumn>
 <specialColumn name="Utilization (%)">1, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -65,8 +65,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_dataflow_parent_loop_proc_fu_168">dataflow_parent_loop_proc, 32, 0, 1019, 3050, 0</column>
-<column name="grp_send2AIE_15_fu_252">send2AIE_15, 4, 0, 116, 365, 0</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166">dataflow_parent_loop_proc, 32, 0, 1091, 3182, 0</column>
+<column name="grp_send2AIE_15_fu_250">send2AIE_15, 4, 0, 120, 379, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -83,30 +83,30 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_31_fu_293_p2">+, 0, 0, 5, 2, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx1_0_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx1_1_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx2_0_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx2_1_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx3_0_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx3_1_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx4_0_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_sweep_tx4_1_TREADY">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln253_fu_299_p2">icmp, 0, 0, 5, 2, 3</column>
+<column name="i_31_fu_291_p2">+, 0, 0, 5, 4, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx1_0_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx1_1_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx2_0_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx2_1_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx3_0_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx3_1_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx4_0_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_sweep_tx4_1_TREADY">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln253_fu_297_p2">icmp, 0, 0, 5, 4, 5</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state20">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_168_ap_done">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_168_ap_ready">or, 0, 0, 2, 1, 1</column>
-<column name="grp_send2AIE_15_fu_252_norm_tx0_TREADY">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_166_ap_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_166_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="grp_send2AIE_15_fu_250_norm_tx0_TREADY">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">22, 21, 1, 21</column>
 <column name="ap_done">2, 2, 1, 2</column>
-<column name="grp_send2AIE_15_fu_252_send_fifo_L_0_dout">370, 8, 128, 1024</column>
-<column name="grp_send2AIE_15_fu_252_send_fifo_L_0_empty_n">6, 8, 1, 8</column>
-<column name="i_fu_158">2, 2, 2, 4</column>
+<column name="grp_send2AIE_15_fu_250_send_fifo_L_0_dout">370, 8, 128, 1024</column>
+<column name="grp_send2AIE_15_fu_250_send_fifo_L_0_empty_n">6, 8, 1, 8</column>
+<column name="i_fu_156">4, 2, 4, 8</column>
 <column name="norm_tx0_TVALID_int_regslice">2, 2, 1, 2</column>
 <column name="send_fifo_L_0_read">2, 3, 1, 3</column>
 <column name="send_fifo_L_1_read">2, 3, 1, 3</column>
@@ -123,11 +123,11 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">20, 0, 20, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_168_ap_done">1, 0, 1, 0</column>
-<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_168_ap_ready">1, 0, 1, 0</column>
-<column name="grp_dataflow_parent_loop_proc_fu_168_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_send2AIE_15_fu_252_ap_start_reg">1, 0, 1, 0</column>
-<column name="i_fu_158">2, 0, 2, 0</column>
+<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_166_ap_done">1, 0, 1, 0</column>
+<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_166_ap_ready">1, 0, 1, 0</column>
+<column name="grp_dataflow_parent_loop_proc_fu_166_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_send2AIE_15_fu_250_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_fu_156">4, 0, 4, 0</column>
 </table>
 </item>
 </section>
@@ -150,43 +150,43 @@
 <column name="syscontrol_0_empty_n">in, 1, ap_fifo, syscontrol_0, pointer</column>
 <column name="syscontrol_0_read">out, 1, ap_fifo, syscontrol_0, pointer</column>
 <column name="send_fifo_L_0_dout">in, 128, ap_fifo, send_fifo_L_0, pointer</column>
-<column name="send_fifo_L_0_num_data_valid">in, 6, ap_fifo, send_fifo_L_0, pointer</column>
-<column name="send_fifo_L_0_fifo_cap">in, 6, ap_fifo, send_fifo_L_0, pointer</column>
+<column name="send_fifo_L_0_num_data_valid">in, 10, ap_fifo, send_fifo_L_0, pointer</column>
+<column name="send_fifo_L_0_fifo_cap">in, 10, ap_fifo, send_fifo_L_0, pointer</column>
 <column name="send_fifo_L_0_empty_n">in, 1, ap_fifo, send_fifo_L_0, pointer</column>
 <column name="send_fifo_L_0_read">out, 1, ap_fifo, send_fifo_L_0, pointer</column>
 <column name="send_fifo_L_1_dout">in, 128, ap_fifo, send_fifo_L_1, pointer</column>
-<column name="send_fifo_L_1_num_data_valid">in, 6, ap_fifo, send_fifo_L_1, pointer</column>
-<column name="send_fifo_L_1_fifo_cap">in, 6, ap_fifo, send_fifo_L_1, pointer</column>
+<column name="send_fifo_L_1_num_data_valid">in, 10, ap_fifo, send_fifo_L_1, pointer</column>
+<column name="send_fifo_L_1_fifo_cap">in, 10, ap_fifo, send_fifo_L_1, pointer</column>
 <column name="send_fifo_L_1_empty_n">in, 1, ap_fifo, send_fifo_L_1, pointer</column>
 <column name="send_fifo_L_1_read">out, 1, ap_fifo, send_fifo_L_1, pointer</column>
 <column name="send_fifo_L_2_dout">in, 128, ap_fifo, send_fifo_L_2, pointer</column>
-<column name="send_fifo_L_2_num_data_valid">in, 6, ap_fifo, send_fifo_L_2, pointer</column>
-<column name="send_fifo_L_2_fifo_cap">in, 6, ap_fifo, send_fifo_L_2, pointer</column>
+<column name="send_fifo_L_2_num_data_valid">in, 10, ap_fifo, send_fifo_L_2, pointer</column>
+<column name="send_fifo_L_2_fifo_cap">in, 10, ap_fifo, send_fifo_L_2, pointer</column>
 <column name="send_fifo_L_2_empty_n">in, 1, ap_fifo, send_fifo_L_2, pointer</column>
 <column name="send_fifo_L_2_read">out, 1, ap_fifo, send_fifo_L_2, pointer</column>
 <column name="send_fifo_L_3_dout">in, 128, ap_fifo, send_fifo_L_3, pointer</column>
-<column name="send_fifo_L_3_num_data_valid">in, 6, ap_fifo, send_fifo_L_3, pointer</column>
-<column name="send_fifo_L_3_fifo_cap">in, 6, ap_fifo, send_fifo_L_3, pointer</column>
+<column name="send_fifo_L_3_num_data_valid">in, 10, ap_fifo, send_fifo_L_3, pointer</column>
+<column name="send_fifo_L_3_fifo_cap">in, 10, ap_fifo, send_fifo_L_3, pointer</column>
 <column name="send_fifo_L_3_empty_n">in, 1, ap_fifo, send_fifo_L_3, pointer</column>
 <column name="send_fifo_L_3_read">out, 1, ap_fifo, send_fifo_L_3, pointer</column>
 <column name="send_fifo_R_0_dout">in, 128, ap_fifo, send_fifo_R_0, pointer</column>
-<column name="send_fifo_R_0_num_data_valid">in, 6, ap_fifo, send_fifo_R_0, pointer</column>
-<column name="send_fifo_R_0_fifo_cap">in, 6, ap_fifo, send_fifo_R_0, pointer</column>
+<column name="send_fifo_R_0_num_data_valid">in, 10, ap_fifo, send_fifo_R_0, pointer</column>
+<column name="send_fifo_R_0_fifo_cap">in, 10, ap_fifo, send_fifo_R_0, pointer</column>
 <column name="send_fifo_R_0_empty_n">in, 1, ap_fifo, send_fifo_R_0, pointer</column>
 <column name="send_fifo_R_0_read">out, 1, ap_fifo, send_fifo_R_0, pointer</column>
 <column name="send_fifo_R_1_dout">in, 128, ap_fifo, send_fifo_R_1, pointer</column>
-<column name="send_fifo_R_1_num_data_valid">in, 6, ap_fifo, send_fifo_R_1, pointer</column>
-<column name="send_fifo_R_1_fifo_cap">in, 6, ap_fifo, send_fifo_R_1, pointer</column>
+<column name="send_fifo_R_1_num_data_valid">in, 10, ap_fifo, send_fifo_R_1, pointer</column>
+<column name="send_fifo_R_1_fifo_cap">in, 10, ap_fifo, send_fifo_R_1, pointer</column>
 <column name="send_fifo_R_1_empty_n">in, 1, ap_fifo, send_fifo_R_1, pointer</column>
 <column name="send_fifo_R_1_read">out, 1, ap_fifo, send_fifo_R_1, pointer</column>
 <column name="send_fifo_R_2_dout">in, 128, ap_fifo, send_fifo_R_2, pointer</column>
-<column name="send_fifo_R_2_num_data_valid">in, 6, ap_fifo, send_fifo_R_2, pointer</column>
-<column name="send_fifo_R_2_fifo_cap">in, 6, ap_fifo, send_fifo_R_2, pointer</column>
+<column name="send_fifo_R_2_num_data_valid">in, 10, ap_fifo, send_fifo_R_2, pointer</column>
+<column name="send_fifo_R_2_fifo_cap">in, 10, ap_fifo, send_fifo_R_2, pointer</column>
 <column name="send_fifo_R_2_empty_n">in, 1, ap_fifo, send_fifo_R_2, pointer</column>
 <column name="send_fifo_R_2_read">out, 1, ap_fifo, send_fifo_R_2, pointer</column>
 <column name="send_fifo_R_3_dout">in, 128, ap_fifo, send_fifo_R_3, pointer</column>
-<column name="send_fifo_R_3_num_data_valid">in, 6, ap_fifo, send_fifo_R_3, pointer</column>
-<column name="send_fifo_R_3_fifo_cap">in, 6, ap_fifo, send_fifo_R_3, pointer</column>
+<column name="send_fifo_R_3_num_data_valid">in, 10, ap_fifo, send_fifo_R_3, pointer</column>
+<column name="send_fifo_R_3_fifo_cap">in, 10, ap_fifo, send_fifo_R_3, pointer</column>
 <column name="send_fifo_R_3_empty_n">in, 1, ap_fifo, send_fifo_R_3, pointer</column>
 <column name="send_fifo_R_3_read">out, 1, ap_fifo, send_fifo_R_3, pointer</column>
 <column name="sweep_tx1_0_TDATA">out, 128, axis, sweep_tx1_0_V_data_V, pointer</column>

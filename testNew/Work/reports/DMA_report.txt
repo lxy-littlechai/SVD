@@ -1,0 +1,366 @@
+DMA Analysis Report 
+
+DMA Report: S2MM
+portinst: i1_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[1])
+ MG(2,0) : channel=0, startBD=0, lockID=0, name=buf3
+ MG(2,0) : channel=0, startBD=1, lockID=1, name=buf3d
+portinst: i1_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[0])
+ MG(1,0) : channel=0, startBD=0, lockID=0, name=buf2
+ MG(1,0) : channel=0, startBD=1, lockID=1, name=buf2d
+portinst: i0_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[1])
+ MG(1,1) : channel=1, startBD=2, lockID=2, name=buf1
+ MG(1,1) : channel=1, startBD=3, lockID=3, name=buf1d
+portinst: i2_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[0])
+ MG(3,0) : channel=0, startBD=0, lockID=0, name=buf4
+ MG(3,0) : channel=0, startBD=1, lockID=1, name=buf4d
+portinst: i2_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[1])
+ MG(3,0) : channel=1, startBD=2, lockID=2, name=buf5
+ MG(3,0) : channel=1, startBD=3, lockID=3, name=buf5d
+portinst: i3_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[0])
+ MG(4,0) : channel=0, startBD=0, lockID=0, name=buf6
+ MG(4,0) : channel=0, startBD=1, lockID=1, name=buf6d
+portinst: i3_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[1])
+ MG(4,0) : channel=1, startBD=2, lockID=2, name=buf7
+ MG(4,0) : channel=1, startBD=3, lockID=3, name=buf7d
+portinst: i7_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][1].in[1])
+ MG(5,1) : channel=0, startBD=0, lockID=0, name=buf9r
+ MG(5,1) : channel=0, startBD=1, lockID=1, name=buf9dr
+portinst: i8_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][2].in[0])
+ MG(0,2) : channel=0, startBD=0, lockID=0, name=buf17r
+ MG(0,2) : channel=0, startBD=1, lockID=1, name=buf17dr
+portinst: i15_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][3].in[1])
+ MG(5,3) : channel=0, startBD=0, lockID=0, name=buf27r
+ MG(5,3) : channel=0, startBD=1, lockID=1, name=buf27dr
+portinst: i16_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][4].in[0])
+ MG(0,4) : channel=0, startBD=0, lockID=0, name=buf35r
+ MG(0,4) : channel=0, startBD=1, lockID=1, name=buf35dr
+portinst: i23_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][5].in[1])
+ MG(5,5) : channel=0, startBD=0, lockID=0, name=buf45r
+ MG(5,5) : channel=0, startBD=1, lockID=1, name=buf45dr
+portinst: i24_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][6].in[0])
+ MG(0,6) : channel=0, startBD=0, lockID=0, name=buf53r
+ MG(0,6) : channel=0, startBD=1, lockID=1, name=buf53dr
+portinst: i36_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[0])
+ MG(5,0) : channel=0, startBD=0, lockID=0, name=buf64
+ MG(5,0) : channel=0, startBD=1, lockID=1, name=buf64d
+portinst: i36_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[1])
+ MG(5,0) : channel=1, startBD=2, lockID=2, name=buf65
+ MG(5,0) : channel=1, startBD=3, lockID=3, name=buf65d
+portinst: i37_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[0])
+ MG(6,0) : channel=0, startBD=0, lockID=0, name=buf66
+ MG(6,0) : channel=0, startBD=1, lockID=1, name=buf66d
+portinst: i37_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[1])
+ MG(6,0) : channel=1, startBD=2, lockID=2, name=buf67
+ MG(6,0) : channel=1, startBD=3, lockID=3, name=buf67d
+portinst: i38_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[0])
+ MG(7,0) : channel=0, startBD=0, lockID=0, name=buf68
+ MG(7,0) : channel=0, startBD=1, lockID=1, name=buf68d
+portinst: i38_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[1])
+ MG(7,0) : channel=1, startBD=2, lockID=2, name=buf69
+ MG(7,0) : channel=1, startBD=3, lockID=3, name=buf69d
+portinst: i39_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[0])
+ MG(9,0) : channel=0, startBD=0, lockID=0, name=buf70
+ MG(9,0) : channel=0, startBD=1, lockID=1, name=buf70d
+portinst: i39_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[1])
+ MG(9,0) : channel=1, startBD=2, lockID=2, name=buf71
+ MG(9,0) : channel=1, startBD=3, lockID=3, name=buf71d
+portinst: i43_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][1].in[1])
+ MG(10,1) : channel=0, startBD=0, lockID=0, name=buf73r
+ MG(10,1) : channel=0, startBD=1, lockID=1, name=buf73dr
+portinst: i44_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][2].in[0])
+ MG(5,2) : channel=0, startBD=0, lockID=0, name=buf81r
+ MG(5,2) : channel=0, startBD=1, lockID=1, name=buf81dr
+portinst: i52_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][4].in[0])
+ MG(5,4) : channel=0, startBD=0, lockID=0, name=buf99r
+ MG(5,4) : channel=0, startBD=1, lockID=1, name=buf99dr
+portinst: i59_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][5].in[1])
+ MG(10,5) : channel=0, startBD=0, lockID=0, name=buf109r
+ MG(10,5) : channel=0, startBD=1, lockID=1, name=buf109dr
+portinst: i60_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][6].in[0])
+ MG(5,6) : channel=0, startBD=0, lockID=0, name=buf117r
+ MG(5,6) : channel=0, startBD=1, lockID=1, name=buf117dr
+portinst: i72_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[0])
+ MG(10,0) : channel=0, startBD=0, lockID=0, name=buf128
+ MG(10,0) : channel=0, startBD=1, lockID=1, name=buf128d
+portinst: i72_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[1])
+ MG(10,0) : channel=1, startBD=2, lockID=2, name=buf129
+ MG(10,0) : channel=1, startBD=3, lockID=3, name=buf129d
+portinst: i73_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[0])
+ MG(11,0) : channel=0, startBD=0, lockID=0, name=buf130
+ MG(11,0) : channel=0, startBD=1, lockID=1, name=buf130d
+portinst: i73_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[1])
+ MG(12,0) : channel=0, startBD=0, lockID=0, name=buf131
+ MG(12,0) : channel=0, startBD=1, lockID=1, name=buf131d
+portinst: i74_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[0])
+ MG(12,0) : channel=1, startBD=2, lockID=2, name=buf132
+ MG(12,0) : channel=1, startBD=3, lockID=3, name=buf132d
+portinst: i74_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[1])
+ MG(13,0) : channel=0, startBD=0, lockID=0, name=buf133
+ MG(13,0) : channel=0, startBD=1, lockID=1, name=buf133d
+portinst: i75_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[0])
+ MG(14,0) : channel=0, startBD=0, lockID=0, name=buf134
+ MG(14,0) : channel=0, startBD=1, lockID=1, name=buf134d
+portinst: i75_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[1])
+ MG(14,0) : channel=1, startBD=2, lockID=2, name=buf135
+ MG(14,0) : channel=1, startBD=3, lockID=3, name=buf135d
+portinst: i79_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][1].in[1])
+ MG(15,1) : channel=0, startBD=0, lockID=0, name=buf137r
+ MG(15,1) : channel=0, startBD=1, lockID=1, name=buf137dr
+portinst: i80_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][2].in[0])
+ MG(10,2) : channel=0, startBD=0, lockID=0, name=buf145r
+ MG(10,2) : channel=0, startBD=1, lockID=1, name=buf145dr
+portinst: i87_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][3].in[1])
+ MG(15,3) : channel=0, startBD=0, lockID=0, name=buf155r
+ MG(15,3) : channel=0, startBD=1, lockID=1, name=buf155dr
+portinst: i88_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][4].in[0])
+ MG(10,4) : channel=0, startBD=0, lockID=0, name=buf163r
+ MG(10,4) : channel=0, startBD=1, lockID=1, name=buf163dr
+portinst: i95_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][5].in[1])
+ MG(15,5) : channel=0, startBD=0, lockID=0, name=buf173r
+ MG(15,5) : channel=0, startBD=1, lockID=1, name=buf173dr
+portinst: i96_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][6].in[0])
+ MG(10,6) : channel=0, startBD=0, lockID=0, name=buf181r
+ MG(10,6) : channel=0, startBD=1, lockID=1, name=buf181dr
+portinst: i108_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[0])
+ MG(19,0) : channel=0, startBD=0, lockID=0, name=buf192
+ MG(19,0) : channel=0, startBD=1, lockID=1, name=buf192d
+portinst: i108_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[1])
+ MG(19,0) : channel=1, startBD=2, lockID=2, name=buf193
+ MG(19,0) : channel=1, startBD=3, lockID=3, name=buf193d
+portinst: i109_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[0])
+ MG(20,0) : channel=0, startBD=0, lockID=0, name=buf194
+ MG(20,0) : channel=0, startBD=1, lockID=1, name=buf194d
+portinst: i109_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[1][0].in[1])
+ MG(21,0) : channel=0, startBD=0, lockID=0, name=buf195
+ MG(21,0) : channel=0, startBD=1, lockID=1, name=buf195d
+portinst: i110_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[0])
+ MG(22,0) : channel=0, startBD=0, lockID=0, name=buf196
+ MG(22,0) : channel=0, startBD=1, lockID=1, name=buf196d
+portinst: i110_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[2][0].in[1])
+ MG(22,0) : channel=1, startBD=2, lockID=2, name=buf197
+ MG(22,0) : channel=1, startBD=3, lockID=3, name=buf197d
+portinst: i111_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[0])
+ MG(23,0) : channel=0, startBD=0, lockID=0, name=buf198
+ MG(23,0) : channel=0, startBD=1, lockID=1, name=buf198d
+portinst: i111_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[3][0].in[1])
+ MG(23,0) : channel=1, startBD=2, lockID=2, name=buf199
+ MG(23,0) : channel=1, startBD=3, lockID=3, name=buf199d
+portinst: i115_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][1].in[1])
+ MG(24,1) : channel=0, startBD=0, lockID=0, name=buf201r
+ MG(24,1) : channel=0, startBD=1, lockID=1, name=buf201dr
+portinst: i116_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][2].in[0])
+ MG(19,2) : channel=0, startBD=0, lockID=0, name=buf209r
+ MG(19,2) : channel=0, startBD=1, lockID=1, name=buf209dr
+portinst: i123_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][3].in[1])
+ MG(24,3) : channel=0, startBD=0, lockID=0, name=buf219r
+ MG(24,3) : channel=0, startBD=1, lockID=1, name=buf219dr
+portinst: i124_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][4].in[0])
+ MG(19,4) : channel=0, startBD=0, lockID=0, name=buf227r
+ MG(19,4) : channel=0, startBD=1, lockID=1, name=buf227dr
+portinst: i131_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][5].in[1])
+ MG(24,5) : channel=0, startBD=0, lockID=0, name=buf237r
+ MG(24,5) : channel=0, startBD=1, lockID=1, name=buf237dr
+portinst: i132_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][6].in[0])
+ MG(19,6) : channel=0, startBD=0, lockID=0, name=buf245r
+ MG(19,6) : channel=0, startBD=1, lockID=1, name=buf245dr
+portinst: i144_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  norm[0].in[0])
+ MG(0,1) : channel=0, startBD=0, lockID=0, name=buf256
+ MG(0,1) : channel=0, startBD=1, lockID=1, name=buf256d
+portinst: i145_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  norm[1].in[0])
+ MG(0,1) : channel=1, startBD=4, lockID=4, name=buf258
+ MG(0,1) : channel=1, startBD=5, lockID=5, name=buf258d
+portinst: i146_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  norm[2].in[0])
+ MG(0,3) : channel=0, startBD=0, lockID=0, name=buf260
+ MG(0,3) : channel=0, startBD=1, lockID=1, name=buf260d
+portinst: i147_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  norm[3].in[0])
+ MG(0,3) : channel=1, startBD=4, lockID=4, name=buf262
+ MG(0,3) : channel=1, startBD=5, lockID=5, name=buf262d
+portinst: i51_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[3][3].in[1])
+ MG(10,3) : channel=0, startBD=0, lockID=0, name=buf91r
+ MG(10,3) : channel=0, startBD=1, lockID=1, name=buf91dr
+portinst: i0_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.25 (variable name:  orth[0][0].in[0])
+ MG(1,1) : channel=0, startBD=0, lockID=0, name=buf0
+ MG(1,1) : channel=0, startBD=1, lockID=1, name=buf0d
+
+DMA Report: MM2S
+portinst: i0_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][0].out[1])
+ MG(1,1) : channel=0, startBD=4, lockID=6, name=buf9
+ MG(1,1) : channel=0, startBD=5, lockID=7, name=buf9d
+portinst: i7_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][1].out[1])
+ MG(4,2) : channel=0, startBD=0, lockID=2, name=buf17
+ MG(4,2) : channel=0, startBD=1, lockID=3, name=buf17d
+portinst: i8_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][2].out[1])
+ MG(1,3) : channel=0, startBD=0, lockID=2, name=buf27
+ MG(1,3) : channel=0, startBD=1, lockID=3, name=buf27d
+portinst: i15_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][3].out[1])
+ MG(4,4) : channel=0, startBD=0, lockID=2, name=buf35
+ MG(4,4) : channel=0, startBD=1, lockID=3, name=buf35d
+portinst: i16_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][4].out[1])
+ MG(1,5) : channel=0, startBD=0, lockID=2, name=buf45
+ MG(1,5) : channel=0, startBD=1, lockID=3, name=buf45d
+portinst: i23_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][5].out[1])
+ MG(4,6) : channel=0, startBD=0, lockID=2, name=buf53
+ MG(4,6) : channel=0, startBD=1, lockID=3, name=buf53d
+portinst: i24_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[0])
+ MG(1,7) : channel=0, startBD=0, lockID=0, name=buf61
+ MG(1,7) : channel=0, startBD=1, lockID=1, name=buf61d
+portinst: i24_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[1])
+ MG(1,7) : channel=1, startBD=2, lockID=2, name=buf62
+ MG(1,7) : channel=1, startBD=3, lockID=3, name=buf62d
+portinst: i25_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[0])
+ MG(2,7) : channel=0, startBD=0, lockID=0, name=buf59
+ MG(2,7) : channel=0, startBD=1, lockID=1, name=buf59d
+portinst: i25_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[1])
+ MG(2,7) : channel=1, startBD=2, lockID=2, name=buf60
+ MG(2,7) : channel=1, startBD=3, lockID=3, name=buf60d
+portinst: i26_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[0])
+ MG(3,7) : channel=0, startBD=0, lockID=0, name=buf57
+ MG(3,7) : channel=0, startBD=1, lockID=1, name=buf57d
+portinst: i26_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[1])
+ MG(3,7) : channel=1, startBD=2, lockID=2, name=buf58
+ MG(3,7) : channel=1, startBD=3, lockID=3, name=buf58d
+portinst: i27_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[0])
+ MG(4,7) : channel=0, startBD=0, lockID=0, name=buf56
+ MG(4,7) : channel=0, startBD=1, lockID=1, name=buf56d
+portinst: i27_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[1])
+ MG(4,7) : channel=1, startBD=2, lockID=2, name=buf63
+ MG(4,7) : channel=1, startBD=3, lockID=3, name=buf63d
+portinst: i36_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][0].out[1])
+ MG(6,1) : channel=0, startBD=0, lockID=2, name=buf73
+ MG(6,1) : channel=0, startBD=1, lockID=3, name=buf73d
+portinst: i43_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][1].out[1])
+ MG(9,2) : channel=0, startBD=0, lockID=2, name=buf81
+ MG(9,2) : channel=0, startBD=1, lockID=3, name=buf81d
+portinst: i44_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][2].out[1])
+ MG(6,3) : channel=0, startBD=0, lockID=2, name=buf91
+ MG(6,3) : channel=0, startBD=1, lockID=3, name=buf91d
+portinst: i51_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][3].out[1])
+ MG(9,4) : channel=0, startBD=0, lockID=2, name=buf99
+ MG(9,4) : channel=0, startBD=1, lockID=3, name=buf99d
+portinst: i52_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][4].out[1])
+ MG(6,5) : channel=0, startBD=0, lockID=2, name=buf109
+ MG(6,5) : channel=0, startBD=1, lockID=3, name=buf109d
+portinst: i59_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][5].out[1])
+ MG(9,6) : channel=0, startBD=0, lockID=2, name=buf117
+ MG(9,6) : channel=0, startBD=1, lockID=3, name=buf117d
+portinst: i60_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[0])
+ MG(6,7) : channel=0, startBD=0, lockID=0, name=buf125
+ MG(6,7) : channel=0, startBD=1, lockID=1, name=buf125d
+portinst: i60_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[1])
+ MG(6,7) : channel=1, startBD=2, lockID=2, name=buf126
+ MG(6,7) : channel=1, startBD=3, lockID=3, name=buf126d
+portinst: i61_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[0])
+ MG(7,7) : channel=0, startBD=0, lockID=0, name=buf123
+ MG(7,7) : channel=0, startBD=1, lockID=1, name=buf123d
+portinst: i61_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[1])
+ MG(7,7) : channel=1, startBD=2, lockID=2, name=buf124
+ MG(7,7) : channel=1, startBD=3, lockID=3, name=buf124d
+portinst: i62_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[0])
+ MG(8,7) : channel=0, startBD=0, lockID=0, name=buf121
+ MG(8,7) : channel=0, startBD=1, lockID=1, name=buf121d
+portinst: i62_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[1])
+ MG(8,7) : channel=1, startBD=2, lockID=2, name=buf122
+ MG(8,7) : channel=1, startBD=3, lockID=3, name=buf122d
+portinst: i63_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[0])
+ MG(9,7) : channel=0, startBD=0, lockID=0, name=buf120
+ MG(9,7) : channel=0, startBD=1, lockID=1, name=buf120d
+portinst: i63_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[1])
+ MG(9,7) : channel=1, startBD=2, lockID=2, name=buf127
+ MG(9,7) : channel=1, startBD=3, lockID=3, name=buf127d
+portinst: i72_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][0].out[1])
+ MG(11,1) : channel=0, startBD=0, lockID=2, name=buf137
+ MG(11,1) : channel=0, startBD=1, lockID=3, name=buf137d
+portinst: i79_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][1].out[1])
+ MG(14,2) : channel=0, startBD=0, lockID=2, name=buf145
+ MG(14,2) : channel=0, startBD=1, lockID=3, name=buf145d
+portinst: i80_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][2].out[1])
+ MG(11,3) : channel=0, startBD=0, lockID=2, name=buf155
+ MG(11,3) : channel=0, startBD=1, lockID=3, name=buf155d
+portinst: i87_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][3].out[1])
+ MG(14,4) : channel=0, startBD=0, lockID=2, name=buf163
+ MG(14,4) : channel=0, startBD=1, lockID=3, name=buf163d
+portinst: i88_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][4].out[1])
+ MG(11,5) : channel=0, startBD=0, lockID=2, name=buf173
+ MG(11,5) : channel=0, startBD=1, lockID=3, name=buf173d
+portinst: i95_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][5].out[1])
+ MG(14,6) : channel=0, startBD=0, lockID=2, name=buf181
+ MG(14,6) : channel=0, startBD=1, lockID=3, name=buf181d
+portinst: i96_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[0])
+ MG(11,7) : channel=0, startBD=0, lockID=0, name=buf189
+ MG(11,7) : channel=0, startBD=1, lockID=1, name=buf189d
+portinst: i96_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[1])
+ MG(11,7) : channel=1, startBD=2, lockID=2, name=buf190
+ MG(11,7) : channel=1, startBD=3, lockID=3, name=buf190d
+portinst: i97_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[0])
+ MG(12,7) : channel=0, startBD=0, lockID=0, name=buf187
+ MG(12,7) : channel=0, startBD=1, lockID=1, name=buf187d
+portinst: i97_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[1])
+ MG(12,7) : channel=1, startBD=2, lockID=2, name=buf188
+ MG(12,7) : channel=1, startBD=3, lockID=3, name=buf188d
+portinst: i98_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[0])
+ MG(13,7) : channel=0, startBD=0, lockID=0, name=buf185
+ MG(13,7) : channel=0, startBD=1, lockID=1, name=buf185d
+portinst: i98_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[1])
+ MG(13,7) : channel=1, startBD=2, lockID=2, name=buf186
+ MG(13,7) : channel=1, startBD=3, lockID=3, name=buf186d
+portinst: i99_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[0])
+ MG(14,7) : channel=0, startBD=0, lockID=0, name=buf184
+ MG(14,7) : channel=0, startBD=1, lockID=1, name=buf184d
+portinst: i99_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[1])
+ MG(14,7) : channel=1, startBD=2, lockID=2, name=buf191
+ MG(14,7) : channel=1, startBD=3, lockID=3, name=buf191d
+portinst: i108_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][0].out[1])
+ MG(20,1) : channel=0, startBD=0, lockID=2, name=buf201
+ MG(20,1) : channel=0, startBD=1, lockID=3, name=buf201d
+portinst: i115_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][1].out[1])
+ MG(23,2) : channel=0, startBD=0, lockID=2, name=buf209
+ MG(23,2) : channel=0, startBD=1, lockID=3, name=buf209d
+portinst: i116_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][2].out[1])
+ MG(20,3) : channel=0, startBD=0, lockID=2, name=buf219
+ MG(20,3) : channel=0, startBD=1, lockID=3, name=buf219d
+portinst: i123_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][3].out[1])
+ MG(23,4) : channel=0, startBD=0, lockID=2, name=buf227
+ MG(23,4) : channel=0, startBD=1, lockID=3, name=buf227d
+portinst: i124_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][4].out[1])
+ MG(20,5) : channel=0, startBD=0, lockID=2, name=buf237
+ MG(20,5) : channel=0, startBD=1, lockID=3, name=buf237d
+portinst: i131_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[3][5].out[1])
+ MG(23,6) : channel=0, startBD=0, lockID=2, name=buf245
+ MG(23,6) : channel=0, startBD=1, lockID=3, name=buf245d
+portinst: i132_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[0])
+ MG(20,7) : channel=0, startBD=0, lockID=0, name=buf253
+ MG(20,7) : channel=0, startBD=1, lockID=1, name=buf253d
+portinst: i132_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[0][6].out[1])
+ MG(20,7) : channel=1, startBD=2, lockID=2, name=buf254
+ MG(20,7) : channel=1, startBD=3, lockID=3, name=buf254d
+portinst: i133_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[0])
+ MG(21,7) : channel=0, startBD=0, lockID=0, name=buf251
+ MG(21,7) : channel=0, startBD=1, lockID=1, name=buf251d
+portinst: i133_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[1][6].out[1])
+ MG(21,7) : channel=1, startBD=2, lockID=2, name=buf252
+ MG(21,7) : channel=1, startBD=3, lockID=3, name=buf252d
+portinst: i134_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[0])
+ MG(22,7) : channel=0, startBD=0, lockID=0, name=buf249
+ MG(22,7) : channel=0, startBD=1, lockID=1, name=buf249d
+portinst: i134_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[2][6].out[1])
+ MG(22,7) : channel=1, startBD=2, lockID=2, name=buf250
+ MG(22,7) : channel=1, startBD=3, lockID=3, name=buf250d
+portinst: i135_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[0])
+ MG(23,7) : channel=0, startBD=0, lockID=0, name=buf248
+ MG(23,7) : channel=0, startBD=1, lockID=1, name=buf248d
+portinst: i135_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  orth[3][6].out[1])
+ MG(23,7) : channel=1, startBD=2, lockID=2, name=buf255
+ MG(23,7) : channel=1, startBD=3, lockID=3, name=buf255d
+portinst: i144_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  norm[0].out[0])
+ MG(0,1) : channel=0, startBD=2, lockID=2, name=buf257
+ MG(0,1) : channel=0, startBD=3, lockID=3, name=buf257d
+portinst: i145_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  norm[1].out[0])
+ MG(0,0) : channel=0, startBD=0, lockID=0, name=buf259
+ MG(0,0) : channel=0, startBD=1, lockID=1, name=buf259d
+portinst: i146_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  norm[2].out[0])
+ MG(0,3) : channel=0, startBD=2, lockID=2, name=buf261
+ MG(0,3) : channel=0, startBD=3, lockID=3, name=buf261d
+portinst: i147_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.25 (variable name:  norm[3].out[0])
+ MG(0,3) : channel=1, startBD=6, lockID=6, name=buf263
+ MG(0,3) : channel=1, startBD=7, lockID=7, name=buf263d
+

@@ -95,9 +95,9 @@ end;
 architecture behav of TopPL_dataflow_parent_loop_proc is 
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_logic_1 : STD_LOGIC := '1';
-    constant ap_const_lv5_1E : STD_LOGIC_VECTOR (4 downto 0) := "11110";
-    constant ap_const_lv5_0 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
-    constant ap_const_lv5_1 : STD_LOGIC_VECTOR (4 downto 0) := "00001";
+    constant ap_const_lv9_1F8 : STD_LOGIC_VECTOR (8 downto 0) := "111111000";
+    constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    constant ap_const_lv9_1 : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
 attribute shreg_extract : string;
@@ -154,9 +154,9 @@ attribute shreg_extract : string;
     signal dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_ready : STD_LOGIC;
     signal dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_idle : STD_LOGIC;
     signal dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_continue : STD_LOGIC;
-    signal loop_dataflow_input_count : STD_LOGIC_VECTOR (4 downto 0) := "00000";
-    signal loop_dataflow_output_count : STD_LOGIC_VECTOR (4 downto 0) := "00000";
-    signal bound_minus_1 : STD_LOGIC_VECTOR (4 downto 0);
+    signal loop_dataflow_input_count : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    signal loop_dataflow_output_count : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    signal bound_minus_1 : STD_LOGIC_VECTOR (8 downto 0);
     signal ap_ce_reg : STD_LOGIC;
 
     component TopPL_dataflow_in_loop_VITIS_LOOP_235_2 IS
@@ -335,12 +335,12 @@ begin
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                loop_dataflow_input_count <= ap_const_lv5_0;
+                loop_dataflow_input_count <= ap_const_lv9_0;
             else
                 if ((not((loop_dataflow_input_count = bound_minus_1)) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_ready = ap_const_logic_1))) then 
-                    loop_dataflow_input_count <= std_logic_vector(unsigned(loop_dataflow_input_count) + unsigned(ap_const_lv5_1));
+                    loop_dataflow_input_count <= std_logic_vector(unsigned(loop_dataflow_input_count) + unsigned(ap_const_lv9_1));
                 elsif (((loop_dataflow_input_count = bound_minus_1) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_ready = ap_const_logic_1))) then 
-                    loop_dataflow_input_count <= ap_const_lv5_0;
+                    loop_dataflow_input_count <= ap_const_lv9_0;
                 end if; 
             end if;
         end if;
@@ -351,12 +351,12 @@ begin
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                loop_dataflow_output_count <= ap_const_lv5_0;
+                loop_dataflow_output_count <= ap_const_lv9_0;
             else
                 if ((not((loop_dataflow_output_count = bound_minus_1)) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_continue = ap_const_logic_1) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_done = ap_const_logic_1))) then 
-                    loop_dataflow_output_count <= std_logic_vector(unsigned(loop_dataflow_output_count) + unsigned(ap_const_lv5_1));
+                    loop_dataflow_output_count <= std_logic_vector(unsigned(loop_dataflow_output_count) + unsigned(ap_const_lv9_1));
                 elsif (((loop_dataflow_output_count = bound_minus_1) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_continue = ap_const_logic_1) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_done = ap_const_logic_1))) then 
-                    loop_dataflow_output_count <= ap_const_lv5_0;
+                    loop_dataflow_output_count <= ap_const_lv9_0;
                 end if; 
             end if;
         end if;
@@ -375,7 +375,7 @@ begin
 
     ap_idle_assign_proc : process(dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_idle, ap_start, loop_dataflow_output_count)
     begin
-        if (((loop_dataflow_output_count = ap_const_lv5_0) and (ap_start = ap_const_logic_0) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_idle = ap_const_logic_1))) then 
+        if (((loop_dataflow_output_count = ap_const_lv9_0) and (ap_start = ap_const_logic_0) and (dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_idle = ap_const_logic_1))) then 
             ap_idle <= ap_const_logic_1;
         else 
             ap_idle <= ap_const_logic_0;
@@ -392,7 +392,7 @@ begin
         end if; 
     end process;
 
-    bound_minus_1 <= std_logic_vector(unsigned(ap_const_lv5_1E) - unsigned(ap_const_lv5_1));
+    bound_minus_1 <= std_logic_vector(unsigned(ap_const_lv9_1F8) - unsigned(ap_const_lv9_1));
 
     dataflow_in_loop_VITIS_LOOP_235_2_U0_ap_continue_assign_proc : process(ap_continue, loop_dataflow_output_count, bound_minus_1)
     begin

@@ -76,8 +76,8 @@ output   ap_done;
 output   ap_idle;
 output   ap_ready;
 input  [127:0] receive_fifo_L_0_dout;
-input  [8:0] receive_fifo_L_0_num_data_valid;
-input  [8:0] receive_fifo_L_0_fifo_cap;
+input  [14:0] receive_fifo_L_0_num_data_valid;
+input  [14:0] receive_fifo_L_0_fifo_cap;
 input   receive_fifo_L_0_empty_n;
 output   receive_fifo_L_0_read;
 output   m_axi_gmem1_AWVALID;
@@ -154,9 +154,9 @@ reg    ap_block_pp0_stage0_01001;
 reg   [383:0] phi_ln285_fu_74;
 wire   [383:0] select_ln285_fu_223_p3;
 wire    ap_loop_init;
-reg   [3:0] j_5_fu_78;
-wire   [3:0] add_ln283_fu_138_p2;
-reg   [3:0] ap_sig_allocacmp_j;
+reg   [6:0] j_5_fu_78;
+wire   [6:0] add_ln283_fu_138_p2;
+reg   [6:0] ap_sig_allocacmp_j;
 wire   [1:0] trunc_ln283_fu_150_p1;
 wire   [255:0] tmp_6_fu_205_p4;
 wire   [383:0] tmp_7_fu_215_p3;
@@ -173,7 +173,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 phi_ln285_fu_74 = 384'd0;
-#0 j_5_fu_78 = 4'd0;
+#0 j_5_fu_78 = 7'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -229,7 +229,7 @@ always @ (posedge ap_clk) begin
         if (((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln283_fu_144_p2 == 1'd0))) begin
             j_5_fu_78 <= add_ln283_fu_138_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            j_5_fu_78 <= 4'd0;
+            j_5_fu_78 <= 7'd0;
         end
     end
 end
@@ -292,7 +292,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1) & (1'b0 == ap_block_pp0_stage0))) begin
-        ap_sig_allocacmp_j = 4'd0;
+        ap_sig_allocacmp_j = 7'd0;
     end else begin
         ap_sig_allocacmp_j = j_5_fu_78;
     end
@@ -341,7 +341,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln283_fu_138_p2 = (ap_sig_allocacmp_j + 4'd1);
+assign add_ln283_fu_138_p2 = (ap_sig_allocacmp_j + 7'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -373,7 +373,7 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign icmp_ln283_fu_144_p2 = ((ap_sig_allocacmp_j == 4'd8) ? 1'b1 : 1'b0);
+assign icmp_ln283_fu_144_p2 = ((ap_sig_allocacmp_j == 7'd64) ? 1'b1 : 1'b0);
 
 assign icmp_ln285_fu_154_p2 = ((trunc_ln283_fu_150_p1 == 2'd3) ? 1'b1 : 1'b0);
 

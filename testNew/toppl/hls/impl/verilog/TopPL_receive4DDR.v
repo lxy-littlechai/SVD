@@ -40,8 +40,8 @@ output   ap_done;
 output   ap_idle;
 output   ap_ready;
 output  [127:0] receive_fifo_L_0_din;
-input  [8:0] receive_fifo_L_0_num_data_valid;
-input  [8:0] receive_fifo_L_0_fifo_cap;
+input  [14:0] receive_fifo_L_0_num_data_valid;
+input  [14:0] receive_fifo_L_0_fifo_cap;
 input   receive_fifo_L_0_full_n;
 output   receive_fifo_L_0_write;
 input  [127:0] norm_rx0_TDATA;
@@ -84,8 +84,8 @@ reg    grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start_reg;
 wire    ap_CS_fsm_state3;
 wire    ap_CS_fsm_state4;
 reg   [127:0] data_temp_fu_88;
-reg   [1:0] i_04_fu_84;
-wire   [1:0] i_19_fu_188_p2;
+reg   [2:0] i_04_fu_84;
+wire   [2:0] i_19_fu_188_p2;
 reg    ap_block_state2;
 reg   [127:0] data_temp_1_fu_92;
 wire   [127:0] data_temp_6_fu_254_p5;
@@ -107,7 +107,7 @@ initial begin
 #0 ap_CS_fsm = 6'd1;
 #0 grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start_reg = 1'b0;
 #0 data_temp_fu_88 = 128'd0;
-#0 i_04_fu_84 = 2'd0;
+#0 i_04_fu_84 = 3'd0;
 #0 data_temp_1_fu_92 = 128'd0;
 end
 
@@ -120,8 +120,8 @@ TopPL_receive4DDR_Pipeline_VITIS_LOOP_39_2 grp_receive4DDR_Pipeline_VITIS_LOOP_3
     .ap_ready(grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_ready),
     .norm_rx0_TVALID(norm_rx0_TVALID),
     .receive_fifo_L_0_din(grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_receive_fifo_L_0_din),
-    .receive_fifo_L_0_num_data_valid(9'd0),
-    .receive_fifo_L_0_fifo_cap(9'd0),
+    .receive_fifo_L_0_num_data_valid(15'd0),
+    .receive_fifo_L_0_fifo_cap(15'd0),
     .receive_fifo_L_0_full_n(receive_fifo_L_0_full_n),
     .receive_fifo_L_0_write(grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_receive_fifo_L_0_write),
     .data_temp_1(data_temp_1_fu_92),
@@ -176,7 +176,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-        i_04_fu_84 <= 2'd0;
+        i_04_fu_84 <= 3'd0;
     end else if (((icmp_ln32_fu_194_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2) & (1'b0 == ap_block_state2))) begin
         i_04_fu_84 <= i_19_fu_188_p2;
     end
@@ -382,9 +382,9 @@ assign data_temp_6_fu_254_p5 = {{trunc_ln50_fu_250_p1}, {grp_receive4DDR_Pipelin
 
 assign grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start = grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start_reg;
 
-assign i_19_fu_188_p2 = (i_04_fu_84 + 2'd1);
+assign i_19_fu_188_p2 = (i_04_fu_84 + 3'd1);
 
-assign icmp_ln32_fu_194_p2 = ((i_04_fu_84 == 2'd2) ? 1'b1 : 1'b0);
+assign icmp_ln32_fu_194_p2 = ((i_04_fu_84 == 3'd4) ? 1'b1 : 1'b0);
 
 assign tmp_fu_206_p4 = {{norm_rx0_TDATA[127:32]}};
 

@@ -83,7 +83,11 @@ if __name__ == '__main__':
     svd_model.optimize()
     config = svd_model.getBestConfig()
   elif args.optimize == 0:
-    config = svd_model.resourceCheck(args.BLOCK_SIZE)
+    # base_config = SysConfig(args.COL, args.ROW, args.ITER, args.BATCH)
+    # base_config.BLOCK_SIZE = args.BLOCK_SIZE
+    # base_config.PARALLEL_NUM = args.PARALLEL_NUM
+    # base_config.padding = args.COL - args.COL
+    config = svd_model.resourceCheck(base_config)
     config = svd_model.generateConfig(args.Frequency, args.PARALLEL_NUM, config)
   
 

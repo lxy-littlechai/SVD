@@ -18,7 +18,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_R_3 \
     op interface \
-    ports { send_fifo_R_3_din { O 128 vector } send_fifo_R_3_num_data_valid { I 6 vector } send_fifo_R_3_fifo_cap { I 6 vector } send_fifo_R_3_full_n { I 1 bit } send_fifo_R_3_write { O 1 bit } } \
+    ports { send_fifo_R_3_din { O 128 vector } send_fifo_R_3_num_data_valid { I 10 vector } send_fifo_R_3_fifo_cap { I 10 vector } send_fifo_R_3_full_n { I 1 bit } send_fifo_R_3_write { O 1 bit } } \
 } "
 }
 

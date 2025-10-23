@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_parent_loop_proc'" level="0">
-<item name = "Date">Mon Oct 20 21:14:56 2025
+<item name = "Date">Mon Oct 20 22:10:26 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 2.538 ns, 1.35 ns</column>
+<column name="ap_clk">5.00 ns, 2.473 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">991, 991, 4.955 us, 4.955 us, 991, 991, no</column>
+<column name="">144649, 144649, 0.723 ms, 0.723 ms, 144649, 144649, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="dataflow_in_loop_VITIS_LOOP_235_2_U0">dataflow_in_loop_VITIS_LOOP_235_2, 32, 32, 0.160 us, 0.160 us, 33, 33, dataflow</column>
+<column name="dataflow_in_loop_VITIS_LOOP_235_2_U0">dataflow_in_loop_VITIS_LOOP_235_2, 286, 286, 1.430 us, 1.430 us, 287, 287, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_235_2">990, 990, 34, -, -, 30, no</column>
+<column name="- VITIS_LOOP_235_2">144648, 144648, 288, -, -, 504, no</column>
 </table>
 </item>
 </section>
@@ -49,12 +49,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 65, 32, -</column>
+<column name="Expression">-, -, 97, 46, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">32, -, 944, 3008, 0</column>
+<column name="Instance">32, -, 976, 3120, 0</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 10, -</column>
-<column name="Register">-, -, 10, -, -</column>
+<column name="Multiplexer">-, -, -, 16, -</column>
+<column name="Register">-, -, 18, -, -</column>
 <specialColumn name="Available">1934, 1968, 1799680, 899840, 463</specialColumn>
 <specialColumn name="Utilization (%)">1, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -63,7 +63,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="dataflow_in_loop_VITIS_LOOP_235_2_U0">dataflow_in_loop_VITIS_LOOP_235_2, 32, 0, 944, 3008, 0</column>
+<column name="dataflow_in_loop_VITIS_LOOP_235_2_U0">dataflow_in_loop_VITIS_LOOP_235_2, 32, 0, 976, 3120, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -80,21 +80,21 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="loop_dataflow_input_count">+, 0, 23, 12, 5, 1</column>
-<column name="loop_dataflow_output_count">+, 0, 23, 12, 5, 1</column>
-<column name="bound_minus_1">-, 0, 19, 8, 3, 1</column>
+<column name="loop_dataflow_input_count">+, 0, 37, 17, 9, 1</column>
+<column name="loop_dataflow_output_count">+, 0, 37, 17, 9, 1</column>
+<column name="bound_minus_1">-, 0, 23, 12, 5, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="loop_dataflow_input_count">5, 2, 5, 10</column>
-<column name="loop_dataflow_output_count">5, 2, 5, 10</column>
+<column name="loop_dataflow_input_count">8, 2, 9, 18</column>
+<column name="loop_dataflow_output_count">8, 2, 9, 18</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="loop_dataflow_input_count">5, 0, 5, 0</column>
-<column name="loop_dataflow_output_count">5, 0, 5, 0</column>
+<column name="loop_dataflow_input_count">9, 0, 9, 0</column>
+<column name="loop_dataflow_output_count">9, 0, 9, 0</column>
 </table>
 </item>
 </section>

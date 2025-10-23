@@ -33,13 +33,13 @@ set portList {
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ receive_fifo_R_2_dout sc_in sc_lv 128 signal 0 } 
-	{ receive_fifo_R_2_num_data_valid sc_in sc_lv 9 signal 0 } 
-	{ receive_fifo_R_2_fifo_cap sc_in sc_lv 9 signal 0 } 
+	{ receive_fifo_R_2_num_data_valid sc_in sc_lv 15 signal 0 } 
+	{ receive_fifo_R_2_fifo_cap sc_in sc_lv 15 signal 0 } 
 	{ receive_fifo_R_2_empty_n sc_in sc_logic 1 signal 0 } 
 	{ receive_fifo_R_2_read sc_out sc_logic 1 signal 0 } 
 	{ send_fifo_R_1_din sc_out sc_lv 128 signal 1 } 
-	{ send_fifo_R_1_num_data_valid sc_in sc_lv 6 signal 1 } 
-	{ send_fifo_R_1_fifo_cap sc_in sc_lv 6 signal 1 } 
+	{ send_fifo_R_1_num_data_valid sc_in sc_lv 10 signal 1 } 
+	{ send_fifo_R_1_fifo_cap sc_in sc_lv 10 signal 1 } 
 	{ send_fifo_R_1_full_n sc_in sc_logic 1 signal 1 } 
 	{ send_fifo_R_1_write sc_out sc_logic 1 signal 1 } 
 }
@@ -51,13 +51,13 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "receive_fifo_R_2_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "receive_fifo_R_2", "role": "dout" }} , 
- 	{ "name": "receive_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "receive_fifo_R_2", "role": "num_data_valid" }} , 
- 	{ "name": "receive_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "receive_fifo_R_2", "role": "fifo_cap" }} , 
+ 	{ "name": "receive_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "receive_fifo_R_2", "role": "num_data_valid" }} , 
+ 	{ "name": "receive_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "receive_fifo_R_2", "role": "fifo_cap" }} , 
  	{ "name": "receive_fifo_R_2_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "receive_fifo_R_2", "role": "empty_n" }} , 
  	{ "name": "receive_fifo_R_2_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "receive_fifo_R_2", "role": "read" }} , 
  	{ "name": "send_fifo_R_1_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "din" }} , 
- 	{ "name": "send_fifo_R_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_1_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "full_n" }} , 
  	{ "name": "send_fifo_R_1_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "write" }}  ]}
 
@@ -68,7 +68,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -97,8 +97,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "18", "Max" : "18"}
-	, {"Name" : "Interval", "Min" : "18", "Max" : "18"}
+	{"Name" : "Latency", "Min" : "258", "Max" : "258"}
+	, {"Name" : "Interval", "Min" : "258", "Max" : "258"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -106,6 +106,6 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	receive_fifo_R_2 { ap_fifo {  { receive_fifo_R_2_dout fifo_data_in 0 128 }  { receive_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 9 }  { receive_fifo_R_2_fifo_cap fifo_update 0 9 }  { receive_fifo_R_2_empty_n fifo_status 0 1 }  { receive_fifo_R_2_read fifo_port_we 1 1 } } }
-	send_fifo_R_1 { ap_fifo {  { send_fifo_R_1_din fifo_data_in 1 128 }  { send_fifo_R_1_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_1_fifo_cap fifo_update 0 6 }  { send_fifo_R_1_full_n fifo_status 0 1 }  { send_fifo_R_1_write fifo_port_we 1 1 } } }
+	receive_fifo_R_2 { ap_fifo {  { receive_fifo_R_2_dout fifo_data_in 0 128 }  { receive_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 15 }  { receive_fifo_R_2_fifo_cap fifo_update 0 15 }  { receive_fifo_R_2_empty_n fifo_status 0 1 }  { receive_fifo_R_2_read fifo_port_we 1 1 } } }
+	send_fifo_R_1 { ap_fifo {  { send_fifo_R_1_din fifo_data_in 1 128 }  { send_fifo_R_1_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_1_fifo_cap fifo_update 0 10 }  { send_fifo_R_1_full_n fifo_status 0 1 }  { send_fifo_R_1_write fifo_port_we 1 1 } } }
 }

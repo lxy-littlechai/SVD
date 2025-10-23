@@ -3721,7 +3721,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>34601168</spirit:value>
+            <spirit:value>ceeb0442</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3740,7 +3740,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>746fc3ac</spirit:value>
+            <spirit:value>4038c91b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3759,7 +3759,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9d3b8e84</spirit:value>
+            <spirit:value>403dad8c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3778,7 +3778,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c87f7237</spirit:value>
+            <spirit:value>a410024b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -9637,11 +9637,11 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/TopPL_fifo_w128_d32_B.v</spirit:name>
+        <spirit:name>hdl/verilog/TopPL_fifo_w128_d512_B_with_almost.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/TopPL_fifo_w128_d256_U.v</spirit:name>
+        <spirit:name>hdl/verilog/TopPL_fifo_w128_d16384_U.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -9922,6 +9922,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/TopPL_RoundRobin_Pipeline_VITIS_LOOP_421_10.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/TopPL_RoundRobin_Pipeline_VITIS_LOOP_431_11.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -10257,12 +10261,12 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/TopPL_fifo_w128_d32_B.v</spirit:name>
+        <spirit:name>hdl/verilog/TopPL_fifo_w128_d512_B_with_almost.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/TopPL_fifo_w128_d256_U.v</spirit:name>
+        <spirit:name>hdl/verilog/TopPL_fifo_w128_d16384_U.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -10613,6 +10617,11 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/TopPL_RoundRobin_Pipeline_VITIS_LOOP_421_10.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/TopPL_RoundRobin_Pipeline_VITIS_LOOP_431_11.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -10978,11 +10987,11 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d32_B.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d512_B_with_almost.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d256_U.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d16384_U.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -11150,6 +11159,10 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/vhdl/TopPL_RoundRobin_Pipeline_VITIS_LOOP_431_11.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/vhdl/TopPL_RoundRobin_Pipeline_VITIS_LOOP_458_12.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
@@ -11292,7 +11305,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/TopPL.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_bbe01114</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_533627b9</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -11478,12 +11491,12 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d32_B.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d512_B_with_almost.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d256_U.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/TopPL_fifo_w128_d16384_U.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -11689,6 +11702,11 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/TopPL_RoundRobin_Pipeline_VITIS_LOOP_421_10.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/TopPL_RoundRobin_Pipeline_VITIS_LOOP_431_11.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -12446,8 +12464,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Toppl</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2114312355</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-10-20T13:15:55Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2114312411</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-10-20T14:11:22Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -12458,7 +12476,7 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="84e15b1b"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="f53e1c9f"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="4647e485"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="70c8c52e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="083efaa8"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="66d43c63"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9985b9c8"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="6ae3d945"/>

@@ -1,0 +1,398 @@
+Contents of the .debug_line section:
+
+CU: ../src/12_5.cc:
+File name                            Line number    Starting address    View    Stmt
+
+../src/12_5.cc:
+12_5.cc                                       28               0x120        
+12_5.cc                                       28               0x120       1       x
+12_5.cc                                       29               0x120       2
+12_5.cc                                       29               0x120       3
+12_5.cc                                       53               0x120       4
+12_5.cc                                       57               0x120       5
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             303               0x120       6
+io_buffer_main.h                             317               0x120       7
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
+mul_acc32_fp.hpp                              73               0x120       8
+
+../src/12_5.cc:
+12_5.cc                                       28               0x12c        
+12_5.cc                                       42               0x12c       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x12c       2
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             303               0x12c       3
+io_buffer_main.h                             303               0x12c       4
+io_buffer_main.h                             317               0x12c       5
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/detail/io_buffer_impl.h:
+io_buffer_impl.h                             201               0x12c       6
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               290               0x12c       7
+add_reduce.hpp                               291               0x12c       8
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x12c       9
+vector.hpp                                   384               0x12c      10
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x138        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             303               0x138       1
+io_buffer_main.h                             303               0x138       2
+
+../src/12_5.cc:
+12_5.cc                                       29               0x148               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x148       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/detail/io_buffer_impl.h:
+io_buffer_impl.h                             201               0x148       2
+io_buffer_impl.h                             201               0x150        
+io_buffer_impl.h                             201               0x158               x
+
+../src/12_5.cc:
+12_5.cc                                       42               0x17c        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x17c       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/detail/io_buffer_impl.h:
+io_buffer_impl.h                             201               0x17c       2
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/square.hpp:
+square.hpp                                   286               0x188        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x188       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/detail/io_buffer_impl.h:
+io_buffer_impl.h                             201               0x190        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               289               0x198        
+add_reduce.hpp                               290               0x198       1
+add_reduce.hpp                               291               0x198       2
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x198       3
+vector.hpp                                   384               0x198       4
+vector.hpp                                   384               0x198       5
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x1a0        
+io_buffer_compiler.h                         175               0x1a8        
+
+../src/12_5.cc:
+12_5.cc                                       36               0x1f0               x
+12_5.cc                                       38               0x206               x
+12_5.cc                                       38               0x206       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x220        
+io_buffer_compiler.h                         175               0x220       1
+io_buffer_compiler.h                         175               0x220       2       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             303               0x220       3
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x22c        
+
+../src/12_5.cc:
+12_5.cc                                       42               0x230               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x230       1
+io_buffer_compiler.h                         175               0x238               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             303               0x238       1       x
+io_buffer_main.h                             303               0x242        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x246        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             303               0x24a        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_compiler.h:
+io_buffer_compiler.h                         175               0x250        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             303               0x260        
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 16               0x26a               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             125               0x26a       1       x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 16               0x276        
+Normalize.cpp                                 16               0x27e        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/square.hpp:
+square.hpp                                   286               0x286        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x286       1
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 14               0x294               x
+Normalize.cpp                                 32               0x294       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x294       2
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 21               0x2a0               x
+Normalize.cpp                                 21               0x2c0        
+Normalize.cpp                                 21               0x2e0        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/square.hpp:
+square.hpp                                   286               0x2f0               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x2f0       1       x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 28               0x300               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             125               0x300       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               289               0x300       2
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x300       3
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 28               0x30c        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/square.hpp:
+square.hpp                                   286               0x30c       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x30c       2       x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 28               0x31c               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/square.hpp:
+square.hpp                                   286               0x324               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x324       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               289               0x336        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x336       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               289               0x33a               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x33a       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               290               0x34c        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x34c       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               290               0x350               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x350       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               291               0x362        
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x362       1
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/add_reduce.hpp:
+add_reduce.hpp                               291               0x366               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x366       1
+vector.hpp                                   539               0x378               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/elementary.hpp:
+elementary.hpp                                84               0x380               x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 32               0x388               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x388       1       x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 37               0x390        
+Normalize.cpp                                 32               0x398               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x398       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
+mul_acc32_fp.hpp                              73               0x3ae               x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 32               0x3b6               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x3b6       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
+mul_acc32_fp.hpp                              73               0x3c4               x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 32               0x3d0               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
+vector.hpp                                   384               0x3d0       1       x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 34               0x3d8               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
+mul_acc32_fp.hpp                              73               0x3e0               x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 34               0x3f2               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
+mul_acc32_fp.hpp                              73               0x3f8               x
+
+/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:
+Normalize.cpp                                 34               0x402               x
+Normalize.cpp                                 34               0x40c        
+Normalize.cpp                                 37               0x410               x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
+io_buffer_main.h                             317               0x41c               x
+io_buffer_main.h                             317               0x426        
+
+../src/12_5.cc:
+12_5.cc                                       53               0x42a               x
+12_5.cc                                       53               0x42e        
+12_5.cc                                       38               0x432               x
+12_5.cc                                       38               0x432       1       x
+12_5.cc                                       56               0x460               x
+12_5.cc                                       57               0x46e               x
+12_5.cc                                       57               0x484        
+12_5.cc                                       60               0x49a        
+12_5.cc                                       60               0x49a       1
+12_5.cc                                       60               0x4a2               x
+12_5.cc                                       60               0x4b6        
+12_5.cc                                        -               0x4b7
+
+
+CU: No directory table
+CU: Empty file name table
+<unknown>                                      -                 0x1
+
+
+CU: No directory table
+CU: Empty file name table
+<unknown>                                      -                 0x1
+
+
+CU: ./me_basic.c:
+File name                            Line number    Starting address    View    Stmt
+
+./me_basic.c:[++]
+me_basic.c                                    73               0x4d0               x
+me_basic.c                                    73               0x4d0       1
+me_basic.c                                    73               0x4d8        
+me_basic.c                                    75               0x4d8       1
+me_basic.c                                    75               0x4d8       2
+me_basic.c                                    75               0x4e4        
+me_basic.c                                    75               0x4ec               x
+me_basic.c                                    75               0x4f0        
+me_basic.c                                    76               0x514        
+me_basic.c                                    76               0x520               x
+me_basic.c                                    76               0x536        
+me_basic.c                                    75               0x538        
+me_basic.c                                    75               0x550               x
+me_basic.c                                    75               0x554        
+me_basic.c                                    77               0x570        
+me_basic.c                                    77               0x594               x
+me_basic.c                                    77               0x59a        
+me_basic.c                                    77               0x59e        
+me_basic.c                                    87                   0               x
+me_basic.c                                    94                   0       1       x
+me_basic.c                                    88                 0x4               x
+me_basic.c                                    89                 0x8               x
+me_basic.c                                    90                 0xa               x
+me_basic.c                                    69                 0xc        
+me_basic.c                                    69                 0xc       1
+me_basic.c                                    96                 0xc       2
+me_basic.c                                    97                 0xc       3
+me_basic.c                                    69                0x18        
+me_basic.c                                    96                0x20               x
+me_basic.c                                    69                0x22               x
+me_basic.c                                    97                0x22       1       x
+me_basic.c                                    69                0x2a        
+me_basic.c                                    69                0x3c        
+me_basic.c                                    70                0x3c       1
+me_basic.c                                   104                0x44        
+me_basic.c                                   104                0x48        
+me_basic.c                                    69                0x50        
+me_basic.c                                    70                0x50       1       x
+me_basic.c                                    70                0x66        
+me_basic.c                                    69                0x80               x
+me_basic.c                                    69                0x84        
+me_basic.c                                   104                0x96        
+me_basic.c                                   104                0x98        
+me_basic.c                                   104                0xa0               x
+
+runtime/include/stdlib.h:
+stdlib.h                                      76                0xc0               x
+stdlib.h                                      76                0xc8        
+stdlib.h                                      61                0xf0               x
+stdlib.h                                      62                0xfe               x
+stdlib.h                                      63               0x100               x
+stdlib.h                                       -               0x101
+
+
+CU: src/atexit.c:
+File name                            Line number    Starting address    View    Stmt
+
+src/atexit.c:
+atexit.c                                      47               0x5b0               x
+atexit.c                                      52               0x5b0       1
+atexit.c                                      53               0x5b0       2
+atexit.c                                      53               0x5b0       3
+atexit.c                                      55               0x5b0       4
+atexit.c                                      56               0x5bc        
+atexit.c                                      68               0x5c4        
+atexit.c                                      52               0x5c6               x
+atexit.c                                      53               0x5ce               x
+atexit.c                                      54               0x5de               x
+atexit.c                                      55               0x5e2               x
+atexit.c                                      56               0x5e2       1
+atexit.c                                      56               0x5ea               x
+atexit.c                                      65               0x5f0               x
+atexit.c                                      65               0x5f8        
+atexit.c                                      65               0x60c        
+atexit.c                                      62               0x620        
+atexit.c                                      62               0x628               x
+atexit.c                                      68               0x636        
+atexit.c                                      68               0x638               x
+atexit.c                                       -               0x639
+
+

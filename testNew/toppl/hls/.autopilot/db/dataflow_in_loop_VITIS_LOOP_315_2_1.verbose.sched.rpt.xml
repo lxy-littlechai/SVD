@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_315_2_1'" level="0">
-<item name = "Date">Mon Oct 20 21:14:52 2025
+<item name = "Date">Mon Oct 20 22:10:21 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">33, 33, 0.165 us, 0.165 us, 32, 32, dataflow</column>
+<column name="">287, 287, 1.435 us, 1.435 us, 286, 286, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

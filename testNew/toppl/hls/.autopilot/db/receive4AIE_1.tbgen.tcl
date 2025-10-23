@@ -43,8 +43,8 @@ set portList {
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ return_r sc_out sc_lv 32 signal 0 } 
 	{ receive_fifo_L_1_din sc_out sc_lv 128 signal 1 } 
-	{ receive_fifo_L_1_num_data_valid sc_in sc_lv 9 signal 1 } 
-	{ receive_fifo_L_1_fifo_cap sc_in sc_lv 9 signal 1 } 
+	{ receive_fifo_L_1_num_data_valid sc_in sc_lv 15 signal 1 } 
+	{ receive_fifo_L_1_fifo_cap sc_in sc_lv 15 signal 1 } 
 	{ receive_fifo_L_1_full_n sc_in sc_logic 1 signal 1 } 
 	{ receive_fifo_L_1_write sc_out sc_logic 1 signal 1 } 
 	{ sweep_rx2_0_TDATA sc_in sc_lv 128 signal 2 } 
@@ -64,8 +64,8 @@ set NewPortList {[
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "return_r", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "return_r", "role": "default" }} , 
  	{ "name": "receive_fifo_L_1_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "din" }} , 
- 	{ "name": "receive_fifo_L_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "num_data_valid" }} , 
- 	{ "name": "receive_fifo_L_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "fifo_cap" }} , 
+ 	{ "name": "receive_fifo_L_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "num_data_valid" }} , 
+ 	{ "name": "receive_fifo_L_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "fifo_cap" }} , 
  	{ "name": "receive_fifo_L_1_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "full_n" }} , 
  	{ "name": "receive_fifo_L_1_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "receive_fifo_L_1", "role": "write" }} , 
  	{ "name": "sweep_rx2_0_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "sweep_rx2_0_V_data_V", "role": "default" }} , 
@@ -82,7 +82,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "31", "EstimateLatencyMax" : "31",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "285", "EstimateLatencyMax" : "285",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -120,7 +120,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "9", "EstimateLatencyMax" : "9",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "65", "EstimateLatencyMax" : "65",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -146,9 +146,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "VITIS_LOOP_76_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_receive4AIE_1_Pipeline_VITIS_LOOP_76_2_fu_158.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fptrunc_64ns_32_1_no_dsp_1_U447", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U448", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U449", "Parent" : "0"}]}
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fptrunc_64ns_32_1_no_dsp_1_U463", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U464", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fpext_32ns_64_1_no_dsp_1_U465", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -173,8 +173,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "31", "Max" : "31"}
-	, {"Name" : "Interval", "Min" : "31", "Max" : "31"}
+	{"Name" : "Latency", "Min" : "285", "Max" : "285"}
+	, {"Name" : "Interval", "Min" : "285", "Max" : "285"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -182,7 +182,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	return_r { ap_none {  { return_r out_data 1 32 } } }
-	receive_fifo_L_1 { ap_fifo {  { receive_fifo_L_1_din fifo_data_in 1 128 }  { receive_fifo_L_1_num_data_valid fifo_status_num_data_valid 0 9 }  { receive_fifo_L_1_fifo_cap fifo_update 0 9 }  { receive_fifo_L_1_full_n fifo_status 0 1 }  { receive_fifo_L_1_write fifo_port_we 1 1 } } }
+	receive_fifo_L_1 { ap_fifo {  { receive_fifo_L_1_din fifo_data_in 1 128 }  { receive_fifo_L_1_num_data_valid fifo_status_num_data_valid 0 15 }  { receive_fifo_L_1_fifo_cap fifo_update 0 15 }  { receive_fifo_L_1_full_n fifo_status 0 1 }  { receive_fifo_L_1_write fifo_port_we 1 1 } } }
 	sweep_rx2_0_V_data_V { axis {  { sweep_rx2_0_TDATA in_data 0 128 } } }
 	sweep_rx2_0_V_keep_V { axis {  { sweep_rx2_0_TKEEP in_data 0 16 } } }
 	sweep_rx2_0_V_strb_V { axis {  { sweep_rx2_0_TSTRB in_data 0 16 } } }

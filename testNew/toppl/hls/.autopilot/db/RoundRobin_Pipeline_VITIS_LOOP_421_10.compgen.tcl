@@ -18,7 +18,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_R_3 \
     op interface \
-    ports { receive_fifo_R_3_dout { I 128 vector } receive_fifo_R_3_num_data_valid { I 9 vector } receive_fifo_R_3_fifo_cap { I 9 vector } receive_fifo_R_3_empty_n { I 1 bit } receive_fifo_R_3_read { O 1 bit } } \
+    ports { receive_fifo_R_3_dout { I 128 vector } receive_fifo_R_3_num_data_valid { I 15 vector } receive_fifo_R_3_fifo_cap { I 15 vector } receive_fifo_R_3_empty_n { I 1 bit } receive_fifo_R_3_read { O 1 bit } } \
 } "
 }
 
@@ -33,7 +33,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_R_2 \
     op interface \
-    ports { send_fifo_R_2_din { O 128 vector } send_fifo_R_2_num_data_valid { I 6 vector } send_fifo_R_2_fifo_cap { I 6 vector } send_fifo_R_2_full_n { I 1 bit } send_fifo_R_2_write { O 1 bit } } \
+    ports { send_fifo_R_2_din { O 128 vector } send_fifo_R_2_num_data_valid { I 10 vector } send_fifo_R_2_fifo_cap { I 10 vector } send_fifo_R_2_full_n { I 1 bit } send_fifo_R_2_write { O 1 bit } } \
 } "
 }
 

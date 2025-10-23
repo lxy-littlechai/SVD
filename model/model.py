@@ -14,27 +14,21 @@ class SysConfig:
         self.valid = False
         self.COL = COL
         self.ROW = ROW
+        self.padding = 0
         self.BATCH = BATCH
         self.ITER = ITER
         self.BLOCK_SIZE = 0
         self.Frequency = 0
         self.aie_num = 0
-        self.graph_num = 0 # graph_num means the task-level parallel num
-        self.graph_list = [] #row, col, direction
-        self.PARALLEL_NUM = 0 # parallel_num means the parallel num in single graph
+        self.task_num = 0 # task_num means the task-level parallel num
+        self.orth_graph_list = [] #orthogonal graph list
+        self.norm_graph_list = [] #norm graph list
+        self.parallel_num = 0 # parallel_num means the parallel num in single graph
         self.plio_num = 0
         self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
 
         self.uram = 0
         self.estimated_time = 0.0
-    
-    """ def __eq__(self, other):
-        if self.estimated_time == other.estimated_time and self.BLOCK_SIZE == other.BLOCK_SIZE:
-            return True
-        return False
-    
-    def __hash__(self):
-        return hash(self.estimated_time + self.BLOCK_SIZE) """
         
     def __lt__(self, other): 
         if self.estimated_time < other.estimated_time:
@@ -51,7 +45,7 @@ class SysConfig:
 
         
     def keys(self):
-        return ('COL', 'ROW', 'BATCH', 'BLOCK_SIZE', 'PARALLEL_NUM', 'graph_num', 'graph_list')
+        return ('COL', 'ROW', 'padding', 'BATCH', 'BLOCK_SIZE', 'parallel_num', 'task_num', 'orth_graph_list', 'norm_graph_list')
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -67,25 +61,37 @@ class SVD_Model:
         self.config_list = []
         self.best_config = SysConfig(COL, ROW, ITER, BATCH)
 
-    def config4BlockSize(self):
-        for i in range(1, self.COL):
-            if (i & 1) and (i != 1):
-                continue
-            if self.COL % i != 0:
-                continue
-            BLOCK_SIZE = i
-            config = self.resourceCheck(BLOCK_SIZE)
-            
-            if not config.valid:
-                continue
-            
-            self.config_blocksize.append(config)
-            #self.print(config)
+    def enumerateConfig(self):
+        # step 1. enumerate different block_size
+        for block_size in range(1, 14): # 14 is the maximum block_size
+            col = self.COL
+            # padding the matrix to the multiple of block_size
+            if self.COL % block_size != 0:
+                col = self.COL + self.COL % block_size
+                while (col//block_size) % 2 != 0:
+                    col += block_size
+
+            # enumerate different parallel_num
+            block_num = col//block_size
+            block_pair_num = block_num//2
+            for parallel_num in range(1, block_pair_num//2+1):
+
+                base_config = SysConfig(col, self.ROW, self.ITER, self.BATCH)
+                base_config.BLOCK_SIZE = block_size
+                base_config.parallel_num = parallel_num
+                base_config.padding = col - self.COL
+                # print(base_config)
+                
+                config = self.resourceCheck(base_config)
+                if not config.valid:
+                    continue
+                self.config_list.append(config)
+                print(dict(config))
 
     def config4Freq(self):
         #step 1. for freq & block_size, predict the config time then select the best config in the freq
         config_dict = dict()
-        for i in range(1, 12):
+        for i in range(1, 14):
             config_dict[str(i)] = []
 
         best_config_list = []
@@ -95,14 +101,14 @@ class SVD_Model:
         for freq in range(MIN_FREQ, MAX_FREQ, FREQ_INTER):
             #bestConfig4freq = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
             #bestConfig4freq.estimated_time = math.inf
-            for config in self.config_blocksize:
+            for config in self.config_list:
                 config.Frequency = freq
                 config.estimated_time = round(self.predict(config), 7)
                 config_dict[str(config.BLOCK_SIZE)].append(copy.deepcopy(config))
             
         
         #step 2. sort according time
-        for i in range(1, 12):
+        for i in range(1, 14):
             config_dict[str(i)] = sorted(config_dict[str(i)]) 
 
         #step 3. merge similar time, remain the lower freq
@@ -130,10 +136,10 @@ class SVD_Model:
                
 
     def optimize(self):
-        #step 1. find different block_size
+        #step 1. enuerate different block_size & parallel_num
         #step 2. for freq to find the best_config in different freq
         #step 3. get the best config rank
-        self.config4BlockSize()
+        self.enumerateConfig()
         self.config4Freq()
         for config in self.config_list:
             self.print(config)
@@ -143,8 +149,8 @@ class SVD_Model:
 
     def generateConfig(self, freq, parallel_num, config):
         svd_pl = SVD_PL(self.COL, self.ROW)
-        config.uram = svd_pl.getRAM(config.graph_num)
-        config.PARALLEL_NUM = parallel_num
+        config.uram = svd_pl.getRAM(config.task_num)
+        config.parallel_num = parallel_num
         config.Frequency = freq
         # config.estimated_time = self.predict(config)
         print("Current Config!")
@@ -160,37 +166,40 @@ class SVD_Model:
         print("----------------------------------")
         print(f"COL: {self.COL} ROW: {self.ROW} BATCH: {self.BATCH}")
         print(f"Freq: {config.Frequency}")
-        print(f"PARALLEL_NUM: {config.PARALLEL_NUM}")
-        print(f"BLOCK_SIZE: {config.BLOCK_SIZE} aie_num: {config.aie_num} graph_num: {config.graph_num}")
+        print(f"parallel_num: {config.parallel_num}")
+        print(f"BLOCK_SIZE: {config.BLOCK_SIZE} aie_num: {config.aie_num} task_num: {config.task_num}")
         print(f"URAM: {config.uram}")
         print(f"estimated_time: {config.estimated_time}")
         print("----------------------------------")
 
-    def resourceCheck(self, BLOCK_SIZE):
-        config = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
-        config.BLOCK_SIZE = BLOCK_SIZE
-
+    # this api find the configuration with maximum task-level parallelism
+    def resourceCheck(self, config):
+        # print(config)
         ## AIE Check
-        svd_aie = SVD_AIE(1, 0, 1, BLOCK_SIZE)
-        aiePosition = svd_aie.getAIEPosition()
-        #print(config.graph_list)
+        svd_aie = SVD_AIE(1, 0, 1, config.BLOCK_SIZE)
+        # aiePosition = svd_aie.getAIEPosition()
         ## PL Uram Check
-        svd_pl = SVD_PL(self.COL, self.ROW)
+        svd_pl = SVD_PL(config.COL, config.ROW, config.parallel_num)
 
-        while svd_pl.checkRAM(svd_aie.getGraphNum()+1) and svd_aie.tryAIEPlacement():
+        while svd_aie.getTaskNum() < self.BATCH:
             config.valid = True
-            config.graph_list.append(aiePosition)
 
-            if svd_aie.getGraphNum() >= self.BATCH or (not config.valid):
+            # PL resource check
+            pl_valid = svd_pl.checkRAM(svd_aie.getTaskNum()+1)
+            # AIE resource check
+            # this api should return the success or failure and the graph list [{row, col, direction}, ...]
+            aie_valid, orth_graph_list, norm_graph_list = svd_aie.tryAIEPlacement(config.parallel_num)
+            
+            if aie_valid and pl_valid:
+                config.orth_graph_list.append(orth_graph_list)
+                config.norm_graph_list.append(norm_graph_list)
+            else:
+                config.valid = False
                 break
-            
-            aiePosition = svd_aie.getAIEPosition()
-            
-            
         
         config.aie_num = svd_aie.getAIENum()
-        config.graph_num = min(svd_aie.getGraphNum(), self.BATCH)
-        config.uram = svd_pl.getRAM(config.graph_num)
+        config.task_num = svd_aie.getTaskNum()
+        config.uram = svd_pl.getRAM(config.task_num)
         config.Frequency = 320
         return config
 
@@ -201,7 +210,7 @@ class SVD_Model:
         Frequency = config.Frequency
         ITER = self.ITER
         BLOCK_SIZE = config.BLOCK_SIZE
-        GRAPH_NUM = config.graph_num
+        TASK_NUM = config.task_num
 
         BLOCK_NUM = COL/BLOCK_SIZE
 
@@ -210,8 +219,12 @@ class SVD_Model:
             Tx_row = 1.0/Frequency*(ROW*32/128 + 4 + 8)
 
         id = str(ROW) + "_" + str(BLOCK_SIZE)
-        orth_single_aie = single_aie[str(ROW)]
-        orth_total_aie = total_aie[id]
+        if id not in single_aie:
+            orth_single_aie = 1 # for test
+            orth_total_aie = 2
+        else:
+            orth_single_aie = single_aie[str(ROW)]
+            orth_total_aie = total_aie[id]
 
         CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row - ROW*32/128/1250, 0.0)
         
@@ -231,7 +244,7 @@ class SVD_Model:
         
         sys_predict_time = DDR_Latency + ITER*one_sweep + norm_stage
 
-        batch_predict_time = (BATCH//GRAPH_NUM*sys_predict_time + (BATCH > GRAPH_NUM)*sys_predict_time + (GRAPH_NUM-1)*50)/1000000
+        batch_predict_time = (BATCH//TASK_NUM*sys_predict_time + (BATCH > TASK_NUM)*sys_predict_time + (TASK_NUM-1)*50)/1000000
     
 
         #Tx = Tx_row*BLOCK_SIZE + CTC_wait

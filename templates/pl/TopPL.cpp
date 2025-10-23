@@ -134,12 +134,12 @@ void send2AIE(axis_stream_128& block,
     
 }
 
-void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 send_fifo_L[PARALLEL_NUM], axis_stream_128 send_fifo_R[PARALLEL_NUM]) {
+void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 send_fifo_L[parallel_num], axis_stream_128 send_fifo_R[parallel_num]) {
 
   const int BLOCK_DATA_SIZE = BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   for(int i = 0;i < BLOCK_NUM;i ++) {
-    {% for k in range(0, PARALLEL_NUM) %}
-      if({{2*k}} <= i%(2*PARALLEL_NUM) && i%(2*PARALLEL_NUM) <= {{2*k+1}}) {
+    {% for k in range(0, parallel_num) %}
+      if({{2*k}} <= i%(2*parallel_num) && i%(2*parallel_num) <= {{2*k+1}}) {
         if(i&1) {
           for(int j = 0;j < BLOCK_DATA_SIZE;j ++) {
             #pragma HLS PIPELINE II = 1
@@ -161,8 +161,8 @@ void DDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_128 send_fifo_L[PARALLEL_N
 }
 
 void Send(axis_stream_sys& syscontrol,
-                    axis_stream_128 fifo_L[PARALLEL_NUM], axis_stream_128 fifo_R[PARALLEL_NUM], 
-{% for i in range(0, PARALLEL_NUM) %}
+                    axis_stream_128 fifo_L[parallel_num], axis_stream_128 fifo_R[parallel_num], 
+{% for i in range(0, parallel_num) %}
                     axis_pkt_stream& sweep_tx{{i}}_0, axis_pkt_stream& sweep_tx{{i}}_1, 
 {% endfor %}
                     axis_pkt_stream& norm_tx0) {
@@ -170,22 +170,22 @@ void Send(axis_stream_sys& syscontrol,
 #pragma HLS bind_storage variable=fifo_R type=fifo impl=bram
 
     #pragma HLS INLINE off
-    const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / PARALLEL_NUM;
+    const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / parallel_num;
 
     while(true) {
       ap_uint<1> sig = syscontrol.read();
       if(sig == END) break;
       for(int i = 0;i < SWEEP_STEP;i ++) {
         #pragma HLS dataflow
-{% for i in range(0, PARALLEL_NUM) %}
+{% for i in range(0, parallel_num) %}
         send2AIE(fifo_L[{{i}}], sweep_tx{{i}}_0);
         send2AIE(fifo_R[{{i}}], sweep_tx{{i}}_1);
 {% endfor %}
       }
     }
 
-    for(int i = 0;i < BLOCK_PAIR_NUM/PARALLEL_NUM;i ++) {
-{% for i in range(0, PARALLEL_NUM) %}
+    for(int i = 0;i < BLOCK_PAIR_NUM/parallel_num;i ++) {
+{% for i in range(0, parallel_num) %}
       send2AIE(fifo_L[{{i}}], norm_tx0);
       send2AIE(fifo_R[{{i}}], norm_tx0);
 {% endfor %}
@@ -214,9 +214,9 @@ void FIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_stream_deep_128& recei
   }
 }
 
-void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[PARALLEL_NUM], axis_stream_float convSet_R[PARALLEL_NUM],
-                       axis_stream_deep_128 fifo_L[PARALLEL_NUM], axis_stream_deep_128 fifo_R[PARALLEL_NUM], 
-{% for i in range(0, PARALLEL_NUM) %}
+void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[parallel_num], axis_stream_float convSet_R[parallel_num],
+                       axis_stream_deep_128 fifo_L[parallel_num], axis_stream_deep_128 fifo_R[parallel_num], 
+{% for i in range(0, parallel_num) %}
                        axis_pkt_stream& sweep_rx{{i}}_0, axis_pkt_stream& sweep_rx{{i}}_1,
 {% endfor %}
                        axis_pkt_stream& norm_rx0) {
@@ -225,7 +225,7 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[PARALLEL_N
 
     #pragma HLS INLINE off
     
-    const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / PARALLEL_NUM;
+    const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / parallel_num;
 
     while(true) {
       ap_uint<1> sig = syscontrol.read();
@@ -234,11 +234,11 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[PARALLEL_N
       for(int i = 0;i < SWEEP_STEP;i ++) {
         hls::print("Receive i: %d\n", i);
         #pragma HLS dataflow
-{% for i in range(0, PARALLEL_NUM) %}
+{% for i in range(0, parallel_num) %}
         float convL{{i}} = receive4AIE(fifo_L[{{i}}], sweep_rx{{i}}_0);
         float convR{{i}} = receive4AIE(fifo_R[{{i}}], sweep_rx{{i}}_1);
 {% endfor %}
-{% for i in range(0, PARALLEL_NUM) %}
+{% for i in range(0, parallel_num) %}
         convSet_L[{{i}}].write(convL{{i}});
         convSet_R[{{i}}].write(convR{{i}});
 {% endfor %}
@@ -256,8 +256,8 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[PARALLEL_N
 
 void RoundRobin(axis_stream_sys& syscontrol,
                 ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S,
-                axis_stream_128 send_fifo_L[PARALLEL_NUM], axis_stream_128 send_fifo_R[PARALLEL_NUM], 
-                axis_stream_deep_128 receive_fifo_L[PARALLEL_NUM], axis_stream_deep_128 receive_fifo_R[PARALLEL_NUM]) {
+                axis_stream_128 send_fifo_L[parallel_num], axis_stream_128 send_fifo_R[parallel_num], 
+                axis_stream_deep_128 receive_fifo_L[parallel_num], axis_stream_deep_128 receive_fifo_R[parallel_num]) {
   
   //DDR2AIE
   DDR2FIFO(dataIn, send_fifo_L, send_fifo_R);
@@ -274,11 +274,11 @@ void RoundRobin(axis_stream_sys& syscontrol,
     for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
 
       const int STAGE1_SIZE = BLOCK_SIZE*ROW/ELEM_NUM;
-      {% for k in range(0, PARALLEL_NUM) %}
+      {% for k in range(0, parallel_num) %}
         for(int j = 0;j < STAGE1_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
           ap_uint<W> tmp_L{{k}} = receive_fifo_L[{{k}}].read();
-          send_fifo_L[{{(k+1)%PARALLEL_NUM}}].write(tmp_L{{k}});
+          send_fifo_L[{{(k+1)%parallel_num}}].write(tmp_L{{k}});
         }
       {% endfor %}
 
@@ -288,54 +288,54 @@ void RoundRobin(axis_stream_sys& syscontrol,
         send_fifo_L[0].write(tmp_R0);
       }
 
-      {% for k in range(1, PARALLEL_NUM) %}
+      {% for k in range(1, parallel_num) %}
         for(int j = 0;j < STAGE1_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
           ap_uint<W> tmp_R{{k}} = receive_fifo_R[{{k}}].read();
-          send_fifo_R[{{(k-1+PARALLEL_NUM)%PARALLEL_NUM}}].write(tmp_R{{k}});
+          send_fifo_R[{{(k-1+parallel_num)%parallel_num}}].write(tmp_R{{k}});
         }
       {% endfor %}
 
 
-      const int STAGE2_SIZE = (BLOCK_PAIR_NUM-2*PARALLEL_NUM)/PARALLEL_NUM*BLOCK_SIZE*ROW/ELEM_NUM;
+      const int STAGE2_SIZE = (BLOCK_PAIR_NUM-2*parallel_num)/parallel_num*BLOCK_SIZE*ROW/ELEM_NUM;
       
       for(int j = 0;j < STAGE2_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
-        {% for k in range(0, PARALLEL_NUM) %}
+        {% for k in range(0, parallel_num) %}
           ap_uint<W> tmp_L{{k}} = receive_fifo_L[{{k}}].read();
-          send_fifo_L[{{(k+1)%PARALLEL_NUM}}].write(tmp_L{{k}});
+          send_fifo_L[{{(k+1)%parallel_num}}].write(tmp_L{{k}});
           ap_uint<W> tmp_R{{k}} = receive_fifo_R[{{k}}].read();
-          send_fifo_R[{{(k-1+PARALLEL_NUM)%PARALLEL_NUM}}].write(tmp_R{{k}});
+          send_fifo_R[{{(k-1+parallel_num)%parallel_num}}].write(tmp_R{{k}});
         {% endfor %}
       }
 
       const int STAGE3_SIZE = BLOCK_SIZE*ROW/ELEM_NUM;
-      {% for k in range(0, PARALLEL_NUM-1) %}
+      {% for k in range(0, parallel_num-1) %}
         for(int j = 0;j < STAGE3_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
           ap_uint<W> tmp_L{{k}} = receive_fifo_L[{{k}}].read();
-          send_fifo_L[{{(k+1)%PARALLEL_NUM}}].write(tmp_L{{k}});
+          send_fifo_L[{{(k+1)%parallel_num}}].write(tmp_L{{k}});
         }
       {% endfor %}
 
       for(int j = 0;j < STAGE3_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
-        ap_uint<W> tmp_L{{PARALLEL_NUM-1}} = receive_fifo_L[{{PARALLEL_NUM-1}}].read();
-        send_fifo_R[{{PARALLEL_NUM-2}}].write(tmp_L{{PARALLEL_NUM-1}});
+        ap_uint<W> tmp_L{{parallel_num-1}} = receive_fifo_L[{{parallel_num-1}}].read();
+        send_fifo_R[{{((parallel_num-2+parallel_num)%parallel_num)}}].write(tmp_L{{parallel_num-1}});
       }
 
-      {% for k in range(0, PARALLEL_NUM-1) %}
+      {% for k in range(0, parallel_num-1) %}
         for(int j = 0;j < STAGE3_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
           ap_uint<W> tmp_R{{k}} = receive_fifo_R[{{k}}].read();
-          send_fifo_R[{{(k-1+PARALLEL_NUM)%PARALLEL_NUM}}].write(tmp_R{{k}});
+          send_fifo_R[{{(k-1+parallel_num)%parallel_num}}].write(tmp_R{{k}});
         }
       {% endfor %}
 
       for(int j = 0;j < STAGE3_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
-        ap_uint<W> tmp_R{{PARALLEL_NUM-1}} = receive_fifo_R[{{PARALLEL_NUM-1}}].read();
-        send_fifo_R[{{PARALLEL_NUM-1}}].write(tmp_R{{PARALLEL_NUM-1}});
+        ap_uint<W> tmp_R{{parallel_num-1}} = receive_fifo_R[{{parallel_num-1}}].read();
+        send_fifo_R[{{parallel_num-1}}].write(tmp_R{{parallel_num-1}});
       }
 
       
@@ -346,25 +346,25 @@ void RoundRobin(axis_stream_sys& syscontrol,
     FIFO2DDR(U, S, receive_fifo_L[0]);
 }
 
-void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sys syscontrol[3], axis_stream_float convSet_L[PARALLEL_NUM], axis_stream_float convSet_R[PARALLEL_NUM]) {
+void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sys syscontrol[3], axis_stream_float convSet_L[parallel_num], axis_stream_float convSet_R[parallel_num]) {
   const int FUNCNUM = 3;
   for(int i = 0;i < FUNCNUM;i ++) {
     syscontrol[i].write(START);
   }
 
   int iter = 0;
-  const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / PARALLEL_NUM;
+  const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / parallel_num;
   while(true) {
     fp_uint maxConv;
-    float all_conv[PARALLEL_NUM*2];
+    float all_conv[parallel_num*2];
     maxConv.data_float = 0;
     for(int i = 0;i < SWEEP_STEP;i ++) {
       
-      for(int k = 0; k < PARALLEL_NUM; ++k) {
+      for(int k = 0; k < parallel_num; ++k) {
         all_conv[k*2]   = convSet_L[k].read();
         all_conv[k*2+1] = convSet_R[k].read();
       }
-      for(int k = 0; k < PARALLEL_NUM*2; ++k) {
+      for(int k = 0; k < parallel_num*2; ++k) {
         maxConv.data_float = fmax(maxConv.data_float, all_conv[k]);
       }
     }
@@ -390,7 +390,7 @@ void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sys sysco
 
 void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap_uint<32>* ConvArray,
                 const int ITER, 
-                {% for i in range(1, PARALLEL_NUM+1) %}
+                {% for i in range(1, parallel_num+1) %}
                 axis_pkt_stream& sweep_tx{{i}}_0, axis_pkt_stream& sweep_rx{{i}}_0,
                 axis_pkt_stream& sweep_tx{{i}}_1, axis_pkt_stream& sweep_rx{{i}}_1,
                 {% endfor %}
@@ -411,7 +411,7 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
 #pragma HLS INTERFACE s_axilite port = ConvArray bundle = control
 #pragma HLS INTERFACE s_axilite port = return bundle = control
 
-{% for i in range(1, PARALLEL_NUM+1) %}
+{% for i in range(1, parallel_num+1) %}
 #pragma HLS INTERFACE axis port = sweep_tx{{i}}_0
 #pragma HLS INTERFACE axis port = sweep_tx{{i}}_1
 #pragma HLS INTERFACE axis port = sweep_rx{{i}}_0
@@ -423,15 +423,15 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
 
     #pragma HLS dataflow
 
-    axis_stream_float convSet_L[PARALLEL_NUM], convSet_R[PARALLEL_NUM];
+    axis_stream_float convSet_L[parallel_num], convSet_R[parallel_num];
     axis_stream_sys syscontrol[3];
-    axis_stream_128 send_fifo_L[PARALLEL_NUM], send_fifo_R[PARALLEL_NUM]; // the first param is parrallel AIE graph
-    axis_stream_deep_128 receive_fifo_L[PARALLEL_NUM], receive_fifo_R[PARALLEL_NUM]; 
+    axis_stream_128 send_fifo_L[parallel_num], send_fifo_R[parallel_num]; // the first param is parrallel AIE graph
+    axis_stream_deep_128 receive_fifo_L[parallel_num], receive_fifo_R[parallel_num]; 
 
     SystemControl(ITER, ConvArray, syscontrol, convSet_L, convSet_R);
     Send(syscontrol[0],
                    send_fifo_L, send_fifo_R,  
-{% for i in range(1, PARALLEL_NUM+1) %}
+{% for i in range(1, parallel_num+1) %}
                    sweep_tx{{i}}_0, sweep_tx{{i}}_1,
 {% endfor %}
                    norm_tx0);
@@ -440,7 +440,7 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
                send_fifo_L, send_fifo_R, receive_fifo_L, receive_fifo_R);
     Receive(syscontrol[2], convSet_L, convSet_R,
                      receive_fifo_L, receive_fifo_R, 
-{% for i in range(1, PARALLEL_NUM+1) %}
+{% for i in range(1, parallel_num+1) %}
                      sweep_rx{{i}}_0, sweep_rx{{i}}_1,
 {% endfor %}
                      norm_rx0);

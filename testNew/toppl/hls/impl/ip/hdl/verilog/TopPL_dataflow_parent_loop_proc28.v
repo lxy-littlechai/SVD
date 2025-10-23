@@ -266,15 +266,15 @@ wire    dataflow_in_loop_VITIS_LOOP_315_2_1_U0_sweep_rx4_1_TREADY;
 wire    dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_ready;
 wire    dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_idle;
 reg    dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_continue;
-reg   [4:0] loop_dataflow_input_count;
-reg   [4:0] loop_dataflow_output_count;
-wire   [4:0] bound_minus_1;
+reg   [8:0] loop_dataflow_input_count;
+reg   [8:0] loop_dataflow_output_count;
+wire   [8:0] bound_minus_1;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 loop_dataflow_input_count = 5'd0;
-#0 loop_dataflow_output_count = 5'd0;
+#0 loop_dataflow_input_count = 9'd0;
+#0 loop_dataflow_output_count = 9'd0;
 end
 
 TopPL_dataflow_in_loop_VITIS_LOOP_315_2_1 dataflow_in_loop_VITIS_LOOP_315_2_1_U0(
@@ -387,24 +387,24 @@ TopPL_dataflow_in_loop_VITIS_LOOP_315_2_1 dataflow_in_loop_VITIS_LOOP_315_2_1_U0
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        loop_dataflow_input_count <= 5'd0;
+        loop_dataflow_input_count <= 9'd0;
     end else begin
         if ((~(loop_dataflow_input_count == bound_minus_1) & (ap_start == 1'b1) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_ready == 1'b1))) begin
-            loop_dataflow_input_count <= (loop_dataflow_input_count + 5'd1);
+            loop_dataflow_input_count <= (loop_dataflow_input_count + 9'd1);
         end else if (((loop_dataflow_input_count == bound_minus_1) & (ap_start == 1'b1) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_ready == 1'b1))) begin
-            loop_dataflow_input_count <= 5'd0;
+            loop_dataflow_input_count <= 9'd0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        loop_dataflow_output_count <= 5'd0;
+        loop_dataflow_output_count <= 9'd0;
     end else begin
         if ((~(loop_dataflow_output_count == bound_minus_1) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_continue == 1'b1) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_done == 1'b1))) begin
-            loop_dataflow_output_count <= (loop_dataflow_output_count + 5'd1);
+            loop_dataflow_output_count <= (loop_dataflow_output_count + 9'd1);
         end else if (((loop_dataflow_output_count == bound_minus_1) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_continue == 1'b1) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_done == 1'b1))) begin
-            loop_dataflow_output_count <= 5'd0;
+            loop_dataflow_output_count <= 9'd0;
         end
     end
 end
@@ -418,7 +418,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((loop_dataflow_output_count == 5'd0) & (ap_start == 1'b0) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_idle == 1'b1))) begin
+    if (((loop_dataflow_output_count == 9'd0) & (ap_start == 1'b0) & (dataflow_in_loop_VITIS_LOOP_315_2_1_U0_ap_idle == 1'b1))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -441,7 +441,7 @@ always @ (*) begin
     end
 end
 
-assign bound_minus_1 = (5'd30 - 5'd1);
+assign bound_minus_1 = (9'd504 - 9'd1);
 
 assign convSet_L_0_din = dataflow_in_loop_VITIS_LOOP_315_2_1_U0_convSet_L_0_din;
 

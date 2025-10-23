@@ -19,8 +19,8 @@ port (
     ap_ready : OUT STD_LOGIC;
     return_r : OUT STD_LOGIC_VECTOR (31 downto 0);
     receive_fifo_L_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_3_full_n : IN STD_LOGIC;
     receive_fifo_L_3_write : OUT STD_LOGIC;
     sweep_rx4_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -53,10 +53,10 @@ architecture behav of TopPL_receive4AIE_3 is
     constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
     constant ap_const_lv32_3 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000011";
     constant ap_const_lv32_6 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000110";
-    constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
     constant ap_const_lv128_lc_1 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_const_lv2_1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
-    constant ap_const_lv2_2 : STD_LOGIC_VECTOR (1 downto 0) := "10";
+    constant ap_const_lv3_1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
+    constant ap_const_lv3_4 : STD_LOGIC_VECTOR (2 downto 0) := "100";
     constant ap_const_lv32_20 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100000";
     constant ap_const_lv32_7F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001111111";
     constant ap_const_lv32_5F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001011111";
@@ -68,7 +68,7 @@ architecture behav of TopPL_receive4AIE_3 is
     constant ap_const_lv52_0 : STD_LOGIC_VECTOR (51 downto 0) := "0000000000000000000000000000000000000000000000000000";
     constant ap_const_lv11_7FF : STD_LOGIC_VECTOR (10 downto 0) := "11111111111";
     constant ap_const_lv32_33 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000110011";
-    constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    constant ap_const_lv15_0 : STD_LOGIC_VECTOR (14 downto 0) := "000000000000000";
 
 attribute shreg_extract : string;
     signal ap_done_reg : STD_LOGIC := '0';
@@ -135,8 +135,8 @@ attribute shreg_extract : string;
     signal ap_CS_fsm_state7 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state7 : signal is "none";
     signal ap_block_state1 : BOOLEAN;
-    signal i_04_fu_116 : STD_LOGIC_VECTOR (1 downto 0) := "00";
-    signal i_24_fu_260_p2 : STD_LOGIC_VECTOR (1 downto 0);
+    signal i_04_fu_116 : STD_LOGIC_VECTOR (2 downto 0) := "000";
+    signal i_24_fu_260_p2 : STD_LOGIC_VECTOR (2 downto 0);
     signal data_temp_39_fu_124 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     signal data_temp_41_fu_326_p5 : STD_LOGIC_VECTOR (127 downto 0);
     signal return_r_preg : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
@@ -198,8 +198,8 @@ attribute shreg_extract : string;
         ap_ready : OUT STD_LOGIC;
         sweep_rx4_0_TVALID : IN STD_LOGIC;
         receive_fifo_L_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_3_full_n : IN STD_LOGIC;
         receive_fifo_L_3_write : OUT STD_LOGIC;
         data_temp_41 : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -253,8 +253,8 @@ begin
         ap_ready => grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_ap_ready,
         sweep_rx4_0_TVALID => sweep_rx4_0_TVALID,
         receive_fifo_L_3_din => grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_receive_fifo_L_3_din,
-        receive_fifo_L_3_num_data_valid => ap_const_lv9_0,
-        receive_fifo_L_3_fifo_cap => ap_const_lv9_0,
+        receive_fifo_L_3_num_data_valid => ap_const_lv15_0,
+        receive_fifo_L_3_fifo_cap => ap_const_lv15_0,
         receive_fifo_L_3_full_n => receive_fifo_L_3_full_n,
         receive_fifo_L_3_write => grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_receive_fifo_L_3_write,
         data_temp_41 => data_temp_39_fu_124,
@@ -270,7 +270,7 @@ begin
         data_temp_44_out_o => grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_data_temp_44_out_o,
         data_temp_44_out_o_ap_vld => grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_data_temp_44_out_o_ap_vld);
 
-    fptrunc_64ns_32_1_no_dsp_1_U519 : component TopPL_fptrunc_64ns_32_1_no_dsp_1
+    fptrunc_64ns_32_1_no_dsp_1_U535 : component TopPL_fptrunc_64ns_32_1_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -280,7 +280,7 @@ begin
         din0 => conv_fu_176_p0,
         dout => conv_fu_176_p1);
 
-    fpext_32ns_64_1_no_dsp_1_U520 : component TopPL_fpext_32ns_64_1_no_dsp_1
+    fpext_32ns_64_1_no_dsp_1_U536 : component TopPL_fpext_32ns_64_1_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -290,7 +290,7 @@ begin
         din0 => conv_03_fu_112,
         dout => dc_fu_179_p1);
 
-    fpext_32ns_64_1_no_dsp_1_U521 : component TopPL_fpext_32ns_64_1_no_dsp_1
+    fpext_32ns_64_1_no_dsp_1_U537 : component TopPL_fpext_32ns_64_1_no_dsp_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -399,7 +399,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_state1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                i_04_fu_116 <= ap_const_lv2_0;
+                i_04_fu_116 <= ap_const_lv3_0;
             elsif (((ap_const_boolean_0 = ap_block_state2) and (icmp_ln69_fu_266_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                 i_04_fu_116 <= i_24_fu_260_p2;
             end if; 
@@ -597,14 +597,14 @@ begin
     data_temp_41_fu_326_p5 <= (trunc_ln86_fu_322_p1 & grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_data_temp_45_out(95 downto 0));
     dc_15_fu_182_p0 <= fp_uint_tmp_reg_705;
     grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_ap_start <= grp_receive4AIE_3_Pipeline_VITIS_LOOP_76_2_fu_158_ap_start_reg;
-    i_24_fu_260_p2 <= std_logic_vector(unsigned(i_04_fu_116) + unsigned(ap_const_lv2_1));
+    i_24_fu_260_p2 <= std_logic_vector(unsigned(i_04_fu_116) + unsigned(ap_const_lv3_1));
     icmp_ln18_13_fu_452_p2 <= "1" when (y_fp_exp_fu_408_p4 = ap_const_lv11_7FF) else "0";
     icmp_ln18_14_fu_458_p2 <= "0" when (y_fp_sig_fu_418_p1 = ap_const_lv52_0) else "1";
     icmp_ln18_15_fu_464_p2 <= "1" when (x_fp_sig_5_fu_392_p1 = ap_const_lv52_0) else "0";
     icmp_ln18_fu_446_p2 <= "1" when (x_fp_exp_fu_382_p4 = ap_const_lv11_7FF) else "0";
     icmp_ln25_5_fu_440_p2 <= "1" when (or_ln25_5_fu_434_p2 = ap_const_lv52_0) else "0";
     icmp_ln25_fu_428_p2 <= "1" when (or_ln25_fu_422_p2 = ap_const_lv11_0) else "0";
-    icmp_ln69_fu_266_p2 <= "1" when (i_04_fu_116 = ap_const_lv2_2) else "0";
+    icmp_ln69_fu_266_p2 <= "1" when (i_04_fu_116 = ap_const_lv3_4) else "0";
     or_ln18_5_fu_612_p2 <= (xor_ln18_10_fu_607_p2 or icmp_ln18_15_reg_763);
     or_ln18_fu_594_p2 <= (and_ln25_fu_498_p2 or and_ln18_38_fu_589_p2);
     or_ln25_5_fu_434_p2 <= (y_fp_sig_fu_418_p1 or x_fp_sig_5_fu_392_p1);

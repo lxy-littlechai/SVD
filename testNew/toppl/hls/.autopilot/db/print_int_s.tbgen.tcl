@@ -15,12 +15,12 @@ set DLRegItemOffset 0
 set C_modelName {print<int>}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ v int 5 regular  }
+	{ v int 9 regular  }
 }
 set hasAXIMCache 0
 set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
-	{ "Name" : "v", "interface" : "wire", "bitwidth" : 5, "direction" : "READONLY"} ]}
+	{ "Name" : "v", "interface" : "wire", "bitwidth" : 9, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 8
 set portList { 
@@ -31,7 +31,7 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ v sc_in sc_lv 5 signal 0 } 
+	{ v sc_in sc_lv 9 signal 0 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -41,7 +41,7 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "v", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "v", "role": "default" }}  ]}
+ 	{ "name": "v", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "v", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -60,7 +60,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "v", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.printint_U400", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.printint_U416", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -78,5 +78,5 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	v { ap_none {  { v in_data 0 5 } } }
+	v { ap_none {  { v in_data 0 9 } } }
 }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_parent_loop_proc28'" level="0">
-<item name = "Date">Mon Oct 20 21:14:52 2025
+<item name = "Date">Mon Oct 20 22:10:21 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">963, 963, 4.815 us, 4.815 us, 963, 963, no</column>
+<column name="">144147, 144147, 0.721 ms, 0.721 ms, 144147, 144147, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dataflow_in_loop_VITIS_LOOP_315_2_1_fu_170">dataflow_in_loop_VITIS_LOOP_315_2_1, 33, 33, 0.165 us, 0.165 us, 32, 32, dataflow</column>
+<column name="grp_dataflow_in_loop_VITIS_LOOP_315_2_1_fu_170">dataflow_in_loop_VITIS_LOOP_315_2_1, 287, 287, 1.435 us, 1.435 us, 286, 286, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_315_2">962, 962, 35, -, -, 30, no</column>
+<column name="- VITIS_LOOP_315_2">144146, 144146, 289, -, -, 504, no</column>
 </table>
 </item>
 </section>

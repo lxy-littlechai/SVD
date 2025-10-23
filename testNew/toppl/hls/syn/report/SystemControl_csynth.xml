@@ -37,7 +37,7 @@
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
-<IterationLatency>800</IterationLatency>
+<IterationLatency>12176</IterationLatency>
 <InstanceList>
 </InstanceList>
 </VITIS_LOOP_525_2>
@@ -59,8 +59,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>1071</FF>
-<LUT>1537</LUT>
+<FF>1079</FF>
+<LUT>1551</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>

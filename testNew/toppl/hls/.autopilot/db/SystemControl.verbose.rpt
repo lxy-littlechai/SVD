@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'SystemControl'
 ================================================================
-* Date:           Mon Oct 20 21:14:54 2025
+* Date:           Mon Oct 20 22:10:23 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -34,22 +34,22 @@
 
     + Detail: 
         * Instance: 
-        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |                                                    |                                         |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-        |                      Instance                      |                  Module                 |   min   |   max   |    min    |    max    | min | max |   Type  |
-        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144  |SystemControl_Pipeline_VITIS_LOOP_519_1  |        5|        5|  25.000 ns|  25.000 ns|    5|    5|       no|
-        |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |      722|      722|   3.610 us|   3.610 us|  722|  722|       no|
-        |grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175  |SystemControl_Pipeline_VITIS_LOOP_549_7  |        5|        5|  25.000 ns|  25.000 ns|    5|    5|       no|
-        |grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185  |SystemControl_Pipeline_VITIS_LOOP_543_6  |        5|        5|  25.000 ns|  25.000 ns|    5|    5|       no|
-        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |                                                    |                                         |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+        |                      Instance                      |                  Module                 |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144  |SystemControl_Pipeline_VITIS_LOOP_519_1  |        5|        5|  25.000 ns|  25.000 ns|      5|      5|       no|
+        |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |    12098|    12098|  60.490 us|  60.490 us|  12098|  12098|       no|
+        |grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175  |SystemControl_Pipeline_VITIS_LOOP_549_7  |        5|        5|  25.000 ns|  25.000 ns|      5|      5|       no|
+        |grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185  |SystemControl_Pipeline_VITIS_LOOP_543_6  |        5|        5|  25.000 ns|  25.000 ns|      5|      5|       no|
+        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
 
         * Loop: 
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_525_2  |        ?|        ?|       800|          -|          -|     ?|        no|
+        |- VITIS_LOOP_525_2  |        ?|        ?|     12176|          -|          -|     ?|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -64,12 +64,12 @@
 |DSP              |        -|     -|        -|       -|    -|
 |Expression       |        -|     -|        0|     168|    -|
 |FIFO             |        -|     -|        -|       -|    -|
-|Instance         |        -|     -|      859|    1216|    -|
+|Instance         |        -|     -|      867|    1230|    -|
 |Memory           |        -|     -|        -|       -|    -|
 |Multiplexer      |        -|     -|        -|     153|    -|
 |Register         |        -|     -|      212|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |        0|     0|     1071|    1537|    0|
+|Total            |        0|     0|     1079|    1551|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -82,14 +82,14 @@
     |                      Instance                      |                  Module                 | BRAM_18K| DSP|  FF |  LUT | URAM|
     +----------------------------------------------------+-----------------------------------------+---------+----+-----+------+-----+
     |grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144  |SystemControl_Pipeline_VITIS_LOOP_519_1  |        0|   0|    7|    32|    0|
-    |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |        0|   0|  838|  1120|    0|
+    |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |        0|   0|  846|  1134|    0|
     |grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185  |SystemControl_Pipeline_VITIS_LOOP_543_6  |        0|   0|    7|    32|    0|
     |grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175  |SystemControl_Pipeline_VITIS_LOOP_549_7  |        0|   0|    7|    32|    0|
     |fcmp_32ns_32ns_1_1_no_dsp_1_U27                     |fcmp_32ns_32ns_1_1_no_dsp_1              |        0|   0|    0|     0|    0|
     |fpext_32ns_64_1_no_dsp_1_U26                        |fpext_32ns_64_1_no_dsp_1                 |        0|   0|    0|     0|    0|
     |printdouble_U28                                     |printdouble                              |        0|   0|    0|     0|    0|
     +----------------------------------------------------+-----------------------------------------+---------+----+-----+------+-----+
-    |Total                                               |                                         |        0|   0|  859|  1216|    0|
+    |Total                                               |                                         |        0|   0|  867|  1230|    0|
     +----------------------------------------------------+-----------------------------------------+---------+----+-----+------+-----+
 
     * DSP: 
@@ -423,19 +423,19 @@ State 3 <SV = 2> <Delay = 0.00>
 ST_3 : Operation 90 [1/2] (0.00ns)   --->   "%call_ln0 = call void @SystemControl_Pipeline_VITIS_LOOP_519_1, i1 %syscontrol_0, i1 %syscontrol_1, i1 %syscontrol_2"   --->   Operation 90 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_2, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 91 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_1, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 92 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 93 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_0, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 93 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 94 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_3, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 94 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 95 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_2, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 95 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 96 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_1, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 96 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 97 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_0, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 97 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 98 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_3, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 98 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 99 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_2, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 99 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_1, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 100 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 101 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_0, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 101 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem3, void @empty_65, i32 0, i32 0, void @empty_70, i32 64, i32 8192, void @empty_53, void @empty_45, void @empty_70, i32 16, i32 16, i32 64, i32 64, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 102 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 103 [1/1] (0.00ns)   --->   "%empty_248 = wait i32 @_ssdm_op_Wait"   --->   Operation 103 'wait' 'empty_248' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_2, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 91 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_1, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 92 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 93 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_0, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 93 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 94 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_3, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 94 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 95 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_2, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 95 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 96 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_1, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 96 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 97 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_0, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 97 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 98 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_3, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 98 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 99 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_2, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 99 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_1, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 100 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 101 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_0, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 101 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem3, void @empty_64, i32 0, i32 0, void @empty_62, i32 64, i32 8192, void @empty_46, void @empty_15, void @empty_62, i32 16, i32 16, i32 64, i32 64, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 102 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 103 [1/1] (0.00ns)   --->   "%empty_252 = wait i32 @_ssdm_op_Wait"   --->   Operation 103 'wait' 'empty_252' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 104 [1/1] (0.00ns)   --->   "%br_ln525 = br void %VITIS_LOOP_529_3" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:525]   --->   Operation 104 'br' 'br_ln525' <Predicate = true> <Delay = 0.00>
 
 State 5 <SV = 4> <Delay = 1.78>
@@ -443,7 +443,7 @@ ST_5 : Operation 105 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_iter_1 = muxlogic
 ST_5 : Operation 106 [1/1] (0.00ns)   --->   "%iter_1 = load i31 %iter" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:541]   --->   Operation 106 'load' 'iter_1' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 107 [1/1] (0.89ns)   --->   "%add_ln541 = add i31 %iter_1, i31 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:541]   --->   Operation 107 'add' 'add_ln541' <Predicate = true> <Delay = 0.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_5 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln529 = zext i31 %add_ln541" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:529]   --->   Operation 108 'zext' 'zext_ln529' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 109 [1/1] (0.00ns)   --->   "%empty_249 = wait i32 @_ssdm_op_Wait"   --->   Operation 109 'wait' 'empty_249' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 109 [1/1] (0.00ns)   --->   "%empty_253 = wait i32 @_ssdm_op_Wait"   --->   Operation 109 'wait' 'empty_253' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 110 [2/2] (0.00ns)   --->   "%call_ln0 = call void @SystemControl_Pipeline_VITIS_LOOP_529_3, i32 %convSet_L_0, i32 %convSet_R_0, i32 %convSet_L_1, i32 %convSet_R_1, i32 %convSet_L_2, i32 %convSet_R_2, i32 %convSet_L_3, i32 %convSet_R_3, i32 %conv32_lcssa11_loc"   --->   Operation 110 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_5 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_25 = bitconcatenate i33 @_ssdm_op_BitConcatenate.i33.i31.i2, i31 %iter_1, i2 0" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:539]   --->   Operation 111 'bitconcatenate' 'tmp_25' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 112 [1/1] (0.00ns)   --->   "%zext_ln539 = zext i33 %tmp_25" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:539]   --->   Operation 112 'zext' 'zext_ln539' <Predicate = true> <Delay = 0.00>
@@ -453,11 +453,11 @@ ST_5 : Operation 115 [1/1] (0.00ns)   --->   "%sext_ln539 = sext i62 %trunc_ln" 
 ST_5 : Operation 116 [1/1] (0.00ns)   --->   "%gmem3_addr = getelementptr i32 %gmem3, i64 %sext_ln539" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:539]   --->   Operation 116 'getelementptr' 'gmem3_addr' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 117 [1/1] (0.89ns)   --->   "%icmp_ln542_2 = icmp_slt  i32 %zext_ln529, i32 %ITER_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:542]   --->   Operation 117 'icmp' 'icmp_ln542_2' <Predicate = true> <Delay = 0.89> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 
-State 6 <SV = 5> <Delay = 1.04>
-ST_6 : Operation 118 [1/2] (1.04ns)   --->   "%call_ln0 = call void @SystemControl_Pipeline_VITIS_LOOP_529_3, i32 %convSet_L_0, i32 %convSet_R_0, i32 %convSet_L_1, i32 %convSet_R_1, i32 %convSet_L_2, i32 %convSet_R_2, i32 %convSet_L_3, i32 %convSet_R_3, i32 %conv32_lcssa11_loc"   --->   Operation 118 'call' 'call_ln0' <Predicate = true> <Delay = 1.04> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+State 6 <SV = 5> <Delay = 1.17>
+ST_6 : Operation 118 [1/2] (1.17ns)   --->   "%call_ln0 = call void @SystemControl_Pipeline_VITIS_LOOP_529_3, i32 %convSet_L_0, i32 %convSet_R_0, i32 %convSet_L_1, i32 %convSet_R_1, i32 %convSet_L_2, i32 %convSet_R_2, i32 %convSet_L_3, i32 %convSet_R_3, i32 %conv32_lcssa11_loc"   --->   Operation 118 'call' 'call_ln0' <Predicate = true> <Delay = 1.17> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 7 <SV = 6> <Delay = 1.00>
-ST_7 : Operation 119 [1/1] (0.00ns)   --->   "%empty_250 = wait i32 @_ssdm_op_Wait"   --->   Operation 119 'wait' 'empty_250' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 119 [1/1] (0.00ns)   --->   "%empty_254 = wait i32 @_ssdm_op_Wait"   --->   Operation 119 'wait' 'empty_254' <Predicate = true> <Delay = 0.00>
 ST_7 : Operation 120 [1/1] (1.00ns)   --->   "%gmem3_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i64 %gmem3_addr, i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:539]   --->   Operation 120 'writereq' 'gmem3_addr_req' <Predicate = true> <Delay = 1.00> <CoreInst = "m_axi">   --->   Core 125 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 8 <SV = 7> <Delay = 3.61>
@@ -684,15 +684,15 @@ State 75 <SV = 74> <Delay = 3.65>
 ST_75 : Operation 207 [2/68] (3.65ns)   --->   "%gmem3_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i64 %gmem3_addr" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:539]   --->   Operation 207 'writeresp' 'gmem3_addr_resp' <Predicate = true> <Delay = 3.65> <CoreInst = "m_axi">   --->   Core 125 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 76 <SV = 75> <Delay = 1.00>
-ST_76 : Operation 208 [1/1] (0.00ns)   --->   "%specloopname_ln525 = specloopname void @_ssdm_op_SpecLoopName, void @empty_44" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:525]   --->   Operation 208 'specloopname' 'specloopname_ln525' <Predicate = true> <Delay = 0.00>
+ST_76 : Operation 208 [1/1] (0.00ns)   --->   "%specloopname_ln525 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:525]   --->   Operation 208 'specloopname' 'specloopname_ln525' <Predicate = true> <Delay = 0.00>
 ST_76 : Operation 209 [1/68] (1.00ns)   --->   "%gmem3_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i64 %gmem3_addr" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:539]   --->   Operation 209 'writeresp' 'gmem3_addr_resp' <Predicate = true> <Delay = 1.00> <CoreInst = "m_axi">   --->   Core 125 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 ST_76 : Operation 210 [1/1] (0.00ns)   --->   "%br_ln542 = br i1 %or_ln542, void %for.inc67.preheader, void %for.inc56.preheader" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:542]   --->   Operation 210 'br' 'br_ln542' <Predicate = true> <Delay = 0.00>
-ST_76 : Operation 211 [1/1] (0.00ns)   --->   "%empty_251 = wait i32 @_ssdm_op_Wait"   --->   Operation 211 'wait' 'empty_251' <Predicate = (!or_ln542)> <Delay = 0.00>
+ST_76 : Operation 211 [1/1] (0.00ns)   --->   "%empty_255 = wait i32 @_ssdm_op_Wait"   --->   Operation 211 'wait' 'empty_255' <Predicate = (!or_ln542)> <Delay = 0.00>
 ST_76 : Operation 212 [2/2] (0.00ns)   --->   "%call_ln0 = call void @SystemControl_Pipeline_VITIS_LOOP_549_7, i1 %syscontrol_0, i1 %syscontrol_1, i1 %syscontrol_2"   --->   Operation 212 'call' 'call_ln0' <Predicate = (!or_ln542)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_76 : Operation 213 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln523 = muxlogic i31 %add_ln541"   --->   Operation 213 'muxlogic' 'muxLogicData_to_store_ln523' <Predicate = (!or_ln542)> <Delay = 0.00>
 ST_76 : Operation 214 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln523 = muxlogic i31 %iter"   --->   Operation 214 'muxlogic' 'muxLogicAddr_to_store_ln523' <Predicate = (!or_ln542)> <Delay = 0.00>
 ST_76 : Operation 215 [1/1] (0.46ns)   --->   "%store_ln523 = store i31 %add_ln541, i31 %iter" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:523]   --->   Operation 215 'store' 'store_ln523' <Predicate = (!or_ln542)> <Delay = 0.46>
-ST_76 : Operation 216 [1/1] (0.00ns)   --->   "%empty_252 = wait i32 @_ssdm_op_Wait"   --->   Operation 216 'wait' 'empty_252' <Predicate = (or_ln542)> <Delay = 0.00>
+ST_76 : Operation 216 [1/1] (0.00ns)   --->   "%empty_256 = wait i32 @_ssdm_op_Wait"   --->   Operation 216 'wait' 'empty_256' <Predicate = (or_ln542)> <Delay = 0.00>
 ST_76 : Operation 217 [2/2] (0.00ns)   --->   "%call_ln0 = call void @SystemControl_Pipeline_VITIS_LOOP_543_6, i1 %syscontrol_0, i1 %syscontrol_1, i1 %syscontrol_2"   --->   Operation 217 'call' 'call_ln0' <Predicate = (or_ln542)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 77 <SV = 76> <Delay = 0.00>
@@ -758,13 +758,13 @@ specinterface_ln0                       (specinterface ) [ 000000000000000000000
 specinterface_ln0                       (specinterface ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0                       (specinterface ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 specinterface_ln0                       (specinterface ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
-empty_248                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
+empty_252                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 br_ln525                                (br            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 MuxLogicAddr_to_iter_1                  (muxlogic      ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 iter_1                                  (load          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 add_ln541                               (add           ) [ 0000001111111111111111111111111111111111111111111111111111111111111111111111100]
 zext_ln529                              (zext          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
-empty_249                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
+empty_253                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 tmp_25                                  (bitconcatenate) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 zext_ln539                              (zext          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 add_ln539                               (add           ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
@@ -773,7 +773,7 @@ sext_ln539                              (sext          ) [ 000000000000000000000
 gmem3_addr                              (getelementptr ) [ 0000001111111111111111111111111111111111111111111111111111111111111111111111100]
 icmp_ln542_2                            (icmp          ) [ 0000001110000000000000000000000000000000000000000000000000000000000000000000000]
 call_ln0                                (call          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
-empty_250                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
+empty_254                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 gmem3_addr_req                          (writereq      ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 MuxLogicAddr_to_conv32_lcssa11_loc_load (muxlogic      ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 conv32_lcssa11_loc_load                 (load          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
@@ -798,11 +798,11 @@ or_ln542                                (or            ) [ 000000000111111111111
 specloopname_ln525                      (specloopname  ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 gmem3_addr_resp                         (writeresp     ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 br_ln542                                (br            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
-empty_251                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
+empty_255                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 muxLogicData_to_store_ln523             (muxlogic      ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 muxLogicAddr_to_store_ln523             (muxlogic      ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 store_ln523                             (store         ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
-empty_252                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
+empty_256                               (wait          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 call_ln0                                (call          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 br_ln525                                (br            ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
 call_ln0                                (call          ) [ 0000000000000000000000000000000000000000000000000000000000000000000000000000000]
@@ -1015,7 +1015,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 <pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_80"/></StgValue>
+<StgValue><ssdm name="empty_84"/></StgValue>
 </bind>
 </comp>
 
@@ -1033,7 +1033,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 <pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_70"/></StgValue>
+<StgValue><ssdm name="empty_62"/></StgValue>
 </bind>
 </comp>
 
@@ -1051,7 +1051,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 <pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_65"/></StgValue>
+<StgValue><ssdm name="empty_64"/></StgValue>
 </bind>
 </comp>
 
@@ -1078,7 +1078,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 <pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_53"/></StgValue>
+<StgValue><ssdm name="empty_46"/></StgValue>
 </bind>
 </comp>
 
@@ -1087,7 +1087,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 <pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_45"/></StgValue>
+<StgValue><ssdm name="empty_15"/></StgValue>
 </bind>
 </comp>
 
@@ -1276,7 +1276,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 <pin id="103" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_44"/></StgValue>
+<StgValue><ssdm name="empty_11"/></StgValue>
 </bind>
 </comp>
 
@@ -2285,7 +2285,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 | Operation|                   Functional Unit                  |  Delay  |    FF   |   LUT   |
 |----------|----------------------------------------------------|---------|---------|---------|
 |          | grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144 |    0    |    4    |    10   |
-|   call   | grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154 |  3.424  |   811   |   1026  |
+|   call   | grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154 |  3.424  |   819   |   1034  |
 |          | grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175 |    0    |    4    |    10   |
 |          | grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185 |    0    |    4    |    10   |
 |----------|----------------------------------------------------|---------|---------|---------|
@@ -2340,7 +2340,7 @@ ret_ln554                               (ret           ) [ 000000000000000000000
 |----------|----------------------------------------------------|---------|---------|---------|
 |   trunc  |                 trunc_ln542_fu_318                 |    0    |    0    |    0    |
 |----------|----------------------------------------------------|---------|---------|---------|
-|   Total  |                                                    |  3.424  |   823   |   1222  |
+|   Total  |                                                    |  3.424  |   831   |   1230  |
 |----------|----------------------------------------------------|---------|---------|---------|
 
 Memories:
@@ -2377,10 +2377,10 @@ N/A
 +-----------+--------+--------+--------+
 |           |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+
-|  Function |    3   |   823  |  1222  |
+|  Function |    3   |   831  |  1230  |
 |   Memory  |    -   |    -   |    -   |
 |Multiplexer|    0   |    -   |    -   |
 |  Register |    -   |   224  |    -   |
 +-----------+--------+--------+--------+
-|   Total   |    3   |  1047  |  1222  |
+|   Total   |    3   |  1055  |  1230  |
 +-----------+--------+--------+--------+

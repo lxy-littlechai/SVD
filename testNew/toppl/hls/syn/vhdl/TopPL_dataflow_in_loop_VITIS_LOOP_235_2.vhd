@@ -95,7 +95,7 @@ end;
 architecture behav of TopPL_dataflow_in_loop_VITIS_LOOP_235_2 is 
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_logic_1 : STD_LOGIC := '1';
-    constant ap_const_lv6_0 : STD_LOGIC_VECTOR (5 downto 0) := "000000";
+    constant ap_const_lv10_0 : STD_LOGIC_VECTOR (9 downto 0) := "0000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
 attribute shreg_extract : string;
@@ -218,8 +218,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_L_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_0_empty_n : IN STD_LOGIC;
         send_fifo_L_0_read : OUT STD_LOGIC;
         sweep_tx1_0_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -241,8 +241,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_R_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_0_empty_n : IN STD_LOGIC;
         send_fifo_R_0_read : OUT STD_LOGIC;
         sweep_tx1_1_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -264,8 +264,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_L_1_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_1_empty_n : IN STD_LOGIC;
         send_fifo_L_1_read : OUT STD_LOGIC;
         sweep_tx2_0_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -287,8 +287,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_R_1_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_1_empty_n : IN STD_LOGIC;
         send_fifo_R_1_read : OUT STD_LOGIC;
         sweep_tx2_1_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -310,8 +310,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_L_2_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_2_empty_n : IN STD_LOGIC;
         send_fifo_L_2_read : OUT STD_LOGIC;
         sweep_tx3_0_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -333,8 +333,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_R_2_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_2_empty_n : IN STD_LOGIC;
         send_fifo_R_2_read : OUT STD_LOGIC;
         sweep_tx3_1_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -356,8 +356,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_L_3_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_3_empty_n : IN STD_LOGIC;
         send_fifo_L_3_read : OUT STD_LOGIC;
         sweep_tx4_0_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -379,8 +379,8 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         send_fifo_R_3_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_3_empty_n : IN STD_LOGIC;
         send_fifo_R_3_read : OUT STD_LOGIC;
         sweep_tx4_1_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -404,8 +404,8 @@ begin
         ap_idle => send2AIE_U0_ap_idle,
         ap_ready => send2AIE_U0_ap_ready,
         send_fifo_L_0_dout => send_fifo_L_0_dout,
-        send_fifo_L_0_num_data_valid => ap_const_lv6_0,
-        send_fifo_L_0_fifo_cap => ap_const_lv6_0,
+        send_fifo_L_0_num_data_valid => ap_const_lv10_0,
+        send_fifo_L_0_fifo_cap => ap_const_lv10_0,
         send_fifo_L_0_empty_n => send_fifo_L_0_empty_n,
         send_fifo_L_0_read => send2AIE_U0_send_fifo_L_0_read,
         sweep_tx1_0_TDATA => send2AIE_U0_sweep_tx1_0_TDATA,
@@ -425,8 +425,8 @@ begin
         ap_idle => send2AIE_8_U0_ap_idle,
         ap_ready => send2AIE_8_U0_ap_ready,
         send_fifo_R_0_dout => send_fifo_R_0_dout,
-        send_fifo_R_0_num_data_valid => ap_const_lv6_0,
-        send_fifo_R_0_fifo_cap => ap_const_lv6_0,
+        send_fifo_R_0_num_data_valid => ap_const_lv10_0,
+        send_fifo_R_0_fifo_cap => ap_const_lv10_0,
         send_fifo_R_0_empty_n => send_fifo_R_0_empty_n,
         send_fifo_R_0_read => send2AIE_8_U0_send_fifo_R_0_read,
         sweep_tx1_1_TDATA => send2AIE_8_U0_sweep_tx1_1_TDATA,
@@ -446,8 +446,8 @@ begin
         ap_idle => send2AIE_9_U0_ap_idle,
         ap_ready => send2AIE_9_U0_ap_ready,
         send_fifo_L_1_dout => send_fifo_L_1_dout,
-        send_fifo_L_1_num_data_valid => ap_const_lv6_0,
-        send_fifo_L_1_fifo_cap => ap_const_lv6_0,
+        send_fifo_L_1_num_data_valid => ap_const_lv10_0,
+        send_fifo_L_1_fifo_cap => ap_const_lv10_0,
         send_fifo_L_1_empty_n => send_fifo_L_1_empty_n,
         send_fifo_L_1_read => send2AIE_9_U0_send_fifo_L_1_read,
         sweep_tx2_0_TDATA => send2AIE_9_U0_sweep_tx2_0_TDATA,
@@ -467,8 +467,8 @@ begin
         ap_idle => send2AIE_10_U0_ap_idle,
         ap_ready => send2AIE_10_U0_ap_ready,
         send_fifo_R_1_dout => send_fifo_R_1_dout,
-        send_fifo_R_1_num_data_valid => ap_const_lv6_0,
-        send_fifo_R_1_fifo_cap => ap_const_lv6_0,
+        send_fifo_R_1_num_data_valid => ap_const_lv10_0,
+        send_fifo_R_1_fifo_cap => ap_const_lv10_0,
         send_fifo_R_1_empty_n => send_fifo_R_1_empty_n,
         send_fifo_R_1_read => send2AIE_10_U0_send_fifo_R_1_read,
         sweep_tx2_1_TDATA => send2AIE_10_U0_sweep_tx2_1_TDATA,
@@ -488,8 +488,8 @@ begin
         ap_idle => send2AIE_11_U0_ap_idle,
         ap_ready => send2AIE_11_U0_ap_ready,
         send_fifo_L_2_dout => send_fifo_L_2_dout,
-        send_fifo_L_2_num_data_valid => ap_const_lv6_0,
-        send_fifo_L_2_fifo_cap => ap_const_lv6_0,
+        send_fifo_L_2_num_data_valid => ap_const_lv10_0,
+        send_fifo_L_2_fifo_cap => ap_const_lv10_0,
         send_fifo_L_2_empty_n => send_fifo_L_2_empty_n,
         send_fifo_L_2_read => send2AIE_11_U0_send_fifo_L_2_read,
         sweep_tx3_0_TDATA => send2AIE_11_U0_sweep_tx3_0_TDATA,
@@ -509,8 +509,8 @@ begin
         ap_idle => send2AIE_12_U0_ap_idle,
         ap_ready => send2AIE_12_U0_ap_ready,
         send_fifo_R_2_dout => send_fifo_R_2_dout,
-        send_fifo_R_2_num_data_valid => ap_const_lv6_0,
-        send_fifo_R_2_fifo_cap => ap_const_lv6_0,
+        send_fifo_R_2_num_data_valid => ap_const_lv10_0,
+        send_fifo_R_2_fifo_cap => ap_const_lv10_0,
         send_fifo_R_2_empty_n => send_fifo_R_2_empty_n,
         send_fifo_R_2_read => send2AIE_12_U0_send_fifo_R_2_read,
         sweep_tx3_1_TDATA => send2AIE_12_U0_sweep_tx3_1_TDATA,
@@ -530,8 +530,8 @@ begin
         ap_idle => send2AIE_13_U0_ap_idle,
         ap_ready => send2AIE_13_U0_ap_ready,
         send_fifo_L_3_dout => send_fifo_L_3_dout,
-        send_fifo_L_3_num_data_valid => ap_const_lv6_0,
-        send_fifo_L_3_fifo_cap => ap_const_lv6_0,
+        send_fifo_L_3_num_data_valid => ap_const_lv10_0,
+        send_fifo_L_3_fifo_cap => ap_const_lv10_0,
         send_fifo_L_3_empty_n => send_fifo_L_3_empty_n,
         send_fifo_L_3_read => send2AIE_13_U0_send_fifo_L_3_read,
         sweep_tx4_0_TDATA => send2AIE_13_U0_sweep_tx4_0_TDATA,
@@ -551,8 +551,8 @@ begin
         ap_idle => send2AIE_14_U0_ap_idle,
         ap_ready => send2AIE_14_U0_ap_ready,
         send_fifo_R_3_dout => send_fifo_R_3_dout,
-        send_fifo_R_3_num_data_valid => ap_const_lv6_0,
-        send_fifo_R_3_fifo_cap => ap_const_lv6_0,
+        send_fifo_R_3_num_data_valid => ap_const_lv10_0,
+        send_fifo_R_3_fifo_cap => ap_const_lv10_0,
         send_fifo_R_3_empty_n => send_fifo_R_3_empty_n,
         send_fifo_R_3_read => send2AIE_14_U0_send_fifo_R_3_read,
         sweep_tx4_1_TDATA => send2AIE_14_U0_sweep_tx4_1_TDATA,

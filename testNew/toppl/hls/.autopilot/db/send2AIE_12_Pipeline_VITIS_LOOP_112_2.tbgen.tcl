@@ -41,8 +41,8 @@ set portList {
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ send_fifo_R_2_dout sc_in sc_lv 128 signal 0 } 
-	{ send_fifo_R_2_num_data_valid sc_in sc_lv 6 signal 0 } 
-	{ send_fifo_R_2_fifo_cap sc_in sc_lv 6 signal 0 } 
+	{ send_fifo_R_2_num_data_valid sc_in sc_lv 10 signal 0 } 
+	{ send_fifo_R_2_fifo_cap sc_in sc_lv 10 signal 0 } 
 	{ send_fifo_R_2_empty_n sc_in sc_logic 1 signal 0 } 
 	{ send_fifo_R_2_read sc_out sc_logic 1 signal 0 } 
 	{ sweep_tx3_1_TREADY sc_in sc_logic 1 outacc 2 } 
@@ -67,8 +67,8 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "send_fifo_R_2_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "dout" }} , 
- 	{ "name": "send_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_2_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "empty_n" }} , 
  	{ "name": "send_fifo_R_2_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "read" }} , 
  	{ "name": "sweep_tx3_1_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "sweep_tx3_1_V_data_V", "role": "default" }} , 
@@ -92,7 +92,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -129,8 +129,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "10", "Max" : "10"}
-	, {"Name" : "Interval", "Min" : "10", "Max" : "10"}
+	{"Name" : "Latency", "Min" : "66", "Max" : "66"}
+	, {"Name" : "Interval", "Min" : "66", "Max" : "66"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -138,7 +138,7 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	send_fifo_R_2 { ap_fifo {  { send_fifo_R_2_dout fifo_data_in 0 128 }  { send_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_2_fifo_cap fifo_update 0 6 }  { send_fifo_R_2_empty_n fifo_status 0 1 }  { send_fifo_R_2_read fifo_port_we 1 1 } } }
+	send_fifo_R_2 { ap_fifo {  { send_fifo_R_2_dout fifo_data_in 0 128 }  { send_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_2_fifo_cap fifo_update 0 10 }  { send_fifo_R_2_empty_n fifo_status 0 1 }  { send_fifo_R_2_read fifo_port_we 1 1 } } }
 	data_temp { ap_memory {  { data_temp_address0 mem_address 1 1 }  { data_temp_ce0 mem_ce 1 1 }  { data_temp_we0 mem_we 1 1 }  { data_temp_d0 mem_din 1 128 }  { data_temp_address1 MemPortADDR2 1 1 }  { data_temp_ce1 MemPortCE2 1 1 }  { data_temp_q1 in_data 0 128 } } }
 	sweep_tx3_1_V_data_V { axis {  { sweep_tx3_1_TREADY out_acc 0 1 }  { sweep_tx3_1_TDATA out_data 1 128 } } }
 	sweep_tx3_1_V_keep_V { axis {  { sweep_tx3_1_TKEEP out_data 1 16 } } }

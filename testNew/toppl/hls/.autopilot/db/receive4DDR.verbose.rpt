@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'receive4DDR'
 ================================================================
-* Date:           Mon Oct 20 21:15:09 2025
+* Date:           Mon Oct 20 22:10:36 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -20,7 +20,7 @@
     +--------+---------+----------+------------+
     |  Clock |  Target | Estimated| Uncertainty|
     +--------+---------+----------+------------+
-    |ap_clk  |  5.00 ns|  2.577 ns|     1.35 ns|
+    |ap_clk  |  5.00 ns|  2.766 ns|     1.35 ns|
     +--------+---------+----------+------------+
 
 + Latency: 
@@ -29,24 +29,24 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |       29|       29|  0.145 us|  0.145 us|   29|   29|       no|
+    |      281|      281|  1.405 us|  1.405 us|  281|  281|       no|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
         * Instance: 
-        +-------------------------------------------------+--------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |                                                 |                                      |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-        |                     Instance                    |                Module                |   min   |   max   |    min    |    max    | min | max |   Type  |
-        +-------------------------------------------------+--------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119  |receive4DDR_Pipeline_VITIS_LOOP_39_2  |        9|        9|  45.000 ns|  45.000 ns|    9|    9|       no|
-        +-------------------------------------------------+--------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        +-------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                 |                                      |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                     Instance                    |                Module                |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119  |receive4DDR_Pipeline_VITIS_LOOP_39_2  |       65|       65|  0.325 us|  0.325 us|   65|   65|       no|
+        +-------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-----+-----+---------+
 
         * Loop: 
         +-------------------+---------+---------+----------+-----------+-----------+------+----------+
         |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +-------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_32_1  |       28|       28|        14|          -|          -|     2|        no|
+        |- VITIS_LOOP_32_1  |      280|      280|        70|          -|          -|     4|        no|
         +-------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -61,12 +61,12 @@
 |DSP              |        -|     -|        -|       -|    -|
 |Expression       |        -|     -|        0|      14|    -|
 |FIFO             |        -|     -|        -|       -|    -|
-|Instance         |        -|     -|      264|     787|    -|
+|Instance         |        -|     -|      267|     795|    -|
 |Memory           |        -|     -|        -|       -|    -|
-|Multiplexer      |        -|     -|        -|     386|    -|
-|Register         |        -|     -|      425|       -|    -|
+|Multiplexer      |        -|     -|        -|     387|    -|
+|Register         |        -|     -|      426|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |        0|     0|      689|    1187|    0|
+|Total            |        0|     0|      693|    1196|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -78,9 +78,9 @@
     +-------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
     |                     Instance                    |                Module                | BRAM_18K| DSP|  FF | LUT | URAM|
     +-------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
-    |grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119  |receive4DDR_Pipeline_VITIS_LOOP_39_2  |        0|   0|  264|  787|    0|
+    |grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119  |receive4DDR_Pipeline_VITIS_LOOP_39_2  |        0|   0|  267|  795|    0|
     +-------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
-    |Total                                            |                                      |        0|   0|  264|  787|    0|
+    |Total                                            |                                      |        0|   0|  267|  795|    0|
     +-------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
 
     * DSP: 
@@ -96,12 +96,12 @@
     +---------------------+----------+----+---+----+------------+------------+
     |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------+----------+----+---+----+------------+------------+
-    |i_19_fu_188_p2       |         +|   0|  0|   5|           2|           1|
+    |i_19_fu_188_p2       |         +|   0|  0|   5|           3|           1|
     |ap_block_state2      |       and|   0|  0|   2|           1|           1|
-    |icmp_ln32_fu_194_p2  |      icmp|   0|  0|   5|           2|           3|
+    |icmp_ln32_fu_194_p2  |      icmp|   0|  0|   5|           3|           4|
     |ap_block_state5      |        or|   0|  0|   2|           1|           1|
     +---------------------+----------+----+---+----+------------+------------+
-    |Total                |          |   0|  0|  14|           6|           6|
+    |Total                |          |   0|  0|  14|           8|           7|
     +---------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -111,14 +111,14 @@
     |ap_NS_fsm               |    6|          7|    1|          7|
     |data_temp_1_fu_92       |  121|          2|  128|        256|
     |data_temp_fu_88         |  121|          2|  128|        256|
-    |i_04_fu_84              |    2|          2|    2|          4|
+    |i_04_fu_84              |    3|          2|    3|          6|
     |norm_rx0_TDATA_blk_n    |    2|          2|    1|          2|
     |norm_rx0_TREADY         |    2|          3|    1|          3|
     |receive_fifo_L_0_blk_n  |    2|          2|    1|          2|
     |receive_fifo_L_0_din    |  128|          3|  128|        384|
     |receive_fifo_L_0_write  |    2|          3|    1|          3|
     +------------------------+-----+-----------+-----+-----------+
-    |Total                   |  386|         26|  391|        917|
+    |Total                   |  387|         26|  392|        919|
     +------------------------+-----+-----------+-----+-----------+
 
     * Register: 
@@ -130,10 +130,10 @@
     |data_temp_2_reg_336                                           |  128|   0|  128|          0|
     |data_temp_fu_88                                               |  128|   0|  128|          0|
     |grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119_ap_start_reg  |    1|   0|    1|          0|
-    |i_04_fu_84                                                    |    2|   0|    2|          0|
+    |i_04_fu_84                                                    |    3|   0|    3|          0|
     |sigma_reg_344                                                 |   32|   0|   32|          0|
     +--------------------------------------------------------------+-----+----+-----+-----------+
-    |Total                                                         |  425|   0|  425|          0|
+    |Total                                                         |  426|   0|  426|          0|
     +--------------------------------------------------------------+-----+----+-----+-----------+
 
 
@@ -152,8 +152,8 @@
 |ap_idle                          |  out|    1|  ap_ctrl_hs|        receive4DDR|  return value|
 |ap_ready                         |  out|    1|  ap_ctrl_hs|        receive4DDR|  return value|
 |receive_fifo_L_0_din             |  out|  128|     ap_fifo|   receive_fifo_L_0|       pointer|
-|receive_fifo_L_0_num_data_valid  |   in|    9|     ap_fifo|   receive_fifo_L_0|       pointer|
-|receive_fifo_L_0_fifo_cap        |   in|    9|     ap_fifo|   receive_fifo_L_0|       pointer|
+|receive_fifo_L_0_num_data_valid  |   in|   15|     ap_fifo|   receive_fifo_L_0|       pointer|
+|receive_fifo_L_0_fifo_cap        |   in|   15|     ap_fifo|   receive_fifo_L_0|       pointer|
 |receive_fifo_L_0_full_n          |   in|    1|     ap_fifo|   receive_fifo_L_0|       pointer|
 |receive_fifo_L_0_write           |  out|    1|     ap_fifo|   receive_fifo_L_0|       pointer|
 |norm_rx0_TDATA                   |   in|  128|        axis|  norm_rx0_V_data_V|       pointer|
@@ -209,26 +209,26 @@ ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%i_04 = alloca i32 1" [/media/4T/hom
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%data_temp = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31]   --->   Operation 8 'alloca' 'data_temp' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%data_temp_1 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31]   --->   Operation 9 'alloca' 'data_temp_1' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%data_temp_5_loc = alloca i64 1"   --->   Operation 10 'alloca' 'data_temp_5_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 0, i1 %norm_rx0_V_last_V, i1 0, i1 0, void @empty_6"   --->   Operation 11 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 0, i1 %norm_rx0_V_last_V, i1 0, i1 0, void @empty"   --->   Operation 11 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_L_0, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 12 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, void @empty_82, i32 0, i32 0, void @empty_81, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_0, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, void @empty_77, i32 0, i32 0, void @empty_76, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_0, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln31 = muxlogic i128 0"   --->   Operation 15 'muxlogic' 'muxLogicData_to_store_ln31' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln31 = muxlogic i128 %data_temp_1"   --->   Operation 16 'muxlogic' 'muxLogicAddr_to_store_ln31' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 17 [1/1] (0.53ns)   --->   "%store_ln31 = store i128 0, i128 %data_temp_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31]   --->   Operation 17 'store' 'store_ln31' <Predicate = true> <Delay = 0.53>
 ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln31 = muxlogic i128 0"   --->   Operation 18 'muxlogic' 'muxLogicData_to_store_ln31' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln31 = muxlogic i128 %data_temp"   --->   Operation 19 'muxlogic' 'muxLogicAddr_to_store_ln31' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%store_ln31 = store i128 0, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31]   --->   Operation 20 'store' 'store_ln31' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln32 = muxlogic i2 0"   --->   Operation 21 'muxlogic' 'muxLogicData_to_store_ln32' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln32 = muxlogic i2 %i_04"   --->   Operation 22 'muxlogic' 'muxLogicAddr_to_store_ln32' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 23 [1/1] (0.33ns)   --->   "%store_ln32 = store i2 0, i2 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 23 'store' 'store_ln32' <Predicate = true> <Delay = 0.33>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln32 = muxlogic i3 0"   --->   Operation 21 'muxlogic' 'muxLogicData_to_store_ln32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln32 = muxlogic i3 %i_04"   --->   Operation 22 'muxlogic' 'muxLogicAddr_to_store_ln32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.36ns)   --->   "%store_ln32 = store i3 0, i3 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 23 'store' 'store_ln32' <Predicate = true> <Delay = 0.36>
 ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln32 = br void %VITIS_LOOP_39_2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 24 'br' 'br_ln32' <Predicate = true> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 1.53>
-ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_i = muxlogic i2 %i_04"   --->   Operation 25 'muxlogic' 'MuxLogicAddr_to_i' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%i = load i2 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 26 'load' 'i' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 27 [1/1] (0.53ns)   --->   "%i_19 = add i2 %i, i2 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 27 'add' 'i_19' <Predicate = true> <Delay = 0.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 28 [1/1] (0.53ns)   --->   "%icmp_ln32 = icmp_eq  i2 %i, i2 2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 28 'icmp' 'icmp_ln32' <Predicate = true> <Delay = 0.53> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_i = muxlogic i3 %i_04"   --->   Operation 25 'muxlogic' 'MuxLogicAddr_to_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%i = load i3 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 26 'load' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.53ns)   --->   "%i_19 = add i3 %i, i3 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 27 'add' 'i_19' <Predicate = true> <Delay = 0.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.53ns)   --->   "%icmp_ln32 = icmp_eq  i3 %i, i3 4" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 28 'icmp' 'icmp_ln32' <Predicate = true> <Delay = 0.53> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln32 = br i1 %icmp_ln32, void %VITIS_LOOP_39_2.split, void %for.end67" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 29 'br' 'br_ln32' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_load = muxlogic i128 %data_temp"   --->   Operation 30 'muxlogic' 'MuxLogicAddr_to_data_temp_load' <Predicate = (!icmp_ln32)> <Delay = 0.00>
 ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%data_temp_load = load i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:37]   --->   Operation 31 'load' 'data_temp_load' <Predicate = (!icmp_ln32)> <Delay = 0.00>
@@ -237,42 +237,42 @@ ST_2 : Operation 33 [1/1] (1.00ns)   --->   "%empty = read i161 @_ssdm_op_Read.a
 ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_data = extractvalue i161 %empty" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:33]   --->   Operation 34 'extractvalue' 'tmp_data' <Predicate = (!icmp_ln32)> <Delay = 0.00>
 ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%tmp = partselect i96 @_ssdm_op_PartSelect.i96.i128.i32.i32, i128 %tmp_data, i32 32, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:37]   --->   Operation 35 'partselect' 'tmp' <Predicate = (!icmp_ln32)> <Delay = 0.00>
 ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%data_temp_2 = partset i128 @_ssdm_op_PartSet.i128.i128.i96.i32.i32, i128 %data_temp_load, i96 %tmp, i32 0, i32 95" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:37]   --->   Operation 36 'partset' 'data_temp_2' <Predicate = (!icmp_ln32)> <Delay = 0.00>
-ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln32 = muxlogic i2 %i_19"   --->   Operation 37 'muxlogic' 'muxLogicData_to_store_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.00>
-ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln32 = muxlogic i2 %i_04"   --->   Operation 38 'muxlogic' 'muxLogicAddr_to_store_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.00>
-ST_2 : Operation 39 [1/1] (0.33ns)   --->   "%store_ln32 = store i2 %i_19, i2 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 39 'store' 'store_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.33>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln32 = muxlogic i3 %i_19"   --->   Operation 37 'muxlogic' 'muxLogicData_to_store_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln32 = muxlogic i3 %i_04"   --->   Operation 38 'muxlogic' 'muxLogicAddr_to_store_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.36ns)   --->   "%store_ln32 = store i3 %i_19, i3 %i_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 39 'store' 'store_ln32' <Predicate = (!icmp_ln32)> <Delay = 0.36>
 ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%ret_ln57 = ret" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:57]   --->   Operation 40 'ret' 'ret_ln57' <Predicate = (icmp_ln32)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 2.04>
 ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_1_load = muxlogic i128 %data_temp_1"   --->   Operation 41 'muxlogic' 'MuxLogicAddr_to_data_temp_1_load' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%data_temp_1_load = load i128 %data_temp_1"   --->   Operation 42 'load' 'data_temp_1_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%empty_120 = wait i32 @_ssdm_op_Wait"   --->   Operation 43 'wait' 'empty_120' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%empty_121 = wait i32 @_ssdm_op_Wait"   --->   Operation 43 'wait' 'empty_121' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 44 [2/2] (2.04ns)   --->   "%call_ln37 = call void @receive4DDR_Pipeline_VITIS_LOOP_39_2, i128 %data_temp_1_load, i128 %data_temp_2, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, i128 %receive_fifo_L_0, i128 %data_temp_5_loc, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:37]   --->   Operation 44 'call' 'call_ln37' <Predicate = true> <Delay = 2.04> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
-State 4 <SV = 3> <Delay = 0.53>
-ST_4 : Operation 45 [1/2] (0.53ns)   --->   "%call_ln37 = call void @receive4DDR_Pipeline_VITIS_LOOP_39_2, i128 %data_temp_1_load, i128 %data_temp_2, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, i128 %receive_fifo_L_0, i128 %data_temp_5_loc, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:37]   --->   Operation 45 'call' 'call_ln37' <Predicate = true> <Delay = 0.53> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+State 4 <SV = 3> <Delay = 0.71>
+ST_4 : Operation 45 [1/2] (0.71ns)   --->   "%call_ln37 = call void @receive4DDR_Pipeline_VITIS_LOOP_39_2, i128 %data_temp_1_load, i128 %data_temp_2, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, i128 %receive_fifo_L_0, i128 %data_temp_5_loc, i128 %data_temp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:37]   --->   Operation 45 'call' 'call_ln37' <Predicate = true> <Delay = 0.71> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
-State 5 <SV = 4> <Delay = 2.03>
+State 5 <SV = 4> <Delay = 2.30>
 ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_5_loc_load = muxlogic i128 %data_temp_5_loc"   --->   Operation 46 'muxlogic' 'MuxLogicAddr_to_data_temp_5_loc_load' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%data_temp_5_loc_load = load i128 %data_temp_5_loc"   --->   Operation 47 'load' 'data_temp_5_loc_load' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%empty_121 = wait i32 @_ssdm_op_Wait"   --->   Operation 48 'wait' 'empty_121' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty_122 = muxlogic"   --->   Operation 49 'muxlogic' 'muxLogicCE_to_empty_122' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 50 [1/1] (1.00ns)   --->   "%empty_122 = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:49]   --->   Operation 50 'read' 'empty_122' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
-ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_data_10 = extractvalue i161 %empty_122" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:49]   --->   Operation 51 'extractvalue' 'tmp_data_10' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%empty_122 = wait i32 @_ssdm_op_Wait"   --->   Operation 48 'wait' 'empty_122' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty_123 = muxlogic"   --->   Operation 49 'muxlogic' 'muxLogicCE_to_empty_123' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (1.00ns)   --->   "%empty_123 = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:49]   --->   Operation 50 'read' 'empty_123' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_data_10 = extractvalue i161 %empty_123" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:49]   --->   Operation 51 'extractvalue' 'tmp_data_10' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%trunc_ln50 = trunc i128 %tmp_data_10" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:50]   --->   Operation 52 'trunc' 'trunc_ln50' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%data_temp_6 = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i32.i32, i128 %data_temp_5_loc_load, i32 %trunc_ln50, i32 96, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:50]   --->   Operation 53 'partset' 'data_temp_6' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln51 = muxlogic i128 %data_temp_6"   --->   Operation 54 'muxlogic' 'muxLogicData_to_write_ln51' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 55 [1/1] (1.03ns)   --->   "%write_ln51 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_0, i128 %data_temp_6" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:51]   --->   Operation 55 'write' 'write_ln51' <Predicate = true> <Delay = 1.03> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.03> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 256> <FIFO>
+ST_5 : Operation 55 [1/1] (1.30ns)   --->   "%write_ln51 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_0, i128 %data_temp_6" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:51]   --->   Operation 55 'write' 'write_ln51' <Predicate = true> <Delay = 1.30> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.30> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 16384> <FIFO>
 ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%sigma = partselect i32 @_ssdm_op_PartSelect.i32.i128.i32.i32, i128 %tmp_data_10, i32 32, i32 63" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:53]   --->   Operation 56 'partselect' 'sigma' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln31 = muxlogic i128 %data_temp_6"   --->   Operation 57 'muxlogic' 'muxLogicData_to_store_ln31' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln31 = muxlogic i128 %data_temp_1"   --->   Operation 58 'muxlogic' 'muxLogicAddr_to_store_ln31' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 59 [1/1] (0.53ns)   --->   "%store_ln31 = store i128 %data_temp_6, i128 %data_temp_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31]   --->   Operation 59 'store' 'store_ln31' <Predicate = true> <Delay = 0.53>
 
-State 6 <SV = 5> <Delay = 1.03>
-ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%speclooptripcount_ln31 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2, i64 2, i64 2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31]   --->   Operation 60 'speclooptripcount' 'speclooptripcount_ln31' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specloopname_ln32 = specloopname void @_ssdm_op_SpecLoopName, void @empty_63" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 61 'specloopname' 'specloopname_ln32' <Predicate = true> <Delay = 0.00>
+State 6 <SV = 5> <Delay = 1.30>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%speclooptripcount_ln31 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:31]   --->   Operation 60 'speclooptripcount' 'speclooptripcount_ln31' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specloopname_ln32 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 61 'specloopname' 'specloopname_ln32' <Predicate = true> <Delay = 0.00>
 ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%zext_ln53 = zext i32 %sigma" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:53]   --->   Operation 62 'zext' 'zext_ln53' <Predicate = true> <Delay = 0.00>
 ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln54 = muxlogic i128 %zext_ln53"   --->   Operation 63 'muxlogic' 'muxLogicData_to_write_ln54' <Predicate = true> <Delay = 0.00>
-ST_6 : Operation 64 [1/1] (1.03ns)   --->   "%write_ln54 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_0, i128 %zext_ln53" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:54]   --->   Operation 64 'write' 'write_ln54' <Predicate = true> <Delay = 1.03> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.03> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 256> <FIFO>
+ST_6 : Operation 64 [1/1] (1.30ns)   --->   "%write_ln54 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_0, i128 %zext_ln53" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:54]   --->   Operation 64 'write' 'write_ln54' <Predicate = true> <Delay = 1.30> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.30> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 16384> <FIFO>
 ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%br_ln32 = br void %VITIS_LOOP_39_2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:32]   --->   Operation 65 'br' 'br_ln32' <Predicate = true> <Delay = 0.00>
 
 
@@ -334,13 +334,13 @@ store_ln32                           (store              ) [ 0000000]
 ret_ln57                             (ret                ) [ 0000000]
 MuxLogicAddr_to_data_temp_1_load     (muxlogic           ) [ 0000000]
 data_temp_1_load                     (load               ) [ 0000100]
-empty_120                            (wait               ) [ 0000000]
+empty_121                            (wait               ) [ 0000000]
 call_ln37                            (call               ) [ 0000000]
 MuxLogicAddr_to_data_temp_5_loc_load (muxlogic           ) [ 0000000]
 data_temp_5_loc_load                 (load               ) [ 0000000]
-empty_121                            (wait               ) [ 0000000]
-muxLogicCE_to_empty_122              (muxlogic           ) [ 0000000]
-empty_122                            (read               ) [ 0000000]
+empty_122                            (wait               ) [ 0000000]
+muxLogicCE_to_empty_123              (muxlogic           ) [ 0000000]
+empty_123                            (read               ) [ 0000000]
 tmp_data_10                          (extractvalue       ) [ 0000000]
 trunc_ln50                           (trunc              ) [ 0000000]
 data_temp_6                          (partset            ) [ 0000000]
@@ -447,7 +447,7 @@ br_ln32                              (br                 ) [ 0000000]
 <pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_6"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </bind>
 </comp>
 
@@ -501,7 +501,7 @@ br_ln32                              (br                 ) [ 0000000]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_82"/></StgValue>
+<StgValue><ssdm name="empty_77"/></StgValue>
 </bind>
 </comp>
 
@@ -519,7 +519,7 @@ br_ln32                              (br                 ) [ 0000000]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_81"/></StgValue>
+<StgValue><ssdm name="empty_76"/></StgValue>
 </bind>
 </comp>
 
@@ -528,7 +528,7 @@ br_ln32                              (br                 ) [ 0000000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_70"/></StgValue>
+<StgValue><ssdm name="empty_62"/></StgValue>
 </bind>
 </comp>
 
@@ -546,7 +546,7 @@ br_ln32                              (br                 ) [ 0000000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_80"/></StgValue>
+<StgValue><ssdm name="empty_84"/></StgValue>
 </bind>
 </comp>
 
@@ -735,14 +735,14 @@ br_ln32                              (br                 ) [ 0000000]
 <pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_63"/></StgValue>
+<StgValue><ssdm name="empty_8"/></StgValue>
 </bind>
 </comp>
 
 <comp id="84" class="1004" name="i_04_fu_84">
 <pin_list>
 <pin id="85" dir="0" index="0" bw="1" slack="0"/>
-<pin id="86" dir="1" index="1" bw="2" slack="0"/>
+<pin id="86" dir="1" index="1" bw="3" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
@@ -794,7 +794,7 @@ br_ln32                              (br                 ) [ 0000000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="empty/2 empty_122/5 "/>
+<opset="empty/2 empty_123/5 "/>
 </bind>
 </comp>
 
@@ -837,7 +837,7 @@ br_ln32                              (br                 ) [ 0000000]
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
-<opset="muxLogicCE_to_empty/2 muxLogicCE_to_empty_122/5 "/>
+<opset="muxLogicCE_to_empty/2 muxLogicCE_to_empty_123/5 "/>
 </bind>
 </comp>
 
@@ -944,7 +944,7 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="174" class="1004" name="muxLogicAddr_to_store_ln32_fu_174">
 <pin_list>
-<pin id="175" dir="0" index="0" bw="2" slack="0"/>
+<pin id="175" dir="0" index="0" bw="3" slack="0"/>
 <pin id="176" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -956,7 +956,7 @@ br_ln32                              (br                 ) [ 0000000]
 <comp id="177" class="1004" name="store_ln32_store_fu_177">
 <pin_list>
 <pin id="178" dir="0" index="0" bw="1" slack="0"/>
-<pin id="179" dir="0" index="1" bw="2" slack="0"/>
+<pin id="179" dir="0" index="1" bw="3" slack="0"/>
 <pin id="180" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -967,8 +967,8 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="182" class="1004" name="MuxLogicAddr_to_i_fu_182">
 <pin_list>
-<pin id="183" dir="0" index="0" bw="2" slack="1"/>
-<pin id="184" dir="1" index="1" bw="2" slack="2147483647"/>
+<pin id="183" dir="0" index="0" bw="3" slack="1"/>
+<pin id="184" dir="1" index="1" bw="3" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="muxlogic(592) " fcode="muxlogic"/>
@@ -978,8 +978,8 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="185" class="1004" name="i_load_fu_185">
 <pin_list>
-<pin id="186" dir="0" index="0" bw="2" slack="1"/>
-<pin id="187" dir="1" index="1" bw="2" slack="0"/>
+<pin id="186" dir="0" index="0" bw="3" slack="1"/>
+<pin id="187" dir="1" index="1" bw="3" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -989,9 +989,9 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="188" class="1004" name="i_19_fu_188">
 <pin_list>
-<pin id="189" dir="0" index="0" bw="2" slack="0"/>
+<pin id="189" dir="0" index="0" bw="3" slack="0"/>
 <pin id="190" dir="0" index="1" bw="1" slack="0"/>
-<pin id="191" dir="1" index="2" bw="2" slack="0"/>
+<pin id="191" dir="1" index="2" bw="3" slack="0"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
@@ -1001,8 +1001,8 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="194" class="1004" name="icmp_ln32_fu_194">
 <pin_list>
-<pin id="195" dir="0" index="0" bw="2" slack="0"/>
-<pin id="196" dir="0" index="1" bw="2" slack="0"/>
+<pin id="195" dir="0" index="0" bw="3" slack="0"/>
+<pin id="196" dir="0" index="1" bw="3" slack="0"/>
 <pin id="197" dir="1" index="2" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -1064,7 +1064,7 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="228" class="1004" name="muxLogicData_to_store_ln32_fu_228">
 <pin_list>
-<pin id="229" dir="0" index="0" bw="2" slack="0"/>
+<pin id="229" dir="0" index="0" bw="3" slack="0"/>
 <pin id="230" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -1075,7 +1075,7 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="232" class="1004" name="muxLogicAddr_to_store_ln32_fu_232">
 <pin_list>
-<pin id="233" dir="0" index="0" bw="2" slack="1"/>
+<pin id="233" dir="0" index="0" bw="3" slack="1"/>
 <pin id="234" dir="1" index="1" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -1086,8 +1086,8 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="235" class="1004" name="store_ln32_store_fu_235">
 <pin_list>
-<pin id="236" dir="0" index="0" bw="2" slack="0"/>
-<pin id="237" dir="0" index="1" bw="2" slack="1"/>
+<pin id="236" dir="0" index="0" bw="3" slack="0"/>
+<pin id="237" dir="0" index="1" bw="3" slack="1"/>
 <pin id="238" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -1227,8 +1227,8 @@ br_ln32                              (br                 ) [ 0000000]
 
 <comp id="298" class="1005" name="i_04_reg_298">
 <pin_list>
-<pin id="299" dir="0" index="0" bw="2" slack="0"/>
-<pin id="300" dir="1" index="1" bw="2" slack="0"/>
+<pin id="299" dir="0" index="0" bw="3" slack="0"/>
+<pin id="300" dir="1" index="1" bw="3" slack="0"/>
 </pin_list>
 <bind>
 <opset="i_04 "/>
@@ -1512,7 +1512,7 @@ br_ln32                              (br                 ) [ 0000000]
 |----------|-------------------------------------------------|---------|---------|
 | Operation|                 Functional Unit                 |    FF   |   LUT   |
 |----------|-------------------------------------------------|---------|---------|
-|   call   | grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119 |   260   |   518   |
+|   call   | grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119 |   263   |   522   |
 |----------|-------------------------------------------------|---------|---------|
 |    add   |                   i_19_fu_188                   |    0    |    5    |
 |----------|-------------------------------------------------|---------|---------|
@@ -1551,7 +1551,7 @@ br_ln32                              (br                 ) [ 0000000]
 |----------|-------------------------------------------------|---------|---------|
 |   zext   |                 zext_ln53_fu_290                |    0    |    0    |
 |----------|-------------------------------------------------|---------|---------|
-|   Total  |                                                 |   260   |   528   |
+|   Total  |                                                 |   263   |   532   |
 |----------|-------------------------------------------------|---------|---------|
 
 Memories:
@@ -1565,10 +1565,10 @@ N/A
 |  data_temp_2_reg_336  |   128  |
 |data_temp_5_loc_reg_326|   128  |
 |   data_temp_reg_308   |   128  |
-|      i_04_reg_298     |    2   |
+|      i_04_reg_298     |    3   |
 |     sigma_reg_344     |   32   |
 +-----------------------+--------+
-|         Total         |   546  |
+|         Total         |   547  |
 +-----------------------+--------+
 
 * Multiplexer (MUX) list: 
@@ -1586,10 +1586,10 @@ N/A
 +-----------+--------+--------+--------+
 |           |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+
-|  Function |    -   |   260  |   528  |
+|  Function |    -   |   263  |   532  |
 |   Memory  |    -   |    -   |    -   |
 |Multiplexer|    0   |    -   |   121  |
-|  Register |    -   |   546  |    -   |
+|  Register |    -   |   547  |    -   |
 +-----------+--------+--------+--------+
-|   Total   |    0   |   806  |   649  |
+|   Total   |    0   |   810  |   653  |
 +-----------+--------+--------+--------+

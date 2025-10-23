@@ -18,8 +18,8 @@ port (
     ap_ready : OUT STD_LOGIC;
     sweep_rx1_1_TVALID : IN STD_LOGIC;
     receive_fifo_R_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_R_0_full_n : IN STD_LOGIC;
     receive_fifo_R_0_write : OUT STD_LOGIC;
     data_temp_9 : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -46,8 +46,8 @@ architecture behav of TopPL_receive4AIE_7_Pipeline_VITIS_LOOP_76_2 is
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_boolean_0 : BOOLEAN := false;
-    constant ap_const_lv4_1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
-    constant ap_const_lv4_8 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
+    constant ap_const_lv7_1 : STD_LOGIC_VECTOR (6 downto 0) := "0000001";
+    constant ap_const_lv7_40 : STD_LOGIC_VECTOR (6 downto 0) := "1000000";
     constant ap_const_lv32_60 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001100000";
     constant ap_const_lv32_7F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001111111";
     constant ap_const_lv32_20 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000100000";
@@ -78,8 +78,8 @@ attribute shreg_extract : string;
     signal ap_block_pp0_stage0_11001 : BOOLEAN;
     signal data_temp_12_fu_276_p3 : STD_LOGIC_VECTOR (127 downto 0);
     signal ap_loop_init : STD_LOGIC;
-    signal j_02_fu_84 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    signal j_17_fu_198_p2 : STD_LOGIC_VECTOR (3 downto 0);
+    signal j_02_fu_84 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    signal j_17_fu_198_p2 : STD_LOGIC_VECTOR (6 downto 0);
     signal data_temp_fu_88 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     signal data_temp_13_fu_268_p3 : STD_LOGIC_VECTOR (127 downto 0);
     signal ap_block_pp0_stage0_01001 : BOOLEAN;
@@ -213,7 +213,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
                 if ((ap_loop_init = ap_const_logic_1)) then 
-                    j_02_fu_84 <= ap_const_lv4_1;
+                    j_02_fu_84 <= ap_const_lv7_1;
                 elsif (((icmp_ln76_fu_181_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
                     j_02_fu_84 <= j_17_fu_198_p2;
                 end if;
@@ -367,8 +367,8 @@ begin
         end if; 
     end process;
 
-    icmp_ln76_fu_181_p2 <= "1" when (j_02_fu_84 = ap_const_lv4_8) else "0";
-    j_17_fu_198_p2 <= std_logic_vector(unsigned(j_02_fu_84) + unsigned(ap_const_lv4_1));
+    icmp_ln76_fu_181_p2 <= "1" when (j_02_fu_84 = ap_const_lv7_40) else "0";
+    j_17_fu_198_p2 <= std_logic_vector(unsigned(j_02_fu_84) + unsigned(ap_const_lv7_1));
 
     receive_fifo_R_0_blk_n_assign_proc : process(ap_enable_reg_pp0_iter2, receive_fifo_R_0_full_n, ap_block_pp0_stage0)
     begin

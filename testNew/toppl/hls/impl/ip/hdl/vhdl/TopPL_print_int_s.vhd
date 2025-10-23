@@ -17,7 +17,7 @@ port (
     ap_continue : IN STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    v : IN STD_LOGIC_VECTOR (4 downto 0) );
+    v : IN STD_LOGIC_VECTOR (8 downto 0) );
 end;
 
 
@@ -55,7 +55,7 @@ attribute shreg_extract : string;
 
 
 begin
-    printint_U400 : component TopPL_printint
+    printint_U416 : component TopPL_printint
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_const_logic_0,

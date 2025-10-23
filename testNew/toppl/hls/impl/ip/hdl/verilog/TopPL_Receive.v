@@ -214,43 +214,43 @@ input  [2:0] convSet_R_3_fifo_cap;
 input   convSet_R_3_full_n;
 output   convSet_R_3_write;
 output  [127:0] receive_fifo_L_0_din;
-input  [8:0] receive_fifo_L_0_num_data_valid;
-input  [8:0] receive_fifo_L_0_fifo_cap;
+input  [14:0] receive_fifo_L_0_num_data_valid;
+input  [14:0] receive_fifo_L_0_fifo_cap;
 input   receive_fifo_L_0_full_n;
 output   receive_fifo_L_0_write;
 output  [127:0] receive_fifo_L_1_din;
-input  [8:0] receive_fifo_L_1_num_data_valid;
-input  [8:0] receive_fifo_L_1_fifo_cap;
+input  [14:0] receive_fifo_L_1_num_data_valid;
+input  [14:0] receive_fifo_L_1_fifo_cap;
 input   receive_fifo_L_1_full_n;
 output   receive_fifo_L_1_write;
 output  [127:0] receive_fifo_L_2_din;
-input  [8:0] receive_fifo_L_2_num_data_valid;
-input  [8:0] receive_fifo_L_2_fifo_cap;
+input  [14:0] receive_fifo_L_2_num_data_valid;
+input  [14:0] receive_fifo_L_2_fifo_cap;
 input   receive_fifo_L_2_full_n;
 output   receive_fifo_L_2_write;
 output  [127:0] receive_fifo_L_3_din;
-input  [8:0] receive_fifo_L_3_num_data_valid;
-input  [8:0] receive_fifo_L_3_fifo_cap;
+input  [14:0] receive_fifo_L_3_num_data_valid;
+input  [14:0] receive_fifo_L_3_fifo_cap;
 input   receive_fifo_L_3_full_n;
 output   receive_fifo_L_3_write;
 output  [127:0] receive_fifo_R_0_din;
-input  [8:0] receive_fifo_R_0_num_data_valid;
-input  [8:0] receive_fifo_R_0_fifo_cap;
+input  [14:0] receive_fifo_R_0_num_data_valid;
+input  [14:0] receive_fifo_R_0_fifo_cap;
 input   receive_fifo_R_0_full_n;
 output   receive_fifo_R_0_write;
 output  [127:0] receive_fifo_R_1_din;
-input  [8:0] receive_fifo_R_1_num_data_valid;
-input  [8:0] receive_fifo_R_1_fifo_cap;
+input  [14:0] receive_fifo_R_1_num_data_valid;
+input  [14:0] receive_fifo_R_1_fifo_cap;
 input   receive_fifo_R_1_full_n;
 output   receive_fifo_R_1_write;
 output  [127:0] receive_fifo_R_2_din;
-input  [8:0] receive_fifo_R_2_num_data_valid;
-input  [8:0] receive_fifo_R_2_fifo_cap;
+input  [14:0] receive_fifo_R_2_num_data_valid;
+input  [14:0] receive_fifo_R_2_fifo_cap;
 input   receive_fifo_R_2_full_n;
 output   receive_fifo_R_2_write;
 output  [127:0] receive_fifo_R_3_din;
-input  [8:0] receive_fifo_R_3_num_data_valid;
-input  [8:0] receive_fifo_R_3_fifo_cap;
+input  [14:0] receive_fifo_R_3_num_data_valid;
+input  [14:0] receive_fifo_R_3_fifo_cap;
 input   receive_fifo_R_3_full_n;
 output   receive_fifo_R_3_write;
 input  [127:0] sweep_rx1_0_TDATA;
@@ -399,8 +399,8 @@ reg    grp_receive4DDR_fu_284_ap_start_reg;
 wire    ap_CS_fsm_state4;
 wire   [0:0] icmp_ln273_fu_324_p2;
 wire    ap_CS_fsm_state5;
-reg   [4:0] i_fu_174;
-wire   [4:0] i_35_fu_318_p2;
+reg   [6:0] i_fu_174;
+wire   [6:0] i_35_fu_318_p2;
 reg   [4:0] ap_NS_fsm;
 reg    ap_block_state1;
 reg    ap_ST_fsm_state1_blk;
@@ -571,7 +571,7 @@ initial begin
 #0 ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_ready = 1'b0;
 #0 ap_sync_reg_grp_dataflow_parent_loop_proc28_fu_184_ap_done = 1'b0;
 #0 grp_receive4DDR_fu_284_ap_start_reg = 1'b0;
-#0 i_fu_174 = 5'd0;
+#0 i_fu_174 = 7'd0;
 end
 
 TopPL_dataflow_parent_loop_proc28 grp_dataflow_parent_loop_proc28_fu_184(
@@ -688,8 +688,8 @@ TopPL_receive4DDR grp_receive4DDR_fu_284(
     .ap_idle(grp_receive4DDR_fu_284_ap_idle),
     .ap_ready(grp_receive4DDR_fu_284_ap_ready),
     .receive_fifo_L_0_din(grp_receive4DDR_fu_284_receive_fifo_L_0_din),
-    .receive_fifo_L_0_num_data_valid(9'd0),
-    .receive_fifo_L_0_fifo_cap(9'd0),
+    .receive_fifo_L_0_num_data_valid(15'd0),
+    .receive_fifo_L_0_fifo_cap(15'd0),
     .receive_fifo_L_0_full_n(receive_fifo_L_0_full_n),
     .receive_fifo_L_0_write(grp_receive4DDR_fu_284_receive_fifo_L_0_write),
     .norm_rx0_TDATA(norm_rx0_TDATA_int_regslice),
@@ -1274,7 +1274,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((syscontrol_2_empty_n == 1'b1) & (sig_read_fu_178_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
-        i_fu_174 <= 5'd0;
+        i_fu_174 <= 7'd0;
     end else if (((icmp_ln273_fu_324_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         i_fu_174 <= i_35_fu_318_p2;
     end
@@ -1661,9 +1661,9 @@ assign grp_dataflow_parent_loop_proc28_fu_184_ap_start = grp_dataflow_parent_loo
 
 assign grp_receive4DDR_fu_284_ap_start = grp_receive4DDR_fu_284_ap_start_reg;
 
-assign i_35_fu_318_p2 = (i_fu_174 + 5'd1);
+assign i_35_fu_318_p2 = (i_fu_174 + 7'd1);
 
-assign icmp_ln273_fu_324_p2 = ((i_fu_174 == 5'd16) ? 1'b1 : 1'b0);
+assign icmp_ln273_fu_324_p2 = ((i_fu_174 == 7'd64) ? 1'b1 : 1'b0);
 
 assign norm_rx0_TREADY = regslice_both_norm_rx0_V_data_V_U_ack_in;
 

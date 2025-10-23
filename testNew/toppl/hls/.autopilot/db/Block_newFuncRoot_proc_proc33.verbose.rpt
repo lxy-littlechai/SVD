@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'Block_newFuncRoot_proc_proc33'
 ================================================================
-* Date:           Mon Oct 20 21:15:07 2025
+* Date:           Mon Oct 20 22:10:35 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -165,7 +165,7 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.84>
-ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_1, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 2 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_1, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 2 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_p_val = muxlogic i32 %empty"   --->   Operation 3 'muxlogic' 'MuxLogicAddr_to_p_val' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%p_val = load i32 %empty" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:335]   --->   Operation 4 'load' 'p_val' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln335 = muxlogic i32 %p_val"   --->   Operation 5 'muxlogic' 'muxLogicData_to_write_ln335' <Predicate = true> <Delay = 0.00>
@@ -235,7 +235,7 @@ ret_ln335                   (ret          ) [ 00]
 <pin id="7" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_80"/></StgValue>
+<StgValue><ssdm name="empty_84"/></StgValue>
 </bind>
 </comp>
 
@@ -253,7 +253,7 @@ ret_ln335                   (ret          ) [ 00]
 <pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_70"/></StgValue>
+<StgValue><ssdm name="empty_62"/></StgValue>
 </bind>
 </comp>
 

@@ -10,7 +10,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 372 \
+    id 388 \
     name gmem1 \
     type other \
     dir O \
@@ -25,7 +25,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 373 \
+    id 389 \
     name sext_ln282 \
     type other \
     dir I \
@@ -40,7 +40,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 374 \
+    id 390 \
     name receive_fifo_L_0 \
     type fifo \
     dir I \
@@ -48,7 +48,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_L_0 \
     op interface \
-    ports { receive_fifo_L_0_dout { I 128 vector } receive_fifo_L_0_num_data_valid { I 9 vector } receive_fifo_L_0_fifo_cap { I 9 vector } receive_fifo_L_0_empty_n { I 1 bit } receive_fifo_L_0_read { O 1 bit } } \
+    ports { receive_fifo_L_0_dout { I 128 vector } receive_fifo_L_0_num_data_valid { I 15 vector } receive_fifo_L_0_fifo_cap { I 15 vector } receive_fifo_L_0_empty_n { I 1 bit } receive_fifo_L_0_read { O 1 bit } } \
 } "
 }
 

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'send2AIE_14_Pipeline_VITIS_LOOP_112_2'
 ================================================================
-* Date:           Mon Oct 20 21:14:56 2025
+* Date:           Mon Oct 20 22:10:25 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-    |   min   |   max   |    min    |    max    | min | max |   Type  |
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |       10|       10|  50.000 ns|  50.000 ns|   10|   10|       no|
-    +---------+---------+-----------+-----------+-----+-----+---------+
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       66|       66|  0.330 us|  0.330 us|   66|   66|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
         * Instance: 
@@ -41,7 +41,7 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_112_2  |        8|        8|         3|          1|          1|     7|       yes|
+        |- VITIS_LOOP_112_2  |       64|       64|         3|          1|          1|    63|       yes|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -54,14 +54,14 @@
 |       Name      | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
 +-----------------+---------+------+---------+--------+-----+
 |DSP              |        -|     -|        -|       -|    -|
-|Expression       |        -|     -|        0|      18|    -|
+|Expression       |        -|     -|        0|      23|    -|
 |FIFO             |        -|     -|        -|       -|    -|
 |Instance         |        -|     -|        -|       -|    -|
 |Memory           |        -|     -|        -|       -|    -|
-|Multiplexer      |        -|     -|        -|      16|    -|
-|Register         |        -|     -|      106|       -|    -|
+|Multiplexer      |        -|     -|        -|      22|    -|
+|Register         |        -|     -|      109|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |        0|     0|      106|      34|    0|
+|Total            |        0|     0|      109|      45|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -85,14 +85,14 @@
     +---------------------------+----------+----+---+----+------------+------------+
     |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------+----------+----+---+----+------------+------------+
-    |j_10_fu_157_p2             |         +|   0|  0|   5|           4|           1|
-    |icmp_ln112_fu_151_p2       |      icmp|   0|  0|   5|           4|           5|
+    |j_10_fu_157_p2             |         +|   0|  0|   7|           7|           1|
+    |icmp_ln112_fu_151_p2       |      icmp|   0|  0|   8|           7|           8|
     |ap_block_pp0_stage0_01001  |        or|   0|  0|   2|           1|           1|
     |ap_block_pp0_stage0_11001  |        or|   0|  0|   2|           1|           1|
     |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
     |rem27_urem_fu_193_p2       |       xor|   0|  0|   2|           1|           2|
     +---------------------------+----------+----+---+----+------------+------------+
-    |Total                      |          |   0|  0|  18|          12|          12|
+    |Total                      |          |   0|  0|  23|          18|          15|
     +---------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -101,12 +101,12 @@
     +-------------------------+----+-----------+-----+-----------+
     |ap_done_int              |   2|          2|    1|          2|
     |ap_enable_reg_pp0_iter1  |   2|          2|    1|          2|
-    |ap_sig_allocacmp_j_9     |   4|          2|    4|          8|
-    |j_fu_78                  |   4|          2|    4|          8|
+    |ap_sig_allocacmp_j_9     |   7|          2|    7|         14|
+    |j_fu_78                  |   7|          2|    7|         14|
     |send_fifo_R_3_blk_n      |   2|          2|    1|          2|
     |sweep_tx4_1_TDATA_blk_n  |   2|          2|    1|          2|
     +-------------------------+----+-----------+-----+-----------+
-    |Total                    |  16|         12|   12|         24|
+    |Total                    |  22|         12|   18|         36|
     +-------------------------+----+-----------+-----+-----------+
 
     * Register: 
@@ -118,11 +118,11 @@
     |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
-    |j_fu_78                           |   4|   0|    4|          0|
+    |j_fu_78                           |   7|   0|    7|          0|
     |trunc_ln112_reg_247               |   1|   0|    1|          0|
     |trunc_ln118_reg_258               |  96|   0|   96|          0|
     +----------------------------------+----+----+-----+-----------+
-    |Total                             | 106|   0|  106|          0|
+    |Total                             | 109|   0|  109|          0|
     +----------------------------------+----+----+-----+-----------+
 
 
@@ -141,8 +141,8 @@
 |ap_idle                       |  out|    1|  ap_ctrl_hs|  send2AIE.14_Pipeline_VITIS_LOOP_112_2|  return value|
 |ap_ready                      |  out|    1|  ap_ctrl_hs|  send2AIE.14_Pipeline_VITIS_LOOP_112_2|  return value|
 |send_fifo_R_3_dout            |   in|  128|     ap_fifo|                          send_fifo_R_3|       pointer|
-|send_fifo_R_3_num_data_valid  |   in|    6|     ap_fifo|                          send_fifo_R_3|       pointer|
-|send_fifo_R_3_fifo_cap        |   in|    6|     ap_fifo|                          send_fifo_R_3|       pointer|
+|send_fifo_R_3_num_data_valid  |   in|   10|     ap_fifo|                          send_fifo_R_3|       pointer|
+|send_fifo_R_3_fifo_cap        |   in|   10|     ap_fifo|                          send_fifo_R_3|       pointer|
 |send_fifo_R_3_empty_n         |   in|    1|     ap_fifo|                          send_fifo_R_3|       pointer|
 |send_fifo_R_3_read            |  out|    1|     ap_fifo|                          send_fifo_R_3|       pointer|
 |sweep_tx4_1_TREADY            |   in|    1|        axis|                   sweep_tx4_1_V_data_V|       pointer|

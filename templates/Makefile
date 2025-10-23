@@ -38,7 +38,7 @@ HW_EMU_CMD := ./launch_hw_emu.sh -g
 # Frequency Option
 AIE_FREQ = --freqhz=200000000
 KERNEL_FREQ = --freqhz=200000000
-{% for id in range(1, graph_num+1) %}
+{% for id in range(1, task_num+1) %}
 KERNEL_FREQ_{{id}} = --freqhz=200000000:TopPL_{{id}}.ap_clk
 {% endfor %}
 
@@ -60,7 +60,7 @@ VPP_XO_FLAGS += $(KERNEL_FREQ)
 	
 VPP_LINK_FLAGS := -l -t $(TARGET) --platform $(BASE_PLATFORM) $(KERNEL_XO) $(GRAPH_O) --save-temps -g --config $(CONFIG_FILE) -o $(XSA)
 VPP_LINK_FLAGS += --vivado.impl.jobs 256
-{% for id in range(1, graph_num+1) %}
+{% for id in range(1, task_num+1) %}
 VPP_LINK_FLAGS += $(KERNEL_FREQ_{{id}})
 {% endfor %}
 VPP_FLAGS := $(VPP_LINK_FLAGS)

@@ -10,7 +10,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 356 \
+    id 372 \
     name receive_fifo_L_0 \
     type fifo \
     dir I \
@@ -18,14 +18,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_L_0 \
     op interface \
-    ports { receive_fifo_L_0_dout { I 128 vector } receive_fifo_L_0_num_data_valid { I 9 vector } receive_fifo_L_0_fifo_cap { I 9 vector } receive_fifo_L_0_empty_n { I 1 bit } receive_fifo_L_0_read { O 1 bit } } \
+    ports { receive_fifo_L_0_dout { I 128 vector } receive_fifo_L_0_num_data_valid { I 15 vector } receive_fifo_L_0_fifo_cap { I 15 vector } receive_fifo_L_0_empty_n { I 1 bit } receive_fifo_L_0_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 357 \
+    id 373 \
     name send_fifo_L_1 \
     type fifo \
     dir O \
@@ -33,7 +33,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_L_1 \
     op interface \
-    ports { send_fifo_L_1_din { O 128 vector } send_fifo_L_1_num_data_valid { I 6 vector } send_fifo_L_1_fifo_cap { I 6 vector } send_fifo_L_1_full_n { I 1 bit } send_fifo_L_1_write { O 1 bit } } \
+    ports { send_fifo_L_1_din { O 128 vector } send_fifo_L_1_num_data_valid { I 10 vector } send_fifo_L_1_fifo_cap { I 10 vector } send_fifo_L_1_full_n { I 1 bit } send_fifo_L_1_write { O 1 bit } } \
 } "
 }
 

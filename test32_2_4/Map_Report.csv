@@ -1,0 +1,231 @@
+
+
+BUFFER,FROM_INSTANCE.PORT,TO_INSTANCE.PORT,SIZE,MEMORY_GROUP,BANK,OFFSET,DMA_NEEDED
+buf58,topSweepGraph1_4.sweepGraph.orth[0][1].po1,topSweepGraph1_4.sweepGraph.orth[0][2].pi1,144,"(20, 2)",2,0,-
+buf145,topSweepGraph1_4.sp[1].po1,topSweepGraph1_4.sweepGraph.orth[1][0].pi1,144,"(20, 0)",2,0,-
+buf143,topSweepGraph1_4.sp[1].po0,topSweepGraph1_4.sweepGraph.orth[0][0].pi1,144,"(19, 0)",0,8032,-
+buf144,topSweepGraph1_4.sp[0].po1,topSweepGraph1_4.sweepGraph.orth[1][0].pi0,144,"(21, 0)",1,736,-
+buf54,topSweepGraph1_4.sweepGraph.orth[1][0].po0,topSweepGraph1_4.sweepGraph.orth[0][1].pi1,144,"(21, 1)",0,160,-
+buf62,topSweepGraph1_4.sweepGraph.orth[0][2].po1,topSweepGraph1_4.mg[0].pi1,144,"(20, 3)",2,0,-
+buf149,topSweepGraph1_4.sweepGraph.orth[1][0].po1,topSweepGraph1_4.sweepGraph.orth[1][1].pi0,144,"(21, 1)",3,0,-
+sysmem88,-,-,2080,"(21, 2)",0,0,-
+buf53,topSweepGraph1_4.sweepGraph.orth[0][0].po1,-,144,"(20, 1)",2,0,-
+buf155,topSweepGraph1_4.sweepGraph.orth[0][2].po0,topSweepGraph1_4.mg[1].pi0,144,"(20, 3)",1,0,-
+buf150,topSweepGraph1_4.sweepGraph.orth[0][1].po0,topSweepGraph1_4.sweepGraph.orth[1][2].pi0,144,"(20, 2)",1,0,-
+buf154,topSweepGraph1_4.sweepGraph.orth[1][2].po0,topSweepGraph1_4.mg[0].pi0,144,"(21, 3)",1,0,-
+buf147,topSweepGraph1_4.sweepGraph.orth[0][0].po1,-,144,"(20, 1)",3,0,-
+buf151,topSweepGraph1_4.sweepGraph.orth[1][1].po1,-,144,"(21, 2)",3,0,-
+buf142,topSweepGraph1_4.sp[0].po0,topSweepGraph1_4.sweepGraph.orth[0][0].pi0,144,"(19, 0)",1,0,-
+sysmem85,-,-,2080,"(20, 1)",0,160,-
+buf53rr,topSweepGraph1_4.sweepGraph.orth[0][0].po1,-,144,"(22, 1)",0,0,-
+buf151rr,topSweepGraph1_4.sweepGraph.orth[1][1].po1,-,144,"(19, 2)",1,736,-
+buf57rr,topSweepGraph1_4.sweepGraph.orth[1][1].po1,-,144,"(19, 2)",2,0,-
+buf56,topSweepGraph1_4.sweepGraph.orth[0][1].po0,topSweepGraph1_4.sweepGraph.orth[1][2].pi0,144,"(20, 2)",0,0,-
+buf152,topSweepGraph1_4.sweepGraph.orth[0][1].po1,topSweepGraph1_4.sweepGraph.orth[0][2].pi1,144,"(20, 2)",3,0,-
+buf153,topSweepGraph1_4.sweepGraph.orth[1][1].po0,topSweepGraph1_4.sweepGraph.orth[1][2].pi1,144,"(21, 2)",1,0,-
+buf57,topSweepGraph1_4.sweepGraph.orth[1][1].po1,-,144,"(21, 2)",2,0,-
+buf5,topSweepGraph1_1.sweepGraph.orth[0][0].po1,-,144,"(1, 1)",2,0,-
+buf136,topSweepGraph1_3.sweepGraph.orth[0][1].po1,topSweepGraph1_3.sweepGraph.orth[0][2].pi1,144,"(11, 2)",3,0,-
+buf4,topSweepGraph1_1.sweepGraph.orth[0][0].po0,topSweepGraph1_1.sweepGraph.orth[0][1].pi0,144,"(1, 1)",0,160,-
+buf134,topSweepGraph1_3.sweepGraph.orth[0][1].po0,topSweepGraph1_3.sweepGraph.orth[1][2].pi0,144,"(11, 2)",1,0,-
+buf133,topSweepGraph1_3.sweepGraph.orth[1][0].po1,topSweepGraph1_3.sweepGraph.orth[1][1].pi0,144,"(12, 1)",3,0,-
+buf35,topSweepGraph1_3.sp[1].po1,topSweepGraph1_3.sweepGraph.orth[1][0].pi1,144,"(11, 0)",0,0,-
+buf52,topSweepGraph1_4.sweepGraph.orth[0][0].po0,topSweepGraph1_4.sweepGraph.orth[0][1].pi0,144,"(20, 1)",0,0,-
+buf131rr,topSweepGraph1_3.sweepGraph.orth[0][0].po1,-,144,"(13, 1)",1,736,-
+buf26,topSweepGraph1_2.sweepGraph.orth[0][1].po1,topSweepGraph1_2.sweepGraph.orth[0][2].pi1,144,"(6, 2)",2,0,-
+sysmem78,-,-,2080,"(12, 0)",1,160,-
+buf159,topNormGraph1.normGraph.norm[0].po0,topNormGraph1.mg[0].pi0,144,"(0, 1)",2,0,-
+buf44,topSweepGraph1_3.sweepGraph.orth[1][2].po0,topSweepGraph1_3.mg[0].pi0,144,"(12, 3)",0,8032,-
+buf99,topSweepGraph1_1.sweepGraph.orth[0][0].po1,-,144,"(1, 1)",3,0,-
+buf7,topSweepGraph1_1.sweepGraph.orth[1][0].po1,topSweepGraph1_1.sweepGraph.orth[1][1].pi0,144,"(2, 1)",2,0,-
+sysmem72,-,-,2080,"(6, 1)",0,160,-
+buf115,topSweepGraph1_2.sweepGraph.orth[0][0].po1,-,144,"(6, 1)",3,0,-
+sysmem80,-,-,2080,"(11, 2)",0,0,-
+buf114,topSweepGraph1_2.sweepGraph.orth[0][0].po0,topSweepGraph1_2.sweepGraph.orth[0][1].pi0,144,"(6, 1)",1,0,-
+buf135rr,topSweepGraph1_3.sweepGraph.orth[1][1].po1,-,144,"(10, 2)",1,0,-
+sysmem71,-,-,2080,"(6, 0)",0,6112,-
+sysmem79,-,-,2080,"(2, 0)",0,0,-
+buf22,topSweepGraph1_2.sweepGraph.orth[1][0].po0,topSweepGraph1_2.sweepGraph.orth[0][1].pi1,144,"(7, 1)",0,8032,-
+buf23,topSweepGraph1_2.sweepGraph.orth[1][0].po1,topSweepGraph1_2.sweepGraph.orth[1][1].pi0,144,"(7, 1)",2,0,-
+sysmem87,-,-,2080,"(20, 0)",0,0,-
+sysmem82,-,-,2080,"(11, 1)",1,160,-
+buf131,topSweepGraph1_3.sweepGraph.orth[0][0].po1,-,144,"(11, 1)",3,0,-
+buf119rr,topSweepGraph1_2.sweepGraph.orth[1][1].po1,-,144,"(5, 2)",1,0,-
+buf63,topSweepGraph1_4.sweepGraph.orth[1][2].po1,topSweepGraph1_4.mg[1].pi1,144,"(21, 3)",2,0,-
+sysmem93,-,-,2080,"(0, 2)",0,6112,-
+buf32,topSweepGraph1_3.sp[0].po0,topSweepGraph1_3.sweepGraph.orth[0][0].pi0,144,"(10, 0)",2,0,-
+buf127,topSweepGraph1_3.sp[1].po0,topSweepGraph1_3.sweepGraph.orth[0][0].pi1,144,"(10, 0)",1,4256,-
+sysmem81,-,-,2080,"(13, 1)",0,0,-
+sysmem76,-,-,2080,"(1, 2)",0,160,-
+buf9,topSweepGraph1_1.sweepGraph.orth[1][1].po1,-,144,"(2, 2)",2,0,-
+buf36,topSweepGraph1_3.sweepGraph.orth[0][0].po0,topSweepGraph1_3.sweepGraph.orth[0][1].pi0,144,"(11, 1)",0,0,-
+buf104,topSweepGraph1_1.sweepGraph.orth[0][1].po1,topSweepGraph1_1.sweepGraph.orth[0][2].pi1,144,"(1, 2)",3,0,-
+buf59,topSweepGraph1_4.sweepGraph.orth[1][1].po0,topSweepGraph1_4.sweepGraph.orth[1][2].pi1,144,"(21, 2)",0,2080,-
+buf105,topSweepGraph1_1.sweepGraph.orth[1][1].po0,topSweepGraph1_1.sweepGraph.orth[1][2].pi1,144,"(2, 2)",1,0,-
+buf99rr,topSweepGraph1_1.sweepGraph.orth[0][0].po1,-,144,"(3, 1)",1,0,-
+buf156,topSweepGraph1_4.sweepGraph.orth[0][2].po1,topSweepGraph1_4.mg[0].pi1,144,"(20, 3)",3,0,-
+buf20,topSweepGraph1_2.sweepGraph.orth[0][0].po0,topSweepGraph1_2.sweepGraph.orth[0][1].pi0,144,"(6, 1)",0,0,-
+buf25rr,topSweepGraph1_2.sweepGraph.orth[1][1].po1,-,144,"(5, 2)",0,0,-
+buf118,topSweepGraph1_2.sweepGraph.orth[0][1].po0,topSweepGraph1_2.sweepGraph.orth[1][2].pi0,144,"(6, 2)",1,0,-
+buf148,topSweepGraph1_4.sweepGraph.orth[1][0].po0,topSweepGraph1_4.sweepGraph.orth[0][1].pi1,144,"(21, 1)",1,160,-
+sysmem90,-,-,2080,"(20, 2)",0,160,-
+buf6,topSweepGraph1_1.sweepGraph.orth[1][0].po0,topSweepGraph1_1.sweepGraph.orth[0][1].pi1,144,"(2, 1)",0,8032,-
+buf49,topSweepGraph1_4.sp[1].po0,topSweepGraph1_4.sweepGraph.orth[0][0].pi1,144,"(19, 0)",2,0,-
+buf123,topSweepGraph1_2.sweepGraph.orth[0][2].po0,topSweepGraph1_2.mg[1].pi0,144,"(6, 3)",1,0,-
+buf34,topSweepGraph1_3.sp[0].po1,topSweepGraph1_3.sweepGraph.orth[1][0].pi0,144,"(12, 0)",3,0,-
+buf55,topSweepGraph1_4.sweepGraph.orth[1][0].po1,topSweepGraph1_4.sweepGraph.orth[1][1].pi0,144,"(21, 1)",2,0,-
+buf109,topSweepGraph1_1.sweepGraph.orth[1][2].po1,topSweepGraph1_1.mg[1].pi1,144,"(2, 3)",3,0,-
+buf31,topSweepGraph1_2.sweepGraph.orth[1][2].po1,topSweepGraph1_2.mg[1].pi1,144,"(7, 3)",2,0,-
+buf126,topSweepGraph1_3.sp[0].po0,topSweepGraph1_3.sweepGraph.orth[0][0].pi0,144,"(10, 0)",0,8032,-
+buf97,topSweepGraph1_1.sp[1].po1,topSweepGraph1_1.sweepGraph.orth[1][0].pi1,144,"(2, 0)",3,0,-
+buf61,topSweepGraph1_4.sweepGraph.orth[0][2].po0,topSweepGraph1_4.mg[1].pi0,144,"(20, 3)",0,8032,-
+sysmem74,-,-,2080,"(6, 3)",0,0,-
+buf50,topSweepGraph1_4.sp[0].po1,topSweepGraph1_4.sweepGraph.orth[1][0].pi0,144,"(21, 0)",2,0,-
+buf124,topSweepGraph1_2.sweepGraph.orth[0][2].po1,topSweepGraph1_2.mg[0].pi1,144,"(6, 3)",3,0,-
+sysmem86,-,-,2080,"(21, 0)",0,0,-
+buf37,topSweepGraph1_3.sweepGraph.orth[0][0].po1,-,144,"(11, 1)",2,0,-
+buf29,topSweepGraph1_2.sweepGraph.orth[0][2].po0,topSweepGraph1_2.mg[1].pi0,144,"(6, 3)",0,2080,-
+buf122,topSweepGraph1_2.sweepGraph.orth[1][2].po0,topSweepGraph1_2.mg[0].pi0,144,"(7, 3)",1,0,-
+buf138,topSweepGraph1_3.sweepGraph.orth[1][2].po0,topSweepGraph1_3.mg[0].pi0,144,"(12, 3)",1,0,-
+sysmem84,-,-,2080,"(1, 3)",0,6112,-
+buf117,topSweepGraph1_2.sweepGraph.orth[1][0].po1,topSweepGraph1_2.sweepGraph.orth[1][1].pi0,144,"(7, 1)",3,0,-
+buf19,topSweepGraph1_2.sp[1].po1,topSweepGraph1_2.sweepGraph.orth[1][0].pi1,144,"(6, 0)",1,0,-
+buf113,topSweepGraph1_2.sp[1].po1,topSweepGraph1_2.sweepGraph.orth[1][0].pi1,144,"(6, 0)",2,0,-
+buf60,topSweepGraph1_4.sweepGraph.orth[1][2].po0,topSweepGraph1_4.mg[0].pi0,144,"(21, 3)",0,8032,-
+buf106,topSweepGraph1_1.sweepGraph.orth[1][2].po0,topSweepGraph1_1.mg[0].pi0,144,"(2, 3)",1,0,-
+sysmem91,-,-,2080,"(2, 2)",0,160,-
+buf135,topSweepGraph1_3.sweepGraph.orth[1][1].po1,-,144,"(12, 2)",3,0,-
+buf96,topSweepGraph1_1.sp[0].po1,topSweepGraph1_1.sweepGraph.orth[1][0].pi0,144,"(2, 0)",1,0,-
+buf108,topSweepGraph1_1.sweepGraph.orth[0][2].po1,topSweepGraph1_1.mg[0].pi1,144,"(1, 3)",3,0,-
+buf65,topNormGraph1.normGraph.norm[0].po0,topNormGraph1.mg[0].pi0,144,"(0, 1)",3,0,-
+buf129,topSweepGraph1_3.sp[1].po1,topSweepGraph1_3.sweepGraph.orth[1][0].pi1,144,"(11, 0)",1,0,-
+buf119,topSweepGraph1_2.sweepGraph.orth[1][1].po1,-,144,"(7, 2)",3,0,-
+buf112,topSweepGraph1_2.sp[0].po1,topSweepGraph1_2.sweepGraph.orth[1][0].pi0,144,"(7, 0)",0,7872,-
+buf100,topSweepGraph1_1.sweepGraph.orth[1][0].po0,topSweepGraph1_1.sweepGraph.orth[0][1].pi1,144,"(2, 1)",1,0,-
+buf125,topSweepGraph1_2.sweepGraph.orth[1][2].po1,topSweepGraph1_2.mg[1].pi1,144,"(7, 3)",3,0,-
+buf27,topSweepGraph1_2.sweepGraph.orth[1][1].po0,topSweepGraph1_2.sweepGraph.orth[1][2].pi1,144,"(7, 2)",0,0,-
+buf14,topSweepGraph1_1.sweepGraph.orth[0][2].po1,topSweepGraph1_1.mg[0].pi1,144,"(1, 3)",2,0,-
+buf103rr,topSweepGraph1_1.sweepGraph.orth[1][1].po1,-,144,"(1, 3)",1,0,-
+buf41,topSweepGraph1_3.sweepGraph.orth[1][1].po1,-,144,"(12, 2)",2,0,-
+buf9rr,topSweepGraph1_1.sweepGraph.orth[1][1].po1,-,144,"(1, 3)",0,0,-
+sysmem89,-,-,2080,"(19, 2)",0,0,-
+buf137,topSweepGraph1_3.sweepGraph.orth[1][1].po0,topSweepGraph1_3.sweepGraph.orth[1][2].pi1,144,"(12, 2)",1,0,-
+sysmem73,-,-,2080,"(7, 0)",1,160,-
+buf42,topSweepGraph1_3.sweepGraph.orth[0][1].po1,topSweepGraph1_3.sweepGraph.orth[0][2].pi1,144,"(11, 2)",2,0,-
+buf120,topSweepGraph1_2.sweepGraph.orth[0][1].po1,topSweepGraph1_2.sweepGraph.orth[0][2].pi1,144,"(6, 2)",3,0,-
+sysmem83,-,-,2080,"(12, 2)",0,0,-
+buf40,topSweepGraph1_3.sweepGraph.orth[0][1].po0,topSweepGraph1_3.sweepGraph.orth[1][2].pi0,144,"(11, 2)",0,2080,-
+buf139,topSweepGraph1_3.sweepGraph.orth[0][2].po0,topSweepGraph1_3.mg[1].pi0,144,"(11, 3)",1,0,-
+buf38,topSweepGraph1_3.sweepGraph.orth[1][0].po0,topSweepGraph1_3.sweepGraph.orth[0][1].pi1,144,"(12, 1)",0,8032,-
+buf30,topSweepGraph1_2.sweepGraph.orth[0][2].po1,topSweepGraph1_2.mg[0].pi1,144,"(6, 3)",2,0,-
+buf18,topSweepGraph1_2.sp[0].po1,topSweepGraph1_2.sweepGraph.orth[1][0].pi0,144,"(7, 0)",3,0,-
+buf16,topSweepGraph1_2.sp[0].po0,topSweepGraph1_2.sweepGraph.orth[0][0].pi0,144,"(5, 0)",3,0,-
+buf3,topSweepGraph1_1.sp[1].po1,topSweepGraph1_1.sweepGraph.orth[1][0].pi1,144,"(2, 0)",2,0,-
+buf115rr,topSweepGraph1_2.sweepGraph.orth[0][0].po1,-,144,"(8, 1)",1,0,-
+buf5rr,topSweepGraph1_1.sweepGraph.orth[0][0].po1,-,144,"(3, 1)",0,0,-
+buf157,topSweepGraph1_4.sweepGraph.orth[1][2].po1,topSweepGraph1_4.mg[1].pi1,144,"(21, 3)",3,0,-
+buf111,topSweepGraph1_2.sp[1].po0,topSweepGraph1_2.sweepGraph.orth[0][0].pi1,144,"(5, 0)",2,0,-
+buf17,topSweepGraph1_2.sp[1].po0,topSweepGraph1_2.sweepGraph.orth[0][0].pi1,144,"(5, 0)",1,0,-
+sysmem70,-,-,2080,"(5, 0)",1,160,-
+buf110,topSweepGraph1_2.sp[0].po0,topSweepGraph1_2.sweepGraph.orth[0][0].pi0,144,"(5, 0)",0,7872,-
+buf95,topSweepGraph1_1.sp[1].po0,topSweepGraph1_1.sweepGraph.orth[0][0].pi1,144,"(1, 0)",1,4256,-
+sysmem92,-,-,2080,"(0, 0)",1,0,-
+buf2,topSweepGraph1_1.sp[0].po1,topSweepGraph1_1.sweepGraph.orth[1][0].pi0,144,"(2, 0)",0,2080,-
+sysmem75,-,-,2080,"(7, 2)",0,160,-
+buf33,topSweepGraph1_3.sp[1].po0,topSweepGraph1_3.sweepGraph.orth[0][0].pi1,144,"(10, 0)",3,0,-
+buf11,topSweepGraph1_1.sweepGraph.orth[1][1].po0,topSweepGraph1_1.sweepGraph.orth[1][2].pi1,144,"(2, 2)",0,0,-
+buf160,topNormGraph1.sp[0].po1,topNormGraph1.normGraph.norm[1].pi0,144,"(0, 1)",2,8032,-
+sysmem77,-,-,2080,"(11, 1)",0,160,-
+buf1,topSweepGraph1_1.sp[1].po0,topSweepGraph1_1.sweepGraph.orth[0][0].pi1,144,"(1, 0)",3,0,-
+buf98,topSweepGraph1_1.sweepGraph.orth[0][0].po0,topSweepGraph1_1.sweepGraph.orth[0][1].pi0,144,"(1, 1)",1,160,-
+buf12,topSweepGraph1_1.sweepGraph.orth[1][2].po0,topSweepGraph1_1.mg[0].pi0,144,"(2, 3)",0,8032,-
+buf141,topSweepGraph1_3.sweepGraph.orth[1][2].po1,topSweepGraph1_3.mg[1].pi1,144,"(12, 3)",3,0,-
+sysmem69,-,-,2080,"(2, 0)",3,160,-
+buf102,topSweepGraph1_1.sweepGraph.orth[0][1].po0,topSweepGraph1_1.sweepGraph.orth[1][2].pi0,144,"(1, 2)",1,0,-
+buf140,topSweepGraph1_3.sweepGraph.orth[0][2].po1,topSweepGraph1_3.mg[0].pi1,144,"(11, 3)",3,0,-
+buf15,topSweepGraph1_1.sweepGraph.orth[1][2].po1,topSweepGraph1_1.mg[1].pi1,144,"(2, 3)",2,0,-
+buf21rr,topSweepGraph1_2.sweepGraph.orth[0][0].po1,-,144,"(8, 1)",0,0,-
+buf146,topSweepGraph1_4.sweepGraph.orth[0][0].po0,topSweepGraph1_4.sweepGraph.orth[0][1].pi0,144,"(20, 1)",1,0,-
+buf51,topSweepGraph1_4.sp[1].po1,topSweepGraph1_4.sweepGraph.orth[1][0].pi1,144,"(20, 0)",1,0,-
+buf8,topSweepGraph1_1.sweepGraph.orth[0][1].po0,topSweepGraph1_1.sweepGraph.orth[1][2].pi0,144,"(1, 2)",0,0,-
+buf25,topSweepGraph1_2.sweepGraph.orth[1][1].po1,-,144,"(7, 2)",2,0,-
+buf24,topSweepGraph1_2.sweepGraph.orth[0][1].po0,topSweepGraph1_2.sweepGraph.orth[1][2].pi0,144,"(6, 2)",0,8032,-
+buf21,topSweepGraph1_2.sweepGraph.orth[0][0].po1,-,144,"(6, 1)",2,0,-
+buf41rr,topSweepGraph1_3.sweepGraph.orth[1][1].po1,-,144,"(10, 2)",0,0,-
+buf37rr,topSweepGraph1_3.sweepGraph.orth[0][0].po1,-,144,"(13, 1)",2,0,-
+buf128,topSweepGraph1_3.sp[0].po1,topSweepGraph1_3.sweepGraph.orth[1][0].pi0,144,"(12, 0)",0,7872,-
+buf66,topNormGraph1.sp[0].po1,topNormGraph1.normGraph.norm[1].pi0,144,"(0, 1)",0,0,-
+buf43,topSweepGraph1_3.sweepGraph.orth[1][1].po0,topSweepGraph1_3.sweepGraph.orth[1][2].pi1,144,"(12, 2)",0,2080,-
+buf39,topSweepGraph1_3.sweepGraph.orth[1][0].po1,topSweepGraph1_3.sweepGraph.orth[1][1].pi0,144,"(12, 1)",2,0,-
+buf130,topSweepGraph1_3.sweepGraph.orth[0][0].po0,topSweepGraph1_3.sweepGraph.orth[0][1].pi0,144,"(11, 1)",1,0,-
+buf48,topSweepGraph1_4.sp[0].po0,topSweepGraph1_4.sweepGraph.orth[0][0].pi0,144,"(19, 0)",3,0,-
+buf67,topNormGraph1.normGraph.norm[1].po0,topNormGraph1.mg[0].pi1,144,"(0, 2)",1,0,-
+buf45,topSweepGraph1_3.sweepGraph.orth[0][2].po0,topSweepGraph1_3.mg[1].pi0,144,"(11, 3)",0,8032,-
+buf0,topSweepGraph1_1.sp[0].po0,topSweepGraph1_1.sweepGraph.orth[0][0].pi0,144,"(1, 0)",2,0,-
+buf101,topSweepGraph1_1.sweepGraph.orth[1][0].po1,topSweepGraph1_1.sweepGraph.orth[1][1].pi0,144,"(2, 1)",3,0,-
+buf46,topSweepGraph1_3.sweepGraph.orth[0][2].po1,topSweepGraph1_3.mg[0].pi1,144,"(11, 3)",2,0,-
+sysmem68,-,-,2080,"(0, 0)",0,0,-
+buf28,topSweepGraph1_2.sweepGraph.orth[1][2].po0,topSweepGraph1_2.mg[0].pi0,144,"(7, 3)",0,8032,-
+buf47,topSweepGraph1_3.sweepGraph.orth[1][2].po1,topSweepGraph1_3.mg[1].pi1,144,"(12, 3)",2,0,-
+buf64,topNormGraph1.sp[0].po0,topNormGraph1.normGraph.norm[0].pi0,144,"(0, 0)",2,0,-
+buf116,topSweepGraph1_2.sweepGraph.orth[1][0].po0,topSweepGraph1_2.sweepGraph.orth[0][1].pi1,144,"(7, 1)",1,0,-
+buf94,topSweepGraph1_1.sp[0].po0,topSweepGraph1_1.sweepGraph.orth[0][0].pi0,144,"(1, 0)",0,8032,-
+buf158,topNormGraph1.sp[0].po0,topNormGraph1.normGraph.norm[0].pi0,144,"(0, 0)",3,0,-
+buf13,topSweepGraph1_1.sweepGraph.orth[0][2].po0,topSweepGraph1_1.mg[1].pi0,144,"(1, 3)",0,320,-
+buf132,topSweepGraph1_3.sweepGraph.orth[1][0].po0,topSweepGraph1_3.sweepGraph.orth[0][1].pi1,144,"(12, 1)",1,0,-
+buf103,topSweepGraph1_1.sweepGraph.orth[1][1].po1,-,144,"(2, 2)",3,0,-
+buf161,topNormGraph1.normGraph.norm[1].po0,topNormGraph1.mg[0].pi1,144,"(0, 2)",2,0,-
+buf107,topSweepGraph1_1.sweepGraph.orth[0][2].po0,topSweepGraph1_1.mg[1].pi0,144,"(1, 3)",1,160,-
+buf147rr,topSweepGraph1_4.sweepGraph.orth[0][0].po1,-,144,"(22, 1)",1,0,-
+buf10,topSweepGraph1_1.sweepGraph.orth[0][1].po1,topSweepGraph1_1.sweepGraph.orth[0][2].pi1,144,"(1, 2)",2,0,-
+buf121,topSweepGraph1_2.sweepGraph.orth[1][1].po0,topSweepGraph1_2.sweepGraph.orth[1][2].pi1,144,"(7, 2)",1,0,-
+
+
+PLIO,IN/OUT,TILE_COLUMN,CHANNEL
+1_4_sweep_in_1,in,21,0
+1_4_sweep_in_0,in,21,4
+1_4_sweep_out_1,out,20,0
+1_4_sweep_out_0,out,21,0
+1_3_sweep_out_1,out,12,4
+1_3_sweep_out_0,out,12,2
+1_1_sweep_in_1,in,6,0
+1_1_sweep_in_0,in,8,0
+1_norm_in_0,in,6,4
+1_2_sweep_in_1,in,7,0
+1_2_sweep_out_1,out,8,0
+1_norm_out_0,out,7,4
+1_2_sweep_out_0,out,7,2
+1_3_sweep_in_1,in,11,4
+1_1_sweep_out_0,out,6,2
+1_1_sweep_out_1,out,6,4
+1_2_sweep_in_0,in,7,4
+1_3_sweep_in_0,in,11,0
+
+
+CLUSTER,KERNELS,TILE
+PT17,"topSweepGraph1_4.sweepGraph.orth[0][0],","(20, 0)"
+PT20,"topSweepGraph1_4.sweepGraph.orth[1][1],","(21, 1)"
+PT22,"topSweepGraph1_4.sweepGraph.orth[1][2],","(21, 2)"
+PT9,"topSweepGraph1_3.sweepGraph.orth[0][0],","(11, 0)"
+PT13,"topSweepGraph1_3.sweepGraph.orth[1][1],","(12, 1)"
+PT6,"topSweepGraph1_2.sweepGraph.orth[0][2],","(6, 2)"
+PT7,"topSweepGraph1_2.sweepGraph.orth[1][2],","(7, 2)"
+PT16,"topSweepGraph1_1.sweepGraph.orth[0][2],","(1, 2)"
+PT4,"topSweepGraph1_2.sweepGraph.orth[0][1],","(6, 1)"
+PT19,"topSweepGraph1_4.sweepGraph.orth[0][1],","(20, 1)"
+PT5,"topSweepGraph1_2.sweepGraph.orth[1][1],","(7, 1)"
+PT12,"topSweepGraph1_3.sweepGraph.orth[0][1],","(11, 1)"
+PT2,"topSweepGraph1_2.sweepGraph.orth[0][0],","(6, 0)"
+PT25,"topNormGraph1.normGraph.norm[1],","(0, 1)"
+PT15,"topSweepGraph1_3.sweepGraph.orth[1][2],","(12, 2)"
+PT10,"topSweepGraph1_3.sweepGraph.orth[1][0],","(12, 0)"
+PT24,"topNormGraph1.normGraph.norm[0],","(0, 0)"
+PT0,"topSweepGraph1_1.sweepGraph.orth[0][0],","(1, 0)"
+PT1,"topSweepGraph1_1.sweepGraph.orth[1][0],","(2, 0)"
+PT21,"topSweepGraph1_4.sweepGraph.orth[0][2],","(20, 2)"
+PT8,"topSweepGraph1_1.sweepGraph.orth[0][1],","(1, 1)"
+PT11,"topSweepGraph1_1.sweepGraph.orth[1][1],","(2, 1)"
+PT18,"topSweepGraph1_4.sweepGraph.orth[1][0],","(21, 0)"
+PT3,"topSweepGraph1_2.sweepGraph.orth[1][0],","(7, 0)"
+PT14,"topSweepGraph1_3.sweepGraph.orth[0][2],","(11, 2)"
+PT23,"topSweepGraph1_1.sweepGraph.orth[1][2],","(2, 2)"

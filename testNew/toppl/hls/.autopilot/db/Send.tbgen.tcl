@@ -125,43 +125,43 @@ set portList {
 	{ syscontrol_0_empty_n sc_in sc_logic 1 signal 0 } 
 	{ syscontrol_0_read sc_out sc_logic 1 signal 0 } 
 	{ send_fifo_L_0_dout sc_in sc_lv 128 signal 1 } 
-	{ send_fifo_L_0_num_data_valid sc_in sc_lv 6 signal 1 } 
-	{ send_fifo_L_0_fifo_cap sc_in sc_lv 6 signal 1 } 
+	{ send_fifo_L_0_num_data_valid sc_in sc_lv 10 signal 1 } 
+	{ send_fifo_L_0_fifo_cap sc_in sc_lv 10 signal 1 } 
 	{ send_fifo_L_0_empty_n sc_in sc_logic 1 signal 1 } 
 	{ send_fifo_L_0_read sc_out sc_logic 1 signal 1 } 
 	{ send_fifo_L_1_dout sc_in sc_lv 128 signal 2 } 
-	{ send_fifo_L_1_num_data_valid sc_in sc_lv 6 signal 2 } 
-	{ send_fifo_L_1_fifo_cap sc_in sc_lv 6 signal 2 } 
+	{ send_fifo_L_1_num_data_valid sc_in sc_lv 10 signal 2 } 
+	{ send_fifo_L_1_fifo_cap sc_in sc_lv 10 signal 2 } 
 	{ send_fifo_L_1_empty_n sc_in sc_logic 1 signal 2 } 
 	{ send_fifo_L_1_read sc_out sc_logic 1 signal 2 } 
 	{ send_fifo_L_2_dout sc_in sc_lv 128 signal 3 } 
-	{ send_fifo_L_2_num_data_valid sc_in sc_lv 6 signal 3 } 
-	{ send_fifo_L_2_fifo_cap sc_in sc_lv 6 signal 3 } 
+	{ send_fifo_L_2_num_data_valid sc_in sc_lv 10 signal 3 } 
+	{ send_fifo_L_2_fifo_cap sc_in sc_lv 10 signal 3 } 
 	{ send_fifo_L_2_empty_n sc_in sc_logic 1 signal 3 } 
 	{ send_fifo_L_2_read sc_out sc_logic 1 signal 3 } 
 	{ send_fifo_L_3_dout sc_in sc_lv 128 signal 4 } 
-	{ send_fifo_L_3_num_data_valid sc_in sc_lv 6 signal 4 } 
-	{ send_fifo_L_3_fifo_cap sc_in sc_lv 6 signal 4 } 
+	{ send_fifo_L_3_num_data_valid sc_in sc_lv 10 signal 4 } 
+	{ send_fifo_L_3_fifo_cap sc_in sc_lv 10 signal 4 } 
 	{ send_fifo_L_3_empty_n sc_in sc_logic 1 signal 4 } 
 	{ send_fifo_L_3_read sc_out sc_logic 1 signal 4 } 
 	{ send_fifo_R_0_dout sc_in sc_lv 128 signal 5 } 
-	{ send_fifo_R_0_num_data_valid sc_in sc_lv 6 signal 5 } 
-	{ send_fifo_R_0_fifo_cap sc_in sc_lv 6 signal 5 } 
+	{ send_fifo_R_0_num_data_valid sc_in sc_lv 10 signal 5 } 
+	{ send_fifo_R_0_fifo_cap sc_in sc_lv 10 signal 5 } 
 	{ send_fifo_R_0_empty_n sc_in sc_logic 1 signal 5 } 
 	{ send_fifo_R_0_read sc_out sc_logic 1 signal 5 } 
 	{ send_fifo_R_1_dout sc_in sc_lv 128 signal 6 } 
-	{ send_fifo_R_1_num_data_valid sc_in sc_lv 6 signal 6 } 
-	{ send_fifo_R_1_fifo_cap sc_in sc_lv 6 signal 6 } 
+	{ send_fifo_R_1_num_data_valid sc_in sc_lv 10 signal 6 } 
+	{ send_fifo_R_1_fifo_cap sc_in sc_lv 10 signal 6 } 
 	{ send_fifo_R_1_empty_n sc_in sc_logic 1 signal 6 } 
 	{ send_fifo_R_1_read sc_out sc_logic 1 signal 6 } 
 	{ send_fifo_R_2_dout sc_in sc_lv 128 signal 7 } 
-	{ send_fifo_R_2_num_data_valid sc_in sc_lv 6 signal 7 } 
-	{ send_fifo_R_2_fifo_cap sc_in sc_lv 6 signal 7 } 
+	{ send_fifo_R_2_num_data_valid sc_in sc_lv 10 signal 7 } 
+	{ send_fifo_R_2_fifo_cap sc_in sc_lv 10 signal 7 } 
 	{ send_fifo_R_2_empty_n sc_in sc_logic 1 signal 7 } 
 	{ send_fifo_R_2_read sc_out sc_logic 1 signal 7 } 
 	{ send_fifo_R_3_dout sc_in sc_lv 128 signal 8 } 
-	{ send_fifo_R_3_num_data_valid sc_in sc_lv 6 signal 8 } 
-	{ send_fifo_R_3_fifo_cap sc_in sc_lv 6 signal 8 } 
+	{ send_fifo_R_3_num_data_valid sc_in sc_lv 10 signal 8 } 
+	{ send_fifo_R_3_fifo_cap sc_in sc_lv 10 signal 8 } 
 	{ send_fifo_R_3_empty_n sc_in sc_logic 1 signal 8 } 
 	{ send_fifo_R_3_read sc_out sc_logic 1 signal 8 } 
 	{ sweep_tx1_0_TDATA sc_out sc_lv 128 signal 9 } 
@@ -233,43 +233,43 @@ set NewPortList {[
  	{ "name": "syscontrol_0_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "syscontrol_0", "role": "empty_n" }} , 
  	{ "name": "syscontrol_0_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "syscontrol_0", "role": "read" }} , 
  	{ "name": "send_fifo_L_0_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "dout" }} , 
- 	{ "name": "send_fifo_L_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_0_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "empty_n" }} , 
  	{ "name": "send_fifo_L_0_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "read" }} , 
  	{ "name": "send_fifo_L_1_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "dout" }} , 
- 	{ "name": "send_fifo_L_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_1_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "empty_n" }} , 
  	{ "name": "send_fifo_L_1_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_1", "role": "read" }} , 
  	{ "name": "send_fifo_L_2_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "dout" }} , 
- 	{ "name": "send_fifo_L_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_2_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "empty_n" }} , 
  	{ "name": "send_fifo_L_2_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_2", "role": "read" }} , 
  	{ "name": "send_fifo_L_3_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "dout" }} , 
- 	{ "name": "send_fifo_L_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_3_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "empty_n" }} , 
  	{ "name": "send_fifo_L_3_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_3", "role": "read" }} , 
  	{ "name": "send_fifo_R_0_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "dout" }} , 
- 	{ "name": "send_fifo_R_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_0_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "empty_n" }} , 
  	{ "name": "send_fifo_R_0_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_0", "role": "read" }} , 
  	{ "name": "send_fifo_R_1_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "dout" }} , 
- 	{ "name": "send_fifo_R_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_1_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_1_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_1_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "empty_n" }} , 
  	{ "name": "send_fifo_R_1_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_1", "role": "read" }} , 
  	{ "name": "send_fifo_R_2_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "dout" }} , 
- 	{ "name": "send_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_2_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_2_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_2_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "empty_n" }} , 
  	{ "name": "send_fifo_R_2_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_2", "role": "read" }} , 
  	{ "name": "send_fifo_R_3_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "dout" }} , 
- 	{ "name": "send_fifo_R_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_R_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_R_3_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_R_3_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_R_3_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "empty_n" }} , 
  	{ "name": "send_fifo_R_3_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_R_3", "role": "read" }} , 
  	{ "name": "sweep_tx1_0_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "sweep_tx1_0_V_data_V", "role": "default" }} , 
@@ -346,158 +346,158 @@ set RtlHierarchyInfo {[
 			{"Name" : "syscontrol_0", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "4", "DependentChanType" : "0",
 				"BlockSignal" : [
 					{"Name" : "syscontrol_0_blk_n", "Type" : "RtlSignal"}]},
-			{"Name" : "send_fifo_L_0", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+			{"Name" : "send_fifo_L_0", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_L_0", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
-			{"Name" : "send_fifo_L_1", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_L_0", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+			{"Name" : "send_fifo_L_1", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_L_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
-			{"Name" : "send_fifo_L_2", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_L_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+			{"Name" : "send_fifo_L_2", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_L_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
-			{"Name" : "send_fifo_L_3", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_L_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+			{"Name" : "send_fifo_L_3", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_L_3", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
-			{"Name" : "send_fifo_R_0", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_L_3", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+			{"Name" : "send_fifo_R_0", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_R_0", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
-			{"Name" : "send_fifo_R_1", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_R_0", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+			{"Name" : "send_fifo_R_1", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_R_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
-			{"Name" : "send_fifo_R_2", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_R_1", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+			{"Name" : "send_fifo_R_2", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_R_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
-			{"Name" : "send_fifo_R_3", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "32", "DependentChanType" : "0",
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_R_2", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+			{"Name" : "send_fifo_R_3", "Type" : "Fifo", "Direction" : "I", "DependentProc" : ["0"], "DependentChan" : "0", "DependentChanDepth" : "512", "DependentChanType" : "0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "send_fifo_R_3", "Inst_start_state" : "2", "Inst_end_state" : "3"},
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "send_fifo_R_3", "Inst_start_state" : "2", "Inst_end_state" : "3"},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "send_fifo_L_0", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
 			{"Name" : "sweep_tx1_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx1_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx1_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx1_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx1_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx1_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx1_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx1_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx1_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx1_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx2_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx2_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx2_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx3_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx3_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx3_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_0_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_0_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_0_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_0_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_1_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_1_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_1_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "sweep_tx4_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_168", "Port" : "sweep_tx4_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "1", "SubInstance" : "grp_dataflow_parent_loop_proc_fu_166", "Port" : "sweep_tx4_1_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "norm_tx0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"SubConnect" : [
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "norm_tx0_V_data_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "norm_tx0_V_data_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
 			{"Name" : "norm_tx0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"SubConnect" : [
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "norm_tx0_V_keep_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "norm_tx0_V_keep_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
 			{"Name" : "norm_tx0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"SubConnect" : [
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "norm_tx0_V_strb_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "norm_tx0_V_strb_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]},
 			{"Name" : "norm_tx0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"SubConnect" : [
-					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_252", "Port" : "norm_tx0_V_last_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]}],
+					{"ID" : "35", "SubInstance" : "grp_send2AIE_15_fu_250", "Port" : "norm_tx0_V_last_V", "Inst_start_state" : "18", "Inst_end_state" : "19"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_232_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "20", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state3"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state4"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
 			{"Name" : "VITIS_LOOP_253_3", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "20", "FirstState" : "ap_ST_fsm_state4", "LastState" : ["ap_ST_fsm_state19"], "QuitState" : ["ap_ST_fsm_state4"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state20"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168", "Parent" : "0", "Child" : ["2"],
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166", "Parent" : "0", "Child" : ["2"],
 		"CDFG" : "dataflow_parent_loop_proc",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "991", "EstimateLatencyMax" : "991",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "144649", "EstimateLatencyMax" : "144649",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -633,13 +633,13 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_235_2", "PipelineType" : "dataflow",
 				"LoopDec" : {"InfiniteLoop" : "0", "BodyInst" : "dataflow_in_loop_VITIS_LOOP_235_2_U0", "has_continue" : "1"}}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0", "Parent" : "1", "Child" : ["3", "7", "11", "15", "19", "23", "27", "31"],
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0", "Parent" : "1", "Child" : ["3", "7", "11", "15", "19", "23", "27", "31"],
 		"CDFG" : "dataflow_in_loop_VITIS_LOOP_235_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -786,13 +786,13 @@ set RtlHierarchyInfo {[
 			{"Name" : "sweep_tx4_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
 					{"ID" : "31", "SubInstance" : "send2AIE_14_U0", "Port" : "sweep_tx4_1_V_last_V"}]}]},
-	{"ID" : "3", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0", "Parent" : "2", "Child" : ["4", "5"],
+	{"ID" : "3", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0", "Parent" : "2", "Child" : ["4", "5"],
 		"CDFG" : "send2AIE",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -805,32 +805,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_L_0_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_L_0", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_L_0", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx1_0_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_0",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "5", "SubInstance" : "grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "4", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0.data_temp_U", "Parent" : "3"},
-	{"ID" : "5", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0.grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "3", "Child" : ["6"],
+	{"ID" : "4", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0.data_temp_U", "Parent" : "3"},
+	{"ID" : "5", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0.grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "3", "Child" : ["6"],
 		"CDFG" : "send2AIE_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -852,14 +852,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "6", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0.grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
-	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0", "Parent" : "2", "Child" : ["8", "9"],
+	{"ID" : "6", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_U0.grp_send2AIE_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
+	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0", "Parent" : "2", "Child" : ["8", "9"],
 		"CDFG" : "send2AIE_8",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -872,32 +872,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_R_0_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_R_0", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_R_0", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx1_1_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx1_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx1_1",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx1_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "9", "SubInstance" : "grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx1_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "8", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0.data_temp_U", "Parent" : "7"},
-	{"ID" : "9", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0.grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "7", "Child" : ["10"],
+	{"ID" : "8", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0.data_temp_U", "Parent" : "7"},
+	{"ID" : "9", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0.grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "7", "Child" : ["10"],
 		"CDFG" : "send2AIE_8_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -919,14 +919,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "10", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0.grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "9"},
-	{"ID" : "11", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0", "Parent" : "2", "Child" : ["12", "13"],
+	{"ID" : "10", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_8_U0.grp_send2AIE_8_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "9"},
+	{"ID" : "11", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0", "Parent" : "2", "Child" : ["12", "13"],
 		"CDFG" : "send2AIE_9",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -939,32 +939,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_L_1_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_L_1", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_L_1", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx2_0_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_0",
 				"SubConnect" : [
-					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "13", "SubInstance" : "grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "12", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0.data_temp_U", "Parent" : "11"},
-	{"ID" : "13", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0.grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "11", "Child" : ["14"],
+	{"ID" : "12", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0.data_temp_U", "Parent" : "11"},
+	{"ID" : "13", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0.grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "11", "Child" : ["14"],
 		"CDFG" : "send2AIE_9_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -986,14 +986,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "14", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0.grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "13"},
-	{"ID" : "15", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0", "Parent" : "2", "Child" : ["16", "17"],
+	{"ID" : "14", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_9_U0.grp_send2AIE_9_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "13"},
+	{"ID" : "15", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0", "Parent" : "2", "Child" : ["16", "17"],
 		"CDFG" : "send2AIE_10",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1006,32 +1006,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_R_1_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_R_1", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_R_1", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx2_1_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"SubConnect" : [
-					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"SubConnect" : [
-					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx2_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx2_1",
 				"SubConnect" : [
-					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx2_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "17", "SubInstance" : "grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx2_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "16", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0.data_temp_U", "Parent" : "15"},
-	{"ID" : "17", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0.grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "15", "Child" : ["18"],
+	{"ID" : "16", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0.data_temp_U", "Parent" : "15"},
+	{"ID" : "17", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0.grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "15", "Child" : ["18"],
 		"CDFG" : "send2AIE_10_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1053,14 +1053,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "18", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0.grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "17"},
-	{"ID" : "19", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0", "Parent" : "2", "Child" : ["20", "21"],
+	{"ID" : "18", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_10_U0.grp_send2AIE_10_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "17"},
+	{"ID" : "19", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0", "Parent" : "2", "Child" : ["20", "21"],
 		"CDFG" : "send2AIE_11",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1073,32 +1073,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_L_2_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_L_2", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_L_2", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx3_0_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"SubConnect" : [
-					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"SubConnect" : [
-					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_0",
 				"SubConnect" : [
-					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "21", "SubInstance" : "grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "20", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0.data_temp_U", "Parent" : "19"},
-	{"ID" : "21", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0.grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "19", "Child" : ["22"],
+	{"ID" : "20", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0.data_temp_U", "Parent" : "19"},
+	{"ID" : "21", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0.grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "19", "Child" : ["22"],
 		"CDFG" : "send2AIE_11_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1120,14 +1120,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "22", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0.grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "21"},
-	{"ID" : "23", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0", "Parent" : "2", "Child" : ["24", "25"],
+	{"ID" : "22", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_11_U0.grp_send2AIE_11_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "21"},
+	{"ID" : "23", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0", "Parent" : "2", "Child" : ["24", "25"],
 		"CDFG" : "send2AIE_12",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1140,32 +1140,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_R_2_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_R_2", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_R_2", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx3_1_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"SubConnect" : [
-					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"SubConnect" : [
-					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx3_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx3_1",
 				"SubConnect" : [
-					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx3_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "25", "SubInstance" : "grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx3_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "24", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0.data_temp_U", "Parent" : "23"},
-	{"ID" : "25", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0.grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "23", "Child" : ["26"],
+	{"ID" : "24", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0.data_temp_U", "Parent" : "23"},
+	{"ID" : "25", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0.grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "23", "Child" : ["26"],
 		"CDFG" : "send2AIE_12_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1187,14 +1187,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "26", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0.grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "25"},
-	{"ID" : "27", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0", "Parent" : "2", "Child" : ["28", "29"],
+	{"ID" : "26", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_12_U0.grp_send2AIE_12_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "25"},
+	{"ID" : "27", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0", "Parent" : "2", "Child" : ["28", "29"],
 		"CDFG" : "send2AIE_13",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1207,32 +1207,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_L_3_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_L_3", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_L_3", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx4_0_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"SubConnect" : [
-					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"SubConnect" : [
-					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_0",
 				"SubConnect" : [
-					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "29", "SubInstance" : "grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "28", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0.data_temp_U", "Parent" : "27"},
-	{"ID" : "29", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0.grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "27", "Child" : ["30"],
+	{"ID" : "28", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0.data_temp_U", "Parent" : "27"},
+	{"ID" : "29", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0.grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "27", "Child" : ["30"],
 		"CDFG" : "send2AIE_13_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1254,14 +1254,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "30", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0.grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "29"},
-	{"ID" : "31", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0", "Parent" : "2", "Child" : ["32", "33"],
+	{"ID" : "30", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_13_U0.grp_send2AIE_13_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "29"},
+	{"ID" : "31", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0", "Parent" : "2", "Child" : ["32", "33"],
 		"CDFG" : "send2AIE_14",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1274,32 +1274,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_R_3_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_R_3", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_R_3", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_1_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"BlockSignal" : [
 					{"Name" : "sweep_tx4_1_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_1_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_1_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
-					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_1_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_1_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
-					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_1_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "sweep_tx4_1_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "sweep_tx4_1",
 				"SubConnect" : [
-					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "sweep_tx4_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "33", "SubInstance" : "grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "sweep_tx4_1_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "32", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0.data_temp_U", "Parent" : "31"},
-	{"ID" : "33", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0.grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "31", "Child" : ["34"],
+	{"ID" : "32", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0.data_temp_U", "Parent" : "31"},
+	{"ID" : "33", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0.grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "31", "Child" : ["34"],
 		"CDFG" : "send2AIE_14_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1321,14 +1321,14 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "34", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_168.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0.grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "33"},
-	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_252", "Parent" : "0", "Child" : ["36", "37"],
+	{"ID" : "34", "Level" : "5", "Path" : "`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc_fu_166.dataflow_in_loop_VITIS_LOOP_235_2_U0.send2AIE_14_U0.grp_send2AIE_14_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "33"},
+	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_250", "Parent" : "0", "Child" : ["36", "37"],
 		"CDFG" : "send2AIE_15",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "32", "EstimateLatencyMax" : "32",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "286", "EstimateLatencyMax" : "286",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1341,32 +1341,32 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "send_fifo_L_0_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "send_fifo_L_0", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "send_fifo_L_0", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "norm_tx0_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"BlockSignal" : [
 					{"Name" : "norm_tx0_TDATA_blk_n", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "norm_tx0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "norm_tx0_V_data_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "norm_tx0_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"SubConnect" : [
-					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "norm_tx0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "norm_tx0_V_keep_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "norm_tx0_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"SubConnect" : [
-					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "norm_tx0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
+					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "norm_tx0_V_strb_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]},
 			{"Name" : "norm_tx0_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "norm_tx0",
 				"SubConnect" : [
-					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_145", "Port" : "norm_tx0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
+					{"ID" : "37", "SubInstance" : "grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_147", "Port" : "norm_tx0_V_last_V", "Inst_start_state" : "3", "Inst_end_state" : "4"}]}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_102_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "7", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state7"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "36", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_252.data_temp_U", "Parent" : "35"},
-	{"ID" : "37", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_252.grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_145", "Parent" : "35", "Child" : ["38"],
+	{"ID" : "36", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_250.data_temp_U", "Parent" : "35"},
+	{"ID" : "37", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_250.grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_147", "Parent" : "35", "Child" : ["38"],
 		"CDFG" : "send2AIE_15_Pipeline_VITIS_LOOP_112_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "66", "EstimateLatencyMax" : "66",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1388,7 +1388,7 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_112_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "38", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_252.grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_145.flow_control_loop_pipe_sequential_init_U", "Parent" : "37"},
+	{"ID" : "38", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_send2AIE_15_fu_250.grp_send2AIE_15_Pipeline_VITIS_LOOP_112_2_fu_147.flow_control_loop_pipe_sequential_init_U", "Parent" : "37"},
 	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_sweep_tx1_0_V_data_V_U", "Parent" : "0"},
 	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_sweep_tx1_0_V_keep_V_U", "Parent" : "0"},
 	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_sweep_tx1_0_V_strb_V_U", "Parent" : "0"},
@@ -1686,14 +1686,14 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	syscontrol_0 { ap_fifo {  { syscontrol_0_dout fifo_data_in 0 1 }  { syscontrol_0_num_data_valid fifo_status_num_data_valid 0 3 }  { syscontrol_0_fifo_cap fifo_update 0 3 }  { syscontrol_0_empty_n fifo_status 0 1 }  { syscontrol_0_read fifo_port_we 1 1 } } }
-	send_fifo_L_0 { ap_fifo {  { send_fifo_L_0_dout fifo_data_in 0 128 }  { send_fifo_L_0_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_0_fifo_cap fifo_update 0 6 }  { send_fifo_L_0_empty_n fifo_status 0 1 }  { send_fifo_L_0_read fifo_port_we 1 1 } } }
-	send_fifo_L_1 { ap_fifo {  { send_fifo_L_1_dout fifo_data_in 0 128 }  { send_fifo_L_1_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_1_fifo_cap fifo_update 0 6 }  { send_fifo_L_1_empty_n fifo_status 0 1 }  { send_fifo_L_1_read fifo_port_we 1 1 } } }
-	send_fifo_L_2 { ap_fifo {  { send_fifo_L_2_dout fifo_data_in 0 128 }  { send_fifo_L_2_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_2_fifo_cap fifo_update 0 6 }  { send_fifo_L_2_empty_n fifo_status 0 1 }  { send_fifo_L_2_read fifo_port_we 1 1 } } }
-	send_fifo_L_3 { ap_fifo {  { send_fifo_L_3_dout fifo_data_in 0 128 }  { send_fifo_L_3_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_3_fifo_cap fifo_update 0 6 }  { send_fifo_L_3_empty_n fifo_status 0 1 }  { send_fifo_L_3_read fifo_port_we 1 1 } } }
-	send_fifo_R_0 { ap_fifo {  { send_fifo_R_0_dout fifo_data_in 0 128 }  { send_fifo_R_0_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_0_fifo_cap fifo_update 0 6 }  { send_fifo_R_0_empty_n fifo_status 0 1 }  { send_fifo_R_0_read fifo_port_we 1 1 } } }
-	send_fifo_R_1 { ap_fifo {  { send_fifo_R_1_dout fifo_data_in 0 128 }  { send_fifo_R_1_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_1_fifo_cap fifo_update 0 6 }  { send_fifo_R_1_empty_n fifo_status 0 1 }  { send_fifo_R_1_read fifo_port_we 1 1 } } }
-	send_fifo_R_2 { ap_fifo {  { send_fifo_R_2_dout fifo_data_in 0 128 }  { send_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_2_fifo_cap fifo_update 0 6 }  { send_fifo_R_2_empty_n fifo_status 0 1 }  { send_fifo_R_2_read fifo_port_we 1 1 } } }
-	send_fifo_R_3 { ap_fifo {  { send_fifo_R_3_dout fifo_data_in 0 128 }  { send_fifo_R_3_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_R_3_fifo_cap fifo_update 0 6 }  { send_fifo_R_3_empty_n fifo_status 0 1 }  { send_fifo_R_3_read fifo_port_we 1 1 } } }
+	send_fifo_L_0 { ap_fifo {  { send_fifo_L_0_dout fifo_data_in 0 128 }  { send_fifo_L_0_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_0_fifo_cap fifo_update 0 10 }  { send_fifo_L_0_empty_n fifo_status 0 1 }  { send_fifo_L_0_read fifo_port_we 1 1 } } }
+	send_fifo_L_1 { ap_fifo {  { send_fifo_L_1_dout fifo_data_in 0 128 }  { send_fifo_L_1_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_1_fifo_cap fifo_update 0 10 }  { send_fifo_L_1_empty_n fifo_status 0 1 }  { send_fifo_L_1_read fifo_port_we 1 1 } } }
+	send_fifo_L_2 { ap_fifo {  { send_fifo_L_2_dout fifo_data_in 0 128 }  { send_fifo_L_2_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_2_fifo_cap fifo_update 0 10 }  { send_fifo_L_2_empty_n fifo_status 0 1 }  { send_fifo_L_2_read fifo_port_we 1 1 } } }
+	send_fifo_L_3 { ap_fifo {  { send_fifo_L_3_dout fifo_data_in 0 128 }  { send_fifo_L_3_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_3_fifo_cap fifo_update 0 10 }  { send_fifo_L_3_empty_n fifo_status 0 1 }  { send_fifo_L_3_read fifo_port_we 1 1 } } }
+	send_fifo_R_0 { ap_fifo {  { send_fifo_R_0_dout fifo_data_in 0 128 }  { send_fifo_R_0_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_0_fifo_cap fifo_update 0 10 }  { send_fifo_R_0_empty_n fifo_status 0 1 }  { send_fifo_R_0_read fifo_port_we 1 1 } } }
+	send_fifo_R_1 { ap_fifo {  { send_fifo_R_1_dout fifo_data_in 0 128 }  { send_fifo_R_1_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_1_fifo_cap fifo_update 0 10 }  { send_fifo_R_1_empty_n fifo_status 0 1 }  { send_fifo_R_1_read fifo_port_we 1 1 } } }
+	send_fifo_R_2 { ap_fifo {  { send_fifo_R_2_dout fifo_data_in 0 128 }  { send_fifo_R_2_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_2_fifo_cap fifo_update 0 10 }  { send_fifo_R_2_empty_n fifo_status 0 1 }  { send_fifo_R_2_read fifo_port_we 1 1 } } }
+	send_fifo_R_3 { ap_fifo {  { send_fifo_R_3_dout fifo_data_in 0 128 }  { send_fifo_R_3_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_R_3_fifo_cap fifo_update 0 10 }  { send_fifo_R_3_empty_n fifo_status 0 1 }  { send_fifo_R_3_read fifo_port_we 1 1 } } }
 	sweep_tx1_0_V_data_V { axis {  { sweep_tx1_0_TDATA out_data 1 128 } } }
 	sweep_tx1_0_V_keep_V { axis {  { sweep_tx1_0_TKEEP out_data 1 16 } } }
 	sweep_tx1_0_V_strb_V { axis {  { sweep_tx1_0_TSTRB out_data 1 16 } } }

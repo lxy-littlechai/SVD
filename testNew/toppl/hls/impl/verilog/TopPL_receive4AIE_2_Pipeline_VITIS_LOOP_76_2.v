@@ -43,8 +43,8 @@ output   ap_idle;
 output   ap_ready;
 input   sweep_rx3_0_TVALID;
 output  [127:0] receive_fifo_L_2_din;
-input  [8:0] receive_fifo_L_2_num_data_valid;
-input  [8:0] receive_fifo_L_2_fifo_cap;
+input  [14:0] receive_fifo_L_2_num_data_valid;
+input  [14:0] receive_fifo_L_2_fifo_cap;
 input   receive_fifo_L_2_full_n;
 output   receive_fifo_L_2_write;
 input  [127:0] data_temp_49;
@@ -88,8 +88,8 @@ reg   [127:0] data_temp_42_reg_357;
 reg    ap_block_pp0_stage0_11001;
 wire   [127:0] data_temp_43_fu_276_p3;
 wire    ap_loop_init;
-reg   [3:0] j_02_fu_84;
-wire   [3:0] j_22_fu_198_p2;
+reg   [6:0] j_02_fu_84;
+wire   [6:0] j_22_fu_198_p2;
 reg   [127:0] data_temp_fu_88;
 wire   [127:0] data_temp_44_fu_268_p3;
 reg    ap_block_pp0_stage0_01001;
@@ -112,7 +112,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
-#0 j_02_fu_84 = 4'd0;
+#0 j_02_fu_84 = 7'd0;
 #0 data_temp_fu_88 = 128'd0;
 #0 ap_done_reg = 1'b0;
 end
@@ -189,7 +189,7 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            j_02_fu_84 <= 4'd1;
+            j_02_fu_84 <= 7'd1;
         end else if (((icmp_ln76_fu_181_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
             j_02_fu_84 <= j_22_fu_198_p2;
         end
@@ -353,9 +353,9 @@ assign data_temp_44_fu_268_p3 = ((trunc_ln76_fu_204_p1[0:0] == 1'b1) ? tmp_7_fu_
 
 assign data_temp_53_out = data_temp_fu_88;
 
-assign icmp_ln76_fu_181_p2 = ((j_02_fu_84 == 4'd8) ? 1'b1 : 1'b0);
+assign icmp_ln76_fu_181_p2 = ((j_02_fu_84 == 7'd64) ? 1'b1 : 1'b0);
 
-assign j_22_fu_198_p2 = (j_02_fu_84 + 4'd1);
+assign j_22_fu_198_p2 = (j_02_fu_84 + 7'd1);
 
 assign receive_fifo_L_2_din = data_temp_42_reg_357;
 

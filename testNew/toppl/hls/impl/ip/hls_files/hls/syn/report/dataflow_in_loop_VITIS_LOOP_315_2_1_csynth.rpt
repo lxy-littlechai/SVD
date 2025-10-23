@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_315_2_1'
 ================================================================
-* Date:           Mon Oct 20 21:15:08 2025
+* Date:           Mon Oct 20 22:10:36 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
     |   min   |   max   |    min   |    max   | min | max |   Type   |
     +---------+---------+----------+----------+-----+-----+----------+
-    |       33|       33|  0.165 us|  0.165 us|   32|   32|  dataflow|
+    |      287|      287|  1.435 us|  1.435 us|  286|  286|  dataflow|
     +---------+---------+----------+----------+-----+-----+----------+
 
     + Detail: 
@@ -39,14 +39,14 @@
         |             Instance             |             Module            |   min   |   max   |    min   |    max   | min | max |   Type  |
         +----------------------------------+-------------------------------+---------+---------+----------+----------+-----+-----+---------+
         |print_int_U0                      |print_int_s                    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
-        |receive4AIE_U0                    |receive4AIE                    |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
-        |receive4AIE_7_U0                  |receive4AIE_7                  |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
-        |receive4AIE_1_U0                  |receive4AIE_1                  |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
-        |receive4AIE_6_U0                  |receive4AIE_6                  |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
-        |receive4AIE_2_U0                  |receive4AIE_2                  |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
-        |receive4AIE_5_U0                  |receive4AIE_5                  |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
-        |receive4AIE_3_U0                  |receive4AIE_3                  |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
-        |receive4AIE_4_U0                  |receive4AIE_4                  |       31|       31|  0.155 us|  0.155 us|   31|   31|       no|
+        |receive4AIE_U0                    |receive4AIE                    |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
+        |receive4AIE_7_U0                  |receive4AIE_7                  |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
+        |receive4AIE_1_U0                  |receive4AIE_1                  |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
+        |receive4AIE_6_U0                  |receive4AIE_6                  |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
+        |receive4AIE_2_U0                  |receive4AIE_2                  |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
+        |receive4AIE_5_U0                  |receive4AIE_5                  |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
+        |receive4AIE_3_U0                  |receive4AIE_3                  |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
+        |receive4AIE_4_U0                  |receive4AIE_4                  |      285|      285|  1.425 us|  1.425 us|  285|  285|       no|
         |Block_newFuncRoot_proc_proc_U0    |Block_newFuncRoot_proc_proc    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
         |Block_newFuncRoot_proc_proc30_U0  |Block_newFuncRoot_proc_proc30  |        0|        0|      0 ns|      0 ns|    0|    0|       no|
         |Block_newFuncRoot_proc_proc32_U0  |Block_newFuncRoot_proc_proc32  |        0|        0|      0 ns|      0 ns|    0|    0|       no|
@@ -80,12 +80,12 @@
 |DSP              |        -|     -|        -|       -|    -|
 |Expression       |        -|     -|        0|      44|    -|
 |FIFO             |        -|     -|     1088|     384|    -|
-|Instance         |        -|     -|     7834|   14964|    -|
+|Instance         |        -|     -|     7866|   15036|    -|
 |Memory           |        -|     -|        -|       -|    -|
 |Multiplexer      |        -|     -|        -|      18|    -|
 |Register         |        -|     -|        9|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |        0|     0|     8931|   15410|    0|
+|Total            |        0|     0|     8963|   15482|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -114,16 +114,16 @@
     |Block_newFuncRoot_proc_proc42_U0  |Block_newFuncRoot_proc_proc42  |        0|   0|   34|    36|    0|
     |Block_newFuncRoot_proc_proc43_U0  |Block_newFuncRoot_proc_proc43  |        0|   0|    2|     6|    0|
     |print_int_U0                      |print_int_s                    |        0|   0|    2|     4|    0|
-    |receive4AIE_U0                    |receive4AIE                    |        0|   0|  943|  1828|    0|
-    |receive4AIE_1_U0                  |receive4AIE_1                  |        0|   0|  943|  1828|    0|
-    |receive4AIE_2_U0                  |receive4AIE_2                  |        0|   0|  943|  1828|    0|
-    |receive4AIE_3_U0                  |receive4AIE_3                  |        0|   0|  943|  1828|    0|
-    |receive4AIE_4_U0                  |receive4AIE_4                  |        0|   0|  943|  1828|    0|
-    |receive4AIE_5_U0                  |receive4AIE_5                  |        0|   0|  943|  1828|    0|
-    |receive4AIE_6_U0                  |receive4AIE_6                  |        0|   0|  943|  1828|    0|
-    |receive4AIE_7_U0                  |receive4AIE_7                  |        0|   0|  943|  1828|    0|
+    |receive4AIE_U0                    |receive4AIE                    |        0|   0|  947|  1837|    0|
+    |receive4AIE_1_U0                  |receive4AIE_1                  |        0|   0|  947|  1837|    0|
+    |receive4AIE_2_U0                  |receive4AIE_2                  |        0|   0|  947|  1837|    0|
+    |receive4AIE_3_U0                  |receive4AIE_3                  |        0|   0|  947|  1837|    0|
+    |receive4AIE_4_U0                  |receive4AIE_4                  |        0|   0|  947|  1837|    0|
+    |receive4AIE_5_U0                  |receive4AIE_5                  |        0|   0|  947|  1837|    0|
+    |receive4AIE_6_U0                  |receive4AIE_6                  |        0|   0|  947|  1837|    0|
+    |receive4AIE_7_U0                  |receive4AIE_7                  |        0|   0|  947|  1837|    0|
     +----------------------------------+-------------------------------+---------+----+-----+------+-----+
-    |Total                             |                               |        0|   0| 7834| 14964|    0|
+    |Total                             |                               |        0|   0| 7866| 15036|    0|
     +----------------------------------+-------------------------------+---------+----+-----+------+-----+
 
     * DSP: 
@@ -144,13 +144,13 @@
     |convR1_channel_U  |        0|  68|   0|    -|     2|   32|       64|
     |convR2_channel_U  |        0|  68|   0|    -|     2|   32|       64|
     |convR3_channel_U  |        0|  68|   0|    -|     2|   32|       64|
-    |empty_147_U       |        0|  68|   0|    -|     2|   32|       64|
     |empty_148_U       |        0|  68|   0|    -|     2|   32|       64|
     |empty_149_U       |        0|  68|   0|    -|     2|   32|       64|
     |empty_150_U       |        0|  68|   0|    -|     2|   32|       64|
     |empty_151_U       |        0|  68|   0|    -|     2|   32|       64|
     |empty_152_U       |        0|  68|   0|    -|     2|   32|       64|
     |empty_153_U       |        0|  68|   0|    -|     2|   32|       64|
+    |empty_154_U       |        0|  68|   0|    -|     2|   32|       64|
     |empty_U           |        0|  68|   0|    -|     2|   32|       64|
     +------------------+---------+----+----+-----+------+-----+---------+
     |Total             |        0|1088|   0|    0|    32|  512|     1024|
@@ -229,7 +229,7 @@
 +-------------------------+-----+-----+------------+-------------------------------------+--------------+
 |        RTL Ports        | Dir | Bits|  Protocol  |            Source Object            |    C Type    |
 +-------------------------+-----+-----+------------+-------------------------------------+--------------+
-|i_0                      |   in|    5|     ap_none|                                  i_0|        scalar|
+|i_0                      |   in|    9|     ap_none|                                  i_0|        scalar|
 |i_0_ap_vld               |   in|    1|     ap_none|                                  i_0|        scalar|
 |receive_fifo_L_0_din     |  out|  128|     ap_fifo|                     receive_fifo_L_0|       pointer|
 |receive_fifo_L_0_full_n  |   in|    1|     ap_fifo|                     receive_fifo_L_0|       pointer|

@@ -81,8 +81,8 @@ set portList {
 	{ m_axi_gmem0_BID sc_in sc_lv 1 signal 1 } 
 	{ m_axi_gmem0_BUSER sc_in sc_lv 1 signal 1 } 
 	{ send_fifo_L_0_din sc_out sc_lv 128 signal 0 } 
-	{ send_fifo_L_0_num_data_valid sc_in sc_lv 6 signal 0 } 
-	{ send_fifo_L_0_fifo_cap sc_in sc_lv 6 signal 0 } 
+	{ send_fifo_L_0_num_data_valid sc_in sc_lv 10 signal 0 } 
+	{ send_fifo_L_0_fifo_cap sc_in sc_lv 10 signal 0 } 
 	{ send_fifo_L_0_full_n sc_in sc_logic 1 signal 0 } 
 	{ send_fifo_L_0_write sc_out sc_logic 1 signal 0 } 
 	{ sext_ln151 sc_in sc_lv 58 signal 2 } 
@@ -141,8 +141,8 @@ set NewPortList {[
  	{ "name": "m_axi_gmem0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "BID" }} , 
  	{ "name": "m_axi_gmem0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem0", "role": "BUSER" }} , 
  	{ "name": "send_fifo_L_0_din", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "din" }} , 
- 	{ "name": "send_fifo_L_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "num_data_valid" }} , 
- 	{ "name": "send_fifo_L_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "fifo_cap" }} , 
+ 	{ "name": "send_fifo_L_0_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "num_data_valid" }} , 
+ 	{ "name": "send_fifo_L_0_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "fifo_cap" }} , 
  	{ "name": "send_fifo_L_0_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "full_n" }} , 
  	{ "name": "send_fifo_L_0_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "send_fifo_L_0", "role": "write" }} , 
  	{ "name": "sext_ln151", "direction": "in", "datatype": "sc_lv", "bitwidth":58, "type": "signal", "bundle":{"name": "sext_ln151", "role": "default" }}  ]}
@@ -154,7 +154,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -185,8 +185,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "18", "Max" : "18"}
-	, {"Name" : "Interval", "Min" : "18", "Max" : "18"}
+	{"Name" : "Latency", "Min" : "258", "Max" : "258"}
+	, {"Name" : "Interval", "Min" : "258", "Max" : "258"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -194,7 +194,7 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	send_fifo_L_0 { ap_fifo {  { send_fifo_L_0_din fifo_data_in 1 128 }  { send_fifo_L_0_num_data_valid fifo_status_num_data_valid 0 6 }  { send_fifo_L_0_fifo_cap fifo_update 0 6 }  { send_fifo_L_0_full_n fifo_status 0 1 }  { send_fifo_L_0_write fifo_port_we 1 1 } } }
+	send_fifo_L_0 { ap_fifo {  { send_fifo_L_0_din fifo_data_in 1 128 }  { send_fifo_L_0_num_data_valid fifo_status_num_data_valid 0 10 }  { send_fifo_L_0_fifo_cap fifo_update 0 10 }  { send_fifo_L_0_full_n fifo_status 0 1 }  { send_fifo_L_0_write fifo_port_we 1 1 } } }
 	 { m_axi {  { m_axi_gmem0_AWVALID VALID 1 1 }  { m_axi_gmem0_AWREADY READY 0 1 }  { m_axi_gmem0_AWADDR ADDR 1 64 }  { m_axi_gmem0_AWID ID 1 1 }  { m_axi_gmem0_AWLEN SIZE 1 32 }  { m_axi_gmem0_AWSIZE BURST 1 3 }  { m_axi_gmem0_AWBURST LOCK 1 2 }  { m_axi_gmem0_AWLOCK CACHE 1 2 }  { m_axi_gmem0_AWCACHE PROT 1 4 }  { m_axi_gmem0_AWPROT QOS 1 3 }  { m_axi_gmem0_AWQOS REGION 1 4 }  { m_axi_gmem0_AWREGION USER 1 4 }  { m_axi_gmem0_AWUSER DATA 1 1 }  { m_axi_gmem0_WVALID VALID 1 1 }  { m_axi_gmem0_WREADY READY 0 1 }  { m_axi_gmem0_WDATA FIFONUM 1 512 }  { m_axi_gmem0_WSTRB STRB 1 64 }  { m_axi_gmem0_WLAST LAST 1 1 }  { m_axi_gmem0_WID ID 1 1 }  { m_axi_gmem0_WUSER DATA 1 1 }  { m_axi_gmem0_ARVALID VALID 1 1 }  { m_axi_gmem0_ARREADY READY 0 1 }  { m_axi_gmem0_ARADDR ADDR 1 64 }  { m_axi_gmem0_ARID ID 1 1 }  { m_axi_gmem0_ARLEN SIZE 1 32 }  { m_axi_gmem0_ARSIZE BURST 1 3 }  { m_axi_gmem0_ARBURST LOCK 1 2 }  { m_axi_gmem0_ARLOCK CACHE 1 2 }  { m_axi_gmem0_ARCACHE PROT 1 4 }  { m_axi_gmem0_ARPROT QOS 1 3 }  { m_axi_gmem0_ARQOS REGION 1 4 }  { m_axi_gmem0_ARREGION USER 1 4 }  { m_axi_gmem0_ARUSER DATA 1 1 }  { m_axi_gmem0_RVALID VALID 0 1 }  { m_axi_gmem0_RREADY READY 1 1 }  { m_axi_gmem0_RDATA FIFONUM 0 512 }  { m_axi_gmem0_RLAST LAST 0 1 }  { m_axi_gmem0_RID ID 0 1 }  { m_axi_gmem0_RFIFONUM LEN 0 11 }  { m_axi_gmem0_RUSER DATA 0 1 }  { m_axi_gmem0_RRESP RESP 0 2 }  { m_axi_gmem0_BVALID VALID 0 1 }  { m_axi_gmem0_BREADY READY 1 1 }  { m_axi_gmem0_BRESP RESP 0 2 }  { m_axi_gmem0_BID ID 0 1 }  { m_axi_gmem0_BUSER DATA 0 1 } } }
 	sext_ln151 { ap_none {  { sext_ln151 in_data 0 58 } } }
 }

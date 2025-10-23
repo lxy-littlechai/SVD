@@ -147,6 +147,38 @@ entry:
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
+define void @"arraycpy_hls.p0a8192struct.ap_uint<128>"([8192 x %"struct.ap_uint<128>"]* %dst, [8192 x %"struct.ap_uint<128>"]* readonly %src, i64 %num) local_unnamed_addr #2 {
+entry:
+  %0 = icmp eq [8192 x %"struct.ap_uint<128>"]* %src, null
+  %1 = icmp eq [8192 x %"struct.ap_uint<128>"]* %dst, null
+  %2 = or i1 %1, %0
+  br i1 %2, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  %for.loop.cond7 = icmp sgt i64 %num, 0
+  br i1 %for.loop.cond7, label %for.loop.lr.ph, label %copy.split
+
+for.loop.lr.ph:                                   ; preds = %copy
+  br label %for.loop
+
+for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
+  %for.loop.idx8 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
+  %src.addr.0.0.05 = getelementptr [8192 x %"struct.ap_uint<128>"], [8192 x %"struct.ap_uint<128>"]* %src, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
+  %dst.addr.0.0.06 = getelementptr [8192 x %"struct.ap_uint<128>"], [8192 x %"struct.ap_uint<128>"]* %dst, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
+  %3 = load i128, i128* %src.addr.0.0.05, align 16
+  store i128 %3, i128* %dst.addr.0.0.06, align 16
+  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx8, 1
+  %exitcond = icmp ne i64 %for.loop.idx.next, %num
+  br i1 %exitcond, label %for.loop, label %copy.split
+
+copy.split:                                       ; preds = %for.loop, %copy
+  br label %ret
+
+ret:                                              ; preds = %copy.split, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline norecurse willreturn
 define void @"arraycpy_hls.p0a8192struct.ap_uint<32>"([8192 x %"struct.ap_uint<32>"]* %dst, [8192 x %"struct.ap_uint<32>"]* readonly %src, i64 %num) local_unnamed_addr #2 {
 entry:
   %0 = icmp eq [8192 x %"struct.ap_uint<32>"]* %src, null

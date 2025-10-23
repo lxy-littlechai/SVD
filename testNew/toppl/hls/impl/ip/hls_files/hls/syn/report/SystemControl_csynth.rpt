@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'SystemControl'
 ================================================================
-* Date:           Mon Oct 20 21:14:54 2025
+* Date:           Mon Oct 20 22:10:23 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -34,22 +34,22 @@
 
     + Detail: 
         * Instance: 
-        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |                                                    |                                         |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-        |                      Instance                      |                  Module                 |   min   |   max   |    min    |    max    | min | max |   Type  |
-        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
-        |grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144  |SystemControl_Pipeline_VITIS_LOOP_519_1  |        5|        5|  25.000 ns|  25.000 ns|    5|    5|       no|
-        |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |      722|      722|   3.610 us|   3.610 us|  722|  722|       no|
-        |grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175  |SystemControl_Pipeline_VITIS_LOOP_549_7  |        5|        5|  25.000 ns|  25.000 ns|    5|    5|       no|
-        |grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185  |SystemControl_Pipeline_VITIS_LOOP_543_6  |        5|        5|  25.000 ns|  25.000 ns|    5|    5|       no|
-        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+---------+
+        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |                                                    |                                         |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+        |                      Instance                      |                  Module                 |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144  |SystemControl_Pipeline_VITIS_LOOP_519_1  |        5|        5|  25.000 ns|  25.000 ns|      5|      5|       no|
+        |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |    12098|    12098|  60.490 us|  60.490 us|  12098|  12098|       no|
+        |grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175  |SystemControl_Pipeline_VITIS_LOOP_549_7  |        5|        5|  25.000 ns|  25.000 ns|      5|      5|       no|
+        |grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185  |SystemControl_Pipeline_VITIS_LOOP_543_6  |        5|        5|  25.000 ns|  25.000 ns|      5|      5|       no|
+        +----------------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
 
         * Loop: 
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_525_2  |        ?|        ?|       800|          -|          -|     ?|        no|
+        |- VITIS_LOOP_525_2  |        ?|        ?|     12176|          -|          -|     ?|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -64,12 +64,12 @@
 |DSP              |        -|     -|        -|       -|    -|
 |Expression       |        -|     -|        0|     168|    -|
 |FIFO             |        -|     -|        -|       -|    -|
-|Instance         |        -|     -|      859|    1216|    -|
+|Instance         |        -|     -|      867|    1230|    -|
 |Memory           |        -|     -|        -|       -|    -|
 |Multiplexer      |        -|     -|        -|     153|    -|
 |Register         |        -|     -|      212|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |        0|     0|     1071|    1537|    0|
+|Total            |        0|     0|     1079|    1551|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -82,14 +82,14 @@
     |                      Instance                      |                  Module                 | BRAM_18K| DSP|  FF |  LUT | URAM|
     +----------------------------------------------------+-----------------------------------------+---------+----+-----+------+-----+
     |grp_SystemControl_Pipeline_VITIS_LOOP_519_1_fu_144  |SystemControl_Pipeline_VITIS_LOOP_519_1  |        0|   0|    7|    32|    0|
-    |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |        0|   0|  838|  1120|    0|
+    |grp_SystemControl_Pipeline_VITIS_LOOP_529_3_fu_154  |SystemControl_Pipeline_VITIS_LOOP_529_3  |        0|   0|  846|  1134|    0|
     |grp_SystemControl_Pipeline_VITIS_LOOP_543_6_fu_185  |SystemControl_Pipeline_VITIS_LOOP_543_6  |        0|   0|    7|    32|    0|
     |grp_SystemControl_Pipeline_VITIS_LOOP_549_7_fu_175  |SystemControl_Pipeline_VITIS_LOOP_549_7  |        0|   0|    7|    32|    0|
     |fcmp_32ns_32ns_1_1_no_dsp_1_U27                     |fcmp_32ns_32ns_1_1_no_dsp_1              |        0|   0|    0|     0|    0|
     |fpext_32ns_64_1_no_dsp_1_U26                        |fpext_32ns_64_1_no_dsp_1                 |        0|   0|    0|     0|    0|
     |printdouble_U28                                     |printdouble                              |        0|   0|    0|     0|    0|
     +----------------------------------------------------+-----------------------------------------+---------+----+-----+------+-----+
-    |Total                                               |                                         |        0|   0|  859|  1216|    0|
+    |Total                                               |                                         |        0|   0|  867|  1230|    0|
     +----------------------------------------------------+-----------------------------------------+---------+----+-----+------+-----+
 
     * DSP: 

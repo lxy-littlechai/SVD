@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'Send'
 ================================================================
-* Date:           Mon Oct 20 21:14:57 2025
+* Date:           Mon Oct 20 22:10:27 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -20,7 +20,7 @@
     +--------+---------+----------+------------+
     |  Clock |  Target | Estimated| Uncertainty|
     +--------+---------+----------+------------+
-    |ap_clk  |  5.00 ns|  2.538 ns|     1.35 ns|
+    |ap_clk  |  5.00 ns|  2.473 ns|     1.35 ns|
     +--------+---------+----------+------------+
 
 + Latency: 
@@ -34,21 +34,21 @@
 
     + Detail: 
         * Instance: 
-        +--------------------------------------+---------------------------+---------+---------+----------+----------+-----+-----+---------+
-        |                                      |                           |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
-        |               Instance               |           Module          |   min   |   max   |    min   |    max   | min | max |   Type  |
-        +--------------------------------------+---------------------------+---------+---------+----------+----------+-----+-----+---------+
-        |grp_dataflow_parent_loop_proc_fu_168  |dataflow_parent_loop_proc  |      991|      991|  4.955 us|  4.955 us|  991|  991|       no|
-        |grp_send2AIE_15_fu_252                |send2AIE_15                |       32|       32|  0.160 us|  0.160 us|   32|   32|       no|
-        +--------------------------------------+---------------------------+---------+---------+----------+----------+-----+-----+---------+
+        +--------------------------------------+---------------------------+---------+---------+----------+----------+--------+--------+---------+
+        |                                      |                           |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+        |               Instance               |           Module          |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+        +--------------------------------------+---------------------------+---------+---------+----------+----------+--------+--------+---------+
+        |grp_dataflow_parent_loop_proc_fu_166  |dataflow_parent_loop_proc  |   144649|   144649|  0.723 ms|  0.723 ms|  144649|  144649|       no|
+        |grp_send2AIE_15_fu_250                |send2AIE_15                |      286|      286|  1.430 us|  1.430 us|     286|     286|       no|
+        +--------------------------------------+---------------------------+---------+---------+----------+----------+--------+--------+---------+
 
         * Loop: 
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_232_1  |        ?|        ?|       993|          -|          -|     ?|        no|
-        |- VITIS_LOOP_253_3  |      544|      544|       272|          -|          -|     2|        no|
+        |- VITIS_LOOP_232_1  |        ?|        ?|    144651|          -|          -|     ?|        no|
+        |- VITIS_LOOP_253_3  |    18432|    18432|      2304|          -|          -|     8|        no|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -63,12 +63,12 @@
 |DSP              |        -|     -|        -|       -|    -|
 |Expression       |        -|     -|        0|      36|    -|
 |FIFO             |        -|     -|        -|       -|    -|
-|Instance         |       36|     -|     1135|    3415|    0|
+|Instance         |       36|     -|     1211|    3561|    0|
 |Memory           |        -|     -|        -|       -|    -|
-|Multiplexer      |        -|     -|        -|     422|    -|
-|Register         |        -|     -|       27|       -|    -|
+|Multiplexer      |        -|     -|        -|     424|    -|
+|Register         |        -|     -|       29|       -|    -|
 +-----------------+---------+------+---------+--------+-----+
-|Total            |       36|     0|     1162|    3873|    0|
+|Total            |       36|     0|     1240|    4021|    0|
 +-----------------+---------+------+---------+--------+-----+
 |Available        |     1934|  1968|  1799680|  899840|  463|
 +-----------------+---------+------+---------+--------+-----+
@@ -80,10 +80,10 @@
     +--------------------------------------+---------------------------+---------+----+------+------+-----+
     |               Instance               |           Module          | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +--------------------------------------+---------------------------+---------+----+------+------+-----+
-    |grp_dataflow_parent_loop_proc_fu_168  |dataflow_parent_loop_proc  |       32|   0|  1019|  3050|    0|
-    |grp_send2AIE_15_fu_252                |send2AIE_15                |        4|   0|   116|   365|    0|
+    |grp_dataflow_parent_loop_proc_fu_166  |dataflow_parent_loop_proc  |       32|   0|  1091|  3182|    0|
+    |grp_send2AIE_15_fu_250                |send2AIE_15                |        4|   0|   120|   379|    0|
     +--------------------------------------+---------------------------+---------+----+------+------+-----+
-    |Total                                 |                           |       36|   0|  1135|  3415|    0|
+    |Total                                 |                           |       36|   0|  1211|  3561|    0|
     +--------------------------------------+---------------------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -99,23 +99,23 @@
     +---------------------------------------------------------+----------+----+---+----+------------+------------+
     |                      Variable Name                      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------------------------------------------+----------+----+---+----+------------+------------+
-    |i_31_fu_293_p2                                           |         +|   0|  0|   5|           2|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx1_0_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx1_1_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx2_0_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx2_1_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx3_0_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx3_1_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx4_0_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dataflow_parent_loop_proc_fu_168_sweep_tx4_1_TREADY  |       and|   0|  0|   2|           1|           1|
-    |icmp_ln253_fu_299_p2                                     |      icmp|   0|  0|   5|           2|           3|
+    |i_31_fu_291_p2                                           |         +|   0|  0|   5|           4|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx1_0_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx1_1_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx2_0_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx2_1_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx3_0_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx3_1_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx4_0_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dataflow_parent_loop_proc_fu_166_sweep_tx4_1_TREADY  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln253_fu_297_p2                                     |      icmp|   0|  0|   5|           4|           5|
     |ap_block_state1                                          |        or|   0|  0|   2|           1|           1|
     |ap_block_state20                                         |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_dataflow_parent_loop_proc_fu_168_ap_done     |        or|   0|  0|   2|           1|           1|
-    |ap_sync_grp_dataflow_parent_loop_proc_fu_168_ap_ready    |        or|   0|  0|   2|           1|           1|
-    |grp_send2AIE_15_fu_252_norm_tx0_TREADY                   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_dataflow_parent_loop_proc_fu_166_ap_done     |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_dataflow_parent_loop_proc_fu_166_ap_ready    |        or|   0|  0|   2|           1|           1|
+    |grp_send2AIE_15_fu_250_norm_tx0_TREADY                   |        or|   0|  0|   2|           1|           1|
     +---------------------------------------------------------+----------+----+---+----+------------+------------+
-    |Total                                                    |          |   0|  0|  36|          17|          17|
+    |Total                                                    |          |   0|  0|  36|          21|          19|
     +---------------------------------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -124,9 +124,9 @@
     +----------------------------------------------+-----+-----------+-----+-----------+
     |ap_NS_fsm                                     |   22|         21|    1|         21|
     |ap_done                                       |    2|          2|    1|          2|
-    |grp_send2AIE_15_fu_252_send_fifo_L_0_dout     |  370|          8|  128|       1024|
-    |grp_send2AIE_15_fu_252_send_fifo_L_0_empty_n  |    6|          8|    1|          8|
-    |i_fu_158                                      |    2|          2|    2|          4|
+    |grp_send2AIE_15_fu_250_send_fifo_L_0_dout     |  370|          8|  128|       1024|
+    |grp_send2AIE_15_fu_250_send_fifo_L_0_empty_n  |    6|          8|    1|          8|
+    |i_fu_156                                      |    4|          2|    4|          8|
     |norm_tx0_TVALID_int_regslice                  |    2|          2|    1|          2|
     |send_fifo_L_0_read                            |    2|          3|    1|          3|
     |send_fifo_L_1_read                            |    2|          3|    1|          3|
@@ -138,7 +138,7 @@
     |send_fifo_R_3_read                            |    2|          3|    1|          3|
     |syscontrol_0_blk_n                            |    2|          2|    1|          2|
     +----------------------------------------------+-----+-----------+-----+-----------+
-    |Total                                         |  422|         69|  143|       1087|
+    |Total                                         |  424|         69|  145|       1091|
     +----------------------------------------------+-----+-----------+-----+-----------+
 
     * Register: 
@@ -147,13 +147,13 @@
     +-----------------------------------------------------------+----+----+-----+-----------+
     |ap_CS_fsm                                                  |  20|   0|   20|          0|
     |ap_done_reg                                                |   1|   0|    1|          0|
-    |ap_sync_reg_grp_dataflow_parent_loop_proc_fu_168_ap_done   |   1|   0|    1|          0|
-    |ap_sync_reg_grp_dataflow_parent_loop_proc_fu_168_ap_ready  |   1|   0|    1|          0|
-    |grp_dataflow_parent_loop_proc_fu_168_ap_start_reg          |   1|   0|    1|          0|
-    |grp_send2AIE_15_fu_252_ap_start_reg                        |   1|   0|    1|          0|
-    |i_fu_158                                                   |   2|   0|    2|          0|
+    |ap_sync_reg_grp_dataflow_parent_loop_proc_fu_166_ap_done   |   1|   0|    1|          0|
+    |ap_sync_reg_grp_dataflow_parent_loop_proc_fu_166_ap_ready  |   1|   0|    1|          0|
+    |grp_dataflow_parent_loop_proc_fu_166_ap_start_reg          |   1|   0|    1|          0|
+    |grp_send2AIE_15_fu_250_ap_start_reg                        |   1|   0|    1|          0|
+    |i_fu_156                                                   |   4|   0|    4|          0|
     +-----------------------------------------------------------+----+----+-----+-----------+
-    |Total                                                      |  27|   0|   27|          0|
+    |Total                                                      |  29|   0|   29|          0|
     +-----------------------------------------------------------+----+----+-----+-----------+
 
 
@@ -178,43 +178,43 @@
 |syscontrol_0_empty_n          |   in|    1|     ap_fifo|          syscontrol_0|       pointer|
 |syscontrol_0_read             |  out|    1|     ap_fifo|          syscontrol_0|       pointer|
 |send_fifo_L_0_dout            |   in|  128|     ap_fifo|         send_fifo_L_0|       pointer|
-|send_fifo_L_0_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_L_0|       pointer|
-|send_fifo_L_0_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_L_0|       pointer|
+|send_fifo_L_0_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_L_0|       pointer|
+|send_fifo_L_0_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_L_0|       pointer|
 |send_fifo_L_0_empty_n         |   in|    1|     ap_fifo|         send_fifo_L_0|       pointer|
 |send_fifo_L_0_read            |  out|    1|     ap_fifo|         send_fifo_L_0|       pointer|
 |send_fifo_L_1_dout            |   in|  128|     ap_fifo|         send_fifo_L_1|       pointer|
-|send_fifo_L_1_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_L_1|       pointer|
-|send_fifo_L_1_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_L_1|       pointer|
+|send_fifo_L_1_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_L_1|       pointer|
+|send_fifo_L_1_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_L_1|       pointer|
 |send_fifo_L_1_empty_n         |   in|    1|     ap_fifo|         send_fifo_L_1|       pointer|
 |send_fifo_L_1_read            |  out|    1|     ap_fifo|         send_fifo_L_1|       pointer|
 |send_fifo_L_2_dout            |   in|  128|     ap_fifo|         send_fifo_L_2|       pointer|
-|send_fifo_L_2_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_L_2|       pointer|
-|send_fifo_L_2_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_L_2|       pointer|
+|send_fifo_L_2_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_L_2|       pointer|
+|send_fifo_L_2_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_L_2|       pointer|
 |send_fifo_L_2_empty_n         |   in|    1|     ap_fifo|         send_fifo_L_2|       pointer|
 |send_fifo_L_2_read            |  out|    1|     ap_fifo|         send_fifo_L_2|       pointer|
 |send_fifo_L_3_dout            |   in|  128|     ap_fifo|         send_fifo_L_3|       pointer|
-|send_fifo_L_3_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_L_3|       pointer|
-|send_fifo_L_3_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_L_3|       pointer|
+|send_fifo_L_3_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_L_3|       pointer|
+|send_fifo_L_3_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_L_3|       pointer|
 |send_fifo_L_3_empty_n         |   in|    1|     ap_fifo|         send_fifo_L_3|       pointer|
 |send_fifo_L_3_read            |  out|    1|     ap_fifo|         send_fifo_L_3|       pointer|
 |send_fifo_R_0_dout            |   in|  128|     ap_fifo|         send_fifo_R_0|       pointer|
-|send_fifo_R_0_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_R_0|       pointer|
-|send_fifo_R_0_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_R_0|       pointer|
+|send_fifo_R_0_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_R_0|       pointer|
+|send_fifo_R_0_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_R_0|       pointer|
 |send_fifo_R_0_empty_n         |   in|    1|     ap_fifo|         send_fifo_R_0|       pointer|
 |send_fifo_R_0_read            |  out|    1|     ap_fifo|         send_fifo_R_0|       pointer|
 |send_fifo_R_1_dout            |   in|  128|     ap_fifo|         send_fifo_R_1|       pointer|
-|send_fifo_R_1_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_R_1|       pointer|
-|send_fifo_R_1_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_R_1|       pointer|
+|send_fifo_R_1_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_R_1|       pointer|
+|send_fifo_R_1_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_R_1|       pointer|
 |send_fifo_R_1_empty_n         |   in|    1|     ap_fifo|         send_fifo_R_1|       pointer|
 |send_fifo_R_1_read            |  out|    1|     ap_fifo|         send_fifo_R_1|       pointer|
 |send_fifo_R_2_dout            |   in|  128|     ap_fifo|         send_fifo_R_2|       pointer|
-|send_fifo_R_2_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_R_2|       pointer|
-|send_fifo_R_2_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_R_2|       pointer|
+|send_fifo_R_2_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_R_2|       pointer|
+|send_fifo_R_2_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_R_2|       pointer|
 |send_fifo_R_2_empty_n         |   in|    1|     ap_fifo|         send_fifo_R_2|       pointer|
 |send_fifo_R_2_read            |  out|    1|     ap_fifo|         send_fifo_R_2|       pointer|
 |send_fifo_R_3_dout            |   in|  128|     ap_fifo|         send_fifo_R_3|       pointer|
-|send_fifo_R_3_num_data_valid  |   in|    6|     ap_fifo|         send_fifo_R_3|       pointer|
-|send_fifo_R_3_fifo_cap        |   in|    6|     ap_fifo|         send_fifo_R_3|       pointer|
+|send_fifo_R_3_num_data_valid  |   in|   10|     ap_fifo|         send_fifo_R_3|       pointer|
+|send_fifo_R_3_fifo_cap        |   in|   10|     ap_fifo|         send_fifo_R_3|       pointer|
 |send_fifo_R_3_empty_n         |   in|    1|     ap_fifo|         send_fifo_R_3|       pointer|
 |send_fifo_R_3_read            |  out|    1|     ap_fifo|         send_fifo_R_3|       pointer|
 |sweep_tx1_0_TDATA             |  out|  128|        axis|  sweep_tx1_0_V_data_V|       pointer|

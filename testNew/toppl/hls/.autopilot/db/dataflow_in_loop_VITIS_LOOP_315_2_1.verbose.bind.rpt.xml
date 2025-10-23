@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_315_2_1'" level="0">
-<item name = "Date">Mon Oct 20 21:14:52 2025
+<item name = "Date">Mon Oct 20 22:10:21 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">33, 33, 0.165 us, 0.165 us, 32, 32, dataflow</column>
+<column name="">287, 287, 1.435 us, 1.435 us, 286, 286, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -32,14 +32,14 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="call_ln316_print_int_s_fu_266">print_int_s, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
-<column name="grp_receive4AIE_fu_272">receive4AIE, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="grp_receive4AIE_7_fu_287">receive4AIE_7, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="grp_receive4AIE_1_fu_302">receive4AIE_1, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="grp_receive4AIE_6_fu_317">receive4AIE_6, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="grp_receive4AIE_2_fu_332">receive4AIE_2, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="grp_receive4AIE_5_fu_347">receive4AIE_5, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="grp_receive4AIE_3_fu_362">receive4AIE_3, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
-<column name="grp_receive4AIE_4_fu_377">receive4AIE_4, 31, 31, 0.155 us, 0.155 us, 31, 31, no</column>
+<column name="grp_receive4AIE_fu_272">receive4AIE, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="grp_receive4AIE_7_fu_287">receive4AIE_7, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="grp_receive4AIE_1_fu_302">receive4AIE_1, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="grp_receive4AIE_6_fu_317">receive4AIE_6, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="grp_receive4AIE_2_fu_332">receive4AIE_2, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="grp_receive4AIE_5_fu_347">receive4AIE_5, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="grp_receive4AIE_3_fu_362">receive4AIE_3, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
+<column name="grp_receive4AIE_4_fu_377">receive4AIE_4, 285, 285, 1.425 us, 1.425 us, 285, 285, no</column>
 <column name="call_ln332_Block_newFuncRoot_proc_proc_fu_392">Block_newFuncRoot_proc_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 <column name="call_ln333_Block_newFuncRoot_proc_proc30_fu_398">Block_newFuncRoot_proc_proc30, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 <column name="call_ln335_Block_newFuncRoot_proc_proc32_fu_404">Block_newFuncRoot_proc_proc32, 0, 0, 0 ns, 0 ns, 0, 0, no</column>

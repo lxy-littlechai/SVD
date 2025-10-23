@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 440 \
+    id 456 \
     name sweep_rx2_0_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -30,7 +30,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 441 \
+    id 457 \
     name sweep_rx2_0_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -49,7 +49,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 442 \
+    id 458 \
     name sweep_rx2_0_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -68,7 +68,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 443 \
+    id 459 \
     name sweep_rx2_0_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -86,7 +86,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 438 \
+    id 454 \
     name data_temp_57 \
     type other \
     dir I \
@@ -101,7 +101,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 439 \
+    id 455 \
     name data_temp_58 \
     type other \
     dir I \
@@ -116,7 +116,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 444 \
+    id 460 \
     name receive_fifo_L_1 \
     type fifo \
     dir O \
@@ -124,14 +124,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_L_1 \
     op interface \
-    ports { receive_fifo_L_1_din { O 128 vector } receive_fifo_L_1_num_data_valid { I 9 vector } receive_fifo_L_1_fifo_cap { I 9 vector } receive_fifo_L_1_full_n { I 1 bit } receive_fifo_L_1_write { O 1 bit } } \
+    ports { receive_fifo_L_1_din { O 128 vector } receive_fifo_L_1_num_data_valid { I 15 vector } receive_fifo_L_1_fifo_cap { I 15 vector } receive_fifo_L_1_full_n { I 1 bit } receive_fifo_L_1_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 445 \
+    id 461 \
     name data_temp_61_out \
     type other \
     dir O \
@@ -146,7 +146,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 446 \
+    id 462 \
     name data_temp_60_out \
     type other \
     dir IO \

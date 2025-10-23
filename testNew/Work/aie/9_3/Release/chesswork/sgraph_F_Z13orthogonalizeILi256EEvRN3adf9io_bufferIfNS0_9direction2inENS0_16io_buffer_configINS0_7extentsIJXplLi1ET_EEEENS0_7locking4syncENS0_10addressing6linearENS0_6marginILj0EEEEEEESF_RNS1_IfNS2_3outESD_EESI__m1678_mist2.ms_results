@@ -1,0 +1,51 @@
+sgraph: F_Z13orthogonalizeILi256EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI__m1678
+n_nodes: 12
+ms_unfold_len: 16
+ms_RecMII: 4
+ms_ResMII: 4
+ms_MII: 4
+ms_II: 4
+ms_SC: 4
+ms_status: folded
+ms_cost: 40301
+ms_n_back_tracks: 0
+ms_tot_n_back_tracks: 0
+ms_n_nodes_scheduled:     12
+ms_tot_n_nodes_scheduled: 12
+ms_req_budgetRatio: 1
+ms_node_order: s151 #0
+ms_node_order: s149 #1
+ms_node_order: s150 #2
+ms_node_order: s1549 #3
+ms_node_order: s148 #4
+ms_node_order: s145 #5
+ms_node_order: s147 #6
+ms_node_order: s1547 #7
+ms_node_order: s146 #8
+ms_node_order: s144 #9
+ms_node_order: s1550 #10
+ms_node_order: s1548 #11
+ms_cstep s144: 3 0 3
+ms_cstep s145: 1 0 1
+ms_cstep s146: 2 1 6
+ms_cstep s147: 3 1 7
+ms_cstep s148: 0 2 8
+ms_cstep s149: 1 2 9
+ms_cstep s150: 2 3 14
+ms_cstep s151: 3 3 15
+ms_cstep s1547: 0 0 0
+ms_cstep s1548: 1 0 1
+ms_cstep s1549: 2 0 2
+ms_cstep s1550: 3 0 3
+---------- block m1678: modulo scheduled: schedule S :
+    length: 4
+    word length: 64
+    word cost: 640
+    side-effect writes: 10
+    instr_prior: 7992
+    bundles per cstep:
+        0:	b148	--> p932, 	b1547	--> p6362	 DELAYED_WRITE = 1
+        1:	b145	--> p426, 	b149	--> p1940, 	b1548	--> p6365	 DELAYED_WRITE = 1
+        2:	b146	--> p428, 	b150	--> p2540, 	b1549	--> p6368	 DELAYED_WRITE = 1
+        3:	b144	--> p424, 	b147	--> p680, 	b151	--> p2541, 	b1550	--> p6371	 DELAYED_WRITE = 1
+    

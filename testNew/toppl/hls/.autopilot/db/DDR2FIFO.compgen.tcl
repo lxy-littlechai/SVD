@@ -48,7 +48,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_L_0 \
     op interface \
-    ports { send_fifo_L_0_din { O 128 vector } send_fifo_L_0_num_data_valid { I 6 vector } send_fifo_L_0_fifo_cap { I 6 vector } send_fifo_L_0_full_n { I 1 bit } send_fifo_L_0_write { O 1 bit } } \
+    ports { send_fifo_L_0_din { O 128 vector } send_fifo_L_0_num_data_valid { I 10 vector } send_fifo_L_0_fifo_cap { I 10 vector } send_fifo_L_0_full_n { I 1 bit } send_fifo_L_0_write { O 1 bit } } \
 } "
 }
 
@@ -63,7 +63,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_L_1 \
     op interface \
-    ports { send_fifo_L_1_din { O 128 vector } send_fifo_L_1_num_data_valid { I 6 vector } send_fifo_L_1_fifo_cap { I 6 vector } send_fifo_L_1_full_n { I 1 bit } send_fifo_L_1_write { O 1 bit } } \
+    ports { send_fifo_L_1_din { O 128 vector } send_fifo_L_1_num_data_valid { I 10 vector } send_fifo_L_1_fifo_cap { I 10 vector } send_fifo_L_1_full_n { I 1 bit } send_fifo_L_1_write { O 1 bit } } \
 } "
 }
 
@@ -78,7 +78,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_L_2 \
     op interface \
-    ports { send_fifo_L_2_din { O 128 vector } send_fifo_L_2_num_data_valid { I 6 vector } send_fifo_L_2_fifo_cap { I 6 vector } send_fifo_L_2_full_n { I 1 bit } send_fifo_L_2_write { O 1 bit } } \
+    ports { send_fifo_L_2_din { O 128 vector } send_fifo_L_2_num_data_valid { I 10 vector } send_fifo_L_2_fifo_cap { I 10 vector } send_fifo_L_2_full_n { I 1 bit } send_fifo_L_2_write { O 1 bit } } \
 } "
 }
 
@@ -93,7 +93,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_L_3 \
     op interface \
-    ports { send_fifo_L_3_din { O 128 vector } send_fifo_L_3_num_data_valid { I 6 vector } send_fifo_L_3_fifo_cap { I 6 vector } send_fifo_L_3_full_n { I 1 bit } send_fifo_L_3_write { O 1 bit } } \
+    ports { send_fifo_L_3_din { O 128 vector } send_fifo_L_3_num_data_valid { I 10 vector } send_fifo_L_3_fifo_cap { I 10 vector } send_fifo_L_3_full_n { I 1 bit } send_fifo_L_3_write { O 1 bit } } \
 } "
 }
 
@@ -108,7 +108,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_R_0 \
     op interface \
-    ports { send_fifo_R_0_din { O 128 vector } send_fifo_R_0_num_data_valid { I 6 vector } send_fifo_R_0_fifo_cap { I 6 vector } send_fifo_R_0_full_n { I 1 bit } send_fifo_R_0_write { O 1 bit } } \
+    ports { send_fifo_R_0_din { O 128 vector } send_fifo_R_0_num_data_valid { I 10 vector } send_fifo_R_0_fifo_cap { I 10 vector } send_fifo_R_0_full_n { I 1 bit } send_fifo_R_0_write { O 1 bit } } \
 } "
 }
 
@@ -123,7 +123,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_R_1 \
     op interface \
-    ports { send_fifo_R_1_din { O 128 vector } send_fifo_R_1_num_data_valid { I 6 vector } send_fifo_R_1_fifo_cap { I 6 vector } send_fifo_R_1_full_n { I 1 bit } send_fifo_R_1_write { O 1 bit } } \
+    ports { send_fifo_R_1_din { O 128 vector } send_fifo_R_1_num_data_valid { I 10 vector } send_fifo_R_1_fifo_cap { I 10 vector } send_fifo_R_1_full_n { I 1 bit } send_fifo_R_1_write { O 1 bit } } \
 } "
 }
 
@@ -138,7 +138,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_R_2 \
     op interface \
-    ports { send_fifo_R_2_din { O 128 vector } send_fifo_R_2_num_data_valid { I 6 vector } send_fifo_R_2_fifo_cap { I 6 vector } send_fifo_R_2_full_n { I 1 bit } send_fifo_R_2_write { O 1 bit } } \
+    ports { send_fifo_R_2_din { O 128 vector } send_fifo_R_2_num_data_valid { I 10 vector } send_fifo_R_2_fifo_cap { I 10 vector } send_fifo_R_2_full_n { I 1 bit } send_fifo_R_2_write { O 1 bit } } \
 } "
 }
 
@@ -153,7 +153,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_send_fifo_R_3 \
     op interface \
-    ports { send_fifo_R_3_din { O 128 vector } send_fifo_R_3_num_data_valid { I 6 vector } send_fifo_R_3_fifo_cap { I 6 vector } send_fifo_R_3_full_n { I 1 bit } send_fifo_R_3_write { O 1 bit } } \
+    ports { send_fifo_R_3_din { O 128 vector } send_fifo_R_3_num_data_valid { I 10 vector } send_fifo_R_3_fifo_cap { I 10 vector } send_fifo_R_3_full_n { I 1 bit } send_fifo_R_3_write { O 1 bit } } \
 } "
 }
 

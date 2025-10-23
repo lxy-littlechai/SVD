@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 722 \
+    id 738 \
     name sweep_rx1_0_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -30,7 +30,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 723 \
+    id 739 \
     name sweep_rx1_0_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -49,7 +49,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 724 \
+    id 740 \
     name sweep_rx1_0_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -68,7 +68,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 725 \
+    id 741 \
     name sweep_rx1_0_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -87,7 +87,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 726 \
+    id 742 \
     name sweep_rx1_1_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -106,7 +106,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 727 \
+    id 743 \
     name sweep_rx1_1_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -125,7 +125,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 728 \
+    id 744 \
     name sweep_rx1_1_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -144,7 +144,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 729 \
+    id 745 \
     name sweep_rx1_1_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -163,7 +163,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 730 \
+    id 746 \
     name sweep_rx2_0_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -182,7 +182,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 731 \
+    id 747 \
     name sweep_rx2_0_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -201,7 +201,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 732 \
+    id 748 \
     name sweep_rx2_0_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -220,7 +220,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 733 \
+    id 749 \
     name sweep_rx2_0_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -239,7 +239,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 734 \
+    id 750 \
     name sweep_rx2_1_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -258,7 +258,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 735 \
+    id 751 \
     name sweep_rx2_1_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -277,7 +277,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 736 \
+    id 752 \
     name sweep_rx2_1_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -296,7 +296,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 737 \
+    id 753 \
     name sweep_rx2_1_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -315,7 +315,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 738 \
+    id 754 \
     name sweep_rx3_0_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -334,7 +334,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 739 \
+    id 755 \
     name sweep_rx3_0_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -353,7 +353,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 740 \
+    id 756 \
     name sweep_rx3_0_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -372,7 +372,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 741 \
+    id 757 \
     name sweep_rx3_0_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -391,7 +391,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 742 \
+    id 758 \
     name sweep_rx3_1_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -410,7 +410,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 743 \
+    id 759 \
     name sweep_rx3_1_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -429,7 +429,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 744 \
+    id 760 \
     name sweep_rx3_1_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -448,7 +448,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 745 \
+    id 761 \
     name sweep_rx3_1_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -467,7 +467,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 746 \
+    id 762 \
     name sweep_rx4_0_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -486,7 +486,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 747 \
+    id 763 \
     name sweep_rx4_0_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -505,7 +505,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 748 \
+    id 764 \
     name sweep_rx4_0_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -524,7 +524,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 749 \
+    id 765 \
     name sweep_rx4_0_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -543,7 +543,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 750 \
+    id 766 \
     name sweep_rx4_1_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -562,7 +562,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 751 \
+    id 767 \
     name sweep_rx4_1_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -581,7 +581,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 752 \
+    id 768 \
     name sweep_rx4_1_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -600,7 +600,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 753 \
+    id 769 \
     name sweep_rx4_1_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -619,7 +619,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 754 \
+    id 770 \
     name norm_rx0_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -638,7 +638,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 755 \
+    id 771 \
     name norm_rx0_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -657,7 +657,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 756 \
+    id 772 \
     name norm_rx0_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -676,7 +676,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 757 \
+    id 773 \
     name norm_rx0_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -694,7 +694,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 705 \
+    id 721 \
     name syscontrol_2 \
     type fifo \
     dir I \
@@ -709,7 +709,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 706 \
+    id 722 \
     name convSet_L_0 \
     type fifo \
     dir O \
@@ -724,7 +724,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 707 \
+    id 723 \
     name convSet_L_1 \
     type fifo \
     dir O \
@@ -739,7 +739,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 708 \
+    id 724 \
     name convSet_L_2 \
     type fifo \
     dir O \
@@ -754,7 +754,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 709 \
+    id 725 \
     name convSet_L_3 \
     type fifo \
     dir O \
@@ -769,7 +769,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 710 \
+    id 726 \
     name convSet_R_0 \
     type fifo \
     dir O \
@@ -784,7 +784,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 711 \
+    id 727 \
     name convSet_R_1 \
     type fifo \
     dir O \
@@ -799,7 +799,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 712 \
+    id 728 \
     name convSet_R_2 \
     type fifo \
     dir O \
@@ -814,7 +814,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 713 \
+    id 729 \
     name convSet_R_3 \
     type fifo \
     dir O \
@@ -829,7 +829,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 714 \
+    id 730 \
     name receive_fifo_L_0 \
     type fifo \
     dir O \
@@ -837,14 +837,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_L_0 \
     op interface \
-    ports { receive_fifo_L_0_din { O 128 vector } receive_fifo_L_0_num_data_valid { I 9 vector } receive_fifo_L_0_fifo_cap { I 9 vector } receive_fifo_L_0_full_n { I 1 bit } receive_fifo_L_0_write { O 1 bit } } \
+    ports { receive_fifo_L_0_din { O 128 vector } receive_fifo_L_0_num_data_valid { I 15 vector } receive_fifo_L_0_fifo_cap { I 15 vector } receive_fifo_L_0_full_n { I 1 bit } receive_fifo_L_0_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 715 \
+    id 731 \
     name receive_fifo_L_1 \
     type fifo \
     dir O \
@@ -852,14 +852,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_L_1 \
     op interface \
-    ports { receive_fifo_L_1_din { O 128 vector } receive_fifo_L_1_num_data_valid { I 9 vector } receive_fifo_L_1_fifo_cap { I 9 vector } receive_fifo_L_1_full_n { I 1 bit } receive_fifo_L_1_write { O 1 bit } } \
+    ports { receive_fifo_L_1_din { O 128 vector } receive_fifo_L_1_num_data_valid { I 15 vector } receive_fifo_L_1_fifo_cap { I 15 vector } receive_fifo_L_1_full_n { I 1 bit } receive_fifo_L_1_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 716 \
+    id 732 \
     name receive_fifo_L_2 \
     type fifo \
     dir O \
@@ -867,14 +867,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_L_2 \
     op interface \
-    ports { receive_fifo_L_2_din { O 128 vector } receive_fifo_L_2_num_data_valid { I 9 vector } receive_fifo_L_2_fifo_cap { I 9 vector } receive_fifo_L_2_full_n { I 1 bit } receive_fifo_L_2_write { O 1 bit } } \
+    ports { receive_fifo_L_2_din { O 128 vector } receive_fifo_L_2_num_data_valid { I 15 vector } receive_fifo_L_2_fifo_cap { I 15 vector } receive_fifo_L_2_full_n { I 1 bit } receive_fifo_L_2_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 717 \
+    id 733 \
     name receive_fifo_L_3 \
     type fifo \
     dir O \
@@ -882,14 +882,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_L_3 \
     op interface \
-    ports { receive_fifo_L_3_din { O 128 vector } receive_fifo_L_3_num_data_valid { I 9 vector } receive_fifo_L_3_fifo_cap { I 9 vector } receive_fifo_L_3_full_n { I 1 bit } receive_fifo_L_3_write { O 1 bit } } \
+    ports { receive_fifo_L_3_din { O 128 vector } receive_fifo_L_3_num_data_valid { I 15 vector } receive_fifo_L_3_fifo_cap { I 15 vector } receive_fifo_L_3_full_n { I 1 bit } receive_fifo_L_3_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 718 \
+    id 734 \
     name receive_fifo_R_0 \
     type fifo \
     dir O \
@@ -897,14 +897,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_R_0 \
     op interface \
-    ports { receive_fifo_R_0_din { O 128 vector } receive_fifo_R_0_num_data_valid { I 9 vector } receive_fifo_R_0_fifo_cap { I 9 vector } receive_fifo_R_0_full_n { I 1 bit } receive_fifo_R_0_write { O 1 bit } } \
+    ports { receive_fifo_R_0_din { O 128 vector } receive_fifo_R_0_num_data_valid { I 15 vector } receive_fifo_R_0_fifo_cap { I 15 vector } receive_fifo_R_0_full_n { I 1 bit } receive_fifo_R_0_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 719 \
+    id 735 \
     name receive_fifo_R_1 \
     type fifo \
     dir O \
@@ -912,14 +912,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_R_1 \
     op interface \
-    ports { receive_fifo_R_1_din { O 128 vector } receive_fifo_R_1_num_data_valid { I 9 vector } receive_fifo_R_1_fifo_cap { I 9 vector } receive_fifo_R_1_full_n { I 1 bit } receive_fifo_R_1_write { O 1 bit } } \
+    ports { receive_fifo_R_1_din { O 128 vector } receive_fifo_R_1_num_data_valid { I 15 vector } receive_fifo_R_1_fifo_cap { I 15 vector } receive_fifo_R_1_full_n { I 1 bit } receive_fifo_R_1_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 720 \
+    id 736 \
     name receive_fifo_R_2 \
     type fifo \
     dir O \
@@ -927,14 +927,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_R_2 \
     op interface \
-    ports { receive_fifo_R_2_din { O 128 vector } receive_fifo_R_2_num_data_valid { I 9 vector } receive_fifo_R_2_fifo_cap { I 9 vector } receive_fifo_R_2_full_n { I 1 bit } receive_fifo_R_2_write { O 1 bit } } \
+    ports { receive_fifo_R_2_din { O 128 vector } receive_fifo_R_2_num_data_valid { I 15 vector } receive_fifo_R_2_fifo_cap { I 15 vector } receive_fifo_R_2_full_n { I 1 bit } receive_fifo_R_2_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 721 \
+    id 737 \
     name receive_fifo_R_3 \
     type fifo \
     dir O \
@@ -942,7 +942,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_R_3 \
     op interface \
-    ports { receive_fifo_R_3_din { O 128 vector } receive_fifo_R_3_num_data_valid { I 9 vector } receive_fifo_R_3_fifo_cap { I 9 vector } receive_fifo_R_3_full_n { I 1 bit } receive_fifo_R_3_write { O 1 bit } } \
+    ports { receive_fifo_R_3_din { O 128 vector } receive_fifo_R_3_num_data_valid { I 15 vector } receive_fifo_R_3_fifo_cap { I 15 vector } receive_fifo_R_3_full_n { I 1 bit } receive_fifo_R_3_write { O 1 bit } } \
 } "
 }
 
@@ -1007,374 +1007,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
-}
-
-
-# RegSlice definition:
-set ID 758
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 759
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 760
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 761
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 762
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 763
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 764
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 765
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 766
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 767
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 768
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 769
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 770
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 771
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 772
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 773
-set RegSliceName TopPL_regslice_both
-set RegSliceInstName TopPL_regslice_both_U
-set CoreName ap_simcore_TopPL_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix TopPL_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
 }
 
 
@@ -1817,6 +1449,374 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check you
 
 # RegSlice definition:
 set ID 793
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 794
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 795
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 796
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 797
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 798
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 799
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 800
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 801
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 802
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 803
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 804
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 805
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 806
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 807
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 808
+set RegSliceName TopPL_regslice_both
+set RegSliceInstName TopPL_regslice_both_U
+set CoreName ap_simcore_TopPL_regslice_both
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
+}
+
+
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
+    name ${RegSliceName} \
+    prefix TopPL_ \
+    sliceTypeList 0\
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
+}
+}
+
+
+# RegSlice definition:
+set ID 809
 set RegSliceName TopPL_regslice_both
 set RegSliceInstName TopPL_regslice_both_U
 set CoreName ap_simcore_TopPL_regslice_both

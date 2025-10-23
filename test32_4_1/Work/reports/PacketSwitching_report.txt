@@ -1,0 +1,25 @@
+Packet ID Report 
+net0 S_SHIM_SOUTH_ch0_C7 M_S2MM_DMA_ch0_C0_R0 : packet id = 0
+net1 S_SHIM_SOUTH_ch0_C6 M_S2MM_DMA_ch1_C0_R0 : packet id = 0
+net2 S_SHIM_SOUTH_ch0_C7 M_S2MM_DMA_ch0_C2_R1 : packet id = 1
+net3 S_SHIM_SOUTH_ch0_C6 M_S2MM_DMA_ch0_C2_R0 : packet id = 1
+net4 S_SHIM_SOUTH_ch0_C7 M_S2MM_DMA_ch0_C3_R1 : packet id = 2
+net5 S_SHIM_SOUTH_ch0_C6 M_S2MM_DMA_ch0_C3_R0 : packet id = 2
+net56 S_MM2S_DMA_ch0_C4_R7 M_SHIM_SOUTH_ch0_C7 : packet id = 0
+net57 S_MM2S_DMA_ch0_C3_R7 M_SHIM_SOUTH_ch2_C6 : packet id = 0
+net58 S_MM2S_DMA_ch1_C3_R7 M_SHIM_SOUTH_ch0_C7 : packet id = 1
+net59 S_MM2S_DMA_ch0_C2_R7 M_SHIM_SOUTH_ch2_C6 : packet id = 1
+net6 S_SHIM_SOUTH_ch0_C7 M_S2MM_DMA_ch0_C4_R0 : packet id = 3
+net60 S_MM2S_DMA_ch1_C2_R7 M_SHIM_SOUTH_ch0_C7 : packet id = 2
+net61 S_MM2S_DMA_ch0_C1_R7 M_SHIM_SOUTH_ch2_C6 : packet id = 2
+net62 S_MM2S_DMA_ch1_C1_R7 M_SHIM_SOUTH_ch0_C7 : packet id = 3
+net63 S_MM2S_DMA_ch1_C4_R7 M_SHIM_SOUTH_ch2_C6 : packet id = 3
+net68 S_SHIM_SOUTH_ch4_C6 M_S2MM_DMA_ch0_C0_R1 : packet id = 0
+net69 S_MM2S_DMA_ch0_C0_R1 M_SHIM_SOUTH_ch4_C6 : packet id = 0
+net7 S_SHIM_SOUTH_ch0_C6 M_S2MM_DMA_ch1_C4_R0 : packet id = 3
+net70 S_SHIM_SOUTH_ch4_C6 M_S2MM_DMA_ch1_C0_R1 : packet id = 1
+net71 S_MM2S_DMA_ch0_C0_R0 M_SHIM_SOUTH_ch4_C6 : packet id = 1
+net72 S_SHIM_SOUTH_ch4_C6 M_S2MM_DMA_ch0_C0_R3 : packet id = 2
+net73 S_MM2S_DMA_ch0_C0_R3 M_SHIM_SOUTH_ch4_C6 : packet id = 2
+net74 S_SHIM_SOUTH_ch4_C6 M_S2MM_DMA_ch0_C0_R2 : packet id = 3
+net75 S_MM2S_DMA_ch0_C0_R4 M_SHIM_SOUTH_ch4_C6 : packet id = 3

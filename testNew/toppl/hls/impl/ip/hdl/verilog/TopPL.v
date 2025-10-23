@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="TopPL_TopPL,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvc1902-vsva2197-2MP-e-S,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.650000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=246,HLS_SYN_DSP=0,HLS_SYN_FF=33002,HLS_SYN_LUT=40542,HLS_VERSION=2023_2}" *)
+(* CORE_GENERATION_INFO="TopPL_TopPL,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvc1902-vsva2197-2MP-e-S,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.650000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=278,HLS_SYN_DSP=0,HLS_SYN_FF=33546,HLS_SYN_LUT=41742,HLS_VERSION=2023_2}" *)
 
 module TopPL (
         s_axi_control_AWVALID,
@@ -800,13 +800,29 @@ wire    Send_U0_ap_continue;
 wire    Send_U0_ap_idle;
 wire    Send_U0_ap_ready;
 wire    Send_U0_syscontrol_0_read;
+wire   [9:0] Send_U0_send_fifo_L_0_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_L_0_fifo_cap;
 wire    Send_U0_send_fifo_L_0_read;
+wire   [9:0] Send_U0_send_fifo_L_1_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_L_1_fifo_cap;
 wire    Send_U0_send_fifo_L_1_read;
+wire   [9:0] Send_U0_send_fifo_L_2_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_L_2_fifo_cap;
 wire    Send_U0_send_fifo_L_2_read;
+wire   [9:0] Send_U0_send_fifo_L_3_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_L_3_fifo_cap;
 wire    Send_U0_send_fifo_L_3_read;
+wire   [9:0] Send_U0_send_fifo_R_0_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_R_0_fifo_cap;
 wire    Send_U0_send_fifo_R_0_read;
+wire   [9:0] Send_U0_send_fifo_R_1_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_R_1_fifo_cap;
 wire    Send_U0_send_fifo_R_1_read;
+wire   [9:0] Send_U0_send_fifo_R_2_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_R_2_fifo_cap;
 wire    Send_U0_send_fifo_R_2_read;
+wire   [9:0] Send_U0_send_fifo_R_3_num_data_valid;
+wire   [9:0] Send_U0_send_fifo_R_3_fifo_cap;
 wire    Send_U0_send_fifo_R_3_read;
 wire   [127:0] Send_U0_sweep_tx1_0_TDATA;
 wire    Send_U0_sweep_tx1_0_TVALID;
@@ -1082,84 +1098,100 @@ wire   [2:0] convSet_R_3_num_data_valid;
 wire   [2:0] convSet_R_3_fifo_cap;
 wire    convSet_R_3_empty_n;
 wire    send_fifo_L_full_n;
+wire    send_fifo_L_almost_full_n;
 wire   [127:0] send_fifo_L_dout;
-wire   [5:0] send_fifo_L_num_data_valid;
-wire   [5:0] send_fifo_L_fifo_cap;
+wire   [10:0] send_fifo_L_num_data_valid;
+wire   [10:0] send_fifo_L_fifo_cap;
 wire    send_fifo_L_empty_n;
+wire    send_fifo_L_almost_empty_n;
 wire    send_fifo_L_1_full_n;
+wire    send_fifo_L_1_almost_full_n;
 wire   [127:0] send_fifo_L_1_dout;
-wire   [5:0] send_fifo_L_1_num_data_valid;
-wire   [5:0] send_fifo_L_1_fifo_cap;
+wire   [10:0] send_fifo_L_1_num_data_valid;
+wire   [10:0] send_fifo_L_1_fifo_cap;
 wire    send_fifo_L_1_empty_n;
+wire    send_fifo_L_1_almost_empty_n;
 wire    send_fifo_L_2_full_n;
+wire    send_fifo_L_2_almost_full_n;
 wire   [127:0] send_fifo_L_2_dout;
-wire   [5:0] send_fifo_L_2_num_data_valid;
-wire   [5:0] send_fifo_L_2_fifo_cap;
+wire   [10:0] send_fifo_L_2_num_data_valid;
+wire   [10:0] send_fifo_L_2_fifo_cap;
 wire    send_fifo_L_2_empty_n;
+wire    send_fifo_L_2_almost_empty_n;
 wire    send_fifo_L_3_full_n;
+wire    send_fifo_L_3_almost_full_n;
 wire   [127:0] send_fifo_L_3_dout;
-wire   [5:0] send_fifo_L_3_num_data_valid;
-wire   [5:0] send_fifo_L_3_fifo_cap;
+wire   [10:0] send_fifo_L_3_num_data_valid;
+wire   [10:0] send_fifo_L_3_fifo_cap;
 wire    send_fifo_L_3_empty_n;
+wire    send_fifo_L_3_almost_empty_n;
 wire    send_fifo_R_full_n;
+wire    send_fifo_R_almost_full_n;
 wire   [127:0] send_fifo_R_dout;
-wire   [5:0] send_fifo_R_num_data_valid;
-wire   [5:0] send_fifo_R_fifo_cap;
+wire   [10:0] send_fifo_R_num_data_valid;
+wire   [10:0] send_fifo_R_fifo_cap;
 wire    send_fifo_R_empty_n;
+wire    send_fifo_R_almost_empty_n;
 wire    send_fifo_R_1_full_n;
+wire    send_fifo_R_1_almost_full_n;
 wire   [127:0] send_fifo_R_1_dout;
-wire   [5:0] send_fifo_R_1_num_data_valid;
-wire   [5:0] send_fifo_R_1_fifo_cap;
+wire   [10:0] send_fifo_R_1_num_data_valid;
+wire   [10:0] send_fifo_R_1_fifo_cap;
 wire    send_fifo_R_1_empty_n;
+wire    send_fifo_R_1_almost_empty_n;
 wire    send_fifo_R_2_full_n;
+wire    send_fifo_R_2_almost_full_n;
 wire   [127:0] send_fifo_R_2_dout;
-wire   [5:0] send_fifo_R_2_num_data_valid;
-wire   [5:0] send_fifo_R_2_fifo_cap;
+wire   [10:0] send_fifo_R_2_num_data_valid;
+wire   [10:0] send_fifo_R_2_fifo_cap;
 wire    send_fifo_R_2_empty_n;
+wire    send_fifo_R_2_almost_empty_n;
 wire    send_fifo_R_3_full_n;
+wire    send_fifo_R_3_almost_full_n;
 wire   [127:0] send_fifo_R_3_dout;
-wire   [5:0] send_fifo_R_3_num_data_valid;
-wire   [5:0] send_fifo_R_3_fifo_cap;
+wire   [10:0] send_fifo_R_3_num_data_valid;
+wire   [10:0] send_fifo_R_3_fifo_cap;
 wire    send_fifo_R_3_empty_n;
+wire    send_fifo_R_3_almost_empty_n;
 wire    receive_fifo_L_full_n;
 wire   [127:0] receive_fifo_L_dout;
-wire   [8:0] receive_fifo_L_num_data_valid;
-wire   [8:0] receive_fifo_L_fifo_cap;
+wire   [14:0] receive_fifo_L_num_data_valid;
+wire   [14:0] receive_fifo_L_fifo_cap;
 wire    receive_fifo_L_empty_n;
 wire    receive_fifo_L_1_full_n;
 wire   [127:0] receive_fifo_L_1_dout;
-wire   [8:0] receive_fifo_L_1_num_data_valid;
-wire   [8:0] receive_fifo_L_1_fifo_cap;
+wire   [14:0] receive_fifo_L_1_num_data_valid;
+wire   [14:0] receive_fifo_L_1_fifo_cap;
 wire    receive_fifo_L_1_empty_n;
 wire    receive_fifo_L_2_full_n;
 wire   [127:0] receive_fifo_L_2_dout;
-wire   [8:0] receive_fifo_L_2_num_data_valid;
-wire   [8:0] receive_fifo_L_2_fifo_cap;
+wire   [14:0] receive_fifo_L_2_num_data_valid;
+wire   [14:0] receive_fifo_L_2_fifo_cap;
 wire    receive_fifo_L_2_empty_n;
 wire    receive_fifo_L_3_full_n;
 wire   [127:0] receive_fifo_L_3_dout;
-wire   [8:0] receive_fifo_L_3_num_data_valid;
-wire   [8:0] receive_fifo_L_3_fifo_cap;
+wire   [14:0] receive_fifo_L_3_num_data_valid;
+wire   [14:0] receive_fifo_L_3_fifo_cap;
 wire    receive_fifo_L_3_empty_n;
 wire    receive_fifo_R_full_n;
 wire   [127:0] receive_fifo_R_dout;
-wire   [8:0] receive_fifo_R_num_data_valid;
-wire   [8:0] receive_fifo_R_fifo_cap;
+wire   [14:0] receive_fifo_R_num_data_valid;
+wire   [14:0] receive_fifo_R_fifo_cap;
 wire    receive_fifo_R_empty_n;
 wire    receive_fifo_R_1_full_n;
 wire   [127:0] receive_fifo_R_1_dout;
-wire   [8:0] receive_fifo_R_1_num_data_valid;
-wire   [8:0] receive_fifo_R_1_fifo_cap;
+wire   [14:0] receive_fifo_R_1_num_data_valid;
+wire   [14:0] receive_fifo_R_1_fifo_cap;
 wire    receive_fifo_R_1_empty_n;
 wire    receive_fifo_R_2_full_n;
 wire   [127:0] receive_fifo_R_2_dout;
-wire   [8:0] receive_fifo_R_2_num_data_valid;
-wire   [8:0] receive_fifo_R_2_fifo_cap;
+wire   [14:0] receive_fifo_R_2_num_data_valid;
+wire   [14:0] receive_fifo_R_2_fifo_cap;
 wire    receive_fifo_R_2_empty_n;
 wire    receive_fifo_R_3_full_n;
 wire   [127:0] receive_fifo_R_3_dout;
-wire   [8:0] receive_fifo_R_3_num_data_valid;
-wire   [8:0] receive_fifo_R_3_fifo_cap;
+wire   [14:0] receive_fifo_R_3_num_data_valid;
+wire   [14:0] receive_fifo_R_3_fifo_cap;
 wire    receive_fifo_R_3_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
@@ -1713,43 +1745,43 @@ TopPL_Send Send_U0(
     .syscontrol_0_empty_n(syscontrol_empty_n),
     .syscontrol_0_read(Send_U0_syscontrol_0_read),
     .send_fifo_L_0_dout(send_fifo_L_dout),
-    .send_fifo_L_0_num_data_valid(send_fifo_L_num_data_valid),
-    .send_fifo_L_0_fifo_cap(send_fifo_L_fifo_cap),
+    .send_fifo_L_0_num_data_valid(Send_U0_send_fifo_L_0_num_data_valid),
+    .send_fifo_L_0_fifo_cap(Send_U0_send_fifo_L_0_fifo_cap),
     .send_fifo_L_0_empty_n(send_fifo_L_empty_n),
     .send_fifo_L_0_read(Send_U0_send_fifo_L_0_read),
     .send_fifo_L_1_dout(send_fifo_L_1_dout),
-    .send_fifo_L_1_num_data_valid(send_fifo_L_1_num_data_valid),
-    .send_fifo_L_1_fifo_cap(send_fifo_L_1_fifo_cap),
+    .send_fifo_L_1_num_data_valid(Send_U0_send_fifo_L_1_num_data_valid),
+    .send_fifo_L_1_fifo_cap(Send_U0_send_fifo_L_1_fifo_cap),
     .send_fifo_L_1_empty_n(send_fifo_L_1_empty_n),
     .send_fifo_L_1_read(Send_U0_send_fifo_L_1_read),
     .send_fifo_L_2_dout(send_fifo_L_2_dout),
-    .send_fifo_L_2_num_data_valid(send_fifo_L_2_num_data_valid),
-    .send_fifo_L_2_fifo_cap(send_fifo_L_2_fifo_cap),
+    .send_fifo_L_2_num_data_valid(Send_U0_send_fifo_L_2_num_data_valid),
+    .send_fifo_L_2_fifo_cap(Send_U0_send_fifo_L_2_fifo_cap),
     .send_fifo_L_2_empty_n(send_fifo_L_2_empty_n),
     .send_fifo_L_2_read(Send_U0_send_fifo_L_2_read),
     .send_fifo_L_3_dout(send_fifo_L_3_dout),
-    .send_fifo_L_3_num_data_valid(send_fifo_L_3_num_data_valid),
-    .send_fifo_L_3_fifo_cap(send_fifo_L_3_fifo_cap),
+    .send_fifo_L_3_num_data_valid(Send_U0_send_fifo_L_3_num_data_valid),
+    .send_fifo_L_3_fifo_cap(Send_U0_send_fifo_L_3_fifo_cap),
     .send_fifo_L_3_empty_n(send_fifo_L_3_empty_n),
     .send_fifo_L_3_read(Send_U0_send_fifo_L_3_read),
     .send_fifo_R_0_dout(send_fifo_R_dout),
-    .send_fifo_R_0_num_data_valid(send_fifo_R_num_data_valid),
-    .send_fifo_R_0_fifo_cap(send_fifo_R_fifo_cap),
+    .send_fifo_R_0_num_data_valid(Send_U0_send_fifo_R_0_num_data_valid),
+    .send_fifo_R_0_fifo_cap(Send_U0_send_fifo_R_0_fifo_cap),
     .send_fifo_R_0_empty_n(send_fifo_R_empty_n),
     .send_fifo_R_0_read(Send_U0_send_fifo_R_0_read),
     .send_fifo_R_1_dout(send_fifo_R_1_dout),
-    .send_fifo_R_1_num_data_valid(send_fifo_R_1_num_data_valid),
-    .send_fifo_R_1_fifo_cap(send_fifo_R_1_fifo_cap),
+    .send_fifo_R_1_num_data_valid(Send_U0_send_fifo_R_1_num_data_valid),
+    .send_fifo_R_1_fifo_cap(Send_U0_send_fifo_R_1_fifo_cap),
     .send_fifo_R_1_empty_n(send_fifo_R_1_empty_n),
     .send_fifo_R_1_read(Send_U0_send_fifo_R_1_read),
     .send_fifo_R_2_dout(send_fifo_R_2_dout),
-    .send_fifo_R_2_num_data_valid(send_fifo_R_2_num_data_valid),
-    .send_fifo_R_2_fifo_cap(send_fifo_R_2_fifo_cap),
+    .send_fifo_R_2_num_data_valid(Send_U0_send_fifo_R_2_num_data_valid),
+    .send_fifo_R_2_fifo_cap(Send_U0_send_fifo_R_2_fifo_cap),
     .send_fifo_R_2_empty_n(send_fifo_R_2_empty_n),
     .send_fifo_R_2_read(Send_U0_send_fifo_R_2_read),
     .send_fifo_R_3_dout(send_fifo_R_3_dout),
-    .send_fifo_R_3_num_data_valid(send_fifo_R_3_num_data_valid),
-    .send_fifo_R_3_fifo_cap(send_fifo_R_3_fifo_cap),
+    .send_fifo_R_3_num_data_valid(Send_U0_send_fifo_R_3_num_data_valid),
+    .send_fifo_R_3_fifo_cap(Send_U0_send_fifo_R_3_fifo_cap),
     .send_fifo_R_3_empty_n(send_fifo_R_3_empty_n),
     .send_fifo_R_3_read(Send_U0_send_fifo_R_3_read),
     .sweep_tx1_0_TDATA(Send_U0_sweep_tx1_0_TDATA),
@@ -1966,41 +1998,49 @@ TopPL_RoundRobin RoundRobin_U0(
     .send_fifo_L_0_num_data_valid(send_fifo_L_num_data_valid),
     .send_fifo_L_0_fifo_cap(send_fifo_L_fifo_cap),
     .send_fifo_L_0_full_n(send_fifo_L_full_n),
+    .send_fifo_L_0_almost_full_n(send_fifo_L_almost_full_n),
     .send_fifo_L_0_write(RoundRobin_U0_send_fifo_L_0_write),
     .send_fifo_L_1_din(RoundRobin_U0_send_fifo_L_1_din),
     .send_fifo_L_1_num_data_valid(send_fifo_L_1_num_data_valid),
     .send_fifo_L_1_fifo_cap(send_fifo_L_1_fifo_cap),
     .send_fifo_L_1_full_n(send_fifo_L_1_full_n),
+    .send_fifo_L_1_almost_full_n(send_fifo_L_1_almost_full_n),
     .send_fifo_L_1_write(RoundRobin_U0_send_fifo_L_1_write),
     .send_fifo_L_2_din(RoundRobin_U0_send_fifo_L_2_din),
     .send_fifo_L_2_num_data_valid(send_fifo_L_2_num_data_valid),
     .send_fifo_L_2_fifo_cap(send_fifo_L_2_fifo_cap),
     .send_fifo_L_2_full_n(send_fifo_L_2_full_n),
+    .send_fifo_L_2_almost_full_n(send_fifo_L_2_almost_full_n),
     .send_fifo_L_2_write(RoundRobin_U0_send_fifo_L_2_write),
     .send_fifo_L_3_din(RoundRobin_U0_send_fifo_L_3_din),
     .send_fifo_L_3_num_data_valid(send_fifo_L_3_num_data_valid),
     .send_fifo_L_3_fifo_cap(send_fifo_L_3_fifo_cap),
     .send_fifo_L_3_full_n(send_fifo_L_3_full_n),
+    .send_fifo_L_3_almost_full_n(send_fifo_L_3_almost_full_n),
     .send_fifo_L_3_write(RoundRobin_U0_send_fifo_L_3_write),
     .send_fifo_R_0_din(RoundRobin_U0_send_fifo_R_0_din),
     .send_fifo_R_0_num_data_valid(send_fifo_R_num_data_valid),
     .send_fifo_R_0_fifo_cap(send_fifo_R_fifo_cap),
     .send_fifo_R_0_full_n(send_fifo_R_full_n),
+    .send_fifo_R_0_almost_full_n(send_fifo_R_almost_full_n),
     .send_fifo_R_0_write(RoundRobin_U0_send_fifo_R_0_write),
     .send_fifo_R_1_din(RoundRobin_U0_send_fifo_R_1_din),
     .send_fifo_R_1_num_data_valid(send_fifo_R_1_num_data_valid),
     .send_fifo_R_1_fifo_cap(send_fifo_R_1_fifo_cap),
     .send_fifo_R_1_full_n(send_fifo_R_1_full_n),
+    .send_fifo_R_1_almost_full_n(send_fifo_R_1_almost_full_n),
     .send_fifo_R_1_write(RoundRobin_U0_send_fifo_R_1_write),
     .send_fifo_R_2_din(RoundRobin_U0_send_fifo_R_2_din),
     .send_fifo_R_2_num_data_valid(send_fifo_R_2_num_data_valid),
     .send_fifo_R_2_fifo_cap(send_fifo_R_2_fifo_cap),
     .send_fifo_R_2_full_n(send_fifo_R_2_full_n),
+    .send_fifo_R_2_almost_full_n(send_fifo_R_2_almost_full_n),
     .send_fifo_R_2_write(RoundRobin_U0_send_fifo_R_2_write),
     .send_fifo_R_3_din(RoundRobin_U0_send_fifo_R_3_din),
     .send_fifo_R_3_num_data_valid(send_fifo_R_3_num_data_valid),
     .send_fifo_R_3_fifo_cap(send_fifo_R_3_fifo_cap),
     .send_fifo_R_3_full_n(send_fifo_R_3_full_n),
+    .send_fifo_R_3_almost_full_n(send_fifo_R_3_almost_full_n),
     .send_fifo_R_3_write(RoundRobin_U0_send_fifo_R_3_write),
     .receive_fifo_L_0_dout(receive_fifo_L_dout),
     .receive_fifo_L_0_num_data_valid(receive_fifo_L_num_data_valid),
@@ -2358,127 +2398,143 @@ TopPL_fifo_w32_d4_S convSet_R_3_U(
     .if_read(SystemControl_U0_convSet_R_3_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_L_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_L_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_L_0_din),
     .if_full_n(send_fifo_L_full_n),
+    .if_almost_full_n(send_fifo_L_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_L_0_write),
     .if_dout(send_fifo_L_dout),
     .if_num_data_valid(send_fifo_L_num_data_valid),
     .if_fifo_cap(send_fifo_L_fifo_cap),
     .if_empty_n(send_fifo_L_empty_n),
+    .if_almost_empty_n(send_fifo_L_almost_empty_n),
     .if_read(Send_U0_send_fifo_L_0_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_L_1_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_L_1_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_L_1_din),
     .if_full_n(send_fifo_L_1_full_n),
+    .if_almost_full_n(send_fifo_L_1_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_L_1_write),
     .if_dout(send_fifo_L_1_dout),
     .if_num_data_valid(send_fifo_L_1_num_data_valid),
     .if_fifo_cap(send_fifo_L_1_fifo_cap),
     .if_empty_n(send_fifo_L_1_empty_n),
+    .if_almost_empty_n(send_fifo_L_1_almost_empty_n),
     .if_read(Send_U0_send_fifo_L_1_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_L_2_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_L_2_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_L_2_din),
     .if_full_n(send_fifo_L_2_full_n),
+    .if_almost_full_n(send_fifo_L_2_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_L_2_write),
     .if_dout(send_fifo_L_2_dout),
     .if_num_data_valid(send_fifo_L_2_num_data_valid),
     .if_fifo_cap(send_fifo_L_2_fifo_cap),
     .if_empty_n(send_fifo_L_2_empty_n),
+    .if_almost_empty_n(send_fifo_L_2_almost_empty_n),
     .if_read(Send_U0_send_fifo_L_2_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_L_3_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_L_3_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_L_3_din),
     .if_full_n(send_fifo_L_3_full_n),
+    .if_almost_full_n(send_fifo_L_3_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_L_3_write),
     .if_dout(send_fifo_L_3_dout),
     .if_num_data_valid(send_fifo_L_3_num_data_valid),
     .if_fifo_cap(send_fifo_L_3_fifo_cap),
     .if_empty_n(send_fifo_L_3_empty_n),
+    .if_almost_empty_n(send_fifo_L_3_almost_empty_n),
     .if_read(Send_U0_send_fifo_L_3_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_R_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_R_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_R_0_din),
     .if_full_n(send_fifo_R_full_n),
+    .if_almost_full_n(send_fifo_R_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_R_0_write),
     .if_dout(send_fifo_R_dout),
     .if_num_data_valid(send_fifo_R_num_data_valid),
     .if_fifo_cap(send_fifo_R_fifo_cap),
     .if_empty_n(send_fifo_R_empty_n),
+    .if_almost_empty_n(send_fifo_R_almost_empty_n),
     .if_read(Send_U0_send_fifo_R_0_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_R_1_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_R_1_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_R_1_din),
     .if_full_n(send_fifo_R_1_full_n),
+    .if_almost_full_n(send_fifo_R_1_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_R_1_write),
     .if_dout(send_fifo_R_1_dout),
     .if_num_data_valid(send_fifo_R_1_num_data_valid),
     .if_fifo_cap(send_fifo_R_1_fifo_cap),
     .if_empty_n(send_fifo_R_1_empty_n),
+    .if_almost_empty_n(send_fifo_R_1_almost_empty_n),
     .if_read(Send_U0_send_fifo_R_1_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_R_2_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_R_2_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_R_2_din),
     .if_full_n(send_fifo_R_2_full_n),
+    .if_almost_full_n(send_fifo_R_2_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_R_2_write),
     .if_dout(send_fifo_R_2_dout),
     .if_num_data_valid(send_fifo_R_2_num_data_valid),
     .if_fifo_cap(send_fifo_R_2_fifo_cap),
     .if_empty_n(send_fifo_R_2_empty_n),
+    .if_almost_empty_n(send_fifo_R_2_almost_empty_n),
     .if_read(Send_U0_send_fifo_R_2_read)
 );
 
-TopPL_fifo_w128_d32_B send_fifo_R_3_U(
+TopPL_fifo_w128_d512_B_with_almost send_fifo_R_3_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(RoundRobin_U0_send_fifo_R_3_din),
     .if_full_n(send_fifo_R_3_full_n),
+    .if_almost_full_n(send_fifo_R_3_almost_full_n),
     .if_write(RoundRobin_U0_send_fifo_R_3_write),
     .if_dout(send_fifo_R_3_dout),
     .if_num_data_valid(send_fifo_R_3_num_data_valid),
     .if_fifo_cap(send_fifo_R_3_fifo_cap),
     .if_empty_n(send_fifo_R_3_empty_n),
+    .if_almost_empty_n(send_fifo_R_3_almost_empty_n),
     .if_read(Send_U0_send_fifo_R_3_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_L_U(
+TopPL_fifo_w128_d16384_U receive_fifo_L_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2493,7 +2549,7 @@ TopPL_fifo_w128_d256_U receive_fifo_L_U(
     .if_read(RoundRobin_U0_receive_fifo_L_0_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_L_1_U(
+TopPL_fifo_w128_d16384_U receive_fifo_L_1_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2508,7 +2564,7 @@ TopPL_fifo_w128_d256_U receive_fifo_L_1_U(
     .if_read(RoundRobin_U0_receive_fifo_L_1_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_L_2_U(
+TopPL_fifo_w128_d16384_U receive_fifo_L_2_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2523,7 +2579,7 @@ TopPL_fifo_w128_d256_U receive_fifo_L_2_U(
     .if_read(RoundRobin_U0_receive_fifo_L_2_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_L_3_U(
+TopPL_fifo_w128_d16384_U receive_fifo_L_3_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2538,7 +2594,7 @@ TopPL_fifo_w128_d256_U receive_fifo_L_3_U(
     .if_read(RoundRobin_U0_receive_fifo_L_3_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_R_U(
+TopPL_fifo_w128_d16384_U receive_fifo_R_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2553,7 +2609,7 @@ TopPL_fifo_w128_d256_U receive_fifo_R_U(
     .if_read(RoundRobin_U0_receive_fifo_R_0_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_R_1_U(
+TopPL_fifo_w128_d16384_U receive_fifo_R_1_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2568,7 +2624,7 @@ TopPL_fifo_w128_d256_U receive_fifo_R_1_U(
     .if_read(RoundRobin_U0_receive_fifo_R_1_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_R_2_U(
+TopPL_fifo_w128_d16384_U receive_fifo_R_2_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2583,7 +2639,7 @@ TopPL_fifo_w128_d256_U receive_fifo_R_2_U(
     .if_read(RoundRobin_U0_receive_fifo_R_2_read)
 );
 
-TopPL_fifo_w128_d256_U receive_fifo_R_3_U(
+TopPL_fifo_w128_d16384_U receive_fifo_R_3_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2671,6 +2727,38 @@ assign RoundRobin_U0_ap_start = ((ap_sync_reg_RoundRobin_U0_ap_ready ^ 1'b1) & a
 assign Send_U0_ap_continue = ap_sync_continue;
 
 assign Send_U0_ap_start = start_for_Send_U0_empty_n;
+
+assign Send_U0_send_fifo_L_0_fifo_cap = send_fifo_L_fifo_cap;
+
+assign Send_U0_send_fifo_L_0_num_data_valid = send_fifo_L_num_data_valid;
+
+assign Send_U0_send_fifo_L_1_fifo_cap = send_fifo_L_1_fifo_cap;
+
+assign Send_U0_send_fifo_L_1_num_data_valid = send_fifo_L_1_num_data_valid;
+
+assign Send_U0_send_fifo_L_2_fifo_cap = send_fifo_L_2_fifo_cap;
+
+assign Send_U0_send_fifo_L_2_num_data_valid = send_fifo_L_2_num_data_valid;
+
+assign Send_U0_send_fifo_L_3_fifo_cap = send_fifo_L_3_fifo_cap;
+
+assign Send_U0_send_fifo_L_3_num_data_valid = send_fifo_L_3_num_data_valid;
+
+assign Send_U0_send_fifo_R_0_fifo_cap = send_fifo_R_fifo_cap;
+
+assign Send_U0_send_fifo_R_0_num_data_valid = send_fifo_R_num_data_valid;
+
+assign Send_U0_send_fifo_R_1_fifo_cap = send_fifo_R_1_fifo_cap;
+
+assign Send_U0_send_fifo_R_1_num_data_valid = send_fifo_R_1_num_data_valid;
+
+assign Send_U0_send_fifo_R_2_fifo_cap = send_fifo_R_2_fifo_cap;
+
+assign Send_U0_send_fifo_R_2_num_data_valid = send_fifo_R_2_num_data_valid;
+
+assign Send_U0_send_fifo_R_3_fifo_cap = send_fifo_R_3_fifo_cap;
+
+assign Send_U0_send_fifo_R_3_num_data_valid = send_fifo_R_3_num_data_valid;
 
 assign SystemControl_U0_ap_continue = ap_sync_continue;
 

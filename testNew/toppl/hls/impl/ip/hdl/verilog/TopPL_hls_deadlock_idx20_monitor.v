@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ps
 
-module TopPL_hls_deadlock_idx20_monitor ( // for module TopPL_TopPL_inst.Send_U0.grp_send2AIE_15_fu_252
+module TopPL_hls_deadlock_idx20_monitor ( // for module TopPL_TopPL_inst.Send_U0.grp_send2AIE_15_fu_250
     input wire clock,
     input wire reset,
     input wire [35:0] axis_block_sigs,

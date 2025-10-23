@@ -17,13 +17,13 @@ port (
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     receive_fifo_L_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_0_empty_n : IN STD_LOGIC;
     receive_fifo_L_0_read : OUT STD_LOGIC;
     send_fifo_L_1_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-    send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-    send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+    send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+    send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
     send_fifo_L_1_full_n : IN STD_LOGIC;
     send_fifo_L_1_write : OUT STD_LOGIC );
 end;
@@ -37,10 +37,10 @@ architecture behav of TopPL_RoundRobin_Pipeline_VITIS_LOOP_377_3 is
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_boolean_0 : BOOLEAN := false;
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
-    constant ap_const_lv5_0 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
+    constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
-    constant ap_const_lv5_1 : STD_LOGIC_VECTOR (4 downto 0) := "00001";
-    constant ap_const_lv5_10 : STD_LOGIC_VECTOR (4 downto 0) := "10000";
+    constant ap_const_lv9_1 : STD_LOGIC_VECTOR (8 downto 0) := "000000001";
+    constant ap_const_lv9_100 : STD_LOGIC_VECTOR (8 downto 0) := "100000000";
 
 attribute shreg_extract : string;
     signal ap_CS_fsm : STD_LOGIC_VECTOR (0 downto 0) := "1";
@@ -60,11 +60,11 @@ attribute shreg_extract : string;
     signal receive_fifo_L_0_blk_n : STD_LOGIC;
     signal ap_block_pp0_stage0 : BOOLEAN;
     signal send_fifo_L_1_blk_n : STD_LOGIC;
-    signal j_01_fu_46 : STD_LOGIC_VECTOR (4 downto 0) := "00000";
-    signal j_42_fu_82_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal j_01_fu_46 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
+    signal j_44_fu_82_p2 : STD_LOGIC_VECTOR (8 downto 0);
     signal ap_loop_init : STD_LOGIC;
     signal ap_block_pp0_stage0_11001 : BOOLEAN;
-    signal ap_sig_allocacmp_j : STD_LOGIC_VECTOR (4 downto 0);
+    signal ap_sig_allocacmp_j : STD_LOGIC_VECTOR (8 downto 0);
     signal ap_block_pp0_stage0_01001 : BOOLEAN;
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
@@ -161,9 +161,9 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
                 if (((icmp_ln377_fu_88_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter0 = ap_const_logic_1))) then 
-                    j_01_fu_46 <= j_42_fu_82_p2;
+                    j_01_fu_46 <= j_44_fu_82_p2;
                 elsif ((ap_loop_init = ap_const_logic_1)) then 
-                    j_01_fu_46 <= ap_const_lv5_0;
+                    j_01_fu_46 <= ap_const_lv9_0;
                 end if;
             end if; 
         end if;
@@ -261,14 +261,14 @@ begin
     ap_sig_allocacmp_j_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_block_pp0_stage0, j_01_fu_46, ap_loop_init)
     begin
         if (((ap_loop_init = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
-            ap_sig_allocacmp_j <= ap_const_lv5_0;
+            ap_sig_allocacmp_j <= ap_const_lv9_0;
         else 
             ap_sig_allocacmp_j <= j_01_fu_46;
         end if; 
     end process;
 
-    icmp_ln377_fu_88_p2 <= "1" when (ap_sig_allocacmp_j = ap_const_lv5_10) else "0";
-    j_42_fu_82_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_j) + unsigned(ap_const_lv5_1));
+    icmp_ln377_fu_88_p2 <= "1" when (ap_sig_allocacmp_j = ap_const_lv9_100) else "0";
+    j_44_fu_82_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_j) + unsigned(ap_const_lv9_1));
 
     receive_fifo_L_0_blk_n_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, receive_fifo_L_0_empty_n, ap_block_pp0_stage0)
     begin

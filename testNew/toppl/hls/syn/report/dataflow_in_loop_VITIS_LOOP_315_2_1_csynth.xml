@@ -22,15 +22,15 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>33</Best-caseLatency>
-<Average-caseLatency>33</Average-caseLatency>
-<Worst-caseLatency>33</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.165 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.165 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.165 us</Worst-caseRealTimeLatency>
-<DataflowPipelineThroughput>32</DataflowPipelineThroughput>
-<Interval-min>32</Interval-min>
-<Interval-max>32</Interval-max>
+<Best-caseLatency>287</Best-caseLatency>
+<Average-caseLatency>287</Average-caseLatency>
+<Worst-caseLatency>287</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.435 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.435 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.435 us</Worst-caseRealTimeLatency>
+<DataflowPipelineThroughput>286</DataflowPipelineThroughput>
+<Interval-min>286</Interval-min>
+<Interval-max>286</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
@@ -41,8 +41,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>8931</FF>
-<LUT>15410</LUT>
+<FF>8963</FF>
+<LUT>15482</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -65,7 +65,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>5</Bits>
+<Bits>9</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

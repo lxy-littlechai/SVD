@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'print_int_s'" level="0">
-<item name = "Date">Mon Oct 20 21:15:03 2025
+<item name = "Date">Mon Oct 20 22:10:32 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -61,7 +61,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="printint_U400">printint, 0, 0, 0, 0, 0</column>
+<column name="printint_U416">printint, 0, 0, 0, 0, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -106,7 +106,7 @@
 <column name="ap_continue">in, 1, ap_ctrl_hs, print&lt;int&gt;, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, print&lt;int&gt;, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, print&lt;int&gt;, return value</column>
-<column name="v">in, 5, ap_none, v, scalar</column>
+<column name="v">in, 9, ap_none, v, scalar</column>
 </table>
 </item>
 </section>

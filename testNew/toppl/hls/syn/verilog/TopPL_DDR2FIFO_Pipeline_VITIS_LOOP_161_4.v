@@ -122,8 +122,8 @@ input  [1:0] m_axi_gmem0_BRESP;
 input  [0:0] m_axi_gmem0_BID;
 input  [0:0] m_axi_gmem0_BUSER;
 output  [127:0] send_fifo_R_1_din;
-input  [5:0] send_fifo_R_1_num_data_valid;
-input  [5:0] send_fifo_R_1_fifo_cap;
+input  [9:0] send_fifo_R_1_num_data_valid;
+input  [9:0] send_fifo_R_1_fifo_cap;
 input   send_fifo_R_1_full_n;
 output   send_fifo_R_1_write;
 input  [57:0] sext_ln168;
@@ -156,9 +156,9 @@ wire   [511:0] ap_phi_reg_pp0_iter1_empty_reg_96;
 wire   [511:0] zext_ln161_fu_188_p1;
 reg   [383:0] shiftreg23_fu_70;
 wire    ap_loop_init;
-reg   [4:0] j_38_fu_74;
-wire   [4:0] add_ln161_fu_142_p2;
-reg   [4:0] ap_sig_allocacmp_j;
+reg   [8:0] j_40_fu_74;
+wire   [8:0] add_ln161_fu_142_p2;
+reg   [8:0] ap_sig_allocacmp_j;
 reg    ap_block_pp0_stage0_01001;
 wire   [1:0] trunc_ln161_fu_154_p1;
 reg    ap_done_reg;
@@ -174,7 +174,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 shiftreg23_fu_70 = 384'd0;
-#0 j_38_fu_74 = 5'd0;
+#0 j_40_fu_74 = 9'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -228,9 +228,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
         if (((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln161_fu_148_p2 == 1'd0))) begin
-            j_38_fu_74 <= add_ln161_fu_142_p2;
+            j_40_fu_74 <= add_ln161_fu_142_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            j_38_fu_74 <= 5'd0;
+            j_40_fu_74 <= 9'd0;
         end
     end
 end
@@ -308,9 +308,9 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1) & (1'b0 == ap_block_pp0_stage0))) begin
-        ap_sig_allocacmp_j = 5'd0;
+        ap_sig_allocacmp_j = 9'd0;
     end else begin
-        ap_sig_allocacmp_j = j_38_fu_74;
+        ap_sig_allocacmp_j = j_40_fu_74;
     end
 end
 
@@ -357,7 +357,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln161_fu_142_p2 = (ap_sig_allocacmp_j + 5'd1);
+assign add_ln161_fu_142_p2 = (ap_sig_allocacmp_j + 9'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -391,7 +391,7 @@ always @ (*) begin
     ap_predicate_op39_read_state2 = ((icmp_ln163_reg_255 == 1'd1) & (icmp_ln161_reg_251 == 1'd0));
 end
 
-assign icmp_ln161_fu_148_p2 = ((ap_sig_allocacmp_j == 5'd16) ? 1'b1 : 1'b0);
+assign icmp_ln161_fu_148_p2 = ((ap_sig_allocacmp_j == 9'd256) ? 1'b1 : 1'b0);
 
 assign icmp_ln163_fu_158_p2 = ((trunc_ln161_fu_154_p1 == 2'd0) ? 1'b1 : 1'b0);
 

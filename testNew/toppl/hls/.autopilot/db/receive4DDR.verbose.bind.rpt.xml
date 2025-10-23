@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'receive4DDR'" level="0">
-<item name = "Date">Mon Oct 20 21:14:52 2025
+<item name = "Date">Mon Oct 20 22:10:22 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 2.577 ns, 1.35 ns</column>
+<column name="ap_clk">5.00 ns, 2.766 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">29, 29, 0.145 us, 0.145 us, 29, 29, no</column>
+<column name="">281, 281, 1.405 us, 1.405 us, 281, 281, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119">receive4DDR_Pipeline_VITIS_LOOP_39_2, 9, 9, 45.000 ns, 45.000 ns, 9, 9, no</column>
+<column name="grp_receive4DDR_Pipeline_VITIS_LOOP_39_2_fu_119">receive4DDR_Pipeline_VITIS_LOOP_39_2, 65, 65, 0.325 us, 0.325 us, 65, 65, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_32_1">28, 28, 14, -, -, 2, no</column>
+<column name="- VITIS_LOOP_32_1">280, 280, 70, -, -, 4, no</column>
 </table>
 </item>
 </section>

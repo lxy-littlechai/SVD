@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 542 \
+    id 558 \
     name sweep_rx4_1_V_data_V \
     reset_level 1 \
     sync_rst true \
@@ -30,7 +30,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 543 \
+    id 559 \
     name sweep_rx4_1_V_keep_V \
     reset_level 1 \
     sync_rst true \
@@ -49,7 +49,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 544 \
+    id 560 \
     name sweep_rx4_1_V_strb_V \
     reset_level 1 \
     sync_rst true \
@@ -68,7 +68,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 545 \
+    id 561 \
     name sweep_rx4_1_V_last_V \
     reset_level 1 \
     sync_rst true \
@@ -86,7 +86,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 540 \
+    id 556 \
     name return_r \
     type other \
     dir O \
@@ -101,7 +101,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 541 \
+    id 557 \
     name receive_fifo_R_3 \
     type fifo \
     dir O \
@@ -109,7 +109,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_receive_fifo_R_3 \
     op interface \
-    ports { receive_fifo_R_3_din { O 128 vector } receive_fifo_R_3_num_data_valid { I 9 vector } receive_fifo_R_3_fifo_cap { I 9 vector } receive_fifo_R_3_full_n { I 1 bit } receive_fifo_R_3_write { O 1 bit } } \
+    ports { receive_fifo_R_3_din { O 128 vector } receive_fifo_R_3_num_data_valid { I 15 vector } receive_fifo_R_3_fifo_cap { I 15 vector } receive_fifo_R_3_full_n { I 1 bit } receive_fifo_R_3_write { O 1 bit } } \
 } "
 }
 

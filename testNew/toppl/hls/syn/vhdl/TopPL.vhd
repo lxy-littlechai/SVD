@@ -371,7 +371,7 @@ end;
 architecture behav of TopPL is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "TopPL_TopPL,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvc1902-vsva2197-2MP-e-S,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.650000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=246,HLS_SYN_DSP=0,HLS_SYN_FF=33002,HLS_SYN_LUT=40542,HLS_VERSION=2023_2}";
+    "TopPL_TopPL,hls_ip_2023_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvc1902-vsva2197-2MP-e-S,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.650000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=278,HLS_SYN_DSP=0,HLS_SYN_FF=33546,HLS_SYN_LUT=41742,HLS_VERSION=2023_2}";
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
@@ -503,13 +503,29 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal Send_U0_ap_idle : STD_LOGIC;
     signal Send_U0_ap_ready : STD_LOGIC;
     signal Send_U0_syscontrol_0_read : STD_LOGIC;
+    signal Send_U0_send_fifo_L_0_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_L_0_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_L_0_read : STD_LOGIC;
+    signal Send_U0_send_fifo_L_1_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_L_1_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_L_1_read : STD_LOGIC;
+    signal Send_U0_send_fifo_L_2_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_L_2_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_L_2_read : STD_LOGIC;
+    signal Send_U0_send_fifo_L_3_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_L_3_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_L_3_read : STD_LOGIC;
+    signal Send_U0_send_fifo_R_0_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_R_0_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_R_0_read : STD_LOGIC;
+    signal Send_U0_send_fifo_R_1_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_R_1_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_R_1_read : STD_LOGIC;
+    signal Send_U0_send_fifo_R_2_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_R_2_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_R_2_read : STD_LOGIC;
+    signal Send_U0_send_fifo_R_3_num_data_valid : STD_LOGIC_VECTOR (9 downto 0);
+    signal Send_U0_send_fifo_R_3_fifo_cap : STD_LOGIC_VECTOR (9 downto 0);
     signal Send_U0_send_fifo_R_3_read : STD_LOGIC;
     signal Send_U0_sweep_tx1_0_TDATA : STD_LOGIC_VECTOR (127 downto 0);
     signal Send_U0_sweep_tx1_0_TVALID : STD_LOGIC;
@@ -785,84 +801,100 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     signal convSet_R_3_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
     signal convSet_R_3_empty_n : STD_LOGIC;
     signal send_fifo_L_full_n : STD_LOGIC;
+    signal send_fifo_L_almost_full_n : STD_LOGIC;
     signal send_fifo_L_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_L_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_L_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_L_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_L_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_L_empty_n : STD_LOGIC;
+    signal send_fifo_L_almost_empty_n : STD_LOGIC;
     signal send_fifo_L_1_full_n : STD_LOGIC;
+    signal send_fifo_L_1_almost_full_n : STD_LOGIC;
     signal send_fifo_L_1_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_L_1_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_L_1_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_L_1_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_L_1_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_L_1_empty_n : STD_LOGIC;
+    signal send_fifo_L_1_almost_empty_n : STD_LOGIC;
     signal send_fifo_L_2_full_n : STD_LOGIC;
+    signal send_fifo_L_2_almost_full_n : STD_LOGIC;
     signal send_fifo_L_2_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_L_2_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_L_2_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_L_2_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_L_2_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_L_2_empty_n : STD_LOGIC;
+    signal send_fifo_L_2_almost_empty_n : STD_LOGIC;
     signal send_fifo_L_3_full_n : STD_LOGIC;
+    signal send_fifo_L_3_almost_full_n : STD_LOGIC;
     signal send_fifo_L_3_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_L_3_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_L_3_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_L_3_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_L_3_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_L_3_empty_n : STD_LOGIC;
+    signal send_fifo_L_3_almost_empty_n : STD_LOGIC;
     signal send_fifo_R_full_n : STD_LOGIC;
+    signal send_fifo_R_almost_full_n : STD_LOGIC;
     signal send_fifo_R_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_R_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_R_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_R_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_R_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_R_empty_n : STD_LOGIC;
+    signal send_fifo_R_almost_empty_n : STD_LOGIC;
     signal send_fifo_R_1_full_n : STD_LOGIC;
+    signal send_fifo_R_1_almost_full_n : STD_LOGIC;
     signal send_fifo_R_1_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_R_1_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_R_1_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_R_1_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_R_1_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_R_1_empty_n : STD_LOGIC;
+    signal send_fifo_R_1_almost_empty_n : STD_LOGIC;
     signal send_fifo_R_2_full_n : STD_LOGIC;
+    signal send_fifo_R_2_almost_full_n : STD_LOGIC;
     signal send_fifo_R_2_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_R_2_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_R_2_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_R_2_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_R_2_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_R_2_empty_n : STD_LOGIC;
+    signal send_fifo_R_2_almost_empty_n : STD_LOGIC;
     signal send_fifo_R_3_full_n : STD_LOGIC;
+    signal send_fifo_R_3_almost_full_n : STD_LOGIC;
     signal send_fifo_R_3_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal send_fifo_R_3_num_data_valid : STD_LOGIC_VECTOR (5 downto 0);
-    signal send_fifo_R_3_fifo_cap : STD_LOGIC_VECTOR (5 downto 0);
+    signal send_fifo_R_3_num_data_valid : STD_LOGIC_VECTOR (10 downto 0);
+    signal send_fifo_R_3_fifo_cap : STD_LOGIC_VECTOR (10 downto 0);
     signal send_fifo_R_3_empty_n : STD_LOGIC;
+    signal send_fifo_R_3_almost_empty_n : STD_LOGIC;
     signal receive_fifo_L_full_n : STD_LOGIC;
     signal receive_fifo_L_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_L_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_L_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_L_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_L_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_L_empty_n : STD_LOGIC;
     signal receive_fifo_L_1_full_n : STD_LOGIC;
     signal receive_fifo_L_1_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_L_1_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_L_1_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_L_1_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_L_1_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_L_1_empty_n : STD_LOGIC;
     signal receive_fifo_L_2_full_n : STD_LOGIC;
     signal receive_fifo_L_2_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_L_2_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_L_2_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_L_2_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_L_2_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_L_2_empty_n : STD_LOGIC;
     signal receive_fifo_L_3_full_n : STD_LOGIC;
     signal receive_fifo_L_3_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_L_3_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_L_3_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_L_3_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_L_3_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_L_3_empty_n : STD_LOGIC;
     signal receive_fifo_R_full_n : STD_LOGIC;
     signal receive_fifo_R_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_R_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_R_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_R_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_R_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_R_empty_n : STD_LOGIC;
     signal receive_fifo_R_1_full_n : STD_LOGIC;
     signal receive_fifo_R_1_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_R_1_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_R_1_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_R_1_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_R_1_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_R_1_empty_n : STD_LOGIC;
     signal receive_fifo_R_2_full_n : STD_LOGIC;
     signal receive_fifo_R_2_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_R_2_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_R_2_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_R_2_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_R_2_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_R_2_empty_n : STD_LOGIC;
     signal receive_fifo_R_3_full_n : STD_LOGIC;
     signal receive_fifo_R_3_dout : STD_LOGIC_VECTOR (127 downto 0);
-    signal receive_fifo_R_3_num_data_valid : STD_LOGIC_VECTOR (8 downto 0);
-    signal receive_fifo_R_3_fifo_cap : STD_LOGIC_VECTOR (8 downto 0);
+    signal receive_fifo_R_3_num_data_valid : STD_LOGIC_VECTOR (14 downto 0);
+    signal receive_fifo_R_3_fifo_cap : STD_LOGIC_VECTOR (14 downto 0);
     signal receive_fifo_R_3_empty_n : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
@@ -1013,43 +1045,43 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         syscontrol_0_empty_n : IN STD_LOGIC;
         syscontrol_0_read : OUT STD_LOGIC;
         send_fifo_L_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_0_empty_n : IN STD_LOGIC;
         send_fifo_L_0_read : OUT STD_LOGIC;
         send_fifo_L_1_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_1_empty_n : IN STD_LOGIC;
         send_fifo_L_1_read : OUT STD_LOGIC;
         send_fifo_L_2_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_2_empty_n : IN STD_LOGIC;
         send_fifo_L_2_read : OUT STD_LOGIC;
         send_fifo_L_3_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_L_3_empty_n : IN STD_LOGIC;
         send_fifo_L_3_read : OUT STD_LOGIC;
         send_fifo_R_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_0_empty_n : IN STD_LOGIC;
         send_fifo_R_0_read : OUT STD_LOGIC;
         send_fifo_R_1_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_1_empty_n : IN STD_LOGIC;
         send_fifo_R_1_read : OUT STD_LOGIC;
         send_fifo_R_2_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_2_empty_n : IN STD_LOGIC;
         send_fifo_R_2_read : OUT STD_LOGIC;
         send_fifo_R_3_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (9 downto 0);
+        send_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (9 downto 0);
         send_fifo_R_3_empty_n : IN STD_LOGIC;
         send_fifo_R_3_read : OUT STD_LOGIC;
         sweep_tx1_0_TDATA : OUT STD_LOGIC_VECTOR (127 downto 0);
@@ -1265,83 +1297,91 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         m_axi_gmem2_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         S : IN STD_LOGIC_VECTOR (63 downto 0);
         send_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_L_0_full_n : IN STD_LOGIC;
+        send_fifo_L_0_almost_full_n : IN STD_LOGIC;
         send_fifo_L_0_write : OUT STD_LOGIC;
         send_fifo_L_1_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_L_1_full_n : IN STD_LOGIC;
+        send_fifo_L_1_almost_full_n : IN STD_LOGIC;
         send_fifo_L_1_write : OUT STD_LOGIC;
         send_fifo_L_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_L_2_full_n : IN STD_LOGIC;
+        send_fifo_L_2_almost_full_n : IN STD_LOGIC;
         send_fifo_L_2_write : OUT STD_LOGIC;
         send_fifo_L_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_L_3_full_n : IN STD_LOGIC;
+        send_fifo_L_3_almost_full_n : IN STD_LOGIC;
         send_fifo_L_3_write : OUT STD_LOGIC;
         send_fifo_R_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_R_0_full_n : IN STD_LOGIC;
+        send_fifo_R_0_almost_full_n : IN STD_LOGIC;
         send_fifo_R_0_write : OUT STD_LOGIC;
         send_fifo_R_1_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_R_1_full_n : IN STD_LOGIC;
+        send_fifo_R_1_almost_full_n : IN STD_LOGIC;
         send_fifo_R_1_write : OUT STD_LOGIC;
         send_fifo_R_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_R_2_full_n : IN STD_LOGIC;
+        send_fifo_R_2_almost_full_n : IN STD_LOGIC;
         send_fifo_R_2_write : OUT STD_LOGIC;
         send_fifo_R_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        send_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (5 downto 0);
-        send_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (5 downto 0);
+        send_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (10 downto 0);
+        send_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (10 downto 0);
         send_fifo_R_3_full_n : IN STD_LOGIC;
+        send_fifo_R_3_almost_full_n : IN STD_LOGIC;
         send_fifo_R_3_write : OUT STD_LOGIC;
         receive_fifo_L_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_0_empty_n : IN STD_LOGIC;
         receive_fifo_L_0_read : OUT STD_LOGIC;
         receive_fifo_L_1_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_1_empty_n : IN STD_LOGIC;
         receive_fifo_L_1_read : OUT STD_LOGIC;
         receive_fifo_L_2_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_2_empty_n : IN STD_LOGIC;
         receive_fifo_L_2_read : OUT STD_LOGIC;
         receive_fifo_L_3_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_3_empty_n : IN STD_LOGIC;
         receive_fifo_L_3_read : OUT STD_LOGIC;
         receive_fifo_R_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_0_empty_n : IN STD_LOGIC;
         receive_fifo_R_0_read : OUT STD_LOGIC;
         receive_fifo_R_1_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_1_empty_n : IN STD_LOGIC;
         receive_fifo_R_1_read : OUT STD_LOGIC;
         receive_fifo_R_2_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_2_empty_n : IN STD_LOGIC;
         receive_fifo_R_2_read : OUT STD_LOGIC;
         receive_fifo_R_3_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_3_empty_n : IN STD_LOGIC;
         receive_fifo_R_3_read : OUT STD_LOGIC );
     end component;
@@ -1402,43 +1442,43 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         convSet_R_3_full_n : IN STD_LOGIC;
         convSet_R_3_write : OUT STD_LOGIC;
         receive_fifo_L_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_0_full_n : IN STD_LOGIC;
         receive_fifo_L_0_write : OUT STD_LOGIC;
         receive_fifo_L_1_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_1_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_1_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_1_full_n : IN STD_LOGIC;
         receive_fifo_L_1_write : OUT STD_LOGIC;
         receive_fifo_L_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_2_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_2_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_2_full_n : IN STD_LOGIC;
         receive_fifo_L_2_write : OUT STD_LOGIC;
         receive_fifo_L_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_L_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_L_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_L_3_full_n : IN STD_LOGIC;
         receive_fifo_L_3_write : OUT STD_LOGIC;
         receive_fifo_R_0_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_0_full_n : IN STD_LOGIC;
         receive_fifo_R_0_write : OUT STD_LOGIC;
         receive_fifo_R_1_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_1_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_1_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_1_full_n : IN STD_LOGIC;
         receive_fifo_R_1_write : OUT STD_LOGIC;
         receive_fifo_R_2_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_2_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_2_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_2_full_n : IN STD_LOGIC;
         receive_fifo_R_2_write : OUT STD_LOGIC;
         receive_fifo_R_3_din : OUT STD_LOGIC_VECTOR (127 downto 0);
-        receive_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-        receive_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+        receive_fifo_R_3_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+        receive_fifo_R_3_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
         receive_fifo_R_3_full_n : IN STD_LOGIC;
         receive_fifo_R_3_write : OUT STD_LOGIC;
         sweep_rx1_0_TDATA : IN STD_LOGIC_VECTOR (127 downto 0);
@@ -1532,7 +1572,7 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
     end component;
 
 
-    component TopPL_fifo_w128_d32_B IS
+    component TopPL_fifo_w128_d512_B_with_almost IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
@@ -1540,16 +1580,18 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         if_write_ce : IN STD_LOGIC;
         if_din : IN STD_LOGIC_VECTOR (127 downto 0);
         if_full_n : OUT STD_LOGIC;
+        if_almost_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
         if_dout : OUT STD_LOGIC_VECTOR (127 downto 0);
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (5 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (5 downto 0);
+        if_num_data_valid : OUT STD_LOGIC_VECTOR (10 downto 0);
+        if_fifo_cap : OUT STD_LOGIC_VECTOR (10 downto 0);
         if_empty_n : OUT STD_LOGIC;
+        if_almost_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
 
 
-    component TopPL_fifo_w128_d256_U IS
+    component TopPL_fifo_w128_d16384_U IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
@@ -1559,8 +1601,8 @@ attribute shreg_extract of ap_rst_n_inv : signal is "no";
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
         if_dout : OUT STD_LOGIC_VECTOR (127 downto 0);
-        if_num_data_valid : OUT STD_LOGIC_VECTOR (8 downto 0);
-        if_fifo_cap : OUT STD_LOGIC_VECTOR (8 downto 0);
+        if_num_data_valid : OUT STD_LOGIC_VECTOR (14 downto 0);
+        if_fifo_cap : OUT STD_LOGIC_VECTOR (14 downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
@@ -2533,43 +2575,43 @@ begin
         syscontrol_0_empty_n => syscontrol_empty_n,
         syscontrol_0_read => Send_U0_syscontrol_0_read,
         send_fifo_L_0_dout => send_fifo_L_dout,
-        send_fifo_L_0_num_data_valid => send_fifo_L_num_data_valid,
-        send_fifo_L_0_fifo_cap => send_fifo_L_fifo_cap,
+        send_fifo_L_0_num_data_valid => Send_U0_send_fifo_L_0_num_data_valid,
+        send_fifo_L_0_fifo_cap => Send_U0_send_fifo_L_0_fifo_cap,
         send_fifo_L_0_empty_n => send_fifo_L_empty_n,
         send_fifo_L_0_read => Send_U0_send_fifo_L_0_read,
         send_fifo_L_1_dout => send_fifo_L_1_dout,
-        send_fifo_L_1_num_data_valid => send_fifo_L_1_num_data_valid,
-        send_fifo_L_1_fifo_cap => send_fifo_L_1_fifo_cap,
+        send_fifo_L_1_num_data_valid => Send_U0_send_fifo_L_1_num_data_valid,
+        send_fifo_L_1_fifo_cap => Send_U0_send_fifo_L_1_fifo_cap,
         send_fifo_L_1_empty_n => send_fifo_L_1_empty_n,
         send_fifo_L_1_read => Send_U0_send_fifo_L_1_read,
         send_fifo_L_2_dout => send_fifo_L_2_dout,
-        send_fifo_L_2_num_data_valid => send_fifo_L_2_num_data_valid,
-        send_fifo_L_2_fifo_cap => send_fifo_L_2_fifo_cap,
+        send_fifo_L_2_num_data_valid => Send_U0_send_fifo_L_2_num_data_valid,
+        send_fifo_L_2_fifo_cap => Send_U0_send_fifo_L_2_fifo_cap,
         send_fifo_L_2_empty_n => send_fifo_L_2_empty_n,
         send_fifo_L_2_read => Send_U0_send_fifo_L_2_read,
         send_fifo_L_3_dout => send_fifo_L_3_dout,
-        send_fifo_L_3_num_data_valid => send_fifo_L_3_num_data_valid,
-        send_fifo_L_3_fifo_cap => send_fifo_L_3_fifo_cap,
+        send_fifo_L_3_num_data_valid => Send_U0_send_fifo_L_3_num_data_valid,
+        send_fifo_L_3_fifo_cap => Send_U0_send_fifo_L_3_fifo_cap,
         send_fifo_L_3_empty_n => send_fifo_L_3_empty_n,
         send_fifo_L_3_read => Send_U0_send_fifo_L_3_read,
         send_fifo_R_0_dout => send_fifo_R_dout,
-        send_fifo_R_0_num_data_valid => send_fifo_R_num_data_valid,
-        send_fifo_R_0_fifo_cap => send_fifo_R_fifo_cap,
+        send_fifo_R_0_num_data_valid => Send_U0_send_fifo_R_0_num_data_valid,
+        send_fifo_R_0_fifo_cap => Send_U0_send_fifo_R_0_fifo_cap,
         send_fifo_R_0_empty_n => send_fifo_R_empty_n,
         send_fifo_R_0_read => Send_U0_send_fifo_R_0_read,
         send_fifo_R_1_dout => send_fifo_R_1_dout,
-        send_fifo_R_1_num_data_valid => send_fifo_R_1_num_data_valid,
-        send_fifo_R_1_fifo_cap => send_fifo_R_1_fifo_cap,
+        send_fifo_R_1_num_data_valid => Send_U0_send_fifo_R_1_num_data_valid,
+        send_fifo_R_1_fifo_cap => Send_U0_send_fifo_R_1_fifo_cap,
         send_fifo_R_1_empty_n => send_fifo_R_1_empty_n,
         send_fifo_R_1_read => Send_U0_send_fifo_R_1_read,
         send_fifo_R_2_dout => send_fifo_R_2_dout,
-        send_fifo_R_2_num_data_valid => send_fifo_R_2_num_data_valid,
-        send_fifo_R_2_fifo_cap => send_fifo_R_2_fifo_cap,
+        send_fifo_R_2_num_data_valid => Send_U0_send_fifo_R_2_num_data_valid,
+        send_fifo_R_2_fifo_cap => Send_U0_send_fifo_R_2_fifo_cap,
         send_fifo_R_2_empty_n => send_fifo_R_2_empty_n,
         send_fifo_R_2_read => Send_U0_send_fifo_R_2_read,
         send_fifo_R_3_dout => send_fifo_R_3_dout,
-        send_fifo_R_3_num_data_valid => send_fifo_R_3_num_data_valid,
-        send_fifo_R_3_fifo_cap => send_fifo_R_3_fifo_cap,
+        send_fifo_R_3_num_data_valid => Send_U0_send_fifo_R_3_num_data_valid,
+        send_fifo_R_3_fifo_cap => Send_U0_send_fifo_R_3_fifo_cap,
         send_fifo_R_3_empty_n => send_fifo_R_3_empty_n,
         send_fifo_R_3_read => Send_U0_send_fifo_R_3_read,
         sweep_tx1_0_TDATA => Send_U0_sweep_tx1_0_TDATA,
@@ -2786,41 +2828,49 @@ begin
         send_fifo_L_0_num_data_valid => send_fifo_L_num_data_valid,
         send_fifo_L_0_fifo_cap => send_fifo_L_fifo_cap,
         send_fifo_L_0_full_n => send_fifo_L_full_n,
+        send_fifo_L_0_almost_full_n => send_fifo_L_almost_full_n,
         send_fifo_L_0_write => RoundRobin_U0_send_fifo_L_0_write,
         send_fifo_L_1_din => RoundRobin_U0_send_fifo_L_1_din,
         send_fifo_L_1_num_data_valid => send_fifo_L_1_num_data_valid,
         send_fifo_L_1_fifo_cap => send_fifo_L_1_fifo_cap,
         send_fifo_L_1_full_n => send_fifo_L_1_full_n,
+        send_fifo_L_1_almost_full_n => send_fifo_L_1_almost_full_n,
         send_fifo_L_1_write => RoundRobin_U0_send_fifo_L_1_write,
         send_fifo_L_2_din => RoundRobin_U0_send_fifo_L_2_din,
         send_fifo_L_2_num_data_valid => send_fifo_L_2_num_data_valid,
         send_fifo_L_2_fifo_cap => send_fifo_L_2_fifo_cap,
         send_fifo_L_2_full_n => send_fifo_L_2_full_n,
+        send_fifo_L_2_almost_full_n => send_fifo_L_2_almost_full_n,
         send_fifo_L_2_write => RoundRobin_U0_send_fifo_L_2_write,
         send_fifo_L_3_din => RoundRobin_U0_send_fifo_L_3_din,
         send_fifo_L_3_num_data_valid => send_fifo_L_3_num_data_valid,
         send_fifo_L_3_fifo_cap => send_fifo_L_3_fifo_cap,
         send_fifo_L_3_full_n => send_fifo_L_3_full_n,
+        send_fifo_L_3_almost_full_n => send_fifo_L_3_almost_full_n,
         send_fifo_L_3_write => RoundRobin_U0_send_fifo_L_3_write,
         send_fifo_R_0_din => RoundRobin_U0_send_fifo_R_0_din,
         send_fifo_R_0_num_data_valid => send_fifo_R_num_data_valid,
         send_fifo_R_0_fifo_cap => send_fifo_R_fifo_cap,
         send_fifo_R_0_full_n => send_fifo_R_full_n,
+        send_fifo_R_0_almost_full_n => send_fifo_R_almost_full_n,
         send_fifo_R_0_write => RoundRobin_U0_send_fifo_R_0_write,
         send_fifo_R_1_din => RoundRobin_U0_send_fifo_R_1_din,
         send_fifo_R_1_num_data_valid => send_fifo_R_1_num_data_valid,
         send_fifo_R_1_fifo_cap => send_fifo_R_1_fifo_cap,
         send_fifo_R_1_full_n => send_fifo_R_1_full_n,
+        send_fifo_R_1_almost_full_n => send_fifo_R_1_almost_full_n,
         send_fifo_R_1_write => RoundRobin_U0_send_fifo_R_1_write,
         send_fifo_R_2_din => RoundRobin_U0_send_fifo_R_2_din,
         send_fifo_R_2_num_data_valid => send_fifo_R_2_num_data_valid,
         send_fifo_R_2_fifo_cap => send_fifo_R_2_fifo_cap,
         send_fifo_R_2_full_n => send_fifo_R_2_full_n,
+        send_fifo_R_2_almost_full_n => send_fifo_R_2_almost_full_n,
         send_fifo_R_2_write => RoundRobin_U0_send_fifo_R_2_write,
         send_fifo_R_3_din => RoundRobin_U0_send_fifo_R_3_din,
         send_fifo_R_3_num_data_valid => send_fifo_R_3_num_data_valid,
         send_fifo_R_3_fifo_cap => send_fifo_R_3_fifo_cap,
         send_fifo_R_3_full_n => send_fifo_R_3_full_n,
+        send_fifo_R_3_almost_full_n => send_fifo_R_3_almost_full_n,
         send_fifo_R_3_write => RoundRobin_U0_send_fifo_R_3_write,
         receive_fifo_L_0_dout => receive_fifo_L_dout,
         receive_fifo_L_0_num_data_valid => receive_fifo_L_num_data_valid,
@@ -3177,7 +3227,7 @@ begin
         if_empty_n => convSet_R_3_empty_n,
         if_read => SystemControl_U0_convSet_R_3_read);
 
-    send_fifo_L_U : component TopPL_fifo_w128_d32_B
+    send_fifo_L_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3185,14 +3235,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_L_0_din,
         if_full_n => send_fifo_L_full_n,
+        if_almost_full_n => send_fifo_L_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_L_0_write,
         if_dout => send_fifo_L_dout,
         if_num_data_valid => send_fifo_L_num_data_valid,
         if_fifo_cap => send_fifo_L_fifo_cap,
         if_empty_n => send_fifo_L_empty_n,
+        if_almost_empty_n => send_fifo_L_almost_empty_n,
         if_read => Send_U0_send_fifo_L_0_read);
 
-    send_fifo_L_1_U : component TopPL_fifo_w128_d32_B
+    send_fifo_L_1_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3200,14 +3252,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_L_1_din,
         if_full_n => send_fifo_L_1_full_n,
+        if_almost_full_n => send_fifo_L_1_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_L_1_write,
         if_dout => send_fifo_L_1_dout,
         if_num_data_valid => send_fifo_L_1_num_data_valid,
         if_fifo_cap => send_fifo_L_1_fifo_cap,
         if_empty_n => send_fifo_L_1_empty_n,
+        if_almost_empty_n => send_fifo_L_1_almost_empty_n,
         if_read => Send_U0_send_fifo_L_1_read);
 
-    send_fifo_L_2_U : component TopPL_fifo_w128_d32_B
+    send_fifo_L_2_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3215,14 +3269,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_L_2_din,
         if_full_n => send_fifo_L_2_full_n,
+        if_almost_full_n => send_fifo_L_2_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_L_2_write,
         if_dout => send_fifo_L_2_dout,
         if_num_data_valid => send_fifo_L_2_num_data_valid,
         if_fifo_cap => send_fifo_L_2_fifo_cap,
         if_empty_n => send_fifo_L_2_empty_n,
+        if_almost_empty_n => send_fifo_L_2_almost_empty_n,
         if_read => Send_U0_send_fifo_L_2_read);
 
-    send_fifo_L_3_U : component TopPL_fifo_w128_d32_B
+    send_fifo_L_3_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3230,14 +3286,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_L_3_din,
         if_full_n => send_fifo_L_3_full_n,
+        if_almost_full_n => send_fifo_L_3_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_L_3_write,
         if_dout => send_fifo_L_3_dout,
         if_num_data_valid => send_fifo_L_3_num_data_valid,
         if_fifo_cap => send_fifo_L_3_fifo_cap,
         if_empty_n => send_fifo_L_3_empty_n,
+        if_almost_empty_n => send_fifo_L_3_almost_empty_n,
         if_read => Send_U0_send_fifo_L_3_read);
 
-    send_fifo_R_U : component TopPL_fifo_w128_d32_B
+    send_fifo_R_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3245,14 +3303,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_R_0_din,
         if_full_n => send_fifo_R_full_n,
+        if_almost_full_n => send_fifo_R_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_R_0_write,
         if_dout => send_fifo_R_dout,
         if_num_data_valid => send_fifo_R_num_data_valid,
         if_fifo_cap => send_fifo_R_fifo_cap,
         if_empty_n => send_fifo_R_empty_n,
+        if_almost_empty_n => send_fifo_R_almost_empty_n,
         if_read => Send_U0_send_fifo_R_0_read);
 
-    send_fifo_R_1_U : component TopPL_fifo_w128_d32_B
+    send_fifo_R_1_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3260,14 +3320,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_R_1_din,
         if_full_n => send_fifo_R_1_full_n,
+        if_almost_full_n => send_fifo_R_1_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_R_1_write,
         if_dout => send_fifo_R_1_dout,
         if_num_data_valid => send_fifo_R_1_num_data_valid,
         if_fifo_cap => send_fifo_R_1_fifo_cap,
         if_empty_n => send_fifo_R_1_empty_n,
+        if_almost_empty_n => send_fifo_R_1_almost_empty_n,
         if_read => Send_U0_send_fifo_R_1_read);
 
-    send_fifo_R_2_U : component TopPL_fifo_w128_d32_B
+    send_fifo_R_2_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3275,14 +3337,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_R_2_din,
         if_full_n => send_fifo_R_2_full_n,
+        if_almost_full_n => send_fifo_R_2_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_R_2_write,
         if_dout => send_fifo_R_2_dout,
         if_num_data_valid => send_fifo_R_2_num_data_valid,
         if_fifo_cap => send_fifo_R_2_fifo_cap,
         if_empty_n => send_fifo_R_2_empty_n,
+        if_almost_empty_n => send_fifo_R_2_almost_empty_n,
         if_read => Send_U0_send_fifo_R_2_read);
 
-    send_fifo_R_3_U : component TopPL_fifo_w128_d32_B
+    send_fifo_R_3_U : component TopPL_fifo_w128_d512_B_with_almost
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3290,14 +3354,16 @@ begin
         if_write_ce => ap_const_logic_1,
         if_din => RoundRobin_U0_send_fifo_R_3_din,
         if_full_n => send_fifo_R_3_full_n,
+        if_almost_full_n => send_fifo_R_3_almost_full_n,
         if_write => RoundRobin_U0_send_fifo_R_3_write,
         if_dout => send_fifo_R_3_dout,
         if_num_data_valid => send_fifo_R_3_num_data_valid,
         if_fifo_cap => send_fifo_R_3_fifo_cap,
         if_empty_n => send_fifo_R_3_empty_n,
+        if_almost_empty_n => send_fifo_R_3_almost_empty_n,
         if_read => Send_U0_send_fifo_R_3_read);
 
-    receive_fifo_L_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_L_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3312,7 +3378,7 @@ begin
         if_empty_n => receive_fifo_L_empty_n,
         if_read => RoundRobin_U0_receive_fifo_L_0_read);
 
-    receive_fifo_L_1_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_L_1_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3327,7 +3393,7 @@ begin
         if_empty_n => receive_fifo_L_1_empty_n,
         if_read => RoundRobin_U0_receive_fifo_L_1_read);
 
-    receive_fifo_L_2_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_L_2_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3342,7 +3408,7 @@ begin
         if_empty_n => receive_fifo_L_2_empty_n,
         if_read => RoundRobin_U0_receive_fifo_L_2_read);
 
-    receive_fifo_L_3_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_L_3_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3357,7 +3423,7 @@ begin
         if_empty_n => receive_fifo_L_3_empty_n,
         if_read => RoundRobin_U0_receive_fifo_L_3_read);
 
-    receive_fifo_R_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_R_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3372,7 +3438,7 @@ begin
         if_empty_n => receive_fifo_R_empty_n,
         if_read => RoundRobin_U0_receive_fifo_R_0_read);
 
-    receive_fifo_R_1_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_R_1_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3387,7 +3453,7 @@ begin
         if_empty_n => receive_fifo_R_1_empty_n,
         if_read => RoundRobin_U0_receive_fifo_R_1_read);
 
-    receive_fifo_R_2_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_R_2_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3402,7 +3468,7 @@ begin
         if_empty_n => receive_fifo_R_2_empty_n,
         if_read => RoundRobin_U0_receive_fifo_R_2_read);
 
-    receive_fifo_R_3_U : component TopPL_fifo_w128_d256_U
+    receive_fifo_R_3_U : component TopPL_fifo_w128_d16384_U
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3505,6 +3571,22 @@ begin
     RoundRobin_U0_ap_start <= ((ap_sync_reg_RoundRobin_U0_ap_ready xor ap_const_logic_1) and ap_start);
     Send_U0_ap_continue <= ap_sync_continue;
     Send_U0_ap_start <= start_for_Send_U0_empty_n;
+    Send_U0_send_fifo_L_0_fifo_cap <= send_fifo_L_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_L_0_num_data_valid <= send_fifo_L_num_data_valid(10 - 1 downto 0);
+    Send_U0_send_fifo_L_1_fifo_cap <= send_fifo_L_1_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_L_1_num_data_valid <= send_fifo_L_1_num_data_valid(10 - 1 downto 0);
+    Send_U0_send_fifo_L_2_fifo_cap <= send_fifo_L_2_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_L_2_num_data_valid <= send_fifo_L_2_num_data_valid(10 - 1 downto 0);
+    Send_U0_send_fifo_L_3_fifo_cap <= send_fifo_L_3_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_L_3_num_data_valid <= send_fifo_L_3_num_data_valid(10 - 1 downto 0);
+    Send_U0_send_fifo_R_0_fifo_cap <= send_fifo_R_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_R_0_num_data_valid <= send_fifo_R_num_data_valid(10 - 1 downto 0);
+    Send_U0_send_fifo_R_1_fifo_cap <= send_fifo_R_1_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_R_1_num_data_valid <= send_fifo_R_1_num_data_valid(10 - 1 downto 0);
+    Send_U0_send_fifo_R_2_fifo_cap <= send_fifo_R_2_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_R_2_num_data_valid <= send_fifo_R_2_num_data_valid(10 - 1 downto 0);
+    Send_U0_send_fifo_R_3_fifo_cap <= send_fifo_R_3_fifo_cap(10 - 1 downto 0);
+    Send_U0_send_fifo_R_3_num_data_valid <= send_fifo_R_3_num_data_valid(10 - 1 downto 0);
     SystemControl_U0_ap_continue <= ap_sync_continue;
     SystemControl_U0_ap_start <= ((ap_sync_reg_SystemControl_U0_ap_ready xor ap_const_logic_1) and ap_start);
     SystemControl_U0_start_full_n <= (start_for_Send_U0_full_n and start_for_Receive_U0_full_n);

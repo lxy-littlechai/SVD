@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'send2AIE_11_Pipeline_VITIS_LOOP_112_2'
 ================================================================
-* Date:           Mon Oct 20 21:14:42 2025
+* Date:           Mon Oct 20 22:10:13 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        toppl
@@ -25,12 +25,12 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-    |   min   |   max   |    min    |    max    | min | max |   Type  |
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |       10|       10|  50.000 ns|  50.000 ns|   10|   10|       no|
-    +---------+---------+-----------+-----------+-----+-----+---------+
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       66|       66|  0.330 us|  0.330 us|   66|   66|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
         * Instance: 
@@ -41,7 +41,7 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_112_2  |        8|        8|         3|          1|          1|     7|       yes|
+        |- VITIS_LOOP_112_2  |       64|       64|         3|          1|          1|    63|       yes|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
@@ -85,29 +85,29 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 1.31>
+State 1 <SV = 0> <Delay = 1.53>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%j_04 = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 6 'alloca' 'j_04' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_tx3_0_V_data_V, i16 %sweep_tx3_0_V_keep_V, i16 %sweep_tx3_0_V_strb_V, i1 0, i1 %sweep_tx3_0_V_last_V, i1 0, i1 0, void @empty_14"   --->   Operation 7 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_tx3_0_V_data_V, i16 %sweep_tx3_0_V_keep_V, i16 %sweep_tx3_0_V_strb_V, i1 0, i1 %sweep_tx3_0_V_last_V, i1 0, i1 0, void @empty_60"   --->   Operation 7 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %send_fifo_L_2, i64 666, i64 8, i64 18446744073709551615"   --->   Operation 8 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_tx3_0_V_data_V, i16 %sweep_tx3_0_V_keep_V, i16 %sweep_tx3_0_V_strb_V, i1 %sweep_tx3_0_V_last_V, void @empty_82, i32 0, i32 0, void @empty_81, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_L_2, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln112 = muxlogic i4 1"   --->   Operation 11 'muxlogic' 'muxLogicData_to_store_ln112' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln112 = muxlogic i4 %j_04"   --->   Operation 12 'muxlogic' 'muxLogicAddr_to_store_ln112' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.39ns)   --->   "%store_ln112 = store i4 1, i4 %j_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 13 'store' 'store_ln112' <Predicate = true> <Delay = 0.39>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_tx3_0_V_data_V, i16 %sweep_tx3_0_V_keep_V, i16 %sweep_tx3_0_V_strb_V, i1 %sweep_tx3_0_V_last_V, void @empty_77, i32 0, i32 0, void @empty_76, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_L_2, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln112 = muxlogic i7 1"   --->   Operation 11 'muxlogic' 'muxLogicData_to_store_ln112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln112 = muxlogic i7 %j_04"   --->   Operation 12 'muxlogic' 'muxLogicAddr_to_store_ln112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.40ns)   --->   "%store_ln112 = store i7 1, i7 %j_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 13 'store' 'store_ln112' <Predicate = true> <Delay = 0.40>
 ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 14 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_j = muxlogic i4 %j_04"   --->   Operation 15 'muxlogic' 'MuxLogicAddr_to_j' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%j = load i4 %j_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 16 'load' 'j' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.53ns)   --->   "%icmp_ln112 = icmp_eq  i4 %j, i4 8" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 17 'icmp' 'icmp_ln112' <Predicate = true> <Delay = 0.53> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_j = muxlogic i7 %j_04"   --->   Operation 15 'muxlogic' 'MuxLogicAddr_to_j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%j = load i7 %j_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 16 'load' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.71ns)   --->   "%icmp_ln112 = icmp_eq  i7 %j, i7 64" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 17 'icmp' 'icmp_ln112' <Predicate = true> <Delay = 0.71> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln112 = br i1 %icmp_ln112, void %for.inc.split, void %for.inc76.exitStub" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 18 'br' 'br_ln112' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 19 [1/1] (0.53ns)   --->   "%j_13 = add i4 %j, i4 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 19 'add' 'j_13' <Predicate = (!icmp_ln112)> <Delay = 0.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln112 = trunc i4 %j" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 20 'trunc' 'trunc_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln112 = muxlogic i4 %j_13"   --->   Operation 21 'muxlogic' 'muxLogicData_to_store_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln112 = muxlogic i4 %j_04"   --->   Operation 22 'muxlogic' 'muxLogicAddr_to_store_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.00>
-ST_1 : Operation 23 [1/1] (0.39ns)   --->   "%store_ln112 = store i4 %j_13, i4 %j_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 23 'store' 'store_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.39>
+ST_1 : Operation 19 [1/1] (0.71ns)   --->   "%j_13 = add i7 %j, i7 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 19 'add' 'j_13' <Predicate = (!icmp_ln112)> <Delay = 0.71> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln112 = trunc i7 %j" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 20 'trunc' 'trunc_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln112 = muxlogic i7 %j_13"   --->   Operation 21 'muxlogic' 'muxLogicData_to_store_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln112 = muxlogic i7 %j_04"   --->   Operation 22 'muxlogic' 'muxLogicAddr_to_store_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.40ns)   --->   "%store_ln112 = store i7 %j_13, i7 %j_04" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 23 'store' 'store_ln112' <Predicate = (!icmp_ln112)> <Delay = 0.40>
 
-State 2 <SV = 1> <Delay = 1.77>
+State 2 <SV = 1> <Delay = 1.71>
 ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%muxLogicCE_to_send_fifo_L_2_read = muxlogic"   --->   Operation 24 'muxlogic' 'muxLogicCE_to_send_fifo_L_2_read' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 25 [1/1] (1.00ns)   --->   "%send_fifo_L_2_read = read i128 @_ssdm_op_Read.ap_fifo.volatile.i128P0A, i128 %send_fifo_L_2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114]   --->   Operation 25 'read' 'send_fifo_L_2_read' <Predicate = true> <Delay = 1.00> <CoreInst = "FIFO_BRAM">   --->   Core 83 'FIFO_BRAM' <Latency = 0> <II = 1> <Delay = 1.00> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 32> <FIFO>
+ST_2 : Operation 25 [1/1] (0.94ns)   --->   "%send_fifo_L_2_read = read i128 @_ssdm_op_Read.ap_fifo.volatile.i128P0A, i128 %send_fifo_L_2" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114]   --->   Operation 25 'read' 'send_fifo_L_2_read' <Predicate = true> <Delay = 0.94> <CoreInst = "FIFO_BRAM">   --->   Core 83 'FIFO_BRAM' <Latency = 0> <II = 1> <Delay = 0.94> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 512> <FIFO>
 ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%zext_ln114 = zext i1 %trunc_ln112" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114]   --->   Operation 26 'zext' 'zext_ln114' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%data_temp_addr = getelementptr i128 %data_temp, i64 0, i64 %zext_ln114" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114]   --->   Operation 27 'getelementptr' 'data_temp_addr' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln114 = muxlogic i128 %send_fifo_L_2_read"   --->   Operation 28 'muxlogic' 'muxLogicData_to_store_ln114' <Predicate = true> <Delay = 0.00>
@@ -122,9 +122,9 @@ ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln118 = trunc i128 %send_fif
 ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 46 'ret' 'ret_ln0' <Predicate = (icmp_ln112)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 1.88>
-ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_70" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:113]   --->   Operation 37 'specpipeline' 'specpipeline_ln113' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 7, i64 7, i64 7" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 38 'speclooptripcount' 'speclooptripcount_ln112' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%specloopname_ln112 = specloopname void @_ssdm_op_SpecLoopName, void @empty_50" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 39 'specloopname' 'specloopname_ln112' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_62" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:113]   --->   Operation 37 'specpipeline' 'specpipeline_ln113' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 63, i64 63, i64 63" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 38 'speclooptripcount' 'speclooptripcount_ln112' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%specloopname_ln112 = specloopname void @_ssdm_op_SpecLoopName, void @empty_75" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112]   --->   Operation 39 'specloopname' 'specloopname_ln112' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 40 [1/2] (0.88ns) (share mux size 4)   --->   "%data_temp_load = load i1 %data_temp_addr_13" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:115]   --->   Operation 40 'load' 'data_temp_load' <Predicate = true> <Delay = 0.88> <CoreInst = "RAM">   --->   Core 87 'RAM' <Latency = 1> <II = 1> <Delay = 1.10> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 128> <Depth = 2> <RAM>
 ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_s = partselect i32 @_ssdm_op_PartSelect.i32.i128.i32.i32, i128 %data_temp_load, i32 96, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:115]   --->   Operation 41 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_data = bitconcatenate i128 @_ssdm_op_BitConcatenate.i128.i96.i32, i96 %trunc_ln118, i32 %tmp_s" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:118]   --->   Operation 42 'bitconcatenate' 'tmp_data' <Predicate = true> <Delay = 0.00>
@@ -138,17 +138,17 @@ ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%br_ln112 = br void %for.inc" [/med
 ============================================================
 Target clock period: 5.000ns, clock uncertainty: 1.350ns.
 
- <State 1>: 1.318ns
+ <State 1>: 1.531ns
 The critical path consists of the following:
-	'store' operation 0 bit ('store_ln112', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) of constant 1 on local variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 [14]  (0.394 ns)
-	'load' operation 4 bit ('j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) on local variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 [18]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln112', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) [19]  (0.530 ns)
-	'store' operation 0 bit ('store_ln112', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) of variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 on local variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 [46]  (0.394 ns)
+	'store' operation 0 bit ('store_ln112', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) of constant 1 on local variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 [14]  (0.406 ns)
+	'load' operation 7 bit ('j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) on local variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 [18]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln112', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) [19]  (0.719 ns)
+	'store' operation 0 bit ('store_ln112', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112) of variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 on local variable 'j', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:112 [46]  (0.406 ns)
 
- <State 2>: 1.776ns
+ <State 2>: 1.711ns
 The critical path consists of the following:
 	'muxlogic' operation 128 bit ('muxLogicCE_to_send_fifo_L_2_read') [27]  (0.000 ns)
-	fifo read operation ('send_fifo_L_2_read', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114) on port 'send_fifo_L_2' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114) [28]  (1.008 ns)
+	fifo read operation ('send_fifo_L_2_read', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114) on port 'send_fifo_L_2' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114) [28]  (0.943 ns)
 	'muxlogic' operation 0 bit ('muxLogicData_to_store_ln114') [31]  (0.000 ns)
 	'store' operation 0 bit ('store_ln114', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114) of variable 'send_fifo_L_2_read', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNew/pl/TopPL.cpp:114 on array 'data_temp' [33]  (0.768 ns)
 

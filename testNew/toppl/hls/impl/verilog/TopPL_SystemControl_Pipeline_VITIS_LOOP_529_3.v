@@ -220,8 +220,8 @@ wire    ap_CS_fsm_pp0_stage7;
 wire    ap_block_pp0_stage7_11001;
 wire    ap_CS_fsm_pp0_stage10;
 wire    ap_block_pp0_stage10_11001;
-wire   [4:0] i_28_fu_202_p2;
-reg   [4:0] i_28_reg_361;
+wire   [8:0] i_28_fu_202_p2;
+reg   [8:0] i_28_reg_361;
 wire    ap_block_pp0_stage0_11001;
 reg   [31:0] convSet_R_0_read_reg_371;
 reg   [31:0] convSet_L_1_read_reg_376;
@@ -245,9 +245,9 @@ wire    ap_block_pp0_stage14;
 wire    ap_block_pp0_stage17;
 wire    ap_block_pp0_stage20;
 wire    ap_block_pp0_stage23;
-reg   [4:0] i_10_fu_54;
+reg   [8:0] i_10_fu_54;
 wire    ap_loop_init;
-reg   [4:0] ap_sig_allocacmp_i;
+reg   [8:0] ap_sig_allocacmp_i;
 wire    ap_block_pp0_stage0;
 reg   [31:0] conv32_lcssa11_fu_58;
 wire    ap_block_pp0_stage0_01001;
@@ -311,7 +311,7 @@ initial begin
 #0 ap_CS_fsm = 24'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter0_reg = 1'b0;
-#0 i_10_fu_54 = 5'd0;
+#0 i_10_fu_54 = 9'd0;
 #0 conv32_lcssa11_fu_58 = 32'd0;
 #0 ap_done_reg = 1'b0;
 end
@@ -424,7 +424,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_loop_init == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        i_10_fu_54 <= 5'd0;
+        i_10_fu_54 <= 9'd0;
     end else if (((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1) & (icmp_ln529_reg_367 == 1'd0))) begin
         i_10_fu_54 <= i_28_reg_361;
     end
@@ -561,7 +561,7 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (ap_loop_init == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_sig_allocacmp_i = 5'd0;
+        ap_sig_allocacmp_i = 9'd0;
     end else begin
         ap_sig_allocacmp_i = i_10_fu_54;
     end
@@ -1171,8 +1171,8 @@ assign bitcast_ln533_fu_260_p1 = convSet_R_0_read_reg_371;
 
 assign conv32_lcssa11_out = conv32_lcssa11_fu_58;
 
-assign i_28_fu_202_p2 = (ap_sig_allocacmp_i + 5'd1);
+assign i_28_fu_202_p2 = (ap_sig_allocacmp_i + 9'd1);
 
-assign icmp_ln529_fu_208_p2 = ((ap_sig_allocacmp_i == 5'd30) ? 1'b1 : 1'b0);
+assign icmp_ln529_fu_208_p2 = ((ap_sig_allocacmp_i == 9'd504) ? 1'b1 : 1'b0);
 
 endmodule //TopPL_SystemControl_Pipeline_VITIS_LOOP_529_3

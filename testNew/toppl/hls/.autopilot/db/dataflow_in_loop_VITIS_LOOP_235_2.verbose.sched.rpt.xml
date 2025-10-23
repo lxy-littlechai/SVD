@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_235_2'" level="0">
-<item name = "Date">Mon Oct 20 21:14:43 2025
+<item name = "Date">Mon Oct 20 22:10:13 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">toppl</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 2.538 ns, 1.35 ns</column>
+<column name="ap_clk">5.00 ns, 2.473 ns, 1.35 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">32, 32, 0.160 us, 0.160 us, 33, 33, dataflow</column>
+<column name="">286, 286, 1.430 us, 1.430 us, 287, 287, dataflow</column>
 </table>
 </item>
 <item name = "Detail">

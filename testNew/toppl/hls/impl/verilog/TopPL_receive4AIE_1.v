@@ -45,8 +45,8 @@ output   ap_idle;
 output   ap_ready;
 output  [31:0] return_r;
 output  [127:0] receive_fifo_L_1_din;
-input  [8:0] receive_fifo_L_1_num_data_valid;
-input  [8:0] receive_fifo_L_1_fifo_cap;
+input  [14:0] receive_fifo_L_1_num_data_valid;
+input  [14:0] receive_fifo_L_1_fifo_cap;
 input   receive_fifo_L_1_full_n;
 output   receive_fifo_L_1_write;
 input  [127:0] sweep_rx2_0_TDATA;
@@ -119,8 +119,8 @@ reg   [31:0] conv_03_fu_112;
 wire   [31:0] conv_fu_176_p1;
 wire    ap_CS_fsm_state7;
 reg    ap_block_state1;
-reg   [1:0] i_04_fu_116;
-wire   [1:0] i_26_fu_260_p2;
+reg   [2:0] i_04_fu_116;
+wire   [2:0] i_26_fu_260_p2;
 reg   [127:0] data_temp_51_fu_124;
 wire   [127:0] data_temp_53_fu_326_p5;
 reg   [31:0] return_r_preg;
@@ -179,7 +179,7 @@ initial begin
 #0 grp_receive4AIE_1_Pipeline_VITIS_LOOP_76_2_fu_158_ap_start_reg = 1'b0;
 #0 data_temp_fu_120 = 128'd0;
 #0 conv_03_fu_112 = 32'd0;
-#0 i_04_fu_116 = 2'd0;
+#0 i_04_fu_116 = 3'd0;
 #0 data_temp_51_fu_124 = 128'd0;
 #0 return_r_preg = 32'd0;
 end
@@ -193,8 +193,8 @@ TopPL_receive4AIE_1_Pipeline_VITIS_LOOP_76_2 grp_receive4AIE_1_Pipeline_VITIS_LO
     .ap_ready(grp_receive4AIE_1_Pipeline_VITIS_LOOP_76_2_fu_158_ap_ready),
     .sweep_rx2_0_TVALID(sweep_rx2_0_TVALID),
     .receive_fifo_L_1_din(grp_receive4AIE_1_Pipeline_VITIS_LOOP_76_2_fu_158_receive_fifo_L_1_din),
-    .receive_fifo_L_1_num_data_valid(9'd0),
-    .receive_fifo_L_1_fifo_cap(9'd0),
+    .receive_fifo_L_1_num_data_valid(15'd0),
+    .receive_fifo_L_1_fifo_cap(15'd0),
     .receive_fifo_L_1_full_n(receive_fifo_L_1_full_n),
     .receive_fifo_L_1_write(grp_receive4AIE_1_Pipeline_VITIS_LOOP_76_2_fu_158_receive_fifo_L_1_write),
     .data_temp_57(data_temp_51_fu_124),
@@ -216,7 +216,7 @@ TopPL_fptrunc_64ns_32_1_no_dsp_1 #(
     .NUM_STAGE( 1 ),
     .din0_WIDTH( 64 ),
     .dout_WIDTH( 32 ))
-fptrunc_64ns_32_1_no_dsp_1_U447(
+fptrunc_64ns_32_1_no_dsp_1_U463(
     .din0(conv_fu_176_p0),
     .dout(conv_fu_176_p1)
 );
@@ -226,7 +226,7 @@ TopPL_fpext_32ns_64_1_no_dsp_1 #(
     .NUM_STAGE( 1 ),
     .din0_WIDTH( 32 ),
     .dout_WIDTH( 64 ))
-fpext_32ns_64_1_no_dsp_1_U448(
+fpext_32ns_64_1_no_dsp_1_U464(
     .din0(conv_03_fu_112),
     .dout(dc_fu_179_p1)
 );
@@ -236,7 +236,7 @@ TopPL_fpext_32ns_64_1_no_dsp_1 #(
     .NUM_STAGE( 1 ),
     .din0_WIDTH( 32 ),
     .dout_WIDTH( 64 ))
-fpext_32ns_64_1_no_dsp_1_U449(
+fpext_32ns_64_1_no_dsp_1_U465(
     .din0(dc_21_fu_182_p0),
     .dout(dc_21_fu_182_p1)
 );
@@ -309,7 +309,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
-        i_04_fu_116 <= 2'd0;
+        i_04_fu_116 <= 3'd0;
     end else if (((1'b0 == ap_block_state2) & (icmp_ln69_fu_266_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
         i_04_fu_116 <= i_26_fu_260_p2;
     end
@@ -568,7 +568,7 @@ assign dc_21_fu_182_p0 = fp_uint_tmp_reg_705;
 
 assign grp_receive4AIE_1_Pipeline_VITIS_LOOP_76_2_fu_158_ap_start = grp_receive4AIE_1_Pipeline_VITIS_LOOP_76_2_fu_158_ap_start_reg;
 
-assign i_26_fu_260_p2 = (i_04_fu_116 + 2'd1);
+assign i_26_fu_260_p2 = (i_04_fu_116 + 3'd1);
 
 assign icmp_ln18_19_fu_452_p2 = ((y_fp_exp_fu_408_p4 == 11'd2047) ? 1'b1 : 1'b0);
 
@@ -582,7 +582,7 @@ assign icmp_ln25_7_fu_440_p2 = ((or_ln25_7_fu_434_p2 == 52'd0) ? 1'b1 : 1'b0);
 
 assign icmp_ln25_fu_428_p2 = ((or_ln25_fu_422_p2 == 11'd0) ? 1'b1 : 1'b0);
 
-assign icmp_ln69_fu_266_p2 = ((i_04_fu_116 == 2'd2) ? 1'b1 : 1'b0);
+assign icmp_ln69_fu_266_p2 = ((i_04_fu_116 == 3'd4) ? 1'b1 : 1'b0);
 
 assign or_ln18_7_fu_612_p2 = (xor_ln18_14_fu_607_p2 | icmp_ln18_21_reg_763);
 

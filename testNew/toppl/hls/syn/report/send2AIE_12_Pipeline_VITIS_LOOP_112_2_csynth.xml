@@ -22,21 +22,21 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>10</Best-caseLatency>
-<Average-caseLatency>10</Average-caseLatency>
-<Worst-caseLatency>10</Worst-caseLatency>
-<Best-caseRealTimeLatency>50.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>50.000 ns</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>50.000 ns</Worst-caseRealTimeLatency>
-<Interval-min>10</Interval-min>
-<Interval-max>10</Interval-max>
+<Best-caseLatency>66</Best-caseLatency>
+<Average-caseLatency>66</Average-caseLatency>
+<Worst-caseLatency>66</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.330 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.330 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.330 us</Worst-caseRealTimeLatency>
+<Interval-min>66</Interval-min>
+<Interval-max>66</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_112_2>
 <Slack>3.65</Slack>
-<TripCount>7</TripCount>
-<Latency>8</Latency>
-<AbsoluteTimeLatency>40</AbsoluteTimeLatency>
+<TripCount>63</TripCount>
+<Latency>64</Latency>
+<AbsoluteTimeLatency>320</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 <InstanceList>
@@ -60,8 +60,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>106</FF>
-<LUT>34</LUT>
+<FF>109</FF>
+<LUT>45</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -161,7 +161,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>10</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -172,7 +172,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>10</Bits>
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>

@@ -29,7 +29,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="4" op_0_bw="32">
+<Node id="7" bw="7" op_0_bw="32">
 <![CDATA[
 newFuncRoot:0 %j = alloca i32 1
 
@@ -46,7 +46,7 @@ newFuncRoot:0 %j = alloca i32 1
 
 <Node id="8" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="16" op_3_bw="16" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-newFuncRoot:1 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_tx1_1_V_data_V, i16 %sweep_tx1_1_V_keep_V, i16 %sweep_tx1_1_V_strb_V, i1 0, i1 %sweep_tx1_1_V_last_V, i1 0, i1 0, void @empty
+newFuncRoot:1 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_tx1_1_V_data_V, i16 %sweep_tx1_1_V_keep_V, i16 %sweep_tx1_1_V_strb_V, i1 0, i1 %sweep_tx1_1_V_last_V, i1 0, i1 0, void @empty_5
 
 ]]></Node>
 <StgValue><ssdm name="specaxissidechannel_ln0"/></StgValue>
@@ -76,7 +76,7 @@ newFuncRoot:2 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %s
 
 <Node id="10" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="16" op_3_bw="16" op_4_bw="1" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="32" op_10_bw="32" op_11_bw="0" op_12_bw="0" op_13_bw="0" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="0" op_19_bw="0" op_20_bw="32" op_21_bw="32">
 <![CDATA[
-newFuncRoot:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_tx1_1_V_data_V, i16 %sweep_tx1_1_V_keep_V, i16 %sweep_tx1_1_V_strb_V, i1 %sweep_tx1_1_V_last_V, void @empty_82, i32 0, i32 0, void @empty_81, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0
+newFuncRoot:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_tx1_1_V_data_V, i16 %sweep_tx1_1_V_keep_V, i16 %sweep_tx1_1_V_strb_V, i1 %sweep_tx1_1_V_last_V, void @empty_77, i32 0, i32 0, void @empty_76, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -91,7 +91,7 @@ newFuncRoot:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 
 <Node id="11" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
 <![CDATA[
-newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_R_0, void @empty_80, i32 0, i32 0, void @empty_70, i32 0, i32 0, void @empty_70, void @empty_70, void @empty_70, i32 0, i32 0, i32 0, i32 0, void @empty_70, void @empty_70, i32 4294967295, i32 0
+newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %send_fifo_R_0, void @empty_84, i32 0, i32 0, void @empty_62, i32 0, i32 0, void @empty_62, void @empty_62, void @empty_62, i32 0, i32 0, i32 0, i32 0, void @empty_62, void @empty_62, i32 4294967295, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -104,9 +104,9 @@ newFuncRoot:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="12" bw="0" op_0_bw="4">
+<Node id="12" bw="0" op_0_bw="7">
 <![CDATA[
-newFuncRoot:5 %muxLogicData_to_store_ln112 = muxlogic i4 1
+newFuncRoot:5 %muxLogicData_to_store_ln112 = muxlogic i7 1
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln112"/></StgValue>
@@ -119,9 +119,9 @@ newFuncRoot:5 %muxLogicData_to_store_ln112 = muxlogic i4 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="13" bw="0" op_0_bw="4">
+<Node id="13" bw="0" op_0_bw="7">
 <![CDATA[
-newFuncRoot:6 %muxLogicAddr_to_store_ln112 = muxlogic i4 %j
+newFuncRoot:6 %muxLogicAddr_to_store_ln112 = muxlogic i7 %j
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicAddr_to_store_ln112"/></StgValue>
@@ -134,9 +134,9 @@ newFuncRoot:6 %muxLogicAddr_to_store_ln112 = muxlogic i4 %j
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="0" op_0_bw="4" op_1_bw="4">
+<Node id="14" bw="0" op_0_bw="7" op_1_bw="7">
 <![CDATA[
-newFuncRoot:7 %store_ln112 = store i4 1, i4 %j
+newFuncRoot:7 %store_ln112 = store i7 1, i7 %j
 
 ]]></Node>
 <StgValue><ssdm name="store_ln112"/></StgValue>
@@ -164,9 +164,9 @@ newFuncRoot:8 %br_ln0 = br void %for.inc
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="17" bw="4" op_0_bw="4">
+<Node id="17" bw="7" op_0_bw="7">
 <![CDATA[
-for.inc:0 %MuxLogicAddr_to_j_5 = muxlogic i4 %j
+for.inc:0 %MuxLogicAddr_to_j_5 = muxlogic i7 %j
 
 ]]></Node>
 <StgValue><ssdm name="MuxLogicAddr_to_j_5"/></StgValue>
@@ -179,9 +179,9 @@ for.inc:0 %MuxLogicAddr_to_j_5 = muxlogic i4 %j
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="18" bw="4" op_0_bw="4" op_1_bw="0">
+<Node id="18" bw="7" op_0_bw="7" op_1_bw="0">
 <![CDATA[
-for.inc:1 %j_5 = load i4 %j
+for.inc:1 %j_5 = load i7 %j
 
 ]]></Node>
 <StgValue><ssdm name="j_5"/></StgValue>
@@ -194,9 +194,9 @@ for.inc:1 %j_5 = load i4 %j
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="19" bw="1" op_0_bw="4" op_1_bw="4">
+<Node id="19" bw="1" op_0_bw="7" op_1_bw="7">
 <![CDATA[
-for.inc:2 %icmp_ln112 = icmp_eq  i4 %j_5, i4 8
+for.inc:2 %icmp_ln112 = icmp_eq  i7 %j_5, i7 64
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln112"/></StgValue>
@@ -225,9 +225,9 @@ for.inc:3 %br_ln112 = br i1 %icmp_ln112, void %for.inc.split, void %for.inc76.ex
 </and_exp></or_exp>
 </condition>
 
-<Node id="22" bw="4" op_0_bw="4" op_1_bw="4">
+<Node id="22" bw="7" op_0_bw="7" op_1_bw="7">
 <![CDATA[
-for.inc.split:0 %j_6 = add i4 %j_5, i4 1
+for.inc.split:0 %j_6 = add i7 %j_5, i7 1
 
 ]]></Node>
 <StgValue><ssdm name="j_6"/></StgValue>
@@ -241,9 +241,9 @@ for.inc.split:0 %j_6 = add i4 %j_5, i4 1
 </and_exp></or_exp>
 </condition>
 
-<Node id="23" bw="1" op_0_bw="4">
+<Node id="23" bw="1" op_0_bw="7">
 <![CDATA[
-for.inc.split:1 %trunc_ln112 = trunc i4 %j_5
+for.inc.split:1 %trunc_ln112 = trunc i7 %j_5
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln112"/></StgValue>
@@ -257,9 +257,9 @@ for.inc.split:1 %trunc_ln112 = trunc i4 %j_5
 </and_exp></or_exp>
 </condition>
 
-<Node id="44" bw="0" op_0_bw="4">
+<Node id="44" bw="0" op_0_bw="7">
 <![CDATA[
-for.inc.split:22 %muxLogicData_to_store_ln112 = muxlogic i4 %j_6
+for.inc.split:22 %muxLogicData_to_store_ln112 = muxlogic i7 %j_6
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicData_to_store_ln112"/></StgValue>
@@ -273,9 +273,9 @@ for.inc.split:22 %muxLogicData_to_store_ln112 = muxlogic i4 %j_6
 </and_exp></or_exp>
 </condition>
 
-<Node id="45" bw="0" op_0_bw="4">
+<Node id="45" bw="0" op_0_bw="7">
 <![CDATA[
-for.inc.split:23 %muxLogicAddr_to_store_ln112 = muxlogic i4 %j
+for.inc.split:23 %muxLogicAddr_to_store_ln112 = muxlogic i7 %j
 
 ]]></Node>
 <StgValue><ssdm name="muxLogicAddr_to_store_ln112"/></StgValue>
@@ -289,9 +289,9 @@ for.inc.split:23 %muxLogicAddr_to_store_ln112 = muxlogic i4 %j
 </and_exp></or_exp>
 </condition>
 
-<Node id="46" bw="0" op_0_bw="4" op_1_bw="4" op_2_bw="0" op_3_bw="0">
+<Node id="46" bw="0" op_0_bw="7" op_1_bw="7" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.inc.split:24 %store_ln112 = store i4 %j_6, i4 %j
+for.inc.split:24 %store_ln112 = store i7 %j_6, i7 %j
 
 ]]></Node>
 <StgValue><ssdm name="store_ln112"/></StgValue>
@@ -523,7 +523,7 @@ for.inc76.exitStub:0 %ret_ln0 = ret
 
 <Node id="24" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.inc.split:2 %specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_70
+for.inc.split:2 %specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_62
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln113"/></StgValue>
@@ -538,7 +538,7 @@ for.inc.split:2 %specpipeline_ln113 = specpipeline void @_ssdm_op_SpecPipeline, 
 
 <Node id="25" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-for.inc.split:3 %speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 7, i64 7, i64 7
+for.inc.split:3 %speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 63, i64 63, i64 63
 
 ]]></Node>
 <StgValue><ssdm name="speclooptripcount_ln112"/></StgValue>
@@ -553,7 +553,7 @@ for.inc.split:3 %speclooptripcount_ln112 = speclooptripcount void @_ssdm_op_Spec
 
 <Node id="26" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.inc.split:4 %specloopname_ln112 = specloopname void @_ssdm_op_SpecLoopName, void @empty_50
+for.inc.split:4 %specloopname_ln112 = specloopname void @_ssdm_op_SpecLoopName, void @empty_75
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln112"/></StgValue>

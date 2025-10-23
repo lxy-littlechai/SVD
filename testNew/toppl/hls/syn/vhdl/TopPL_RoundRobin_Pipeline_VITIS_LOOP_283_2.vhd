@@ -17,8 +17,8 @@ port (
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     receive_fifo_L_0_dout : IN STD_LOGIC_VECTOR (127 downto 0);
-    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (8 downto 0);
-    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (8 downto 0);
+    receive_fifo_L_0_num_data_valid : IN STD_LOGIC_VECTOR (14 downto 0);
+    receive_fifo_L_0_fifo_cap : IN STD_LOGIC_VECTOR (14 downto 0);
     receive_fifo_L_0_empty_n : IN STD_LOGIC;
     receive_fifo_L_0_read : OUT STD_LOGIC;
     m_axi_gmem1_AWVALID : OUT STD_LOGIC;
@@ -86,8 +86,9 @@ architecture behav of TopPL_RoundRobin_Pipeline_VITIS_LOOP_283_2 is
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
     constant ap_const_lv64_FFFFFFFFFFFFFFFF : STD_LOGIC_VECTOR (63 downto 0) := "1111111111111111111111111111111111111111111111111111111111111111";
     constant ap_const_lv384_lc_1 : STD_LOGIC_VECTOR (383 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-    constant ap_const_lv4_1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
-    constant ap_const_lv4_8 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
+    constant ap_const_lv7_0 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    constant ap_const_lv7_1 : STD_LOGIC_VECTOR (6 downto 0) := "0000001";
+    constant ap_const_lv7_40 : STD_LOGIC_VECTOR (6 downto 0) := "1000000";
     constant ap_const_lv2_3 : STD_LOGIC_VECTOR (1 downto 0) := "11";
     constant ap_const_lv32_80 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000010000000";
     constant ap_const_lv32_17F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000101111111";
@@ -118,9 +119,9 @@ attribute shreg_extract : string;
     signal phi_ln285_fu_74 : STD_LOGIC_VECTOR (383 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     signal select_ln285_fu_223_p3 : STD_LOGIC_VECTOR (383 downto 0);
     signal ap_loop_init : STD_LOGIC;
-    signal j_5_fu_78 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
-    signal add_ln283_fu_138_p2 : STD_LOGIC_VECTOR (3 downto 0);
-    signal ap_sig_allocacmp_j : STD_LOGIC_VECTOR (3 downto 0);
+    signal j_5_fu_78 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+    signal add_ln283_fu_138_p2 : STD_LOGIC_VECTOR (6 downto 0);
+    signal ap_sig_allocacmp_j : STD_LOGIC_VECTOR (6 downto 0);
     signal trunc_ln283_fu_150_p1 : STD_LOGIC_VECTOR (1 downto 0);
     signal tmp_6_fu_205_p4 : STD_LOGIC_VECTOR (255 downto 0);
     signal tmp_7_fu_215_p3 : STD_LOGIC_VECTOR (383 downto 0);
@@ -221,7 +222,7 @@ begin
                 if (((ap_enable_reg_pp0_iter0 = ap_const_logic_1) and (icmp_ln283_fu_144_p2 = ap_const_lv1_0))) then 
                     j_5_fu_78 <= add_ln283_fu_138_p2;
                 elsif ((ap_loop_init = ap_const_logic_1)) then 
-                    j_5_fu_78 <= ap_const_lv4_0;
+                    j_5_fu_78 <= ap_const_lv7_0;
                 end if;
             end if; 
         end if;
@@ -257,7 +258,7 @@ begin
                 ap_NS_fsm <= "X";
         end case;
     end process;
-    add_ln283_fu_138_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_j) + unsigned(ap_const_lv4_1));
+    add_ln283_fu_138_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_j) + unsigned(ap_const_lv7_1));
     ap_CS_fsm_pp0_stage0 <= ap_CS_fsm(0);
         ap_block_pp0_stage0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
 
@@ -347,7 +348,7 @@ begin
     ap_sig_allocacmp_j_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_block_pp0_stage0, ap_loop_init, j_5_fu_78)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_pp0_stage0) and (ap_loop_init = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0))) then 
-            ap_sig_allocacmp_j <= ap_const_lv4_0;
+            ap_sig_allocacmp_j <= ap_const_lv7_0;
         else 
             ap_sig_allocacmp_j <= j_5_fu_78;
         end if; 
@@ -363,7 +364,7 @@ begin
         end if; 
     end process;
 
-    icmp_ln283_fu_144_p2 <= "1" when (ap_sig_allocacmp_j = ap_const_lv4_8) else "0";
+    icmp_ln283_fu_144_p2 <= "1" when (ap_sig_allocacmp_j = ap_const_lv7_40) else "0";
     icmp_ln285_fu_154_p2 <= "1" when (trunc_ln283_fu_150_p1 = ap_const_lv2_3) else "0";
     m_axi_gmem1_ARADDR <= ap_const_lv64_0;
     m_axi_gmem1_ARBURST <= ap_const_lv2_0;
