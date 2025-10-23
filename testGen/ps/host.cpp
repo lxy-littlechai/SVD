@@ -43,18 +43,18 @@ int main(int argc, char** argv) {
     if(argc >= 3) sscanf (argv[2], "%d", &ITER);
     if(argc == 4) sscanf (argv[3], "%d", &BATCH);
     
-    xrt::kernel kernel[];
-    xrt::bo input_buffer[];
-    xrt::bo output_buffer_U[];
-    xrt::bo output_buffer_S[];
-    xrt::bo output_buffer_CONV[];
+    xrt::kernel kernel[1];
+    xrt::bo input_buffer[1];
+    xrt::bo output_buffer_U[1];
+    xrt::bo output_buffer_S[1];
+    xrt::bo output_buffer_CONV[1];
 
-    float* data[];
-    float* U[];
-    float* S[];
-    float* CONV[];
+    float* data[1];
+    float* U[1];
+    float* S[1];
+    float* CONV[1];
 
-    for(int i = 0;i < ;i ++) {
+    for(int i = 0;i < 1;i ++) {
       string kernel_name = "TopPL:{TopPL_" + to_string(i+1) + "}";
       kernel[i] = xrt::kernel(device, xclbin_uuid, kernel_name.c_str());
       input_buffer[i] = xrt::bo(device, DATA_SIZE_BYTE, kernel[i].group_id(0));
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
       CONV[i] = output_buffer_CONV[i].map<float*>();
     }
 
-    for(int k = 0;k < ;k ++){
+    for(int k = 0;k < 1;k ++){
       int index = 0, matrix_id = 0;
       for(int j = 0;j < COL;j ++) {
         for(int i = 0;i < ROW;i ++) {
@@ -81,7 +81,7 @@ int main(int argc, char** argv) {
       }
     }
     
-    for(int k = 0;k < ;k ++) {
+    for(int k = 0;k < 1;k ++) {
       input_buffer[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_CONV[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
     }
@@ -90,22 +90,27 @@ int main(int argc, char** argv) {
     std::vector<xrt::graph> topSweepGraph;
     std::vector<xrt::graph> topNormGraph;
 
-    for(int i = 0;i < ;i ++) {
-      for(int j = 0;j < ;j ++) {
-        string topSweepGraphName = "topSweepGraph" + to_string(i+1) + "_" + to_string(j+1);
-        auto SweepGraph = xrt::graph(device, xclbin_uuid, topSweepGraphName.c_str());
-        topSweepGraph.emplace_back(SweepGraph);
-      }
-      string topNormGraphName = "topNormGraph" + to_string(i+1);
-      auto NormGraph = xrt::graph(device, xclbin_uuid, topNormGraphName.c_str());
-      topNormGraph.emplace_back(NormGraph);
-    }
+    
+    
+    string topSweepGraphName1_1 = "topSweepGraph" + to_string(1) + "_" + to_string(1);
+    auto SweepGraph1_1 = xrt::graph(device, xclbin_uuid, topSweepGraphName1_1.c_str());
+    topSweepGraph.emplace_back(SweepGraph1_1);
+    
+    
 
-    for(int i = 0;i < ;i ++) {
+    
+    
+    string topNormGraphName1_1 = "topNormGraph" + to_string(1) + "_" + to_string(1);
+    auto NormGraph1_1 = xrt::graph(device, xclbin_uuid, topNormGraphName1_1.c_str());
+    topNormGraph.emplace_back(NormGraph1_1);
+    
+    
+
+    for(int i = 0;i < topSweepGraph.size();i ++) {
       topSweepGraph[i].run();
     }
 
-    for(int i = 0;i < ;i ++) {
+    for(int i = 0;i < topNormGraph.size();i ++) {
       topNormGraph[i].run();
     }
     
@@ -116,19 +121,19 @@ int main(int argc, char** argv) {
     std::chrono::duration<double> kernel_time(0);
     auto kernel_start = std::chrono::high_resolution_clock::now();
     
-    xrt::run run[];
-    for(int i = 0;i < BATCH/;i ++) {
-      for(int k = 0;k < ;k ++) {
+    xrt::run run[1];
+    for(int i = 0;i < BATCH/1;i ++) {
+      for(int k = 0;k < 1;k ++) {
         run[k] = kernel[k](input_buffer[k], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
       }
-      for(int k = 0;k < ;k ++) {
+      for(int k = 0;k < 1;k ++) {
         run[k].wait();
       }
     }
-    for(int k = 0;k < BATCH%;k ++) {
+    for(int k = 0;k < BATCH%1;k ++) {
       run[k] = kernel[k](input_buffer[k], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
     }
-    for(int k = 0;k < BATCH%;k ++) {
+    for(int k = 0;k < BATCH%1;k ++) {
         run[k].wait();
       }
     
@@ -143,7 +148,7 @@ int main(int argc, char** argv) {
     std::cout << "Throughput: "<< BATCH/kernel_time_in_sec <<"task/s\n";
     cout << "------------------------------------------------\n";
     
-    for(int k = 0;k < ;k ++) {
+    for(int k = 0;k < 1;k ++) {
       output_buffer_U[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_S[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_CONV[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);

@@ -43,18 +43,18 @@ int main(int argc, char** argv) {
     if(argc >= 3) sscanf (argv[2], "%d", &ITER);
     if(argc == 4) sscanf (argv[3], "%d", &BATCH);
     
-    xrt::kernel kernel[{{graph_num}}];
-    xrt::bo input_buffer[{{graph_num}}];
-    xrt::bo output_buffer_U[{{graph_num}}];
-    xrt::bo output_buffer_S[{{graph_num}}];
-    xrt::bo output_buffer_CONV[{{graph_num}}];
+    xrt::kernel kernel[{{task_num}}];
+    xrt::bo input_buffer[{{task_num}}];
+    xrt::bo output_buffer_U[{{task_num}}];
+    xrt::bo output_buffer_S[{{task_num}}];
+    xrt::bo output_buffer_CONV[{{task_num}}];
 
-    float* data[{{graph_num}}];
-    float* U[{{graph_num}}];
-    float* S[{{graph_num}}];
-    float* CONV[{{graph_num}}];
+    float* data[{{task_num}}];
+    float* U[{{task_num}}];
+    float* S[{{task_num}}];
+    float* CONV[{{task_num}}];
 
-    for(int i = 0;i < {{graph_num}};i ++) {
+    for(int i = 0;i < {{task_num}};i ++) {
       string kernel_name = "TopPL:{TopPL_" + to_string(i+1) + "}";
       kernel[i] = xrt::kernel(device, xclbin_uuid, kernel_name.c_str());
       input_buffer[i] = xrt::bo(device, DATA_SIZE_BYTE, kernel[i].group_id(0));
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
       CONV[i] = output_buffer_CONV[i].map<float*>();
     }
 
-    for(int k = 0;k < {{graph_num}};k ++){
+    for(int k = 0;k < {{task_num}};k ++){
       int index = 0, matrix_id = 0;
       for(int j = 0;j < COL;j ++) {
         for(int i = 0;i < ROW;i ++) {
@@ -81,7 +81,7 @@ int main(int argc, char** argv) {
       }
     }
     
-    for(int k = 0;k < {{graph_num}};k ++) {
+    for(int k = 0;k < {{task_num}};k ++) {
       input_buffer[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_CONV[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
     }
@@ -90,22 +90,27 @@ int main(int argc, char** argv) {
     std::vector<xrt::graph> topSweepGraph;
     std::vector<xrt::graph> topNormGraph;
 
-    for(int i = 0;i < {{graph_num}};i ++) {
-      for(int j = 0;j < {{PARALLEL_NUM}};j ++) {
-        string topSweepGraphName = "topSweepGraph" + to_string(i+1) + "_" + to_string(j+1);
-        auto SweepGraph = xrt::graph(device, xclbin_uuid, topSweepGraphName.c_str());
-        topSweepGraph.emplace_back(SweepGraph);
-      }
-      string topNormGraphName = "topNormGraph" + to_string(i+1);
-      auto NormGraph = xrt::graph(device, xclbin_uuid, topNormGraphName.c_str());
-      topNormGraph.emplace_back(NormGraph);
-    }
+    {% for graphs in orth_graph_list %}
+    {% for graph in graphs %}
+    string topSweepGraphName{{graph['task_id']}}_{{graph['graph_id']}} = "topSweepGraph" + to_string({{graph['task_id']}}) + "_" + to_string({{graph['graph_id']}});
+    auto SweepGraph{{graph['task_id']}}_{{graph['graph_id']}} = xrt::graph(device, xclbin_uuid, topSweepGraphName{{graph['task_id']}}_{{graph['graph_id']}}.c_str());
+    topSweepGraph.emplace_back(SweepGraph{{graph['task_id']}}_{{graph['graph_id']}});
+    {% endfor %}
+    {% endfor %}
 
-    for(int i = 0;i < {{PARALLEL_NUM}};i ++) {
+    {% for graphs in norm_graph_list %}
+    {% for graph in graphs %}
+    string topNormGraphName{{graph['task_id']}}_{{graph['graph_id']}} = "topNormGraph" + to_string({{graph['task_id']}}) + "_" + to_string({{graph['graph_id']}});
+    auto NormGraph{{graph['task_id']}}_{{graph['graph_id']}} = xrt::graph(device, xclbin_uuid, topNormGraphName{{graph['task_id']}}_{{graph['graph_id']}}.c_str());
+    topNormGraph.emplace_back(NormGraph{{graph['task_id']}}_{{graph['graph_id']}});
+    {% endfor %}
+    {% endfor %}
+
+    for(int i = 0;i < topSweepGraph.size();i ++) {
       topSweepGraph[i].run();
     }
 
-    for(int i = 0;i < {{graph_num}};i ++) {
+    for(int i = 0;i < topNormGraph.size();i ++) {
       topNormGraph[i].run();
     }
     
@@ -116,19 +121,19 @@ int main(int argc, char** argv) {
     std::chrono::duration<double> kernel_time(0);
     auto kernel_start = std::chrono::high_resolution_clock::now();
     
-    xrt::run run[{{graph_num}}];
-    for(int i = 0;i < BATCH/{{graph_num}};i ++) {
-      for(int k = 0;k < {{graph_num}};k ++) {
+    xrt::run run[{{task_num}}];
+    for(int i = 0;i < BATCH/{{task_num}};i ++) {
+      for(int k = 0;k < {{task_num}};k ++) {
         run[k] = kernel[k](input_buffer[k], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
       }
-      for(int k = 0;k < {{graph_num}};k ++) {
+      for(int k = 0;k < {{task_num}};k ++) {
         run[k].wait();
       }
     }
-    for(int k = 0;k < BATCH%{{graph_num}};k ++) {
+    for(int k = 0;k < BATCH%{{task_num}};k ++) {
       run[k] = kernel[k](input_buffer[k], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
     }
-    for(int k = 0;k < BATCH%{{graph_num}};k ++) {
+    for(int k = 0;k < BATCH%{{task_num}};k ++) {
         run[k].wait();
       }
     
@@ -143,7 +148,7 @@ int main(int argc, char** argv) {
     std::cout << "Throughput: "<< BATCH/kernel_time_in_sec <<"task/s\n";
     cout << "------------------------------------------------\n";
     
-    for(int k = 0;k < {{graph_num}};k ++) {
+    for(int k = 0;k < {{task_num}};k ++) {
       output_buffer_U[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_S[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
       output_buffer_CONV[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
