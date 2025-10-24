@@ -17,7 +17,7 @@ Min II:
        b156  VFPMAC wd0, r1, wd0, ya, r2, cl0, r2, cl0, #0, cl1 [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:384:27]
          |
          |
-       [2,LC]   flow dep: __tmp.2830/__tmp.2827 in WD[0] , __tmp.2830 in WD[0] , bypassed 1; loop carried
+       [2,LC]   flow dep: __tmp.2830 in WD[0] , __tmp.2830/__tmp.2827 in WD[0] , bypassed 1; loop carried
          |
          v
        b156  VFPMAC wd0, r1, wd0, ya, r2, cl0, r2, cl0, #0, cl1 [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:384:27]

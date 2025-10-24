@@ -41,7 +41,7 @@ Min II:
        b245  VLDA wr0, [p0], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:45:15]
          |
          |
-       [7,LC]   flow dep: vec1.4528/__tmp.4525 in WR0[0] , vec1.4528 in WR0[0] ; loop carried
+       [7,LC]   flow dep: vec1.4528 in WR0[0] , vec1.4528/__tmp.4525 in WR0[0] ; loop carried
          |
          v
        b691  VMOV wc1, wr0 [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:384:27]
@@ -101,7 +101,7 @@ Register live ranges for register R[16]:
 
                                   000000000011111111
                                   012345678901234567 012
-R[12]: span 18, min_span 18      |AAAAAAAAAAAAAAAAAA|AAA| A: _cst.5697 <1247> L78:45
+R[12]: span 18, min_span 18      |AAAAAAAAAAAAAAAAAA|AAA| A: _cst.5697 <1247> L384:27
 R[ 7]: span  1, min_span  1      |:..:..:..:..:.b:..|..b| B: __seff.4530 <248> L384:27
 R[ 6]: span  1, min_span  1      |:..:..:..:..:..c..|c..| C: __seff.4541 <247> L384:27
 R[ 5]: span  1, min_span  1      |:..:..:..:..:..:d.|.d.| D: __seff.4516 <249> L384:27

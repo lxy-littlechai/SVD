@@ -1,5 +1,5 @@
 const int ROW = 32;
-const int COL = 53;
+const int COL = 44;
 const int BLOCK_SIZE = 11;
 const int BLOCK_NUM = COL/BLOCK_SIZE;
 const int BLOCK_PAIR_NUM = BLOCK_NUM/2;

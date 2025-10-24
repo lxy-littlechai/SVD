@@ -19,3 +19,4 @@ Predict_test
 **/*.exe
 **/*.a
 **/toppl
+test*

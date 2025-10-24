@@ -63538,11 +63538,11 @@ public:
 # 2 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp" 2
 # 1 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h" 1
 const int ROW = 32;
-const int COL = 53;
+const int COL = 44;
 const int BLOCK_SIZE = 11;
 const int BLOCK_NUM = COL/BLOCK_SIZE;
 const int BLOCK_PAIR_NUM = BLOCK_NUM/2;
-const int PARALLEL_NUM = 1;
+const int parallel_num = 1;
 const float EPS = 1e-6;
 # 3 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp" 2
 

@@ -77,7 +77,7 @@ Register live ranges for register R[16]:
 
                                   0000000000111111
                                   0123456789012345 01
-R[ 2]: span 16, min_span 16      |AAAAAAAAAAAAAAAA|AA| A: _cst.3659 <1285> L0:0
+R[ 2]: span 16, min_span 16      |AAAAAAAAAAAAAAAA|AA| A: _cst.3659 <1285> L384:27
 R[ 1]: span  1, min_span  1      |:.:.:.:.:.:.:.:b|.b| B: __seff.2831 <156> L384:27
 R[ 9]: span 16, min_span  0      |cccccccccccccccc|cc| C: _cst.3668 <1290> L175:25
 R[15]: span  0, min_span  0      |:.:.:.:.:.:.:.:.|..| 

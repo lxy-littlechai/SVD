@@ -67,7 +67,7 @@ class SVD_Model:
             col = self.COL
             # padding the matrix to the multiple of block_size
             if self.COL % block_size != 0:
-                col = self.COL + self.COL % block_size
+                col = self.COL + block_size - self.COL % block_size
                 while (col//block_size) % 2 != 0:
                     col += block_size
 
