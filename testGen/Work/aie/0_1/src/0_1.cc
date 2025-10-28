@@ -9,16 +9,16 @@ volatile static int sync_buffer[8] = {0, -1};
 #include <adf/sync/mesync.h>
 
 // Define Locks
-#define LOCK_0_1_4_8032 20
-#define LOCK_0_1_5_160 21
-#define LOCK_1_1_4_0 52
-#define LOCK_1_1_5_0 53
+#define LOCK_0_0_0_0 0
+#define LOCK_0_0_1_0 1
+#define LOCK_0_2_0_0 32
+#define LOCK_0_2_1_0 33
 
 // Declare shared memory buffers
-v4float buf486[9];
-v4float buf486d[9];
-v4float buf487[9];
-v4float buf487d[9];
+v4float buf18[9];
+v4float buf18d[9];
+v4float buf19[9];
+v4float buf19d[9];
 
 // Declare Kernel functions and initializers
 #include "aie/ProcessUnit/Normalize.cpp"
@@ -27,8 +27,8 @@ v4float buf487d[9];
 
 int main(void) {
   sync_buffer[0] = 0; //reset end signal
-  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf486_buf486d_i[1] = {{(float*)buf486, 33, 0}};
-  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf487_buf487d_o[1] = {{(float*)buf487, 33, 0}};
+  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf18_buf18d_i[1] = {{(float*)buf18, 33, 0}};
+  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf19_buf19d_o[1] = {{(float*)buf19, 33, 0}};
   int32 index = 1;
   while(true)
   {
@@ -38,14 +38,14 @@ int main(void) {
   while (proc_0_1_bounds)
   {
 
-    // Kernel call : i240:normalize<32>
-    window_buf486_buf486d_i->setData(*window_buf486_buf486d_i, (float*)buf486, (float*)buf486d, 1-index, 0);
-    window_buf486_buf486d_i->acquire(*window_buf486_buf486d_i, LOCK_0_1_4_8032, LOCK_0_1_5_160, 1-index);
-    window_buf487_buf487d_o->setData(*window_buf487_buf487d_o, (float*)buf487, (float*)buf487d, 1-index, 0);
-    window_buf487_buf487d_o->acquire(*window_buf487_buf487d_o, LOCK_1_1_4_0, LOCK_1_1_5_0, 1-index);
-    normalize<32>(window_buf486_buf486d_i[0],window_buf487_buf487d_o[0]);
-    window_buf486_buf486d_i->release(*window_buf486_buf486d_i, LOCK_0_1_4_8032, LOCK_0_1_5_160, 1-index);
-    window_buf487_buf487d_o->release(*window_buf487_buf487d_o, LOCK_1_1_4_0, LOCK_1_1_5_0, 1-index);
+    // Kernel call : i23:normalize<32>
+    window_buf18_buf18d_i->setData(*window_buf18_buf18d_i, (float*)buf18, (float*)buf18d, 1-index, 0);
+    window_buf18_buf18d_i->acquire(*window_buf18_buf18d_i, LOCK_0_0_0_0, LOCK_0_0_1_0, 1-index);
+    window_buf19_buf19d_o->setData(*window_buf19_buf19d_o, (float*)buf19, (float*)buf19d, 1-index, 0);
+    window_buf19_buf19d_o->acquire(*window_buf19_buf19d_o, LOCK_0_2_0_0, LOCK_0_2_1_0, 1-index);
+    normalize<32>(window_buf18_buf18d_i[0],window_buf19_buf19d_o[0]);
+    window_buf18_buf18d_i->release(*window_buf18_buf18d_i, LOCK_0_0_0_0, LOCK_0_0_1_0, 1-index);
+    window_buf19_buf19d_o->release(*window_buf19_buf19d_o, LOCK_0_2_0_0, LOCK_0_2_1_0, 1-index);
     index = 1 - index;
 
     chess_memory_fence();

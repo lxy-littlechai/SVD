@@ -63459,15 +63459,15 @@ public:
 
 using namespace adf;
 
-template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION>
+template<int MatrixROW, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION>
 class TopNormGraph: public graph {
 private:
-    RingNormGraph<MatrixROW, GraphSize, START_COL, START_ROW, DIRECTION> normGraph;
+    RingNormGraph<MatrixROW, SUB_BLOCK_SIZE, START_COL, START_ROW, DIRECTION> normGraph;
 public:
     input_plio in[1];
     output_plio out[1];
-    pktsplit<GraphSize> sp[1];
-    pktmerge<GraphSize> mg[1];
+    pktsplit<SUB_BLOCK_SIZE> sp[1];
+    pktmerge<SUB_BLOCK_SIZE> mg[1];
 
     TopNormGraph(std::string graphID) {
         for(int j = 0;j < 1;j ++) {
@@ -63477,15 +63477,15 @@ public:
             std::string plout = graphID + "_norm_out_" + std::to_string(j);
             in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
             out[j] = output_plio::create(plout, plio_128_bits, fileOut);
-            sp[j] = pktsplit<GraphSize>::create();
-            mg[j] = pktmerge<GraphSize>::create();
+            sp[j] = pktsplit<SUB_BLOCK_SIZE>::create();
+            mg[j] = pktmerge<SUB_BLOCK_SIZE>::create();
         }
 
         for(int j = 0;j < 1;j ++) {
             connect<> (in[j].out[0], sp[j].in[0]);
             connect<> (mg[j].out[0], out[j].in[0]);
         }
-        for(int i = 0;i < GraphSize;i ++) {
+        for(int i = 0;i < SUB_BLOCK_SIZE;i ++) {
             for(int j = 0;j < 1;j ++) {
                 connect<> (sp[j].out[i], normGraph.in[i]);
                 connect<> (normGraph.out[i], mg[j].in[i]);
@@ -63498,38 +63498,46 @@ public:
 };
 
 
-template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION>
+template<int MatrixROW, int GraphSize, int IO_NUM, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION>
 class TopSweepGraph: public graph {
 private:
     RingSweepGraph<MatrixROW, GraphSize, START_COL, START_ROW, DIRECTION> sweepGraph;
 public:
-    input_plio in[2];
-    output_plio out[2];
-    pktsplit<GraphSize> sp[2];
-    pktmerge<GraphSize> mg[2];
+    input_plio in[IO_NUM][2];
+    output_plio out[IO_NUM][2];
+    pktsplit<SUB_BLOCK_SIZE> sp[IO_NUM][2];
+    pktmerge<SUB_BLOCK_SIZE> mg[IO_NUM][2];
 
     TopSweepGraph(std::string graphID) {
-        for(int j = 0;j < 2;j ++) {
-            std::string fileIn = "aie/data/" + graphID + "_sweep_in_" + std::to_string(j) + ".txt";
-            std::string fileOut = "aie/data/" + graphID + "_sweep_out_" + std::to_string(j) +".txt";
-            std::string plIn = graphID + "_sweep_in_" + std::to_string(j);
-            std::string plout = graphID + "_sweep_out_" + std::to_string(j);
-            in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
-            out[j] = output_plio::create(plout, plio_128_bits, fileOut);
-            sp[j] = pktsplit<GraphSize>::create();
-            mg[j] = pktmerge<GraphSize>::create();
-        }
 
-        for(int j = 0;j < 2;j ++) {
-            connect<> (in[j].out[0], sp[j].in[0]);
-            connect<> (mg[j].out[0], out[j].in[0]);
-        }
-        for(int i = 0;i < GraphSize;i ++) {
-            for(int j = 0;j < 2;j ++) {
-                connect<> (sp[j].out[i], sweepGraph.in[i][j]);
-                connect<> (sweepGraph.out[i][j], mg[j].in[i]);
+        for(int j = 0;j < IO_NUM;j ++) {
+            for(int k = 0;k < 2;k ++) {
+                std::string type = k == 0 ? "L" : "R";
+                std::string fileIn = "aie/data/" + graphID + "_sweep_in_" + type + "_" + std::to_string(j) + ".txt";
+                std::string fileOut = "aie/data/" + graphID + "_sweep_out_" + type + "_" + std::to_string(j) + ".txt";
+                std::string plIn = graphID + "_sweep_in_" + type + "_" + std::to_string(j);
+                std::string plout = graphID + "_sweep_out_" + type + "_" + std::to_string(j);
+                in[j][k] = input_plio::create(plIn, plio_128_bits, fileIn);
+                out[j][k] = output_plio::create(plout, plio_128_bits, fileOut);
+                sp[j][k] = pktsplit<SUB_BLOCK_SIZE>::create();
+                mg[j][k] = pktmerge<SUB_BLOCK_SIZE>::create();
             }
+        }
 
+        for(int i = 0;i < 2;i ++) {
+            for(int j = 0;j < IO_NUM;j ++) {
+                connect<> (in[j][i].out[0], sp[j][i].in[0]);
+                connect<> (mg[j][i].out[0], out[j][i].in[0]);
+            }
+        }
+
+        for(int i = 0;i < 2;i ++) {
+            for(int j = 0;j < IO_NUM;j ++) {
+                for(int k = 0;k < SUB_BLOCK_SIZE;k ++) {
+                    connect<> (sp[j][i].out[k], sweepGraph.in[j*SUB_BLOCK_SIZE+k][i]);
+                    connect<> (sweepGraph.out[j*SUB_BLOCK_SIZE+k][i], mg[j][i].in[k]);
+                }
+            }
         }
 
 
@@ -63538,17 +63546,20 @@ public:
 # 2 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp" 2
 # 1 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h" 1
 const int ROW = 32;
-const int COL = 44;
-const int BLOCK_SIZE = 11;
+const int COL = 32;
+const int BLOCK_SIZE = 2;
 const int BLOCK_NUM = COL/BLOCK_SIZE;
 const int BLOCK_PAIR_NUM = BLOCK_NUM/2;
 const int parallel_num = 1;
 const float EPS = 1e-6;
+
+const int IO_NUM = 2;
+const int SUB_BLOCK_SIZE = BLOCK_SIZE/IO_NUM;
 # 3 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp" 2
 
 
 
-TopSweepGraph<ROW, BLOCK_SIZE, 1, 0, 1> topSweepGraph1_1("1_1");
+TopSweepGraph<ROW, BLOCK_SIZE, IO_NUM, SUB_BLOCK_SIZE, 1, 0, 1> topSweepGraph1_1("1_1");
 
 
 

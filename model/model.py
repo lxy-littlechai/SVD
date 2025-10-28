@@ -24,6 +24,7 @@ class SysConfig:
         self.orth_graph_list = [] #orthogonal graph list
         self.norm_graph_list = [] #norm graph list
         self.parallel_num = 0 # parallel_num means the parallel num in single graph
+        self.IO_NUM = 0 # IO_NUM means the IO_NUM in single graph
         self.plio_num = 0
         self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
 
@@ -45,7 +46,7 @@ class SysConfig:
 
         
     def keys(self):
-        return ('COL', 'ROW', 'padding', 'BATCH', 'BLOCK_SIZE', 'parallel_num', 'task_num', 'orth_graph_list', 'norm_graph_list')
+        return ('COL', 'ROW', 'padding', 'BATCH', 'BLOCK_SIZE', 'parallel_num', 'IO_NUM', 'task_num', 'orth_graph_list', 'norm_graph_list')
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -147,10 +148,9 @@ class SVD_Model:
         
 
 
-    def generateConfig(self, freq, parallel_num, config):
-        svd_pl = SVD_PL(self.COL, self.ROW)
+    def generateConfig(self, freq, config):
+        svd_pl = SVD_PL(self.COL, self.ROW, config.parallel_num)
         config.uram = svd_pl.getRAM(config.task_num)
-        config.parallel_num = parallel_num
         config.Frequency = freq
         # config.estimated_time = self.predict(config)
         print("Current Config!")
@@ -179,6 +179,7 @@ class SVD_Model:
         svd_aie = SVD_AIE(1, 0, 1, config.BLOCK_SIZE)
         # aiePosition = svd_aie.getAIEPosition()
         ## PL Uram Check
+        print("------", config.parallel_num)
         svd_pl = SVD_PL(config.COL, config.ROW, config.parallel_num)
 
         while svd_aie.getTaskNum() < self.BATCH:

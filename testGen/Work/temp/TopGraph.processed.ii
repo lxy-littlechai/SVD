@@ -63240,9 +63240,9 @@ public:
     RingSweepGraph() {
         for(int i = 0;i < ROW;i ++) {
             for(int j = 0;j < COL;j ++) {
-                orth[j][i] = adf::kernel::create(orthogonalize<MatrixROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci68__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:45:30", "template<int ROW> void orthogonalize(adf::input_buffer<float, adf::extents<1 + ROW>> &in0, adf::input_buffer<float, adf::extents<1 + ROW>> &in1, adf::output_buffer<float, adf::extents<1 + ROW>> &out0, adf::output_buffer<float, adf::extents<1 + ROW>> &out1)", {{"RingSweepGraph<32, 11, 1, 0, 1>", "orthogonalize<32>", false, {"adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &"}, {"in0", "in1", "out0", "out1"}, "void"}}};
-                adf::source(orth[j][i]) = "aie/ProcessUnit/Orthogonalize.cpp"; adf::frontend::CallExprConstraintFunction __ci42__{"adf::source", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:46:17"};
-                runtime<ratio>(orth[j][i]) = 0.9; adf::frontend::CallExprConstraintFunction __ci43__{"adf::runtime<adf::ratio>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:47:17"};
+                orth[j][i] = adf::kernel::create(orthogonalize<MatrixROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci70__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:45:30", "template<int ROW> void orthogonalize(adf::input_buffer<float, adf::extents<1 + ROW>> &in0, adf::input_buffer<float, adf::extents<1 + ROW>> &in1, adf::output_buffer<float, adf::extents<1 + ROW>> &out0, adf::output_buffer<float, adf::extents<1 + ROW>> &out1)", {{"RingSweepGraph<32, 2, 1, 0, 1>", "orthogonalize<32>", false, {"adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &"}, {"in0", "in1", "out0", "out1"}, "void"}}};
+                adf::source(orth[j][i]) = "aie/ProcessUnit/Orthogonalize.cpp"; adf::frontend::CallExprConstraintFunction __ci44__{"adf::source", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:46:17"};
+                runtime<ratio>(orth[j][i]) = 0.9; adf::frontend::CallExprConstraintFunction __ci45__{"adf::runtime<adf::ratio>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:47:17"};
             }
         }
 
@@ -63251,7 +63251,7 @@ public:
         for(int i = 0;i < ROW;i ++) {
             int base_col = col;
             for(int j = 0;j < COL;j ++) {
-                location<kernel>(orth[j][i]) = tile(base_col+j, row); adf::frontend::CallExprLocationConstraint __ci44__{"adf::location<adf::kernel>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:56:17"}; adf::frontend::CallExprLocationConstraint __ci45__{"adf::tile", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:56:48"};
+                location<kernel>(orth[j][i]) = tile(base_col+j, row); adf::frontend::CallExprLocationConstraint __ci46__{"adf::location<adf::kernel>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:56:17"}; adf::frontend::CallExprLocationConstraint __ci47__{"adf::tile", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:56:48"};
                 orthInfo[j][i].col = base_col+j;
                 orthInfo[j][i].row = row;
             }
@@ -63280,10 +63280,10 @@ public:
             for(int j = 0;j < COL;j ++) {
                 col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                 location<buffer>(orth[j][i].out[0]) = {bank(col, row, getBankID(j, i, col, row, 0, 0)),
-                                                       bank(col, row, getBankID(j, i, col, row, 0, 1))}; adf::frontend::CallExprLocationConstraint __ci46__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:84:17"}; adf::frontend::CallExprLocationConstraint __ci47__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:84:56"}; adf::frontend::CallExprLocationConstraint __ci48__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:85:56"};
+                                                       bank(col, row, getBankID(j, i, col, row, 0, 1))}; adf::frontend::CallExprLocationConstraint __ci48__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:84:17"}; adf::frontend::CallExprLocationConstraint __ci49__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:84:56"}; adf::frontend::CallExprLocationConstraint __ci50__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:85:56"};
                 col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                 location<buffer>(orth[j][i].out[1]) = {bank(col, row, getBankID(j, i, col, row, 1, 0)),
-                                                       bank(col, row, getBankID(j, i, col, row, 1, 1))}; adf::frontend::CallExprLocationConstraint __ci49__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:87:17"}; adf::frontend::CallExprLocationConstraint __ci50__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:87:56"}; adf::frontend::CallExprLocationConstraint __ci51__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:88:56"};
+                                                       bank(col, row, getBankID(j, i, col, row, 1, 1))}; adf::frontend::CallExprLocationConstraint __ci51__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:87:17"}; adf::frontend::CallExprLocationConstraint __ci52__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:87:56"}; adf::frontend::CallExprLocationConstraint __ci53__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:88:56"};
 
             }
             pow_row += direction;
@@ -63302,8 +63302,8 @@ public:
 
         initRingOrder();
         for(int i = 0;i < COL;i ++) {
-            connect<> (in[i][0], orth[i][0].in[0]); adf::frontend::DeclConnect __ci52__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:107:13", ""};
-            connect<> (in[i][1], orth[i][0].in[1]); adf::frontend::DeclConnect __ci53__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:108:13", ""};
+            connect<> (in[i][0], orth[i][0].in[0]); adf::frontend::DeclConnect __ci54__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:107:13", ""};
+            connect<> (in[i][1], orth[i][0].in[1]); adf::frontend::DeclConnect __ci55__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:108:13", ""};
         }
 
          {
@@ -63315,7 +63315,7 @@ public:
                     int out_port = ring[j][i].port;
                     int in_col = ring[j][i+1].col;
                     int in_port = ring[j][i+1].port;
-                    connect<> (orth[out_col][i].out[out_port], orth[in_col][i+1].in[in_port]); adf::frontend::DeclConnect __ci54__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:142:21", ""};
+                    connect<> (orth[out_col][i].out[out_port], orth[in_col][i+1].in[in_port]); adf::frontend::DeclConnect __ci56__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:142:21", ""};
                   }
 
 
@@ -63335,10 +63335,10 @@ public:
                int out_col = ring[j][ROW-1].col;
                int out_port = ring[j][ROW-1].port;
                if(j&1) {
-                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][1]); adf::frontend::DeclConnect __ci55__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:162:17", ""};
+                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][1]); adf::frontend::DeclConnect __ci57__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:162:17", ""};
                }
                else {
-                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][0]); adf::frontend::DeclConnect __ci56__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:165:17", ""};
+                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][0]); adf::frontend::DeclConnect __ci58__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:165:17", ""};
                }
 
              }
@@ -63423,19 +63423,19 @@ public:
 
   RingNormGraph() {
     for(int i = 0;i < GraphSize; i ++) {
-      norm[i] = kernel::create(normalize<MatrixROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci67__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:250:17", "template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out)", {{"RingNormGraph<32, 11, 0, 0, 1>", "normalize<32>", false, {"adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict"}, {"in", "out"}, "void"}}};
-      adf::source(norm[i]) = "aie/ProcessUnit/Normalize.cpp"; adf::frontend::CallExprConstraintFunction __ci61__{"adf::source", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:251:7"};
-      runtime<ratio>(norm[i]) = 0.9; adf::frontend::CallExprConstraintFunction __ci62__{"adf::runtime<adf::ratio>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:252:7"};
+      norm[i] = kernel::create(normalize<MatrixROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci69__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:250:17", "template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out)", {{"RingNormGraph<32, 2, 0, 0, 1>", "normalize<32>", false, {"adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict"}, {"in", "out"}, "void"}}};
+      adf::source(norm[i]) = "aie/ProcessUnit/Normalize.cpp"; adf::frontend::CallExprConstraintFunction __ci63__{"adf::source", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:251:7"};
+      runtime<ratio>(norm[i]) = 0.9; adf::frontend::CallExprConstraintFunction __ci64__{"adf::runtime<adf::ratio>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:252:7"};
     }
 
     for(int i = 0;i < GraphSize;i ++) {
-      connect<> (in[i], norm[i].in[0]); adf::frontend::DeclConnect __ci63__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:256:7", ""};
-      connect<> (norm[i].out[0], out[i]); adf::frontend::DeclConnect __ci64__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:257:7", ""};
+      connect<> (in[i], norm[i].in[0]); adf::frontend::DeclConnect __ci65__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:256:7", ""};
+      connect<> (norm[i].out[0], out[i]); adf::frontend::DeclConnect __ci66__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:257:7", ""};
     }
 
     int row = START_ROW, col = START_COL, direction = DIRECTION;
     for(int i = 0;i < GraphSize;i ++) {
-        location<kernel>(norm[i]) = tile(col, row); adf::frontend::CallExprLocationConstraint __ci65__{"adf::location<adf::kernel>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:262:9"}; adf::frontend::CallExprLocationConstraint __ci66__{"adf::tile", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:262:37"};
+        location<kernel>(norm[i]) = tile(col, row); adf::frontend::CallExprLocationConstraint __ci67__{"adf::location<adf::kernel>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:262:9"}; adf::frontend::CallExprLocationConstraint __ci68__{"adf::tile", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/ProcessGraph/RingGraph.hpp:262:37"};
         row += direction;
         if(row == VCK190_ROW && direction == 1) {
             row = VCK190_ROW-1;
@@ -63461,15 +63461,15 @@ public:
 
 using namespace adf;
 
-template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION>
+template<int MatrixROW, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION>
 class TopNormGraph: public graph {
 private:
-    RingNormGraph<MatrixROW, GraphSize, START_COL, START_ROW, DIRECTION> normGraph; decltype(adf::frontend::instrument< decltype(normGraph) > (normGraph)) __ci19__ = adf::frontend::instrument< decltype(normGraph) > ( normGraph, "normGraph", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:10:5", adf::frontend::getParentGraphImpl(*this));
+    RingNormGraph<MatrixROW, SUB_BLOCK_SIZE, START_COL, START_ROW, DIRECTION> normGraph; decltype(adf::frontend::instrument< decltype(normGraph) > (normGraph)) __ci19__ = adf::frontend::instrument< decltype(normGraph) > ( normGraph, "normGraph", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:10:5", adf::frontend::getParentGraphImpl(*this));
 public:
     input_plio in[1]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci20__ = adf::frontend::instrument< decltype(in) > ( in, "in", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:12:5", adf::frontend::getParentGraphImpl(*this));
     output_plio out[1]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci21__ = adf::frontend::instrument< decltype(out) > ( out, "out", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:13:5", adf::frontend::getParentGraphImpl(*this));
-    pktsplit<GraphSize> sp[1]; decltype(adf::frontend::instrument< decltype(sp) > (sp)) __ci22__ = adf::frontend::instrument< decltype(sp) > ( sp, "sp", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:14:5", adf::frontend::getParentGraphImpl(*this));
-    pktmerge<GraphSize> mg[1]; decltype(adf::frontend::instrument< decltype(mg) > (mg)) __ci23__ = adf::frontend::instrument< decltype(mg) > ( mg, "mg", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:15:5", adf::frontend::getParentGraphImpl(*this));
+    pktsplit<SUB_BLOCK_SIZE> sp[1]; decltype(adf::frontend::instrument< decltype(sp) > (sp)) __ci22__ = adf::frontend::instrument< decltype(sp) > ( sp, "sp", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:14:5", adf::frontend::getParentGraphImpl(*this));
+    pktmerge<SUB_BLOCK_SIZE> mg[1]; decltype(adf::frontend::instrument< decltype(mg) > (mg)) __ci23__ = adf::frontend::instrument< decltype(mg) > ( mg, "mg", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:15:5", adf::frontend::getParentGraphImpl(*this));
 
     TopNormGraph(std::string graphID) {
         for(int j = 0;j < 1;j ++) {
@@ -63479,18 +63479,18 @@ public:
             std::string plout = graphID + "_norm_out_" + std::to_string(j);
             in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
             out[j] = output_plio::create(plout, plio_128_bits, fileOut);
-            sp[j] = pktsplit<GraphSize>::create();
-            mg[j] = pktmerge<GraphSize>::create();
+            sp[j] = pktsplit<SUB_BLOCK_SIZE>::create();
+            mg[j] = pktmerge<SUB_BLOCK_SIZE>::create();
         }
 
         for(int j = 0;j < 1;j ++) {
-            connect<> (in[j].out[0], sp[j].in[0]); adf::frontend::DeclConnect __ci57__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:30:13", ""};
-            connect<> (mg[j].out[0], out[j].in[0]); adf::frontend::DeclConnect __ci58__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:31:13", ""};
+            connect<> (in[j].out[0], sp[j].in[0]); adf::frontend::DeclConnect __ci59__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:30:13", ""};
+            connect<> (mg[j].out[0], out[j].in[0]); adf::frontend::DeclConnect __ci60__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:31:13", ""};
         }
-        for(int i = 0;i < GraphSize;i ++) {
+        for(int i = 0;i < SUB_BLOCK_SIZE;i ++) {
             for(int j = 0;j < 1;j ++) {
-                connect<> (sp[j].out[i], normGraph.in[i]); adf::frontend::DeclConnect __ci59__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:35:17", ""};
-                connect<> (normGraph.out[i], mg[j].in[i]); adf::frontend::DeclConnect __ci60__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:36:17", ""};
+                connect<> (sp[j].out[i], normGraph.in[i]); adf::frontend::DeclConnect __ci61__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:35:17", ""};
+                connect<> (normGraph.out[i], mg[j].in[i]); adf::frontend::DeclConnect __ci62__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:36:17", ""};
             }
 
         }
@@ -63500,38 +63500,46 @@ public:
 };
 
 
-template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION>
+template<int MatrixROW, int GraphSize, int IO_NUM, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION>
 class TopSweepGraph: public graph {
 private:
     RingSweepGraph<MatrixROW, GraphSize, START_COL, START_ROW, DIRECTION> sweepGraph; decltype(adf::frontend::instrument< decltype(sweepGraph) > (sweepGraph)) __ci24__ = adf::frontend::instrument< decltype(sweepGraph) > ( sweepGraph, "sweepGraph", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:49:5", adf::frontend::getParentGraphImpl(*this));
 public:
-    input_plio in[2]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci25__ = adf::frontend::instrument< decltype(in) > ( in, "in", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:51:5", adf::frontend::getParentGraphImpl(*this));
-    output_plio out[2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci26__ = adf::frontend::instrument< decltype(out) > ( out, "out", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:52:5", adf::frontend::getParentGraphImpl(*this));
-    pktsplit<GraphSize> sp[2]; decltype(adf::frontend::instrument< decltype(sp) > (sp)) __ci27__ = adf::frontend::instrument< decltype(sp) > ( sp, "sp", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:53:5", adf::frontend::getParentGraphImpl(*this));
-    pktmerge<GraphSize> mg[2]; decltype(adf::frontend::instrument< decltype(mg) > (mg)) __ci28__ = adf::frontend::instrument< decltype(mg) > ( mg, "mg", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:54:5", adf::frontend::getParentGraphImpl(*this));
+    input_plio in[IO_NUM][2]; decltype(adf::frontend::instrument< decltype(in) > (in)) __ci25__ = adf::frontend::instrument< decltype(in) > ( in, "in", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:51:5", adf::frontend::getParentGraphImpl(*this));
+    output_plio out[IO_NUM][2]; decltype(adf::frontend::instrument< decltype(out) > (out)) __ci26__ = adf::frontend::instrument< decltype(out) > ( out, "out", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:52:5", adf::frontend::getParentGraphImpl(*this));
+    pktsplit<SUB_BLOCK_SIZE> sp[IO_NUM][2]; decltype(adf::frontend::instrument< decltype(sp) > (sp)) __ci27__ = adf::frontend::instrument< decltype(sp) > ( sp, "sp", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:53:5", adf::frontend::getParentGraphImpl(*this));
+    pktmerge<SUB_BLOCK_SIZE> mg[IO_NUM][2]; decltype(adf::frontend::instrument< decltype(mg) > (mg)) __ci28__ = adf::frontend::instrument< decltype(mg) > ( mg, "mg", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:54:5", adf::frontend::getParentGraphImpl(*this));
 
     TopSweepGraph(std::string graphID) {
-        for(int j = 0;j < 2;j ++) {
-            std::string fileIn = "aie/data/" + graphID + "_sweep_in_" + std::to_string(j) + ".txt";
-            std::string fileOut = "aie/data/" + graphID + "_sweep_out_" + std::to_string(j) +".txt";
-            std::string plIn = graphID + "_sweep_in_" + std::to_string(j);
-            std::string plout = graphID + "_sweep_out_" + std::to_string(j);
-            in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
-            out[j] = output_plio::create(plout, plio_128_bits, fileOut);
-            sp[j] = pktsplit<GraphSize>::create();
-            mg[j] = pktmerge<GraphSize>::create();
-        }
 
-        for(int j = 0;j < 2;j ++) {
-            connect<> (in[j].out[0], sp[j].in[0]); adf::frontend::DeclConnect __ci38__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:69:13", ""};
-            connect<> (mg[j].out[0], out[j].in[0]); adf::frontend::DeclConnect __ci39__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:70:13", ""};
-        }
-        for(int i = 0;i < GraphSize;i ++) {
-            for(int j = 0;j < 2;j ++) {
-                connect<> (sp[j].out[i], sweepGraph.in[i][j]); adf::frontend::DeclConnect __ci40__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:74:17", ""};
-                connect<> (sweepGraph.out[i][j], mg[j].in[i]); adf::frontend::DeclConnect __ci41__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:75:17", ""};
+        for(int j = 0;j < IO_NUM;j ++) {
+            for(int k = 0;k < 2;k ++) {
+                std::string type = k == 0 ? "L" : "R";
+                std::string fileIn = "aie/data/" + graphID + "_sweep_in_" + type + "_" + std::to_string(j) + ".txt";
+                std::string fileOut = "aie/data/" + graphID + "_sweep_out_" + type + "_" + std::to_string(j) + ".txt";
+                std::string plIn = graphID + "_sweep_in_" + type + "_" + std::to_string(j);
+                std::string plout = graphID + "_sweep_out_" + type + "_" + std::to_string(j);
+                in[j][k] = input_plio::create(plIn, plio_128_bits, fileIn);
+                out[j][k] = output_plio::create(plout, plio_128_bits, fileOut);
+                sp[j][k] = pktsplit<SUB_BLOCK_SIZE>::create();
+                mg[j][k] = pktmerge<SUB_BLOCK_SIZE>::create();
             }
+        }
 
+        for(int i = 0;i < 2;i ++) {
+            for(int j = 0;j < IO_NUM;j ++) {
+                connect<> (in[j][i].out[0], sp[j][i].in[0]); adf::frontend::DeclConnect __ci40__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:74:17", ""};
+                connect<> (mg[j][i].out[0], out[j][i].in[0]); adf::frontend::DeclConnect __ci41__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:75:17", ""};
+            }
+        }
+
+        for(int i = 0;i < 2;i ++) {
+            for(int j = 0;j < IO_NUM;j ++) {
+                for(int k = 0;k < SUB_BLOCK_SIZE;k ++) {
+                    connect<> (sp[j][i].out[k], sweepGraph.in[j*SUB_BLOCK_SIZE+k][i]); adf::frontend::DeclConnect __ci42__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:82:21", ""};
+                    connect<> (sweepGraph.out[j*SUB_BLOCK_SIZE+k][i], mg[j][i].in[k]); adf::frontend::DeclConnect __ci43__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:83:21", ""};
+                }
+            }
         }
 
 
@@ -63540,23 +63548,26 @@ public:
 # 2 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp" 2
 # 1 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h" 1
 const int ROW = 32; decltype(adf::frontend::instrument< decltype(ROW) > (ROW)) __ci29__ = adf::frontend::instrument< decltype(ROW) > ( ROW, "ROW", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:1:1", nullptr, "");
-const int COL = 44; decltype(adf::frontend::instrument< decltype(COL) > (COL)) __ci30__ = adf::frontend::instrument< decltype(COL) > ( COL, "COL", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:2:1", nullptr, "");
-const int BLOCK_SIZE = 11; decltype(adf::frontend::instrument< decltype(BLOCK_SIZE) > (BLOCK_SIZE)) __ci31__ = adf::frontend::instrument< decltype(BLOCK_SIZE) > ( BLOCK_SIZE, "BLOCK_SIZE", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:3:1", nullptr, "");
+const int COL = 32; decltype(adf::frontend::instrument< decltype(COL) > (COL)) __ci30__ = adf::frontend::instrument< decltype(COL) > ( COL, "COL", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:2:1", nullptr, "");
+const int BLOCK_SIZE = 2; decltype(adf::frontend::instrument< decltype(BLOCK_SIZE) > (BLOCK_SIZE)) __ci31__ = adf::frontend::instrument< decltype(BLOCK_SIZE) > ( BLOCK_SIZE, "BLOCK_SIZE", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:3:1", nullptr, "");
 const int BLOCK_NUM = COL/BLOCK_SIZE; decltype(adf::frontend::instrument< decltype(BLOCK_NUM) > (BLOCK_NUM)) __ci32__ = adf::frontend::instrument< decltype(BLOCK_NUM) > ( BLOCK_NUM, "BLOCK_NUM", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:4:1", nullptr, "");
 const int BLOCK_PAIR_NUM = BLOCK_NUM/2; decltype(adf::frontend::instrument< decltype(BLOCK_PAIR_NUM) > (BLOCK_PAIR_NUM)) __ci33__ = adf::frontend::instrument< decltype(BLOCK_PAIR_NUM) > ( BLOCK_PAIR_NUM, "BLOCK_PAIR_NUM", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:5:1", nullptr, "");
 const int parallel_num = 1; decltype(adf::frontend::instrument< decltype(parallel_num) > (parallel_num)) __ci34__ = adf::frontend::instrument< decltype(parallel_num) > ( parallel_num, "parallel_num", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:6:1", nullptr, "");
 const float EPS = 1e-6; decltype(adf::frontend::instrument< decltype(EPS) > (EPS)) __ci35__ = adf::frontend::instrument< decltype(EPS) > ( EPS, "EPS", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:7:1", nullptr, "");
+
+const int IO_NUM = 2; decltype(adf::frontend::instrument< decltype(IO_NUM) > (IO_NUM)) __ci36__ = adf::frontend::instrument< decltype(IO_NUM) > ( IO_NUM, "IO_NUM", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:9:1", nullptr, "");
+const int SUB_BLOCK_SIZE = BLOCK_SIZE/IO_NUM; decltype(adf::frontend::instrument< decltype(SUB_BLOCK_SIZE) > (SUB_BLOCK_SIZE)) __ci37__ = adf::frontend::instrument< decltype(SUB_BLOCK_SIZE) > ( SUB_BLOCK_SIZE, "SUB_BLOCK_SIZE", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:10:1", nullptr, "");
 # 3 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp" 2
 
 
 
-TopSweepGraph<ROW, BLOCK_SIZE, 1, 0, 1> topSweepGraph1_1("1_1"); decltype(adf::frontend::instrument< decltype(topSweepGraph1_1) > (topSweepGraph1_1)) __ci36__ = adf::frontend::instrument< decltype(topSweepGraph1_1) > ( topSweepGraph1_1, "topSweepGraph1_1", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp:6:1", nullptr, "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:47:1");
+TopSweepGraph<ROW, BLOCK_SIZE, IO_NUM, SUB_BLOCK_SIZE, 1, 0, 1> topSweepGraph1_1("1_1"); decltype(adf::frontend::instrument< decltype(topSweepGraph1_1) > (topSweepGraph1_1)) __ci38__ = adf::frontend::instrument< decltype(topSweepGraph1_1) > ( topSweepGraph1_1, "topSweepGraph1_1", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp:6:1", nullptr, "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:47:1");
 
 
 
 
 
-TopNormGraph<ROW, BLOCK_SIZE, 0, 0, 1> topNormGraph1_1("1_1"); decltype(adf::frontend::instrument< decltype(topNormGraph1_1) > (topNormGraph1_1)) __ci37__ = adf::frontend::instrument< decltype(topNormGraph1_1) > ( topNormGraph1_1, "topNormGraph1_1", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp:12:1", nullptr, "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:8:1");
+TopNormGraph<ROW, BLOCK_SIZE, 0, 0, 1> topNormGraph1_1("1_1"); decltype(adf::frontend::instrument< decltype(topNormGraph1_1) > (topNormGraph1_1)) __ci39__ = adf::frontend::instrument< decltype(topNormGraph1_1) > ( topNormGraph1_1, "topNormGraph1_1", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp:12:1", nullptr, "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.h:8:1");
 
 int main(int argc, char** argv)
 {

@@ -74,6 +74,7 @@ if __name__ == '__main__':
   parser.add_argument("--optimize", type=int, default=1)
   parser.add_argument("--BLOCK_SIZE", type=int)
   parser.add_argument("--PARALLEL_NUM", type=int)
+  parser.add_argument("--IO_NUM", type=int)
   parser.add_argument("--Frequency", type=float)
   #parser.add_argument("--MaxSweep", type=int, default=20)
   args = parser.parse_args()
@@ -83,12 +84,13 @@ if __name__ == '__main__':
     svd_model.optimize()
     config = svd_model.getBestConfig()
   elif args.optimize == 0:
-    # base_config = SysConfig(args.COL, args.ROW, args.ITER, args.BATCH)
-    # base_config.BLOCK_SIZE = args.BLOCK_SIZE
-    # base_config.PARALLEL_NUM = args.PARALLEL_NUM
-    # base_config.padding = args.COL - args.COL
+    base_config = SysConfig(args.COL, args.ROW, args.ITER, args.BATCH)
+    base_config.BLOCK_SIZE = args.BLOCK_SIZE
+    base_config.parallel_num = args.PARALLEL_NUM
+    base_config.padding = args.COL - args.COL
+    base_config.IO_NUM = args.IO_NUM
     config = svd_model.resourceCheck(base_config)
-    config = svd_model.generateConfig(args.Frequency, args.PARALLEL_NUM, config)
+    config = svd_model.generateConfig(args.Frequency, config)
   
 
   generate(args.PATH, config)

@@ -17,8 +17,8 @@ const int DDR_ELEM_NUM = DDR_WIDTH/32;
 typedef ap_axiu<W, 0, 0, 0> axis_pkt;
 typedef hls::stream<ap_uint<1>, 4> axis_stream_sys;
 typedef hls::stream<float, 4> axis_stream_float;
-typedef hls::stream<ap_uint<128>, 2*BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_128;
-typedef hls::stream<ap_uint<128>, BLOCK_NUM*BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_deep_128;
+typedef hls::stream<ap_uint<128>, 2*IO_NUM*ROW/ELEM_NUM> axis_stream_128;
+typedef hls::stream<ap_uint<128>, BLOCK_NUM*IO_NUM*ROW/ELEM_NUM> axis_stream_deep_128;
 typedef hls::stream<axis_pkt> axis_pkt_stream;
 
 const int START = 1;

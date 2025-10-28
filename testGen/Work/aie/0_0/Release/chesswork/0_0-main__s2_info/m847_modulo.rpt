@@ -1,5 +1,5 @@
-Modulo scheduling report for loop #847 in "/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp", line 28: (loop #30)
-======================================================================================================================================================
+Modulo scheduling report for loop #847 in "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp", line 28: (loop #30)
+=========================================================================================================================================================
 
 Initiation interval (II): 4 cycles (minimum II = 1)
 Software pipeline stages: 4 (folded over 3 iterations), minimum: 4
@@ -14,13 +14,13 @@ Min II:
 
     details:
 
-       b142  VST wd0, [p3], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
+       b142  VST wd0, [p3], #32 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
          |
          |
        [1,LC]   flow dep: __ali0.1216/__ali0.534 ; loop carried
          |
          v
-       b142  VST wd0, [p3], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
+       b142  VST wd0, [p3], #32 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
 
     Total delay: 1, total loop degree: 1 => length critical cycle: 1
 
@@ -84,7 +84,7 @@ R[ 0]: span  1, min_span  1      |:...:...:...:...:b..:...:...|.b..| B: __seff.2
 R[ 9]: span 28, min_span  0      |cccccccccccccccccccccccccccc|cccc| C: _cst.3668 <1290> L175:25
 R[ 6]: span 28, min_span  0      |dddddddddddddddddddddddddddd|dddd| D: __tmp.2932 <164> L303:18
 R[ 5]: span 28, min_span  0      |eeeeeeeeeeeeeeeeeeeeeeeeeeee|eeee| E: __tmp.2923 <170> L303:18
-R[ 4]: span 28, min_span  0      |ffffffffffffffffffffffffffff|ffff| F: bufId.2913 <167> L42:97
+R[ 4]: span 28, min_span  0      |ffffffffffffffffffffffffffff|ffff| F: bufId.2913 <167> L42:91
 R[ 3]: span 28, min_span  0      |gggggggggggggggggggggggggggg|gggg| G: __tmp.3015
 R[15]: span  0, min_span  0      |:...:...:...:...:...:...:...|....| 
 R[14]: span  0, min_span  0      |:...:...:...:...:...:...:...|....| 
@@ -167,7 +167,7 @@ Cmd line: --mist2 -v -D__AIENGINE__ -D__AIE_ARCH__=10 -DDEPLOYMENT_ELF=1 -D__LOC
 Work dir: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork
 SFG in : 0_0-main__ra.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork/0_0-main__ra.sfg)
 SFG out: 0_0-main__s2.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork/0_0-main__s2.sfg)
-Src file: /home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp
+Src file: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp
 Function: main
 Line    : 28
 Loop    : #30

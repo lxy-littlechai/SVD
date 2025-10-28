@@ -3,17 +3,17 @@
     "startColumn": 0,
     "numColumns": 50,
     "aieshimPorts": {
-      "AIE_PL_X5Y0_AIE_PL_S_AXIS_1": {
+      "AIE_PL_X5Y0_AIE_PL_S_AXIS_5": {
         "PhysicalInstance": [
           {
-            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_0",
+            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_4",
             "column": 6,
-            "channel": 0
+            "channel": 4
           },
           {
-            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_1",
+            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_5",
             "column": 6,
-            "channel": 1
+            "channel": 5
           }
         ],
         "type": "stream",
@@ -21,25 +21,25 @@
         "dataWidth": 32,
         "parameterIndex": 0,
         "registeredInterface": true,
-        "traceFile": "aie/data/1_1_sweep_in_0.txt",
+        "traceFile": "aie/data/1_1_sweep_in_L_0.txt",
         "annotation": [
-          "1_1_sweep_in_0"
+          "1_1_sweep_in_L_0"
         ],
         "sdfioName": [
-          "i231_po0"
+          "i6_po0"
         ]
       },
-      "AIE_PL_X29Y0_AIE_PL_M_AXIS_3": {
+      "AIE_PL_X5Y0_AIE_PL_M_AXIS_5": {
         "PhysicalInstance": [
           {
-            "name": "AIE_PL_X29Y0_AIE_PL_M_AXIS_2",
-            "column": 30,
-            "channel": 2
+            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_4",
+            "column": 6,
+            "channel": 4
           },
           {
-            "name": "AIE_PL_X29Y0_AIE_PL_M_AXIS_3",
-            "column": 30,
-            "channel": 3
+            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_5",
+            "column": 6,
+            "channel": 5
           }
         ],
         "type": "stream",
@@ -47,12 +47,64 @@
         "dataWidth": 32,
         "parameterIndex": 0,
         "registeredInterface": true,
-        "traceFile": "aie/data/1_1_sweep_out_0.txt",
+        "traceFile": "aie/data/1_1_sweep_out_L_0.txt",
         "annotation": [
-          "1_1_sweep_out_0"
+          "1_1_sweep_out_L_0"
         ],
         "sdfioName": [
-          "i232_pi0"
+          "i7_pi0"
+        ]
+      },
+      "AIE_PL_X6Y0_AIE_PL_S_AXIS_5": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X6Y0_AIE_PL_S_AXIS_4",
+            "column": 7,
+            "channel": 4
+          },
+          {
+            "name": "AIE_PL_X6Y0_AIE_PL_S_AXIS_5",
+            "column": 7,
+            "channel": 5
+          }
+        ],
+        "type": "stream",
+        "direction": "slave",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/1_1_sweep_in_R_0.txt",
+        "annotation": [
+          "1_1_sweep_in_R_0"
+        ],
+        "sdfioName": [
+          "i10_po0"
+        ]
+      },
+      "AIE_PL_X6Y0_AIE_PL_M_AXIS_5": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X6Y0_AIE_PL_M_AXIS_4",
+            "column": 7,
+            "channel": 4
+          },
+          {
+            "name": "AIE_PL_X6Y0_AIE_PL_M_AXIS_5",
+            "column": 7,
+            "channel": 5
+          }
+        ],
+        "type": "stream",
+        "direction": "master",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/1_1_sweep_out_R_0.txt",
+        "annotation": [
+          "1_1_sweep_out_R_0"
+        ],
+        "sdfioName": [
+          "i11_pi0"
         ]
       },
       "AIE_PL_X6Y0_AIE_PL_S_AXIS_1": {
@@ -73,25 +125,25 @@
         "dataWidth": 32,
         "parameterIndex": 0,
         "registeredInterface": true,
-        "traceFile": "aie/data/1_1_sweep_in_1.txt",
+        "traceFile": "aie/data/1_1_sweep_in_L_1.txt",
         "annotation": [
-          "1_1_sweep_in_1"
+          "1_1_sweep_in_L_1"
         ],
         "sdfioName": [
-          "i235_po0"
+          "i14_po0"
         ]
       },
-      "AIE_PL_X29Y0_AIE_PL_M_AXIS_5": {
+      "AIE_PL_X6Y0_AIE_PL_M_AXIS_3": {
         "PhysicalInstance": [
           {
-            "name": "AIE_PL_X29Y0_AIE_PL_M_AXIS_4",
-            "column": 30,
-            "channel": 4
+            "name": "AIE_PL_X6Y0_AIE_PL_M_AXIS_2",
+            "column": 7,
+            "channel": 2
           },
           {
-            "name": "AIE_PL_X29Y0_AIE_PL_M_AXIS_5",
-            "column": 30,
-            "channel": 5
+            "name": "AIE_PL_X6Y0_AIE_PL_M_AXIS_3",
+            "column": 7,
+            "channel": 3
           }
         ],
         "type": "stream",
@@ -99,25 +151,77 @@
         "dataWidth": 32,
         "parameterIndex": 0,
         "registeredInterface": true,
-        "traceFile": "aie/data/1_1_sweep_out_1.txt",
+        "traceFile": "aie/data/1_1_sweep_out_L_1.txt",
         "annotation": [
-          "1_1_sweep_out_1"
+          "1_1_sweep_out_L_1"
         ],
         "sdfioName": [
-          "i236_pi0"
+          "i15_pi0"
         ]
       },
-      "AIE_PL_X5Y0_AIE_PL_S_AXIS_5": {
+      "AIE_PL_X7Y0_AIE_PL_S_AXIS_1": {
         "PhysicalInstance": [
           {
-            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_4",
-            "column": 6,
-            "channel": 4
+            "name": "AIE_PL_X7Y0_AIE_PL_S_AXIS_0",
+            "column": 8,
+            "channel": 0
           },
           {
-            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_5",
+            "name": "AIE_PL_X7Y0_AIE_PL_S_AXIS_1",
+            "column": 8,
+            "channel": 1
+          }
+        ],
+        "type": "stream",
+        "direction": "slave",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/1_1_sweep_in_R_1.txt",
+        "annotation": [
+          "1_1_sweep_in_R_1"
+        ],
+        "sdfioName": [
+          "i18_po0"
+        ]
+      },
+      "AIE_PL_X7Y0_AIE_PL_M_AXIS_1": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X7Y0_AIE_PL_M_AXIS_0",
+            "column": 8,
+            "channel": 0
+          },
+          {
+            "name": "AIE_PL_X7Y0_AIE_PL_M_AXIS_1",
+            "column": 8,
+            "channel": 1
+          }
+        ],
+        "type": "stream",
+        "direction": "master",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "aie/data/1_1_sweep_out_R_1.txt",
+        "annotation": [
+          "1_1_sweep_out_R_1"
+        ],
+        "sdfioName": [
+          "i19_pi0"
+        ]
+      },
+      "AIE_PL_X5Y0_AIE_PL_S_AXIS_1": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_0",
             "column": 6,
-            "channel": 5
+            "channel": 0
+          },
+          {
+            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_1",
+            "column": 6,
+            "channel": 1
           }
         ],
         "type": "stream",
@@ -130,20 +234,20 @@
           "1_1_norm_in_0"
         ],
         "sdfioName": [
-          "i250_po0"
+          "i24_po0"
         ]
       },
-      "AIE_PL_X5Y0_AIE_PL_M_AXIS_1": {
+      "AIE_PL_X5Y0_AIE_PL_M_AXIS_3": {
         "PhysicalInstance": [
           {
-            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_0",
+            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_2",
             "column": 6,
-            "channel": 0
+            "channel": 2
           },
           {
-            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_1",
+            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_3",
             "column": 6,
-            "channel": 1
+            "channel": 3
           }
         ],
         "type": "stream",
@@ -156,7 +260,7 @@
           "1_1_norm_out_0"
         ],
         "sdfioName": [
-          "i251_pi0"
+          "i25_pi0"
         ]
       }
     }

@@ -3,7 +3,7 @@
 
 
 
-TopSweepGraph<ROW, BLOCK_SIZE, 1, 0, 1> topSweepGraph1_1("1_1");
+TopSweepGraph<ROW, BLOCK_SIZE, IO_NUM, SUB_BLOCK_SIZE, 1, 0, 1> topSweepGraph1_1("1_1");
 
 
 

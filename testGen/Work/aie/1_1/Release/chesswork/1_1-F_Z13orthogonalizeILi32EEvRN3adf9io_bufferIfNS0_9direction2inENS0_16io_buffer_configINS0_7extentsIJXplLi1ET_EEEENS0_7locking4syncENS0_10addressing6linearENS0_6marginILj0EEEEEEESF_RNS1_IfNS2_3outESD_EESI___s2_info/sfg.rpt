@@ -1,46 +1,46 @@
 SFG: 1_1-F_Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI___s2.sfg
 
-Offset  Macro node                             Source ref                                                                                      Cycle Instr Words    Scheduling graphs + reports
-------  -------------------------------------  ----------------------------------------------------------------------------------------------  ----- ----- -----    ---------------------------
-        block m1                               [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:24]
-000000  .  block m2247                                                                                                                            21    21   192    [m2247.dot]
-        .  for m3                              [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:36]
-000192  .  .  block m1219                                                                                                                          3     3    48    [m1219_crit_loop.dot] [m1219_not_folded_loop.dot] [m1219_unfolded_modulo_loop.dot] [m1219_final_loop.dot] [m1219_modulo.rpt]
-000240  .  block m2073                                                                                                                            51    51   320    [m2073.dot]
-        .  call m2074                          [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
-000560  .  block m2233                                                                                                                             6     6    18    [m2233.dot]
-        .  if m15                              [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
-        .  .  else m32                         [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
-000578  .  .  .  block m2085                                                                                                                      18    18   110    [m2085.dot]
-        .  .  .  call m2086                    [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:63]
-000688  .  .  .  block m2238                                                                                                                       6     6    18    [m2238.dot]
-        .  .  .  if m34                        [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:63]
-        .  .  .  .  else m36                   [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:63]
-000706  .  .  .  .  .  block m2209                                                                                                                37    37   222    [m2209.dot]
-        .  .  .  .  .  call m2080              [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
-000928  .  .  .  .  .  block m2236                                                                                                                 6     6    30    [m2236.dot]
-        .  .  .  .  .  if m377                 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
-        .  .  .  .  .  .  else m2180           [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
-000958  .  .  .  .  .  .  .  block m2239                                                                                                           7     7    22    [m2239.dot]
-        .  .  .  .  .  .  .  if m367           [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
-000980  .  .  .  .  .  .  .  .  else m370                                                                                                          2     2    28    [m370.dot]
-        .  .  .  .  .  .  .  .  then m369                                                                                                          0     0     0   
-        .  .  .  .  .  .  .  block m2241                                                                                                           0     0     0   
-        .  .  .  .  .  .  then m379                                                                                                                0     0     0   
-001008  .  .  .  .  .  block m2255                                                                                                                94    94   560    [m2255.dot]
-        .  .  .  .  .  for m38                 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:89]
-001568  .  .  .  .  .  .  block m1678                                                                                                              4     4    64    [m1678_crit_loop.dot] [m1678_not_folded_loop.dot] [m1678_unfolded_modulo_loop.dot] [m1678_final_loop.dot] [m1678_modulo.rpt]
-001632  .  .  .  .  .  block m2257                                                                                                                12    12    80    [m2257.dot]
-002080  .  .  .  .  then m257                                                                                                                      6     6    18    [m257.dot]
-        .  .  .  block m2242                                                                                                                 
-        .  .  then m17                         [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
-001712  .  .  .  block m2243                                                                                                                       2     2    16    [m2243.dot]
-        .  .  .  sync m18                      [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]      0     0     0   
-001728  .  .  .  block m2251                                                                                                                      13    13    96    [m2251.dot]
-        .  .  .  for m20                       [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:64]
-001824  .  .  .  .  block m1143                                                                                                                    3     3    48    [m1143_not_folded_loop.dot] [m1143_unfolded_modulo_loop.dot] [m1143_final_loop.dot] [m1143_modulo.rpt]
-001872  .  .  .  block m2253                                                                                                                       6     6    32    [m2253.dot]
-001904  .  block m255                                                                                                                             24    24   176    [m255.dot]
+Offset  Macro node                             Source ref                                                                                         Cycle Instr Words    Scheduling graphs + reports
+------  -------------------------------------  -------------------------------------------------------------------------------------------------  ----- ----- -----    ---------------------------
+        block m1                               [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:24]
+000000  .  block m2247                                                                                                                               21    21   192    [m2247.dot]
+        .  for m3                              [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:36]
+000192  .  .  block m1219                                                                                                                             3     3    48    [m1219_crit_loop.dot] [m1219_not_folded_loop.dot] [m1219_unfolded_modulo_loop.dot] [m1219_final_loop.dot] [m1219_modulo.rpt]
+000240  .  block m2073                                                                                                                               51    51   320    [m2073.dot]
+        .  call m2074                          [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
+000560  .  block m2233                                                                                                                                6     6    18    [m2233.dot]
+        .  if m15                              [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
+        .  .  else m32                         [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
+000578  .  .  .  block m2085                                                                                                                         18    18   110    [m2085.dot]
+        .  .  .  call m2086                    [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:63]
+000688  .  .  .  block m2238                                                                                                                          6     6    18    [m2238.dot]
+        .  .  .  if m34                        [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:63]
+        .  .  .  .  else m36                   [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:63]
+000706  .  .  .  .  .  block m2209                                                                                                                   37    37   222    [m2209.dot]
+        .  .  .  .  .  call m2080              [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
+000928  .  .  .  .  .  block m2236                                                                                                                    6     6    30    [m2236.dot]
+        .  .  .  .  .  if m377                 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
+        .  .  .  .  .  .  else m2180           [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
+000958  .  .  .  .  .  .  .  block m2239                                                                                                              7     7    22    [m2239.dot]
+        .  .  .  .  .  .  .  if m367           [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:15]
+000980  .  .  .  .  .  .  .  .  else m370                                                                                                             2     2    28    [m370.dot]
+        .  .  .  .  .  .  .  .  then m369                                                                                                             0     0     0   
+        .  .  .  .  .  .  .  block m2241                                                                                                              0     0     0   
+        .  .  .  .  .  .  then m379                                                                                                                   0     0     0   
+001008  .  .  .  .  .  block m2255                                                                                                                   94    94   560    [m2255.dot]
+        .  .  .  .  .  for m38                 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:89]
+001568  .  .  .  .  .  .  block m1678                                                                                                                 4     4    64    [m1678_crit_loop.dot] [m1678_not_folded_loop.dot] [m1678_unfolded_modulo_loop.dot] [m1678_final_loop.dot] [m1678_modulo.rpt]
+001632  .  .  .  .  .  block m2257                                                                                                                   12    12    80    [m2257.dot]
+002080  .  .  .  .  then m257                                                                                                                         6     6    18    [m257.dot]
+        .  .  .  block m2242                                                                                                                    
+        .  .  then m17                         [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]
+001712  .  .  .  block m2243                                                                                                                          2     2    16    [m2243.dot]
+        .  .  .  sync m18                      [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:54]      0     0     0   
+001728  .  .  .  block m2251                                                                                                                         13    13    96    [m2251.dot]
+        .  .  .  for m20                       [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:64]
+001824  .  .  .  .  block m1143                                                                                                                       3     3    48    [m1143_not_folded_loop.dot] [m1143_unfolded_modulo_loop.dot] [m1143_final_loop.dot] [m1143_modulo.rpt]
+001872  .  .  .  block m2253                                                                                                                          6     6    32    [m2253.dot]
+001904  .  block m255                                                                                                                                24    24   176    [m255.dot]
 
 Total cycles: 321, total instrs: 321, total words: 2098
 

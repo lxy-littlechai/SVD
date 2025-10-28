@@ -95,7 +95,7 @@ Bundle schedule (instruction words shown before relocation)
 000262         2 00 01                                              NOP
 000264         2 00 01                                              NOP
 000266         2 14 5b 30 03                                        b158  (ACQ r11, #1, r5)            
-000270  m140   2 00 00 1d c2 00 00 00 7f f7 f1 1e 9f                b1239 (MOV.s9 r13, #16)             b155  (ITE_NEZ r15, r13, r15, r0)   b1257 (MOV.s8 r10, #17)            
+000270  m140   2 00 00 1d c6 40 00 00 7f f7 f3 3e 9f                b1239 (MOV.s9 r13, #50)             b155  (ITE_NEZ r15, r13, r15, r0)   b1257 (MOV.s8 r10, #51)            
 000282         2 1e da d0 03                                        b156  (ITE_EQZ r13, r10, r13, r0)  
 000286         2 00 01                                              .swstall "mem_acquire0"
 000288         2 80 00 00 ff ff b8 47 f7                            b157  (ST.SPIL r15, [sp, #-72])    
