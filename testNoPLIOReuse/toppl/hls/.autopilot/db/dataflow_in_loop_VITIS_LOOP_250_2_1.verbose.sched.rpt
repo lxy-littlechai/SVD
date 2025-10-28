@@ -1,0 +1,178 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_in_loop_VITIS_LOOP_250_2_1'
+================================================================
+* Date:           Tue Oct 28 18:37:26 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        toppl
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  4.052 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+    |   min   |   max   |    min    |    max    | min | max |   Type   |
+    +---------+---------+-----------+-----------+-----+-----+----------+
+    |       15|       15|  75.000 ns|  75.000 ns|   14|   14|  dataflow|
+    +---------+---------+-----------+-----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 4, States = { 1 2 3 4 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.05>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%muxLogicCE_to_i_0_read = muxlogic"   --->   Operation 5 'muxlogic' 'muxLogicCE_to_i_0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i_0_read = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %i_0"   --->   Operation 6 'read' 'i_0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.73ns)   --->   "%conv0R1_channel = alloca i64 1"   --->   Operation 7 'alloca' 'conv0R1_channel' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 8 [1/1] (0.73ns)   --->   "%conv0L1_channel = alloca i64 1"   --->   Operation 8 'alloca' 'conv0L1_channel' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 9 [1/1] (0.73ns)   --->   "%conv0R0_channel = alloca i64 1"   --->   Operation 9 'alloca' 'conv0R0_channel' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 10 [1/1] (0.73ns)   --->   "%conv0L0_channel = alloca i64 1"   --->   Operation 10 'alloca' 'conv0L0_channel' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 11 [1/1] (0.73ns)   --->   "%empty = alloca i64 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:251]   --->   Operation 11 'alloca' 'empty' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 12 [1/1] (0.73ns)   --->   "%empty_101 = alloca i64 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:251]   --->   Operation 12 'alloca' 'empty_101' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 13 [1/1] (0.73ns)   --->   "%empty_102 = alloca i64 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:251]   --->   Operation 13 'alloca' 'empty_102' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 14 [1/1] (0.73ns)   --->   "%empty_103 = alloca i64 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:251]   --->   Operation 14 'alloca' 'empty_103' <Predicate = true> <Delay = 0.73> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 15 [1/1] (1.00ns)   --->   "%call_ln251 = call void @print<int>, i7 %i_0_read" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:251]   --->   Operation 15 'call' 'call_ln251' <Predicate = true> <Delay = 1.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 16 [2/2] (3.31ns)   --->   "%call_ln254 = call void @receive4AIE.1, i32 %conv0L0_channel, i128 %receive_fifo_L_0, i128 %sweep_rx1_L_0_V_data_V, i16 %sweep_rx1_L_0_V_keep_V, i16 %sweep_rx1_L_0_V_strb_V, i1 %sweep_rx1_L_0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:254]   --->   Operation 16 'call' 'call_ln254' <Predicate = true> <Delay = 3.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 17 [2/2] (3.31ns)   --->   "%call_ln255 = call void @receive4AIE.2, i32 %conv0R0_channel, i128 %receive_fifo_R_0, i128 %sweep_rx1_R_0_V_data_V, i16 %sweep_rx1_R_0_V_keep_V, i16 %sweep_rx1_R_0_V_strb_V, i1 %sweep_rx1_R_0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:255]   --->   Operation 17 'call' 'call_ln255' <Predicate = true> <Delay = 3.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 18 [2/2] (3.31ns)   --->   "%call_ln256 = call void @receive4AIE, i32 %conv0L1_channel, i128 %receive_fifo_L_1, i128 %sweep_rx1_L_1_V_data_V, i16 %sweep_rx1_L_1_V_keep_V, i16 %sweep_rx1_L_1_V_strb_V, i1 %sweep_rx1_L_1_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:256]   --->   Operation 18 'call' 'call_ln256' <Predicate = true> <Delay = 3.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 19 [2/2] (3.31ns)   --->   "%call_ln257 = call void @receive4AIE.3, i32 %conv0R1_channel, i128 %receive_fifo_R_1, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 %sweep_rx1_R_1_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:257]   --->   Operation 19 'call' 'call_ln257' <Predicate = true> <Delay = 3.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 3.27>
+ST_2 : Operation 20 [1/2] (3.27ns)   --->   "%call_ln254 = call void @receive4AIE.1, i32 %conv0L0_channel, i128 %receive_fifo_L_0, i128 %sweep_rx1_L_0_V_data_V, i16 %sweep_rx1_L_0_V_keep_V, i16 %sweep_rx1_L_0_V_strb_V, i1 %sweep_rx1_L_0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:254]   --->   Operation 20 'call' 'call_ln254' <Predicate = true> <Delay = 3.27> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 21 [1/2] (3.27ns)   --->   "%call_ln255 = call void @receive4AIE.2, i32 %conv0R0_channel, i128 %receive_fifo_R_0, i128 %sweep_rx1_R_0_V_data_V, i16 %sweep_rx1_R_0_V_keep_V, i16 %sweep_rx1_R_0_V_strb_V, i1 %sweep_rx1_R_0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:255]   --->   Operation 21 'call' 'call_ln255' <Predicate = true> <Delay = 3.27> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 22 [1/2] (3.27ns)   --->   "%call_ln256 = call void @receive4AIE, i32 %conv0L1_channel, i128 %receive_fifo_L_1, i128 %sweep_rx1_L_1_V_data_V, i16 %sweep_rx1_L_1_V_keep_V, i16 %sweep_rx1_L_1_V_strb_V, i1 %sweep_rx1_L_1_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:256]   --->   Operation 22 'call' 'call_ln256' <Predicate = true> <Delay = 3.27> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 23 [1/2] (3.27ns)   --->   "%call_ln257 = call void @receive4AIE.3, i32 %conv0R1_channel, i128 %receive_fifo_R_1, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 %sweep_rx1_R_1_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:257]   --->   Operation 23 'call' 'call_ln257' <Predicate = true> <Delay = 3.27> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.67>
+ST_3 : Operation 24 [1/1] (1.67ns)   --->   "%call_ln259 = call void @Block_newFuncRoot_proc_proc, i32 %conv0L0_channel, i32 %empty_103" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:259]   --->   Operation 24 'call' 'call_ln259' <Predicate = true> <Delay = 1.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 25 [1/1] (1.67ns)   --->   "%call_ln260 = call void @Block_newFuncRoot_proc_proc18, i32 %conv0R0_channel, i32 %empty_102" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:260]   --->   Operation 25 'call' 'call_ln260' <Predicate = true> <Delay = 1.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 26 [1/1] (1.67ns)   --->   "%call_ln261 = call void @Block_newFuncRoot_proc_proc20, i32 %conv0L1_channel, i32 %empty_101" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:261]   --->   Operation 26 'call' 'call_ln261' <Predicate = true> <Delay = 1.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 27 [1/1] (1.67ns)   --->   "%call_ln262 = call void @Block_newFuncRoot_proc_proc22, i32 %conv0R1_channel, i32 %empty" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:262]   --->   Operation 27 'call' 'call_ln262' <Predicate = true> <Delay = 1.67> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln251 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_27" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:251]   --->   Operation 28 'specdataflowpipeline' 'specdataflowpipeline_ln251' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 0, i1 %sweep_rx1_R_1_V_last_V, i1 0, i1 0, void @empty_38"   --->   Operation 29 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx1_R_0_V_data_V, i16 %sweep_rx1_R_0_V_keep_V, i16 %sweep_rx1_R_0_V_strb_V, i1 0, i1 %sweep_rx1_R_0_V_last_V, i1 0, i1 0, void @empty_56"   --->   Operation 30 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx1_L_0_V_data_V, i16 %sweep_rx1_L_0_V_keep_V, i16 %sweep_rx1_L_0_V_strb_V, i1 0, i1 %sweep_rx1_L_0_V_last_V, i1 0, i1 0, void @empty_47"   --->   Operation 31 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx1_L_1_V_data_V, i16 %sweep_rx1_L_1_V_keep_V, i16 %sweep_rx1_L_1_V_strb_V, i1 0, i1 %sweep_rx1_L_1_V_last_V, i1 0, i1 0, void @empty_12"   --->   Operation 32 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_L_1, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 33 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_L_0, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 34 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_R_1, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 35 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_R_0, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 36 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_rx1_L_0_V_data_V, i16 %sweep_rx1_L_0_V_keep_V, i16 %sweep_rx1_L_0_V_strb_V, i1 %sweep_rx1_L_0_V_last_V, void @empty_8, i32 0, i32 0, void @empty_9, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_rx1_L_1_V_data_V, i16 %sweep_rx1_L_1_V_keep_V, i16 %sweep_rx1_L_1_V_strb_V, i1 %sweep_rx1_L_1_V_last_V, void @empty_8, i32 0, i32 0, void @empty_9, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_rx1_R_0_V_data_V, i16 %sweep_rx1_R_0_V_keep_V, i16 %sweep_rx1_R_0_V_strb_V, i1 %sweep_rx1_R_0_V_last_V, void @empty_8, i32 0, i32 0, void @empty_9, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 %sweep_rx1_R_1_V_last_V, void @empty_8, i32 0, i32 0, void @empty_9, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_0, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_L_1, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_0, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %convSet_R_1, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_0, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_1, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_R_0, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_R_1, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%call_ln259 = call void @Block_newFuncRoot_proc_proc17, i32 %convSet_L_0, i32 %empty_103" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:259]   --->   Operation 49 'call' 'call_ln259' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%call_ln260 = call void @Block_newFuncRoot_proc_proc19, i32 %convSet_R_0, i32 %empty_102" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:260]   --->   Operation 50 'call' 'call_ln260' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%call_ln261 = call void @Block_newFuncRoot_proc_proc21, i32 %convSet_L_1, i32 %empty_101" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:261]   --->   Operation 51 'call' 'call_ln261' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%call_ln262 = call void @Block_newFuncRoot_proc_proc23, i32 %convSet_R_1, i32 %empty" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:262]   --->   Operation 52 'call' 'call_ln262' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 53 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5.000ns, clock uncertainty: 1.350ns.
+
+ <State 1>: 4.052ns
+The critical path consists of the following:
+	'alloca' operation 32 bit ('conv0L0_channel') [31]  (0.733 ns)
+	'call' operation 0 bit ('call_ln254', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:254) to 'receive4AIE.1' [58]  (3.319 ns)
+
+ <State 2>: 3.275ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln254', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:254) to 'receive4AIE.1' [58]  (3.275 ns)
+
+ <State 3>: 1.674ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln259', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:259) to 'Block_newFuncRoot_proc_proc' [62]  (1.674 ns)
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

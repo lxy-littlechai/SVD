@@ -1,0 +1,157 @@
+
+
+================================================================
+== Vitis HLS Report for 'SystemControl_Pipeline_VITIS_LOOP_401_8'
+================================================================
+* Date:           Tue Oct 28 18:37:21 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        toppl
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  1.190 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        5|        5|  25.000 ns|  25.000 ns|    5|    5|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_401_8  |        3|        3|         2|          1|          1|     3|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.19>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_0, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_1, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %syscontrol_2, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln401 = muxlogic i2 0"   --->   Operation 9 'muxlogic' 'muxLogicData_to_store_ln401' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln401 = muxlogic i2 %i"   --->   Operation 10 'muxlogic' 'muxLogicAddr_to_store_ln401' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.33ns)   --->   "%store_ln401 = store i2 0, i2 %i" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 11 'store' 'store_ln401' <Predicate = true> <Delay = 0.33>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc83"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_i_1 = muxlogic i2 %i"   --->   Operation 13 'muxlogic' 'MuxLogicAddr_to_i_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%i_1 = load i2 %i" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 14 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.53ns)   --->   "%add_ln401 = add i2 %i_1, i2 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 15 'add' 'add_ln401' <Predicate = true> <Delay = 0.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.53ns)   --->   "%icmp_ln401 = icmp_eq  i2 %i_1, i2 3" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 16 'icmp' 'icmp_ln401' <Predicate = true> <Delay = 0.53> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln401 = br i1 %icmp_ln401, void %for.inc83.split, void %cleanup.cont.critedge.exitStub" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 17 'br' 'br_ln401' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln401 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_27" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 18 'specpipeline' 'specpipeline_ln401' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln401 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln401' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln401 = specloopname void @_ssdm_op_SpecLoopName, void @empty_32" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 20 'specloopname' 'specloopname_ln401' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.48ns)   --->   "%switch_ln402 = switch i2 %i_1, void %V.i155.case.2, i2 0, void %V.i155.case.0, i2 1, void %V.i155.case.1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402]   --->   Operation 21 'switch' 'switch_ln402' <Predicate = (!icmp_ln401)> <Delay = 0.48>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicData_to_store_ln401 = muxlogic i2 %add_ln401"   --->   Operation 22 'muxlogic' 'muxLogicData_to_store_ln401' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%muxLogicAddr_to_store_ln401 = muxlogic i2 %i"   --->   Operation 23 'muxlogic' 'muxLogicAddr_to_store_ln401' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.33ns)   --->   "%store_ln401 = store i2 %add_ln401, i2 %i" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 24 'store' 'store_ln401' <Predicate = (!icmp_ln401)> <Delay = 0.33>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln401 = br void %for.inc83" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401]   --->   Operation 25 'br' 'br_ln401' <Predicate = (!icmp_ln401)> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 35 'ret' 'ret_ln0' <Predicate = (icmp_ln401)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 0.64>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln402 = muxlogic i1 1"   --->   Operation 26 'muxlogic' 'muxLogicData_to_write_ln402' <Predicate = (i_1 == 1)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.64ns)   --->   "%write_ln402 = write void @_ssdm_op_Write.ap_fifo.volatile.i1P0A, i1 %syscontrol_1, i1 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402]   --->   Operation 27 'write' 'write_ln402' <Predicate = (i_1 == 1)> <Delay = 0.64> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.64> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 4> <FIFO>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%br_ln402 = br void %V.i155.exit" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402]   --->   Operation 28 'br' 'br_ln402' <Predicate = (i_1 == 1)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln402 = muxlogic i1 1"   --->   Operation 29 'muxlogic' 'muxLogicData_to_write_ln402' <Predicate = (i_1 == 0)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.64ns)   --->   "%write_ln402 = write void @_ssdm_op_Write.ap_fifo.volatile.i1P0A, i1 %syscontrol_0, i1 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402]   --->   Operation 30 'write' 'write_ln402' <Predicate = (i_1 == 0)> <Delay = 0.64> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.64> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 4> <FIFO>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%br_ln402 = br void %V.i155.exit" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402]   --->   Operation 31 'br' 'br_ln402' <Predicate = (i_1 == 0)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln402 = muxlogic i1 1"   --->   Operation 32 'muxlogic' 'muxLogicData_to_write_ln402' <Predicate = (i_1 != 0 & i_1 != 1)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.64ns)   --->   "%write_ln402 = write void @_ssdm_op_Write.ap_fifo.volatile.i1P0A, i1 %syscontrol_2, i1 1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402]   --->   Operation 33 'write' 'write_ln402' <Predicate = (i_1 != 0 & i_1 != 1)> <Delay = 0.64> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.64> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 4> <FIFO>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln402 = br void %V.i155.exit" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402]   --->   Operation 34 'br' 'br_ln402' <Predicate = (i_1 != 0 & i_1 != 1)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5.000ns, clock uncertainty: 1.350ns.
+
+ <State 1>: 1.190ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln401', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401) of constant 0 on local variable 'i', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401 [10]  (0.330 ns)
+	'load' operation 2 bit ('i', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401) on local variable 'i', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401 [14]  (0.000 ns)
+	'add' operation 2 bit ('add_ln401', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401) [15]  (0.530 ns)
+	'muxlogic' operation 0 bit ('muxLogicData_to_store_ln401') [36]  (0.000 ns)
+	'store' operation 0 bit ('store_ln401', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401) of variable 'add_ln401', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401 on local variable 'i', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:401 [38]  (0.330 ns)
+
+ <State 2>: 0.640ns
+The critical path consists of the following:
+	'muxlogic' operation 0 bit ('muxLogicData_to_write_ln402') [28]  (0.000 ns)
+	fifo write operation ('write_ln402', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402) on port 'syscontrol_0' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:402) [29]  (0.640 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

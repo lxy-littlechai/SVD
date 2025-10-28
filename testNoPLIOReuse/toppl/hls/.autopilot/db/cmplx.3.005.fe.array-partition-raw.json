@@ -1,0 +1,227 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "12 14 16 8",
+    "file": "TopPL.cpp",
+    "fileloc": 411,
+    "instructions": 124,
+    "name": "TopPL",
+    "total_instructions": 1723
+  },
+  "1": {
+    "basicblocks": 3,
+    "calls": "3",
+    "file": "TopPL.cpp",
+    "fileloc": 59,
+    "instructions": 120,
+    "loads": {
+      "L": 7
+    },
+    "name": "receive4AIE",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 167
+  },
+  "10": {
+    "basicblocks": 3,
+    "calls": "3",
+    "file": "TopPL.cpp",
+    "fileloc": 59,
+    "instructions": 120,
+    "loads": {
+      "L": 7
+    },
+    "name": "receive4AIE",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 167
+  },
+  "11": {
+    "basicblocks": 3,
+    "calls": "3",
+    "file": "TopPL.cpp",
+    "fileloc": 59,
+    "instructions": 120,
+    "loads": {
+      "L": 7
+    },
+    "name": "receive4AIE",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 167
+  },
+  "12": {
+    "basicblocks": 34,
+    "calls": "3",
+    "file": "TopPL.cpp",
+    "fileloc": 365,
+    "instructions": 114,
+    "loads": {
+      "L": 1
+    },
+    "name": "SystemControl",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 161
+  },
+  "13": {
+    "basicblocks": 3,
+    "calls": "3",
+    "file": "TopPL.cpp",
+    "fileloc": 59,
+    "instructions": 120,
+    "loads": {
+      "L": 7
+    },
+    "name": "receive4AIE",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 167
+  },
+  "14": {
+    "basicblocks": 17,
+    "calls": "15 5 6 4 2 2 2 2",
+    "file": "TopPL.cpp",
+    "fileloc": 190,
+    "instructions": 42,
+    "name": "Send",
+    "total_instructions": 482
+  },
+  "15": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 94,
+    "instructions": 55,
+    "loads": {
+      "L": 2
+    },
+    "name": "send2AIE",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 55
+  },
+  "16": {
+    "basicblocks": 37,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 276,
+    "instructions": 139,
+    "loads": {
+      "L": 2
+    },
+    "name": "RoundRobin",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 139
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 94,
+    "instructions": 55,
+    "loads": {
+      "L": 2
+    },
+    "name": "send2AIE",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 55
+  },
+  "3": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_fmax.h",
+    "fileloc": 19,
+    "instructions": 47,
+    "name": "generic_fmax<double>",
+    "total_instructions": 47
+  },
+  "4": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 94,
+    "instructions": 55,
+    "loads": {
+      "L": 2
+    },
+    "name": "send2AIE",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 55
+  },
+  "5": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 94,
+    "instructions": 55,
+    "loads": {
+      "L": 2
+    },
+    "name": "send2AIE",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 55
+  },
+  "6": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 94,
+    "instructions": 55,
+    "loads": {
+      "L": 2
+    },
+    "name": "send2AIE",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 55
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "hls_print.h",
+    "fileloc": 25,
+    "instructions": 2,
+    "name": "print<int>",
+    "total_instructions": 2
+  },
+  "8": {
+    "basicblocks": 11,
+    "calls": "7 11 13 10 1 9",
+    "file": "TopPL.cpp",
+    "fileloc": 232,
+    "instructions": 32,
+    "name": "Receive",
+    "total_instructions": 817
+  },
+  "9": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 26,
+    "instructions": 115,
+    "loads": {
+      "L": 7
+    },
+    "name": "receive4DDR",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 115
+  }
+}

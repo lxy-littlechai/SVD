@@ -1,0 +1,194 @@
+
+
+================================================================
+== Vitis HLS Report for 'receive4AIE_3'
+================================================================
+* Date:           Tue Oct 28 18:37:25 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        toppl
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.319 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       13|       13|  65.000 ns|  65.000 ns|   13|   13|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%data_temp_7_loc = alloca i64 1"   --->   Operation 6 'alloca' 'data_temp_7_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty = muxlogic"   --->   Operation 7 'muxlogic' 'muxLogicCE_to_empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (1.00ns)   --->   "%empty = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 %sweep_rx1_R_1_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:70]   --->   Operation 8 'read' 'empty' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_data = extractvalue i161 %empty" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:70]   --->   Operation 9 'extractvalue' 'tmp_data' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%data_temp = partselect i96 @_ssdm_op_PartSelect.i96.i128.i32.i32, i128 %tmp_data, i32 32, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:74]   --->   Operation 10 'partselect' 'data_temp' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.04>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%empty_89 = wait i32 @_ssdm_op_Wait"   --->   Operation 11 'wait' 'empty_89' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [2/2] (2.04ns)   --->   "%call_ln74 = call void @receive4AIE.3_Pipeline_VITIS_LOOP_76_2, i96 %data_temp, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 %sweep_rx1_R_1_V_last_V, i128 %receive_fifo_R_1, i128 %data_temp_7_loc" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:74]   --->   Operation 12 'call' 'call_ln74' <Predicate = true> <Delay = 2.04> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.53>
+ST_3 : Operation 13 [1/2] (0.53ns)   --->   "%call_ln74 = call void @receive4AIE.3_Pipeline_VITIS_LOOP_76_2, i96 %data_temp, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 %sweep_rx1_R_1_V_last_V, i128 %receive_fifo_R_1, i128 %data_temp_7_loc" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:74]   --->   Operation 13 'call' 'call_ln74' <Predicate = true> <Delay = 0.53> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 3.31>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_7_loc_load = muxlogic i128 %data_temp_7_loc"   --->   Operation 14 'muxlogic' 'MuxLogicAddr_to_data_temp_7_loc_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%data_temp_7_loc_load = load i128 %data_temp_7_loc"   --->   Operation 15 'load' 'data_temp_7_loc_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%empty_90 = wait i32 @_ssdm_op_Wait"   --->   Operation 16 'wait' 'empty_90' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty_91 = muxlogic"   --->   Operation 17 'muxlogic' 'muxLogicCE_to_empty_91' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (1.00ns)   --->   "%empty_91 = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 %sweep_rx1_R_1_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:85]   --->   Operation 18 'read' 'empty_91' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_4 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_data_7 = extractvalue i161 %empty_91" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:85]   --->   Operation 19 'extractvalue' 'tmp_data_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln86 = trunc i128 %tmp_data_7" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:86]   --->   Operation 20 'trunc' 'trunc_ln86' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%p_0 = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i32.i32, i128 %data_temp_7_loc_load, i32 %trunc_ln86, i32 96, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:86]   --->   Operation 21 'partset' 'p_0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%fp_uint_tmp = partselect i32 @_ssdm_op_PartSelect.i32.i128.i32.i32, i128 %tmp_data_7, i32 32, i32 63" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:87]   --->   Operation 22 'partselect' 'fp_uint_tmp' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%bitcast_ln88 = bitcast i32 %fp_uint_tmp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 23 'bitcast' 'bitcast_ln88' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%muxLogicI0_to_dc = muxlogic i32 %bitcast_ln88"   --->   Operation 24 'muxlogic' 'muxLogicI0_to_dc' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 25 [1/1] (1.26ns)   --->   "%dc = fpext i32 %bitcast_ln88" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 25 'fpext' 'dc' <Predicate = true> <Delay = 1.26> <CoreInst = "Float2Double">   --->   Core 68 'Float2Double' <Latency = 0> <II = 1> <Delay = 1.26> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%data = bitcast i64 %dc" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:459->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 26 'bitcast' 'data' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%y_fp_exp = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data, i32 52, i32 62" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:461->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 27 'partselect' 'y_fp_exp' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%y_fp_sig = trunc i64 %data" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:462->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:22->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 28 'trunc' 'y_fp_sig' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (0.80ns)   --->   "%icmp_ln25 = icmp_eq  i11 %y_fp_exp, i11 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 29 'icmp' 'icmp_ln25' <Predicate = true> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 30 [1/1] (0.97ns)   --->   "%icmp_ln25_1 = icmp_eq  i52 %y_fp_sig, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 30 'icmp' 'icmp_ln25_1' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 31 [1/1] (0.80ns)   --->   "%icmp_ln18 = icmp_eq  i11 %y_fp_exp, i11 2047" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 31 'icmp' 'icmp_ln18' <Predicate = true> <Delay = 0.80> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 32 [1/1] (0.97ns)   --->   "%icmp_ln18_1 = icmp_ne  i52 %y_fp_sig, i52 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 32 'icmp' 'icmp_ln18_1' <Predicate = true> <Delay = 0.97> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 33 [1/1] (1.05ns)   --->   "%ymaggreater = icmp_sgt  i64 %data, i64 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:38->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 33 'icmp' 'ymaggreater' <Predicate = true> <Delay = 1.05> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.05> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln89 = muxlogic i128 %p_0"   --->   Operation 34 'muxlogic' 'muxLogicData_to_write_ln89' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (1.03ns)   --->   "%write_ln89 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_R_1, i128 %p_0" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:89]   --->   Operation 35 'write' 'write_ln89' <Predicate = true> <Delay = 1.03> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.03> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 256> <FIFO>
+
+State 5 <SV = 4> <Delay = 3.27>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %sweep_rx1_R_1_V_data_V, i16 %sweep_rx1_R_1_V_keep_V, i16 %sweep_rx1_R_1_V_strb_V, i1 0, i1 %sweep_rx1_R_1_V_last_V, i1 0, i1 0, void @empty_38"   --->   Operation 36 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 37 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_R_1, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 37 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_R_1, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %sweep_rx1_R_1_V_last_V, i16 %sweep_rx1_R_1_V_strb_V, i16 %sweep_rx1_R_1_V_keep_V, i128 %sweep_rx1_R_1_V_data_V, void @empty_8, i32 0, i32 0, void @empty_9, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node res_1)   --->   "%and_ln25 = and i1 %icmp_ln25_1, i1 %icmp_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 40 'and' 'and_ln25' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 41 [1/1] (0.00ns) (grouped into LUT with out node conv)   --->   "%and_ln18 = and i1 %icmp_ln18, i1 %icmp_ln18_1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 41 'and' 'and_ln18' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node res_1)   --->   "%res = select i1 %ymaggreater, i64 %dc, i64 0" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:40->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 42 'select' 'res' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node conv)   --->   "%and_ln25_1 = and i1 %icmp_ln25_1, i1 %icmp_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 43 'and' 'and_ln25_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node conv)   --->   "%xor_ln25 = xor i1 %and_ln25_1, i1 1" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 44 'xor' 'xor_ln25' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 45 [1/1] (0.49ns) (out node of the LUT)   --->   "%res_1 = select i1 %and_ln25, i64 %dc, i64 %res" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 45 'select' 'res_1' <Predicate = true> <Delay = 0.49> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node conv)   --->   "%and_ln18_1 = and i1 %and_ln18, i1 %xor_ln25" [/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 46 'and' 'and_ln18_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 78 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%muxLogicI0_to_tmp = muxlogic i64 %res_1"   --->   Operation 47 'muxlogic' 'muxLogicI0_to_tmp' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (1.55ns)   --->   "%tmp = fptrunc i64 %res_1" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 48 'fptrunc' 'tmp' <Predicate = true> <Delay = 1.55> <CoreInst = "Double2Float">   --->   Core 71 'Double2Float' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+ST_5 : Operation 49 [1/1] (0.39ns) (out node of the LUT)   --->   "%conv = select i1 %and_ln18_1, i32 0, i32 %tmp" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 49 'select' 'conv' <Predicate = true> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 77 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln88 = muxlogic i32 %conv"   --->   Operation 50 'muxlogic' 'muxLogicData_to_write_ln88' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.83ns)   --->   "%write_ln88 = write void @_ssdm_op_Write.ap_auto.volatile.floatP0A, i32 %return_r, i32 %conv" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88]   --->   Operation 51 'write' 'write_ln88' <Predicate = true> <Delay = 0.83> <CoreInst = "FIFO_SRL">   --->   Core 85 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 0.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%ret_ln91 = ret" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:91]   --->   Operation 52 'ret' 'ret_ln91' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5.000ns, clock uncertainty: 1.350ns.
+
+ <State 1>: 1.000ns
+The critical path consists of the following:
+	'muxlogic' operation 0 bit ('muxLogicCE_to_empty') [12]  (0.000 ns)
+	axis read operation ('empty', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:70) on port 'sweep_rx1_R_1_V_data_V' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:70) [13]  (1.000 ns)
+
+ <State 2>: 2.047ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln74', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:74) to 'receive4AIE.3_Pipeline_VITIS_LOOP_76_2' [17]  (2.047 ns)
+
+ <State 3>: 0.530ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln74', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:74) to 'receive4AIE.3_Pipeline_VITIS_LOOP_76_2' [17]  (0.530 ns)
+
+ <State 4>: 3.319ns
+The critical path consists of the following:
+	'muxlogic' operation 0 bit ('muxLogicCE_to_empty_91') [21]  (0.000 ns)
+	axis read operation ('empty_91', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:85) on port 'sweep_rx1_R_1_V_data_V' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:85) [22]  (1.000 ns)
+	'muxlogic' operation 64 bit ('muxLogicI0_to_dc') [28]  (0.000 ns)
+	'fpext' operation 64 bit ('y', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) [29]  (1.264 ns)
+	'icmp' operation 1 bit ('ymaggreater', /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:38->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) [39]  (1.055 ns)
+
+ <State 5>: 3.275ns
+The critical path consists of the following:
+	'and' operation 1 bit ('and_ln25', /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:25->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) [35]  (0.000 ns)
+	'select' operation 64 bit ('res', /wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_isnan.h:18->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fmax.h:28->/wrk/ci/prod/2023.2/hls_product/continuous/689/2023.2/src/shared/hls/clib/hlsmath/src/c/fmaxdouble.cpp:7->/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) [43]  (0.490 ns)
+	'muxlogic' operation 32 bit ('muxLogicI0_to_tmp') [45]  (0.000 ns)
+	'fptrunc' operation 32 bit ('tmp', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) [46]  (1.558 ns)
+	'select' operation 32 bit ('conv', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) [47]  (0.390 ns)
+	'muxlogic' operation 0 bit ('muxLogicData_to_write_ln88') [50]  (0.000 ns)
+	wire write operation ('write_ln88', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) on port 'return_r' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:88) [51]  (0.837 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

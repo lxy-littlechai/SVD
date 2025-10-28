@@ -1,0 +1,104 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">, 33241, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll,  4624, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  2297, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  2340, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  1602, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition,  1723, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,  1710, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,  1710, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,  1710, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,  2290, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification,  2323, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  2427, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  2250, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  2105, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering,  1815, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  1982, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="TopPL" col1="TopPL.cpp:411" col2="33241" col3="1602" col4="2290" col5="2105" col6="1982">
+                    <row id="1" col0="SystemControl" col1="TopPL.cpp:365" col2="3166" col3="127" col4="157" col5="303" col6="333">
+                        <row id="15" col0="fmax" col1="fmaxdouble.cpp:6" col2="2875" col3="" col4="" col5="" col6="">
+                            <row id="13" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="2873" col3="" col4="" col5="" col6="">
+                                <row id="11" col0="fp_struct" col1="x_hls_utils.h:456" col2="624" col2_disp="  624 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                <row id="10" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="1149" col2_disp="1,149 (3 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="11" col0="fp_struct" col1="x_hls_utils.h:456" col2="936" col2_disp="  936 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="21" col0="to_ieee" col1="x_hls_utils.h:509" col2="294" col3="" col4="" col5="" col6="">
+                                    <row id="14" col0="to_double" col1="x_hls_utils.h:494" col2="292" col3="" col4="" col5="" col6="">
+                                        <row id="5" col0="data" col1="x_hls_utils.h:475" col2="274" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                </row>
+                                <row id="2" col0="to_int" col1="x_hls_utils.h:482" col2="566" col2_disp="  566 (2 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="5" col0="data" col1="x_hls_utils.h:475" col2="548" col2_disp="  548 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                </row>
+                            </row>
+                        </row>
+                        <row id="19" col0="print" col1="hls_print.h:35" col2="12" col3="" col4="" col5="" col6=""/>
+                        <row id="13" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="" col3="52" col4="47" col5="188" col5_disp=" 188 (4 calls)" col6="188" col6_disp=" 188 (4 calls)"/>
+                    </row>
+                    <row id="18" col0="Send" col1="TopPL.cpp:190" col2="11400" col3="372" col4="1052" col5="836" col6="581">
+                        <row id="9" col0="send2AIE" col1="TopPL.cpp:94" col2="11280" col2_disp="11,280 (6 calls)" col3="330" col3_disp=" 330 (6 calls)" col4="1016" col4_disp="1,016 (8 calls)" col5="800" col5_disp=" 800 (8 calls)" col6="264" col6_disp=" 264 (4 calls)">
+                            <row id="6" col0="generateHeader" col1="TopPL.cpp:5" col2="2934" col2_disp="2,934 (6 calls)" col3="" col4="" col5="" col6=""/>
+                        </row>
+                    </row>
+                    <row id="7" col0="RoundRobin" col1="TopPL.cpp:276" col2="542" col3="137" col4="181" col5="186" col6="289">
+                        <row id="4" col0="DDR2FIFO" col1="TopPL.cpp:137" col2="104" col3="" col4="" col5="" col6=""/>
+                        <row id="8" col0="print&lt;ap_uint&lt;1&gt; &gt;" col1="hls_print.h:25" col2="10" col3="" col4="" col5="" col6=""/>
+                        <row id="20" col0="FIFO2DDR" col1="TopPL.cpp:175" col2="119" col3="" col4="" col5="" col6=""/>
+                    </row>
+                    <row id="16" col0="Receive" col1="TopPL.cpp:232" col2="17891" col3="863" col4="737" col5="617" col6="618">
+                        <row id="12" col0="print&lt;int&gt;" col1="hls_print.h:25" col2="2" col3="2" col4="2" col5="2" col6=""/>
+                        <row id="3" col0="receive4AIE" col1="TopPL.cpp:59" col2="16400" col2_disp="16,400 (4 calls)" col3="688" col3_disp=" 688 (4 calls)" col4="604" col4_disp=" 604 (4 calls)" col5="508" col5_disp=" 508 (4 calls)" col6="">
+                            <row id="15" col0="fmax" col1="fmaxdouble.cpp:6" col2="11500" col2_disp="11,500 (4 calls)" col3="" col4="" col5="" col6="">
+                                <row id="13" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="11492" col2_disp="11,492 (4 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="11" col0="fp_struct" col1="x_hls_utils.h:456" col2="2496" col2_disp="2,496 (8 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="10" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="4596" col2_disp="4,596 (12 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="11" col0="fp_struct" col1="x_hls_utils.h:456" col2="3744" col2_disp="3,744 (12 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                    <row id="21" col0="to_ieee" col1="x_hls_utils.h:509" col2="1176" col2_disp="1,176 (4 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="14" col0="to_double" col1="x_hls_utils.h:494" col2="1168" col2_disp="1,168 (4 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="5" col0="data" col1="x_hls_utils.h:475" col2="1096" col2_disp="1,096 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                    </row>
+                                    <row id="2" col0="to_int" col1="x_hls_utils.h:482" col2="2264" col2_disp="2,264 (8 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="5" col0="data" col1="x_hls_utils.h:475" col2="2192" col2_disp="2,192 (8 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                </row>
+                            </row>
+                            <row id="13" col0="generic_fmax&lt;double&gt;" col1="hls_fmax.h:19" col2="" col3="208" col3_disp=" 208 (4 calls)" col4="188" col4_disp=" 188 (4 calls)" col5="188" col5_disp=" 188 (4 calls)" col6=""/>
+                        </row>
+                        <row id="22" col0="NormReceive" col1="TopPL.cpp:167" col2="1336" col3="" col4="" col5="" col6="">
+                            <row id="17" col0="receive4DDR" col1="TopPL.cpp:26" col2="1316" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="17" col0="receive4DDR" col1="TopPL.cpp:26" col2="" col3="115" col4="99" col5="75" col6="71"/>
+                    </row>
+                </row>
+            </rows>
+            <notes/>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+

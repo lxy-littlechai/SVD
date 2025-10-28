@@ -1,0 +1,168 @@
+
+
+================================================================
+== Vitis HLS Report for 'receive4DDR'
+================================================================
+* Date:           Tue Oct 28 18:37:26 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        toppl
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  2.577 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       13|       13|  65.000 ns|  65.000 ns|   13|   13|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%data_temp_2_loc = alloca i64 1"   --->   Operation 6 'alloca' 'data_temp_2_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty = muxlogic"   --->   Operation 7 'muxlogic' 'muxLogicCE_to_empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (1.00ns)   --->   "%empty = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:33]   --->   Operation 8 'read' 'empty' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_data = extractvalue i161 %empty" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:33]   --->   Operation 9 'extractvalue' 'tmp_data' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%data_temp = partselect i96 @_ssdm_op_PartSelect.i96.i128.i32.i32, i128 %tmp_data, i32 32, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:37]   --->   Operation 10 'partselect' 'data_temp' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.04>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%empty_86 = wait i32 @_ssdm_op_Wait"   --->   Operation 11 'wait' 'empty_86' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [2/2] (2.04ns)   --->   "%call_ln37 = call void @receive4DDR_Pipeline_VITIS_LOOP_39_2, i96 %data_temp, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, i128 %receive_fifo_L_0, i128 %data_temp_2_loc" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:37]   --->   Operation 12 'call' 'call_ln37' <Predicate = true> <Delay = 2.04> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.53>
+ST_3 : Operation 13 [1/2] (0.53ns)   --->   "%call_ln37 = call void @receive4DDR_Pipeline_VITIS_LOOP_39_2, i96 %data_temp, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, i128 %receive_fifo_L_0, i128 %data_temp_2_loc" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:37]   --->   Operation 13 'call' 'call_ln37' <Predicate = true> <Delay = 0.53> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 2.03>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%MuxLogicAddr_to_data_temp_2_loc_load = muxlogic i128 %data_temp_2_loc"   --->   Operation 14 'muxlogic' 'MuxLogicAddr_to_data_temp_2_loc_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%data_temp_2_loc_load = load i128 %data_temp_2_loc"   --->   Operation 15 'load' 'data_temp_2_loc_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%empty_87 = wait i32 @_ssdm_op_Wait"   --->   Operation 16 'wait' 'empty_87' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%muxLogicCE_to_empty_88 = muxlogic"   --->   Operation 17 'muxlogic' 'muxLogicCE_to_empty_88' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (1.00ns)   --->   "%empty_88 = read i161 @_ssdm_op_Read.axis.volatile.i128P0A.i16P0A.i16P0A.i1P0A, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:49]   --->   Operation 18 'read' 'empty_88' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 127 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_4 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_data_6 = extractvalue i161 %empty_88" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:49]   --->   Operation 19 'extractvalue' 'tmp_data_6' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln50 = trunc i128 %tmp_data_6" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:50]   --->   Operation 20 'trunc' 'trunc_ln50' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%p_s = partset i128 @_ssdm_op_PartSet.i128.i128.i32.i32.i32, i128 %data_temp_2_loc_load, i32 %trunc_ln50, i32 96, i32 127" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:50]   --->   Operation 21 'partset' 'p_s' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln51 = muxlogic i128 %p_s"   --->   Operation 22 'muxlogic' 'muxLogicData_to_write_ln51' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 23 [1/1] (1.03ns)   --->   "%write_ln51 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_0, i128 %p_s" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:51]   --->   Operation 23 'write' 'write_ln51' <Predicate = true> <Delay = 1.03> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.03> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 256> <FIFO>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%sigma = partselect i32 @_ssdm_op_PartSelect.i32.i128.i32.i32, i128 %tmp_data_6, i32 32, i32 63" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:53]   --->   Operation 24 'partselect' 'sigma' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 1.03>
+ST_5 : Operation 25 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 0, i1 %norm_rx0_V_last_V, i1 0, i1 0, void @empty_13"   --->   Operation 25 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 26 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i128 %receive_fifo_L_0, i64 666, i64 11, i64 18446744073709551615"   --->   Operation 26 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %norm_rx0_V_data_V, i16 %norm_rx0_V_keep_V, i16 %norm_rx0_V_strb_V, i1 %norm_rx0_V_last_V, void @empty_8, i32 0, i32 0, void @empty_9, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %receive_fifo_L_0, void @empty_5, i32 0, i32 0, void @empty_27, i32 0, i32 0, void @empty_27, void @empty_27, void @empty_27, i32 0, i32 0, i32 0, i32 0, void @empty_27, void @empty_27, i32 4294967295, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 29 [1/1] (0.00ns)   --->   "%zext_ln53 = zext i32 %sigma" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:53]   --->   Operation 29 'zext' 'zext_ln53' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%muxLogicData_to_write_ln54 = muxlogic i128 %zext_ln53"   --->   Operation 30 'muxlogic' 'muxLogicData_to_write_ln54' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 31 [1/1] (1.03ns)   --->   "%write_ln54 = write void @_ssdm_op_Write.ap_fifo.volatile.i128P0A, i128 %receive_fifo_L_0, i128 %zext_ln53" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:54]   --->   Operation 31 'write' 'write_ln54' <Predicate = true> <Delay = 1.03> <CoreInst = "FIFO_URAM">   --->   Core 86 'FIFO_URAM' <Latency = 0> <II = 1> <Delay = 1.03> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 256> <FIFO>
+ST_5 : Operation 32 [1/1] (0.00ns)   --->   "%ret_ln57 = ret" [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:57]   --->   Operation 32 'ret' 'ret_ln57' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5.000ns, clock uncertainty: 1.350ns.
+
+ <State 1>: 1.000ns
+The critical path consists of the following:
+	'muxlogic' operation 0 bit ('muxLogicCE_to_empty') [11]  (0.000 ns)
+	axis read operation ('empty', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:33) on port 'norm_rx0_V_data_V' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:33) [12]  (1.000 ns)
+
+ <State 2>: 2.047ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln37', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:37) to 'receive4DDR_Pipeline_VITIS_LOOP_39_2' [16]  (2.047 ns)
+
+ <State 3>: 0.530ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln37', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:37) to 'receive4DDR_Pipeline_VITIS_LOOP_39_2' [16]  (0.530 ns)
+
+ <State 4>: 2.035ns
+The critical path consists of the following:
+	'muxlogic' operation 0 bit ('muxLogicCE_to_empty_88') [20]  (0.000 ns)
+	axis read operation ('empty_88', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:49) on port 'norm_rx0_V_data_V' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:49) [21]  (1.000 ns)
+	'muxlogic' operation 0 bit ('muxLogicData_to_write_ln51') [25]  (0.000 ns)
+	fifo write operation ('write_ln51', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:51) on port 'receive_fifo_L_0' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:51) [26]  (1.035 ns)
+
+ <State 5>: 1.035ns
+The critical path consists of the following:
+	'muxlogic' operation 0 bit ('muxLogicData_to_write_ln54') [29]  (0.000 ns)
+	fifo write operation ('write_ln54', /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:54) on port 'receive_fifo_L_0' (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testNoPLIOReuse/pl/TopPL.cpp:54) [30]  (1.035 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

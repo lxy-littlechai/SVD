@@ -1,0 +1,260 @@
+{
+  "0": {
+    "basicblocks": 15,
+    "calls": "19 13 2 6",
+    "file": "TopPL.cpp",
+    "fileloc": 411,
+    "instructions": 140,
+    "name": "TopPL",
+    "total_instructions": 4624
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "hls_print.h",
+    "fileloc": 35,
+    "instructions": 4,
+    "name": "print",
+    "total_instructions": 4
+  },
+  "10": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 137,
+    "instructions": 58,
+    "loads": {
+      "L": 2
+    },
+    "name": "DDR2FIFO",
+    "total_instructions": 58
+  },
+  "11": {
+    "basicblocks": 7,
+    "calls": "14",
+    "file": "TopPL.cpp",
+    "fileloc": 167,
+    "instructions": 14,
+    "name": "NormReceive",
+    "total_instructions": 206
+  },
+  "12": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 475,
+    "instructions": 17,
+    "loads": {
+      "L": 4
+    },
+    "name": "data",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 17
+  },
+  "13": {
+    "basicblocks": 20,
+    "calls": "8 8 8 8 8 8",
+    "file": "TopPL.cpp",
+    "fileloc": 190,
+    "instructions": 59,
+    "name": "Send",
+    "total_instructions": 1889
+  },
+  "14": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 26,
+    "instructions": 192,
+    "loads": {
+      "L": 11
+    },
+    "name": "receive4DDR",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 192
+  },
+  "15": {
+    "basicblocks": 7,
+    "calls": "16",
+    "file": "TopPL.cpp",
+    "fileloc": 59,
+    "instructions": 199,
+    "loads": {
+      "L": 11
+    },
+    "name": "receive4AIE",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 444
+  },
+  "16": {
+    "basicblocks": 1,
+    "calls": "9",
+    "file": "fmaxdouble.cpp",
+    "fileloc": 6,
+    "instructions": 2,
+    "name": "fmax",
+    "total_instructions": 245
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 456,
+    "instructions": 15,
+    "name": "fp_struct",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 15
+  },
+  "18": {
+    "basicblocks": 1,
+    "calls": "12",
+    "file": "x_hls_utils.h",
+    "fileloc": 494,
+    "instructions": 5,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_double",
+    "total_instructions": 22
+  },
+  "19": {
+    "basicblocks": 26,
+    "calls": "16 1",
+    "file": "TopPL.cpp",
+    "fileloc": 365,
+    "instructions": 116,
+    "loads": {
+      "L": 5
+    },
+    "name": "SystemControl",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 365
+  },
+  "2": {
+    "basicblocks": 26,
+    "calls": "10 20 21",
+    "file": "TopPL.cpp",
+    "fileloc": 276,
+    "instructions": 101,
+    "name": "RoundRobin",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 191
+  },
+  "20": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "hls_print.h",
+    "fileloc": 25,
+    "instructions": 5,
+    "loads": {
+      "L": 1
+    },
+    "name": "print<ap_uint<1> >",
+    "total_instructions": 5
+  },
+  "21": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 175,
+    "instructions": 27,
+    "name": "FIFO2DDR",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 27
+  },
+  "3": {
+    "basicblocks": 3,
+    "calls": "17",
+    "file": "hls_isnan.h",
+    "fileloc": 16,
+    "instructions": 14,
+    "loads": {
+      "L": 2
+    },
+    "name": "generic_isnan<double>",
+    "total_instructions": 29
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "hls_print.h",
+    "fileloc": 25,
+    "instructions": 2,
+    "name": "print<int>",
+    "total_instructions": 2
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "18",
+    "file": "x_hls_utils.h",
+    "fileloc": 509,
+    "instructions": 2,
+    "name": "to_ieee",
+    "total_instructions": 24
+  },
+  "6": {
+    "basicblocks": 12,
+    "calls": "4 15 15 15 15 11",
+    "file": "TopPL.cpp",
+    "fileloc": 232,
+    "instructions": 55,
+    "name": "Receive",
+    "total_instructions": 2039
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "12",
+    "file": "x_hls_utils.h",
+    "fileloc": 482,
+    "instructions": 4,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_int",
+    "total_instructions": 21
+  },
+  "8": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "TopPL.cpp",
+    "fileloc": 94,
+    "instructions": 305,
+    "loads": {
+      "L": 8
+    },
+    "name": "send2AIE",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 305
+  },
+  "9": {
+    "basicblocks": 22,
+    "calls": "17 17 3 3 5 3 7 7",
+    "file": "hls_fmax.h",
+    "fileloc": 19,
+    "instructions": 60,
+    "loads": {
+      "L": 7
+    },
+    "name": "generic_fmax<double>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 243
+  }
+}
