@@ -83,10 +83,6 @@
         "net23",
         "net24",
         "net25",
-        "net26",
-        "net27",
-        "net28",
-        "net29",
         "D_net0",
         "D_net1",
         "D_net2",
@@ -103,10 +99,10 @@
         "D_net13",
         "D_net14",
         "D_net15",
-        "D_net24",
-        "D_net25",
-        "D_net26",
-        "D_net27",
+        "D_net20",
+        "D_net21",
+        "D_net22",
+        "D_net23",
         "unconstraint_fifo0",
         "unconstraint_fifo1",
         "unconstraint_fifo2",
@@ -133,10 +129,6 @@
         "unconstraint_fifo23",
         "unconstraint_fifo24",
         "unconstraint_fifo25",
-        "unconstraint_fifo26",
-        "unconstraint_fifo27",
-        "unconstraint_fifo28",
-        "unconstraint_fifo29",
         "buf5r",
         "buf9r",
         "buf33r",
@@ -146,7 +138,7 @@
         {
             "Name": "buf0",
             "Site": "AIE_MEMGRP_X1Y0",
-            "Bel": "BANK1"
+            "Bel": "BANK2"
         },
         {
             "Name": "buf1",
@@ -226,7 +218,7 @@
         {
             "Name": "buf16",
             "Site": "AIE_MEMGRP_X0Y1",
-            "Bel": "BANK0"
+            "Bel": "BANK2"
         },
         {
             "Name": "buf17",
@@ -236,37 +228,37 @@
         {
             "Name": "buf18",
             "Site": "AIE_MEMGRP_X0Y0",
-            "Bel": "BANK2"
+            "Bel": "BANK1"
         },
         {
             "Name": "buf19",
             "Site": "AIE_MEMGRP_X0Y2",
-            "Bel": "BANK1"
+            "Bel": "BANK2"
         },
         {
             "Name": "sysmem20",
             "Site": "AIE_MEMGRP_X1Y0",
-            "Bel": "BANK1"
+            "Bel": "BANK0"
         },
         {
             "Name": "sysmem21",
             "Site": "AIE_MEMGRP_X1Y0",
-            "Bel": "BANK0"
-        },
-        {
-            "Name": "sysmem22",
-            "Site": "AIE_MEMGRP_X1Y0",
             "Bel": "BANK2"
         },
         {
-            "Name": "sysmem23",
+            "Name": "sysmem22",
             "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "sysmem23",
+            "Site": "AIE_MEMGRP_X0Y2",
             "Bel": "BANK0"
         },
         {
             "Name": "sysmem24",
-            "Site": "AIE_MEMGRP_X0Y0",
-            "Bel": "BANK1"
+            "Site": "AIE_MEMGRP_X1Y2",
+            "Bel": "BANK0"
         },
         {
             "Name": "sysmem25",
@@ -276,17 +268,17 @@
         {
             "Name": "sysmem26",
             "Site": "AIE_MEMGRP_X0Y2",
-            "Bel": "BANK0"
+            "Bel": "BANK1"
         },
         {
             "Name": "sysmem27",
-            "Site": "AIE_MEMGRP_X2Y3",
-            "Bel": "BANK0"
+            "Site": "AIE_MEMGRP_X2Y2",
+            "Bel": "BANK1"
         },
         {
             "Name": "buf28",
             "Site": "AIE_MEMGRP_X1Y0",
-            "Bel": "BANK2"
+            "Bel": "BANK1"
         },
         {
             "Name": "buf29",
@@ -366,22 +358,22 @@
         {
             "Name": "buf44",
             "Site": "AIE_MEMGRP_X0Y1",
-            "Bel": "BANK1"
+            "Bel": "BANK0"
         },
         {
             "Name": "buf45",
             "Site": "AIE_MEMGRP_X0Y1",
-            "Bel": "BANK2"
+            "Bel": "BANK1"
         },
         {
             "Name": "buf46",
             "Site": "AIE_MEMGRP_X0Y0",
-            "Bel": "BANK3"
+            "Bel": "BANK2"
         },
         {
             "Name": "buf47",
             "Site": "AIE_MEMGRP_X0Y2",
-            "Bel": "BANK2"
+            "Bel": "BANK3"
         },
         {
             "Name": "PT0",
@@ -395,17 +387,17 @@
         },
         {
             "Name": "PT2",
-            "Site": "AIE_CORE_X1Y1",
-            "Bel": "CORE"
-        },
-        {
-            "Name": "PT3",
             "Site": "AIE_CORE_X0Y0",
             "Bel": "CORE"
         },
         {
-            "Name": "PT4",
+            "Name": "PT3",
             "Site": "AIE_CORE_X0Y1",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "PT4",
+            "Site": "AIE_CORE_X1Y1",
             "Bel": "CORE"
         },
         {
@@ -430,7 +422,7 @@
         },
         {
             "Name": "buf9r",
-            "Site": "AIE_MEMGRP_X1Y3",
+            "Site": "AIE_MEMGRP_X1Y1",
             "Bel": "BANK0"
         },
         {
@@ -440,14 +432,14 @@
         },
         {
             "Name": "buf37r",
-            "Site": "AIE_MEMGRP_X1Y3",
+            "Site": "AIE_MEMGRP_X1Y1",
             "Bel": "BANK1"
         }
     ],
     "Instance Placement": [
         {
             "Name": "1_1_norm_in_0",
-            "Site": "AIE_PL_X5Y0",
+            "Site": "AIE_PL_X6Y0",
             "Bel": "AIE_PL_S_AXIS_0"
         },
         {
@@ -461,18 +453,8 @@
             "Bel": "AIE_PL_S_AXIS_4"
         },
         {
-            "Name": "1_1_sweep_in_L_1",
-            "Site": "AIE_PL_X6Y0",
-            "Bel": "AIE_PL_S_AXIS_0"
-        },
-        {
             "Name": "1_1_sweep_in_R_0",
-            "Site": "AIE_PL_X6Y0",
-            "Bel": "AIE_PL_S_AXIS_4"
-        },
-        {
-            "Name": "1_1_sweep_in_R_1",
-            "Site": "AIE_PL_X7Y0",
+            "Site": "AIE_PL_X5Y0",
             "Bel": "AIE_PL_S_AXIS_0"
         },
         {
@@ -481,18 +463,8 @@
             "Bel": "AIE_PL_M_AXIS_4"
         },
         {
-            "Name": "1_1_sweep_out_L_1",
-            "Site": "AIE_PL_X6Y0",
-            "Bel": "AIE_PL_M_AXIS_2"
-        },
-        {
             "Name": "1_1_sweep_out_R_0",
             "Site": "AIE_PL_X6Y0",
-            "Bel": "AIE_PL_M_AXIS_4"
-        },
-        {
-            "Name": "1_1_sweep_out_R_1",
-            "Site": "AIE_PL_X7Y0",
             "Bel": "AIE_PL_M_AXIS_0"
         },
         {
@@ -553,13 +525,13 @@
         },
         {
             "buf2": [
-                "topSweepGraph1_1.sp[1][0]/po0",
+                "topSweepGraph1_1.sp[0][0]/po1",
                 "topSweepGraph1_1.sweepGraph.orth[1][0]/pi0"
             ]
         },
         {
             "buf3": [
-                "topSweepGraph1_1.sp[1][1]/po0",
+                "topSweepGraph1_1.sp[0][1]/po1",
                 "topSweepGraph1_1.sweepGraph.orth[1][0]/pi1"
             ]
         },
@@ -624,13 +596,13 @@
         {
             "buf14": [
                 "topSweepGraph1_1.sweepGraph.orth[0][2]/po1",
-                "topSweepGraph1_1.mg[1][0]/pi0"
+                "topSweepGraph1_1.mg[0][0]/pi1"
             ]
         },
         {
             "buf15": [
                 "topSweepGraph1_1.sweepGraph.orth[1][2]/po1",
-                "topSweepGraph1_1.mg[1][1]/pi0"
+                "topSweepGraph1_1.mg[0][1]/pi1"
             ]
         },
         {
@@ -671,13 +643,13 @@
         },
         {
             "buf30": [
-                "topSweepGraph1_1.sp[1][0]/po0",
+                "topSweepGraph1_1.sp[0][0]/po1",
                 "topSweepGraph1_1.sweepGraph.orth[1][0]/pi0"
             ]
         },
         {
             "buf31": [
-                "topSweepGraph1_1.sp[1][1]/po0",
+                "topSweepGraph1_1.sp[0][1]/po1",
                 "topSweepGraph1_1.sweepGraph.orth[1][0]/pi1"
             ]
         },
@@ -742,13 +714,13 @@
         {
             "buf42": [
                 "topSweepGraph1_1.sweepGraph.orth[0][2]/po1",
-                "topSweepGraph1_1.mg[1][0]/pi0"
+                "topSweepGraph1_1.mg[0][0]/pi1"
             ]
         },
         {
             "buf43": [
                 "topSweepGraph1_1.sweepGraph.orth[1][2]/po1",
-                "topSweepGraph1_1.mg[1][1]/pi0"
+                "topSweepGraph1_1.mg[0][1]/pi1"
             ]
         },
         {
@@ -787,17 +759,17 @@
         },
         {
             "PT2": [
-                "topSweepGraph1_1.sweepGraph.orth[0][1]"
-            ]
-        },
-        {
-            "PT3": [
                 "topNormGraph1_1.normGraph.norm[0]"
             ]
         },
         {
-            "PT4": [
+            "PT3": [
                 "topNormGraph1_1.normGraph.norm[1]"
+            ]
+        },
+        {
+            "PT4": [
+                "topSweepGraph1_1.sweepGraph.orth[0][1]"
             ]
         },
         {
@@ -887,12 +859,12 @@
         },
         {
             "unconstraint_fifo14": [
-                "topSweepGraph1_1.mg[1][0]/pi0"
+                "topSweepGraph1_1.mg[0][0]/pi1"
             ]
         },
         {
             "unconstraint_fifo15": [
-                "topSweepGraph1_1.mg[1][1]/pi0"
+                "topSweepGraph1_1.mg[0][1]/pi1"
             ]
         },
         {
@@ -907,61 +879,41 @@
         },
         {
             "unconstraint_fifo18": [
-                "topSweepGraph1_1.sp[1][0]/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo19": [
-                "1_1_sweep_out_L_1/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo20": [
                 "topSweepGraph1_1.sp[0][1]/pi0"
             ]
         },
         {
-            "unconstraint_fifo21": [
+            "unconstraint_fifo19": [
                 "1_1_sweep_out_R_0/pi0"
             ]
         },
         {
-            "unconstraint_fifo22": [
-                "topSweepGraph1_1.sp[1][1]/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo23": [
-                "1_1_sweep_out_R_1/pi0"
-            ]
-        },
-        {
-            "unconstraint_fifo24": [
+            "unconstraint_fifo20": [
                 "topNormGraph1_1.normGraph.norm[0]/pi0"
             ]
         },
         {
-            "unconstraint_fifo25": [
+            "unconstraint_fifo21": [
                 "topNormGraph1_1.mg[0]/pi0"
             ]
         },
         {
-            "unconstraint_fifo26": [
+            "unconstraint_fifo22": [
                 "topNormGraph1_1.normGraph.norm[1]/pi0"
             ]
         },
         {
-            "unconstraint_fifo27": [
+            "unconstraint_fifo23": [
                 "topNormGraph1_1.mg[0]/pi1"
             ]
         },
         {
-            "unconstraint_fifo28": [
+            "unconstraint_fifo24": [
                 "topNormGraph1_1.sp[0]/pi0"
             ]
         },
         {
-            "unconstraint_fifo29": [
+            "unconstraint_fifo25": [
                 "1_1_norm_out_0/pi0"
             ]
         },
@@ -1048,7 +1000,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 2080"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -1125,7 +1077,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 5952"
+                    "Val": "INT 4096"
                 },
                 {
                     "Key": "row",
@@ -1158,11 +1110,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "dstPort",
@@ -1235,11 +1187,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "dstPort",
@@ -1356,7 +1308,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 160"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -1433,7 +1385,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
@@ -1664,7 +1616,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 8032"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -1895,7 +1847,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 3936"
                 },
                 {
                     "Key": "row",
@@ -1972,7 +1924,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -2049,7 +2001,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 160"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -2090,11 +2042,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "IsPing",
@@ -2167,11 +2119,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "IsPing",
@@ -2280,7 +2232,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 7872"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -2564,7 +2516,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 5952"
                 },
                 {
                     "Key": "row",
@@ -2621,7 +2573,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
@@ -2678,7 +2630,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 2752"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -2686,15 +2638,15 @@
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 1"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "accessRow",
-                    "Val": "INT 1"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "accessCol",
-                    "Val": "INT 1"
+                    "Val": "INT 0"
                 }
             ]
         },
@@ -2739,7 +2691,7 @@
                 },
                 {
                     "Key": "row",
-                    "Val": "INT 0"
+                    "Val": "INT 2"
                 },
                 {
                     "Key": "column",
@@ -2747,7 +2699,7 @@
                 },
                 {
                     "Key": "accessRow",
-                    "Val": "INT 0"
+                    "Val": "INT 1"
                 },
                 {
                     "Key": "accessCol",
@@ -2792,15 +2744,15 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
-                    "Val": "INT 0"
+                    "Val": "INT 2"
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 0"
+                    "Val": "INT 1"
                 },
                 {
                     "Key": "accessRow",
@@ -2808,7 +2760,7 @@
                 },
                 {
                     "Key": "accessCol",
-                    "Val": "INT 0"
+                    "Val": "INT 1"
                 }
             ]
         },
@@ -2849,7 +2801,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 160"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -2906,7 +2858,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 6112"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -2963,11 +2915,11 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 160"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
-                    "Val": "INT 3"
+                    "Val": "INT 2"
                 },
                 {
                     "Key": "column",
@@ -3040,7 +2992,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
@@ -3109,7 +3061,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 8032"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -3138,11 +3090,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "dstPort",
@@ -3207,11 +3159,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "dstPort",
@@ -3316,7 +3268,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 160"
+                    "Val": "INT 320"
                 },
                 {
                     "Key": "row",
@@ -3385,7 +3337,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
@@ -3799,7 +3751,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 2080"
                 },
                 {
                     "Key": "row",
@@ -3937,7 +3889,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 160"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -3974,11 +3926,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "IsPong",
@@ -4043,11 +3995,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "IsPong",
@@ -4213,7 +4165,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 4256"
                 },
                 {
                     "Key": "row",
@@ -4622,11 +4574,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -4663,11 +4615,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -5122,11 +5074,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -5163,11 +5115,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -5270,80 +5222,6 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING 1_1_sweep_in_L_1"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net19",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING 1_1_sweep_out_L_1"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net20",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
                     "Val": "STRING 1_1_sweep_in_R_0"
                 },
                 {
@@ -5373,7 +5251,7 @@
             ]
         },
         {
-            "Name": "net21",
+            "Name": "net19",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -5410,81 +5288,7 @@
             ]
         },
         {
-            "Name": "net22",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING 1_1_sweep_in_R_1"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net23",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING 1_1_sweep_out_R_1"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net24",
+            "Name": "net20",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -5525,7 +5329,7 @@
             ]
         },
         {
-            "Name": "net25",
+            "Name": "net21",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -5566,7 +5370,7 @@
             ]
         },
         {
-            "Name": "net26",
+            "Name": "net22",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -5607,7 +5411,7 @@
             ]
         },
         {
-            "Name": "net27",
+            "Name": "net23",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -5648,7 +5452,7 @@
             ]
         },
         {
-            "Name": "net28",
+            "Name": "net24",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -5685,7 +5489,7 @@
             ]
         },
         {
-            "Name": "net29",
+            "Name": "net25",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -5812,11 +5616,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -5853,11 +5657,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -6312,11 +6116,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -6353,11 +6157,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -6378,7 +6182,7 @@
             ]
         },
         {
-            "Name": "D_net24",
+            "Name": "D_net20",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -6419,7 +6223,7 @@
             ]
         },
         {
-            "Name": "D_net25",
+            "Name": "D_net21",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -6460,7 +6264,7 @@
             ]
         },
         {
-            "Name": "D_net26",
+            "Name": "D_net22",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -6501,7 +6305,7 @@
             ]
         },
         {
-            "Name": "D_net27",
+            "Name": "D_net23",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -6880,58 +6684,6 @@
             ]
         },
         {
-            "Name": "unconstraint_fifo26",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo27",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo28",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
-            "Name": "unconstraint_fifo29",
-            "attrs": [
-                {
-                    "Key": "size",
-                    "Val": "INT -1"
-                },
-                {
-                    "Key": "record_type",
-                    "Val": "STRING unspecified_fifo"
-                }
-            ]
-        },
-        {
             "Name": "buf5r",
             "attrs": [
                 {
@@ -7065,11 +6817,11 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 7872"
                 },
                 {
                     "Key": "row",
-                    "Val": "INT 3"
+                    "Val": "INT 1"
                 },
                 {
                     "Key": "column",
@@ -7203,11 +6955,11 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
-                    "Val": "INT 3"
+                    "Val": "INT 1"
                 },
                 {
                     "Key": "column",
@@ -7217,6 +6969,110 @@
         }
     ],
     "Netlist Element Attrs": [
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][1]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][1]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][1]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][1]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
         {
             "Name": "topNormGraph1_1.normGraph.norm[0]/pi0",
             "attrs": [
@@ -7322,6 +7178,110 @@
             ]
         },
         {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][2]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][2]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][2]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][2]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][0]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][0]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][0]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
             "Name": "topSweepGraph1_1.sweepGraph.orth[0][0]",
             "attrs": [
                 {
@@ -7384,107 +7344,6 @@
         },
         {
             "Name": "topSweepGraph1_1.mg[0][1]",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                }
-            ]
-        },
-        {
-            "Name": "1_1_sweep_in_L_1",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "1_1_sweep_out_L_1",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sp[1][0]",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.mg[1][0]",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                }
-            ]
-        },
-        {
-            "Name": "1_1_sweep_in_R_1",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "1_1_sweep_out_R_1",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "ioshimType",
-                    "Val": "STRING plioshim"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[0][1]",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                },
-                {
-                    "Key": "schedule",
-                    "Val": "INT 0"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sp[1][1]",
-            "attrs": [
-                {
-                    "Key": "fabric",
-                    "Val": "STRING me"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.mg[1][1]",
             "attrs": [
                 {
                     "Key": "fabric",
@@ -7559,6 +7418,19 @@
                 {
                     "Key": "fabric",
                     "Val": "STRING me"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][1]",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "schedule",
+                    "Val": "INT 0"
                 }
             ]
         },
@@ -7642,78 +7514,6 @@
                 {
                     "Key": "fabric",
                     "Val": "STRING me"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sp[0][0]/po0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0]/pi0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sp[0][1]/po0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0]/pi1",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sp[1][0]/po0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0]/pi0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sp[1][1]/po0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0]/pi1",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
                 }
             ]
         },
@@ -7854,78 +7654,6 @@
         },
         {
             "Name": "topSweepGraph1_1.sweepGraph.orth[1][2]/pi1",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[1][2]/po0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.mg[0][0]/pi0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[0][2]/po0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.mg[0][1]/pi0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[0][2]/po1",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.mg[1][0]/pi0",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.sweepGraph.orth[1][2]/po1",
-            "attrs": [
-                {
-                    "Key": "bufferType",
-                    "Val": "STRING mem"
-                }
-            ]
-        },
-        {
-            "Name": "topSweepGraph1_1.mg[1][1]/pi0",
             "attrs": [
                 {
                     "Key": "bufferType",

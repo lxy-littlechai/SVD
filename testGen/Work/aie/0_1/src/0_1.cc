@@ -38,7 +38,7 @@ int main(void) {
   while (proc_0_1_bounds)
   {
 
-    // Kernel call : i23:normalize<32>
+    // Kernel call : i15:normalize<32>
     window_buf18_buf18d_i->setData(*window_buf18_buf18d_i, (float*)buf18, (float*)buf18d, 1-index, 0);
     window_buf18_buf18d_i->acquire(*window_buf18_buf18d_i, LOCK_0_0_0_0, LOCK_0_0_1_0, 1-index);
     window_buf19_buf19d_o->setData(*window_buf19_buf19d_o, (float*)buf19, (float*)buf19d, 1-index, 0);

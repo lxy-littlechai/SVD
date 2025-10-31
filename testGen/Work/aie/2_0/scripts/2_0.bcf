@@ -11,12 +11,12 @@ _symbol buf4 0x31f60
 _symbol buf4d 0x32000
 _symbol buf5 0x34000
 _symbol buf5d 0x36000
-_symbol _ZL11sync_buffer  0x28000  //synchronization buffer 
-_stack DM_stack 0x28020  0x400 //stack for core 
-//space for synopsys compiler  at  0x28420  0x400//heap for core  
-_reserved DMb 0x20000 0x8000
+_symbol _ZL11sync_buffer  0x2c0a0  //synchronization buffer 
+_stack DM_stack 0x2c0c0  0x400 //stack for core 
+//space for synopsys compiler  at  0x2c4c0  0x400//heap for core  
+_reserved DMb 0x20000 0xc0a0
 
-_reserved DMb 0x28820 0x9740
+_reserved DMb 0x2c8c0 0x56a0
 
 _reserved DMb 0x31ff0 0x10
 

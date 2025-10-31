@@ -1,5 +1,5 @@
-Modulo scheduling report for loop #1143 in "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp", line 64: (loop #20)
-==============================================================================================================================================================
+Modulo scheduling report for loop #1143 in "/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp", line 64: (loop #20)
+===========================================================================================================================================================
 
 Initiation interval (II): 3 cycles (minimum II = 2)
 Software pipeline stages: 3 (folded over 2 iterations), minimum: 3
@@ -14,13 +14,13 @@ Min II:
 
     details:
 
-       b223  VST wc0, [p3], #32 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:70:29]
+       b223  VST wc0, [p3], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:70:29]
          |
          |
        [1,LC]   flow dep: __ali1.1338/__ali1.827 ; loop carried
          |
          v
-       b223  VST wc0, [p3], #32 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:70:29]
+       b223  VST wc0, [p3], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp:70:29]
 
     Total delay: 1, total loop degree: 1 => length critical cycle: 1
 
@@ -130,7 +130,7 @@ Cmd line: --mist2 -v -D__AIENGINE__ -D__AIE_ARCH__=10 -DDEPLOYMENT_ELF=1 -D__LOC
 Work dir: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/1_1/Release/chesswork
 SFG in : 1_1-F_Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI___ra.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/1_1/Release/chesswork/1_1-F_Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI___ra.sfg)
 SFG out: 1_1-F_Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI___s2.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/1_1/Release/chesswork/1_1-F_Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI___s2.sfg)
-Src file: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp
+Src file: /home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Orthogonalize.cpp
 Function: F_Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI_
 Line    : 64
 Loop    : #20

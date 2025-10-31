@@ -6,5 +6,5 @@ const int BLOCK_PAIR_NUM = BLOCK_NUM/2;
 const int parallel_num = 1;
 const float EPS = 1e-6;
 
-const int IO_NUM = 2;
+const int IO_NUM = 1;
 const int SUB_BLOCK_SIZE = BLOCK_SIZE/IO_NUM;

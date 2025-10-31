@@ -9,10 +9,10 @@ volatile static int sync_buffer[8] = {0, -1};
 #include <adf/sync/mesync.h>
 
 // Define Locks
-#define LOCK_0_1_0_7872 32
+#define LOCK_0_1_0_0 32
 #define LOCK_0_1_1_8032 33
 #define LOCK_0_1_2_0 34
-#define LOCK_0_1_3_0 35
+#define LOCK_0_1_3_4256 35
 
 // Declare shared memory buffers
 v4float buf16[9];
@@ -38,14 +38,14 @@ int main(void) {
   while (proc_0_0_bounds)
   {
 
-    // Kernel call : i22:normalize<32>
+    // Kernel call : i14:normalize<32>
     window_buf16_buf16d_i->setData(*window_buf16_buf16d_i, (float*)buf16, (float*)buf16d, 1-index, 0);
-    window_buf16_buf16d_i->acquire(*window_buf16_buf16d_i, LOCK_0_1_0_7872, LOCK_0_1_1_8032, 1-index);
+    window_buf16_buf16d_i->acquire(*window_buf16_buf16d_i, LOCK_0_1_0_0, LOCK_0_1_1_8032, 1-index);
     window_buf17_buf17d_o->setData(*window_buf17_buf17d_o, (float*)buf17, (float*)buf17d, 1-index, 0);
-    window_buf17_buf17d_o->acquire(*window_buf17_buf17d_o, LOCK_0_1_2_0, LOCK_0_1_3_0, 1-index);
+    window_buf17_buf17d_o->acquire(*window_buf17_buf17d_o, LOCK_0_1_2_0, LOCK_0_1_3_4256, 1-index);
     normalize<32>(window_buf16_buf16d_i[0],window_buf17_buf17d_o[0]);
-    window_buf16_buf16d_i->release(*window_buf16_buf16d_i, LOCK_0_1_0_7872, LOCK_0_1_1_8032, 1-index);
-    window_buf17_buf17d_o->release(*window_buf17_buf17d_o, LOCK_0_1_2_0, LOCK_0_1_3_0, 1-index);
+    window_buf16_buf16d_i->release(*window_buf16_buf16d_i, LOCK_0_1_0_0, LOCK_0_1_1_8032, 1-index);
+    window_buf17_buf17d_o->release(*window_buf17_buf17d_o, LOCK_0_1_2_0, LOCK_0_1_3_4256, 1-index);
     index = 1 - index;
 
     chess_memory_fence();

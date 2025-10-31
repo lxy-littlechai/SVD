@@ -45,11 +45,11 @@
                 ],
                 "iteration_memory_rows": [
                     0,
-                    0
+                    2
                 ],
                 "iteration_memory_addresses": [
                     4,
-                    8196
+                    4
                 ],
                 "multirate_triggers": [
                     false,
@@ -87,19 +87,19 @@
                 ],
                 "iteration_memory_rows": [
                     0,
-                    0,
+                    2,
                     2,
                     0,
                     2,
-                    3
+                    2
                 ],
                 "iteration_memory_addresses": [
-                    8196,
-                    19140,
-                    6116,
-                    4,
+                    5956,
                     164,
-                    164
+                    8196,
+                    16548,
+                    4,
+                    8196
                 ],
                 "multirate_triggers": [
                     false,
@@ -205,9 +205,9 @@
                 "id": 2,
                 "name": "topSweepGraph1_1.in[0][1]",
                 "logical_name": "1_1_sweep_in_R_0",
-                "shim_column": 7,
+                "shim_column": 6,
                 "slaveOrMaster": 0,
-                "stream_id": 4
+                "stream_id": 0
             },
             "plio3": {
                 "id": 3,
@@ -215,50 +215,18 @@
                 "logical_name": "1_1_sweep_out_R_0",
                 "shim_column": 7,
                 "slaveOrMaster": 1,
-                "stream_id": 4
+                "stream_id": 0
             },
             "plio4": {
                 "id": 4,
-                "name": "topSweepGraph1_1.in[1][0]",
-                "logical_name": "1_1_sweep_in_L_1",
+                "name": "topNormGraph1_1.in[0]",
+                "logical_name": "1_1_norm_in_0",
                 "shim_column": 7,
                 "slaveOrMaster": 0,
                 "stream_id": 0
             },
             "plio5": {
                 "id": 5,
-                "name": "topSweepGraph1_1.out[1][0]",
-                "logical_name": "1_1_sweep_out_L_1",
-                "shim_column": 7,
-                "slaveOrMaster": 1,
-                "stream_id": 2
-            },
-            "plio6": {
-                "id": 6,
-                "name": "topSweepGraph1_1.in[1][1]",
-                "logical_name": "1_1_sweep_in_R_1",
-                "shim_column": 8,
-                "slaveOrMaster": 0,
-                "stream_id": 0
-            },
-            "plio7": {
-                "id": 7,
-                "name": "topSweepGraph1_1.out[1][1]",
-                "logical_name": "1_1_sweep_out_R_1",
-                "shim_column": 8,
-                "slaveOrMaster": 1,
-                "stream_id": 0
-            },
-            "plio8": {
-                "id": 8,
-                "name": "topNormGraph1_1.in[0]",
-                "logical_name": "1_1_norm_in_0",
-                "shim_column": 6,
-                "slaveOrMaster": 0,
-                "stream_id": 0
-            },
-            "plio9": {
-                "id": 9,
                 "name": "topNormGraph1_1.out[0]",
                 "logical_name": "1_1_norm_out_0",
                 "shim_column": 6,
@@ -327,7 +295,7 @@
                 "dma_rows": [
                     0,
                     0,
-                    3,
+                    1,
                     0,
                     0,
                     1,
@@ -365,26 +333,10 @@
                     "data_width": 128
                 },
                 "plio4": {
-                    "logical_name": "1_1_sweep_in_L_1",
-                    "data_width": 128
-                },
-                "plio5": {
-                    "logical_name": "1_1_sweep_out_L_1",
-                    "data_width": 128
-                },
-                "plio6": {
-                    "logical_name": "1_1_sweep_in_R_1",
-                    "data_width": 128
-                },
-                "plio7": {
-                    "logical_name": "1_1_sweep_out_R_1",
-                    "data_width": 128
-                },
-                "plio8": {
                     "logical_name": "1_1_norm_in_0",
                     "data_width": 128
                 },
-                "plio9": {
+                "plio5": {
                     "logical_name": "1_1_norm_out_0",
                     "data_width": 128
                 }

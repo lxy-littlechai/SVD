@@ -1,21 +1,33 @@
 
 Lock Report
-portinst: i0_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][0].in[0]):
-  Lock 0 MG(1,0) bankId 1 offset 0x820 size 144 name buf0
-  Lock 1 MG(1,0) bankId 2 offset 0x0 size 144 name buf0d
-portinst: i0_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][0].in[1]):
-  Lock 2 MG(1,0) bankId 0 offset 0x1740 size 144 name buf1
-  Lock 3 MG(1,0) bankId 3 offset 0x1f60 size 144 name buf1d
+portinst: i0_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  orth[0][0].in[0]):
+  Lock 0 MG(1,0) bankId 2 offset 0x0 size 144 name buf0
+  Lock 1 MG(1,0) bankId 1 offset 0xa0 size 144 name buf0d
+portinst: i0_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  orth[0][0].in[1]):
+  Lock 2 MG(1,0) bankId 0 offset 0x1000 size 144 name buf1
+  Lock 3 MG(1,0) bankId 3 offset 0x0 size 144 name buf1d
 portinst: i0_po0 idx[2] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][0].out[0]):
-  Lock 0 MG(1,1) bankId 0 offset 0xa0 size 144 name buf4
-  Lock 1 MG(1,1) bankId 1 offset 0xa0 size 144 name buf4d
+  Lock 0 MG(1,1) bankId 0 offset 0x0 size 144 name buf4
+  Lock 1 MG(1,1) bankId 1 offset 0x140 size 144 name buf4d
 portinst: i0_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][0].out[1]):
-  Lock 2 MG(1,1) bankId 2 offset 0x0 size 144 name buf5
-  Lock 3 MG(1,1) bankId 3 offset 0x0 size 144 name buf5d
-portinst: i1_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[1][0].in[0]):
+  Lock 2 MG(1,1) bankId 2 offset 0xa0 size 144 name buf5
+  Lock 3 MG(1,1) bankId 3 offset 0xa0 size 144 name buf5d
+portinst: i14_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  norm[0].in[0]):
+  Lock 0 MG(0,1) bankId 2 offset 0x0 size 144 name buf16
+  Lock 1 MG(0,1) bankId 0 offset 0x1f60 size 144 name buf16d
+portinst: i14_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  norm[0].out[0]):
+  Lock 2 MG(0,1) bankId 3 offset 0x0 size 144 name buf17
+  Lock 3 MG(0,1) bankId 1 offset 0x10a0 size 144 name buf17d
+portinst: i15_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  norm[1].in[0]):
+  Lock 0 MG(0,0) bankId 1 offset 0x0 size 144 name buf18
+  Lock 1 MG(0,0) bankId 2 offset 0x0 size 144 name buf18d
+portinst: i15_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  norm[1].out[0]):
+  Lock 0 MG(0,2) bankId 2 offset 0x0 size 144 name buf19
+  Lock 1 MG(0,2) bankId 3 offset 0x0 size 144 name buf19d
+portinst: i1_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  orth[1][0].in[0]):
   Lock 0 MG(2,0) bankId 2 offset 0x0 size 144 name buf2
   Lock 1 MG(2,0) bankId 0 offset 0x1f60 size 144 name buf2d
-portinst: i1_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[1][0].in[1]):
+portinst: i1_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  orth[1][0].in[1]):
   Lock 2 MG(2,0) bankId 3 offset 0x0 size 144 name buf3
   Lock 3 MG(2,0) bankId 1 offset 0x10a0 size 144 name buf3d
 portinst: i1_po0 idx[2] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[1][0].out[0]):
@@ -24,26 +36,14 @@ portinst: i1_po0 idx[2] datatype:buff<float> mem out bw_utlization = 1 (variable
 portinst: i1_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[1][0].out[1]):
   Lock 2 MG(2,1) bankId 2 offset 0x0 size 144 name buf7
   Lock 3 MG(2,1) bankId 3 offset 0x0 size 144 name buf7d
-portinst: i22_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  norm[0].in[0]):
-  Lock 0 MG(0,1) bankId 0 offset 0x1ec0 size 144 name buf16
-  Lock 1 MG(0,1) bankId 1 offset 0x1f60 size 144 name buf16d
-portinst: i22_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  norm[0].out[0]):
-  Lock 2 MG(0,1) bankId 3 offset 0x0 size 144 name buf17
-  Lock 3 MG(0,1) bankId 2 offset 0x0 size 144 name buf17d
-portinst: i23_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 0.5 (variable name:  norm[1].in[0]):
-  Lock 0 MG(0,0) bankId 2 offset 0x0 size 144 name buf18
-  Lock 1 MG(0,0) bankId 3 offset 0x0 size 144 name buf18d
-portinst: i23_po0 idx[1] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  norm[1].out[0]):
-  Lock 0 MG(0,2) bankId 1 offset 0x0 size 144 name buf19
-  Lock 1 MG(0,2) bankId 2 offset 0x0 size 144 name buf19d
 portinst: i2_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][1].in[0]):
-  Lock 0 MG(1,1) bankId 0 offset 0xa0 size 144 name buf4
-  Lock 1 MG(1,1) bankId 1 offset 0xa0 size 144 name buf4d
+  Lock 0 MG(1,1) bankId 0 offset 0x0 size 144 name buf4
+  Lock 1 MG(1,1) bankId 1 offset 0x140 size 144 name buf4d
 portinst: i2_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][1].in[1]):
   Lock 0 MG(2,1) bankId 0 offset 0x1f60 size 144 name buf6
   Lock 1 MG(2,1) bankId 1 offset 0x0 size 144 name buf6d
 portinst: i2_po0 idx[2] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][1].out[0]):
-  Lock 0 MG(1,2) bankId 0 offset 0x1f60 size 144 name buf8
+  Lock 0 MG(1,2) bankId 0 offset 0x0 size 144 name buf8
   Lock 1 MG(1,2) bankId 1 offset 0x0 size 144 name buf8d
 portinst: i2_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][1].out[1]):
   Lock 2 MG(1,2) bankId 2 offset 0x0 size 144 name buf10
@@ -55,33 +55,33 @@ portinst: i3_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable 
   Lock 0 MG(3,1) bankId 0 offset 0x0 size 144 name buf5r
   Lock 1 MG(3,1) bankId 1 offset 0x0 size 144 name buf5dr
 portinst: i3_po0 idx[2] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[1][1].out[0]):
-  Lock 0 MG(2,2) bankId 0 offset 0x0 size 144 name buf11
-  Lock 1 MG(2,2) bankId 1 offset 0x0 size 144 name buf11d
+  Lock 0 MG(2,2) bankId 0 offset 0xf60 size 144 name buf11
+  Lock 1 MG(2,2) bankId 1 offset 0x820 size 144 name buf11d
 portinst: i3_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[1][1].out[1]):
   Lock 2 MG(2,2) bankId 2 offset 0x0 size 144 name buf9
   Lock 3 MG(2,2) bankId 3 offset 0x0 size 144 name buf9d
 portinst: i4_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][2].in[0]):
-  Lock 0 MG(1,3) bankId 0 offset 0x0 size 144 name buf9r
-  Lock 1 MG(1,3) bankId 1 offset 0x0 size 144 name buf9dr
+  Lock 4 MG(1,1) bankId 0 offset 0x1ec0 size 144 name buf9r
+  Lock 5 MG(1,1) bankId 1 offset 0xa0 size 144 name buf9dr
 portinst: i4_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[0][2].in[1]):
   Lock 2 MG(1,2) bankId 2 offset 0x0 size 144 name buf10
   Lock 3 MG(1,2) bankId 3 offset 0x0 size 144 name buf10d
-portinst: i4_po0 idx[2] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][2].out[0]):
-  Lock 2 MG(1,3) bankId 0 offset 0xa0 size 144 name buf13
-  Lock 3 MG(1,3) bankId 1 offset 0xa0 size 144 name buf13d
-portinst: i4_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[0][2].out[1]):
-  Lock 4 MG(1,3) bankId 2 offset 0x0 size 144 name buf14
-  Lock 5 MG(1,3) bankId 3 offset 0x0 size 144 name buf14d
+portinst: i4_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  orth[0][2].out[0]):
+  Lock 0 MG(1,3) bankId 0 offset 0x1f60 size 144 name buf13
+  Lock 1 MG(1,3) bankId 1 offset 0x0 size 144 name buf13d
+portinst: i4_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  orth[0][2].out[1]):
+  Lock 2 MG(1,3) bankId 2 offset 0x0 size 144 name buf14
+  Lock 3 MG(1,3) bankId 3 offset 0x0 size 144 name buf14d
 portinst: i5_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[1][2].in[0]):
-  Lock 0 MG(1,2) bankId 0 offset 0x1f60 size 144 name buf8
+  Lock 0 MG(1,2) bankId 0 offset 0x0 size 144 name buf8
   Lock 1 MG(1,2) bankId 1 offset 0x0 size 144 name buf8d
 portinst: i5_pi1 idx[1] datatype:buff<float> mem in bw_utlization = 1 (variable name:  orth[1][2].in[1]):
-  Lock 0 MG(2,2) bankId 0 offset 0x0 size 144 name buf11
-  Lock 1 MG(2,2) bankId 1 offset 0x0 size 144 name buf11d
-portinst: i5_po0 idx[2] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[1][2].out[0]):
-  Lock 0 MG(2,3) bankId 0 offset 0x0 size 144 name buf12
+  Lock 0 MG(2,2) bankId 0 offset 0xf60 size 144 name buf11
+  Lock 1 MG(2,2) bankId 1 offset 0x820 size 144 name buf11d
+portinst: i5_po0 idx[2] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  orth[1][2].out[0]):
+  Lock 0 MG(2,3) bankId 0 offset 0x1f60 size 144 name buf12
   Lock 1 MG(2,3) bankId 1 offset 0x0 size 144 name buf12d
-portinst: i5_po1 idx[3] datatype:buff<float> mem out bw_utlization = 1 (variable name:  orth[1][2].out[1]):
+portinst: i5_po1 idx[3] datatype:buff<float> mem out bw_utlization = 0.5 (variable name:  orth[1][2].out[1]):
   Lock 2 MG(2,3) bankId 2 offset 0x0 size 144 name buf15
   Lock 3 MG(2,3) bankId 3 offset 0x0 size 144 name buf15d
 

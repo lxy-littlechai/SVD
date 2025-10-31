@@ -9,14 +9,14 @@ volatile static int sync_buffer[8] = {0, -1};
 #include <adf/sync/mesync.h>
 
 // Define Locks
-#define LOCK_1_0_0_2080 48
-#define LOCK_1_0_1_0 49
-#define LOCK_1_0_2_5952 50
-#define LOCK_1_0_3_8032 51
-#define LOCK_1_1_0_160 32
-#define LOCK_1_1_1_160 33
-#define LOCK_1_1_2_0 34
-#define LOCK_1_1_3_0 35
+#define LOCK_1_0_0_0 48
+#define LOCK_1_0_1_160 49
+#define LOCK_1_0_2_4096 50
+#define LOCK_1_0_3_0 51
+#define LOCK_1_1_0_0 32
+#define LOCK_1_1_1_320 33
+#define LOCK_1_1_2_160 34
+#define LOCK_1_1_3_160 35
 
 // Declare shared memory buffers
 v4float buf0[9];
@@ -50,18 +50,18 @@ int main(void) {
 
     // Kernel call : i0:orthogonalize<32>
     window_buf0_buf0d_i->setData(*window_buf0_buf0d_i, (float*)buf0, (float*)buf0d, 1-index, 0);
-    window_buf0_buf0d_i->acquire(*window_buf0_buf0d_i, LOCK_1_0_0_2080, LOCK_1_0_1_0, 1-index);
+    window_buf0_buf0d_i->acquire(*window_buf0_buf0d_i, LOCK_1_0_0_0, LOCK_1_0_1_160, 1-index);
     window_buf1_buf1d_i->setData(*window_buf1_buf1d_i, (float*)buf1, (float*)buf1d, 1-index, 0);
-    window_buf1_buf1d_i->acquire(*window_buf1_buf1d_i, LOCK_1_0_2_5952, LOCK_1_0_3_8032, 1-index);
+    window_buf1_buf1d_i->acquire(*window_buf1_buf1d_i, LOCK_1_0_2_4096, LOCK_1_0_3_0, 1-index);
     window_buf4_buf4d_o->setData(*window_buf4_buf4d_o, (float*)buf4, (float*)buf4d, 1-index, 0);
-    window_buf4_buf4d_o->acquire(*window_buf4_buf4d_o, LOCK_1_1_0_160, LOCK_1_1_1_160, 1-index);
+    window_buf4_buf4d_o->acquire(*window_buf4_buf4d_o, LOCK_1_1_0_0, LOCK_1_1_1_320, 1-index);
     window_buf5_buf5d_o->setData(*window_buf5_buf5d_o, (float*)buf5, (float*)buf5d, 1-index, 0);
-    window_buf5_buf5d_o->acquire(*window_buf5_buf5d_o, LOCK_1_1_2_0, LOCK_1_1_3_0, 1-index);
+    window_buf5_buf5d_o->acquire(*window_buf5_buf5d_o, LOCK_1_1_2_160, LOCK_1_1_3_160, 1-index);
     orthogonalize<32>(window_buf0_buf0d_i[0],window_buf1_buf1d_i[0],window_buf4_buf4d_o[0],window_buf5_buf5d_o[0]);
-    window_buf0_buf0d_i->release(*window_buf0_buf0d_i, LOCK_1_0_0_2080, LOCK_1_0_1_0, 1-index);
-    window_buf1_buf1d_i->release(*window_buf1_buf1d_i, LOCK_1_0_2_5952, LOCK_1_0_3_8032, 1-index);
-    window_buf4_buf4d_o->release(*window_buf4_buf4d_o, LOCK_1_1_0_160, LOCK_1_1_1_160, 1-index);
-    window_buf5_buf5d_o->release(*window_buf5_buf5d_o, LOCK_1_1_2_0, LOCK_1_1_3_0, 1-index);
+    window_buf0_buf0d_i->release(*window_buf0_buf0d_i, LOCK_1_0_0_0, LOCK_1_0_1_160, 1-index);
+    window_buf1_buf1d_i->release(*window_buf1_buf1d_i, LOCK_1_0_2_4096, LOCK_1_0_3_0, 1-index);
+    window_buf4_buf4d_o->release(*window_buf4_buf4d_o, LOCK_1_1_0_0, LOCK_1_1_1_320, 1-index);
+    window_buf5_buf5d_o->release(*window_buf5_buf5d_o, LOCK_1_1_2_160, LOCK_1_1_3_160, 1-index);
     index = 1 - index;
 
     chess_memory_fence();

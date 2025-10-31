@@ -83,10 +83,6 @@
         "net23",
         "net24",
         "net25",
-        "net26",
-        "net27",
-        "net28",
-        "net29",
         "D_net0",
         "D_net1",
         "D_net2",
@@ -103,10 +99,10 @@
         "D_net13",
         "D_net14",
         "D_net15",
-        "D_net24",
-        "D_net25",
-        "D_net26",
-        "D_net27"
+        "D_net20",
+        "D_net21",
+        "D_net22",
+        "D_net23"
     ],
     "Non-Netlist Instance Placement": [],
     "Instance Placement": [],
@@ -125,17 +121,17 @@
         },
         {
             "PT2": [
-                "topSweepGraph1_1.sweepGraph.orth[0][1]"
-            ]
-        },
-        {
-            "PT3": [
                 "topNormGraph1_1.normGraph.norm[0]"
             ]
         },
         {
-            "PT4": [
+            "PT3": [
                 "topNormGraph1_1.normGraph.norm[1]"
+            ]
+        },
+        {
+            "PT4": [
+                "topSweepGraph1_1.sweepGraph.orth[0][1]"
             ]
         },
         {
@@ -294,11 +290,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "dstPort",
@@ -355,11 +351,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "dstPort",
@@ -1034,11 +1030,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "IsPing",
@@ -1095,11 +1091,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "IsPing",
@@ -1802,11 +1798,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "dstPort",
@@ -1859,11 +1855,11 @@
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]/po0"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]/po1"
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "dstPort",
@@ -2494,11 +2490,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "IsPong",
@@ -2551,11 +2547,11 @@
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]/pi0"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]/pi1"
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "IsPong",
@@ -3070,11 +3066,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -3111,11 +3107,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -3570,11 +3566,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -3611,11 +3607,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -3718,80 +3714,6 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING 1_1_sweep_in_L_1"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net19",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING 1_1_sweep_out_L_1"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net20",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
                     "Val": "STRING 1_1_sweep_in_R_0"
                 },
                 {
@@ -3821,7 +3743,7 @@
             ]
         },
         {
-            "Name": "net21",
+            "Name": "net19",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -3858,81 +3780,7 @@
             ]
         },
         {
-            "Name": "net22",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING 1_1_sweep_in_R_1"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net23",
-            "attrs": [
-                {
-                    "Key": "is_edge",
-                    "Val": "BOOL 1"
-                },
-                {
-                    "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
-                },
-                {
-                    "Key": "srcPort",
-                    "Val": "STRING po0"
-                },
-                {
-                    "Key": "dstInstance",
-                    "Val": "STRING 1_1_sweep_out_R_1"
-                },
-                {
-                    "Key": "dstPort",
-                    "Val": "STRING pi0"
-                },
-                {
-                    "Key": "numLocks",
-                    "Val": "INT 0"
-                },
-                {
-                    "Key": "edgeType",
-                    "Val": "STRING pktstream"
-                },
-                {
-                    "Key": "ephemeral",
-                    "Val": "BOOL 0"
-                }
-            ]
-        },
-        {
-            "Name": "net24",
+            "Name": "net20",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -3973,7 +3821,7 @@
             ]
         },
         {
-            "Name": "net25",
+            "Name": "net21",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4014,7 +3862,7 @@
             ]
         },
         {
-            "Name": "net26",
+            "Name": "net22",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4055,7 +3903,7 @@
             ]
         },
         {
-            "Name": "net27",
+            "Name": "net23",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4096,7 +3944,7 @@
             ]
         },
         {
-            "Name": "net28",
+            "Name": "net24",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4133,7 +3981,7 @@
             ]
         },
         {
-            "Name": "net29",
+            "Name": "net25",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4260,11 +4108,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][0]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][0]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -4301,11 +4149,11 @@
                 },
                 {
                     "Key": "srcInstance",
-                    "Val": "STRING topSweepGraph1_1.sp[1][1]"
+                    "Val": "STRING topSweepGraph1_1.sp[0][1]"
                 },
                 {
                     "Key": "srcPort",
-                    "Val": "STRING po0"
+                    "Val": "STRING po1"
                 },
                 {
                     "Key": "dstInstance",
@@ -4760,11 +4608,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][0]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][0]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -4801,11 +4649,11 @@
                 },
                 {
                     "Key": "dstInstance",
-                    "Val": "STRING topSweepGraph1_1.mg[1][1]"
+                    "Val": "STRING topSweepGraph1_1.mg[0][1]"
                 },
                 {
                     "Key": "dstPort",
-                    "Val": "STRING pi0"
+                    "Val": "STRING pi1"
                 },
                 {
                     "Key": "numLocks",
@@ -4826,7 +4674,7 @@
             ]
         },
         {
-            "Name": "D_net24",
+            "Name": "D_net20",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4867,7 +4715,7 @@
             ]
         },
         {
-            "Name": "D_net25",
+            "Name": "D_net21",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4908,7 +4756,7 @@
             ]
         },
         {
-            "Name": "D_net26",
+            "Name": "D_net22",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4949,7 +4797,7 @@
             ]
         },
         {
-            "Name": "D_net27",
+            "Name": "D_net23",
             "attrs": [
                 {
                     "Key": "is_edge",
@@ -4991,6 +4839,78 @@
         }
     ],
     "Netlist Element Attrs": [
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][1]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][1]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][1]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][1]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
         {
             "Name": "topNormGraph1_1.normGraph.norm[0]/pi0",
             "attrs": [
@@ -5056,6 +4976,78 @@
         },
         {
             "Name": "topNormGraph1_1.mg[0]/pi1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][2]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][2]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][2]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][2]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][0]/po0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sp[0][0]/po1",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "AIE.UTILIZATION",
+                    "Val": "DOUBLE 0.500000"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.mg[0][0]/pi1",
             "attrs": [
                 {
                     "Key": "AIE.UTILIZATION",

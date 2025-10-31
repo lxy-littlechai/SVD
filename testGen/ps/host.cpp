@@ -16,14 +16,7 @@
 #include "./svd.hpp"
 #include "../SystemConfig.h"
 
-float getRand(float L, float R) {
-    static std::random_device rd;
-    static std::mt19937 gen(rd());
-    static std::uniform_real_distribution<float> dis(L, R);
-    float result = dis(gen);
-    
-    return result;
-}
+
 
 using namespace std;
 int main(int argc, char** argv) {
@@ -70,11 +63,14 @@ int main(int argc, char** argv) {
 
     for(int k = 0;k < 1;k ++){
       int index = 0, matrix_id = 0;
-      for(int j = 0;j < COL;j ++) {
-        for(int i = 0;i < ROW;i ++) {
-            data[k][index ++] = getRand(-50, 50);
-        }
-      }
+      std::string filename = to_string(k) + "test.txt";
+      generateMatrix<COL, ROW>(filename);
+      read<COL, ROW>(filename, data[k]);
+      // for(int j = 0;j < COL;j ++) {
+      //   for(int i = 0;i < ROW;i ++) {
+      //       data[k][index ++] = getRand(-50, 50);
+      //   }
+      // }
 
       for(int i = 0;i < 100;i ++) {
         CONV[k][i] = 0;

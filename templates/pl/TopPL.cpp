@@ -293,6 +293,16 @@ void RoundRobin(axis_stream_sys& syscontrol,
     for(int i = 0;i < SINGLE_SWEEP_TIMES;i ++) {
 
       const int STAGE1_SIZE = SUB_BLOCK_SIZE*ROW/ELEM_NUM;
+
+      for(int j = 0;j < STAGE1_SIZE;j ++) {
+        #pragma HLS PIPELINE II = 1
+        for(int k = 0;k < IO_NUM;k ++) {
+          #pragma HLS unroll
+          ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
+          send_fifo_L[0][k].write(tmp_R0);
+        }
+      }
+      
       {% for p in range(0, parallel_num) %}
         for(int j = 0;j < STAGE1_SIZE;j ++) {
           #pragma HLS PIPELINE II = 1
@@ -303,15 +313,6 @@ void RoundRobin(axis_stream_sys& syscontrol,
           }
         }
       {% endfor %}
-
-      for(int j = 0;j < STAGE1_SIZE;j ++) {
-        #pragma HLS PIPELINE II = 1
-        for(int k = 0;k < IO_NUM;k ++) {
-          #pragma HLS unroll
-          ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
-          send_fifo_L[0][k].write(tmp_R0);
-        }
-      }
 
       {% for p in range(1, parallel_num) %}
         for(int j = 0;j < STAGE1_SIZE;j ++) {

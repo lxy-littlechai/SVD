@@ -1,11 +1,11 @@
 #define 1_1_sweep_in_L_0_0 0
+#define 1_1_sweep_in_L_0_1 1
 #define 1_1_sweep_out_L_0_0 0
+#define 1_1_sweep_out_L_0_1 1
 #define 1_1_sweep_in_R_0_0 0
+#define 1_1_sweep_in_R_0_1 1
 #define 1_1_sweep_out_R_0_0 0
-#define 1_1_sweep_in_L_1_0 0
-#define 1_1_sweep_out_L_1_0 0
-#define 1_1_sweep_in_R_1_0 0
-#define 1_1_sweep_out_R_1_0 0
+#define 1_1_sweep_out_R_0_1 1
 #define 1_1_norm_in_0_0 0
 #define 1_1_norm_in_0_1 1
 #define 1_1_norm_out_0_0 0

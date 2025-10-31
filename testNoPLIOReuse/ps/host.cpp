@@ -16,14 +16,6 @@
 #include "./svd.hpp"
 #include "../SystemConfig.h"
 
-float getRand(float L, float R) {
-    static std::random_device rd;
-    static std::mt19937 gen(rd());
-    static std::uniform_real_distribution<float> dis(L, R);
-    float result = dis(gen);
-    
-    return result;
-}
 
 using namespace std;
 int main(int argc, char** argv) {

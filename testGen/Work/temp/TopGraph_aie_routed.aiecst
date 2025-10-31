@@ -9,8 +9,8 @@
       "reserved_memory": {
         "column": 1,
         "row": 0,
-        "bankId": 1,
-        "offset": 0
+        "bankId": 0,
+        "offset": 5952
       }
     },
     "topSweepGraph1_1.sweepGraph.orth[1][0]": {
@@ -22,57 +22,20 @@
       "reserved_memory": {
         "column": 1,
         "row": 0,
-        "bankId": 0,
-        "offset": 0
+        "bankId": 2,
+        "offset": 160
       }
     },
     "1_1_sweep_in_R_0": {
       "shim": {
-        "column": 7,
-        "channel": 4
+        "column": 6,
+        "channel": 0
       }
     },
     "1_1_sweep_out_R_0": {
       "shim": {
         "column": 7,
-        "channel": 4
-      }
-    },
-    "1_1_sweep_in_L_1": {
-      "shim": {
-        "column": 7,
         "channel": 0
-      }
-    },
-    "1_1_sweep_out_L_1": {
-      "shim": {
-        "column": 7,
-        "channel": 2
-      }
-    },
-    "1_1_sweep_in_R_1": {
-      "shim": {
-        "column": 8,
-        "channel": 0
-      }
-    },
-    "1_1_sweep_out_R_1": {
-      "shim": {
-        "column": 8,
-        "channel": 0
-      }
-    },
-    "topSweepGraph1_1.sweepGraph.orth[0][1]": {
-      "tile": {
-        "column": 1,
-        "row": 1,
-        "tile_type": "core"
-      },
-      "reserved_memory": {
-        "column": 1,
-        "row": 0,
-        "bankId": 2,
-        "offset": 2752
       }
     },
     "topNormGraph1_1.normGraph.norm[0]": {
@@ -96,14 +59,14 @@
       },
       "reserved_memory": {
         "column": 0,
-        "row": 0,
-        "bankId": 1,
+        "row": 2,
+        "bankId": 0,
         "offset": 0
       }
     },
     "1_1_norm_in_0": {
       "shim": {
-        "column": 6,
+        "column": 7,
         "channel": 0
       }
     },
@@ -111,6 +74,19 @@
       "shim": {
         "column": 6,
         "channel": 2
+      }
+    },
+    "topSweepGraph1_1.sweepGraph.orth[0][1]": {
+      "tile": {
+        "column": 1,
+        "row": 1,
+        "tile_type": "core"
+      },
+      "reserved_memory": {
+        "column": 1,
+        "row": 2,
+        "bankId": 0,
+        "offset": 160
       }
     },
     "topSweepGraph1_1.sweepGraph.orth[1][1]": {
@@ -123,7 +99,7 @@
         "column": 2,
         "row": 2,
         "bankId": 0,
-        "offset": 160
+        "offset": 0
       }
     },
     "topSweepGraph1_1.sweepGraph.orth[0][2]": {
@@ -135,8 +111,8 @@
       "reserved_memory": {
         "column": 0,
         "row": 2,
-        "bankId": 0,
-        "offset": 6112
+        "bankId": 1,
+        "offset": 0
       }
     },
     "topSweepGraph1_1.sweepGraph.orth[1][2]": {
@@ -147,9 +123,9 @@
       },
       "reserved_memory": {
         "column": 2,
-        "row": 3,
-        "bankId": 0,
-        "offset": 160
+        "row": 2,
+        "bankId": 1,
+        "offset": 0
       }
     },
     "1_1_sweep_in_L_0": {
@@ -170,13 +146,13 @@
       "buffers": [{
           "column": 1,
           "row": 0,
-          "bankId": 1,
-          "offset": 2080
+          "bankId": 2,
+          "offset": 0
         }, {
           "column": 1,
           "row": 0,
-          "bankId": 2,
-          "offset": 0
+          "bankId": 1,
+          "offset": 160
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][0].in[1]": {
@@ -184,12 +160,12 @@
           "column": 1,
           "row": 0,
           "bankId": 0,
-          "offset": 5952
+          "offset": 4096
         }, {
           "column": 1,
           "row": 0,
           "bankId": 3,
-          "offset": 8032
+          "offset": 0
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][0].out[0]": {
@@ -197,12 +173,12 @@
           "column": 1,
           "row": 1,
           "bankId": 0,
-          "offset": 160
+          "offset": 0
         }, {
           "column": 1,
           "row": 1,
           "bankId": 1,
-          "offset": 160
+          "offset": 320
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][0].out[1]": {
@@ -210,12 +186,12 @@
           "column": 1,
           "row": 1,
           "bankId": 2,
-          "offset": 0
+          "offset": 160
         }, {
           "column": 1,
           "row": 1,
           "bankId": 3,
-          "offset": 0
+          "offset": 160
         }]
     },
     "topSweepGraph1_1.sp[0][1].out[0]": {
@@ -223,12 +199,25 @@
           "column": 1,
           "row": 0,
           "bankId": 0,
-          "offset": 5952
+          "offset": 4096
         }, {
           "column": 1,
           "row": 0,
           "bankId": 3,
-          "offset": 8032
+          "offset": 0
+        }]
+    },
+    "topSweepGraph1_1.sp[0][1].out[1]": {
+      "buffers": [{
+          "column": 2,
+          "row": 0,
+          "bankId": 3,
+          "offset": 0
+        }, {
+          "column": 2,
+          "row": 0,
+          "bankId": 1,
+          "offset": 4256
         }]
     },
     "topSweepGraph1_1.mg[0][1].in[0]": {
@@ -236,36 +225,127 @@
           "column": 1,
           "row": 3,
           "bankId": 0,
-          "offset": 160
+          "offset": 8032
         }, {
           "column": 1,
           "row": 3,
           "bankId": 1,
-          "offset": 160
+          "offset": 0
         }]
     },
-    "topSweepGraph1_1.sp[1][0].out[0]": {
+    "topSweepGraph1_1.mg[0][1].in[1]": {
       "buffers": [{
           "column": 2,
-          "row": 0,
+          "row": 3,
           "bankId": 2,
           "offset": 0
         }, {
           "column": 2,
-          "row": 0,
+          "row": 3,
+          "bankId": 3,
+          "offset": 0
+        }]
+    },
+    "topNormGraph1_1.normGraph.norm[0].in[0]": {
+      "buffers": [{
+          "column": 0,
+          "row": 1,
+          "bankId": 2,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 1,
           "bankId": 0,
           "offset": 8032
         }]
     },
-    "topSweepGraph1_1.mg[1][0].in[0]": {
+    "topNormGraph1_1.normGraph.norm[0].out[0]": {
       "buffers": [{
-          "column": 1,
-          "row": 3,
+          "column": 0,
+          "row": 1,
+          "bankId": 3,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 1,
+          "bankId": 1,
+          "offset": 4256
+        }]
+    },
+    "topNormGraph1_1.normGraph.norm[1].in[0]": {
+      "buffers": [{
+          "column": 0,
+          "row": 0,
+          "bankId": 1,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 0,
+          "bankId": 2,
+          "offset": 0
+        }]
+    },
+    "topNormGraph1_1.normGraph.norm[1].out[0]": {
+      "buffers": [{
+          "column": 0,
+          "row": 2,
           "bankId": 2,
           "offset": 0
         }, {
-          "column": 1,
-          "row": 3,
+          "column": 0,
+          "row": 2,
+          "bankId": 3,
+          "offset": 0
+        }]
+    },
+    "topNormGraph1_1.sp[0].out[0]": {
+      "buffers": [{
+          "column": 0,
+          "row": 1,
+          "bankId": 2,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 1,
+          "bankId": 0,
+          "offset": 8032
+        }]
+    },
+    "topNormGraph1_1.sp[0].out[1]": {
+      "buffers": [{
+          "column": 0,
+          "row": 0,
+          "bankId": 1,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 0,
+          "bankId": 2,
+          "offset": 0
+        }]
+    },
+    "topNormGraph1_1.mg[0].in[0]": {
+      "buffers": [{
+          "column": 0,
+          "row": 1,
+          "bankId": 3,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 1,
+          "bankId": 1,
+          "offset": 4256
+        }]
+    },
+    "topNormGraph1_1.mg[0].in[1]": {
+      "buffers": [{
+          "column": 0,
+          "row": 2,
+          "bankId": 2,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 2,
           "bankId": 3,
           "offset": 0
         }]
@@ -322,147 +402,17 @@
           "offset": 0
         }]
     },
-    "topSweepGraph1_1.sp[1][1].out[0]": {
-      "buffers": [{
-          "column": 2,
-          "row": 0,
-          "bankId": 3,
-          "offset": 0
-        }, {
-          "column": 2,
-          "row": 0,
-          "bankId": 1,
-          "offset": 4256
-        }]
-    },
-    "topSweepGraph1_1.mg[1][1].in[0]": {
-      "buffers": [{
-          "column": 2,
-          "row": 3,
-          "bankId": 2,
-          "offset": 0
-        }, {
-          "column": 2,
-          "row": 3,
-          "bankId": 3,
-          "offset": 0
-        }]
-    },
-    "topNormGraph1_1.normGraph.norm[0].in[0]": {
-      "buffers": [{
-          "column": 0,
-          "row": 1,
-          "bankId": 0,
-          "offset": 7872
-        }, {
-          "column": 0,
-          "row": 1,
-          "bankId": 1,
-          "offset": 8032
-        }]
-    },
-    "topNormGraph1_1.normGraph.norm[0].out[0]": {
-      "buffers": [{
-          "column": 0,
-          "row": 1,
-          "bankId": 3,
-          "offset": 0
-        }, {
-          "column": 0,
-          "row": 1,
-          "bankId": 2,
-          "offset": 0
-        }]
-    },
-    "topNormGraph1_1.normGraph.norm[1].in[0]": {
-      "buffers": [{
-          "column": 0,
-          "row": 0,
-          "bankId": 2,
-          "offset": 0
-        }, {
-          "column": 0,
-          "row": 0,
-          "bankId": 3,
-          "offset": 0
-        }]
-    },
-    "topNormGraph1_1.normGraph.norm[1].out[0]": {
-      "buffers": [{
-          "column": 0,
-          "row": 2,
-          "bankId": 1,
-          "offset": 0
-        }, {
-          "column": 0,
-          "row": 2,
-          "bankId": 2,
-          "offset": 0
-        }]
-    },
-    "topNormGraph1_1.sp[0].out[0]": {
-      "buffers": [{
-          "column": 0,
-          "row": 1,
-          "bankId": 0,
-          "offset": 7872
-        }, {
-          "column": 0,
-          "row": 1,
-          "bankId": 1,
-          "offset": 8032
-        }]
-    },
-    "topNormGraph1_1.sp[0].out[1]": {
-      "buffers": [{
-          "column": 0,
-          "row": 0,
-          "bankId": 2,
-          "offset": 0
-        }, {
-          "column": 0,
-          "row": 0,
-          "bankId": 3,
-          "offset": 0
-        }]
-    },
-    "topNormGraph1_1.mg[0].in[0]": {
-      "buffers": [{
-          "column": 0,
-          "row": 1,
-          "bankId": 3,
-          "offset": 0
-        }, {
-          "column": 0,
-          "row": 1,
-          "bankId": 2,
-          "offset": 0
-        }]
-    },
-    "topNormGraph1_1.mg[0].in[1]": {
-      "buffers": [{
-          "column": 0,
-          "row": 2,
-          "bankId": 1,
-          "offset": 0
-        }, {
-          "column": 0,
-          "row": 2,
-          "bankId": 2,
-          "offset": 0
-        }]
-    },
     "topSweepGraph1_1.sweepGraph.orth[0][1].in[0]": {
       "buffers": [{
           "column": 1,
           "row": 1,
           "bankId": 0,
-          "offset": 160
+          "offset": 0
         }, {
           "column": 1,
           "row": 1,
           "bankId": 1,
-          "offset": 160
+          "offset": 320
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][1].in[1]": {
@@ -483,7 +433,7 @@
           "column": 1,
           "row": 2,
           "bankId": 0,
-          "offset": 8032
+          "offset": 0
         }, {
           "column": 1,
           "row": 2,
@@ -535,12 +485,12 @@
           "column": 2,
           "row": 2,
           "bankId": 0,
-          "offset": 0
+          "offset": 3936
         }, {
           "column": 2,
           "row": 2,
           "bankId": 1,
-          "offset": 0
+          "offset": 2080
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[1][1].out[1]": {
@@ -559,14 +509,14 @@
     "topSweepGraph1_1.sweepGraph.orth[0][2].in[0]": {
       "buffers": [{
           "column": 1,
-          "row": 3,
+          "row": 1,
           "bankId": 0,
-          "offset": 0
+          "offset": 7872
         }, {
           "column": 1,
-          "row": 3,
+          "row": 1,
           "bankId": 1,
-          "offset": 0
+          "offset": 160
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][2].in[1]": {
@@ -587,12 +537,12 @@
           "column": 1,
           "row": 3,
           "bankId": 0,
-          "offset": 160
+          "offset": 8032
         }, {
           "column": 1,
           "row": 3,
           "bankId": 1,
-          "offset": 160
+          "offset": 0
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][2].out[1]": {
@@ -613,7 +563,7 @@
           "column": 1,
           "row": 2,
           "bankId": 0,
-          "offset": 8032
+          "offset": 0
         }, {
           "column": 1,
           "row": 2,
@@ -626,12 +576,12 @@
           "column": 2,
           "row": 2,
           "bankId": 0,
-          "offset": 0
+          "offset": 3936
         }, {
           "column": 2,
           "row": 2,
           "bankId": 1,
-          "offset": 0
+          "offset": 2080
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[1][2].out[0]": {
@@ -639,7 +589,7 @@
           "column": 2,
           "row": 3,
           "bankId": 0,
-          "offset": 0
+          "offset": 8032
         }, {
           "column": 2,
           "row": 3,
@@ -664,13 +614,26 @@
       "buffers": [{
           "column": 1,
           "row": 0,
-          "bankId": 1,
-          "offset": 2080
+          "bankId": 2,
+          "offset": 0
         }, {
           "column": 1,
           "row": 0,
+          "bankId": 1,
+          "offset": 160
+        }]
+    },
+    "topSweepGraph1_1.sp[0][0].out[1]": {
+      "buffers": [{
+          "column": 2,
+          "row": 0,
           "bankId": 2,
           "offset": 0
+        }, {
+          "column": 2,
+          "row": 0,
+          "bankId": 0,
+          "offset": 8032
         }]
     },
     "topSweepGraph1_1.mg[0][0].in[0]": {
@@ -678,11 +641,24 @@
           "column": 2,
           "row": 3,
           "bankId": 0,
-          "offset": 0
+          "offset": 8032
         }, {
           "column": 2,
           "row": 3,
           "bankId": 1,
+          "offset": 0
+        }]
+    },
+    "topSweepGraph1_1.mg[0][0].in[1]": {
+      "buffers": [{
+          "column": 1,
+          "row": 3,
+          "bankId": 2,
+          "offset": 0
+        }, {
+          "column": 1,
+          "row": 3,
+          "bankId": 3,
           "offset": 0
         }]
     }

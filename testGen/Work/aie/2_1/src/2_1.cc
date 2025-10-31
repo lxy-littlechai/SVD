@@ -13,8 +13,8 @@ volatile static int sync_buffer[8] = {0, -1};
 #define LOCK_2_1_3_0 19
 #define LOCK_3_1_0_0 48
 #define LOCK_3_1_1_0 49
-#define LOCK_2_2_0_0 32
-#define LOCK_2_2_1_0 33
+#define LOCK_2_2_0_3936 32
+#define LOCK_2_2_1_2080 33
 #define LOCK_2_2_2_0 34
 #define LOCK_2_2_3_0 35
 
@@ -54,13 +54,13 @@ int main(void) {
     window_buf5r_buf5dr_i->setData(*window_buf5r_buf5dr_i, (float*)buf5r, (float*)buf5dr, 1-index, 0);
     window_buf5r_buf5dr_i->acquire(*window_buf5r_buf5dr_i, LOCK_3_1_0_0, LOCK_3_1_1_0, 1-index);
     window_buf11_buf11d_o->setData(*window_buf11_buf11d_o, (float*)buf11, (float*)buf11d, 1-index, 0);
-    window_buf11_buf11d_o->acquire(*window_buf11_buf11d_o, LOCK_2_2_0_0, LOCK_2_2_1_0, 1-index);
+    window_buf11_buf11d_o->acquire(*window_buf11_buf11d_o, LOCK_2_2_0_3936, LOCK_2_2_1_2080, 1-index);
     window_buf9_buf9d_o->setData(*window_buf9_buf9d_o, (float*)buf9, (float*)buf9d, 1-index, 0);
     window_buf9_buf9d_o->acquire(*window_buf9_buf9d_o, LOCK_2_2_2_0, LOCK_2_2_3_0, 1-index);
     orthogonalize<32>(window_buf7_buf7d_i[0],window_buf5r_buf5dr_i[0],window_buf11_buf11d_o[0],window_buf9_buf9d_o[0]);
     window_buf7_buf7d_i->release(*window_buf7_buf7d_i, LOCK_2_1_2_0, LOCK_2_1_3_0, 1-index);
     window_buf5r_buf5dr_i->release(*window_buf5r_buf5dr_i, LOCK_3_1_0_0, LOCK_3_1_1_0, 1-index);
-    window_buf11_buf11d_o->release(*window_buf11_buf11d_o, LOCK_2_2_0_0, LOCK_2_2_1_0, 1-index);
+    window_buf11_buf11d_o->release(*window_buf11_buf11d_o, LOCK_2_2_0_3936, LOCK_2_2_1_2080, 1-index);
     window_buf9_buf9d_o->release(*window_buf9_buf9d_o, LOCK_2_2_2_0, LOCK_2_2_3_0, 1-index);
     index = 1 - index;
 

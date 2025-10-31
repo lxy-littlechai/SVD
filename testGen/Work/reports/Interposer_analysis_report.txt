@@ -8,35 +8,25 @@ Downsizer, resize width: 128
 Port Name : i11_pi0(Variable Name : out[0][1].in[0]) straightthru <stream> : Chnl 
 Upsizer, resize width: 128 
 Port Name : i12_po0(Variable Name : sp[0][1].out[0]) straightthru <stream> : Chnl 
+Port Name : i12_po1(Variable Name : sp[0][1].out[1]) straightthru <stream> : Chnl 
 Port Name : i13_pi0(Variable Name : mg[0][1].in[0]) straightthru <stream> : Chnl 
-Port Name : i14_po0(Variable Name : in[1][0].out[0]) straightthru <stream> : Chnl 
+Port Name : i13_pi1(Variable Name : mg[0][1].in[1]) straightthru <stream> : Chnl 
+Port Name : i14_pi0(Variable Name : norm[0].in[0]) adaptor <stream,memory> : Lock Buff DMA 
+Port Name : i14_po0(Variable Name : norm[0].out[0]) adaptor <memory,stream> : Lock Buff DMA 
+Port Name : i15_pi0(Variable Name : norm[1].in[0]) adaptor <stream,memory> : Lock Buff DMA 
+Port Name : i15_po0(Variable Name : norm[1].out[0]) adaptor <memory,stream> : Lock Buff DMA 
+Port Name : i16_po0(Variable Name : in[0].out[0]) straightthru <stream> : Chnl 
 Downsizer, resize width: 128 
-Port Name : i15_pi0(Variable Name : out[1][0].in[0]) straightthru <stream> : Chnl 
+Port Name : i17_pi0(Variable Name : out[0].in[0]) straightthru <stream> : Chnl 
 Upsizer, resize width: 128 
-Port Name : i16_po0(Variable Name : sp[1][0].out[0]) straightthru <stream> : Chnl 
-Port Name : i17_pi0(Variable Name : mg[1][0].in[0]) straightthru <stream> : Chnl 
-Port Name : i18_po0(Variable Name : in[1][1].out[0]) straightthru <stream> : Chnl 
-Downsizer, resize width: 128 
-Port Name : i19_pi0(Variable Name : out[1][1].in[0]) straightthru <stream> : Chnl 
-Upsizer, resize width: 128 
+Port Name : i18_po0(Variable Name : sp[0].out[0]) straightthru <stream> : Chnl 
+Port Name : i18_po1(Variable Name : sp[0].out[1]) straightthru <stream> : Chnl 
+Port Name : i19_pi0(Variable Name : mg[0].in[0]) straightthru <stream> : Chnl 
+Port Name : i19_pi1(Variable Name : mg[0].in[1]) straightthru <stream> : Chnl 
 Port Name : i1_pi0(Variable Name : orth[1][0].in[0]) adaptor <stream,memory> : Lock Buff DMA 
 Port Name : i1_pi1(Variable Name : orth[1][0].in[1]) adaptor <stream,memory> : Lock Buff DMA 
 Port Name : i1_po0(Variable Name : orth[1][0].out[0]) straightthru <memory> : Lock Buff 
 Port Name : i1_po1(Variable Name : orth[1][0].out[1]) straightthru <memory> : Lock Buff 
-Port Name : i20_po0(Variable Name : sp[1][1].out[0]) straightthru <stream> : Chnl 
-Port Name : i21_pi0(Variable Name : mg[1][1].in[0]) straightthru <stream> : Chnl 
-Port Name : i22_pi0(Variable Name : norm[0].in[0]) adaptor <stream,memory> : Lock Buff DMA 
-Port Name : i22_po0(Variable Name : norm[0].out[0]) adaptor <memory,stream> : Lock Buff DMA 
-Port Name : i23_pi0(Variable Name : norm[1].in[0]) adaptor <stream,memory> : Lock Buff DMA 
-Port Name : i23_po0(Variable Name : norm[1].out[0]) adaptor <memory,stream> : Lock Buff DMA 
-Port Name : i24_po0(Variable Name : in[0].out[0]) straightthru <stream> : Chnl 
-Downsizer, resize width: 128 
-Port Name : i25_pi0(Variable Name : out[0].in[0]) straightthru <stream> : Chnl 
-Upsizer, resize width: 128 
-Port Name : i26_po0(Variable Name : sp[0].out[0]) straightthru <stream> : Chnl 
-Port Name : i26_po1(Variable Name : sp[0].out[1]) straightthru <stream> : Chnl 
-Port Name : i27_pi0(Variable Name : mg[0].in[0]) straightthru <stream> : Chnl 
-Port Name : i27_pi1(Variable Name : mg[0].in[1]) straightthru <stream> : Chnl 
 Port Name : i2_pi0(Variable Name : orth[0][1].in[0]) straightthru <memory> : Lock Buff 
 Port Name : i2_pi1(Variable Name : orth[0][1].in[1]) straightthru <memory> : Lock Buff 
 Port Name : i2_po0(Variable Name : orth[0][1].out[0]) straightthru <memory> : Lock Buff 
@@ -58,5 +48,7 @@ Downsizer, resize width: 128
 Port Name : i7_pi0(Variable Name : out[0][0].in[0]) straightthru <stream> : Chnl 
 Upsizer, resize width: 128 
 Port Name : i8_po0(Variable Name : sp[0][0].out[0]) straightthru <stream> : Chnl 
+Port Name : i8_po1(Variable Name : sp[0][0].out[1]) straightthru <stream> : Chnl 
 Port Name : i9_pi0(Variable Name : mg[0][0].in[0]) straightthru <stream> : Chnl 
+Port Name : i9_pi1(Variable Name : mg[0][0].in[1]) straightthru <stream> : Chnl 
 

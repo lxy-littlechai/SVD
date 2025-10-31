@@ -63555,7 +63555,7 @@ const int BLOCK_PAIR_NUM = BLOCK_NUM/2; decltype(adf::frontend::instrument< decl
 const int parallel_num = 1; decltype(adf::frontend::instrument< decltype(parallel_num) > (parallel_num)) __ci34__ = adf::frontend::instrument< decltype(parallel_num) > ( parallel_num, "parallel_num", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:6:1", nullptr, "");
 const float EPS = 1e-6; decltype(adf::frontend::instrument< decltype(EPS) > (EPS)) __ci35__ = adf::frontend::instrument< decltype(EPS) > ( EPS, "EPS", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:7:1", nullptr, "");
 
-const int IO_NUM = 2; decltype(adf::frontend::instrument< decltype(IO_NUM) > (IO_NUM)) __ci36__ = adf::frontend::instrument< decltype(IO_NUM) > ( IO_NUM, "IO_NUM", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:9:1", nullptr, "");
+const int IO_NUM = 1; decltype(adf::frontend::instrument< decltype(IO_NUM) > (IO_NUM)) __ci36__ = adf::frontend::instrument< decltype(IO_NUM) > ( IO_NUM, "IO_NUM", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:9:1", nullptr, "");
 const int SUB_BLOCK_SIZE = BLOCK_SIZE/IO_NUM; decltype(adf::frontend::instrument< decltype(SUB_BLOCK_SIZE) > (SUB_BLOCK_SIZE)) __ci37__ = adf::frontend::instrument< decltype(SUB_BLOCK_SIZE) > ( SUB_BLOCK_SIZE, "SUB_BLOCK_SIZE", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/../SystemConfig.h:10:1", nullptr, "");
 # 3 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/aie/TopGraph.cpp" 2
 

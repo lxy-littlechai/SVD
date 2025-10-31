@@ -192,8 +192,6 @@ void Send(axis_stream_sys& syscontrol,
   
                     axis_pkt_stream& sweep_tx1_L_0, axis_pkt_stream& sweep_tx1_R_0, 
   
-                    axis_pkt_stream& sweep_tx1_L_1, axis_pkt_stream& sweep_tx1_R_1, 
-  
 
                     axis_pkt_stream& norm_tx0) {
   #pragma HLS bind_storage variable=fifo_L type=fifo impl=bram
@@ -211,9 +209,6 @@ void Send(axis_stream_sys& syscontrol,
   
         send2AIE(fifo_L[0][0], sweep_tx1_L_0);
         send2AIE(fifo_R[0][0], sweep_tx1_R_0);
-  
-        send2AIE(fifo_L[0][1], sweep_tx1_L_1);
-        send2AIE(fifo_R[0][1], sweep_tx1_R_1);
   
 
       }
@@ -238,8 +233,6 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[parallel_n
   
                     axis_pkt_stream& sweep_rx1_L_0, axis_pkt_stream& sweep_rx1_R_0, 
   
-                    axis_pkt_stream& sweep_rx1_L_1, axis_pkt_stream& sweep_rx1_R_1, 
-  
 
                        axis_pkt_stream& norm_rx0) {
   #pragma HLS bind_storage variable=fifo_L type=fifo impl=uram
@@ -254,24 +247,20 @@ void Receive(axis_stream_sys& syscontrol, axis_stream_float convSet_L[parallel_n
       if(sig == END) break;
 
       for(int i = 0;i < SWEEP_STEP;i ++) {
-        hls::print("Receive i: %d\n", i);
+        
         #pragma HLS dataflow
 
   
         float conv0L0 = receive4AIE(fifo_L[0][0], sweep_rx1_L_0);
         float conv0R0 = receive4AIE(fifo_R[0][0], sweep_rx1_R_0);
-  
-        float conv0L1 = receive4AIE(fifo_L[0][1], sweep_rx1_L_1);
-        float conv0R1 = receive4AIE(fifo_R[0][1], sweep_rx1_R_1);
-  
+        hls::print("Receive i: %d\n", i);
+        hls::print("conv0L0: %f\n", conv0L0);
+        hls::print("conv0R0: %f\n", conv0R0);
 
 
   
         convSet_L[0][0].write(conv0L0);
         convSet_R[0][0].write(conv0R0);
-  
-        convSet_L[0][1].write(conv0L1);
-        convSet_R[0][1].write(conv0R1);
   
 
       }
@@ -307,15 +296,6 @@ void RoundRobin(axis_stream_sys& syscontrol,
 
       const int STAGE1_SIZE = SUB_BLOCK_SIZE*ROW/ELEM_NUM;
       
-        for(int j = 0;j < STAGE1_SIZE;j ++) {
-          #pragma HLS PIPELINE II = 1
-          for(int k = 0;k < IO_NUM;k ++) {
-            #pragma HLS unroll
-            ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
-            send_fifo_L[0][k].write(tmp_L0);
-          }
-        }
-      
 
       for(int j = 0;j < STAGE1_SIZE;j ++) {
         #pragma HLS PIPELINE II = 1
@@ -326,7 +306,14 @@ void RoundRobin(axis_stream_sys& syscontrol,
         }
       }
 
-      
+        for(int j = 0;j < STAGE1_SIZE;j ++) {
+          #pragma HLS PIPELINE II = 1
+          for(int k = 0;k < IO_NUM;k ++) {
+            #pragma HLS unroll
+            ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
+            send_fifo_L[0][k].write(tmp_L0);
+          }
+        }
 
 
       const int STAGE2_SIZE = (BLOCK_PAIR_NUM-2*parallel_num)/parallel_num*SUB_BLOCK_SIZE*ROW/ELEM_NUM;
@@ -427,9 +414,6 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
                 axis_pkt_stream& sweep_tx1_L_0, axis_pkt_stream& sweep_tx1_R_0,
                 axis_pkt_stream& sweep_rx1_L_0, axis_pkt_stream& sweep_rx1_R_0,
                 
-                axis_pkt_stream& sweep_tx1_L_1, axis_pkt_stream& sweep_tx1_R_1,
-                axis_pkt_stream& sweep_rx1_L_1, axis_pkt_stream& sweep_rx1_R_1,
-                
                 
                 axis_pkt_stream& norm_tx0, axis_pkt_stream& norm_rx0
                 ) {
@@ -455,11 +439,6 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
 #pragma HLS INTERFACE axis port = sweep_rx1_L_0
 #pragma HLS INTERFACE axis port = sweep_rx1_R_0
 
-#pragma HLS INTERFACE axis port = sweep_tx1_L_1
-#pragma HLS INTERFACE axis port = sweep_tx1_R_1
-#pragma HLS INTERFACE axis port = sweep_rx1_L_1
-#pragma HLS INTERFACE axis port = sweep_rx1_R_1
-
 
 #pragma HLS INTERFACE axis port = norm_tx0
 #pragma HLS INTERFACE axis port = norm_rx0
@@ -478,8 +457,6 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
   
                    sweep_tx1_L_0, sweep_tx1_R_0,
   
-                   sweep_tx1_L_1, sweep_tx1_R_1,
-  
 
                    norm_tx0);
     RoundRobin(syscontrol[1],
@@ -490,8 +467,6 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
 
   
                      sweep_rx1_L_0, sweep_rx1_R_0,
-  
-                     sweep_rx1_L_1, sweep_rx1_R_1,
   
 
                      norm_rx0);

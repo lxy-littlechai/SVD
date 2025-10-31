@@ -1,5 +1,5 @@
-Modulo scheduling report for loop #764 in "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp", line 16: (loop #18)
-=========================================================================================================================================================
+Modulo scheduling report for loop #764 in "/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp", line 16: (loop #18)
+======================================================================================================================================================
 
 Initiation interval (II): 2 cycles (minimum II = 2)
 Software pipeline stages: 3 (folded over 2 iterations), minimum: 2
@@ -158,7 +158,7 @@ Cmd line: --mist2 -v -D__AIENGINE__ -D__AIE_ARCH__=10 -DDEPLOYMENT_ELF=1 -D__LOC
 Work dir: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork
 SFG in : 0_0-main__ra.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork/0_0-main__ra.sfg)
 SFG out: 0_0-main__s2.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork/0_0-main__s2.sfg)
-Src file: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp
+Src file: /home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp
 Function: main
 Line    : 16
 Loop    : #18

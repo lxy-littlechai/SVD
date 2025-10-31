@@ -87,8 +87,8 @@ Bundle schedule (instruction words shown before relocation)
 000206         1 00 01                                              .swstall "delay_slot"
 000208         1 00 00 00 03                                        .swstall "delay_slot"
 000212         1 00 00 00 00 00 00 00 00 00 00 00 1f                .swstall "delay_slot"
-000224  m115   2 00 00 1b c4 07 0b 40 04 0d c0 00 3f                b1153 (MOV.s9 r11, #32)             b160  (EQ r0, r10, r5)              b1112 (MOV.u20 r7, #0)             
-000236         2 00 00 32 1e 43 cf 2e 77                            b161  (ITE_EQZ r7, r9, r7, r0)      b1171 (MOV.s8 r9, #33)             
+000224  m115   2 00 00 1b c0 87 0b 40 04 0d c0 00 3f                b1153 (MOV.s9 r11, #4)              b160  (EQ r0, r10, r5)              b1112 (MOV.u20 r7, #0)             
+000236         2 00 00 30 5e 43 cf 2e 77                            b161  (ITE_EQZ r7, r9, r7, r0)      b1171 (MOV.s8 r9, #5)              
 000244         2 31 a5 a0 f7 ff bc 47 f7                            b159  (SUB r10, r5, r10)            b163  (ST.SPIL r7, [sp, #-68])     
 000252         2 00 00 0f 5c da f5 fb 37                            b162  (ITE_EQZ r11, r9, r11, r0)    b952  (ST.SPIL r10, [sp, #-40])    
 000260  m49    2 00 01                                              NOP
@@ -104,7 +104,7 @@ Bundle schedule (instruction words shown before relocation)
 000300         2 00 01                                              .swstall "mem_acquire0"
 000302         2 80 00 00 fd ff d0 47 f7                            b974  (ST.SPIL r13, [sp, #-48])    
 000310         2 14 5d 30 03                                        b154  (ACQ r13, #1, r5)            
-000314  m165   2 00 00 1c c4 40 00 00 7f b3 72 3f 9f                b1329 (MOV.s9 r12, #34)             b151  (ITE_NEZ r13, r12, r14, r0)   b1347 (MOV.s8 r14, #35)            
+000314  m165   2 00 00 1c c4 00 00 00 7f b3 72 1f 9f                b1329 (MOV.s9 r12, #32)             b151  (ITE_NEZ r13, r12, r14, r0)   b1347 (MOV.s8 r14, #33)            
 000326         2 1f ec c0 03                                        b152  (ITE_NEZ r12, r12, r14, r0)  
 000330         2 00 01                                              .swstall "mem_acquire0"
 000332         2 80 00 00 fd ff b4 47 f7                            b153  (ST.SPIL r13, [sp, #-76])    
@@ -113,7 +113,7 @@ Bundle schedule (instruction words shown before relocation)
 000344         2 00 01                                              .swstall "mem_acquire0"
 000346         2 80 00 00 fc ff cc 47 f7                            b1087 (ST.SPIL r12, [sp, #-52])    
 000354         2 14 4c 30 03                                        b150  (ACQ r12, #1, r4)            
-000358  m190   2 00 00 1e c4 80 00 00 7d a3 32 5f 5f                b1423 (MOV.s9 r14, #36)             b147  (ITE_NEZ r12, r8, r6, r0)     b1441 (MOV.s8 r13, #37)            
+000358  m190   2 00 00 1e c4 40 00 00 7d a3 32 3f 5f                b1423 (MOV.s9 r14, #34)             b147  (ITE_NEZ r12, r8, r6, r0)     b1441 (MOV.s8 r13, #35)            
 000370         2 1f de a0 03                                        b148  (ITE_NEZ r10, r14, r13, r0)  
 000374         2 00 01                                              .swstall "mem_acquire0"
 000376         2 80 00 00 fc ff b0 47 f7                            b149  (ST.SPIL r12, [sp, #-80])    

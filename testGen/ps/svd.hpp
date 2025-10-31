@@ -41,6 +41,15 @@ void read(const std::string& filename, float* float_array) {
         file.close();
 }
 
+float getRand(float L, float R) {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    static std::uniform_real_distribution<float> dis(L, R);
+    float result = dis(gen);
+    
+    return result;
+}
+
 template<int COL, int ROW>
 void generateMatrix(const std::string& filename) {
     std::ofstream file(filename);
@@ -53,7 +62,7 @@ void generateMatrix(const std::string& filename) {
 
     for (int i = 0; i < ROW; ++i) {
         for (int j = 0; j < COL; ++j) {
-            file << rand();
+            file << getRand(-50, 50);
             if (j < COL - 1) {
                 file << " ";
             }

@@ -1,5 +1,5 @@
-Modulo scheduling report for loop #847 in "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp", line 28: (loop #30)
-=========================================================================================================================================================
+Modulo scheduling report for loop #847 in "/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp", line 28: (loop #30)
+======================================================================================================================================================
 
 Initiation interval (II): 4 cycles (minimum II = 1)
 Software pipeline stages: 4 (folded over 3 iterations), minimum: 4
@@ -14,13 +14,13 @@ Min II:
 
     details:
 
-       b142  VST wd0, [p3], #32 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
+       b142  VST wd0, [p3], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
          |
          |
        [1,LC]   flow dep: __ali0.1216/__ali0.534 ; loop carried
          |
          v
-       b142  VST wd0, [p3], #32 [/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
+       b142  VST wd0, [p3], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp:34:21]
 
     Total delay: 1, total loop degree: 1 => length critical cycle: 1
 
@@ -167,7 +167,7 @@ Cmd line: --mist2 -v -D__AIENGINE__ -D__AIE_ARCH__=10 -DDEPLOYMENT_ELF=1 -D__LOC
 Work dir: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork
 SFG in : 0_0-main__ra.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork/0_0-main__ra.sfg)
 SFG out: 0_0-main__s2.sfg  (/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/Work/aie/0_0/Release/chesswork/0_0-main__s2.sfg)
-Src file: /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp
+Src file: /home/luanxinya/large/PaperWork/HeteroSVD/SVD/testGen/./aie/ProcessUnit/Normalize.cpp
 Function: main
 Line    : 28
 Loop    : #30
