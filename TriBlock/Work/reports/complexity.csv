@@ -1,0 +1,11 @@
+total_num_tiles,25
+total_num_kernels,6
+total_num_cores,6
+total_core_util,5.3994
+total_memory_size,17664
+compute_node_count,6
+plio_node_count,8
+gmio_node_count,0
+dma_node_count,0
+pktio_node_count,8
+pktcontrol_node_count,0

@@ -1,0 +1,300 @@
+{
+    "schema_version": {
+        "major": "1",
+        "minor": "0",
+        "patch": "0"
+    },
+    "aie_metadata": {
+        "driver_config": {
+            "hw_gen": 1,
+            "base_address": 2199023255552,
+            "npi_address": 4144627712,
+            "column_shift": 23,
+            "row_shift": 18,
+            "num_rows": 9,
+            "num_columns": 50,
+            "shim_row": 0,
+            "mem_tile_row_start": 0,
+            "mem_tile_num_rows": 0,
+            "aie_tile_row_start": 1,
+            "aie_tile_num_rows": 8,
+            "partition_num_cols": 50,
+            "partition_overlay_start_cols": [
+                0
+            ]
+        },
+        "aiecompiler_options": {
+            "broadcast_enable_core": true,
+            "graph_iterator_event": false
+        },
+        "graphs": {
+            "graph0": {
+                "id": 0,
+                "name": "topSweepGraph1_1",
+                "core_columns": [
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    2
+                ],
+                "core_rows": [
+                    0,
+                    1,
+                    2,
+                    0,
+                    1,
+                    2
+                ],
+                "iteration_memory_columns": [
+                    1,
+                    1,
+                    0,
+                    2,
+                    2,
+                    1
+                ],
+                "iteration_memory_rows": [
+                    1,
+                    0,
+                    2,
+                    0,
+                    0,
+                    2
+                ],
+                "iteration_memory_addresses": [
+                    164,
+                    6116,
+                    8932,
+                    5956,
+                    11396,
+                    164
+                ],
+                "multirate_triggers": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false
+                ],
+                "pl_kernel_instance_names": [],
+                "pl_axi_lite_modes": []
+            }
+        },
+        "TileMapping": {
+            "AIEKernelToTileMapping": [
+                {
+                    "graph": "topSweepGraph1_1.sweepGraph",
+                    "tile": "aie",
+                    "column": 1,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "orthogonalize<32>.orth[0][0]"
+                },
+                {
+                    "graph": "topSweepGraph1_1.sweepGraph",
+                    "tile": "aie",
+                    "column": 2,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "orthogonalize<32>.orth[1][0]"
+                },
+                {
+                    "graph": "topSweepGraph1_1.sweepGraph",
+                    "tile": "aie",
+                    "column": 1,
+                    "row": 1,
+                    "schedule": 0,
+                    "function": "orthogonalize<32>.orth[0][1]"
+                },
+                {
+                    "graph": "topSweepGraph1_1.sweepGraph",
+                    "tile": "aie",
+                    "column": 2,
+                    "row": 1,
+                    "schedule": 0,
+                    "function": "orthogonalize<32>.orth[1][1]"
+                },
+                {
+                    "graph": "topSweepGraph1_1.sweepGraph",
+                    "tile": "aie",
+                    "column": 1,
+                    "row": 2,
+                    "schedule": 0,
+                    "function": "orthogonalize<32>.orth[0][2]"
+                },
+                {
+                    "graph": "topSweepGraph1_1.sweepGraph",
+                    "tile": "aie",
+                    "column": 2,
+                    "row": 2,
+                    "schedule": 0,
+                    "function": "orthogonalize<32>.orth[1][2]"
+                }
+            ],
+            "SharedBufferToTileMapping": []
+        },
+        "RTPs": {},
+        "GMIOs": {},
+        "PLIOs": {
+            "plio0": {
+                "id": 0,
+                "name": "topSweepGraph1_1.in[0][0]",
+                "logical_name": "1_1_sweep_in_L_0",
+                "shim_column": 7,
+                "slaveOrMaster": 0,
+                "stream_id": 4
+            },
+            "plio1": {
+                "id": 1,
+                "name": "topSweepGraph1_1.out[0][0]",
+                "logical_name": "1_1_sweep_out_L_0",
+                "shim_column": 7,
+                "slaveOrMaster": 1,
+                "stream_id": 2
+            },
+            "plio2": {
+                "id": 2,
+                "name": "topSweepGraph1_1.in[0][1]",
+                "logical_name": "1_1_sweep_in_R_0",
+                "shim_column": 7,
+                "slaveOrMaster": 0,
+                "stream_id": 0
+            },
+            "plio3": {
+                "id": 3,
+                "name": "topSweepGraph1_1.out[0][1]",
+                "logical_name": "1_1_sweep_out_R_0",
+                "shim_column": 6,
+                "slaveOrMaster": 1,
+                "stream_id": 4
+            },
+            "plio4": {
+                "id": 4,
+                "name": "topSweepGraph1_1.in[1][0]",
+                "logical_name": "1_1_sweep_in_L_1",
+                "shim_column": 6,
+                "slaveOrMaster": 0,
+                "stream_id": 0
+            },
+            "plio5": {
+                "id": 5,
+                "name": "topSweepGraph1_1.out[1][0]",
+                "logical_name": "1_1_sweep_out_L_1",
+                "shim_column": 6,
+                "slaveOrMaster": 1,
+                "stream_id": 2
+            },
+            "plio6": {
+                "id": 6,
+                "name": "topSweepGraph1_1.in[1][1]",
+                "logical_name": "1_1_sweep_in_R_1",
+                "shim_column": 6,
+                "slaveOrMaster": 0,
+                "stream_id": 4
+            },
+            "plio7": {
+                "id": 7,
+                "name": "topSweepGraph1_1.out[1][1]",
+                "logical_name": "1_1_sweep_out_R_1",
+                "shim_column": 7,
+                "slaveOrMaster": 1,
+                "stream_id": 4
+            }
+        },
+        "EventGraphs": {
+            "graph0": {
+                "id": 0,
+                "name": "topSweepGraph1_1",
+                "core_columns": [
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    2
+                ],
+                "core_rows": [
+                    0,
+                    1,
+                    2,
+                    0,
+                    1,
+                    2
+                ],
+                "dma_columns": [
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    3,
+                    1,
+                    1,
+                    1,
+                    2,
+                    2,
+                    2
+                ],
+                "dma_rows": [
+                    0,
+                    0,
+                    2,
+                    0,
+                    0,
+                    1,
+                    1,
+                    3,
+                    3,
+                    2,
+                    3,
+                    3
+                ]
+            }
+        },
+        "DeviceData": {
+            "AIEBaseAddress": "0x20000000000",
+            "AIEFrequency": 1250
+        },
+        "TraceGMIOs": {},
+        "AIEConfigsForTraceAndProfile": {
+            "GMIOs": {},
+            "PLIOs": {
+                "plio0": {
+                    "logical_name": "1_1_sweep_in_L_0",
+                    "data_width": 128
+                },
+                "plio1": {
+                    "logical_name": "1_1_sweep_out_L_0",
+                    "data_width": 128
+                },
+                "plio2": {
+                    "logical_name": "1_1_sweep_in_R_0",
+                    "data_width": 128
+                },
+                "plio3": {
+                    "logical_name": "1_1_sweep_out_R_0",
+                    "data_width": 128
+                },
+                "plio4": {
+                    "logical_name": "1_1_sweep_in_L_1",
+                    "data_width": 128
+                },
+                "plio5": {
+                    "logical_name": "1_1_sweep_out_L_1",
+                    "data_width": 128
+                },
+                "plio6": {
+                    "logical_name": "1_1_sweep_in_R_1",
+                    "data_width": 128
+                },
+                "plio7": {
+                    "logical_name": "1_1_sweep_out_R_1",
+                    "data_width": 128
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,11 @@
 const int ROW = 32;
 const int COL = 32;
+
+// Block Level 1: 
+const int LEVEL1_BLOCK_SIZE = 8;
+const int LEVEL1_BLOCK_NUM = COL/LEVEL1_BLOCK_SIZE;
+const int LEVEL1_BLOCK_PAIR_NUM = LEVEL1_BLOCK_NUM/2;
+
 const int BLOCK_SIZE = 2;
 const int BLOCK_NUM = COL/BLOCK_SIZE;
 const int BLOCK_PAIR_NUM = BLOCK_NUM/2;

@@ -1,0 +1,44 @@
+{
+    "Packet ID Report": [
+        {
+            "netName": "net0",
+            "net": "S_SHIM_SOUTH_ch4_C7 M_S2MM_DMA_ch0_C0_R0",
+            "packet id": 0
+        },
+        {
+            "netName": "net1",
+            "net": "S_SHIM_SOUTH_ch0_C7 M_S2MM_DMA_ch1_C0_R0",
+            "packet id": 0
+        },
+        {
+            "netName": "net12",
+            "net": "S_MM2S_DMA_ch0_C2_R3 M_SHIM_SOUTH_ch2_C7",
+            "packet id": 0
+        },
+        {
+            "netName": "net13",
+            "net": "S_MM2S_DMA_ch0_C1_R3 M_SHIM_SOUTH_ch4_C6",
+            "packet id": 0
+        },
+        {
+            "netName": "net14",
+            "net": "S_MM2S_DMA_ch1_C1_R3 M_SHIM_SOUTH_ch2_C6",
+            "packet id": 0
+        },
+        {
+            "netName": "net15",
+            "net": "S_MM2S_DMA_ch1_C2_R3 M_SHIM_SOUTH_ch4_C7",
+            "packet id": 0
+        },
+        {
+            "netName": "net2",
+            "net": "S_SHIM_SOUTH_ch0_C6 M_S2MM_DMA_ch0_C2_R0",
+            "packet id": 0
+        },
+        {
+            "netName": "net3",
+            "net": "S_SHIM_SOUTH_ch4_C6 M_S2MM_DMA_ch0_C1_R0",
+            "packet id": 0
+        }
+    ]
+}
