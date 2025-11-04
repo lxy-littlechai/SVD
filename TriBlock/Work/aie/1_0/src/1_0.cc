@@ -9,10 +9,10 @@ volatile static int sync_buffer[8] = {0, -1};
 #include <adf/sync/mesync.h>
 
 // Define Locks
+#define LOCK_1_0_0_0 48
+#define LOCK_1_0_1_0 49
 #define LOCK_0_0_0_0 16
-#define LOCK_0_0_1_8032 17
-#define LOCK_0_0_2_0 18
-#define LOCK_0_0_3_4256 19
+#define LOCK_0_0_1_0 17
 #define LOCK_1_1_0_0 32
 #define LOCK_1_1_1_0 33
 #define LOCK_1_1_2_0 34
@@ -50,16 +50,16 @@ int main(void) {
 
     // Kernel call : i0:orthogonalize<32>
     window_buf0_buf0d_i->setData(*window_buf0_buf0d_i, (float*)buf0, (float*)buf0d, 1-index, 0);
-    window_buf0_buf0d_i->acquire(*window_buf0_buf0d_i, LOCK_0_0_0_0, LOCK_0_0_1_8032, 1-index);
+    window_buf0_buf0d_i->acquire(*window_buf0_buf0d_i, LOCK_1_0_0_0, LOCK_1_0_1_0, 1-index);
     window_buf1_buf1d_i->setData(*window_buf1_buf1d_i, (float*)buf1, (float*)buf1d, 1-index, 0);
-    window_buf1_buf1d_i->acquire(*window_buf1_buf1d_i, LOCK_0_0_2_0, LOCK_0_0_3_4256, 1-index);
+    window_buf1_buf1d_i->acquire(*window_buf1_buf1d_i, LOCK_0_0_0_0, LOCK_0_0_1_0, 1-index);
     window_buf4_buf4d_o->setData(*window_buf4_buf4d_o, (float*)buf4, (float*)buf4d, 1-index, 0);
     window_buf4_buf4d_o->acquire(*window_buf4_buf4d_o, LOCK_1_1_0_0, LOCK_1_1_1_0, 1-index);
     window_buf5_buf5d_o->setData(*window_buf5_buf5d_o, (float*)buf5, (float*)buf5d, 1-index, 0);
     window_buf5_buf5d_o->acquire(*window_buf5_buf5d_o, LOCK_1_1_2_0, LOCK_1_1_3_0, 1-index);
     orthogonalize<32>(window_buf0_buf0d_i[0],window_buf1_buf1d_i[0],window_buf4_buf4d_o[0],window_buf5_buf5d_o[0]);
-    window_buf0_buf0d_i->release(*window_buf0_buf0d_i, LOCK_0_0_0_0, LOCK_0_0_1_8032, 1-index);
-    window_buf1_buf1d_i->release(*window_buf1_buf1d_i, LOCK_0_0_2_0, LOCK_0_0_3_4256, 1-index);
+    window_buf0_buf0d_i->release(*window_buf0_buf0d_i, LOCK_1_0_0_0, LOCK_1_0_1_0, 1-index);
+    window_buf1_buf1d_i->release(*window_buf1_buf1d_i, LOCK_0_0_0_0, LOCK_0_0_1_0, 1-index);
     window_buf4_buf4d_o->release(*window_buf4_buf4d_o, LOCK_1_1_0_0, LOCK_1_1_1_0, 1-index);
     window_buf5_buf5d_o->release(*window_buf5_buf5d_o, LOCK_1_1_2_0, LOCK_1_1_3_0, 1-index);
     index = 1 - index;

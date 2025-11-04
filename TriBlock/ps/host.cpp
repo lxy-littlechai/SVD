@@ -94,9 +94,9 @@ int main(int argc, char** argv) {
 
     
     
-    // string topNormGraphName1_1 = "topNormGraph" + to_string(1) + "_" + to_string(1);
-    // auto NormGraph1_1 = xrt::graph(device, xclbin_uuid, topNormGraphName1_1.c_str());
-    // topNormGraph.emplace_back(NormGraph1_1);
+    string topNormGraphName1_1 = "topNormGraph" + to_string(1) + "_" + to_string(1);
+    auto NormGraph1_1 = xrt::graph(device, xclbin_uuid, topNormGraphName1_1.c_str());
+    topNormGraph.emplace_back(NormGraph1_1);
     
     
 
@@ -104,9 +104,9 @@ int main(int argc, char** argv) {
       topSweepGraph[i].run();
     }
 
-    // for(int i = 0;i < topNormGraph.size();i ++) {
-    //   topNormGraph[i].run();
-    // }
+    for(int i = 0;i < topNormGraph.size();i ++) {
+      topNormGraph[i].run();
+    }
     
     std::cout << "All Graph started\n";
     std::cout << BATCH << "*" << ROW << "*" << COL << " ITER:" << ITER;

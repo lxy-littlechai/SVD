@@ -41,7 +41,7 @@ Min II:
        b245  VLDA wr0, [p0], #32 [/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Orthogonalize.cpp:45:15]
          |
          |
-       [7,LC]   flow dep: vec1.4528/__tmp.4525 in WR0[0] , vec1.4528 in WR0[0] ; loop carried
+       [7,LC]   flow dep: vec1.4528 in WR0[0] , vec1.4528/__tmp.4525 in WR0[0] ; loop carried
          |
          v
        b691  VMOV wc1, wr0 [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:384:27]

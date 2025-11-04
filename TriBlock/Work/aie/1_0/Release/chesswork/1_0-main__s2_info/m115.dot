@@ -5,8 +5,8 @@ digraph N {
  b162[color=orange,fontcolor=black,style=filled,label="b162\nITE_EQZ r11, r9, r11, r0\nout: R[11]"];  {rank=same; S3;  b162;}
  b163[color=orange,fontcolor=black,style=filled,label="b163\nST.SPIL r7, [sp, #-68]\ninp: SP[0]"];  {rank=same; S2;  b163;}
  b1112[color=orange,fontcolor=black,style=filled,label="b1112\nMOV.u20 r7, #0"];  {rank=same; S0;  b1112;}
- b1153[color=orange,fontcolor=black,style=filled,label="b1153\nMOV.s9 r11, #16"];  {rank=same; S0;  b1153;}
- b1171[color=orange,fontcolor=black,style=filled,label="b1171\nMOV.s8 r9, #17"];  {rank=same; S1;  b1171;}
+ b1153[color=orange,fontcolor=black,style=filled,label="b1153\nMOV.s9 r11, #48"];  {rank=same; S0;  b1153;}
+ b1171[color=orange,fontcolor=black,style=filled,label="b1171\nMOV.s8 r9, #49"];  {rank=same; S1;  b1171;}
  b952[color=orange,fontcolor=black,style=filled,label="b952\nST.SPIL r10, [sp, #-40]\ninp: SP[0]"];  {rank=same; S3;  b952;}
  start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
  end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S3;  end;}

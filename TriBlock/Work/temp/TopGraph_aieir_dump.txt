@@ -81,6 +81,26 @@ Module {
                port po0 dir:out porttype:pktstream elttype:pktstream
             }
          }
+         def plio b18 iotype:pktstream to pktstream {
+             ports {
+               port po0 dir:out porttype:pktstream elttype:pktstream
+            }
+         }
+         def plio b19 iotype:pktstream to pktstream {
+             ports {
+               port pi0 dir:in porttype:pktstream elttype:pktstream
+            }
+         }
+         def pktsplit b20 iotype:pktstream to pktstream {
+             outports {
+               port po0 dir:out porttype:pktstream elttype:pktstream
+            }
+         }
+         def pktmerge b21 iotype:pktstream to pktstream {
+             inports {
+               port po0 dir:out porttype:pktstream elttype:pktstream
+            }
+         }
          def aiekernel b0 {
             ports {
                port pi0 dir:in porttype:memvariable name: in0 elttype:buff<float>
@@ -93,7 +113,17 @@ Module {
                aie/ProcessUnit/Orthogonalize.cpp
             }
          }
-         def plkernel ps_b17 {
+         def aiekernel b17 {
+            ports {
+               port pi0 dir:in porttype:memvariable name: in elttype:buff<float>
+               port po0 dir:out porttype:memvariable name: out elttype:buff<float>
+            }
+            kernel: normalize<32>
+            srcs:{
+               aie/ProcessUnit/Normalize.cpp
+            }
+         }
+         def plkernel ps_b22 {
             ports {
             }
             impl_type: unknown
@@ -194,7 +224,25 @@ Module {
             portinst: i21_pi0 idx[0] datatype:pktstream pktstream in bw_utlization = 1 (variable name:  mg[1][1].in[0])
             portinst: i21_po0 idx[1] datatype:pktstream pktstream out bw_utlization = 1 (variable name:  mg[1][1].out[0])
          }
-         pl  nodeinst:ps_i22:ps_b17 {
+         me  i22:b17 runtime:0.8999 {
+            portinst: i22_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  norm[0].in[0])
+            portinst: i22_po0 idx[1] datatype:buff<float> mem out bw_utlization = 1 (variable name:  norm[0].out[0])
+         }
+         plio  nodeinst:i23:b18 {
+            portinst: i23_po0 idx[-1] datatype:pktstream pktstream out bw_utlization = 1 (variable name:  in[0].out[0])
+         }
+         plio  nodeinst:i24:b19 {
+            portinst: i24_pi0 idx[-1] datatype:pktstream pktstream in bw_utlization = 1 (variable name:  out[0].in[0])
+         }
+         pktsplit  nodeinst:i25:b20 {
+            portinst: i25_pi0 idx[0] datatype:pktstream pktstream in bw_utlization = 1 (variable name:  sp[0].in[0])
+            portinst: i25_po0 idx[1] datatype:pktstream pktstream out bw_utlization = 1 (variable name:  sp[0].out[0])
+         }
+         pktmerge  nodeinst:i26:b21 {
+            portinst: i26_pi0 idx[0] datatype:pktstream pktstream in bw_utlization = 1 (variable name:  mg[0].in[0])
+            portinst: i26_po0 idx[1] datatype:pktstream pktstream out bw_utlization = 1 (variable name:  mg[0].out[0])
+         }
+         pl  nodeinst:ps_i27:ps_b22 {
          }
       }
       connections:{
@@ -222,6 +270,10 @@ Module {
          Channel net21: Single :src:i13_po0 dst:i11_pi0
          Channel net22: Single :src:i18_po0 dst:i20_pi0
          Channel net23: Single :src:i21_po0 dst:i19_pi0
+         Channel net24: Single :src:i25_po0 dst:i22_pi0
+         Channel net25: Single :src:i22_po0 dst:i26_pi0
+         Channel net26: Single :src:i23_po0 dst:i25_pi0
+         Channel net27: Single :src:i26_po0 dst:i24_pi0
       }
       constraints {
       }

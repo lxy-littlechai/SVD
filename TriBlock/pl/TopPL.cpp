@@ -23,7 +23,8 @@ static unsigned int getPacketID(ap_uint<32> header){
   return ID;
 }
 
-void receive4DDR(axis_stream_deep_128& block,
+template<typename T>
+void receive4DDR(T& block,
                   axis_pkt_stream& fromAIEstrm) {
   #pragma HLS inline off
     axis_pkt tmp;
@@ -91,7 +92,8 @@ float receive4AIE(axis_stream_deep_128& block,
     return conv.data_float;
 }
 
-void send2AIE(axis_stream_128& block, 
+template<typename T>
+void send2AIE(T& block, 
               axis_pkt_stream& toAIEstrm) {
 
     #pragma HLS inline off     
@@ -200,28 +202,13 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   }
 }
 
-void NormReceive(axis_stream_deep_128& receive_ddr_fifo, axis_pkt_stream& norm_rx0) {
-  for(int i = 0;i < BLOCK_NUM;i ++) {
-    for(int j = 0;j < IO_NUM;j ++) {
-      receive4DDR(receive_ddr_fifo, norm_rx0); // receive subblock
-    }
-  }
-}
-
-void NormFIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_stream_deep_128& receive_ddr_fifo) {
-  ap_uint<W> sigma;
-  ap_uint<W> data_temp;
-
-  for(int i = 0;i < COL;i ++) {
-    for(int j = 0;j < ROW/ELEM_NUM;j ++) {
-      #pragma HLS PIPELINE II = 1
-      U[i*ROW/ELEM_NUM + j] = receive_ddr_fifo.read();
-    }
-    sigma = receive_ddr_fifo.read();
-    S[i] = sigma(31, 0);
-  }
-}
-
+// void NormReceive(axis_stream_deep_128& receive_ddr_fifo, axis_pkt_stream& norm_rx0) {
+//   for(int i = 0;i < BLOCK_NUM;i ++) {
+//     for(int j = 0;j < IO_NUM;j ++) {
+//       receive4DDR(receive_ddr_fifo, norm_rx0); // receive subblock
+//     }
+//   }
+// }
 // void NormDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, axis_stream_ordering& ordering_L, axis_stream_ordering& ordering_R, axis_stream_128 send_fifo_L[parallel_num][IO_NUM], axis_stream_128 send_fifo_R[parallel_num][IO_NUM]) {
 //   for(int i = 0;i < LEVEL1_BLOCK_PAIR_NUM;i ++) {
 //     const int level1_block_L_index = ordering_L.read();
@@ -589,6 +576,54 @@ void Orthogonalize(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32
   
                      sweep_rx1_L_1, sweep_rx1_R_1);
 }
+template<typename T>
+void NormDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, T& tmp_fifo) {
+  for(int i = 0;i < COL/SUB_BLOCK_SIZE;i ++) {
+    for(int j = 0;j < SUB_BLOCK_SIZE*ROW/ELEM_NUM;j ++) {
+      tmp_fifo.write(dataIn[i*SUB_BLOCK_SIZE*ROW/ELEM_NUM + j]);
+    }
+  }
+}
+template<typename T>
+void NormSend(T& norm_send_fifo, axis_pkt_stream& norm_tx0) {
+  for(int i = 0;i < COL/SUB_BLOCK_SIZE;i ++) {
+    send2AIE(norm_send_fifo, norm_tx0);
+  }
+}
+template<typename T>
+void NormReceive(T& norm_receive_fifo, axis_pkt_stream& norm_rx0) {
+  for(int i = 0;i < COL/SUB_BLOCK_SIZE;i ++) {
+    receive4DDR(norm_receive_fifo, norm_rx0);
+  }
+}
+template<typename T>
+void NormFIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, T& norm_receive_fifo) {
+  ap_uint<W> sigma;
+  ap_uint<W> data_temp;
+
+  for(int i = 0;i < COL;i ++) {
+    for(int j = 0;j < ROW/ELEM_NUM;j ++) {
+      #pragma HLS PIPELINE II = 1
+      U[i*ROW/ELEM_NUM + j] = norm_receive_fifo.read();
+    }
+    sigma = norm_receive_fifo.read();
+    S[i] = sigma(31, 0);
+  }
+}
+
+
+void Normalize(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, axis_pkt_stream& norm_tx0, axis_pkt_stream& norm_rx0) {
+  #pragma HLS dataflow
+
+  axis_stream_128 norm_send_fifo, norm_receive_fifo;
+
+  NormDDR2FIFO(dataIn, norm_send_fifo);
+  NormSend(norm_send_fifo, norm_tx0);
+  NormReceive(norm_receive_fifo, norm_rx0);
+  NormFIFO2DDR(U, S, norm_receive_fifo);
+  
+
+}
 
 void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap_uint<32>* ConvArray,
                 const int ITER, 
@@ -598,10 +633,10 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
                 axis_pkt_stream& sweep_rx1_L_0, axis_pkt_stream& sweep_rx1_R_0,
                 
                 axis_pkt_stream& sweep_tx1_L_1, axis_pkt_stream& sweep_tx1_R_1,
-                axis_pkt_stream& sweep_rx1_L_1, axis_pkt_stream& sweep_rx1_R_1
+                axis_pkt_stream& sweep_rx1_L_1, axis_pkt_stream& sweep_rx1_R_1,
                 
                 
-                // axis_pkt_stream& norm_tx0, axis_pkt_stream& norm_rx0
+                 axis_pkt_stream& norm_tx0, axis_pkt_stream& norm_rx0
                 ) {
 #pragma HLS INTERFACE m_axi offset = slave latency = 64 num_write_outstanding = 16 num_read_outstanding = \
     16 max_write_burst_length = 64 max_read_burst_length = 64 bundle = gmem0 port = dataIn depth = 8192
@@ -631,12 +666,12 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
 #pragma HLS INTERFACE axis port = sweep_rx1_R_1
 
 
-// #pragma HLS INTERFACE axis port = norm_tx0
-// #pragma HLS INTERFACE axis port = norm_rx0
+ #pragma HLS INTERFACE axis port = norm_tx0
+ #pragma HLS INTERFACE axis port = norm_rx0
 
     
 
     Orthogonalize(dataIn, U, S, ConvArray, ITER, sweep_tx1_L_0, sweep_tx1_R_0, sweep_rx1_L_0, sweep_rx1_R_0, sweep_tx1_L_1, sweep_tx1_R_1, sweep_rx1_L_1, sweep_rx1_R_1);
-    //Normalize(dataIn, U, S, norm_tx0, norm_rx0);
+    Normalize(dataIn, U, S, norm_tx0, norm_rx0);
     
 }

@@ -16,14 +16,17 @@ void initializeGenerator(bool AXIdebug, bool endianness){
 void addInitConfigToCDO(const std::string &workDirPath){
 	if(broadcastConfigForCoreEnable() != adf::return_code::ok)
 		exit(EXIT_FAILURE);
+	topNormGraph1_1_init(workDirPath);
 	topSweepGraph1_1_init(workDirPath);
 }
 
 void addCoreEnableToCDO(){
+	topNormGraph1_1_core_enable();
 	topSweepGraph1_1_core_enable();
 }
 
 void addDbgHaltToCDO(){
+	topNormGraph1_1_core_debug_halt();
 	topSweepGraph1_1_core_debug_halt();
 }
 
@@ -45,6 +48,8 @@ void addMemClearingConfigToCDO(){
 
 void addAieElfsToCDO(const std::string &workDirPath){
 	std::vector<std::string> elfInfoPath;
+	if(!topNormGraph1_1_load_elf(workDirPath, elfInfoPath))
+		exit(EXIT_FAILURE);
 	if(!topSweepGraph1_1_load_elf(workDirPath, elfInfoPath))
 		exit(EXIT_FAILURE);
 }

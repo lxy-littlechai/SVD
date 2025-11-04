@@ -63240,9 +63240,9 @@ public:
     RingSweepGraph() {
         for(int i = 0;i < ROW;i ++) {
             for(int j = 0;j < COL;j ++) {
-                orth[j][i] = adf::kernel::create(orthogonalize<MatrixROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci61__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:45:30", "template<int ROW> void orthogonalize(adf::input_buffer<float, adf::extents<1 + ROW>> &in0, adf::input_buffer<float, adf::extents<1 + ROW>> &in1, adf::output_buffer<float, adf::extents<1 + ROW>> &out0, adf::output_buffer<float, adf::extents<1 + ROW>> &out1)", {{"RingSweepGraph<32, 2, 1, 0, 1>", "orthogonalize<32>", false, {"adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &"}, {"in0", "in1", "out0", "out1"}, "void"}}};
-                adf::source(orth[j][i]) = "aie/ProcessUnit/Orthogonalize.cpp"; adf::frontend::CallExprConstraintFunction __ci46__{"adf::source", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:46:17"};
-                runtime<ratio>(orth[j][i]) = 0.9; adf::frontend::CallExprConstraintFunction __ci47__{"adf::runtime<adf::ratio>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:47:17"};
+                orth[j][i] = adf::kernel::create(orthogonalize<MatrixROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci73__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:45:30", "template<int ROW> void orthogonalize(adf::input_buffer<float, adf::extents<1 + ROW>> &in0, adf::input_buffer<float, adf::extents<1 + ROW>> &in1, adf::output_buffer<float, adf::extents<1 + ROW>> &out0, adf::output_buffer<float, adf::extents<1 + ROW>> &out1)", {{"RingSweepGraph<32, 2, 1, 0, 1>", "orthogonalize<32>", false, {"adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &"}, {"in0", "in1", "out0", "out1"}, "void"}}};
+                adf::source(orth[j][i]) = "aie/ProcessUnit/Orthogonalize.cpp"; adf::frontend::CallExprConstraintFunction __ci47__{"adf::source", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:46:17"};
+                runtime<ratio>(orth[j][i]) = 0.9; adf::frontend::CallExprConstraintFunction __ci48__{"adf::runtime<adf::ratio>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:47:17"};
             }
         }
 
@@ -63251,7 +63251,7 @@ public:
         for(int i = 0;i < ROW;i ++) {
             int base_col = col;
             for(int j = 0;j < COL;j ++) {
-                location<kernel>(orth[j][i]) = tile(base_col+j, row); adf::frontend::CallExprLocationConstraint __ci48__{"adf::location<adf::kernel>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:56:17"}; adf::frontend::CallExprLocationConstraint __ci49__{"adf::tile", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:56:48"};
+                location<kernel>(orth[j][i]) = tile(base_col+j, row); adf::frontend::CallExprLocationConstraint __ci49__{"adf::location<adf::kernel>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:56:17"}; adf::frontend::CallExprLocationConstraint __ci50__{"adf::tile", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:56:48"};
                 orthInfo[j][i].col = base_col+j;
                 orthInfo[j][i].row = row;
             }
@@ -63280,10 +63280,10 @@ public:
             for(int j = 0;j < COL;j ++) {
                 col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                 location<buffer>(orth[j][i].out[0]) = {bank(col, row, getBankID(j, i, col, row, 0, 0)),
-                                                       bank(col, row, getBankID(j, i, col, row, 0, 1))}; adf::frontend::CallExprLocationConstraint __ci50__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:84:17"}; adf::frontend::CallExprLocationConstraint __ci51__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:84:56"}; adf::frontend::CallExprLocationConstraint __ci52__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:85:56"};
+                                                       bank(col, row, getBankID(j, i, col, row, 0, 1))}; adf::frontend::CallExprLocationConstraint __ci51__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:84:17"}; adf::frontend::CallExprLocationConstraint __ci52__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:84:56"}; adf::frontend::CallExprLocationConstraint __ci53__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:85:56"};
                 col = orthInfo[j][i].col; row = orthInfo[j][i].row+direction;
                 location<buffer>(orth[j][i].out[1]) = {bank(col, row, getBankID(j, i, col, row, 1, 0)),
-                                                       bank(col, row, getBankID(j, i, col, row, 1, 1))}; adf::frontend::CallExprLocationConstraint __ci53__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:87:17"}; adf::frontend::CallExprLocationConstraint __ci54__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:87:56"}; adf::frontend::CallExprLocationConstraint __ci55__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:88:56"};
+                                                       bank(col, row, getBankID(j, i, col, row, 1, 1))}; adf::frontend::CallExprLocationConstraint __ci54__{"adf::location<adf::buffer>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:87:17"}; adf::frontend::CallExprLocationConstraint __ci55__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:87:56"}; adf::frontend::CallExprLocationConstraint __ci56__{"adf::bank", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:88:56"};
 
             }
             pow_row += direction;
@@ -63302,8 +63302,8 @@ public:
 
         initRingOrder();
         for(int i = 0;i < COL;i ++) {
-            connect<> (in[i][0], orth[i][0].in[0]); adf::frontend::DeclConnect __ci56__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:107:13", ""};
-            connect<> (in[i][1], orth[i][0].in[1]); adf::frontend::DeclConnect __ci57__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:108:13", ""};
+            connect<> (in[i][0], orth[i][0].in[0]); adf::frontend::DeclConnect __ci57__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:107:13", ""};
+            connect<> (in[i][1], orth[i][0].in[1]); adf::frontend::DeclConnect __ci58__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:108:13", ""};
         }
 
          {
@@ -63315,7 +63315,7 @@ public:
                     int out_port = ring[j][i].port;
                     int in_col = ring[j][i+1].col;
                     int in_port = ring[j][i+1].port;
-                    connect<> (orth[out_col][i].out[out_port], orth[in_col][i+1].in[in_port]); adf::frontend::DeclConnect __ci58__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:142:21", ""};
+                    connect<> (orth[out_col][i].out[out_port], orth[in_col][i+1].in[in_port]); adf::frontend::DeclConnect __ci59__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:142:21", ""};
                   }
 
 
@@ -63335,10 +63335,10 @@ public:
                int out_col = ring[j][ROW-1].col;
                int out_port = ring[j][ROW-1].port;
                if(j&1) {
-                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][1]); adf::frontend::DeclConnect __ci59__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:162:17", ""};
+                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][1]); adf::frontend::DeclConnect __ci60__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:162:17", ""};
                }
                else {
-                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][0]); adf::frontend::DeclConnect __ci60__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:165:17", ""};
+                connect<> (orth[out_col][ROW-1].out[out_port], out[j/2][0]); adf::frontend::DeclConnect __ci61__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:165:17", ""};
                }
 
              }
@@ -63423,19 +63423,19 @@ public:
 
   RingNormGraph() {
     for(int i = 0;i < GraphSize; i ++) {
-      norm[i] = kernel::create(normalize<MatrixROW>);
-      adf::source(norm[i]) = "aie/ProcessUnit/Normalize.cpp";
-      runtime<ratio>(norm[i]) = 0.9;
+      norm[i] = kernel::create(normalize<MatrixROW>); adf::frontend::CallExprKernelCreateTemplatedGraphAndKernel __ci72__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:250:17", "template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out)", {{"RingNormGraph<32, 1, 0, 0, 1>", "normalize<32>", false, {"adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict", "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict"}, {"in", "out"}, "void"}}};
+      adf::source(norm[i]) = "aie/ProcessUnit/Normalize.cpp"; adf::frontend::CallExprConstraintFunction __ci66__{"adf::source", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:251:7"};
+      runtime<ratio>(norm[i]) = 0.9; adf::frontend::CallExprConstraintFunction __ci67__{"adf::runtime<adf::ratio>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:252:7"};
     }
 
     for(int i = 0;i < GraphSize;i ++) {
-      connect<> (in[i], norm[i].in[0]);
-      connect<> (norm[i].out[0], out[i]);
+      connect<> (in[i], norm[i].in[0]); adf::frontend::DeclConnect __ci68__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:256:7", ""};
+      connect<> (norm[i].out[0], out[i]); adf::frontend::DeclConnect __ci69__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:257:7", ""};
     }
 
     int row = START_ROW, col = START_COL, direction = DIRECTION;
     for(int i = 0;i < GraphSize;i ++) {
-        location<kernel>(norm[i]) = tile(col, row);
+        location<kernel>(norm[i]) = tile(col, row); adf::frontend::CallExprLocationConstraint __ci70__{"adf::location<adf::kernel>", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:262:9"}; adf::frontend::CallExprLocationConstraint __ci71__{"adf::tile", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:262:37"};
         row += direction;
         if(row == VCK190_ROW && direction == 1) {
             row = VCK190_ROW-1;
@@ -63484,13 +63484,13 @@ public:
         }
 
         for(int j = 0;j < 1;j ++) {
-            connect<> (in[j].out[0], sp[j].in[0]);
-            connect<> (mg[j].out[0], out[j].in[0]);
+            connect<> (in[j].out[0], sp[j].in[0]); adf::frontend::DeclConnect __ci62__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:30:13", ""};
+            connect<> (mg[j].out[0], out[j].in[0]); adf::frontend::DeclConnect __ci63__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:31:13", ""};
         }
         for(int i = 0;i < SUB_BLOCK_SIZE;i ++) {
             for(int j = 0;j < 1;j ++) {
-                connect<> (sp[j].out[i], normGraph.in[i]);
-                connect<> (normGraph.out[i], mg[j].in[i]);
+                connect<> (sp[j].out[i], normGraph.in[i]); adf::frontend::DeclConnect __ci64__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:35:17", ""};
+                connect<> (normGraph.out[i], mg[j].in[i]); adf::frontend::DeclConnect __ci65__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:36:17", ""};
             }
 
         }
@@ -63528,16 +63528,16 @@ public:
 
         for(int i = 0;i < 2;i ++) {
             for(int j = 0;j < IO_NUM;j ++) {
-                connect<> (in[j][i].out[0], sp[j][i].in[0]); adf::frontend::DeclConnect __ci42__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:74:17", ""};
-                connect<> (mg[j][i].out[0], out[j][i].in[0]); adf::frontend::DeclConnect __ci43__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:75:17", ""};
+                connect<> (in[j][i].out[0], sp[j][i].in[0]); adf::frontend::DeclConnect __ci43__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:74:17", ""};
+                connect<> (mg[j][i].out[0], out[j][i].in[0]); adf::frontend::DeclConnect __ci44__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:75:17", ""};
             }
         }
 
         for(int i = 0;i < 2;i ++) {
             for(int j = 0;j < IO_NUM;j ++) {
                 for(int k = 0;k < SUB_BLOCK_SIZE;k ++) {
-                    connect<> (sp[j][i].out[k], sweepGraph.in[j*SUB_BLOCK_SIZE+k][i]); adf::frontend::DeclConnect __ci44__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:82:21", ""};
-                    connect<> (sweepGraph.out[j*SUB_BLOCK_SIZE+k][i], mg[j][i].in[k]); adf::frontend::DeclConnect __ci45__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:83:21", ""};
+                    connect<> (sp[j][i].out[k], sweepGraph.in[j*SUB_BLOCK_SIZE+k][i]); adf::frontend::DeclConnect __ci45__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:82:21", ""};
+                    connect<> (sweepGraph.out[j*SUB_BLOCK_SIZE+k][i], mg[j][i].in[k]); adf::frontend::DeclConnect __ci46__{"/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:83:21", ""};
                 }
             }
         }
@@ -63569,6 +63569,12 @@ const int SUB_BLOCK_SIZE = BLOCK_SIZE/IO_NUM; decltype(adf::frontend::instrument
 
 
 TopSweepGraph<ROW, BLOCK_SIZE, IO_NUM, SUB_BLOCK_SIZE, 1, 0, 1> topSweepGraph1_1("1_1"); decltype(adf::frontend::instrument< decltype(topSweepGraph1_1) > (topSweepGraph1_1)) __ci41__ = adf::frontend::instrument< decltype(topSweepGraph1_1) > ( topSweepGraph1_1, "topSweepGraph1_1", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.cpp:6:1", nullptr, "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:47:1");
+
+
+
+
+
+TopNormGraph<ROW, SUB_BLOCK_SIZE, 0, 0, 1> topNormGraph1_1("1_1"); decltype(adf::frontend::instrument< decltype(topNormGraph1_1) > (topNormGraph1_1)) __ci42__ = adf::frontend::instrument< decltype(topNormGraph1_1) > ( topNormGraph1_1, "topNormGraph1_1", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.cpp:12:1", nullptr, "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:8:1");
 
 int main(int argc, char** argv)
 {

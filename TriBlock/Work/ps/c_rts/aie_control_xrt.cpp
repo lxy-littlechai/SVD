@@ -10,24 +10,27 @@
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {0, "topSweepGraph1_1", nullptr, nullptr, nullptr, {1, 1, 1, 2, 2, 2}, {0, 1, 2, 0, 1, 2}, {1, 1, 0, 2, 2, 1}, {1, 0, 2, 0, 0, 2}, {0xa4, 0x17e4, 0x22e4, 0x1744, 0x2c84, 0xa4}, {0, 0, 0, 0, 0, 0}, {}, {}, {}, {},  }, 
+    {2, "topNormGraph1_1", nullptr, nullptr, nullptr, {0}, {0}, {0}, {0}, {0x4}, {0}, {}, {}, {}, {},  }, 
+    {0, "topSweepGraph1_1", nullptr, nullptr, nullptr, {1, 1, 1, 2, 2, 2}, {0, 1, 2, 0, 1, 2}, {1, 1, 1, 1, 2, 2}, {0, 2, 1, 0, 0, 2}, {0x4, 0xa4, 0xa4, 0x2004, 0x2264, 0xa4}, {0, 0, 0, 0, 0, 0}, {}, {}, {}, {},  }, 
   };
-  const int NUM_GRAPH = 1;
+  const int NUM_GRAPH = 2;
 
 /************************** PLIO Configurations  *****************************/
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "topSweepGraph1_1.in[0][0]", "1_1_sweep_in_L_0", 7, 0, 4},
-    {1, "topSweepGraph1_1.out[0][0]", "1_1_sweep_out_L_0", 7, 1, 2},
+    {0, "topSweepGraph1_1.in[0][0]", "1_1_sweep_in_L_0", 6, 0, 4},
+    {1, "topSweepGraph1_1.out[0][0]", "1_1_sweep_out_L_0", 6, 1, 4},
     {2, "topSweepGraph1_1.in[0][1]", "1_1_sweep_in_R_0", 7, 0, 0},
-    {3, "topSweepGraph1_1.out[0][1]", "1_1_sweep_out_R_0", 6, 1, 4},
-    {4, "topSweepGraph1_1.in[1][0]", "1_1_sweep_in_L_1", 6, 0, 0},
-    {5, "topSweepGraph1_1.out[1][0]", "1_1_sweep_out_L_1", 6, 1, 2},
-    {6, "topSweepGraph1_1.in[1][1]", "1_1_sweep_in_R_1", 6, 0, 4},
-    {7, "topSweepGraph1_1.out[1][1]", "1_1_sweep_out_R_1", 7, 1, 4},
+    {3, "topSweepGraph1_1.out[0][1]", "1_1_sweep_out_R_0", 7, 1, 4},
+    {4, "topSweepGraph1_1.in[1][0]", "1_1_sweep_in_L_1", 7, 0, 4},
+    {5, "topSweepGraph1_1.out[1][0]", "1_1_sweep_out_L_1", 7, 1, 2},
+    {6, "topSweepGraph1_1.in[1][1]", "1_1_sweep_in_R_1", 8, 0, 0},
+    {7, "topSweepGraph1_1.out[1][1]", "1_1_sweep_out_R_1", 8, 1, 0},
+    {8, "topNormGraph1_1.in[0]", "1_1_norm_in_0", 6, 0, 0},
+    {9, "topNormGraph1_1.out[0]", "1_1_norm_out_0", 6, 1, 2},
   };
-  const int NUM_PLIO = 8;
+  const int NUM_PLIO = 10;
 
 
 /************************** ADF API initializer *****************************/
@@ -66,6 +69,8 @@
 #if !defined(__CDO__) && !defined(__AIECONTROLCODE__)
 
 // Kernel Stub Definition
+  template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out) { /* Stub */ } 
   template<int ROW> void orthogonalize(adf::input_buffer<float, adf::extents<1 + ROW>> &in0, adf::input_buffer<float, adf::extents<1 + ROW>> &in1, adf::output_buffer<float, adf::extents<1 + ROW>> &out0, adf::output_buffer<float, adf::extents<1 + ROW>> &out1) { /* Stub */ } 
+  template void normalize<32>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict); /* explicit template instantiation */ 
   template void orthogonalize<32>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &,adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &); /* explicit template instantiation */ 
 #endif

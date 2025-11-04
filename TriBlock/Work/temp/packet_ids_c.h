@@ -6,3 +6,5 @@
 #define 1_1_sweep_out_L_1_0 0
 #define 1_1_sweep_in_R_1_0 0
 #define 1_1_sweep_out_R_1_0 0
+#define 1_1_norm_in_0_0 0
+#define 1_1_norm_out_0_0 0

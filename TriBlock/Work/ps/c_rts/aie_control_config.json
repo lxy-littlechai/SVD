@@ -29,6 +29,30 @@
         },
         "graphs": {
             "graph0": {
+                "id": 2,
+                "name": "topNormGraph1_1",
+                "core_columns": [
+                    0
+                ],
+                "core_rows": [
+                    0
+                ],
+                "iteration_memory_columns": [
+                    0
+                ],
+                "iteration_memory_rows": [
+                    0
+                ],
+                "iteration_memory_addresses": [
+                    4
+                ],
+                "multirate_triggers": [
+                    false
+                ],
+                "pl_kernel_instance_names": [],
+                "pl_axi_lite_modes": []
+            },
+            "graph1": {
                 "id": 0,
                 "name": "topSweepGraph1_1",
                 "core_columns": [
@@ -50,25 +74,25 @@
                 "iteration_memory_columns": [
                     1,
                     1,
-                    0,
+                    1,
+                    1,
                     2,
-                    2,
-                    1
+                    2
                 ],
                 "iteration_memory_rows": [
-                    1,
                     0,
                     2,
+                    1,
                     0,
                     0,
                     2
                 ],
                 "iteration_memory_addresses": [
+                    4,
                     164,
-                    6116,
-                    8932,
-                    5956,
-                    11396,
+                    164,
+                    8196,
+                    8804,
                     164
                 ],
                 "multirate_triggers": [
@@ -132,6 +156,14 @@
                     "row": 2,
                     "schedule": 0,
                     "function": "orthogonalize<32>.orth[1][2]"
+                },
+                {
+                    "graph": "topNormGraph1_1.normGraph",
+                    "tile": "aie",
+                    "column": 0,
+                    "row": 0,
+                    "schedule": 0,
+                    "function": "normalize<32>.norm[0]"
                 }
             ],
             "SharedBufferToTileMapping": []
@@ -143,7 +175,7 @@
                 "id": 0,
                 "name": "topSweepGraph1_1.in[0][0]",
                 "logical_name": "1_1_sweep_in_L_0",
-                "shim_column": 7,
+                "shim_column": 6,
                 "slaveOrMaster": 0,
                 "stream_id": 4
             },
@@ -151,9 +183,9 @@
                 "id": 1,
                 "name": "topSweepGraph1_1.out[0][0]",
                 "logical_name": "1_1_sweep_out_L_0",
-                "shim_column": 7,
+                "shim_column": 6,
                 "slaveOrMaster": 1,
-                "stream_id": 2
+                "stream_id": 4
             },
             "plio2": {
                 "id": 2,
@@ -167,7 +199,7 @@
                 "id": 3,
                 "name": "topSweepGraph1_1.out[0][1]",
                 "logical_name": "1_1_sweep_out_R_0",
-                "shim_column": 6,
+                "shim_column": 7,
                 "slaveOrMaster": 1,
                 "stream_id": 4
             },
@@ -175,15 +207,15 @@
                 "id": 4,
                 "name": "topSweepGraph1_1.in[1][0]",
                 "logical_name": "1_1_sweep_in_L_1",
-                "shim_column": 6,
+                "shim_column": 7,
                 "slaveOrMaster": 0,
-                "stream_id": 0
+                "stream_id": 4
             },
             "plio5": {
                 "id": 5,
                 "name": "topSweepGraph1_1.out[1][0]",
                 "logical_name": "1_1_sweep_out_L_1",
-                "shim_column": 6,
+                "shim_column": 7,
                 "slaveOrMaster": 1,
                 "stream_id": 2
             },
@@ -191,21 +223,55 @@
                 "id": 6,
                 "name": "topSweepGraph1_1.in[1][1]",
                 "logical_name": "1_1_sweep_in_R_1",
-                "shim_column": 6,
+                "shim_column": 8,
                 "slaveOrMaster": 0,
-                "stream_id": 4
+                "stream_id": 0
             },
             "plio7": {
                 "id": 7,
                 "name": "topSweepGraph1_1.out[1][1]",
                 "logical_name": "1_1_sweep_out_R_1",
-                "shim_column": 7,
+                "shim_column": 8,
                 "slaveOrMaster": 1,
-                "stream_id": 4
+                "stream_id": 0
+            },
+            "plio8": {
+                "id": 8,
+                "name": "topNormGraph1_1.in[0]",
+                "logical_name": "1_1_norm_in_0",
+                "shim_column": 6,
+                "slaveOrMaster": 0,
+                "stream_id": 0
+            },
+            "plio9": {
+                "id": 9,
+                "name": "topNormGraph1_1.out[0]",
+                "logical_name": "1_1_norm_out_0",
+                "shim_column": 6,
+                "slaveOrMaster": 1,
+                "stream_id": 2
             }
         },
         "EventGraphs": {
             "graph0": {
+                "id": 2,
+                "name": "topNormGraph1_1",
+                "core_columns": [
+                    0
+                ],
+                "core_rows": [
+                    0
+                ],
+                "dma_columns": [
+                    0,
+                    0
+                ],
+                "dma_rows": [
+                    1,
+                    1
+                ]
+            },
+            "graph1": {
                 "id": 0,
                 "name": "topSweepGraph1_1",
                 "core_columns": [
@@ -227,8 +293,8 @@
                 "dma_columns": [
                     0,
                     0,
-                    0,
                     1,
+                    2,
                     2,
                     3,
                     1,
@@ -240,8 +306,8 @@
                 ],
                 "dma_rows": [
                     0,
-                    0,
                     2,
+                    0,
                     0,
                     0,
                     1,
@@ -292,6 +358,14 @@
                 },
                 "plio7": {
                     "logical_name": "1_1_sweep_out_R_1",
+                    "data_width": 128
+                },
+                "plio8": {
+                    "logical_name": "1_1_norm_in_0",
+                    "data_width": 128
+                },
+                "plio9": {
+                    "logical_name": "1_1_norm_out_0",
                     "data_width": 128
                 }
             }

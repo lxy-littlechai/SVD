@@ -71,6 +71,18 @@
         "line": 56,
         "column": 17
       }
+    },
+    "topNormGraph1_1.normGraph.norm[0]": {
+      "tile": {
+        "column": 0,
+        "row": 0,
+        "tile_type": "core"
+      },
+      "tile_src_info": {
+        "file": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp",
+        "line": 262,
+        "column": 9
+      }
     }
   },
   "PortConstraints": {

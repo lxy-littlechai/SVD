@@ -242,6 +242,66 @@
                 }
             }
         },
+        "b18": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "pktstream",
+                    "elementType": "pktstream",
+                    "direction": "out",
+                    "portName": "in[0].out[0]"
+                }
+            }
+        },
+        "b19": {
+            "type": "plio",
+            "ports": {
+                "pi0": {
+                    "type": "pktstream",
+                    "elementType": "pktstream",
+                    "direction": "in",
+                    "portName": "out[0].in[0]"
+                }
+            }
+        },
+        "b20": {
+            "type": "pktsplit",
+            "ports": {
+                "pi0": {
+                    "type": "pktstream",
+                    "elementType": "pktstream",
+                    "direction": "in",
+                    "parameterIndex": 0,
+                    "portName": "sp[0].in[0]"
+                },
+                "po0": {
+                    "type": "pktstream",
+                    "elementType": "pktstream",
+                    "direction": "out",
+                    "parameterIndex": 1,
+                    "portName": "sp[0].out[0]"
+                }
+            }
+        },
+        "b21": {
+            "type": "pktmerge",
+            "ports": {
+                "pi0": {
+                    "type": "pktstream",
+                    "elementType": "pktstream",
+                    "direction": "in",
+                    "parameterIndex": 0,
+                    "portName": "mg[0].in[0]"
+                },
+                "po0": {
+                    "type": "pktstream",
+                    "elementType": "pktstream",
+                    "direction": "out",
+                    "parameterIndex": 1,
+                    "portName": "mg[0].out[0]"
+                }
+            }
+        },
         "b0": {
             "type": "function",
             "function": "orthogonalize<32>",
@@ -302,7 +362,41 @@
                 }
             }
         },
-        "ps_b17": {
+        "b17": {
+            "type": "function",
+            "function": "normalize<32>",
+            "template": "template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out)",
+            "srcFile": "aie/ProcessUnit/Normalize.cpp",
+            "ports": {
+                "pi0": {
+                    "type": "mem",
+                    "elementType": "float",
+                    "direction": "in",
+                    "parameterIndex": 0,
+                    "bufferPort": true,
+                    "portName": "in[0]",
+                    "varName": "in",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict",
+                    "dimensions": [
+                        33
+                    ]
+                },
+                "po0": {
+                    "type": "mem",
+                    "elementType": "float",
+                    "direction": "out",
+                    "parameterIndex": 1,
+                    "bufferPort": true,
+                    "portName": "out[0]",
+                    "varName": "out",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict",
+                    "dimensions": [
+                        33
+                    ]
+                }
+            }
+        },
+        "ps_b22": {
             "type": "function",
             "function": "ps_main",
             "srcFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.cpp",
@@ -616,8 +710,77 @@
             "qualifiedName": "topSweepGraph1_1.mg[1][1]",
             "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:54:5"
         },
-        "ps_i22": {
-            "blockType": "ps_b17",
+        "i22": {
+            "blockType": "b17",
+            "graphIds": [
+                3,
+                2
+            ],
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "qualifiedGraphName": "topNormGraph1_1.normGraph",
+            "qualifiedName": "topNormGraph1_1.normGraph.norm[0]",
+            "runTime": 0.8999,
+            "fabric": "me",
+            "instanceId": 6,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:250:17"
+        },
+        "i23": {
+            "blockType": "b18",
+            "graphIds": [
+                2
+            ],
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "qualifiedGraphName": "topNormGraph1_1",
+            "qualifiedName": "topNormGraph1_1.in[0]",
+            "dataWidth": 128,
+            "dataFile": "aie/data/1_1_norm_in_0.txt",
+            "logicalName": "1_1_norm_in_0",
+            "plFreq": 200.0,
+            "instanceId": 8,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:12:5"
+        },
+        "i24": {
+            "blockType": "b19",
+            "graphIds": [
+                2
+            ],
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "qualifiedGraphName": "topNormGraph1_1",
+            "qualifiedName": "topNormGraph1_1.out[0]",
+            "dataWidth": 128,
+            "dataFile": "aie/data/1_1_norm_out_0.txt",
+            "logicalName": "1_1_norm_out_0",
+            "plFreq": 200.0,
+            "instanceId": 9,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:13:5"
+        },
+        "i25": {
+            "blockType": "b20",
+            "graphIds": [
+                2
+            ],
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "qualifiedGraphName": "topNormGraph1_1",
+            "qualifiedName": "topNormGraph1_1.sp[0]",
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:14:5"
+        },
+        "i26": {
+            "blockType": "b21",
+            "graphIds": [
+                2
+            ],
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "qualifiedGraphName": "topNormGraph1_1",
+            "qualifiedName": "topNormGraph1_1.mg[0]",
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:15:5"
+        },
+        "ps_i27": {
+            "blockType": "ps_b22",
             "graphIds": [
                 -1
             ],
@@ -1178,6 +1341,88 @@
             "portName": "mg[1][1].out[0]",
             "qualifiedName": "topSweepGraph1_1.mg[1][1].out[0]",
             "blockInstance": "i21"
+        },
+        "i22_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "norm[0].in[0]",
+            "qualifiedName": "topNormGraph1_1.normGraph.norm[0].in[0]",
+            "instanceId": 58,
+            "blockInstance": "i22",
+            "blockSize": 132,
+            "dimensions": [
+                33
+            ]
+        },
+        "i22_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "norm[0].out[0]",
+            "qualifiedName": "topNormGraph1_1.normGraph.norm[0].out[0]",
+            "instanceId": 59,
+            "blockInstance": "i22",
+            "blockSize": 132,
+            "dimensions": [
+                33
+            ]
+        },
+        "i23_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "in[0].out[0]",
+            "qualifiedName": "topNormGraph1_1.in[0].out[0]",
+            "blockInstance": "i23"
+        },
+        "i24_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "out[0].in[0]",
+            "qualifiedName": "topNormGraph1_1.out[0].in[0]",
+            "blockInstance": "i24"
+        },
+        "i25_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "sp[0].in[0]",
+            "qualifiedName": "topNormGraph1_1.sp[0].in[0]",
+            "blockInstance": "i25"
+        },
+        "i25_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "sp[0].out[0]",
+            "qualifiedName": "topNormGraph1_1.sp[0].out[0]",
+            "blockInstance": "i25"
+        },
+        "i26_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "mg[0].in[0]",
+            "qualifiedName": "topNormGraph1_1.mg[0].in[0]",
+            "blockInstance": "i26"
+        },
+        "i26_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1>",
+            "portName": "mg[0].out[0]",
+            "qualifiedName": "topNormGraph1_1.mg[0].out[0]",
+            "blockInstance": "i26"
         }
     },
     "nets": {
@@ -1484,6 +1729,58 @@
             "locs": [
                 "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:75:17"
             ]
+        },
+        "net24": {
+            "srcInstance": "i25",
+            "srcPort": "i25_po0",
+            "dstInstance": "i22",
+            "dstPort": "i22_pi0",
+            "varNames": [
+                "",
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:35:17",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:256:7"
+            ]
+        },
+        "net25": {
+            "srcInstance": "i22",
+            "srcPort": "i22_po0",
+            "dstInstance": "i26",
+            "dstPort": "i26_pi0",
+            "varNames": [
+                "",
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/ProcessGraph/RingGraph.hpp:257:7",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:36:17"
+            ]
+        },
+        "net26": {
+            "srcInstance": "i23",
+            "srcPort": "i23_po0",
+            "dstInstance": "i25",
+            "dstPort": "i25_pi0",
+            "varNames": [
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:30:13"
+            ]
+        },
+        "net27": {
+            "srcInstance": "i26",
+            "srcPort": "i26_po0",
+            "dstInstance": "i24",
+            "dstPort": "i24_pi0",
+            "varNames": [
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.h:31:13"
+            ]
         }
     },
     "debugInfo": {
@@ -1553,7 +1850,22 @@
         "i21": {
             "varName": "mg[1][1]"
         },
-        "ps_i22": {
+        "i22": {
+            "varName": "norm[0]"
+        },
+        "i23": {
+            "varName": "in[0]"
+        },
+        "i24": {
+            "varName": "out[0]"
+        },
+        "i25": {
+            "varName": "sp[0]"
+        },
+        "i26": {
+            "varName": "mg[0]"
+        },
+        "ps_i27": {
             "varName": ""
         },
         "i0_pi0": {
@@ -1699,6 +2011,30 @@
         },
         "i21_po0": {
             "varName": "mg[1][1].out[0]"
+        },
+        "i22_pi0": {
+            "varName": "norm[0].in[0]"
+        },
+        "i22_po0": {
+            "varName": "norm[0].out[0]"
+        },
+        "i23_po0": {
+            "varName": "in[0].out[0]"
+        },
+        "i24_pi0": {
+            "varName": "out[0].in[0]"
+        },
+        "i25_pi0": {
+            "varName": "sp[0].in[0]"
+        },
+        "i25_po0": {
+            "varName": "sp[0].out[0]"
+        },
+        "i26_pi0": {
+            "varName": "mg[0].in[0]"
+        },
+        "i26_po0": {
+            "varName": "mg[0].out[0]"
         }
     },
     "graphFilesInfo": {
@@ -1736,7 +2072,7 @@
             "i11": {
                 "plioInfo": {
                     "tile": "shim",
-                    "column": 6,
+                    "column": 7,
                     "direction": "aie2pl",
                     "channel": 4
                 }
@@ -1744,15 +2080,15 @@
             "i14": {
                 "plioInfo": {
                     "tile": "shim",
-                    "column": 6,
+                    "column": 7,
                     "direction": "pl2aie",
-                    "channel": 0
+                    "channel": 4
                 }
             },
             "i15": {
                 "plioInfo": {
                     "tile": "shim",
-                    "column": 6,
+                    "column": 7,
                     "direction": "aie2pl",
                     "channel": 2
                 }
@@ -1760,17 +2096,17 @@
             "i18": {
                 "plioInfo": {
                     "tile": "shim",
-                    "column": 6,
+                    "column": 8,
                     "direction": "pl2aie",
-                    "channel": 4
+                    "channel": 0
                 }
             },
             "i19": {
                 "plioInfo": {
                     "tile": "shim",
-                    "column": 7,
+                    "column": 8,
                     "direction": "aie2pl",
-                    "channel": 4
+                    "channel": 0
                 }
             },
             "i2": {
@@ -1779,6 +2115,30 @@
                     "column": 1,
                     "row": 1,
                     "schedule": 0
+                }
+            },
+            "i22": {
+                "coreInfo": {
+                    "tile": "aie",
+                    "column": 0,
+                    "row": 0,
+                    "schedule": 0
+                }
+            },
+            "i23": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 6,
+                    "direction": "pl2aie",
+                    "channel": 0
+                }
+            },
+            "i24": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 6,
+                    "direction": "aie2pl",
+                    "channel": 2
                 }
             },
             "i3": {
@@ -1808,7 +2168,7 @@
             "i6": {
                 "plioInfo": {
                     "tile": "shim",
-                    "column": 7,
+                    "column": 6,
                     "direction": "pl2aie",
                     "channel": 4
                 }
@@ -1816,9 +2176,9 @@
             "i7": {
                 "plioInfo": {
                     "tile": "shim",
-                    "column": 7,
+                    "column": 6,
                     "direction": "aie2pl",
-                    "channel": 2
+                    "channel": 4
                 }
             }
         },
@@ -1828,7 +2188,7 @@
                     {
                         "generatedName": "buf0",
                         "tile": "aie",
-                        "column": 0,
+                        "column": 1,
                         "row": 0,
                         "offset": 16384,
                         "size": 144,
@@ -1839,9 +2199,9 @@
                     {
                         "generatedName": "buf0d",
                         "tile": "aie",
-                        "column": 0,
+                        "column": 1,
                         "row": 0,
-                        "offset": 8032,
+                        "offset": 24576,
                         "size": 144,
                         "lock": [
                             1
@@ -1850,7 +2210,7 @@
                 ],
                 "dmaInfo": {
                     "tile": "aie",
-                    "column": 0,
+                    "column": 1,
                     "row": 0,
                     "direction": "s2mm",
                     "channel": 0,
@@ -1870,10 +2230,10 @@
                         "tile": "aie",
                         "column": 0,
                         "row": 0,
-                        "offset": 24576,
+                        "offset": 16384,
                         "size": 144,
                         "lock": [
-                            2
+                            0
                         ]
                     },
                     {
@@ -1881,10 +2241,10 @@
                         "tile": "aie",
                         "column": 0,
                         "row": 0,
-                        "offset": 12448,
+                        "offset": 24576,
                         "size": 144,
                         "lock": [
-                            3
+                            1
                         ]
                     }
                 ],
@@ -1893,10 +2253,10 @@
                     "column": 0,
                     "row": 0,
                     "direction": "s2mm",
-                    "channel": 1,
+                    "channel": 0,
                     "bufferDescriptor": [
-                        2,
-                        3
+                        0,
+                        1
                     ],
                     "packetID": [
                         0
@@ -1998,7 +2358,7 @@
                         "tile": "aie",
                         "column": 2,
                         "row": 0,
-                        "offset": 8192,
+                        "offset": 8032,
                         "size": 144,
                         "lock": [
                             1
@@ -2025,35 +2385,35 @@
                     {
                         "generatedName": "buf3",
                         "tile": "aie",
-                        "column": 1,
+                        "column": 2,
                         "row": 0,
-                        "offset": 8192,
+                        "offset": 24576,
                         "size": 144,
                         "lock": [
-                            0
+                            2
                         ]
                     },
                     {
                         "generatedName": "buf3d",
                         "tile": "aie",
-                        "column": 1,
+                        "column": 2,
                         "row": 0,
-                        "offset": 16384,
+                        "offset": 16224,
                         "size": 144,
                         "lock": [
-                            1
+                            3
                         ]
                     }
                 ],
                 "dmaInfo": {
                     "tile": "aie",
-                    "column": 1,
+                    "column": 2,
                     "row": 0,
                     "direction": "s2mm",
-                    "channel": 0,
+                    "channel": 1,
                     "bufferDescriptor": [
-                        0,
-                        1
+                        2,
+                        3
                     ],
                     "packetID": [
                         0
@@ -2116,6 +2476,92 @@
             "i20_po0": {},
             "i21_pi0": {},
             "i21_po0": {},
+            "i22_pi0": {
+                "bufferInfo": [
+                    {
+                        "generatedName": "buf16",
+                        "tile": "aie",
+                        "column": 0,
+                        "row": 1,
+                        "offset": 16384,
+                        "size": 144,
+                        "lock": [
+                            0
+                        ]
+                    },
+                    {
+                        "generatedName": "buf16d",
+                        "tile": "aie",
+                        "column": 0,
+                        "row": 1,
+                        "offset": 8032,
+                        "size": 144,
+                        "lock": [
+                            1
+                        ]
+                    }
+                ],
+                "dmaInfo": {
+                    "tile": "aie",
+                    "column": 0,
+                    "row": 1,
+                    "direction": "s2mm",
+                    "channel": 0,
+                    "bufferDescriptor": [
+                        0,
+                        1
+                    ],
+                    "packetID": [
+                        0
+                    ]
+                }
+            },
+            "i22_po0": {
+                "bufferInfo": [
+                    {
+                        "generatedName": "buf17",
+                        "tile": "aie",
+                        "column": 0,
+                        "row": 1,
+                        "offset": 24576,
+                        "size": 144,
+                        "lock": [
+                            2
+                        ]
+                    },
+                    {
+                        "generatedName": "buf17d",
+                        "tile": "aie",
+                        "column": 0,
+                        "row": 1,
+                        "offset": 12448,
+                        "size": 144,
+                        "lock": [
+                            3
+                        ]
+                    }
+                ],
+                "dmaInfo": {
+                    "tile": "aie",
+                    "column": 0,
+                    "row": 1,
+                    "direction": "mm2s",
+                    "channel": 0,
+                    "bufferDescriptor": [
+                        2,
+                        3
+                    ],
+                    "packetID": [
+                        0
+                    ]
+                }
+            },
+            "i23_po0": {},
+            "i24_pi0": {},
+            "i25_pi0": {},
+            "i25_po0": {},
+            "i26_pi0": {},
+            "i26_po0": {},
             "i2_pi0": {
                 "bufferInfo": [
                     {
@@ -2290,7 +2736,7 @@
                         "tile": "aie",
                         "column": 2,
                         "row": 2,
-                        "offset": 8032,
+                        "offset": 0,
                         "size": 144,
                         "lock": [
                             0
@@ -2353,7 +2799,7 @@
                         "tile": "aie",
                         "column": 0,
                         "row": 2,
-                        "offset": 16384,
+                        "offset": 0,
                         "size": 144,
                         "lock": [
                             0
@@ -2364,7 +2810,7 @@
                         "tile": "aie",
                         "column": 0,
                         "row": 2,
-                        "offset": 24576,
+                        "offset": 8192,
                         "size": 144,
                         "lock": [
                             1
@@ -2522,7 +2968,7 @@
                         "tile": "aie",
                         "column": 2,
                         "row": 2,
-                        "offset": 8032,
+                        "offset": 0,
                         "size": 144,
                         "lock": [
                             0
@@ -2629,6 +3075,28 @@
             "i9_po0": {}
         },
         "graphInstanceMapping": {
+            "topNormGraph1_1": {
+                "graphInfo": {
+                    "core_columns": [
+                        0
+                    ],
+                    "core_rows": [
+                        0
+                    ],
+                    "iteration_memory_columns": [
+                        0
+                    ],
+                    "iteration_memory_rows": [
+                        0
+                    ],
+                    "iteration_memory_addresses": [
+                        4
+                    ],
+                    "multirate_triggers": [
+                        0
+                    ]
+                }
+            },
             "topSweepGraph1_1": {
                 "graphInfo": {
                     "core_columns": [
@@ -2650,25 +3118,25 @@
                     "iteration_memory_columns": [
                         1,
                         1,
-                        0,
+                        1,
+                        1,
                         2,
-                        2,
-                        1
+                        2
                     ],
                     "iteration_memory_rows": [
-                        1,
                         0,
                         2,
+                        1,
                         0,
                         0,
                         2
                     ],
                     "iteration_memory_addresses": [
+                        4,
                         164,
-                        6116,
-                        8932,
-                        5956,
-                        11396,
+                        164,
+                        8196,
+                        8804,
                         164
                     ],
                     "multirate_triggers": [
@@ -2686,23 +3154,23 @@
         "systemMemory": [
             {
                 "tile": "aie",
-                "column": 0,
+                "column": 2,
                 "row": 2,
-                "offset": 8928,
+                "offset": 160,
                 "size": 2080
             },
             {
                 "tile": "aie",
-                "column": 2,
+                "column": 0,
                 "row": 0,
-                "offset": 11392,
+                "offset": 0,
                 "size": 2080
             },
             {
                 "tile": "aie",
-                "column": 2,
-                "row": 0,
-                "offset": 5952,
+                "column": 1,
+                "row": 2,
+                "offset": 160,
                 "size": 2080
             },
             {
@@ -2714,16 +3182,23 @@
             },
             {
                 "tile": "aie",
-                "column": 1,
+                "column": 2,
                 "row": 0,
-                "offset": 6112,
+                "offset": 8800,
                 "size": 2080
             },
             {
                 "tile": "aie",
                 "column": 1,
-                "row": 2,
-                "offset": 160,
+                "row": 0,
+                "offset": 8192,
+                "size": 2080
+            },
+            {
+                "tile": "aie",
+                "column": 1,
+                "row": 0,
+                "offset": 0,
                 "size": 2080
             }
         ]
@@ -2736,6 +3211,9 @@
             "repetition_count": 1
         },
         "i2": {
+            "repetition_count": 1
+        },
+        "i22": {
             "repetition_count": 1
         },
         "i3": {

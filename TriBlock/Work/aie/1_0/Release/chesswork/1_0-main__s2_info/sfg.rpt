@@ -87,15 +87,15 @@ Bundle schedule (instruction words shown before relocation)
 000206         1 00 01                                              .swstall "delay_slot"
 000208         1 00 00 00 03                                        .swstall "delay_slot"
 000212         1 00 00 00 00 00 00 00 00 00 00 00 1f                .swstall "delay_slot"
-000224  m115   2 00 00 1b c2 07 0b 40 04 0d c0 00 3f                b1153 (MOV.s9 r11, #16)             b160  (EQ r0, r10, r5)              b1112 (MOV.u20 r7, #0)             
-000236         2 00 00 31 1e 43 cf 2e 77                            b161  (ITE_EQZ r7, r9, r7, r0)      b1171 (MOV.s8 r9, #17)             
+000224  m115   2 00 00 1b c6 07 0b 40 04 0d c0 00 3f                b1153 (MOV.s9 r11, #48)             b160  (EQ r0, r10, r5)              b1112 (MOV.u20 r7, #0)             
+000236         2 00 00 33 1e 43 cf 2e 77                            b161  (ITE_EQZ r7, r9, r7, r0)      b1171 (MOV.s8 r9, #49)             
 000244         2 31 a5 a0 f7 ff bc 47 f7                            b159  (SUB r10, r5, r10)            b163  (ST.SPIL r7, [sp, #-68])     
 000252         2 00 00 0f 5c da f5 fb 37                            b162  (ITE_EQZ r11, r9, r11, r0)    b952  (ST.SPIL r10, [sp, #-40])    
 000260  m49    2 00 01                                              NOP
 000262         2 00 01                                              NOP
 000264         2 00 01                                              NOP
 000266         2 14 5b 30 03                                        b158  (ACQ r11, #1, r5)            
-000270  m140   2 00 00 1d c2 40 00 00 7f f7 f1 3e 9f                b1239 (MOV.s9 r13, #18)             b155  (ITE_NEZ r15, r13, r15, r0)   b1257 (MOV.s8 r10, #19)            
+000270  m140   2 00 00 1d c2 00 00 00 7f f7 f1 1e 9f                b1239 (MOV.s9 r13, #16)             b155  (ITE_NEZ r15, r13, r15, r0)   b1257 (MOV.s8 r10, #17)            
 000282         2 1e da d0 03                                        b156  (ITE_EQZ r13, r10, r13, r0)  
 000286         2 00 01                                              .swstall "mem_acquire0"
 000288         2 80 00 00 ff ff b8 47 f7                            b157  (ST.SPIL r15, [sp, #-72])    

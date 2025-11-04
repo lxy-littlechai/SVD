@@ -3,36 +3,6 @@
         {
             "KernelPort": {
                 "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-                "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][1].in[1]"
-            },
-            "BufferInfo": [
-                {
-                    "Column": 3,
-                    "Row": 1,
-                    "Channel": 0,
-                    "LockID": 0,
-                    "ControlBuffer": false,
-                    "AB_Mode": false,
-                    "BD": [
-                        0
-                    ]
-                },
-                {
-                    "Column": 3,
-                    "Row": 1,
-                    "Channel": 0,
-                    "LockID": 1,
-                    "ControlBuffer": false,
-                    "AB_Mode": false,
-                    "BD": [
-                        1
-                    ]
-                }
-            ]
-        },
-        {
-            "KernelPort": {
-                "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
                 "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][0].in[0]"
             },
             "BufferInfo": [
@@ -67,8 +37,38 @@
             },
             "BufferInfo": [
                 {
-                    "Column": 1,
+                    "Column": 2,
                     "Row": 0,
+                    "Channel": 1,
+                    "LockID": 2,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        2
+                    ]
+                },
+                {
+                    "Column": 2,
+                    "Row": 0,
+                    "Channel": 1,
+                    "LockID": 3,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "KernelPort": {
+                "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
+                "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][1].in[1]"
+            },
+            "BufferInfo": [
+                {
+                    "Column": 3,
+                    "Row": 1,
                     "Channel": 0,
                     "LockID": 0,
                     "ControlBuffer": false,
@@ -78,8 +78,8 @@
                     ]
                 },
                 {
-                    "Column": 1,
-                    "Row": 0,
+                    "Column": 3,
+                    "Row": 1,
                     "Channel": 0,
                     "LockID": 1,
                     "ControlBuffer": false,
@@ -122,8 +122,68 @@
         },
         {
             "KernelPort": {
+                "QualifiedGraphName": "topNormGraph1_1.normGraph",
+                "VariableName": "topNormGraph1_1.normGraph.norm[0].in[0]"
+            },
+            "BufferInfo": [
+                {
+                    "Column": 0,
+                    "Row": 1,
+                    "Channel": 0,
+                    "LockID": 0,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        0
+                    ]
+                },
+                {
+                    "Column": 0,
+                    "Row": 1,
+                    "Channel": 0,
+                    "LockID": 1,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "KernelPort": {
                 "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
                 "VariableName": "topSweepGraph1_1.sweepGraph.orth[0][0].in[0]"
+            },
+            "BufferInfo": [
+                {
+                    "Column": 1,
+                    "Row": 0,
+                    "Channel": 0,
+                    "LockID": 0,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        0
+                    ]
+                },
+                {
+                    "Column": 1,
+                    "Row": 0,
+                    "Channel": 0,
+                    "LockID": 1,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "KernelPort": {
+                "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
+                "VariableName": "topSweepGraph1_1.sweepGraph.orth[0][0].in[1]"
             },
             "BufferInfo": [
                 {
@@ -146,36 +206,6 @@
                     "AB_Mode": false,
                     "BD": [
                         1
-                    ]
-                }
-            ]
-        },
-        {
-            "KernelPort": {
-                "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-                "VariableName": "topSweepGraph1_1.sweepGraph.orth[0][0].in[1]"
-            },
-            "BufferInfo": [
-                {
-                    "Column": 0,
-                    "Row": 0,
-                    "Channel": 1,
-                    "LockID": 2,
-                    "ControlBuffer": false,
-                    "AB_Mode": false,
-                    "BD": [
-                        2
-                    ]
-                },
-                {
-                    "Column": 0,
-                    "Row": 0,
-                    "Channel": 1,
-                    "LockID": 3,
-                    "ControlBuffer": false,
-                    "AB_Mode": false,
-                    "BD": [
-                        3
                     ]
                 }
             ]
@@ -215,14 +245,14 @@
         {
             "KernelPort": {
                 "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-                "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][1].out[1]"
+                "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][2].out[0]"
             },
             "BufferInfo": [
                 {
                     "Column": 2,
-                    "Row": 2,
+                    "Row": 3,
                     "Channel": 0,
-                    "LockID": 2,
+                    "LockID": 0,
                     "ControlBuffer": false,
                     "AB_Mode": false,
                     "BD": [
@@ -231,9 +261,9 @@
                 },
                 {
                     "Column": 2,
-                    "Row": 2,
+                    "Row": 3,
                     "Channel": 0,
-                    "LockID": 3,
+                    "LockID": 1,
                     "ControlBuffer": false,
                     "AB_Mode": false,
                     "BD": [
@@ -305,14 +335,14 @@
         {
             "KernelPort": {
                 "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-                "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][2].out[0]"
+                "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][1].out[1]"
             },
             "BufferInfo": [
                 {
                     "Column": 2,
-                    "Row": 3,
+                    "Row": 2,
                     "Channel": 0,
-                    "LockID": 0,
+                    "LockID": 2,
                     "ControlBuffer": false,
                     "AB_Mode": false,
                     "BD": [
@@ -321,9 +351,9 @@
                 },
                 {
                     "Column": 2,
-                    "Row": 3,
+                    "Row": 2,
                     "Channel": 0,
-                    "LockID": 1,
+                    "LockID": 3,
                     "ControlBuffer": false,
                     "AB_Mode": false,
                     "BD": [
@@ -353,6 +383,36 @@
                     "Column": 2,
                     "Row": 3,
                     "Channel": 1,
+                    "LockID": 3,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        3
+                    ]
+                }
+            ]
+        },
+        {
+            "KernelPort": {
+                "QualifiedGraphName": "topNormGraph1_1.normGraph",
+                "VariableName": "topNormGraph1_1.normGraph.norm[0].out[0]"
+            },
+            "BufferInfo": [
+                {
+                    "Column": 0,
+                    "Row": 1,
+                    "Channel": 0,
+                    "LockID": 2,
+                    "ControlBuffer": false,
+                    "AB_Mode": false,
+                    "BD": [
+                        2
+                    ]
+                },
+                {
+                    "Column": 0,
+                    "Row": 1,
+                    "Channel": 0,
                     "LockID": 3,
                     "ControlBuffer": false,
                     "AB_Mode": false,

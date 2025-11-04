@@ -43,6 +43,17 @@
             "PacketID": [
                 0
             ]
+        },
+        {
+            "Input": {
+                "PLIO": "1_1_norm_in_0",
+                "DataFile": "aie/data/1_1_norm_in_0.txt",
+                "Port": "i23_po0",
+                "PortName": "topNormGraph1_1.in[0].out[0]"
+            },
+            "PacketID": [
+                0
+            ]
         }
     ],
     "Outputs": [
@@ -85,6 +96,17 @@
                 "DataFile": "aie/data/1_1_sweep_out_R_1.txt",
                 "Port": "i19_pi0",
                 "PortName": "topSweepGraph1_1.out[1][1].in[0]"
+            },
+            "PacketID": [
+                0
+            ]
+        },
+        {
+            "Output": {
+                "PLIO": "1_1_norm_out_0",
+                "DataFile": "aie/data/1_1_norm_out_0.txt",
+                "Port": "i24_pi0",
+                "PortName": "topNormGraph1_1.out[0].in[0]"
             },
             "PacketID": [
                 0
@@ -327,6 +349,66 @@
                 "Merge": "topSweepGraph1_1.mg[1][1]",
                 "Port": "i21_po0",
                 "PortName": "topSweepGraph1_1.mg[1][1].out[0]"
+            },
+            "PacketID": [
+                0
+            ]
+        },
+        {
+            "Input": {
+                "Kernel": "topNormGraph1_1.normGraph.norm[0]",
+                "Port": "i22_pi0",
+                "PortName": "topNormGraph1_1.normGraph.norm[0].in[0]"
+            },
+            "PacketID": [
+                0
+            ]
+        },
+        {
+            "Output": {
+                "Kernel": "topNormGraph1_1.normGraph.norm[0]",
+                "Port": "i22_po0",
+                "PortName": "topNormGraph1_1.normGraph.norm[0].out[0]"
+            },
+            "PacketID": [
+                0
+            ]
+        },
+        {
+            "Input": {
+                "Split": "topNormGraph1_1.sp[0]",
+                "Port": "i25_pi0",
+                "PortName": "topNormGraph1_1.sp[0].in[0]"
+            },
+            "PacketID": [
+                0
+            ]
+        },
+        {
+            "Output": {
+                "Split": "topNormGraph1_1.sp[0]",
+                "Port": "i25_po0",
+                "PortName": "topNormGraph1_1.sp[0].out[0]"
+            },
+            "PacketID": [
+                0
+            ]
+        },
+        {
+            "Input": {
+                "Merge": "topNormGraph1_1.mg[0]",
+                "Port": "i26_pi0",
+                "PortName": "topNormGraph1_1.mg[0].in[0]"
+            },
+            "PacketID": [
+                0
+            ]
+        },
+        {
+            "Output": {
+                "Merge": "topNormGraph1_1.mg[0]",
+                "Port": "i26_po0",
+                "PortName": "topNormGraph1_1.mg[0].out[0]"
             },
             "PacketID": [
                 0

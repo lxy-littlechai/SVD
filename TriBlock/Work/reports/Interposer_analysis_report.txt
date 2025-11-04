@@ -25,6 +25,14 @@ Port Name : i1_po0(Variable Name : orth[1][0].out[0]) straightthru <memory> : Lo
 Port Name : i1_po1(Variable Name : orth[1][0].out[1]) straightthru <memory> : Lock Buff 
 Port Name : i20_po0(Variable Name : sp[1][1].out[0]) straightthru <stream> : Chnl 
 Port Name : i21_pi0(Variable Name : mg[1][1].in[0]) straightthru <stream> : Chnl 
+Port Name : i22_pi0(Variable Name : norm[0].in[0]) adaptor <stream,memory> : Lock Buff DMA 
+Port Name : i22_po0(Variable Name : norm[0].out[0]) adaptor <memory,stream> : Lock Buff DMA 
+Port Name : i23_po0(Variable Name : in[0].out[0]) straightthru <stream> : Chnl 
+Downsizer, resize width: 128 
+Port Name : i24_pi0(Variable Name : out[0].in[0]) straightthru <stream> : Chnl 
+Upsizer, resize width: 128 
+Port Name : i25_po0(Variable Name : sp[0].out[0]) straightthru <stream> : Chnl 
+Port Name : i26_pi0(Variable Name : mg[0].in[0]) straightthru <stream> : Chnl 
 Port Name : i2_pi0(Variable Name : orth[0][1].in[0]) straightthru <memory> : Lock Buff 
 Port Name : i2_pi1(Variable Name : orth[0][1].in[1]) straightthru <memory> : Lock Buff 
 Port Name : i2_po0(Variable Name : orth[0][1].out[0]) straightthru <memory> : Lock Buff 

@@ -6,7 +6,8 @@
 
 #ifdef _HYBRID_EMU_
 std::map<std::string, adf::graph*> _gr_inst = { 
-	{"topSweepGraph1_1", &topSweepGraph1_1}
+	{"topSweepGraph1_1", &topSweepGraph1_1},
+	{"topNormGraph1_1", &topNormGraph1_1}
 };
 std::map<std::string, adf::GMIO*> gmioMap = {};
 std::map<std::string, std::pair<adf::input_port*,std::string>> inputPortMap = {};
@@ -17,8 +18,8 @@ std::map<std::string, std::pair<adf::inout_port*,std::string>> inoutPortMap = {}
 extern int ps_main_complete;
 extern std::string g_pkg_dir;
 //Global flag for aximm dumps in real NoC path
-class PSIP_ps_i22 : public IPBlock {
-	 SC_HAS_PROCESS(PSIP_ps_i22);
+class PSIP_ps_i27 : public IPBlock {
+	 SC_HAS_PROCESS(PSIP_ps_i27);
 
 public:
 	 xtlm::xtlm_aximm_initiator_socket PS_AxiMM_Rd; 
@@ -26,9 +27,9 @@ public:
 	 xtlm::xtlm_aximm_initiator_rd_socket_util *PS_AxiMM_Rd_Util;
 	 xtlm::xtlm_aximm_initiator_wr_socket_util *PS_AxiMM_Wr_Util;
 	 xtlm::xtlm_aximm_mem_manager* mem_manager;
-	 static PSIP_ps_i22* createInstance(sc_module_name name);
+	 static PSIP_ps_i27* createInstance(sc_module_name name);
 	 //  Returns the instance created using createInstance()
-	 static PSIP_ps_i22* getInstance();
+	 static PSIP_ps_i27* getInstance();
 	 void write32(uint64_t Addr, uint32_t Data);
 	 uint32 read32(uint64_t Addr);
 	 void write128(uint64_t Addr, uint32_t* Data);
@@ -38,8 +39,8 @@ public:
 	 void aximm_transaction(xtlm::xtlm_aximm_initiator_rd_socket_util& rd_util, xtlm::xtlm_aximm_initiator_wr_socket_util& wr_util, xtlm::xtlm_command command, unsigned long long address, unsigned char* pData, unsigned int trans_size_in_bytes);
 	 sc_event_queue toggle_AIE_array_clk;
 private:
-	 PSIP_ps_i22(sc_module_name nm);
-	 static PSIP_ps_i22* psObj;
+	 PSIP_ps_i27(sc_module_name nm);
+	 static PSIP_ps_i27* psObj;
 	 // Sets attributes for PS-ME, common to both R/W transaction
 	 void set_payload_attr(xtlm::aximm_payload* trans, size_t transBytes);
 	 void main_action();
@@ -47,14 +48,14 @@ private:
 	 sc_event transRspAvail;
 };
 
-PSIP_ps_i22* PSIP_ps_i22::psObj = NULL;
-PSIP_ps_i22* PSIP_ps_i22::createInstance(sc_module_name name) {
+PSIP_ps_i27* PSIP_ps_i27::psObj = NULL;
+PSIP_ps_i27* PSIP_ps_i27::createInstance(sc_module_name name) {
 	 if (psObj == NULL)
-		 psObj = new PSIP_ps_i22(name);
+		 psObj = new PSIP_ps_i27(name);
 	 return psObj;
 }
 
-PSIP_ps_i22* PSIP_ps_i22::getInstance() {
+PSIP_ps_i27* PSIP_ps_i27::getInstance() {
 	 if (psObj != NULL) {
 		 return psObj;
 	 } else {
@@ -62,7 +63,7 @@ PSIP_ps_i22* PSIP_ps_i22::getInstance() {
 		 return NULL;
 	 }
 }
-void PSIP_ps_i22::write32(uint64_t Addr, uint32_t Data) {
+void PSIP_ps_i27::write32(uint64_t Addr, uint32_t Data) {
 	 size_t transBytes = sizeof(uint32_t);
 	 // Get the payload object
 	 xtlm::aximm_payload* trans = mem_manager->get_payload();
@@ -77,7 +78,7 @@ void PSIP_ps_i22::write32(uint64_t Addr, uint32_t Data) {
 
 	 trans->release(); 
 }
-uint32_t PSIP_ps_i22::read32(uint64_t Addr) {
+uint32_t PSIP_ps_i27::read32(uint64_t Addr) {
 	 size_t transBytes = sizeof(uint32_t);
 	 // Get the payload object
 	 xtlm::aximm_payload* trans = mem_manager->get_payload();
@@ -94,7 +95,7 @@ uint32_t PSIP_ps_i22::read32(uint64_t Addr) {
 	 trans->release();
 	 return data;
 }
-void PSIP_ps_i22::write128(uint64_t Addr, uint32_t* Data) {
+void PSIP_ps_i27::write128(uint64_t Addr, uint32_t* Data) {
 	 size_t transBytes = 4*sizeof(uint32_t);
 	 // Get the payload object
 	 xtlm::aximm_payload* trans = mem_manager->get_payload();
@@ -107,7 +108,7 @@ void PSIP_ps_i22::write128(uint64_t Addr, uint32_t* Data) {
 	 PS_AxiMM_Wr_Util->b_transport(*trans, delay);
 	 trans->release();
 }
-void PSIP_ps_i22::read128(uint64_t Addr, uint32_t* Data) {
+void PSIP_ps_i27::read128(uint64_t Addr, uint32_t* Data) {
 	 size_t transBytes = 4*sizeof(uint32_t);
 	 // Get the payload object
 	 xtlm::aximm_payload* trans = mem_manager->get_payload();
@@ -120,7 +121,7 @@ void PSIP_ps_i22::read128(uint64_t Addr, uint32_t* Data) {
 	 memcpy(Data, trans->get_data_ptr(), transBytes);
 	 trans->release();
 }
-void PSIP_ps_i22::writeGM(uint64_t addr, const void* data, uint64_t size) {
+void PSIP_ps_i27::writeGM(uint64_t addr, const void* data, uint64_t size) {
     toggle_AIE_array_clk.notify(1,SC_NS);
     uint64_t remaining = size;
     uint64_t currentAddr = addr;
@@ -154,7 +155,7 @@ void PSIP_ps_i22::writeGM(uint64_t addr, const void* data, uint64_t size) {
     toggle_AIE_array_clk.notify(SC_ZERO_TIME);
 }
 
-void PSIP_ps_i22::readGM(uint64_t addr, void* data, uint64_t size) {
+void PSIP_ps_i27::readGM(uint64_t addr, void* data, uint64_t size) {
     toggle_AIE_array_clk.notify(1,SC_NS);
     uint64_t remaining = size;
     uint64_t currentAddr = addr;
@@ -189,7 +190,7 @@ void PSIP_ps_i22::readGM(uint64_t addr, void* data, uint64_t size) {
     toggle_AIE_array_clk.notify(SC_ZERO_TIME);
 }
 
-void PSIP_ps_i22::aximm_transaction(xtlm::xtlm_aximm_initiator_rd_socket_util& rd_util, xtlm::xtlm_aximm_initiator_wr_socket_util& wr_util, xtlm::xtlm_command command, unsigned long long address, unsigned char* pData, unsigned int trans_size_in_bytes)
+void PSIP_ps_i27::aximm_transaction(xtlm::xtlm_aximm_initiator_rd_socket_util& rd_util, xtlm::xtlm_aximm_initiator_wr_socket_util& wr_util, xtlm::xtlm_command command, unsigned long long address, unsigned char* pData, unsigned int trans_size_in_bytes)
 {
     unsigned int trans_size_in_multiple_of_16bytes = (trans_size_in_bytes + 15) / 16;
     xtlm::aximm_payload* payload = mem_manager->get_payload();
@@ -223,7 +224,7 @@ void PSIP_ps_i22::aximm_transaction(xtlm::xtlm_aximm_initiator_rd_socket_util& r
 }
 
 
-PSIP_ps_i22::PSIP_ps_i22(sc_module_name nm)
+PSIP_ps_i27::PSIP_ps_i27(sc_module_name nm)
   : IPBlock(nm)
   , toggle_AIE_array_clk("toggle_AIE_clk")
   , PS_AxiMM_Rd("ps_axi_rd", BUSWIDTH)
@@ -247,7 +248,7 @@ PSIP_ps_i22::PSIP_ps_i22(sc_module_name nm)
 	 }
 #endif
 };
-void PSIP_ps_i22::main_action() {
+void PSIP_ps_i27::main_action() {
 	 std::cout << "IP-INFO: [" << basename() << "] IP started." << std::endl;
 	 adf::setWorkDirectory(g_pkg_dir);
 #ifdef _HYBRID_EMU_
@@ -260,7 +261,7 @@ void PSIP_ps_i22::main_action() {
 	 }
 	 ps_main_complete = 1;
 }
-void PSIP_ps_i22::set_payload_attr(xtlm::aximm_payload* trans, size_t transBytes) {
+void PSIP_ps_i27::set_payload_attr(xtlm::aximm_payload* trans, size_t transBytes) {
 	 trans->create_and_get_data_ptr(transBytes); 
 	 unsigned char* byte_en_ptr = trans->create_and_get_byte_enable_ptr(transBytes);
 	 for (int i = 0; i < transBytes; i++) {
@@ -275,7 +276,7 @@ void PSIP_ps_i22::set_payload_attr(xtlm::aximm_payload* trans, size_t transBytes
 	 trans->set_burst_size(transBytes);
 	 trans->set_burst_type(1); //INCR(by AWSIZE/ARSIZE)
 }
-void PSIP_ps_i22::response_process() {
+void PSIP_ps_i27::response_process() {
 	 while (true) {
 		  wait(); // Waits for data available in read transaction, or for response available in write transaction
 		  if (PS_AxiMM_Rd_Util->is_data_available()) {
@@ -288,28 +289,28 @@ void PSIP_ps_i22::response_process() {
 }
 extern "C" {
 	 void ess_Write32(uint64 Addr, uint Data) {
-		  (PSIP_ps_i22::getInstance())->write32(Addr, Data); 
+		  (PSIP_ps_i27::getInstance())->write32(Addr, Data); 
 	 }
 	 uint32 ess_Read32(uint64 Addr) {
-		  return ((PSIP_ps_i22::getInstance())->read32(Addr));
+		  return ((PSIP_ps_i27::getInstance())->read32(Addr));
 	 }
 	 void ess_Write128(uint64_t Addr, uint32_t* Data) {
-		  (PSIP_ps_i22::getInstance())->write128(Addr, Data);
+		  (PSIP_ps_i27::getInstance())->write128(Addr, Data);
 	 }
 	 void ess_Read128(uint64_t Addr, uint32_t* Data) {
-		  (PSIP_ps_i22::getInstance())->read128(Addr, Data);
+		  (PSIP_ps_i27::getInstance())->read128(Addr, Data);
 	 }
 	 void ess_WriteGM(uint64 addr, const void* data, uint64_t size) {
-		  (PSIP_ps_i22::getInstance())->writeGM(addr, data, size);
+		  (PSIP_ps_i27::getInstance())->writeGM(addr, data, size);
 	 }
 	 void ess_ReadGM(uint64 addr, void* data, uint64_t size) {
-		  (PSIP_ps_i22::getInstance())->readGM(addr, data, size);
+		  (PSIP_ps_i27::getInstance())->readGM(addr, data, size);
 	 }
 	 IPBlock * create_ip(sc_module_name name) {
-		  return (PSIP_ps_i22::createInstance(name));
+		  return (PSIP_ps_i27::createInstance(name));
 	 }
 	 void destroy_ip(IPBlock* ip) {
-		  std::cout << "IP-INFO: deleting ip PSIP_ps_i22 " << std::endl;
+		  std::cout << "IP-INFO: deleting ip PSIP_ps_i27 " << std::endl;
 		  delete ip;
 	 }
 }

@@ -17,15 +17,15 @@
         "buf13",
         "buf14",
         "buf15",
-        "sysmem16",
-        "sysmem17",
+        "buf16",
+        "buf17",
         "sysmem18",
         "sysmem19",
         "sysmem20",
         "sysmem21",
-        "buf22",
-        "buf23",
-        "buf24",
+        "sysmem22",
+        "sysmem23",
+        "sysmem24",
         "buf25",
         "buf26",
         "buf27",
@@ -39,12 +39,18 @@
         "buf35",
         "buf36",
         "buf37",
+        "buf38",
+        "buf39",
+        "buf40",
+        "buf41",
+        "buf42",
         "PT0",
         "PT1",
         "PT2",
         "PT3",
         "PT4",
         "PT5",
+        "PT6",
         "net0",
         "net1",
         "net2",
@@ -69,6 +75,10 @@
         "net21",
         "net22",
         "net23",
+        "net24",
+        "net25",
+        "net26",
+        "net27",
         "D_net0",
         "D_net1",
         "D_net2",
@@ -84,7 +94,9 @@
         "D_net12",
         "D_net13",
         "D_net14",
-        "D_net15"
+        "D_net15",
+        "D_net24",
+        "D_net25"
     ],
     "Non-Netlist Instance Placement": [],
     "Instance Placement": [],
@@ -108,16 +120,21 @@
         },
         {
             "PT3": [
-                "topSweepGraph1_1.sweepGraph.orth[1][1]"
+                "topNormGraph1_1.normGraph.norm[0]"
             ]
         },
         {
             "PT4": [
-                "topSweepGraph1_1.sweepGraph.orth[0][2]"
+                "topSweepGraph1_1.sweepGraph.orth[1][1]"
             ]
         },
         {
             "PT5": [
+                "topSweepGraph1_1.sweepGraph.orth[0][2]"
+            ]
+        },
+        {
+            "PT6": [
                 "topSweepGraph1_1.sweepGraph.orth[1][2]"
             ]
         }
@@ -160,7 +177,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf22"
+                    "Val": "STRING buf25"
                 },
                 {
                     "Key": "name",
@@ -221,7 +238,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf23"
+                    "Val": "STRING buf26"
                 },
                 {
                     "Key": "name",
@@ -282,7 +299,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf24"
+                    "Val": "STRING buf27"
                 },
                 {
                     "Key": "name",
@@ -343,7 +360,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf25"
+                    "Val": "STRING buf28"
                 },
                 {
                     "Key": "name",
@@ -404,7 +421,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf26"
+                    "Val": "STRING buf29"
                 },
                 {
                     "Key": "name",
@@ -465,7 +482,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf27"
+                    "Val": "STRING buf30"
                 },
                 {
                     "Key": "name",
@@ -526,7 +543,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf28"
+                    "Val": "STRING buf31"
                 },
                 {
                     "Key": "name",
@@ -587,7 +604,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf29"
+                    "Val": "STRING buf32"
                 },
                 {
                     "Key": "name",
@@ -648,7 +665,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf30"
+                    "Val": "STRING buf33"
                 },
                 {
                     "Key": "name",
@@ -709,7 +726,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf31"
+                    "Val": "STRING buf34"
                 },
                 {
                     "Key": "name",
@@ -770,7 +787,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf32"
+                    "Val": "STRING buf35"
                 },
                 {
                     "Key": "name",
@@ -831,7 +848,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf33"
+                    "Val": "STRING buf36"
                 },
                 {
                     "Key": "name",
@@ -892,7 +909,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf34"
+                    "Val": "STRING buf37"
                 },
                 {
                     "Key": "name",
@@ -953,7 +970,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf35"
+                    "Val": "STRING buf38"
                 },
                 {
                     "Key": "name",
@@ -1014,7 +1031,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf36"
+                    "Val": "STRING buf39"
                 },
                 {
                     "Key": "name",
@@ -1075,7 +1092,7 @@
                 },
                 {
                     "Key": "pongBufferName",
-                    "Val": "STRING buf37"
+                    "Val": "STRING buf40"
                 },
                 {
                     "Key": "name",
@@ -1100,27 +1117,47 @@
             ]
         },
         {
-            "Name": "sysmem16",
+            "Name": "buf16",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
                     "Val": "BOOL 1"
                 },
                 {
-                    "Key": "is_partition_reserved_memory",
+                    "Key": "is_port_data_memory_buffer",
                     "Val": "BOOL 1"
                 },
                 {
-                    "Key": "stackSize",
-                    "Val": "INT 1024"
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
                 },
                 {
-                    "Key": "heapSize",
-                    "Val": "INT 1024"
+                    "Key": "srcPort",
+                    "Val": "STRING topNormGraph1_1.sp[0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.sp[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf41"
                 },
                 {
                     "Key": "name",
-                    "Val": "STRING sysmem16"
+                    "Val": "STRING buf16"
                 },
                 {
                     "Key": "fabric",
@@ -1128,36 +1165,60 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 2080"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 2080"
+                    "Val": "INT 144"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf16"
                 }
             ]
         },
         {
-            "Name": "sysmem17",
+            "Name": "buf17",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
                     "Val": "BOOL 1"
                 },
                 {
-                    "Key": "is_partition_reserved_memory",
+                    "Key": "is_port_data_memory_buffer",
                     "Val": "BOOL 1"
                 },
                 {
-                    "Key": "stackSize",
-                    "Val": "INT 1024"
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
                 },
                 {
-                    "Key": "heapSize",
-                    "Val": "INT 1024"
+                    "Key": "srcPort",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topNormGraph1_1.mg[0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.mg[0]"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf42"
                 },
                 {
                     "Key": "name",
-                    "Val": "STRING sysmem17"
+                    "Val": "STRING buf17"
                 },
                 {
                     "Key": "fabric",
@@ -1165,11 +1226,15 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 2080"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 2080"
+                    "Val": "INT 144"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf17"
                 }
             ]
         },
@@ -1322,7 +1387,118 @@
             ]
         },
         {
-            "Name": "buf22",
+            "Name": "sysmem22",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem22"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2080"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2080"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem23",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem23"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2080"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2080"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem24",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem24"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2080"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2080"
+                }
+            ]
+        },
+        {
+            "Name": "buf25",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1374,12 +1550,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf22"
+                    "Val": "STRING_LIST buf25"
                 }
             ]
         },
         {
-            "Name": "buf23",
+            "Name": "buf26",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1431,12 +1607,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf23"
+                    "Val": "STRING_LIST buf26"
                 }
             ]
         },
         {
-            "Name": "buf24",
+            "Name": "buf27",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1488,12 +1664,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf24"
+                    "Val": "STRING_LIST buf27"
                 }
             ]
         },
         {
-            "Name": "buf25",
+            "Name": "buf28",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1545,12 +1721,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf25"
+                    "Val": "STRING_LIST buf28"
                 }
             ]
         },
         {
-            "Name": "buf26",
+            "Name": "buf29",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1602,12 +1778,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf26"
+                    "Val": "STRING_LIST buf29"
                 }
             ]
         },
         {
-            "Name": "buf27",
+            "Name": "buf30",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1659,12 +1835,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf27"
+                    "Val": "STRING_LIST buf30"
                 }
             ]
         },
         {
-            "Name": "buf28",
+            "Name": "buf31",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1716,12 +1892,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf28"
+                    "Val": "STRING_LIST buf31"
                 }
             ]
         },
         {
-            "Name": "buf29",
+            "Name": "buf32",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1773,12 +1949,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf29"
+                    "Val": "STRING_LIST buf32"
                 }
             ]
         },
         {
-            "Name": "buf30",
+            "Name": "buf33",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1830,12 +2006,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf30"
+                    "Val": "STRING_LIST buf33"
                 }
             ]
         },
         {
-            "Name": "buf31",
+            "Name": "buf34",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1887,12 +2063,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf31"
+                    "Val": "STRING_LIST buf34"
                 }
             ]
         },
         {
-            "Name": "buf32",
+            "Name": "buf35",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -1944,12 +2120,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf32"
+                    "Val": "STRING_LIST buf35"
                 }
             ]
         },
         {
-            "Name": "buf33",
+            "Name": "buf36",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -2001,12 +2177,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf33"
+                    "Val": "STRING_LIST buf36"
                 }
             ]
         },
         {
-            "Name": "buf34",
+            "Name": "buf37",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -2058,12 +2234,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf34"
+                    "Val": "STRING_LIST buf37"
                 }
             ]
         },
         {
-            "Name": "buf35",
+            "Name": "buf38",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -2115,12 +2291,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf35"
+                    "Val": "STRING_LIST buf38"
                 }
             ]
         },
         {
-            "Name": "buf36",
+            "Name": "buf39",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -2172,12 +2348,12 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf36"
+                    "Val": "STRING_LIST buf39"
                 }
             ]
         },
         {
-            "Name": "buf37",
+            "Name": "buf40",
             "attrs": [
                 {
                     "Key": "is_memory_buffer",
@@ -2229,7 +2405,121 @@
                 },
                 {
                     "Key": "dataSplits",
-                    "Val": "STRING_LIST buf37"
+                    "Val": "STRING_LIST buf40"
+                }
+            ]
+        },
+        {
+            "Name": "buf41",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topNormGraph1_1.sp[0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.sp[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf16d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 144"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 144"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf41"
+                }
+            ]
+        },
+        {
+            "Name": "buf42",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topNormGraph1_1.mg[0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.mg[0]"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf17d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 144"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 144"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf42"
                 }
             ]
         },
@@ -2250,7 +2540,7 @@
                 },
                 {
                     "Key": "reservedMem",
-                    "Val": "STRING sysmem16"
+                    "Val": "STRING sysmem18"
                 }
             ]
         },
@@ -2271,7 +2561,7 @@
                 },
                 {
                     "Key": "reservedMem",
-                    "Val": "STRING sysmem17"
+                    "Val": "STRING sysmem19"
                 }
             ]
         },
@@ -2292,7 +2582,7 @@
                 },
                 {
                     "Key": "reservedMem",
-                    "Val": "STRING sysmem18"
+                    "Val": "STRING sysmem20"
                 }
             ]
         },
@@ -2313,7 +2603,7 @@
                 },
                 {
                     "Key": "reservedMem",
-                    "Val": "STRING sysmem19"
+                    "Val": "STRING sysmem21"
                 }
             ]
         },
@@ -2334,7 +2624,7 @@
                 },
                 {
                     "Key": "reservedMem",
-                    "Val": "STRING sysmem20"
+                    "Val": "STRING sysmem22"
                 }
             ]
         },
@@ -2355,7 +2645,28 @@
                 },
                 {
                     "Key": "reservedMem",
-                    "Val": "STRING sysmem21"
+                    "Val": "STRING sysmem23"
+                }
+            ]
+        },
+        {
+            "Name": "PT6",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING goldenrod"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 0.899900"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem24"
                 }
             ]
         },
@@ -3312,6 +3623,162 @@
             ]
         },
         {
+            "Name": "net24",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.sp[0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf16"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net25",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.mg[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf17"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net26",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_norm_in_0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.sp[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING pktstream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net27",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.mg[0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_norm_out_0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING pktstream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
             "Name": "D_net0",
             "attrs": [
                 {
@@ -3344,7 +3811,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf22"
+                    "Val": "STRING buf25"
                 },
                 {
                     "Key": "ephemeral",
@@ -3385,7 +3852,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf23"
+                    "Val": "STRING buf26"
                 },
                 {
                     "Key": "ephemeral",
@@ -3426,7 +3893,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf24"
+                    "Val": "STRING buf27"
                 },
                 {
                     "Key": "ephemeral",
@@ -3467,7 +3934,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf25"
+                    "Val": "STRING buf28"
                 },
                 {
                     "Key": "ephemeral",
@@ -3508,7 +3975,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf26"
+                    "Val": "STRING buf29"
                 },
                 {
                     "Key": "ephemeral",
@@ -3549,7 +4016,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf27"
+                    "Val": "STRING buf30"
                 },
                 {
                     "Key": "ephemeral",
@@ -3590,7 +4057,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf28"
+                    "Val": "STRING buf31"
                 },
                 {
                     "Key": "ephemeral",
@@ -3631,7 +4098,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf29"
+                    "Val": "STRING buf32"
                 },
                 {
                     "Key": "ephemeral",
@@ -3672,7 +4139,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf30"
+                    "Val": "STRING buf33"
                 },
                 {
                     "Key": "ephemeral",
@@ -3713,7 +4180,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf31"
+                    "Val": "STRING buf34"
                 },
                 {
                     "Key": "ephemeral",
@@ -3754,7 +4221,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf32"
+                    "Val": "STRING buf35"
                 },
                 {
                     "Key": "ephemeral",
@@ -3795,7 +4262,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf33"
+                    "Val": "STRING buf36"
                 },
                 {
                     "Key": "ephemeral",
@@ -3836,7 +4303,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf34"
+                    "Val": "STRING buf37"
                 },
                 {
                     "Key": "ephemeral",
@@ -3877,7 +4344,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf35"
+                    "Val": "STRING buf38"
                 },
                 {
                     "Key": "ephemeral",
@@ -3918,7 +4385,7 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf36"
+                    "Val": "STRING buf39"
                 },
                 {
                     "Key": "ephemeral",
@@ -3959,7 +4426,89 @@
                 },
                 {
                     "Key": "dataName",
-                    "Val": "STRING buf37"
+                    "Val": "STRING buf40"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net24",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.sp[0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf41"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net25",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topNormGraph1_1.normGraph.norm[0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topNormGraph1_1.mg[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf42"
                 },
                 {
                     "Key": "ephemeral",
