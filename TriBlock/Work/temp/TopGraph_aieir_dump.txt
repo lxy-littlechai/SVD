@@ -108,7 +108,7 @@ Module {
                port po0 dir:out porttype:memvariable name: out0 elttype:buff<float>
                port po1 dir:out porttype:memvariable name: out1 elttype:buff<float>
             }
-            kernel: orthogonalize<32>
+            kernel: orthogonalize<256>
             srcs:{
                aie/ProcessUnit/Orthogonalize.cpp
             }
@@ -118,7 +118,7 @@ Module {
                port pi0 dir:in porttype:memvariable name: in elttype:buff<float>
                port po0 dir:out porttype:memvariable name: out elttype:buff<float>
             }
-            kernel: normalize<32>
+            kernel: normalize<256>
             srcs:{
                aie/ProcessUnit/Normalize.cpp
             }

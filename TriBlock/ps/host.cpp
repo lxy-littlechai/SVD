@@ -155,8 +155,8 @@ int main(int argc, char** argv) {
     }
 
 
-    //writeU<COL, ROW>("./data/test/U.txt", U_matrix);
-    //writeSigma<COL, ROW>("./data/test/Sigma.txt", S_matrix);
+    //writeU<COL, ROW>("./data/test/U.txt", U[0]);
+    writeSigma<COL, ROW>("./data/test/Sigma.txt", S[0]);
 
 
     return 0;

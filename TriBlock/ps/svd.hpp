@@ -95,7 +95,7 @@ void writeU(const std::string& filename, const float float_array[COL][ROW]) {
 }
 
 template<int COL, int ROW>
-void writeSigma(const std::string& filename, const float float_array[COL][ROW]) {
+void writeSigma(const std::string& filename, const float float_array[COL]) {
     std::ofstream file(filename);
     if (!file.is_open()) {
         std::cerr << "Failed to open the file for writing." << std::endl;
@@ -104,12 +104,9 @@ void writeSigma(const std::string& filename, const float float_array[COL][ROW]) 
     file.setf(ios::fixed, ios::floatfield);  
     file.precision(6);
 
-    for (int i = 0; i < ROW; ++i) {
         for (int j = 0; j < COL; ++j) {
-            if(i == j)
-                file << float_array[j][i];
+                file << float_array[j];
         }
         file << "\n";
-    }
     file.close();
 }

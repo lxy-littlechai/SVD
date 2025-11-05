@@ -9,9 +9,9 @@ volatile static int sync_buffer[8] = {0, -1};
 #include <adf/sync/mesync.h>
 
 // Define Locks
-#define LOCK_1_1_0_0 16
+#define LOCK_1_1_0_7136 16
 #define LOCK_1_1_1_0 17
-#define LOCK_2_1_0_8032 48
+#define LOCK_2_1_0_7136 48
 #define LOCK_2_1_1_0 49
 #define LOCK_1_2_0_0 32
 #define LOCK_1_2_1_0 33
@@ -19,14 +19,14 @@ volatile static int sync_buffer[8] = {0, -1};
 #define LOCK_1_2_3_0 35
 
 // Declare shared memory buffers
-v4float buf10[9];
-v4float buf10d[9];
-v4float buf4[9];
-v4float buf4d[9];
-v4float buf6[9];
-v4float buf6d[9];
-v4float buf8[9];
-v4float buf8d[9];
+v4float buf10[65];
+v4float buf10d[65];
+v4float buf4[65];
+v4float buf4d[65];
+v4float buf6[65];
+v4float buf6d[65];
+v4float buf8[65];
+v4float buf8d[65];
 
 // Declare Kernel functions and initializers
 #include "aie/ProcessUnit/Orthogonalize.cpp"
@@ -35,10 +35,10 @@ v4float buf8d[9];
 
 int main(void) {
   sync_buffer[0] = 0; //reset end signal
-  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf4_buf4d_i[1] = {{(float*)buf4, 33, 0}};
-  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf6_buf6d_i[1] = {{(float*)buf6, 33, 0}};
-  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf8_buf8d_o[1] = {{(float*)buf8, 33, 0}};
-  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf10_buf10d_o[1] = {{(float*)buf10, 33, 0}};
+  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf4_buf4d_i[1] = {{(float*)buf4, 257, 0}};
+  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf6_buf6d_i[1] = {{(float*)buf6, 257, 0}};
+  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf8_buf8d_o[1] = {{(float*)buf8, 257, 0}};
+  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf10_buf10d_o[1] = {{(float*)buf10, 257, 0}};
   int32 index = 1;
   while(true)
   {
@@ -48,18 +48,18 @@ int main(void) {
   while (proc_1_1_bounds)
   {
 
-    // Kernel call : i2:orthogonalize<32>
+    // Kernel call : i2:orthogonalize<256>
     window_buf4_buf4d_i->setData(*window_buf4_buf4d_i, (float*)buf4, (float*)buf4d, 1-index, 0);
-    window_buf4_buf4d_i->acquire(*window_buf4_buf4d_i, LOCK_1_1_0_0, LOCK_1_1_1_0, 1-index);
+    window_buf4_buf4d_i->acquire(*window_buf4_buf4d_i, LOCK_1_1_0_7136, LOCK_1_1_1_0, 1-index);
     window_buf6_buf6d_i->setData(*window_buf6_buf6d_i, (float*)buf6, (float*)buf6d, 1-index, 0);
-    window_buf6_buf6d_i->acquire(*window_buf6_buf6d_i, LOCK_2_1_0_8032, LOCK_2_1_1_0, 1-index);
+    window_buf6_buf6d_i->acquire(*window_buf6_buf6d_i, LOCK_2_1_0_7136, LOCK_2_1_1_0, 1-index);
     window_buf8_buf8d_o->setData(*window_buf8_buf8d_o, (float*)buf8, (float*)buf8d, 1-index, 0);
     window_buf8_buf8d_o->acquire(*window_buf8_buf8d_o, LOCK_1_2_0_0, LOCK_1_2_1_0, 1-index);
     window_buf10_buf10d_o->setData(*window_buf10_buf10d_o, (float*)buf10, (float*)buf10d, 1-index, 0);
     window_buf10_buf10d_o->acquire(*window_buf10_buf10d_o, LOCK_1_2_2_0, LOCK_1_2_3_0, 1-index);
-    orthogonalize<32>(window_buf4_buf4d_i[0],window_buf6_buf6d_i[0],window_buf8_buf8d_o[0],window_buf10_buf10d_o[0]);
-    window_buf4_buf4d_i->release(*window_buf4_buf4d_i, LOCK_1_1_0_0, LOCK_1_1_1_0, 1-index);
-    window_buf6_buf6d_i->release(*window_buf6_buf6d_i, LOCK_2_1_0_8032, LOCK_2_1_1_0, 1-index);
+    orthogonalize<256>(window_buf4_buf4d_i[0],window_buf6_buf6d_i[0],window_buf8_buf8d_o[0],window_buf10_buf10d_o[0]);
+    window_buf4_buf4d_i->release(*window_buf4_buf4d_i, LOCK_1_1_0_7136, LOCK_1_1_1_0, 1-index);
+    window_buf6_buf6d_i->release(*window_buf6_buf6d_i, LOCK_2_1_0_7136, LOCK_2_1_1_0, 1-index);
     window_buf8_buf8d_o->release(*window_buf8_buf8d_o, LOCK_1_2_0_0, LOCK_1_2_1_0, 1-index);
     window_buf10_buf10d_o->release(*window_buf10_buf10d_o, LOCK_1_2_2_0, LOCK_1_2_3_0, 1-index);
     index = 1 - index;

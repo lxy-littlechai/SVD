@@ -29,14 +29,14 @@
                     {
                         "port_name": "do0",
                         "column": 6,
-                        "stream_id": 4,
+                        "stream_id": 0,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     },
                     {
                         "port_name": "do1",
                         "column": 6,
-                        "stream_id": 5,
+                        "stream_id": 1,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     }
@@ -91,14 +91,14 @@
                     {
                         "port_name": "do0",
                         "column": 7,
-                        "stream_id": 0,
+                        "stream_id": 4,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     },
                     {
                         "port_name": "do1",
                         "column": 7,
-                        "stream_id": 1,
+                        "stream_id": 5,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     }
@@ -153,14 +153,14 @@
                     {
                         "port_name": "do0",
                         "column": 7,
-                        "stream_id": 4,
+                        "stream_id": 0,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     },
                     {
                         "port_name": "do1",
                         "column": 7,
-                        "stream_id": 5,
+                        "stream_id": 1,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     }
@@ -277,14 +277,14 @@
                     {
                         "port_name": "do0",
                         "column": 6,
-                        "stream_id": 0,
+                        "stream_id": 4,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     },
                     {
                         "port_name": "do1",
                         "column": 6,
-                        "stream_id": 1,
+                        "stream_id": 5,
                         "direction": "pl_to_me",
                         "bus_width": 128
                     }

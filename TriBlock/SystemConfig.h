@@ -1,9 +1,9 @@
-const int ROW = 32;
-const int COL = 32;
+const int ROW = 256;
+const int COL = 256;
 const float EPS = 1e-6;
 
 // level-1
-const int LEVEL1_BLOCK_SIZE = COL/2;
+const int LEVEL1_BLOCK_SIZE = COL/4;
 const int LEVEL1_BLOCK_NUM = COL/LEVEL1_BLOCK_SIZE;
 const int LEVEL1_BLOCK_PAIR_NUM = LEVEL1_BLOCK_NUM/2;
 

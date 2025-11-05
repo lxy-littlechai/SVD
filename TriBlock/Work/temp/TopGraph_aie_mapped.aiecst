@@ -7,10 +7,10 @@
         "tile_type": "core"
       },
       "reserved_memory": {
-        "column": 1,
+        "column": 0,
         "row": 0,
         "bankId": 0,
-        "offset": 0
+        "offset": 6112
       }
     },
     "topSweepGraph1_1.sweepGraph.orth[1][0]": {
@@ -20,16 +20,16 @@
         "tile_type": "core"
       },
       "reserved_memory": {
-        "column": 1,
+        "column": 2,
         "row": 0,
-        "bankId": 1,
-        "offset": 0
+        "bankId": 0,
+        "offset": 6112
       }
     },
     "1_1_sweep_in_R_0": {
       "shim": {
         "column": 7,
-        "channel": 0
+        "channel": 4
       }
     },
     "1_1_sweep_out_R_0": {
@@ -41,7 +41,7 @@
     "1_1_sweep_in_L_1": {
       "shim": {
         "column": 7,
-        "channel": 4
+        "channel": 0
       }
     },
     "1_1_sweep_out_L_1": {
@@ -72,7 +72,7 @@
         "column": 1,
         "row": 2,
         "bankId": 0,
-        "offset": 160
+        "offset": 1056
       }
     },
     "topNormGraph1_1.normGraph.norm[0]": {
@@ -84,14 +84,14 @@
       "reserved_memory": {
         "column": 0,
         "row": 0,
-        "bankId": 0,
-        "offset": 0
+        "bankId": 1,
+        "offset": 1024
       }
     },
     "1_1_norm_in_0": {
       "shim": {
         "column": 6,
-        "channel": 0
+        "channel": 4
       }
     },
     "1_1_norm_out_0": {
@@ -108,9 +108,9 @@
       },
       "reserved_memory": {
         "column": 2,
-        "row": 0,
-        "bankId": 1,
-        "offset": 608
+        "row": 2,
+        "bankId": 0,
+        "offset": 0
       }
     },
     "topSweepGraph1_1.sweepGraph.orth[0][2]": {
@@ -121,9 +121,9 @@
       },
       "reserved_memory": {
         "column": 1,
-        "row": 1,
+        "row": 3,
         "bankId": 0,
-        "offset": 160
+        "offset": 1056
       }
     },
     "topSweepGraph1_1.sweepGraph.orth[1][2]": {
@@ -135,14 +135,14 @@
       "reserved_memory": {
         "column": 2,
         "row": 2,
-        "bankId": 0,
-        "offset": 160
+        "bankId": 1,
+        "offset": 0
       }
     },
     "1_1_sweep_in_L_0": {
       "shim": {
         "column": 6,
-        "channel": 4
+        "channel": 0
       }
     },
     "1_1_sweep_out_L_0": {
@@ -157,23 +157,23 @@
       "buffers": [{
           "column": 1,
           "row": 0,
-          "bankId": 2,
+          "bankId": 0,
           "offset": 0
         }, {
           "column": 1,
           "row": 0,
-          "bankId": 3,
+          "bankId": 1,
           "offset": 0
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][0].in[1]": {
       "buffers": [{
-          "column": 0,
+          "column": 1,
           "row": 0,
           "bankId": 2,
           "offset": 0
         }, {
-          "column": 0,
+          "column": 1,
           "row": 0,
           "bankId": 3,
           "offset": 0
@@ -184,7 +184,7 @@
           "column": 1,
           "row": 1,
           "bankId": 0,
-          "offset": 0
+          "offset": 7136
         }, {
           "column": 1,
           "row": 1,
@@ -207,12 +207,12 @@
     },
     "topSweepGraph1_1.sp[0][1].out[0]": {
       "buffers": [{
-          "column": 0,
+          "column": 1,
           "row": 0,
           "bankId": 2,
           "offset": 0
         }, {
-          "column": 0,
+          "column": 1,
           "row": 0,
           "bankId": 3,
           "offset": 0
@@ -223,7 +223,7 @@
           "column": 1,
           "row": 3,
           "bankId": 0,
-          "offset": 8032
+          "offset": 0
         }, {
           "column": 1,
           "row": 3,
@@ -240,8 +240,8 @@
         }, {
           "column": 2,
           "row": 0,
-          "bankId": 0,
-          "offset": 8032
+          "bankId": 3,
+          "offset": 0
         }]
     },
     "topSweepGraph1_1.mg[1][0].in[0]": {
@@ -266,21 +266,21 @@
         }, {
           "column": 2,
           "row": 0,
-          "bankId": 0,
-          "offset": 8032
+          "bankId": 3,
+          "offset": 0
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[1][0].in[1]": {
       "buffers": [{
           "column": 2,
           "row": 0,
-          "bankId": 3,
+          "bankId": 1,
           "offset": 0
         }, {
           "column": 2,
           "row": 0,
-          "bankId": 1,
-          "offset": 8032
+          "bankId": 0,
+          "offset": 0
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[1][0].out[0]": {
@@ -288,7 +288,7 @@
           "column": 2,
           "row": 1,
           "bankId": 0,
-          "offset": 8032
+          "offset": 7136
         }, {
           "column": 2,
           "row": 1,
@@ -313,13 +313,13 @@
       "buffers": [{
           "column": 2,
           "row": 0,
-          "bankId": 3,
+          "bankId": 1,
           "offset": 0
         }, {
           "column": 2,
           "row": 0,
-          "bankId": 1,
-          "offset": 8032
+          "bankId": 0,
+          "offset": 0
         }]
     },
     "topSweepGraph1_1.mg[1][1].in[0]": {
@@ -339,13 +339,13 @@
       "buffers": [{
           "column": 0,
           "row": 1,
-          "bankId": 2,
+          "bankId": 1,
           "offset": 0
         }, {
           "column": 0,
           "row": 1,
-          "bankId": 0,
-          "offset": 8032
+          "bankId": 2,
+          "offset": 352
         }]
     },
     "topNormGraph1_1.normGraph.norm[0].out[0]": {
@@ -357,21 +357,21 @@
         }, {
           "column": 0,
           "row": 1,
-          "bankId": 1,
-          "offset": 4256
+          "bankId": 0,
+          "offset": 0
         }]
     },
     "topNormGraph1_1.sp[0].out[0]": {
       "buffers": [{
           "column": 0,
           "row": 1,
-          "bankId": 2,
+          "bankId": 1,
           "offset": 0
         }, {
           "column": 0,
           "row": 1,
-          "bankId": 0,
-          "offset": 8032
+          "bankId": 2,
+          "offset": 352
         }]
     },
     "topNormGraph1_1.mg[0].in[0]": {
@@ -383,8 +383,8 @@
         }, {
           "column": 0,
           "row": 1,
-          "bankId": 1,
-          "offset": 4256
+          "bankId": 0,
+          "offset": 0
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[0][1].in[0]": {
@@ -392,7 +392,7 @@
           "column": 1,
           "row": 1,
           "bankId": 0,
-          "offset": 0
+          "offset": 7136
         }, {
           "column": 1,
           "row": 1,
@@ -405,7 +405,7 @@
           "column": 2,
           "row": 1,
           "bankId": 0,
-          "offset": 8032
+          "offset": 7136
         }, {
           "column": 2,
           "row": 1,
@@ -470,12 +470,12 @@
           "column": 2,
           "row": 2,
           "bankId": 0,
-          "offset": 0
+          "offset": 3040
         }, {
           "column": 2,
           "row": 2,
           "bankId": 1,
-          "offset": 0
+          "offset": 2080
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[1][1].out[1]": {
@@ -522,7 +522,7 @@
           "column": 1,
           "row": 3,
           "bankId": 0,
-          "offset": 8032
+          "offset": 0
         }, {
           "column": 1,
           "row": 3,
@@ -561,12 +561,12 @@
           "column": 2,
           "row": 2,
           "bankId": 0,
-          "offset": 0
+          "offset": 3040
         }, {
           "column": 2,
           "row": 2,
           "bankId": 1,
-          "offset": 0
+          "offset": 2080
         }]
     },
     "topSweepGraph1_1.sweepGraph.orth[1][2].out[0]": {
@@ -574,7 +574,7 @@
           "column": 2,
           "row": 3,
           "bankId": 0,
-          "offset": 8032
+          "offset": 7136
         }, {
           "column": 2,
           "row": 3,
@@ -599,12 +599,12 @@
       "buffers": [{
           "column": 1,
           "row": 0,
-          "bankId": 2,
+          "bankId": 0,
           "offset": 0
         }, {
           "column": 1,
           "row": 0,
-          "bankId": 3,
+          "bankId": 1,
           "offset": 0
         }]
     },
@@ -613,7 +613,7 @@
           "column": 2,
           "row": 3,
           "bankId": 0,
-          "offset": 8032
+          "offset": 7136
         }, {
           "column": 2,
           "row": 3,

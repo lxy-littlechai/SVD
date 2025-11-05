@@ -1,11 +1,11 @@
 Packet ID Report 
-net0 S_SHIM_SOUTH_ch4_C6 M_S2MM_DMA_ch0_C1_R0 : packet id = 0
-net1 S_SHIM_SOUTH_ch0_C7 M_S2MM_DMA_ch0_C0_R0 : packet id = 0
+net0 S_SHIM_SOUTH_ch0_C6 M_S2MM_DMA_ch0_C1_R0 : packet id = 0
+net1 S_SHIM_SOUTH_ch4_C7 M_S2MM_DMA_ch1_C1_R0 : packet id = 0
 net12 S_MM2S_DMA_ch0_C2_R3 M_SHIM_SOUTH_ch4_C6 : packet id = 0
 net13 S_MM2S_DMA_ch0_C1_R3 M_SHIM_SOUTH_ch4_C7 : packet id = 0
 net14 S_MM2S_DMA_ch1_C1_R3 M_SHIM_SOUTH_ch2_C7 : packet id = 0
 net15 S_MM2S_DMA_ch1_C2_R3 M_SHIM_SOUTH_ch0_C8 : packet id = 0
-net2 S_SHIM_SOUTH_ch4_C7 M_S2MM_DMA_ch0_C2_R0 : packet id = 0
-net24 S_SHIM_SOUTH_ch0_C6 M_S2MM_DMA_ch0_C0_R1 : packet id = 0
+net2 S_SHIM_SOUTH_ch0_C7 M_S2MM_DMA_ch0_C2_R0 : packet id = 0
+net24 S_SHIM_SOUTH_ch4_C6 M_S2MM_DMA_ch0_C0_R1 : packet id = 0
 net25 S_MM2S_DMA_ch0_C0_R1 M_SHIM_SOUTH_ch2_C6 : packet id = 0
 net3 S_SHIM_SOUTH_ch0_C8 M_S2MM_DMA_ch1_C2_R0 : packet id = 0

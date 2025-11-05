@@ -28,9 +28,9 @@ def orthogonality_measure(matrix):
 
     return accumulated_measure
 
-matrix = read_U('./test/U.txt')
-accumulated_measure = orthogonality_measure(matrix)
-print("orth rate: ", accumulated_measure)
+# matrix = read_U('./test/U.txt')
+# accumulated_measure = orthogonality_measure(matrix)
+# print("orth rate: ", accumulated_measure)
 
 sigma = read_sigma('./test/Sigma.txt')
 standard_sigma = read_sigma('./gold/Sigma.txt')
