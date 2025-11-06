@@ -31,10 +31,10 @@ def generate(storePath, config):
   template_list = [
             ("data", "svd.py"), 
             ("data", "performance.py"), 
-            ("data/gold", "U.txt"),
-            ("data/gold", "Sigma.txt"),
-            ("data/test", "U.txt"),
-            ("data/test", "Sigma.txt"),
+            # ("data/gold", "U.txt"),
+            # ("data/gold", "Sigma.txt"),
+            # ("data/test", "U.txt"),
+            # ("data/test", "Sigma.txt"),
 
             ("aie/ProcessGraph", "RingGraph.hpp"), 
             ("aie/ProcessUnit", "Normalize.cpp"),
