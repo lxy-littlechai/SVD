@@ -222,6 +222,7 @@ void Send(axis_stream_sig& syscontrol,
       ap_uint<1> sig = syscontrol.read();
       if(sig == END) break;
       for(int i = 0;i < SWEEP_STEP;i ++) {
+        hls::print("Send i: %d\n", i);
         #pragma HLS dataflow
 
   
@@ -303,35 +304,101 @@ void Level1OrderingGenerator(axis_stream_sig& syscontrol, axis_stream_ordering& 
   while(true) {
     ap_uint<1> sig = syscontrol.read();
     if(sig == END) break;
-
-    for(int j = 0;j < LEVEL1_BLOCK_NUM-1;j ++) {
+    hls::print("Level1OrderingGenerator sig: %d\n", sig);
+    if(LEVEL1_BLOCK_PAIR_NUM == 1) {
       tmp_L = gen_L.read();
       tmp_R = gen_R.read();
       ordering_L.write(tmp_L);
       ordering_R.write(tmp_R);
-      gen_L.write(tmp_R);
       gen_L.write(tmp_L);
-
-      for(int i = 0;i < LEVEL1_BLOCK_PAIR_NUM-2;i ++) {
+      gen_R.write(tmp_R);
+    }
+    else {
+      for(int j = 0;j < LEVEL1_BLOCK_NUM-1;j ++) {
         tmp_L = gen_L.read();
         tmp_R = gen_R.read();
         ordering_L.write(tmp_L);
         ordering_R.write(tmp_R);
+        gen_L.write(tmp_R);
         gen_L.write(tmp_L);
+  
+        for(int i = 0;i < LEVEL1_BLOCK_PAIR_NUM-2;i ++) {
+          tmp_L = gen_L.read();
+          tmp_R = gen_R.read();
+          ordering_L.write(tmp_L);
+          ordering_R.write(tmp_R);
+          gen_L.write(tmp_L);
+          gen_R.write(tmp_R);
+        }
+  
+        tmp_L = gen_L.read();
+        tmp_R = gen_R.read();
+        ordering_L.write(tmp_L);
+        ordering_R.write(tmp_R);
+        gen_R.write(tmp_L);
         gen_R.write(tmp_R);
-      }
-
-      tmp_L = gen_L.read();
-      tmp_R = gen_R.read();
-      ordering_L.write(tmp_L);
-      ordering_R.write(tmp_R);
-      gen_R.write(tmp_L);
-      gen_R.write(tmp_R);
-    }      
+      }     
+    }
+     
   }
 
 }
 
+template<typename TS, typename TE>
+void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM], TS src_fifo_R[parallel_num][IO_NUM], TE dst_fifo_L[parallel_num][IO_NUM], TE dst_fifo_R[parallel_num][IO_NUM]) {
+  #pragma HLS INLINE off
+
+  const int STAGE1_SIZE = SUB_BLOCK_SIZE*ROW/ELEM_NUM;
+  const int STAGE2_SIZE = (BLOCK_PAIR_NUM-2*parallel_num)/parallel_num*SUB_BLOCK_SIZE*ROW/ELEM_NUM;
+  const int STAGE3_SIZE = SUB_BLOCK_SIZE*ROW/ELEM_NUM;
+  for(int j = 0;j < STAGE1_SIZE;j ++) {
+    #pragma HLS PIPELINE II = 1
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      ap_uint<W> tmp_R0 = src_fifo_R[0][k].read();
+      dst_fifo_L[0][k].write(tmp_R0);
+    }
+  }
+
+  for(int j = 0;j < STAGE1_SIZE;j ++) {
+    #pragma HLS PIPELINE II = 1
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      ap_uint<W> tmp_L0 = src_fifo_L[0][k].read();
+      dst_fifo_L[0][k].write(tmp_L0);
+    }
+  }
+  
+  
+  for(int j = 0;j < STAGE2_SIZE;j ++) {
+    #pragma HLS PIPELINE II = 1
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      ap_uint<W> tmp_L0 = src_fifo_L[0][k].read();
+      dst_fifo_L[0][k].write(tmp_L0);
+      ap_uint<W> tmp_R0 = src_fifo_R[0][k].read();
+      dst_fifo_R[0][k].write(tmp_R0);
+    }
+  }
+
+  for(int j = 0;j < STAGE3_SIZE;j ++) {
+    #pragma HLS PIPELINE II = 1
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      ap_uint<W> tmp_L0 = src_fifo_L[0][k].read();
+      dst_fifo_R[0][k].write(tmp_L0);
+    }
+  }
+
+  for(int j = 0;j < STAGE3_SIZE;j ++) {
+    #pragma HLS PIPELINE II = 1
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      ap_uint<W> tmp_R0 = src_fifo_R[0][k].read();
+      dst_fifo_R[0][k].write(tmp_R0);
+    }
+  }
+}
 
 void RoundRobin(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, axis_stream_ordering& ordering_R,
                 ap_uint<DDR_WIDTH>* dataIn, 
@@ -343,9 +410,7 @@ void RoundRobin(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, a
   //Sweep
   const int LEVEL1_STEP = LEVEL1_BLOCK_PAIR_NUM*(LEVEL1_BLOCK_NUM-1);
   const int LEVEL2_STEP = (BLOCK_NUM-1) - 1;
-  const int STAGE1_SIZE = SUB_BLOCK_SIZE*ROW/ELEM_NUM;
-  const int STAGE2_SIZE = (BLOCK_PAIR_NUM-2*parallel_num)/parallel_num*SUB_BLOCK_SIZE*ROW/ELEM_NUM;
-  const int STAGE3_SIZE = SUB_BLOCK_SIZE*ROW/ELEM_NUM;
+  
 
   while(true) {
     ap_uint<1> sig = syscontrol.read();
@@ -362,103 +427,12 @@ void RoundRobin(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, a
       for(int i = 0;i < LEVEL2_STEP;i ++) {
         hls::print("stage1 start: %d\n", i);
 
-        for(int j = 0;j < STAGE1_SIZE;j ++) {
-          #pragma HLS PIPELINE II = 1
-          for(int k = 0;k < IO_NUM;k ++) {
-            #pragma HLS unroll
-            ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
-            send_fifo_L[0][k].write(tmp_R0);
-          }
-        }
-
-        for(int j = 0;j < STAGE1_SIZE;j ++) {
-          #pragma HLS PIPELINE II = 1
-          for(int k = 0;k < IO_NUM;k ++) {
-            #pragma HLS unroll
-            ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
-            send_fifo_L[0][k].write(tmp_L0);
-          }
-        }
-        
-        
-        for(int j = 0;j < STAGE2_SIZE;j ++) {
-        #pragma HLS PIPELINE II = 1
-        for(int k = 0;k < IO_NUM;k ++) {
-          #pragma HLS unroll
-          ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
-          send_fifo_L[0][k].write(tmp_L0);
-          ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
-          send_fifo_R[0][k].write(tmp_R0);
-        }
-        }
-
-        for(int j = 0;j < STAGE3_SIZE;j ++) {
-        #pragma HLS PIPELINE II = 1
-        for(int k = 0;k < IO_NUM;k ++) {
-          #pragma HLS unroll
-          ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
-          send_fifo_R[0][k].write(tmp_L0);
-        }
-        }
-
-        for(int j = 0;j < STAGE3_SIZE;j ++) {
-        #pragma HLS PIPELINE II = 1
-        for(int k = 0;k < IO_NUM;k ++) {
-          #pragma HLS unroll
-          ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
-          send_fifo_R[0][k].write(tmp_R0);
-        }
-        }
+        FIFOExchange(receive_fifo_L, receive_fifo_R, send_fifo_L, send_fifo_R);
 
         hls::print("stage1 end: %d\n", i);
       }
 
-      for(int j = 0;j < STAGE1_SIZE;j ++) {
-      #pragma HLS PIPELINE II = 1
-      for(int k = 0;k < IO_NUM;k ++) {
-        #pragma HLS unroll
-        ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
-        tmp_fifo_L[0][k].write(tmp_R0);
-      }
-      }
-
-      for(int j = 0;j < STAGE1_SIZE;j ++) {
-        #pragma HLS PIPELINE II = 1
-        for(int k = 0;k < IO_NUM;k ++) {
-          #pragma HLS unroll
-          ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
-          tmp_fifo_L[0][k].write(tmp_L0);
-        }
-      }
-      
-      for(int j = 0;j < STAGE2_SIZE;j ++) {
-      #pragma HLS PIPELINE II = 1
-      for(int k = 0;k < IO_NUM;k ++) {
-        #pragma HLS unroll
-        ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
-        tmp_fifo_L[0][k].write(tmp_L0);
-        ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
-        tmp_fifo_R[0][k].write(tmp_R0);
-      }
-      }
-
-      for(int j = 0;j < STAGE3_SIZE;j ++) {
-      #pragma HLS PIPELINE II = 1
-      for(int k = 0;k < IO_NUM;k ++) {
-        #pragma HLS unroll
-        ap_uint<W> tmp_L0 = receive_fifo_L[0][k].read();
-        tmp_fifo_R[0][k].write(tmp_L0);
-      }
-      }
-
-      for(int j = 0;j < STAGE3_SIZE;j ++) {
-        #pragma HLS PIPELINE II = 1
-        for(int k = 0;k < IO_NUM;k ++) {
-          #pragma HLS unroll
-          ap_uint<W> tmp_R0 = receive_fifo_R[0][k].read();
-          tmp_fifo_R[0][k].write(tmp_R0);
-        }
-      }
+      FIFOExchange(receive_fifo_L, receive_fifo_R, tmp_fifo_L, tmp_fifo_R);
 
       OrthFIFO2DDR(dataIn, level1_block_L_index, level1_block_R_index, tmp_fifo_L, tmp_fifo_R);
       hls::print("fifo2ddr done\n");
@@ -487,11 +461,12 @@ void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sig sysco
   int iter = 0;
   const int LEVEL1_STEP = LEVEL1_BLOCK_PAIR_NUM*(LEVEL1_BLOCK_NUM-1);
   const int SWEEP_STEP = BLOCK_PAIR_NUM*(BLOCK_NUM-1) / parallel_num;
-  while(true) {
-    fp_uint maxLevel1Conv, maxLevel2Conv;
-    float block_conv[parallel_num*IO_NUM*2];
-    maxLevel1Conv.data_float = 0;
+  fp_uint maxLevel1Conv, maxLevel2Conv;
+  float block_conv[parallel_num*IO_NUM*2];
+  
 
+  while(true) {
+    maxLevel1Conv.data_float = 0;
     for(int level1 = 0; level1 < LEVEL1_STEP;level1 ++) {
       maxLevel2Conv.data_float = 0;
       for(int i = 0;i < SWEEP_STEP;i ++) {

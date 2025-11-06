@@ -134,11 +134,11 @@
         {
             "Name": "buf0",
             "Site": "AIE_MEMGRP_X1Y0",
-            "Bel": "BANK0"
+            "Bel": "BANK2"
         },
         {
             "Name": "buf1",
-            "Site": "AIE_MEMGRP_X1Y0",
+            "Site": "AIE_MEMGRP_X0Y0",
             "Bel": "BANK2"
         },
         {
@@ -149,7 +149,7 @@
         {
             "Name": "buf3",
             "Site": "AIE_MEMGRP_X2Y0",
-            "Bel": "BANK1"
+            "Bel": "BANK3"
         },
         {
             "Name": "buf4",
@@ -214,7 +214,7 @@
         {
             "Name": "buf16",
             "Site": "AIE_MEMGRP_X0Y1",
-            "Bel": "BANK1"
+            "Bel": "BANK2"
         },
         {
             "Name": "buf17",
@@ -223,13 +223,13 @@
         },
         {
             "Name": "sysmem18",
-            "Site": "AIE_MEMGRP_X0Y0",
+            "Site": "AIE_MEMGRP_X1Y0",
             "Bel": "BANK0"
         },
         {
             "Name": "sysmem19",
-            "Site": "AIE_MEMGRP_X2Y0",
-            "Bel": "BANK0"
+            "Site": "AIE_MEMGRP_X1Y0",
+            "Bel": "BANK1"
         },
         {
             "Name": "sysmem20",
@@ -239,42 +239,42 @@
         {
             "Name": "sysmem21",
             "Site": "AIE_MEMGRP_X0Y0",
-            "Bel": "BANK1"
-        },
-        {
-            "Name": "sysmem22",
-            "Site": "AIE_MEMGRP_X2Y2",
             "Bel": "BANK0"
         },
         {
+            "Name": "sysmem22",
+            "Site": "AIE_MEMGRP_X2Y0",
+            "Bel": "BANK1"
+        },
+        {
             "Name": "sysmem23",
-            "Site": "AIE_MEMGRP_X1Y3",
+            "Site": "AIE_MEMGRP_X1Y1",
             "Bel": "BANK0"
         },
         {
             "Name": "sysmem24",
             "Site": "AIE_MEMGRP_X2Y2",
-            "Bel": "BANK1"
+            "Bel": "BANK0"
         },
         {
             "Name": "buf25",
             "Site": "AIE_MEMGRP_X1Y0",
-            "Bel": "BANK1"
+            "Bel": "BANK3"
         },
         {
             "Name": "buf26",
-            "Site": "AIE_MEMGRP_X1Y0",
+            "Site": "AIE_MEMGRP_X0Y0",
             "Bel": "BANK3"
         },
         {
             "Name": "buf27",
             "Site": "AIE_MEMGRP_X2Y0",
-            "Bel": "BANK3"
+            "Bel": "BANK0"
         },
         {
             "Name": "buf28",
             "Site": "AIE_MEMGRP_X2Y0",
-            "Bel": "BANK0"
+            "Bel": "BANK1"
         },
         {
             "Name": "buf29",
@@ -339,12 +339,12 @@
         {
             "Name": "buf41",
             "Site": "AIE_MEMGRP_X0Y1",
-            "Bel": "BANK2"
+            "Bel": "BANK0"
         },
         {
             "Name": "buf42",
             "Site": "AIE_MEMGRP_X0Y1",
-            "Bel": "BANK0"
+            "Bel": "BANK1"
         },
         {
             "Name": "PT0",
@@ -406,7 +406,7 @@
         {
             "Name": "1_1_norm_in_0",
             "Site": "AIE_PL_X5Y0",
-            "Bel": "AIE_PL_S_AXIS_4"
+            "Bel": "AIE_PL_S_AXIS_0"
         },
         {
             "Name": "1_1_norm_out_0",
@@ -416,17 +416,17 @@
         {
             "Name": "1_1_sweep_in_L_0",
             "Site": "AIE_PL_X5Y0",
-            "Bel": "AIE_PL_S_AXIS_0"
+            "Bel": "AIE_PL_S_AXIS_4"
         },
         {
             "Name": "1_1_sweep_in_L_1",
             "Site": "AIE_PL_X6Y0",
-            "Bel": "AIE_PL_S_AXIS_0"
+            "Bel": "AIE_PL_S_AXIS_4"
         },
         {
             "Name": "1_1_sweep_in_R_0",
             "Site": "AIE_PL_X6Y0",
-            "Bel": "AIE_PL_S_AXIS_4"
+            "Bel": "AIE_PL_S_AXIS_0"
         },
         {
             "Name": "1_1_sweep_in_R_1",
@@ -950,11 +950,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1027,11 +1027,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1047,7 +1047,7 @@
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 1"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "IsSelector",
@@ -1104,11 +1104,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1181,11 +1181,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1258,11 +1258,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1270,7 +1270,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 7136"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -1335,11 +1335,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1412,11 +1412,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1424,7 +1424,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 7136"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -1489,11 +1489,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1566,11 +1566,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1643,11 +1643,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1720,11 +1720,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1797,11 +1797,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1809,7 +1809,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 3040"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -1874,11 +1874,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1886,7 +1886,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 7136"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -1951,11 +1951,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -1963,7 +1963,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -2028,11 +2028,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2105,11 +2105,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2182,11 +2182,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2259,11 +2259,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2324,7 +2324,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 6112"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -2332,7 +2332,7 @@
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 0"
+                    "Val": "INT 1"
                 },
                 {
                     "Key": "accessRow",
@@ -2381,7 +2381,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 6112"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -2389,7 +2389,7 @@
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 2"
+                    "Val": "INT 1"
                 },
                 {
                     "Key": "accessRow",
@@ -2438,7 +2438,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 1056"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
@@ -2495,7 +2495,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 1024"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -2552,11 +2552,11 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 608"
                 },
                 {
                     "Key": "row",
-                    "Val": "INT 2"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "column",
@@ -2609,11 +2609,11 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 1056"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
-                    "Val": "INT 3"
+                    "Val": "INT 1"
                 },
                 {
                     "Key": "column",
@@ -2666,7 +2666,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 160"
                 },
                 {
                     "Key": "row",
@@ -2731,11 +2731,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2800,11 +2800,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2820,7 +2820,7 @@
                 },
                 {
                     "Key": "column",
-                    "Val": "INT 1"
+                    "Val": "INT 0"
                 }
             ]
         },
@@ -2869,11 +2869,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2881,7 +2881,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -2938,11 +2938,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -2950,7 +2950,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -3007,11 +3007,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3076,11 +3076,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3145,11 +3145,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3214,11 +3214,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3283,11 +3283,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3352,11 +3352,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3421,11 +3421,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3490,11 +3490,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3502,7 +3502,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 2080"
+                    "Val": "INT 0"
                 },
                 {
                     "Key": "row",
@@ -3559,11 +3559,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3628,11 +3628,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3697,11 +3697,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3766,11 +3766,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3835,11 +3835,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3847,7 +3847,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 352"
+                    "Val": "INT 8032"
                 },
                 {
                     "Key": "row",
@@ -3904,11 +3904,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -3916,7 +3916,7 @@
                 },
                 {
                     "Key": "offset",
-                    "Val": "INT 0"
+                    "Val": "INT 4256"
                 },
                 {
                     "Key": "row",
@@ -6334,11 +6334,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -6407,11 +6407,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -6476,11 +6476,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",
@@ -6545,11 +6545,11 @@
                 },
                 {
                     "Key": "fullSize",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "size",
-                    "Val": "INT 1040"
+                    "Val": "INT 144"
                 },
                 {
                     "Key": "dataSplits",

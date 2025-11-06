@@ -5,30 +5,32 @@ _symbol      _main _after _main_init
 _symbol      _main_init 0x0
 _symbol buf8 0x28000
 _symbol buf8d 0x2a000
-_symbol buf11 0x38be0
-_symbol buf11d 0x3a820
-_symbol buf12 0x31be0
+_symbol buf11 0x38000
+_symbol buf11d 0x3a000
+_symbol buf12 0x31f60
 _symbol buf12d 0x32000
 _symbol buf15 0x34000
 _symbol buf15d 0x36000
-_symbol _ZL11sync_buffer  0x3a000  //synchronization buffer 
-_stack DM_stack 0x3a020  0x400 //stack for core 
-//space for synopsys compiler  at  0x3a420  0x400//heap for core  
+_symbol _ZL11sync_buffer  0x380a0  //synchronization buffer 
+_stack DM_stack 0x380c0  0x400 //stack for core 
+//space for synopsys compiler  at  0x384c0  0x400//heap for core  
 _reserved DMb 0x20000 0x8000
 
-_reserved DMb 0x28410 0x1bf0
+_reserved DMb 0x28090 0x1f70
 
-_reserved DMb 0x2a410 0x77d0
+_reserved DMb 0x2a090 0x7ed0
 
 _reserved DMb 0x31ff0 0x10
 
-_reserved DMb 0x32410 0x1bf0
+_reserved DMb 0x32090 0x1f70
 
-_reserved DMb 0x34410 0x1bf0
+_reserved DMb 0x34090 0x1f70
 
-_reserved DMb 0x36410 0x27d0
+_reserved DMb 0x36090 0x1f70
 
-_reserved DMb 0x38ff0 0x1010
+_reserved DMb 0x38090 0x10
 
- _reserved DMb 0x3ac30 0x53d0
+_reserved DMb 0x388c0 0x1740
+
+ _reserved DMb 0x3a090 0x5f70
 _reserved DMb 0x40000 0xc0000 // And everything else the core can't see

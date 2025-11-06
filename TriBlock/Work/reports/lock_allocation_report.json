@@ -26,13 +26,13 @@
                     "Locks": [
                         {
                             "BufferName": "buf1",
-                            "LockID": 2,
-                            "LockName": "LOCK_1_0_2_0"
+                            "LockID": 0,
+                            "LockName": "LOCK_0_0_0_0"
                         },
                         {
                             "BufferName": "buf1d",
-                            "LockID": 3,
-                            "LockName": "LOCK_1_0_3_0"
+                            "LockID": 1,
+                            "LockName": "LOCK_0_0_1_0"
                         }
                     ]
                 },
@@ -43,7 +43,7 @@
                         {
                             "BufferName": "buf4",
                             "LockID": 0,
-                            "LockName": "LOCK_1_1_0_7136"
+                            "LockName": "LOCK_1_1_0_0"
                         },
                         {
                             "BufferName": "buf4d",
@@ -86,7 +86,7 @@
                         {
                             "BufferName": "buf2d",
                             "LockID": 1,
-                            "LockName": "LOCK_2_0_1_0"
+                            "LockName": "LOCK_2_0_1_8032"
                         }
                     ]
                 },
@@ -102,7 +102,7 @@
                         {
                             "BufferName": "buf3d",
                             "LockID": 3,
-                            "LockName": "LOCK_2_0_3_0"
+                            "LockName": "LOCK_2_0_3_8032"
                         }
                     ]
                 },
@@ -113,7 +113,7 @@
                         {
                             "BufferName": "buf6",
                             "LockID": 0,
-                            "LockName": "LOCK_2_1_0_7136"
+                            "LockName": "LOCK_2_1_0_8032"
                         },
                         {
                             "BufferName": "buf6d",
@@ -151,7 +151,7 @@
                         {
                             "BufferName": "buf4",
                             "LockID": 0,
-                            "LockName": "LOCK_1_1_0_7136"
+                            "LockName": "LOCK_1_1_0_0"
                         },
                         {
                             "BufferName": "buf4d",
@@ -167,7 +167,7 @@
                         {
                             "BufferName": "buf6",
                             "LockID": 0,
-                            "LockName": "LOCK_2_1_0_7136"
+                            "LockName": "LOCK_2_1_0_8032"
                         },
                         {
                             "BufferName": "buf6d",
@@ -253,12 +253,12 @@
                         {
                             "BufferName": "buf11",
                             "LockID": 0,
-                            "LockName": "LOCK_2_2_0_3040"
+                            "LockName": "LOCK_2_2_0_0"
                         },
                         {
                             "BufferName": "buf11d",
                             "LockID": 1,
-                            "LockName": "LOCK_2_2_1_2080"
+                            "LockName": "LOCK_2_2_1_0"
                         }
                     ]
                 },
@@ -323,7 +323,7 @@
                         {
                             "BufferName": "buf13",
                             "LockID": 0,
-                            "LockName": "LOCK_1_3_0_0"
+                            "LockName": "LOCK_1_3_0_8032"
                         },
                         {
                             "BufferName": "buf13d",
@@ -377,12 +377,12 @@
                         {
                             "BufferName": "buf11",
                             "LockID": 0,
-                            "LockName": "LOCK_2_2_0_3040"
+                            "LockName": "LOCK_2_2_0_0"
                         },
                         {
                             "BufferName": "buf11d",
                             "LockID": 1,
-                            "LockName": "LOCK_2_2_1_2080"
+                            "LockName": "LOCK_2_2_1_0"
                         }
                     ]
                 },
@@ -393,7 +393,7 @@
                         {
                             "BufferName": "buf12",
                             "LockID": 0,
-                            "LockName": "LOCK_2_3_0_7136"
+                            "LockName": "LOCK_2_3_0_8032"
                         },
                         {
                             "BufferName": "buf12d",
@@ -436,7 +436,7 @@
                         {
                             "BufferName": "buf16d",
                             "LockID": 1,
-                            "LockName": "LOCK_0_1_1_352"
+                            "LockName": "LOCK_0_1_1_8032"
                         }
                     ]
                 },
@@ -452,7 +452,7 @@
                         {
                             "BufferName": "buf17d",
                             "LockID": 3,
-                            "LockName": "LOCK_0_1_3_0"
+                            "LockName": "LOCK_0_1_3_4256"
                         }
                     ]
                 }

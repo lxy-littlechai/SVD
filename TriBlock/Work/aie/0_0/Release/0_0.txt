@@ -241,168 +241,58 @@ Normalize.cpp                                 32               0x38c            
 /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
 vector.hpp                                   384               0x38c       1       x
 
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
+mul_acc32_fp.hpp                              73               0x3a2               x
+
 /home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x394        
+Normalize.cpp                                 32               0x3aa               x
 
 /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x394       1
+vector.hpp                                   384               0x3aa       1       x
+
+/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
+mul_acc32_fp.hpp                              73               0x3b8               x
 
 /home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x39c        
+Normalize.cpp                                 32               0x3c0               x
 
 /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x39c       1
+vector.hpp                                   384               0x3c0       1       x
 
 /home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3a4        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3a4       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3ac               x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3ac       1       x
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3b4        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3b4       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3bc        
+Normalize.cpp                                 34               0x3c8               x
 
 /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x3bc       1       x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3bc       2
+mul_acc32_fp.hpp                              73               0x3d0               x
 
 /home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3c8               x
+Normalize.cpp                                 34               0x3e2               x
 
 /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x3c8       1
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3c8       2       x
+mul_acc32_fp.hpp                              73               0x3e8               x
 
 /home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3d4        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x3d4       1       x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3d4       2
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3e0               x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x3e0       1
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3e0       2       x
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x3f0        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x3f0       1       x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x3f0       2
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x400               x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x400       1
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x400       2       x
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 32               0x410        
-Normalize.cpp                                 34               0x410       1       x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x410       2       x
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/vector.hpp:
-vector.hpp                                   384               0x410       3
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x420        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x420       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x428        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x428       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x430        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x430       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x438        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x438       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x440        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x440       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x448        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x448       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x450        
-
-/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp:
-mul_acc32_fp.hpp                              73               0x450       1
-
-/home/luanxinya/large/PaperWork/HeteroSVD/SVD/TriBlock/./aie/ProcessUnit/Normalize.cpp:
-Normalize.cpp                                 34               0x458        
-Normalize.cpp                                 34               0x45c        
-Normalize.cpp                                 34               0x460        
-Normalize.cpp                                 34               0x464        
-Normalize.cpp                                 34               0x468        
-Normalize.cpp                                 34               0x46c        
-Normalize.cpp                                 37               0x470               x
+Normalize.cpp                                 34               0x3f2               x
+Normalize.cpp                                 34               0x3fc        
+Normalize.cpp                                 37               0x400               x
 
 /usr/xilinx/Vitis/2023.2/aietools/include/adf/io_buffer/io_buffer_main.h:
-io_buffer_main.h                             317               0x47c               x
-io_buffer_main.h                             317               0x486        
+io_buffer_main.h                             317               0x40c               x
+io_buffer_main.h                             317               0x416        
 
 ../src/0_0.cc:
-0_0.cc                                        53               0x48a               x
-0_0.cc                                        53               0x48e        
-0_0.cc                                        38               0x492               x
-0_0.cc                                        38               0x492       1       x
-0_0.cc                                        56               0x4c0               x
-0_0.cc                                        57               0x4ce               x
-0_0.cc                                        57               0x4e4        
-0_0.cc                                        60               0x4fa        
-0_0.cc                                        60               0x4fa       1
-0_0.cc                                        60               0x506               x
-0_0.cc                                        60               0x51c        
-0_0.cc                                         -               0x51d
+0_0.cc                                        53               0x41a               x
+0_0.cc                                        53               0x41e        
+0_0.cc                                        38               0x422               x
+0_0.cc                                        38               0x422       1       x
+0_0.cc                                        56               0x450               x
+0_0.cc                                        57               0x45e               x
+0_0.cc                                        57               0x474        
+0_0.cc                                        60               0x48a        
+0_0.cc                                        60               0x48a       1
+0_0.cc                                        60               0x496               x
+0_0.cc                                        60               0x4ac        
+0_0.cc                                         -               0x4ad
 
 
 CU: No directory table
@@ -419,24 +309,24 @@ CU: ./me_basic.c:
 File name                            Line number    Starting address    View    Stmt
 
 ./me_basic.c:[++]
-me_basic.c                                    73               0x530               x
-me_basic.c                                    73               0x530       1
-me_basic.c                                    73               0x538        
-me_basic.c                                    75               0x538       1
-me_basic.c                                    75               0x538       2
+me_basic.c                                    73               0x4c0               x
+me_basic.c                                    73               0x4c0       1
+me_basic.c                                    73               0x4c8        
+me_basic.c                                    75               0x4c8       1
+me_basic.c                                    75               0x4c8       2
+me_basic.c                                    75               0x4d4        
+me_basic.c                                    75               0x4dc               x
+me_basic.c                                    75               0x4e0        
+me_basic.c                                    76               0x504        
+me_basic.c                                    76               0x510               x
+me_basic.c                                    76               0x526        
+me_basic.c                                    75               0x528        
+me_basic.c                                    75               0x540               x
 me_basic.c                                    75               0x544        
-me_basic.c                                    75               0x54c               x
-me_basic.c                                    75               0x550        
-me_basic.c                                    76               0x574        
-me_basic.c                                    76               0x580               x
-me_basic.c                                    76               0x596        
-me_basic.c                                    75               0x598        
-me_basic.c                                    75               0x5b0               x
-me_basic.c                                    75               0x5b4        
-me_basic.c                                    77               0x5d0        
-me_basic.c                                    77               0x5f4               x
-me_basic.c                                    77               0x5fa        
-me_basic.c                                    77               0x5fe        
+me_basic.c                                    77               0x560        
+me_basic.c                                    77               0x584               x
+me_basic.c                                    77               0x58a        
+me_basic.c                                    77               0x58e        
 me_basic.c                                    87                   0               x
 me_basic.c                                    94                   0       1       x
 me_basic.c                                    88                 0x4               x
@@ -477,26 +367,26 @@ CU: src/atexit.c:
 File name                            Line number    Starting address    View    Stmt
 
 src/atexit.c:
-atexit.c                                      47               0x610               x
-atexit.c                                      52               0x610       1
-atexit.c                                      53               0x610       2
-atexit.c                                      53               0x610       3
-atexit.c                                      55               0x610       4
-atexit.c                                      56               0x61c        
-atexit.c                                      68               0x624        
-atexit.c                                      52               0x626               x
-atexit.c                                      53               0x62e               x
-atexit.c                                      54               0x63e               x
-atexit.c                                      55               0x642               x
-atexit.c                                      56               0x642       1
-atexit.c                                      56               0x64a               x
-atexit.c                                      65               0x650               x
-atexit.c                                      65               0x658        
-atexit.c                                      65               0x66c        
-atexit.c                                      62               0x680        
-atexit.c                                      62               0x688               x
-atexit.c                                      68               0x696        
-atexit.c                                      68               0x698               x
-atexit.c                                       -               0x699
+atexit.c                                      47               0x5a0               x
+atexit.c                                      52               0x5a0       1
+atexit.c                                      53               0x5a0       2
+atexit.c                                      53               0x5a0       3
+atexit.c                                      55               0x5a0       4
+atexit.c                                      56               0x5ac        
+atexit.c                                      68               0x5b4        
+atexit.c                                      52               0x5b6               x
+atexit.c                                      53               0x5be               x
+atexit.c                                      54               0x5ce               x
+atexit.c                                      55               0x5d2               x
+atexit.c                                      56               0x5d2       1
+atexit.c                                      56               0x5da               x
+atexit.c                                      65               0x5e0               x
+atexit.c                                      65               0x5e8        
+atexit.c                                      65               0x5fc        
+atexit.c                                      62               0x610        
+atexit.c                                      62               0x618               x
+atexit.c                                      68               0x626        
+atexit.c                                      68               0x628               x
+atexit.c                                       -               0x629
 
 

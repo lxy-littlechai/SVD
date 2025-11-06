@@ -1,5 +1,5 @@
-const int ROW = 256;
-const int COL = 256;
+const int ROW = 32;
+const int COL = 32;
 const float EPS = 1e-6;
 
 // level-1

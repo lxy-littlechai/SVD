@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<POWERDATA data="AI-Engine Compiler" dataVersion="" design="TopGraph" date="Wed Nov  5 23:49:16 2025
+<POWERDATA data="AI-Engine Compiler" dataVersion="" design="TopGraph" date="Thu Nov  6 15:46:40 2025
 ">
  <DEVICE part="xcvc1902" grade="extended" package="vsva2197" speed="-2MP" process="typical" vid="No"></DEVICE>
   <AIE status="COMPILER_OUTPUT">
     <AIE_MODULE name="TopGraph" num_tiles="32" clk_freq="1250">
-      <TILE name="CR(0,0)" type="int16" int_core_load="0.54" fp_core_load="0" mem_banks="4" mem_rw_rate="0.2" stream_util="0" coordinates="0,1">
+      <TILE name="CR(0,0)" type="int16" int_core_load="0.54" fp_core_load="0" mem_banks="6" mem_rw_rate="0.2" stream_util="0.035" coordinates="0,1">
         <KERNEL name="i22"  int_core_load="0.9" fp_core_load="0"></KERNEL>
       </TILE>
       <TILE name="CR(0,1)" type="none" int_core_load="0" fp_core_load="0" mem_banks="8" mem_rw_rate="0.2" stream_util="0.073" coordinates="0,2">

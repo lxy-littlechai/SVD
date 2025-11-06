@@ -378,9 +378,9 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), NORTH, 3, SOUTH, 2);
 
-	// S_SHIM_SOUTH_ch4_C6 M_SHIM_NORTH_ch5_C6 net24
+	// S_SHIM_SOUTH_ch0_C6 M_SHIM_NORTH_ch5_C6 net24
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 4, NORTH, 5);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 0, NORTH, 5);
 
 	// S_SOUTH_ch5_C6_R0 M_NORTH_ch5_C6_R0 net24
 
@@ -428,7 +428,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -439,7 +439,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4160, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x1f60, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -453,7 +453,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 1), XAie_LockInit(2, 0));
 		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -465,7 +465,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x0, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x30a0, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 1), XAie_LockInit(3, 0));
 		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -477,9 +477,9 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(0, 2), 0, DMA_MM2S);
 
 	printf("Configuring PL-Interface for graph topNormGraph1_1...\n");
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 4);
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 5);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 4, PLIF_WIDTH_128);
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 0);
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 1);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 0, PLIF_WIDTH_128);
 	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(6, 0), 2, PLIF_WIDTH_128);
 
 
@@ -623,20 +623,24 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), EAST, 2, WEST, 2);
 
+	//SLAVE CONFIGURATION FOR SW(0,1)
+
+	// S_EAST_ch3_C0_R0->M_S2MM_DMA_ch0_C0_R0 nets: net1 
+	XAie_StrmPktSwSlaveSlotEnable(&DevInst, XAie_TileLoc(0, 1), EAST, 3, 0, {.PktId=0, .PktType=0}, 0x1f, 0, 0);
+
+	//MASTER CONFIGURATION FOR SW(0,1)
+	//configure master M_S2MM_DMA_ch0_C0_R0 nets: net1 
+
+	XAie_StrmPktSwMstrPortEnable(&DevInst, XAie_TileLoc(0, 1), DMA, 0, XAIE_SS_PKT_DROP_HEADER, 0, 0x1);
+
+
 	// S_EAST_ch3_C0_R2 M_S2MM_DMA_ch0_C0_R2 net9
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(0, 3), EAST, 3, DMA, 0);
 
-	//SLAVE CONFIGURATION FOR SW(1,1)
+	// S_EAST_ch3_C1_R0 M_WEST_ch3_C1_R0 net1
 
-	// S_EAST_ch3_C1_R0->M_S2MM_DMA_ch1_C1_R0 nets: net1 
-	XAie_StrmPktSwSlaveSlotEnable(&DevInst, XAie_TileLoc(1, 1), EAST, 3, 0, {.PktId=0, .PktType=0}, 0x1f, 0, 1);
-
-	//MASTER CONFIGURATION FOR SW(1,1)
-	//configure master M_S2MM_DMA_ch1_C1_R0 nets: net1 
-
-	XAie_StrmPktSwMstrPortEnable(&DevInst, XAie_TileLoc(1, 1), DMA, 1, XAIE_SS_PKT_DROP_HEADER, 1, 0x1);
-
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 1), EAST, 3, WEST, 3);
 
 	// S_EAST_ch3_C1_R2 M_WEST_ch3_C1_R2 net9
 
@@ -761,21 +765,21 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(8, 0), NORTH, 3, SOUTH, 0);
 
-	// S_SHIM_SOUTH_ch0_C6 M_SHIM_NORTH_ch4_C6 net0
+	// S_SHIM_SOUTH_ch0_C7 M_SHIM_NORTH_ch4_C7 net1
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 0, NORTH, 4);
-
-	// S_SHIM_SOUTH_ch0_C7 M_SHIM_NORTH_ch5_C7 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(7, 0), SOUTH, 0, NORTH, 5);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(7, 0), SOUTH, 0, NORTH, 4);
 
 	// S_SHIM_SOUTH_ch0_C8 M_SHIM_NORTH_ch5_C8 net3
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(8, 0), SOUTH, 0, NORTH, 5);
 
-	// S_SHIM_SOUTH_ch4_C7 M_SHIM_NORTH_ch4_C7 net1
+	// S_SHIM_SOUTH_ch4_C6 M_SHIM_NORTH_ch4_C6 net0
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(7, 0), SOUTH, 4, NORTH, 4);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 4, NORTH, 4);
+
+	// S_SHIM_SOUTH_ch4_C7 M_SHIM_NORTH_ch5_C7 net2
+
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(7, 0), SOUTH, 4, NORTH, 5);
 
 	// S_SOUTH_ch4_C6_R0 M_WEST_ch0_C6_R0 net0
 
@@ -893,7 +897,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
 	XAie_StrmPktSwSlavePortEnable(&DevInst, XAie_TileLoc(2,1), EAST, 2);
 
-	XAie_StrmPktSwSlavePortEnable(&DevInst, XAie_TileLoc(1,1), EAST, 3);
+	XAie_StrmPktSwSlavePortEnable(&DevInst, XAie_TileLoc(0,1), EAST, 3);
 
 	XAie_StrmPktSwSlavePortEnable(&DevInst, XAie_TileLoc(2,1), EAST, 3);
 
@@ -920,61 +924,11 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
 	printf("Configuring DMAs of graph topSweepGraph1_1...\n");
 
-	//Setting buffer buf1 of topSweepGraph1_1.sweepGraph.orth[0][0].in[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 1028);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 0), XAie_LockInit(2, 1));
-		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 2);
-	}
-
-	//Setting buffer buf1d of topSweepGraph1_1.sweepGraph.orth[0][0].in[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 1028);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 0), XAie_LockInit(3, 1));
-		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 3);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 1), 1, DMA_S2MM, 2);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 1), 1, DMA_S2MM);
-
-	//Setting buffer buf0 of topSweepGraph1_1.sweepGraph.orth[0][0].in[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x0, 1028);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
-		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 0);
-	}
-
-	//Setting buffer buf0d of topSweepGraph1_1.sweepGraph.orth[0][0].in[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 1028);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
-		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 1);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 1), 0, DMA_S2MM, 0);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 1), 0, DMA_S2MM);
-
 	//Setting buffer buf3 of topSweepGraph1_1.sweepGraph.orth[1][0].in[1]
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 0), XAie_LockInit(2, 1));
 		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -985,7 +939,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x0, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x3f60, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 0), XAie_LockInit(3, 1));
 		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -999,7 +953,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1010,7 +964,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x1f60, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1020,36 +974,36 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(2, 1), 0, DMA_S2MM, 0);
 	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(2, 1), 0, DMA_S2MM);
 
-	//Setting buffer buf9r of topSweepGraph1_1.sweepGraph.orth[0][2].in[0]
+	//Setting buffer buf1 of topSweepGraph1_1.sweepGraph.orth[0][0].in[1]
 	{
 		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x0, 1028);
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 1));
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 3), 0);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 1), 0);
 	}
 
-	//Setting buffer buf9dr of topSweepGraph1_1.sweepGraph.orth[0][2].in[0]
+	//Setting buffer buf1d of topSweepGraph1_1.sweepGraph.orth[0][0].in[1]
 	{
 		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 1028);
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 1));
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 3), 1);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 1), 1);
 	}
 
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(0, 3), 0, DMA_S2MM, 0);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(0, 3), 0, DMA_S2MM);
+	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(0, 1), 0, DMA_S2MM, 0);
+	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(0, 1), 0, DMA_S2MM);
 
 	//Setting buffer buf5r of topSweepGraph1_1.sweepGraph.orth[1][1].in[1]
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(3, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x0, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x0, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1060,7 +1014,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(3, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1070,11 +1024,61 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(3, 2), 0, DMA_S2MM, 0);
 	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(3, 2), 0, DMA_S2MM);
 
+	//Setting buffer buf9r of topSweepGraph1_1.sweepGraph.orth[0][2].in[0]
+	{
+		XAie_DmaDesc DmaInst;
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 3));
+		XAie_DmaSetAddrLen(&DmaInst, 0x0, 132);
+		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
+		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
+		XAie_DmaEnableBd(&DmaInst);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 3), 0);
+	}
+
+	//Setting buffer buf9dr of topSweepGraph1_1.sweepGraph.orth[0][2].in[0]
+	{
+		XAie_DmaDesc DmaInst;
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 3));
+		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 132);
+		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
+		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
+		XAie_DmaEnableBd(&DmaInst);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 3), 1);
+	}
+
+	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(0, 3), 0, DMA_S2MM, 0);
+	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(0, 3), 0, DMA_S2MM);
+
+	//Setting buffer buf0 of topSweepGraph1_1.sweepGraph.orth[0][0].in[0]
+	{
+		XAie_DmaDesc DmaInst;
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
+		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
+		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
+		XAie_DmaEnableBd(&DmaInst);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 0);
+	}
+
+	//Setting buffer buf0d of topSweepGraph1_1.sweepGraph.orth[0][0].in[0]
+	{
+		XAie_DmaDesc DmaInst;
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
+		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
+		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
+		XAie_DmaEnableBd(&DmaInst);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 1);
+	}
+
+	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 1), 0, DMA_S2MM, 0);
+	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 1), 0, DMA_S2MM);
+
 	//Setting buffer buf5 of topSweepGraph1_1.sweepGraph.orth[0][0].out[1]
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 1), XAie_LockInit(2, 0));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1085,7 +1089,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 1), XAie_LockInit(3, 0));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1095,38 +1099,11 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 2), 0, DMA_MM2S, 0);
 	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 2), 0, DMA_MM2S);
 
-	//Setting buffer buf12 of topSweepGraph1_1.sweepGraph.orth[1][2].out[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x1be0, 1028);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 1), XAie_LockInit(0, 0));
-		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
-		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(2, 4), 0);
-	}
-
-	//Setting buffer buf12d of topSweepGraph1_1.sweepGraph.orth[1][2].out[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 1028);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 1), XAie_LockInit(1, 0));
-		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
-		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(2, 4), 1);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(2, 4), 0, DMA_MM2S, 0);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(2, 4), 0, DMA_MM2S);
-
 	//Setting buffer buf9 of topSweepGraph1_1.sweepGraph.orth[1][1].out[1]
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 1), XAie_LockInit(2, 0));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1137,7 +1114,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 1), XAie_LockInit(3, 0));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -1151,7 +1128,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x0, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x1f60, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 1), XAie_LockInit(0, 0));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -1163,7 +1140,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 1), XAie_LockInit(1, 0));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -1178,7 +1155,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 1), XAie_LockInit(2, 0));
 		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -1190,7 +1167,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 1), XAie_LockInit(3, 0));
 		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -1201,11 +1178,38 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 4), 1, DMA_MM2S, 2);
 	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 4), 1, DMA_MM2S);
 
+	//Setting buffer buf12 of topSweepGraph1_1.sweepGraph.orth[1][2].out[0]
+	{
+		XAie_DmaDesc DmaInst;
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 4));
+		XAie_DmaSetAddrLen(&DmaInst, 0x1f60, 132);
+		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 1), XAie_LockInit(0, 0));
+		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
+		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
+		XAie_DmaEnableBd(&DmaInst);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(2, 4), 0);
+	}
+
+	//Setting buffer buf12d of topSweepGraph1_1.sweepGraph.orth[1][2].out[0]
+	{
+		XAie_DmaDesc DmaInst;
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 4));
+		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 132);
+		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 1), XAie_LockInit(1, 0));
+		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
+		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
+		XAie_DmaEnableBd(&DmaInst);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(2, 4), 1);
+	}
+
+	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(2, 4), 0, DMA_MM2S, 0);
+	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(2, 4), 0, DMA_MM2S);
+
 	//Setting buffer buf15 of topSweepGraph1_1.sweepGraph.orth[1][2].out[1]
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 1), XAie_LockInit(2, 0));
 		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -1217,7 +1221,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 4));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 1028);
+		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 1), XAie_LockInit(3, 0));
 		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
 		XAie_DmaSetPkt(&DmaInst, {.PktId=0, .PktType=0});
@@ -1229,19 +1233,19 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(2, 4), 1, DMA_MM2S);
 
 	printf("Configuring PL-Interface for graph topSweepGraph1_1...\n");
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 0);
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 1);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 0, PLIF_WIDTH_128);
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 4);
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 5);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 4, PLIF_WIDTH_128);
 	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(6, 0), 4, PLIF_WIDTH_128);
-
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(7, 0), 4);
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(7, 0), 5);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(7, 0), 4, PLIF_WIDTH_128);
-	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(7, 0), 4, PLIF_WIDTH_128);
 
 	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(7, 0), 0);
 	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(7, 0), 1);
 	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(7, 0), 0, PLIF_WIDTH_128);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(7, 0), 4, PLIF_WIDTH_128);
+
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(7, 0), 4);
+	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(7, 0), 5);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(7, 0), 4, PLIF_WIDTH_128);
 	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(7, 0), 2, PLIF_WIDTH_128);
 
 	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(8, 0), 0);
@@ -1326,8 +1330,8 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {2, "topNormGraph1_1", &topNormGraph1_1_load_elf, &topNormGraph1_1_init, &topNormGraph1_1_core_debug_halt, {0}, {0}, {0}, {0}, {0x2404}, {0}, {}, {}, {}, {},  }, 
-    {0, "topSweepGraph1_1", &topSweepGraph1_1_load_elf, &topSweepGraph1_1_init, &topSweepGraph1_1_core_debug_halt, {1, 1, 1, 2, 2, 2}, {0, 1, 2, 0, 1, 2}, {0, 1, 1, 2, 2, 2}, {0, 2, 3, 0, 2, 2}, {0x17e4, 0x424, 0x424, 0x17e4, 0x4, 0x2004}, {0, 0, 0, 0, 0, 0}, {}, {}, {}, {},  }, 
+    {2, "topNormGraph1_1", &topNormGraph1_1_load_elf, &topNormGraph1_1_init, &topNormGraph1_1_core_debug_halt, {0}, {0}, {0}, {0}, {0x4}, {0}, {}, {}, {}, {},  }, 
+    {0, "topSweepGraph1_1", &topSweepGraph1_1_load_elf, &topSweepGraph1_1_init, &topSweepGraph1_1_core_debug_halt, {1, 1, 1, 2, 2, 2}, {0, 1, 2, 0, 1, 2}, {1, 1, 1, 1, 2, 2}, {0, 2, 1, 0, 0, 2}, {0x4, 0xa4, 0xa4, 0x2004, 0x2264, 0xa4}, {0, 0, 0, 0, 0, 0}, {}, {}, {}, {},  }, 
   };
   const int NUM_GRAPH = 2;
 
@@ -1335,15 +1339,15 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "topSweepGraph1_1.in[0][0]", "1_1_sweep_in_L_0", 6, 0, 0},
+    {0, "topSweepGraph1_1.in[0][0]", "1_1_sweep_in_L_0", 6, 0, 4},
     {1, "topSweepGraph1_1.out[0][0]", "1_1_sweep_out_L_0", 6, 1, 4},
-    {2, "topSweepGraph1_1.in[0][1]", "1_1_sweep_in_R_0", 7, 0, 4},
+    {2, "topSweepGraph1_1.in[0][1]", "1_1_sweep_in_R_0", 7, 0, 0},
     {3, "topSweepGraph1_1.out[0][1]", "1_1_sweep_out_R_0", 7, 1, 4},
-    {4, "topSweepGraph1_1.in[1][0]", "1_1_sweep_in_L_1", 7, 0, 0},
+    {4, "topSweepGraph1_1.in[1][0]", "1_1_sweep_in_L_1", 7, 0, 4},
     {5, "topSweepGraph1_1.out[1][0]", "1_1_sweep_out_L_1", 7, 1, 2},
     {6, "topSweepGraph1_1.in[1][1]", "1_1_sweep_in_R_1", 8, 0, 0},
     {7, "topSweepGraph1_1.out[1][1]", "1_1_sweep_out_R_1", 8, 1, 0},
-    {8, "topNormGraph1_1.in[0]", "1_1_norm_in_0", 6, 0, 4},
+    {8, "topNormGraph1_1.in[0]", "1_1_norm_in_0", 6, 0, 0},
     {9, "topNormGraph1_1.out[0]", "1_1_norm_out_0", 6, 1, 2},
   };
   const int NUM_PLIO = 10;
@@ -1429,6 +1433,6 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 // Kernel Stub Definition
   template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out) { /* Stub */ } 
   template<int ROW> void orthogonalize(adf::input_buffer<float, adf::extents<1 + ROW>> &in0, adf::input_buffer<float, adf::extents<1 + ROW>> &in1, adf::output_buffer<float, adf::extents<1 + ROW>> &out0, adf::output_buffer<float, adf::extents<1 + ROW>> &out1) { /* Stub */ } 
-  template void normalize<256>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<257>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<257>>> &__restrict); /* explicit template instantiation */ 
-  template void orthogonalize<256>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<257>>> &,adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<257>>> &,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<257>>> &,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<257>>> &); /* explicit template instantiation */ 
+  template void normalize<32>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict); /* explicit template instantiation */ 
+  template void orthogonalize<32>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &,adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &); /* explicit template instantiation */ 
 #endif

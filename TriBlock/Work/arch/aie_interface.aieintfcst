@@ -3,7 +3,7 @@
         {
             "LogicalInstance": "1_1_sweep_in_R_0",
             "PhysicalInstance": [
-                "AIE_PL_X6Y0_AIE_PL_S_AXIS_4"
+                "AIE_PL_X6Y0_AIE_PL_S_AXIS_0"
             ],
             "IsSoft": false
         },
@@ -17,7 +17,7 @@
         {
             "LogicalInstance": "1_1_sweep_in_L_1",
             "PhysicalInstance": [
-                "AIE_PL_X6Y0_AIE_PL_S_AXIS_0"
+                "AIE_PL_X6Y0_AIE_PL_S_AXIS_4"
             ],
             "IsSoft": false
         },
@@ -45,7 +45,7 @@
         {
             "LogicalInstance": "1_1_norm_in_0",
             "PhysicalInstance": [
-                "AIE_PL_X5Y0_AIE_PL_S_AXIS_4"
+                "AIE_PL_X5Y0_AIE_PL_S_AXIS_0"
             ],
             "IsSoft": false
         },
@@ -59,7 +59,7 @@
         {
             "LogicalInstance": "1_1_sweep_in_L_0",
             "PhysicalInstance": [
-                "AIE_PL_X5Y0_AIE_PL_S_AXIS_0"
+                "AIE_PL_X5Y0_AIE_PL_S_AXIS_4"
             ],
             "IsSoft": false
         },

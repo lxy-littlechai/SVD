@@ -1,4 +1,5 @@
 <project name="Project" processor="me">
+  <file type="c" name="2_0.cc" path="../src"/>
   <issinit/>
   <option id="cpp.define" value="__AIENGINE__ __AIE_ARCH__=10" inherit = "1"/>
   <option id="backend.mist2.xargs" value="-ggraph" inherit = "1"/>

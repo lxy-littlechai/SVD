@@ -13,20 +13,20 @@ volatile static int sync_buffer[8] = {0, -1};
 #define LOCK_0_2_1_0 17
 #define LOCK_1_2_2_0 50
 #define LOCK_1_2_3_0 51
-#define LOCK_1_3_0_0 32
+#define LOCK_1_3_0_8032 32
 #define LOCK_1_3_1_0 33
 #define LOCK_1_3_2_0 34
 #define LOCK_1_3_3_0 35
 
 // Declare shared memory buffers
-v4float buf10[65];
-v4float buf10d[65];
-v4float buf13[65];
-v4float buf13d[65];
-v4float buf14[65];
-v4float buf14d[65];
-v4float buf9dr[65];
-v4float buf9r[65];
+v4float buf10[9];
+v4float buf10d[9];
+v4float buf13[9];
+v4float buf13d[9];
+v4float buf14[9];
+v4float buf14d[9];
+v4float buf9dr[9];
+v4float buf9r[9];
 
 // Declare Kernel functions and initializers
 #include "aie/ProcessUnit/Orthogonalize.cpp"
@@ -35,10 +35,10 @@ v4float buf9r[65];
 
 int main(void) {
   sync_buffer[0] = 0; //reset end signal
-  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf9r_buf9dr_i[1] = {{(float*)buf9r, 257, 0}};
-  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf10_buf10d_i[1] = {{(float*)buf10, 257, 0}};
-  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf13_buf13d_o[1] = {{(float*)buf13, 257, 0}};
-  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<257u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf14_buf14d_o[1] = {{(float*)buf14, 257, 0}};
+  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf9r_buf9dr_i[1] = {{(float*)buf9r, 33, 0}};
+  adf::_io_buffer< float, adf::direction::in, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf10_buf10d_i[1] = {{(float*)buf10, 33, 0}};
+  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf13_buf13d_o[1] = {{(float*)buf13, 33, 0}};
+  adf::_io_buffer< float, adf::direction::out, adf::io_buffer_config< adf::extents<33u>, adf::locking::sync, adf::addressing::linear, adf::margin<0>>> window_buf14_buf14d_o[1] = {{(float*)buf14, 33, 0}};
   int32 index = 1;
   while(true)
   {
@@ -48,19 +48,19 @@ int main(void) {
   while (proc_1_2_bounds)
   {
 
-    // Kernel call : i4:orthogonalize<256>
+    // Kernel call : i4:orthogonalize<32>
     window_buf9r_buf9dr_i->setData(*window_buf9r_buf9dr_i, (float*)buf9r, (float*)buf9dr, 1-index, 0);
     window_buf9r_buf9dr_i->acquire(*window_buf9r_buf9dr_i, LOCK_0_2_0_0, LOCK_0_2_1_0, 1-index);
     window_buf10_buf10d_i->setData(*window_buf10_buf10d_i, (float*)buf10, (float*)buf10d, 1-index, 0);
     window_buf10_buf10d_i->acquire(*window_buf10_buf10d_i, LOCK_1_2_2_0, LOCK_1_2_3_0, 1-index);
     window_buf13_buf13d_o->setData(*window_buf13_buf13d_o, (float*)buf13, (float*)buf13d, 1-index, 0);
-    window_buf13_buf13d_o->acquire(*window_buf13_buf13d_o, LOCK_1_3_0_0, LOCK_1_3_1_0, 1-index);
+    window_buf13_buf13d_o->acquire(*window_buf13_buf13d_o, LOCK_1_3_0_8032, LOCK_1_3_1_0, 1-index);
     window_buf14_buf14d_o->setData(*window_buf14_buf14d_o, (float*)buf14, (float*)buf14d, 1-index, 0);
     window_buf14_buf14d_o->acquire(*window_buf14_buf14d_o, LOCK_1_3_2_0, LOCK_1_3_3_0, 1-index);
-    orthogonalize<256>(window_buf9r_buf9dr_i[0],window_buf10_buf10d_i[0],window_buf13_buf13d_o[0],window_buf14_buf14d_o[0]);
+    orthogonalize<32>(window_buf9r_buf9dr_i[0],window_buf10_buf10d_i[0],window_buf13_buf13d_o[0],window_buf14_buf14d_o[0]);
     window_buf9r_buf9dr_i->release(*window_buf9r_buf9dr_i, LOCK_0_2_0_0, LOCK_0_2_1_0, 1-index);
     window_buf10_buf10d_i->release(*window_buf10_buf10d_i, LOCK_1_2_2_0, LOCK_1_2_3_0, 1-index);
-    window_buf13_buf13d_o->release(*window_buf13_buf13d_o, LOCK_1_3_0_0, LOCK_1_3_1_0, 1-index);
+    window_buf13_buf13d_o->release(*window_buf13_buf13d_o, LOCK_1_3_0_8032, LOCK_1_3_1_0, 1-index);
     window_buf14_buf14d_o->release(*window_buf14_buf14d_o, LOCK_1_3_2_0, LOCK_1_3_3_0, 1-index);
     index = 1 - index;
 

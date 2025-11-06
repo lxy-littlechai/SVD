@@ -6,7 +6,7 @@ SDKTARGETSYSROOT = ${SYSROOT}
 BASE_PLATFORM ?= ${PLATFORM_REPO_PATHS}/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm
 
 # Makefile input options
-TARGET := hw
+TARGET := hw_emu
 
 XO_DIR=./$(TARGET).xo_dir
 XSA_DIR=./$(TARGET).xsa_dir
