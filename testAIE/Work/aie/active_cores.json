@@ -1,0 +1,7 @@
+{
+  "ActiveCores" : [
+    {"1_0": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/./Work/aie/1_0"},
+    {"1_1": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/./Work/aie/1_1"}
+  ],
+  "ActiveMemory" : ["0_0", "1_0", "1_1", "1_2", "2_1"]
+}

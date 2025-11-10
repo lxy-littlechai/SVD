@@ -1,0 +1,655 @@
+{
+    "schema": "MEGraphSchema-0.4",
+    "id": "root",
+    "blockTypes": {
+        "b1": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "out",
+                    "portName": "in[0][0][0].out[0]"
+                }
+            }
+        },
+        "b2": {
+            "type": "plio",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "in",
+                    "portName": "out[0][0][0].in[0]"
+                }
+            }
+        },
+        "b3": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "out",
+                    "portName": "in[0][0][1].out[0]"
+                }
+            }
+        },
+        "b4": {
+            "type": "plio",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "float",
+                    "direction": "in",
+                    "portName": "out[0][0][1].in[0]"
+                }
+            }
+        },
+        "b0": {
+            "type": "function",
+            "function": "orthogonalize<32>",
+            "template": "template<int ROW> void orthogonalize(adf::input_buffer<float, adf::extents<1 + ROW>> &in0, adf::input_buffer<float, adf::extents<1 + ROW>> &in1, adf::output_buffer<float, adf::extents<1 + ROW>> &out0, adf::output_buffer<float, adf::extents<1 + ROW>> &out1)",
+            "srcFile": "aie/ProcessUnit/Orthogonalize.cpp",
+            "ports": {
+                "pi0": {
+                    "type": "mem",
+                    "elementType": "float",
+                    "direction": "in",
+                    "parameterIndex": 0,
+                    "bufferPort": true,
+                    "portName": "in[0]",
+                    "varName": "in0",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &",
+                    "dimensions": [
+                        33
+                    ]
+                },
+                "pi1": {
+                    "type": "mem",
+                    "elementType": "float",
+                    "direction": "in",
+                    "parameterIndex": 1,
+                    "bufferPort": true,
+                    "portName": "in[1]",
+                    "varName": "in1",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &",
+                    "dimensions": [
+                        33
+                    ]
+                },
+                "po0": {
+                    "type": "mem",
+                    "elementType": "float",
+                    "direction": "out",
+                    "parameterIndex": 2,
+                    "bufferPort": true,
+                    "portName": "out[0]",
+                    "varName": "out0",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &",
+                    "dimensions": [
+                        33
+                    ]
+                },
+                "po1": {
+                    "type": "mem",
+                    "elementType": "float",
+                    "direction": "out",
+                    "parameterIndex": 3,
+                    "bufferPort": true,
+                    "portName": "out[1]",
+                    "varName": "out1",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &",
+                    "dimensions": [
+                        33
+                    ]
+                }
+            }
+        },
+        "ps_b5": {
+            "type": "function",
+            "function": "ps_main",
+            "srcFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.cpp",
+            "implType": "unknown"
+        }
+    },
+    "blockInstances": {
+        "i0": {
+            "blockType": "b0",
+            "graphIds": [
+                1,
+                0
+            ],
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "qualifiedGraphName": "topSweepGraph1_1.sweepGraph",
+            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "runTime": 1.0,
+            "fabric": "me",
+            "instanceId": 0,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp:44:33"
+        },
+        "i1": {
+            "blockType": "b1",
+            "graphIds": [
+                0
+            ],
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "qualifiedGraphName": "topSweepGraph1_1",
+            "qualifiedName": "topSweepGraph1_1.in[0][0][0]",
+            "dataWidth": 32,
+            "dataFile": "data/1_1_sweep_inL.txt",
+            "logicalName": "1_1_sweep_in_L_cas0_io0",
+            "plFreq": 200.0,
+            "instanceId": 0,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:51:5"
+        },
+        "i2": {
+            "blockType": "b2",
+            "graphIds": [
+                0
+            ],
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "qualifiedGraphName": "topSweepGraph1_1",
+            "qualifiedName": "topSweepGraph1_1.out[0][0][0]",
+            "dataWidth": 32,
+            "dataFile": "data/1_1_sweep_out_L_cas0_io0.txt",
+            "logicalName": "1_1_sweep_out_L_cas0_io0",
+            "plFreq": 200.0,
+            "instanceId": 1,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:52:5"
+        },
+        "i3": {
+            "blockType": "b3",
+            "graphIds": [
+                0
+            ],
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "qualifiedGraphName": "topSweepGraph1_1",
+            "qualifiedName": "topSweepGraph1_1.in[0][0][1]",
+            "dataWidth": 32,
+            "dataFile": "data/1_1_sweep_inR.txt",
+            "logicalName": "1_1_sweep_in_R_cas0_io0",
+            "plFreq": 200.0,
+            "instanceId": 2,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:51:5"
+        },
+        "i4": {
+            "blockType": "b4",
+            "graphIds": [
+                0
+            ],
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "qualifiedGraphName": "topSweepGraph1_1",
+            "qualifiedName": "topSweepGraph1_1.out[0][0][1]",
+            "dataWidth": 32,
+            "dataFile": "data/1_1_sweep_out_R_cas0_io0.txt",
+            "logicalName": "1_1_sweep_out_R_cas0_io0",
+            "plFreq": 200.0,
+            "instanceId": 3,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:52:5"
+        },
+        "ps_i5": {
+            "blockType": "ps_b5",
+            "graphIds": [
+                -1
+            ],
+            "fabric": "fpga",
+            "plAxiLite": "useDefault",
+            "plFreq": 200.0
+        }
+    },
+    "portInstances": {
+        "i0_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "orth[0][0][0].in[0]",
+            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[0]",
+            "instanceId": 4,
+            "blockInstance": "i0",
+            "blockSize": 132,
+            "dimensions": [
+                33
+            ]
+        },
+        "i0_pi1": {
+            "margin": 0,
+            "port": "pi1",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "orth[0][0][0].in[1]",
+            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[1]",
+            "instanceId": 5,
+            "blockInstance": "i0",
+            "blockSize": 132,
+            "dimensions": [
+                33
+            ]
+        },
+        "i0_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "orth[0][0][0].out[0]",
+            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]",
+            "instanceId": 6,
+            "blockInstance": "i0",
+            "blockSize": 132,
+            "dimensions": [
+                33
+            ]
+        },
+        "i0_po1": {
+            "margin": 0,
+            "port": "po1",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "orth[0][0][0].out[1]",
+            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]",
+            "instanceId": 7,
+            "blockInstance": "i0",
+            "blockSize": 132,
+            "dimensions": [
+                33
+            ]
+        },
+        "i1_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "in[0][0][0].out[0]",
+            "qualifiedName": "topSweepGraph1_1.in[0][0][0].out[0]",
+            "qualifiedGraphPortAliasNames": [
+                "topSweepGraph1_1.sweepGraph.in[0][0][0]"
+            ],
+            "blockInstance": "i1"
+        },
+        "i2_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "out[0][0][0].in[0]",
+            "qualifiedName": "topSweepGraph1_1.out[0][0][0].in[0]",
+            "qualifiedGraphPortAliasNames": [
+                "topSweepGraph1_1.sweepGraph.out[0][0][0]"
+            ],
+            "blockInstance": "i2"
+        },
+        "i3_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "in[0][0][1].out[0]",
+            "qualifiedName": "topSweepGraph1_1.in[0][0][1].out[0]",
+            "qualifiedGraphPortAliasNames": [
+                "topSweepGraph1_1.sweepGraph.in[0][0][1]"
+            ],
+            "blockInstance": "i3"
+        },
+        "i4_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "topSweepGraph1_1",
+            "graphType": "TopSweepGraph<32, 1, 1, 1, 1, 0, 1, 1>",
+            "portName": "out[0][0][1].in[0]",
+            "qualifiedName": "topSweepGraph1_1.out[0][0][1].in[0]",
+            "qualifiedGraphPortAliasNames": [
+                "topSweepGraph1_1.sweepGraph.out[0][0][1]"
+            ],
+            "blockInstance": "i4"
+        }
+    },
+    "nets": {
+        "net0": {
+            "srcInstance": "i1",
+            "srcPort": "i1_po0",
+            "dstInstance": "i0",
+            "dstPort": "i0_pi0",
+            "varNames": [
+                "",
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:89:25",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp:127:13"
+            ]
+        },
+        "net1": {
+            "srcInstance": "i3",
+            "srcPort": "i3_po0",
+            "dstInstance": "i0",
+            "dstPort": "i0_pi1",
+            "varNames": [
+                "",
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:89:25",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp:128:13"
+            ]
+        },
+        "net2": {
+            "srcInstance": "i0",
+            "srcPort": "i0_po0",
+            "dstInstance": "i2",
+            "dstPort": "i2_pi0",
+            "varNames": [
+                "",
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp:149:14",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:90:25"
+            ]
+        },
+        "net3": {
+            "srcInstance": "i0",
+            "srcPort": "i0_po1",
+            "dstInstance": "i4",
+            "dstPort": "i4_pi0",
+            "varNames": [
+                "",
+                ""
+            ],
+            "locs": [
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp:146:14",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h:90:25"
+            ]
+        }
+    },
+    "debugInfo": {
+        "i0": {
+            "varName": "orth[0][0][0]"
+        },
+        "i1": {
+            "varName": "in[0][0][0]"
+        },
+        "i2": {
+            "varName": "out[0][0][0]"
+        },
+        "i3": {
+            "varName": "in[0][0][1]"
+        },
+        "i4": {
+            "varName": "out[0][0][1]"
+        },
+        "ps_i5": {
+            "varName": ""
+        },
+        "i0_pi0": {
+            "varName": "orth[0][0][0].in[0]"
+        },
+        "i0_pi1": {
+            "varName": "orth[0][0][0].in[1]"
+        },
+        "i0_po0": {
+            "varName": "orth[0][0][0].out[0]"
+        },
+        "i0_po1": {
+            "varName": "orth[0][0][0].out[1]"
+        },
+        "i1_po0": {
+            "varName": "in[0][0][0].out[0]"
+        },
+        "i2_pi0": {
+            "varName": "out[0][0][0].in[0]"
+        },
+        "i3_po0": {
+            "varName": "in[0][0][1].out[0]"
+        },
+        "i4_pi0": {
+            "varName": "out[0][0][1].in[0]"
+        }
+    },
+    "graphFilesInfo": {
+        "headerFiles": [
+            "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp",
+            "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.h"
+        ]
+    },
+    "mapping": {
+        "blockInstanceMap": {
+            "i0": {
+                "fabric": "me",
+                "schedule": 0,
+                "column": 1,
+                "row": 0,
+                "coreId": 1
+            },
+            "i1": {
+                "fabric": "me",
+                "ioshimId": 6,
+                "ioshimType": "plioshim"
+            },
+            "i2": {
+                "fabric": "me",
+                "ioshimId": 6,
+                "ioshimType": "plioshim"
+            },
+            "i3": {
+                "fabric": "me",
+                "ioshimId": 6,
+                "ioshimType": "plioshim"
+            },
+            "i4": {
+                "fabric": "me",
+                "ioshimId": 6,
+                "ioshimType": "plioshim"
+            }
+        },
+        "portInstanceMap": {
+            "i0_pi0": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf0",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 0,
+                        "bankId": 0,
+                        "offset": 0,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf0d",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 0,
+                        "bankId": 1,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            },
+            "i0_pi1": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf1",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 1,
+                        "bankId": 1,
+                        "offset": 0,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf1d",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 1,
+                        "bankId": 0,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            },
+            "i0_po0": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf2",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 0,
+                        "offset": 8032,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf2d",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 1,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            },
+            "i0_po1": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf3",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 2,
+                        "offset": 0,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf3d",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 3,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            },
+            "i1_po0": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf0",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 0,
+                        "bankId": 0,
+                        "offset": 0,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf0d",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 0,
+                        "bankId": 1,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            },
+            "i2_pi0": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf2",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 0,
+                        "offset": 8032,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf2d",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 1,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            },
+            "i3_po0": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf1",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 1,
+                        "bankId": 1,
+                        "offset": 0,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf1d",
+                        "fabric": "me",
+                        "row": 0,
+                        "column": 1,
+                        "bankId": 0,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            },
+            "i4_pi0": {
+                "bufferType": "mem",
+                "bufferInfo": [
+                    {
+                        "name": "buf3",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 2,
+                        "offset": 0,
+                        "size": 144
+                    },
+                    {
+                        "name": "buf3d",
+                        "fabric": "me",
+                        "row": 1,
+                        "column": 1,
+                        "bankId": 3,
+                        "offset": 0,
+                        "size": 144
+                    }
+                ]
+            }
+        },
+        "reservedMem": [
+            {
+                "name": "sysmem4",
+                "fabric": "me",
+                "row": 0,
+                "column": 1,
+                "bankId": 2,
+                "offset": 0,
+                "size": 1647,
+                "accessRow": 0,
+                "accessCol": 1,
+                "stackOffset": 32,
+                "stackSize": 1024,
+                "heapOffset": 1056,
+                "heapSize": 591
+            }
+        ],
+        "topologyId": "VC1902.json"
+    }
+}

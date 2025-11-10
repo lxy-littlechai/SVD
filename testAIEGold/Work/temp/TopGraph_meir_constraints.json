@@ -1,0 +1,50 @@
+{
+  "NodeConstraints": {
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0]": {
+      "tile": {
+        "column": 1,
+        "row": 0,
+        "tile_type": "core"
+      },
+      "tile_src_info": {
+        "file": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp",
+        "line": 70,
+        "column": 19
+      }
+    }
+  },
+  "PortConstraints": {
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]": {
+      "buffers": [{
+          "column": 1,
+          "row": 1,
+          "bankId": 0
+        }, {
+          "column": 1,
+          "row": 1,
+          "bankId": 1
+        }],
+      "buffers_src_info": {
+        "file": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp",
+        "line": 100,
+        "column": 19
+      }
+    },
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]": {
+      "buffers": [{
+          "column": 1,
+          "row": 1,
+          "bankId": 2
+        }, {
+          "column": 1,
+          "row": 1,
+          "bankId": 3
+        }],
+      "buffers_src_info": {
+        "file": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessGraph/RingGraph.hpp",
+        "line": 103,
+        "column": 19
+      }
+    }
+  }
+}

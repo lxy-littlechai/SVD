@@ -1,0 +1,277 @@
+Add module pass cdno::xlopt::PrintFilteredPass
+Add module pass {anonymous}::GuidancePass
+Add module pass {anonymous}::ChessOptionsPass
+Add module pass {anonymous}::InlineAPIPass
+Add module pass {anonymous}::XLModuleAdaptor<llvm::PromotePass>
+Add module pass {anonymous}::IpConstPropPass
+Add module pass {anonymous}::XLModuleAdaptor<llvm::SimplifyCFGPass>
+Add module pass {anonymous}::XLModuleAdaptor<llvm::LoopSimplifyPass>
+Add module pass {anonymous}::XLModuleAdaptor<llvm::FunctionToLoopPassAdaptor>
+Add module pass {anonymous}::XLModuleAdaptor<{anonymous}::AIELoopInfoPass>
+Add module pass {anonymous}::FunctionInliner
+Add module pass cdno::xlopt::AIEAnnotatePragmaPass
+Add module pass {anonymous}::XLModuleAdaptor<llvm::FunctionToLoopPassAdaptor>
+Add module pass {anonymous}::XLModuleAdaptor<{anonymous}::AIELoopPeelPass>
+Add module pass {anonymous}::AIEAliasAnalysisPass
+
+
+--------------- FILTER ANALYSIS INFO LOG ---------------
+
+Reading Header IR from ir/_header.ll 
+
+--------------------------------------------------------
+
+
+
+--------------- FUNCTION FILTERING LOG ---------------
+
+Filtered function llvm.lifetime.start.p0i8
+Filtered function llvm.dbg.declare
+Filtered function llvm.chess_memory_fence
+Filtered function _Z4donev
+Filtered function llvm.lifetime.end.p0i8
+Filtered function _Z25chess_separator_scheduleri
+Filtered function _ZN12me_primitive5eventE7uint2_t
+Filtered function _ZN7uint2_tC2Ei
+Filtered function __regcall3__chessintr_void_event_uint2_t
+Filtered function __regcall3__chessintr_uint2_t_uint2_t___sint
+Filtered function llvm.chess.init.customint.s_struct.ipd.custom_type.uint2_t.uint2_ts.i32.p1f_s_struct.ipd.custom_type.uint2_t.uint2_tsi32f
+Filtered function _Z7acquirejj
+Filtered function _Z25chess_separator_schedulerv
+Filtered function _ZN12me_primitive7acquireEj7uint1_tj
+Filtered function _ZN7uint1_tC2Ei
+Filtered function __regcall3__chessintr_void_acquire___uint_uint1_t___uint
+Filtered function __regcall3__chessintr_uint1_t_uint1_t___sint
+Filtered function llvm.chess.init.customint.s_struct.ipd.custom_type.uint1_t.uint1_ts.i32.p1f_s_struct.ipd.custom_type.uint1_t.uint1_tsi32f
+Filtered function llvm.fmuladd.f32
+Filtered function _Z13undef_v8floatv
+Filtered function __regcall3__chessintr_v8float_undef_v8float
+Filtered function _Z10as_v8float7v8int32
+Filtered function _ZN7v8floatC2E17chessllvmInternal7v32int8
+Filtered function _Z5fpmac7v8float8v16floatijS_ij
+Filtered function __regcall3__chessintr_v8float_fpmac_v8float_v16float___sint___uint_v8float___sint___uint
+Filtered function _Z6xset_wi7v8float
+Filtered function _Z14undef_v16floatv
+Filtered function __regcall3__chessintr_v16float_undef_v16float
+Filtered function __regcall3__chessintr_v16float_xset_w___sint_v8float
+Filtered function llvm.chess_manifest
+Filtered function llvm.chess_error
+Filtered function _Z5fpadd7v8float8v16floatij
+Filtered function __regcall3__chessintr_v8float_fpadd_v8float_v16float___sint___uint
+Filtered function _Z8ext_elem7v8floatj
+Filtered function __regcall3__chessintr___ffloat_ext_elem_v8float___uint
+Filtered function _Z9shft_elem7v8floatf
+Filtered function __regcall3__chessintr_v8float_shft_elem_v8float___ffloat
+Filtered function _Z3invf
+Filtered function __regcall3__chessintr___ffloat_inv___ffloat
+Filtered function _Z5fpmul8v16floatij7v8floatij
+Filtered function __regcall3__chessintr_v8float_fpmul_v16float___sint___uint_v8float___sint___uint
+Filtered function _Z6_sqrtff
+Filtered function __regcall3__chessintr___ffloat__sqrtf___ffloat
+Filtered function _Z9shft_elem8v16floatf
+Filtered function __regcall3__chessintr_v16float_shft_elem_v16float___ffloat
+Filtered function _Z11fpshuffle168v16floatijj
+Filtered function __regcall3__chessintr_v16float_fpshuffle16_v16float___sint___uint___uint
+Filtered function llvm.is.constant.i32
+Filtered function _Z5ext_w8v16floati
+Filtered function _Z8shuffle88v8cint32ij
+Filtered function _Z5ext_w8v8cint32i
+Filtered function __regcall3__chessintr_v8float_ext_w_v16float___sint
+Filtered function __regcall3__chessintr_v8cint32_shuffle8_v8cint32___sint___uint
+Filtered function _Z14undef_v8cint32v
+Filtered function __regcall3__chessintr_v8cint32_undef_v8cint32
+Filtered function _Z11as_v8cint328v16float
+Filtered function _ZN8v8cint32C2E17chessllvmInternal7v64int8
+Filtered function _Z10as_v8float8v4cint32
+Filtered function __regcall3__chessintr_v4cint32_ext_w_v8cint32___sint
+Filtered function _Z5fpmsc7v8float8v16floatijS_ij
+Filtered function __regcall3__chessintr_v8float_fpmsc_v8float_v16float___sint___uint_v8float___sint___uint
+Filtered function _Z5fpmax7v8float8v16floatij
+Filtered function __regcall3__chessintr_v8float_fpmax_v8float_v16float___sint___uint
+Filtered function _Z7releasejj
+Filtered function _ZN12me_primitive7releaseEj7uint1_tj
+Filtered function __regcall3__chessintr_void_release___uint_uint1_t___uint
+
+------------------------------------------------------
+
+
+
+--------------- LOOP STATISTICS : main ---------------
+
+Total loops = 2
+Loops with prepare for pipelining pragma = 0
+Loops with unroll pragma = 0
+Loops with flatten pragma = 0
+Loops with min range pragma = 0
+Loops with max range pragma = 0
+Loops with known trip count = 0
+
+------------------------------------------------------
+
+
+
+--------------- LOOP STATISTICS : _Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI_ ---------------
+
+Total loops = 3
+Loops with prepare for pipelining pragma = 3
+Loops with unroll pragma = 0
+Loops with flatten pragma = 0
+Loops with min range pragma = 3
+Loops with max range pragma = 2
+Loops with known trip count = 3
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------- LOOP STATISTICS : _ZN3aie5printINS_6vectorIfLj8EEEEEvRKT_bPKc ---------------
+
+Total loops = 1
+Loops with prepare for pipelining pragma = 0
+Loops with unroll pragma = 0
+Loops with flatten pragma = 0
+Loops with min range pragma = 0
+Loops with max range pragma = 0
+Loops with known trip count = 0
+
+---------------------------------------------------------------------------------------------
+
+
+
+--------------- FUNCTION INLINING LOG (threshold = 5000) ---------------
+
+Inlining statistics for functions :
+	_ZNK3aie6detail5utils14unroll_contextIjLj0ELj1ELj0EE7currentEv : inscount = 1, 1 callers
+	_ZN3aie6detail11vector_baseIfLj8EE4sizeEv : inscount = 1, 1 callers
+	_ZN3aie6detail15iterator_strideILj1EE5valueEv : inscount = 1, 1 callers
+	_ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEppEv : inscount = 2, 1 callers
+	_ZNK3aie21vector_elem_const_refIfLj8EEcvfEv : inscount = 2, 1 callers
+	_ZN3aie6vectorIfLj8EE4sizeEv : inscount = 2, 1 callers
+	_ZN3adf6detail16io_buffer_marginIfNS_7locking4syncENS_6marginILj0EEEvEC2EjjPfb : inscount = 2, 2 callers
+	_ZN3adf6detailL9addMarginIfEEPT_S3_j : inscount = 2, 4 callers
+	_ZNK3aie15vector_elem_refIfLj8EEcvfEv : inscount = 2, 3 callers
+	_ZNK3aie6detail5utils14unroll_contextIjLj0ELj1ELj0EEcvjEv : inscount = 2, 5 callers
+	_ZN3adf6detail15io_buffer_sizesINS_7extentsIJLj33EEEEEC2IJEEEDpT_ : inscount = 3, 2 callers
+	_ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEppEi : inscount = 3, 1 callers
+	_ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEC2ILj1EEEPf : inscount = 4, 2 callers
+	_ZN3adf6detail14io_buffer_baseIfNS_7locking4syncEEC2EPf : inscount = 4, 2 callers
+	_ZN3aie6detail22check_vector_alignmentILj8EfEEbPKT0_ : inscount = 4, 1 callers
+	_ZNK3adf9io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE4dataEv : inscount = 5, 2 callers
+	_ZNK3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EE9incrementEi : inscount = 5, 1 callers
+	_ZN3aie21vector_elem_const_refIfLj16EEC2ERKNS_6vectorIfLj16EEEj : inscount = 5, 1 callers
+	_ZN3aie21vector_elem_const_refIfLj8EEC2ERKNS_6vectorIfLj8EEEj : inscount = 5, 1 callers
+	_ZN3aie15vector_elem_refIfLj8EEC2ERNS_6vectorIfLj8EEEj : inscount = 5, 1 callers
+	_ZNK3adf9io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE4dataEv : inscount = 5, 2 callers
+	_ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEpLEi : inscount = 6, 1 callers
+	_ZN3aie6detail20elementary_bits_implILNS0_12ElementaryOpE1ELj32EffE3runERKfi : inscount = 7, 1 callers
+	_ZN3aie6detail14broadcast_bitsILj32EfLj8EE3runERKf : inscount = 7, 1 callers
+	_ZN3aie6detail20elementary_bits_implILNS0_12ElementaryOpE0ELj32EffE3runERKfi : inscount = 7, 1 callers
+	_ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEdeEv : inscount = 8, 1 callers
+	_ZN8v8cint32C2E17chessllvmInternal7v64int8 : inscount = 11, 1 callers
+	_ZN7v8floatC2E17chessllvmInternal7v32int8 : inscount = 11, 2 callers
+	_ZN3aie6detail13accum_storageILNS0_10AccumClassE2ELj32ELj8EE5undefEv : inscount = 13, 1 callers
+	_ZN3aie6detail14vector_storageI6cint32Lj8EE5undefEv : inscount = 13, 1 callers
+	_ZN3aie6detail14vector_storageIfLj8EE5undefEv : inscount = 13, 2 callers
+	_ZN3aie6detail14vector_storageIfLj16EE5undefEv : inscount = 13, 2 callers
+	_ZN3aie6detailL18vector_cast_helperIfLj8ERK7v8int32EENS0_14vector_storageIT_XT0_EE4typeEOT1_ : inscount = 15, 1 callers
+	_ZN3aie6detailL18vector_cast_helperI6cint32Lj8ERK8v16floatEENS0_14vector_storageIT_XT0_EE4typeEOT1_ : inscount = 15, 1 callers
+	_ZN3aie6detailL18vector_cast_helperIfLj8E8v4cint32EENS0_14vector_storageIT_XT0_EE4typeEOT1_ : inscount = 15, 1 callers
+	_ZNK3aie15vector_elem_refIfLj8EE3getEv : inscount = 29, 1 callers
+	_ZNK3aie21vector_elem_const_refIfLj8EE3getEv : inscount = 29, 1 callers
+	_ZN3aie6detail20add_reduce_bits_implILj32EfLj8EE3runERKNS_6vectorIfLj8EEE : inscount = 41, 1 callers
+	_ZN3aie6detail11vector_castIfiLj8EEEDaRKNS_6vectorIT0_XT1_EEE : inscount = 49, 1 callers
+	_ZN3aie5printINS_6vectorIfLj8EEEEEvRKT_bPKc : inscount = 78, 1 callers
+	_ZN3aie6detail19broadcast_bits_implILj32EfLj16EE3runERKf : inscount = 111, 1 callers
+	_ZN3aie6detail19broadcast_bits_implILj32EfLj16EE3runILj16EEENS_6vectorIfLj16EEENS_21vector_elem_const_refIfXT_EEE : inscount = 154, 1 callers
+	_ZN3aie6detail19broadcast_bits_implILj32EfLj8EE3runERKf : inscount = 230, 1 callers
+	_ZN3aie6detail17max_min_bits_implILj32EfLj8ELNS0_15MaxMinOperationE0EE3runERKNS_6vectorIfLj8EEES7_ : inscount = 329, 1 callers
+	_ZN3aie6detail22add_reduce_v_bits_implILj32EfLj8ELj1EE3runERKNS_6vectorIfLj8EEE : inscount = 414, 1 callers
+	_Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI_ : inscount = 9775, 1 callers
+
+Inlining decisions based on profitability metrics :
+	inlining function _ZNK3aie6detail5utils14unroll_contextIjLj0ELj1ELj0EE7currentEv
+	inlining function _ZN3aie6detail11vector_baseIfLj8EE4sizeEv
+	inlining function _ZN3aie6detail15iterator_strideILj1EE5valueEv
+	inlining function _ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEppEv
+	inlining function _ZNK3aie21vector_elem_const_refIfLj8EEcvfEv
+	inlining function _ZN3aie6vectorIfLj8EE4sizeEv
+	inlining function _ZN3adf6detail16io_buffer_marginIfNS_7locking4syncENS_6marginILj0EEEvEC2EjjPfb
+	inlining function _ZN3adf6detailL9addMarginIfEEPT_S3_j
+	inlining function _ZNK3aie15vector_elem_refIfLj8EEcvfEv
+	inlining function _ZNK3aie6detail5utils14unroll_contextIjLj0ELj1ELj0EEcvjEv
+	inlining function _ZN3adf6detail15io_buffer_sizesINS_7extentsIJLj33EEEEEC2IJEEEDpT_
+	inlining function _ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEppEi
+	inlining function _ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEC2ILj1EEEPf
+	inlining function _ZN3adf6detail14io_buffer_baseIfNS_7locking4syncEEC2EPf
+	inlining function _ZN3aie6detail22check_vector_alignmentILj8EfEEbPKT0_
+	inlining function _ZNK3adf9io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE4dataEv
+	inlining function _ZNK3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EE9incrementEi
+	inlining function _ZN3aie21vector_elem_const_refIfLj16EEC2ERKNS_6vectorIfLj16EEEj
+	inlining function _ZN3aie21vector_elem_const_refIfLj8EEC2ERKNS_6vectorIfLj8EEEj
+	inlining function _ZN3aie15vector_elem_refIfLj8EEC2ERNS_6vectorIfLj8EEEj
+	inlining function _ZNK3adf9io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE4dataEv
+	inlining function _ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEpLEi
+	inlining function _ZN3aie6detail20elementary_bits_implILNS0_12ElementaryOpE1ELj32EffE3runERKfi
+	inlining function _ZN3aie6detail14broadcast_bitsILj32EfLj8EE3runERKf
+	inlining function _ZN3aie6detail20elementary_bits_implILNS0_12ElementaryOpE0ELj32EffE3runERKfi
+	inlining function _ZN3aie6detail15vector_iteratorIfLj8ELj1EL15aie_dm_resource0EEdeEv
+	inlining function _ZN8v8cint32C2E17chessllvmInternal7v64int8
+	inlining function _ZN7v8floatC2E17chessllvmInternal7v32int8
+	inlining function _ZN3aie6detail13accum_storageILNS0_10AccumClassE2ELj32ELj8EE5undefEv
+	inlining function _ZN3aie6detail14vector_storageI6cint32Lj8EE5undefEv
+	inlining function _ZN3aie6detail14vector_storageIfLj8EE5undefEv
+	inlining function _ZN3aie6detail14vector_storageIfLj16EE5undefEv
+	inlining function _ZN3aie6detailL18vector_cast_helperIfLj8ERK7v8int32EENS0_14vector_storageIT_XT0_EE4typeEOT1_
+	inlining function _ZN3aie6detailL18vector_cast_helperI6cint32Lj8ERK8v16floatEENS0_14vector_storageIT_XT0_EE4typeEOT1_
+	inlining function _ZN3aie6detailL18vector_cast_helperIfLj8E8v4cint32EENS0_14vector_storageIT_XT0_EE4typeEOT1_
+	inlining function _ZNK3aie15vector_elem_refIfLj8EE3getEv
+	inlining function _ZNK3aie21vector_elem_const_refIfLj8EE3getEv
+	inlining function _ZN3aie6detail20add_reduce_bits_implILj32EfLj8EE3runERKNS_6vectorIfLj8EEE
+	inlining function _ZN3aie6detail11vector_castIfiLj8EEEDaRKNS_6vectorIT0_XT1_EEE
+	inlining function _ZN3aie6detail22add_reduce_v_bits_implILj32EfLj8ELj1EE3runERKNS_6vectorIfLj8EEE
+	inlining function _ZN3aie6detail19broadcast_bits_implILj32EfLj16EE3runILj16EEENS_6vectorIfLj16EEENS_21vector_elem_const_refIfXT_EEE
+	inlining function _ZN3aie6detail19broadcast_bits_implILj32EfLj16EE3runERKf
+	inlining function _ZN3aie6detail19broadcast_bits_implILj32EfLj8EE3runERKf
+	inlining function _ZN3aie6detail17max_min_bits_implILj32EfLj8ELNS0_15MaxMinOperationE0EE3runERKNS_6vectorIfLj8EEES7_
+	inlining function _ZZN3aie6detailL23mul_accfloat_get_mul_opILNS0_10MulMacroOpE3EffEEDavENKUlDpOT_E_clIJNS_5accumI8accfloatLj8EEENS_6vectorIfLj16EEEjiNSB_IfLj8EEEiiEEEDaS5_
+	inlining function _ZZN3aie6detail17add_sub_bits_implILj32EfLj8ELNS0_15AddSubOperationE0EE6get_opEvENKUlDpOT_E_clIJNS_6vectorIfLj8EEENS9_IfLj16EEEiiEEEDaS6_
+	inlining function _ZNSt3__23absEf
+	inlining function _ZZN3aie6detail17max_min_bits_implILj32EfLj8ELNS0_15MaxMinOperationE0EE6get_opEvENKUlDpOT_E_clIJNS_6vectorIfLj8EEENS9_IfLj16EEEjiEEEDaS6_
+	inlining function _ZN3aie8unary_opINS_5accumI8accfloatLj8EEELNS_9OperationE1EECI2NS_15unary_op_commonIS3_LS4_1EEEES3_
+	inlining function _ZZN3aie6detailL23mul_accfloat_get_mul_opILNS0_10MulMacroOpE2EffEEDavENKUlDpOT_E_clIJNS_5accumI8accfloatLj8EEENS_6vectorIfLj16EEEjiNSB_IfLj8EEEiiEEEDaS5_
+	inlining function _ZN3aie8unary_opINS_5accumI8accfloatLj8EEELNS_9OperationE2EECI2NS_15unary_op_commonIS3_LS4_2EEEES3_
+	inlining function _ZZN3aie6detail10accum_baseILNS0_10AccumClassE2ELj32ELj8EE7get_upsIfLj8EEEDavENKUlRKT_T0_E_clINS_6vectorIfLj8EEEiEEDaS7_S8_
+	inlining function _Z4signf
+	inlining function _ZZN3aie6detailL23mul_accfloat_get_mul_opILNS0_10MulMacroOpE0EffEEDavENKUlDpOT_E_clIJNS_6vectorIfLj16EEEjiNS8_IfLj8EEEiiEEEDaS5_
+	inlining function _ZN3adf10_io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEEC2IS7_JEEEPNSt3__29enable_ifIXsr3stdE9is_same_vIT_S7_EEfE4typeEjjDpT0_
+	inlining function _ZN3adf10_io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE7setDataERSD_PfSF_ij
+	inlining function _ZN3adf10_io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE7acquireERSD_jji
+	inlining function _ZN3adf9io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE8release_Ejji
+	inlining function _ZN3adf9io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE8release_Ejji
+	inlining function _ZN3adf10_io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE7setDataERSD_PfSF_ij
+	inlining function _ZN3adf10_io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE7acquireERSD_jji
+	inlining function _ZN3adf10_io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE7releaseERSD_jji
+	inlining function _ZN3adf10_io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEEC2IS7_JEEEPNSt3__29enable_ifIXsr3stdE9is_same_vIT_S7_EEfE4typeEjjDpT0_
+	inlining function _ZN3adf10_io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE7releaseERSD_jji
+	inlining function _ZN3aie8unary_opINS_6vectorIfLj8EEELNS_9OperationE0EECI2NS_15unary_op_commonIS2_LS3_0EEEES2_
+	inlining function _ZN3adf9io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEEC2IS7_JEEEPNSt3__29enable_ifIXsr3stdE9is_same_vIT_S7_EEfE4typeEjjDpT0_
+	inlining function _ZN3adf6detail23io_buffer_sizes_storageINS_7extentsIJLj33EEEEvEC2Ev
+	inlining function _ZN3adf9io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEEC2IS7_JEEEPNSt3__29enable_ifIXsr3stdE9is_same_vIT_S7_EEfE4typeEjjDpT0_
+	inlining function _ZN3adf9io_bufferIfNS_9direction2inENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE8acquire_Ejji
+	inlining function _ZN3adf9io_bufferIfNS_9direction3outENS_16io_buffer_configINS_7extentsIJLj33EEEENS_7locking4syncENS_10addressing6linearENS_6marginILj0EEEEEE8acquire_Ejji
+
+------------------------------------------------------------------------
+
+
+
+--------------- PRAGMA INSERTION LOG (unroll threshold = 3000, max unroll factor = 6) ---------------
+
+Adding pragma to function _ZN3aie5printINS_6vectorIfLj8EEEEEvRKT_bPKc :
+	Pragma added to loop at line 300 in file /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp : chess_prepare_for_pipelining
+Adding pragma to function _Z13orthogonalizeILi32EEvRN3adf9io_bufferIfNS0_9direction2inENS0_16io_buffer_configINS0_7extentsIJXplLi1ET_EEEENS0_7locking4syncENS0_10addressing6linearENS0_6marginILj0EEEEEEESF_RNS1_IfNS2_3outESD_EESI_ :
+	Pragma added to loop at line 63 in file aie/ProcessUnit/Orthogonalize.cpp : chess_loop_range(4,4)
+	Pragma added to loop at line 90 in file aie/ProcessUnit/Orthogonalize.cpp : chess_loop_range(4,4)
+	Pragma added to loop at line 35 in file aie/ProcessUnit/Orthogonalize.cpp : chess_loop_range(4,4)
+
+-----------------------------------------------------------------------------------------------------
+

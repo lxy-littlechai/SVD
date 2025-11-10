@@ -1,0 +1,24 @@
+digraph N {
+ b169[color=orange,fontcolor=black,style=filled,label="b169\nITE_NEZ r13, r12, r13, r0\ninp: R0[0] R[12] R[13]"];  {rank=same; S0;  b169;}
+ b170[color=orange,fontcolor=black,style=filled,label="b170\nITE_NEZ r12, r12, r14, r0\ninp: R0[0]\nout: R[12]"];  {rank=same; S1;  b170;}
+ b171[color=orange,fontcolor=black,style=filled,label="b171\nST.SPIL r13, [sp, #-84]\ninp: SP[0]"];  {rank=same; S3;  b171;}
+ b1327[color=orange,fontcolor=black,style=filled,label="b1327\nMOV.s9 r12, #32"];  {rank=same; S0;  b1327;}
+ b1345[color=orange,fontcolor=black,style=filled,label="b1345\nMOV.s8 r14, #33"];  {rank=same; S0;  b1345;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S3;  end;}
+   b169 -> b1327 [color=maroon,fontcolor=maroon,penwidth=3,label="len=0\nR[12]",weight=1000];
+   b169 -> b171 [color=black,fontcolor=black,label="len=1\nR[13]",weight=1000];
+   b1327 -> b170 [color=black,fontcolor=black,penwidth=3,label="len=1\nR[12]",weight=1000];
+   b1345 -> b170 [color=black,fontcolor=black,penwidth=3,label="len=1\nR[14]",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1 [label="step 1",shape=box];
+  S0 -> S1[style=invis,weight=9000];
+  S2 [label="step 2",shape=box];
+  S1 -> S2[style=invis,weight=9000];
+  S3 [label="step 3",shape=box];
+  S2 -> S3[style=invis,weight=9000];
+  S4 [label="successor",shape=box];
+  S3 -> S4[style=invis,weight=9000];
+}

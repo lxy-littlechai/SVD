@@ -1,0 +1,37 @@
+digraph N {
+ b360[color=orange,fontcolor=black,style=filled,label="b360\nJAL #0\nout: LR[0]"];  {rank=same; S6;  b360;}
+ b1447[color=orange,fontcolor=black,style=filled,label="b1447\nLDA.SPIL r6, [sp, #-88]\ninp: SP[0]\nout: R[6]"];  {rank=same; S3;  b1447;}
+ b359[color=orange,fontcolor=black,style=filled,label="b359\nST.SPIL r11, [sp, #-228]\ninp: SP[0] R[11]"];  {rank=same; S8;  b359;}
+ b1471[color=orange,fontcolor=black,style=filled,label="b1471\nST.SPIL r1, [sp, #-12]\ninp: SP[0] R[1]"];  {rank=same; S9;  b1471;}
+ b1487[color=orange,fontcolor=black,style=filled,label="b1487\nST.SPIL r0, [sp, #-16]\ninp: SP[0] R[0]"];  {rank=same; S10;  b1487;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S11;  end;}
+   b1447 -> end [color=maroon,fontcolor=maroon,penwidth=3,label="min len=8",weight=1000];
+   start -> b1447 [color=maroon,fontcolor=maroon,penwidth=3,label="min len=3",weight=1000];
+   start -> b359 [color=maroon,fontcolor=maroon,label="min len=3",weight=1000];
+   start -> b1471 [color=maroon,fontcolor=maroon,label="min len=3",weight=1000];
+   start -> b1487 [color=maroon,fontcolor=maroon,label="min len=3",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1_S2 [label="steps [1,2]",shape=box];
+  S0 -> S1_S2[style=invis,weight=9000];
+  S3 [label="step 3",shape=box];
+  S1_S2 -> S3[style=invis,weight=9000];
+  S4_S5 [label="steps [4,5]",shape=box];
+  S3 -> S4_S5[style=invis,weight=9000];
+  S6 [label="step 6",shape=box];
+  S4_S5 -> S6[style=invis,weight=9000];
+  S7 [label="step 7",shape=box];
+  S6 -> S7[style=invis,weight=9000];
+  S8 [label="step 8",shape=box];
+  S7 -> S8[style=invis,weight=9000];
+  S9 [label="step 9",shape=box];
+  S8 -> S9[style=invis,weight=9000];
+  S10 [label="step 10",shape=box];
+  S9 -> S10[style=invis,weight=9000];
+  S11 [label="step 11",shape=box];
+  S10 -> S11[style=invis,weight=9000];
+  S12 [label="successor",shape=box];
+  S11 -> S12[style=invis,weight=9000];
+}

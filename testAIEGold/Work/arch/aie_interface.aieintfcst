@@ -1,0 +1,32 @@
+{
+    "Placement": [
+        {
+            "LogicalInstance": "1_1_sweep_in_L_cas0_io0",
+            "PhysicalInstance": [
+                "AIE_PL_X5Y0_AIE_PL_S_AXIS_1"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "1_1_sweep_out_L_cas0_io0",
+            "PhysicalInstance": [
+                "AIE_PL_X5Y0_AIE_PL_M_AXIS_1"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "1_1_sweep_in_R_cas0_io0",
+            "PhysicalInstance": [
+                "AIE_PL_X5Y0_AIE_PL_S_AXIS_4"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "1_1_sweep_out_R_cas0_io0",
+            "PhysicalInstance": [
+                "AIE_PL_X5Y0_AIE_PL_M_AXIS_3"
+            ],
+            "IsSoft": false
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "ModulePath": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work/aie/ir/i0_wrap_Orthogonalize.cpp",
+    "KernelSourcePath": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessUnit/Orthogonalize.cpp",
+    "UseCases": [
+        {
+            "Index": 0,
+            "KernelFunction": "orthogonalize<32>",
+            "InitializationFunction": "",
+            "KernelClassCtor": "",
+            "Instances": [
+                "i0"
+            ]
+        }
+    ],
+    "AccessRecords": [],
+    "ControlRegsUsage": {
+        "RndRecords": {
+            "orthogonalize<32>": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 0
+            }
+        },
+        "SatRecords": {
+            "orthogonalize<32>": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 0
+            }
+        },
+        "SymSatRecords": {
+            "orthogonalize<32>": {
+                "SetKind": 1,
+                "SetValue": -1,
+                "GetBeforeSet": 0
+            }
+        }
+    }
+}

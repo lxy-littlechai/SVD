@@ -1,0 +1,16 @@
+digraph root {
+"PT0:i0[1.00]" [style=filled, fillcolor=aquamarine];
+"i1" [shape=box style=filled, fillcolor=lightgrey];
+"i2" [shape=box style=filled, fillcolor=lightgrey];
+"i3" [shape=box style=filled, fillcolor=lightgrey];
+"i4" [shape=box style=filled, fillcolor=lightgrey];
+"ps_i5[0.00]";
+"i1" -> "PT0:i0[1.00]" [label="buf0[144]"];
+"i3" -> "PT0:i0[1.00]" [label="buf1[144]"];
+"PT0:i0[1.00]" -> "i2" [label="buf2[144]"];
+"PT0:i0[1.00]" -> "i4" [label="buf3[144]"];
+"i1" -> "PT0:i0[1.00]" [label="buf0d[144]"];
+"i3" -> "PT0:i0[1.00]" [label="buf1d[144]"];
+"PT0:i0[1.00]" -> "i2" [label="buf2d[144]"];
+"PT0:i0[1.00]" -> "i4" [label="buf3d[144]"];
+}

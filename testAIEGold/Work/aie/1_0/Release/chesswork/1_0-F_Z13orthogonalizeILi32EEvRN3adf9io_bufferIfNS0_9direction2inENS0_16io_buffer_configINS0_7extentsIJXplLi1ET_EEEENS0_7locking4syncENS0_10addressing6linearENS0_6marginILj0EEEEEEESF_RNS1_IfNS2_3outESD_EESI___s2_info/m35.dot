@@ -1,0 +1,20 @@
+digraph N {
+ b2265[color=orange,fontcolor=black,style=filled,label="b2265\nLDA.SPIL p7, [sp, #-92]\ninp: SP[0]\nout: P[7]"];  {rank=same; S1;  b2265;}
+ b2266[color=orange,fontcolor=black,style=filled,label="b2266\nLDA.SPIL p2, [sp, #-80]\ninp: SP[0]\nout: P[2]"];  {rank=same; S0;  b2266;}
+ b2325[color=orange,fontcolor=black,style=filled,label="b2325\nMOV p0, p7\ninp: P[7]\nout: P[0]"];  {rank=same; S0;  b2325;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S4;  end;}
+   b2266 -> end [color=black,fontcolor=black,penwidth=3,label="min len=4",weight=1000];
+   b2325 -> b2265 [color=maroon,fontcolor=maroon,label="len=-6\nP[7]",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1 [label="step 1",shape=box];
+  S0 -> S1[style=invis,weight=9000];
+  S2_S3 [label="steps [2,3]",shape=box];
+  S1 -> S2_S3[style=invis,weight=9000];
+  S4 [label="step 4",shape=box];
+  S2_S3 -> S4[style=invis,weight=9000];
+  S5 [label="successor",shape=box];
+  S4 -> S5[style=invis,weight=9000];
+}

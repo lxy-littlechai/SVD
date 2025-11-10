@@ -1,0 +1,37 @@
+digraph N {
+ b162[color=orange,fontcolor=black,style=filled,label="b162\nREL r11, #1, r4\ninp: R[11] R[4]"];  {rank=same; S6;  b162;}
+ b1084[color=orange,fontcolor=black,style=filled,label="b1084\nMOV.s9 r1, #1\nout: R[1]"];  {rank=same; S0;  b1084;}
+ b1170[color=orange,fontcolor=black,style=filled,label="b1170\nMOV.u20 r7, #0\nout: R[7]"];  {rank=same; S0;  b1170;}
+ b1231[color=orange,fontcolor=black,style=filled,label="b1231\nMOV.u20 r14, #0\nout: R[14]"];  {rank=same; S1;  b1231;}
+ b1256[color=orange,fontcolor=black,style=filled,label="b1256\nMOV.u20 r15, #0\nout: R[15]"];  {rank=same; S2;  b1256;}
+ b1283[color=orange,fontcolor=black,style=filled,label="b1283\nMOV.u20 r12, #0\nout: R[12]"];  {rank=same; S3;  b1283;}
+ b1310[color=orange,fontcolor=black,style=filled,label="b1310\nMOV.u20 r13, #0\nout: R[13]"];  {rank=same; S4;  b1310;}
+ b1375[color=orange,fontcolor=black,style=filled,label="b1375\nMOV.u20 r8, #0\nout: R[8]"];  {rank=same; S5;  b1375;}
+ b1404[color=orange,fontcolor=black,style=filled,label="b1404\nMOV.u20 r6, #0\nout: R[6]"];  {rank=same; S6;  b1404;}
+ b1010[color=orange,fontcolor=black,style=filled,label="b1010\nLDA.SPIL r2, [sp, #-56]\ninp: SP[0]\nout: R[2]"];  {rank=same; S3;  b1010;}
+ b1044[color=orange,fontcolor=black,style=filled,label="b1044\nLDA.SPIL r5, [sp, #-48]\ninp: SP[0]\nout: R[5]"];  {rank=same; S4;  b1044;}
+ b1124[color=orange,fontcolor=black,style=filled,label="b1124\nLDA.SPIL r9, [sp, #-60]\ninp: SP[0]\nout: R[9]"];  {rank=same; S5;  b1124;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S6;  end;}
+   start -> b162 [color=maroon,fontcolor=maroon,penwidth=3,label="min len=6",weight=1000];
+   start -> b1010 [color=maroon,fontcolor=maroon,penwidth=3,label="min len=3",weight=1000];
+   start -> b1044 [color=maroon,fontcolor=maroon,label="min len=3",weight=1000];
+   start -> b1124 [color=maroon,fontcolor=maroon,label="min len=3",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1 [label="step 1",shape=box];
+  S0 -> S1[style=invis,weight=9000];
+  S2 [label="step 2",shape=box];
+  S1 -> S2[style=invis,weight=9000];
+  S3 [label="step 3",shape=box];
+  S2 -> S3[style=invis,weight=9000];
+  S4 [label="step 4",shape=box];
+  S3 -> S4[style=invis,weight=9000];
+  S5 [label="step 5",shape=box];
+  S4 -> S5[style=invis,weight=9000];
+  S6 [label="step 6",shape=box];
+  S5 -> S6[style=invis,weight=9000];
+  S7 [label="successor",shape=box];
+  S6 -> S7[style=invis,weight=9000];
+}

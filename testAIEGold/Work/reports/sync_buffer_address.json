@@ -1,0 +1,15 @@
+{
+    "SyncBufferAddress": [
+        {
+            "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
+            "Column": 1,
+            "Row": 0,
+            "LocalAddress": "0x3c000",
+            "GlobalAddress": {
+                "Column": 1,
+                "Row": 0,
+                "Address": "0x4000"
+            }
+        }
+    ]
+}

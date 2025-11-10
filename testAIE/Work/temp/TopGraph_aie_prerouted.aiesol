@@ -1,0 +1,2915 @@
+{
+    "Version": 0.0,
+    "Non-Netlist Instances": [
+        "buf0",
+        "buf1",
+        "buf2",
+        "buf3",
+        "buf4",
+        "buf5",
+        "buf6",
+        "buf7",
+        "sysmem8",
+        "sysmem9",
+        "buf10",
+        "buf11",
+        "buf12",
+        "buf13",
+        "buf14",
+        "buf15",
+        "buf16",
+        "buf17",
+        "PT0",
+        "PT1",
+        "net0",
+        "net1",
+        "net2",
+        "net3",
+        "net4",
+        "net5",
+        "net6",
+        "net7",
+        "net8",
+        "net9",
+        "D_net0",
+        "D_net1",
+        "D_net2",
+        "D_net3",
+        "D_net4",
+        "D_net5",
+        "D_net6",
+        "D_net7",
+        "unconstraint_fifo0",
+        "unconstraint_fifo1",
+        "unconstraint_fifo2",
+        "unconstraint_fifo3",
+        "unconstraint_fifo4",
+        "unconstraint_fifo5",
+        "unconstraint_fifo6",
+        "unconstraint_fifo7",
+        "unconstraint_fifo8",
+        "unconstraint_fifo9"
+    ],
+    "Non-Netlist Instance Placement": [
+        {
+            "Name": "buf0",
+            "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "BANK3"
+        },
+        {
+            "Name": "buf1",
+            "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "BANK2"
+        },
+        {
+            "Name": "buf2",
+            "Site": "AIE_MEMGRP_X1Y1",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "buf3",
+            "Site": "AIE_MEMGRP_X1Y1",
+            "Bel": "BANK2"
+        },
+        {
+            "Name": "buf4",
+            "Site": "AIE_MEMGRP_X2Y1",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "buf5",
+            "Site": "AIE_MEMGRP_X1Y0",
+            "Bel": "BANK1"
+        },
+        {
+            "Name": "buf6",
+            "Site": "AIE_MEMGRP_X1Y2",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "buf7",
+            "Site": "AIE_MEMGRP_X1Y2",
+            "Bel": "BANK2"
+        },
+        {
+            "Name": "sysmem8",
+            "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "BANK1"
+        },
+        {
+            "Name": "sysmem9",
+            "Site": "AIE_MEMGRP_X1Y0",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "buf10",
+            "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "BANK1"
+        },
+        {
+            "Name": "buf11",
+            "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "buf12",
+            "Site": "AIE_MEMGRP_X1Y1",
+            "Bel": "BANK1"
+        },
+        {
+            "Name": "buf13",
+            "Site": "AIE_MEMGRP_X1Y1",
+            "Bel": "BANK3"
+        },
+        {
+            "Name": "buf14",
+            "Site": "AIE_MEMGRP_X2Y1",
+            "Bel": "BANK1"
+        },
+        {
+            "Name": "buf15",
+            "Site": "AIE_MEMGRP_X1Y0",
+            "Bel": "BANK2"
+        },
+        {
+            "Name": "buf16",
+            "Site": "AIE_MEMGRP_X1Y2",
+            "Bel": "BANK1"
+        },
+        {
+            "Name": "buf17",
+            "Site": "AIE_MEMGRP_X1Y2",
+            "Bel": "BANK3"
+        },
+        {
+            "Name": "PT0",
+            "Site": "AIE_CORE_X1Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "PT1",
+            "Site": "AIE_CORE_X1Y1",
+            "Bel": "CORE"
+        }
+    ],
+    "Instance Placement": [
+        {
+            "Name": "1_1_sweep_in_L_cas0_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_S_AXIS_0"
+        },
+        {
+            "Name": "1_1_sweep_in_L_cas1_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_S_AXIS_6"
+        },
+        {
+            "Name": "1_1_sweep_in_R_cas0_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_S_AXIS_1"
+        },
+        {
+            "Name": "1_1_sweep_in_R_cas1_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_S_AXIS_4"
+        },
+        {
+            "Name": "1_1_sweep_out_L_cas0_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_M_AXIS_0"
+        },
+        {
+            "Name": "1_1_sweep_out_L_cas1_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_M_AXIS_5"
+        },
+        {
+            "Name": "1_1_sweep_out_R_cas0_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_M_AXIS_1"
+        },
+        {
+            "Name": "1_1_sweep_out_R_cas1_io0",
+            "Site": "AIE_PL_X5Y0",
+            "Bel": "AIE_PL_M_AXIS_3"
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "Site": "AIE_CORE_X1Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "Site": "AIE_CORE_X1Y1",
+            "Bel": "CORE"
+        }
+    ],
+    "InstTerm Placement": [
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "InstTermName": "pi0",
+            "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "DMA",
+            "BelPin": "S_DMA_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "InstTermName": "pi1",
+            "Site": "AIE_MEMGRP_X0Y0",
+            "Bel": "DMA",
+            "BelPin": "S_DMA_CH1"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "InstTermName": "pi2",
+            "Site": "AIE_CORE_X1Y0",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "InstTermName": "po0",
+            "Site": "AIE_MEMGRP_X1Y1",
+            "Bel": "DMA",
+            "BelPin": "M_DMA_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "InstTermName": "po1",
+            "Site": "AIE_MEMGRP_X1Y1",
+            "Bel": "DMA",
+            "BelPin": "M_DMA_CH1"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "InstTermName": "po2",
+            "Site": "AIE_CORE_X1Y0",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "InstTermName": "pi0",
+            "Site": "AIE_MEMGRP_X2Y1",
+            "Bel": "DMA",
+            "BelPin": "S_DMA_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "InstTermName": "pi1",
+            "Site": "AIE_MEMGRP_X1Y0",
+            "Bel": "DMA",
+            "BelPin": "S_DMA_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "InstTermName": "pi2",
+            "Site": "AIE_CORE_X1Y1",
+            "Bel": "CORE",
+            "BelPin": "S_CORE_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "InstTermName": "po0",
+            "Site": "AIE_MEMGRP_X1Y2",
+            "Bel": "DMA",
+            "BelPin": "M_DMA_CH0"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "InstTermName": "po1",
+            "Site": "AIE_MEMGRP_X1Y2",
+            "Bel": "DMA",
+            "BelPin": "M_DMA_CH1"
+        },
+        {
+            "InstName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "InstTermName": "po2",
+            "Site": "AIE_CORE_X1Y1",
+            "Bel": "CORE",
+            "BelPin": "M_CORE_CH0"
+        }
+    ],
+    "DMAFIFOs Placement": [],
+    "Non-Netlist Instance Links": [
+        {
+            "buf0": [
+                "1_1_sweep_in_L_cas0_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi0"
+            ]
+        },
+        {
+            "buf1": [
+                "1_1_sweep_in_R_cas0_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi1"
+            ]
+        },
+        {
+            "buf2": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/po0",
+                "1_1_sweep_out_L_cas0_io0/pi0"
+            ]
+        },
+        {
+            "buf3": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/po1",
+                "1_1_sweep_out_R_cas0_io0/pi0"
+            ]
+        },
+        {
+            "buf4": [
+                "1_1_sweep_in_L_cas1_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi0"
+            ]
+        },
+        {
+            "buf5": [
+                "1_1_sweep_in_R_cas1_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi1"
+            ]
+        },
+        {
+            "buf6": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/po0",
+                "1_1_sweep_out_L_cas1_io0/pi0"
+            ]
+        },
+        {
+            "buf7": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/po1",
+                "1_1_sweep_out_R_cas1_io0/pi0"
+            ]
+        },
+        {
+            "buf10": [
+                "1_1_sweep_in_L_cas0_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi0"
+            ]
+        },
+        {
+            "buf11": [
+                "1_1_sweep_in_R_cas0_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi1"
+            ]
+        },
+        {
+            "buf12": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/po0",
+                "1_1_sweep_out_L_cas0_io0/pi0"
+            ]
+        },
+        {
+            "buf13": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/po1",
+                "1_1_sweep_out_R_cas0_io0/pi0"
+            ]
+        },
+        {
+            "buf14": [
+                "1_1_sweep_in_L_cas1_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi0"
+            ]
+        },
+        {
+            "buf15": [
+                "1_1_sweep_in_R_cas1_io0/po0",
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi1"
+            ]
+        },
+        {
+            "buf16": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/po0",
+                "1_1_sweep_out_L_cas1_io0/pi0"
+            ]
+        },
+        {
+            "buf17": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/po1",
+                "1_1_sweep_out_R_cas1_io0/pi0"
+            ]
+        },
+        {
+            "PT0": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+            ]
+        },
+        {
+            "PT1": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+            ]
+        },
+        {
+            "unconstraint_fifo0": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo1": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi1"
+            ]
+        },
+        {
+            "unconstraint_fifo2": [
+                "1_1_sweep_out_L_cas0_io0/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo3": [
+                "1_1_sweep_out_R_cas0_io0/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo4": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo5": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi1"
+            ]
+        },
+        {
+            "unconstraint_fifo6": [
+                "1_1_sweep_out_L_cas1_io0/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo7": [
+                "1_1_sweep_out_R_cas1_io0/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo8": [
+                "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi2"
+            ]
+        },
+        {
+            "unconstraint_fifo9": [
+                "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi2"
+            ]
+        }
+    ],
+    "Non-Netlist Instance Attrs": [
+        {
+            "Name": "buf0",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_L_cas0_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf10"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf0"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf0"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf1",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_R_cas0_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf11"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf1"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf1"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf2",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_L_cas0_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas0_io0"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf12"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf2"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf2"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 8096"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf3",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/po1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_R_cas0_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas0_io0"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf13"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf3"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf3"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf4",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_L_cas1_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf14"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf4"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf4"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 2"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf5",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_R_cas1_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf15"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf5"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf5"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf6",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_L_cas1_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas1_io0"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf16"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf6"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf6"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 96"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 2"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf7",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/po1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_R_cas1_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas1_io0"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf17"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf7"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf7"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 2"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "IsSelector",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem8",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem8"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2080"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2080"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 1760"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "accessRow",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "accessCol",
+                    "Val": "INT 1"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem9",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 1024"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem9"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2080"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2080"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "accessRow",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "accessCol",
+                    "Val": "INT 1"
+                }
+            ]
+        },
+        {
+            "Name": "buf10",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_L_cas0_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf0d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf10"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 8096"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf11",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_R_cas0_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf1d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf11"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 8096"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "buf12",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_L_cas0_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas0_io0"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf2d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf12"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                }
+            ]
+        },
+        {
+            "Name": "buf13",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]/po1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_R_cas0_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas0_io0"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf3d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf13"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                }
+            ]
+        },
+        {
+            "Name": "buf14",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_L_cas1_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf4d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf14"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 2"
+                }
+            ]
+        },
+        {
+            "Name": "buf15",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING 1_1_sweep_in_R_cas1_io0/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf5d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf15"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                }
+            ]
+        },
+        {
+            "Name": "buf16",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_L_cas1_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas1_io0"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf6d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf16"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 96"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 2"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                }
+            ]
+        },
+        {
+            "Name": "buf17",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]/po1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING 1_1_sweep_out_R_cas1_io0/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas1_io0"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf7d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 80"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf17"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 2"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 1"
+                }
+            ]
+        },
+        {
+            "Name": "PT0",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING aquamarine"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem8"
+                }
+            ]
+        },
+        {
+            "Name": "PT1",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING coral"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 1.000000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem9"
+                }
+            ]
+        },
+        {
+            "Name": "net0",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas0_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf0"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net1",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas0_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf1"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net2",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf2"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net3",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf3"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net4",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas1_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf4"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net5",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas1_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf5"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net6",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf6"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net7",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf7"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net8",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po2"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi2"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net9",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po2"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi2"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING stream"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "D_net0",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas0_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf10"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net1",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas0_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf11"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net2",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf12"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net3",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[0][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas0_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf13"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net4",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_L_cas1_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf14"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net5",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING 1_1_sweep_in_R_cas1_io0"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi1"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf15"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net6",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_L_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf16"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net7",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING topSweepGraph1_1.sweepGraph.orth[1][0][0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po1"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING 1_1_sweep_out_R_cas1_io0"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf17"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo0",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo1",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo2",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo3",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo4",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo5",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo6",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo7",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo8",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo9",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        }
+    ],
+    "Netlist Element Attrs": [
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "schedule",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "schedule",
+                    "Val": "INT 0"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_L_cas0_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_L_cas0_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_R_cas0_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_R_cas0_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_L_cas1_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_L_cas1_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_R_cas1_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_R_cas1_io0",
+            "attrs": [
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "ioshimType",
+                    "Val": "STRING plioshim"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_L_cas0_io0/po0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_R_cas0_io0/po0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0][0]/pi1",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0][0]/po0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_L_cas0_io0/pi0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[0][0][0]/po1",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_R_cas0_io0/pi0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_L_cas1_io0/po0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_in_R_cas1_io0/po0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0][0]/pi1",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0][0]/po0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_L_cas1_io0/pi0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "topSweepGraph1_1.sweepGraph.orth[1][0][0]/po1",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        },
+        {
+            "Name": "1_1_sweep_out_R_cas1_io0/pi0",
+            "attrs": [
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                }
+            ]
+        }
+    ],
+    "Net Routing": []
+}

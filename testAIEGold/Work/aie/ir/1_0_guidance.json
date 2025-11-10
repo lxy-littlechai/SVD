@@ -1,0 +1,16 @@
+{
+    "Alignment Hints": [],
+    "Size Hints": [],
+    "Name Mangling Hints": [],
+    "Global Var Read-Before-Write Hints": [],
+    "Global Var Conflict Hints": [],
+    "Operator Hints": [
+        "Operator urem at line 196 in file /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/../ld_st.hpp will degrade performance",
+        "Operator urem at line 122 in file /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp will degrade performance",
+        "Operator urem at line 122 in file /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp will degrade performance",
+        "Operator urem at line 122 in file /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/mul_acc32_fp.hpp will degrade performance",
+        "Operator urem at line 298 in file /usr/xilinx/Vitis/2023.2/aietools/include/aie_api/detail/aie1/max_min.hpp will degrade performance"
+    ],
+    "Bank Conflict Hints": [],
+    "RestrictAliasAnalysisHints": []
+}

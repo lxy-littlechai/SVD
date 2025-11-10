@@ -1,0 +1,84 @@
+Running AIE Simulator in Online mode...
+AIEsim feature license is found.
+INFO: Executing config: ./Work/config/scsim_config.json
+[INFO]: If you are running trace or profile, Xilinx recommends to use --xlopt=0. This will give a greater visibility into the design. One can verify --xlopt level in the aiecompiler command line.
+profile data for cores: All
+set use_simple_noc to: 1
+Loading device config from: /usr/xilinx/Vitis/2023.2/aietools/data/devices/VC1902.json
+Initializing AIE driver...
+Initializing ADF API...
+XAIEFAL: INFO: Resource group Avail is created.
+XAIEFAL: INFO: Resource group Static is created.
+XAIEFAL: INFO: Resource group Generic is created.
+IP-INFO: [ps_i5_ps_main] IP loaded.
+
+Info: DEVICE FILE: /usr/xilinx/Vitis/2023.2/aietools/data/devices/VC1902.json
+
+Info: AIE SOLUTION FILE: ./Work/arch/aieshim_solution.aiesol
+[AIESIM_OPTIONS]: aiesim_options file path aiesimulator_output/aiesim_options.txt
+[INFO]: Disable Unused Tiles
+[INFO]: Xpe File: /media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/./Work/reports/TopGraph.xpe
+INFO  : INFO: Running AIE MTMODEL Simulation with 1 threads
+ISS disables unused tiles
+Optimized ISS Wrapper (R+W), r2p24
+RPC SERVER MESSAGE
+RPC SERVER MESSAGE iss rpc_server available on port 45529
+RPC SERVER MESSAGE
+INFO  : ROWS: 8 COLS: 50
+Running Dispatch Server on port: 40603
+Current Directory=/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold
+--------------------------------------------------------------------------------------------------
+SLAVE STREAM INFO:  | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | S00_AXIS          | 32                | PL STREAM         | 49                
+                    | S01_AXIS          | 32                | PL STREAM         | 52                
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+MASTER STREAM INFO: | Port Name         | Port Width        | Stream Type       | Channel Index     
+                    | M00_AXIS          | 32                | PL STREAM         | 37                
+                    | M01_AXIS          | 32                | PL STREAM         | 39                
+--------------------------------------------------------------------------------------------------
+Enabled fast PM writes.
+Enabled fast DM writes.
+Open VCD pipe: /tmp/vcd_fifo_33b472df-a9c4-4c33-ac68-bb4393abd5ec
+Info: (I702) default timescale unit used for tracing: 1 ps (/tmp/vcd_fifo_33b472df-a9c4-4c33-ac68-bb4393abd5ec.vcd)
+[INFO]: Enabled Stream Switch Port Latency 
+IP-INFO: Starting to send data from file: ./data/1_1_sweep_inL.txt
+IP-INFO: AMD recommends using the CSV based file format for simulating PLIO based input and outputs which provides support for enhanced data control. For more details, please refer UG 1076 https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment/Simulation-Input-and-Output-Data-Streams 
+Starting to receive data into file: aiesimulator_output/data/1_1_sweep_out_L_cas0_io0.txt
+IP-INFO: Starting to send data from file: ./data/1_1_sweep_inR.txt
+Starting to receive data into file: aiesimulator_output/data/1_1_sweep_out_R_cas0_io0.txt
+IP-INFO: [ps_i5_ps_main] IP started.
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Disassemble command used: darts -c /media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work/aie/1_0/Release/1_0 -I/usr/xilinx/Vitis/2023.2/aietools/data/versal_prod/lib me -o /media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work/aie/1_0/Release/1_0.cmic2_154213552 -D__tct_tgt__=230622    +F
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack range [245792..246815] has been loaded from elf executable for stack memory DM_stack and stack pointer SP
+me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 245792
+Loading elfs of graph topSweepGraph1_1...
+Initializing graph topSweepGraph1_1...
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Disassemble command used: darts -c /media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work/aie/1_0/Release/1_0 -I/usr/xilinx/Vitis/2023.2/aietools/data/versal_prod/lib me -o /media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work/aie/1_0/Release/1_0.cmic2_154213552 -D__tct_tgt__=230622    +F : checkers_Disassemble_Elf32File
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack range [245792..246815] has been loaded from elf executable for stack memory DM_stack and stack pointer SP : loadprogram (elf)
+MSG :   -1 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Stack pointer SP for memory DM_stack has been initialised from elf executable to 245792 : loadprogram (elf)
+Resetting cores of graph topSweepGraph1_1...
+Configuring DMAs of graph topSweepGraph1_1...
+Configuring PL-Interface for graph topSweepGraph1_1...
+Set iterations for the core(s) of graph topSweepGraph1_1
+Enabling core(s) of graph topSweepGraph1_1
+Waiting for core(s) of graph topSweepGraph1_1 to finish execution ...
+27490.000000 24745.000000 20913.000000
+c: 0.729893, s: 0.683561
+core(s) are done executing
+Exiting!
+Cores are done executing but the simulation will run for some more cycles to allow PLIO to be flushed
+generate profile data for all cores
+WARNING : WRN (-2) : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : in function chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+WRN :   -2 : me[::tl.aie_logical.aie_xtlm.math_engine.array.tile_1_1.cm.proc.iss] : Execution tracing should be enabled when requesting function details : chkapi_function_profiling
+generate profile data for all cores
+Stopping Simulator.
+
+Info: /OSCI/SystemC: Simulation stopped by user.
+IP-INFO: deleting ip PSIP_ps_i5 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+IP-INFO: deleting packet ip 
+[INFO] : Simulation Finished, Sim result: 0 Total Simulation time 5865600 ps
+AIEsim feature license is released.

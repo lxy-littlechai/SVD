@@ -1,0 +1,65 @@
+digraph N {
+ b267[color=orange,fontcolor=black,style=filled,label="b267\nVLDA wr0, [p6], #32\ninp: P[6]\nout: WR0[0] P[6]"];  {rank=same; S3;  b267;}
+ b268[color=orange,fontcolor=black,style=filled,label="b268\nVLDA wr0, [p0], #32\ninp: P[0]\nout: P[0]"];  {rank=same; S1;  b268;}
+ b269[color=yellow,fontcolor=black,style=filled,label="b269  (fi=1) \nVFPMAC wd0, r7, wd1, ya, r12, cl0, wc0, #0, cl0, #0, cl1\ninp: WR0[0] CL[0] CL[0] R[12] CL[1] WD[1] XC[0]"];  {rank=same; S2;  b269;}
+ b270[color=yellow,fontcolor=black,style=filled,label="b270  (fi=1) \nVFPMAC wr2, r6, wd1, ya, r12, cl0, wc0, #0, cl0, #1, cl1\ninp: WR0[0] CL[0] CL[0] R[12] CL[1] WD[1]"];  {rank=same; S3;  b270;}
+ b271[color=chartreuse,fontcolor=black,style=filled,label="b271  (fi=2) \nVFPMAC wd0, r5, wd0, ya, r12, cl0, wc0, #0, cl0, #0, cl1\ninp: CL[0] CL[0] R[12] CL[1]"];  {rank=same; S0;  b271;}
+ b272[color=chartreuse,fontcolor=black,style=filled,label="b272  (fi=2) \nVFPMAC wd0, r4, wr2, ya, r12, cl0, wc0, #0, cl0, #0, cl1\ninp: CL[0] CL[0] R[12] CL[1]"];  {rank=same; S1;  b272;}
+ b273[color=cyan,fontcolor=black,style=filled,label="b273  (fi=3) \nVST wd0, [p7], #32\ninp: P[7]\nout: P[7]"];  {rank=same; S2;  b273;}
+ b274[color=cyan,fontcolor=black,style=filled,label="b274  (fi=3) \nVST wd0, [p1], #32\ninp: P[1]\nout: P[1]"];  {rank=same; S3;  b274;}
+ b2310[color=orange,fontcolor=black,style=filled,label="b2310\nVLDA.SPIL wc0, [sp, #-192]\ninp: SP[0]"];  {rank=same; S0;  b2310;}
+ b2311[color=orange,fontcolor=black,style=filled,label="b2311\nVLDB wc1, [sp, #-224]\ninp: SP[0]"];  {rank=same; S1;  b2311;}
+ b2312[color=orange,fontcolor=black,style=filled,label="b2312\nVLDA.SPIL wc0, [sp, #-160]\ninp: SP[0]"];  {rank=same; S2;  b2312;}
+ b2313[color=orange,fontcolor=black,style=filled,label="b2313\nVLDB wc1, [sp, #-128]\ninp: SP[0]\nout: XC[0]"];  {rank=same; S3;  b2313;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S3;  end;}
+   b268 -> b267 [color=maroon,fontcolor=maroon,label="len=1\nXA[0]",weight=1000];
+   b2310 -> b269 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-6\nXC[0]",weight=1000,dir=back];
+   b268 -> b269 [color=maroon,fontcolor=maroon,label="len=-6\nWR0[0]",weight=1000,dir=back];
+   b268 -> b270 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-6\nWR0[0]",weight=1000,dir=back];
+   b2312 -> b270 [color=maroon,fontcolor=maroon,label="len=-6\nXC[0]",weight=1000,dir=back];
+   b271 -> b2312 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-6\nXC[0]",weight=1000];
+   b271 -> b268 [color=maroon,fontcolor=maroon,label="len=-6\nXA[0]",weight=1000];
+   b271 -> b272 [color=maroon,fontcolor=maroon,penwidth=3,label="len=1\nmcFPMul[0], mcFPAdd[0], WD[0]",weight=1000];
+   b271 -> b267 [color=maroon,fontcolor=maroon,label="len=-6\nXA[0]",weight=1000];
+   b272 -> b270 [color=maroon,fontcolor=maroon,label="len=-1\nWB[0], mcFPMul[0], mcFPAdd[0]",weight=1000];
+   b2310 -> b272 [color=maroon,fontcolor=maroon,label="len=-6\nXC[0]",weight=1000,dir=back];
+   b272 -> b269 [color=maroon,fontcolor=maroon,penwidth=3,label="len=1\nmcFPMul[0], mcFPAdd[0], WD[0]",weight=1000];
+   b272 -> b267 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-6\nXA[0]",weight=1000];
+   b272 -> b268 [color=maroon,fontcolor=maroon,label="len=-6\nXA[0]",weight=1000];
+   b272 -> b273 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-5\nWD[0]",weight=1000,dir=back];
+   b269 -> b274 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-5\nWD[0]",weight=1000,dir=back];
+   b2310 -> b2312 [color=maroon,fontcolor=maroon,label="len=1\nXC[0]",weight=1000];
+   b269 -> b267 [color=black,fontcolor=black,penwidth=3,style=dashed,dir=back,label="len=7\nWR0[0]"];
+   b267 -> b270 [color=black,fontcolor=black,style=dashed,label="len=7\nWR0[0]"];
+   b268 -> b267 [color=maroon,fontcolor=maroon,style=dashed,dir=back,label="len=1\nWR0[0]"];
+   b267 -> b267 [color=black,fontcolor=black,style=dashed,label="len=1\nP[6]"];
+   b272 -> b268 [color=black,fontcolor=black,style=dashed,dir=back,label="len=7\nXA[0]"];
+   b271 -> b268 [color=black,fontcolor=black,penwidth=3,style=dashed,dir=back,label="len=7\nXA[0]"];
+   b268 -> b268 [color=black,fontcolor=black,style=dashed,label="len=1\nP[0]"];
+   b271 -> b269 [color=black,fontcolor=black,penwidth=3,style=dashed,dir=back,label="len=2\nmcFPMul[0], mcFPAdd[0], WD[0]"];
+   b270 -> b270 [color=maroon,fontcolor=maroon,style=dashed,label="len=1\nRS[6], mcFPMul[0], mcFPAdd[0], WB[0]"];
+   b272 -> b270 [color=black,fontcolor=black,penwidth=3,style=dashed,dir=back,label="len=2\nmcFPMul[0], mcFPAdd[0], WB[0]"];
+   b271 -> b273 [color=black,fontcolor=black,penwidth=3,style=dashed,label="len=6\nWD[0]"];
+   b272 -> b274 [color=black,fontcolor=black,penwidth=3,style=dashed,label="len=6\nWD[0]"];
+   b273 -> b273 [color=black,fontcolor=black,style=dashed,label="len=1\nDMb"];
+   b274 -> b274 [color=black,fontcolor=black,style=dashed,label="len=1\nDMb"];
+   b2310 -> b271 [color=black,fontcolor=black,style=dashed,label="len=7\nXC[0]"];
+   b2310 -> b270 [color=black,fontcolor=black,penwidth=3,style=dashed,label="len=7\nXC[0]"];
+   b2312 -> b269 [color=black,fontcolor=black,style=dashed,label="len=7\nXC[0]"];
+   b2310 -> b2312 [color=maroon,fontcolor=maroon,style=dashed,dir=back,label="len=1\nXC[0]"];
+   b272 -> b2312 [color=black,fontcolor=black,penwidth=3,style=dashed,dir=back,label="len=7\nXC[0]"];
+   b2310 -> b2313 [color=maroon,fontcolor=maroon,penwidth=3,style=dashed,dir=back,label="len=1\nXC[0]"];
+   b269 -> b2313 [color=black,fontcolor=black,penwidth=3,style=dashed,dir=back,label="len=7\nXC[0]"];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1 [label="step 1",shape=box];
+  S0 -> S1[style=invis,weight=9000];
+  S2 [label="step 2",shape=box];
+  S1 -> S2[style=invis,weight=9000];
+  S3 [label="step 3",shape=box];
+  S2 -> S3[style=invis,weight=9000];
+  S4 [label="successor",shape=box];
+  S3 -> S4[style=invis,weight=9000];
+}

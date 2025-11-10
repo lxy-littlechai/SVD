@@ -1,0 +1,214 @@
+<ENTRY>
+{
+ "thisFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aiesimulator_output/default.aierun_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:20:37 2025",
+ "timestampMillis": "1762788037973",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Mon Nov 10 23:20:37 2025",
+ "timestampMillis": "1762788037974",
+ "buildStep": {
+  "cmdId": "a1e6cb34-c679-4648-8620-9272bad91eb2",
+  "name": "aiesim",
+  "logFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/AIESimulator.log",
+  "commandLine": "aiesimulator --pkg-dir ./Work --aiearch-version aie --profile --online -wdb ",
+  "args": [
+   "aiesimulator",
+   "--pkg-dir ./Work",
+   "--aiearch-version aie",
+   "--profile",
+   "--online -wdb"
+  ],
+  "iniFiles": [],
+  "cwd": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Nov 10 23:20:37 2025",
+ "timestampMillis": "1762788037974",
+ "status": {
+  "cmdId": "a1e6cb34-c679-4648-8620-9272bad91eb2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Mon Nov 10 23:20:37 2025",
+ "timestampMillis": "1762788037974",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_AIESIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work/temp/TopGraph.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/TopGraph.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:20:37 2025",
+ "timestampMillis": "1762788037975",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/AIESim_FIFO_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_FIFO_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:20:37 2025",
+ "timestampMillis": "1762788037975",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/AIESim_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_MEMORY_ACCESS_VIOLATION_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:21:08 2025",
+ "timestampMillis": "1762788068779",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aiesimulator_output/profile_instr_1_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:21:08 2025",
+ "timestampMillis": "1762788068780",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aiesimulator_output/profile_funct_1_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:21:08 2025",
+ "timestampMillis": "1762788068781",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aiesimulator_output/profile_funct_1_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:21:08 2025",
+ "timestampMillis": "1762788068781",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aiesimulator_output/profile_instr_1_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:21:08 2025",
+ "timestampMillis": "1762788068782",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/system.wdb",
+  "name": "",
+  "fileType": "BINARY",
+  "reportType": "WAVEFORM_DATABASE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Nov 10 23:21:08 2025",
+ "timestampMillis": "1762788068782",
+ "report": {
+  "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/system.wcfg",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "WAVEFORM_CONFIGURATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Nov 10 23:21:08 2025",
+ "timestampMillis": "1762788068783",
+ "status": {
+  "cmdId": "a1e6cb34-c679-4648-8620-9272bad91eb2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

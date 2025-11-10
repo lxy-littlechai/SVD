@@ -1,0 +1,129 @@
+digraph N {
+ b499[color=orange,fontcolor=black,style=filled,label="b499 F@T \nVLDA wr0, [p2], #32\nout: WR0[0] P[2]"];  {rank=same; S23;  b499;}
+ b500[color=orange,fontcolor=black,style=filled,label="b500\nVLDA wr0, [p7], #32\ninp: P[7]\nout: P[7] XA[0]"];  {rank=same; S17;  b500;}
+ b501[color=orange,fontcolor=black,style=filled,label="b501\nVFPMAC wd0, r0, wd1, ya, r8, cl0, wc0, #0, cl0, #0, cl1\ninp: CL[0] CL[0] R[8] CL[1]\nout: WD[0]"];  {rank=same; S17;  b501;}
+ b502[color=orange,fontcolor=black,style=filled,label="b502\nVFPMAC wr2, r2, wd1, ya, r8, cl0, wc0, #0, cl0, #1, cl1\ninp: CL[0] CL[0] R[8] CL[1]\nout: WB[0]"];  {rank=same; S23;  b502;}
+ b503[color=orange,fontcolor=black,style=filled,label="b503\nVLDA.SPIL wc0, [sp, #-96]\ninp: SP[0]"];  {rank=same; S16;  b503;}
+ b504[color=orange,fontcolor=black,style=filled,label="b504\nVLDB wc1, [sp, #-128]\ninp: SP[0]\nout: XC[0]"];  {rank=same; S20;  b504;}
+ b505[color=orange,fontcolor=black,style=filled,label="b505 F@T \nVLDA.SPIL wc0, [sp, #-32]\ninp: SP[0]"];  {rank=same; S18;  b505;}
+ b506[color=orange,fontcolor=black,style=filled,label="b506 F@T \nVLDB wc1, [sp, #-64]\ninp: SP[0]\nout: XC[0]"];  {rank=same; S23;  b506;}
+ b83[color=orange,fontcolor=black,style=filled,label="b83\nLDA r1, [p2]\ninp: P[2]"];  {rank=same; S0;  b83;}
+ b84[color=orange,fontcolor=black,style=filled,label="b84\nMOV md0[8], r1[0]"];  {rank=same; S8;  b84;}
+ b86[color=orange,fontcolor=black,style=filled,label="b86\nMOV.s12 lc, #0\nout: LC[0]"];  {rank=same; S0;  b86;}
+ b87[color=orange,fontcolor=black,style=filled,label="b87\nMOV.u20 ls, #0\nout: LS[0]"];  {rank=same; S6;  b87;}
+ b88[color=orange,fontcolor=black,style=filled,label="b88\nMOV.u20 le, #0\nout: LE[0]"];  {rank=same; S4;  b88;}
+ b89[color=orange,fontcolor=black,style=filled,label="b89\nMOV0 r9, SS.md0[ 8]"];  {rank=same; S10;  b89;}
+ b90[color=orange,fontcolor=black,style=filled,label="b90\nMOV1 r1, SS.md0[ 8]"];  {rank=same; S11;  b90;}
+ b91[color=orange,fontcolor=black,style=filled,label="b91\nVSHL0.32 xa, r1"];  {rank=same; S12;  b91;}
+ b92[color=orange,fontcolor=black,style=filled,label="b92\nVSHL0.32 xd, r9"];  {rank=same; S11;  b92;}
+ b93[color=orange,fontcolor=black,style=filled,label="b93\nVSEL xd, ya.s32, r3, c2, r3, c2, c3, r3\ninp: RS[3] RS[3] CL[2] CH[2] CL[2] CH[2] RS[3]"];  {rank=same; S13;  b93;}
+ b94[color=orange,fontcolor=black,style=filled,label="b94\nVSEL xc, yd.s32, r3, c2, r3, c2, c3, r3\ninp: RS[3] RS[3] CL[2] CH[2] CL[2] CH[2] RS[3]"];  {rank=same; S12;  b94;}
+ b444[color=orange,fontcolor=black,style=filled,label="b444\nMOV.u20 ch3, #65536"];  {rank=same; S3;  b444;}
+ b464[color=orange,fontcolor=black,style=filled,label="b464\nMOVT.s12 cl3, #25"];  {rank=same; S2;  b464;}
+ b465[color=orange,fontcolor=black,style=filled,label="b465\nMOV.u20 cl3, #114688"];  {rank=same; S1;  b465;}
+ b470[color=orange,fontcolor=black,style=filled,label="b470\nVST.SPIL wd0, [sp, #-96]\ninp: SP[0]"];  {rank=same; S15;  b470;}
+ b471[color=orange,fontcolor=black,style=filled,label="b471\nVST.SPIL wd1, [sp, #-128]\ninp: SP[0]"];  {rank=same; S19;  b471;}
+ b472[color=orange,fontcolor=black,style=filled,label="b472\nVST.SPIL wc0, [sp, #-32]\ninp: SP[0]"];  {rank=same; S14;  b472;}
+ b473[color=orange,fontcolor=black,style=filled,label="b473\nVST.SPIL wc1, [sp, #-64]\ninp: SP[0]"];  {rank=same; S17;  b473;}
+ b366[color=orange,fontcolor=black,style=filled,label="b366\nVLDA.SPIL wr0, [sp, #-32]\ninp: SP[0]"];  {rank=same; S7;  b366;}
+ b419[color=orange,fontcolor=black,style=filled,label="b419\nVMOV wd1, wr3\nout: WD[1]"];  {rank=same; S19;  b419;}
+ b487[color=orange,fontcolor=black,style=filled,label="b487\nMOV p2, p0\ninp: P[0]"];  {rank=same; S5;  b487;}
+ b488[color=orange,fontcolor=black,style=filled,label="b488\nVMOV wr3, wr1\ninp: WR[1]"];  {rank=same; S0;  b488;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S23;  end;}
+   b500 -> b505 [color=maroon,fontcolor=maroon,label="len=-8",weight=1000];
+   b500 -> b499 [color=maroon,fontcolor=maroon,label="len=1\nXA[0]",weight=1000];
+   b500 -> end [color=black,fontcolor=black,penwidth=3,label="min len=6",weight=1000];
+   b501 -> b506 [color=maroon,fontcolor=maroon,label="len=-8\nXC[0]",weight=1000];
+   b503 -> b501 [color=maroon,fontcolor=maroon,label="len=-6\nXC[0]",weight=1000,dir=back];
+   b501 -> end [color=black,fontcolor=black,label="min len=1",weight=1000];
+   b505 -> b502 [color=maroon,fontcolor=maroon,label="len=-6\nXC[0]",weight=1000,dir=back];
+   b500 -> b502 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-6\nWR0[0]",weight=1000,dir=back];
+   b503 -> b502 [color=maroon,fontcolor=maroon,penwidth=3,label="len=7\nXC[0]",weight=1000];
+   b503 -> end [color=black,fontcolor=black,label="min len=6",weight=1000];
+   b505 -> b504 [color=maroon,fontcolor=maroon,label="len=-8\nXC[0]",weight=1000,dir=back];
+   b83 -> b487 [color=maroon,fontcolor=maroon,label="len=0\nP[2]",weight=1000];
+   b83 -> b84 [color=black,fontcolor=black,penwidth=3,label="len=8\nRS[1]",weight=1000];
+   b84 -> b89 [color=black,fontcolor=black,penwidth=3,label="len=2\nmdSS[0]",weight=1000];
+   b89 -> b92 [color=black,fontcolor=black,penwidth=3,label="len=1\nR[9]",weight=1000];
+   b89 -> b90 [color=black,fontcolor=black,penwidth=3,label="len=1\nDMb",weight=1000];
+   b90 -> b91 [color=black,fontcolor=black,penwidth=3,label="len=1\nRS[1]",weight=1000];
+   b91 -> b93 [color=black,fontcolor=black,penwidth=3,label="len=1\nXA[0]",weight=1000];
+   b92 -> b94 [color=black,fontcolor=black,penwidth=3,label="len=1\nXD[0]",weight=1000];
+   b366 -> b93 [color=maroon,fontcolor=maroon,penwidth=3,label="len=-6\nXA[0]",weight=1000,dir=back];
+   b93 -> b471 [color=black,fontcolor=black,label="len=2\nXD[0]",weight=1000];
+   b93 -> b470 [color=black,fontcolor=black,penwidth=3,label="len=2\nXD[0]",weight=1000];
+   b94 -> b93 [color=maroon,fontcolor=maroon,label="len=-1\nXD[0]",weight=1000];
+   b94 -> b473 [color=black,fontcolor=black,label="len=2\nXC[0]",weight=1000];
+   b94 -> b472 [color=black,fontcolor=black,penwidth=3,label="len=2\nXC[0]",weight=1000];
+   b94 -> b501 [color=black,fontcolor=black,label="len=2\nXC[0]",weight=1000];
+   b444 -> b94 [color=black,fontcolor=black,label="len=2\nCH[3]",weight=1000];
+   b444 -> b93 [color=black,fontcolor=black,label="len=2\nCH[3]",weight=1000];
+   b464 -> b94 [color=black,fontcolor=black,label="len=2\nCL[3]",weight=1000];
+   b464 -> b93 [color=black,fontcolor=black,label="len=2\nCL[3]",weight=1000];
+   b465 -> b464 [color=black,fontcolor=black,penwidth=3,label="len=1\nCL[3]",weight=1000];
+   b470 -> b501 [color=maroon,fontcolor=maroon,label="len=-5\nXD[0]",weight=1000];
+   b470 -> b419 [color=maroon,fontcolor=maroon,label="len=-8\nXD[0]",weight=1000];
+   b470 -> b503 [color=black,fontcolor=black,penwidth=3,label="len=1\nDMw_stack[-96]",weight=1000];
+   b471 -> b419 [color=maroon,fontcolor=maroon,penwidth=3,label="len=0\nXD[0]",weight=1000];
+   b471 -> b504 [color=black,fontcolor=black,penwidth=3,label="len=1\nDMw_stack[-128]",weight=1000];
+   b472 -> b503 [color=maroon,fontcolor=maroon,label="len=-6\nXC[0]",weight=1000];
+   b472 -> b505 [color=black,fontcolor=black,label="len=1\nDMw_stack[-32]",weight=1000];
+   b473 -> b504 [color=maroon,fontcolor=maroon,label="len=-6\nXC[0]",weight=1000];
+   b503 -> b473 [color=maroon,fontcolor=maroon,label="len=-8\nXC[0]",weight=1000,dir=back];
+   b473 -> b506 [color=black,fontcolor=black,label="len=1\nDMw_stack[-64]",weight=1000];
+   b366 -> b472 [color=maroon,fontcolor=maroon,label="len=1\nDMw_stack[-32]",weight=1000];
+   b366 -> b501 [color=black,fontcolor=black,label="len=7\nWR0[0]",weight=1000];
+   b501 -> b419 [color=black,fontcolor=black,penwidth=3,label="len=-2\nWD[1]",weight=1000,dir=back];
+   b487 -> b499 [color=black,fontcolor=black,label="len=1\nP[2]",weight=1000];
+   b488 -> b91 [color=maroon,fontcolor=maroon,label="len=1\nWR[1]",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1 [label="step 1",shape=box];
+  S0 -> S1[style=invis,weight=9000];
+  S2 [label="step 2",shape=box];
+  S1 -> S2[style=invis,weight=9000];
+  S3 [label="step 3",shape=box];
+  S2 -> S3[style=invis,weight=9000];
+  S4 [label="step 4",shape=box];
+  S3 -> S4[style=invis,weight=9000];
+  S5 [label="step 5",shape=box];
+  S4 -> S5[style=invis,weight=9000];
+  S6 [label="step 6",shape=box];
+  S5 -> S6[style=invis,weight=9000];
+  S7 [label="step 7",shape=box];
+  S6 -> S7[style=invis,weight=9000];
+  S8 [label="step 8",shape=box];
+  S7 -> S8[style=invis,weight=9000];
+  S9 [label="step 9",shape=box];
+  S8 -> S9[style=invis,weight=9000];
+  S10 [label="step 10",shape=box];
+  S9 -> S10[style=invis,weight=9000];
+  S11 [label="step 11",shape=box];
+  S10 -> S11[style=invis,weight=9000];
+  S12 [label="step 12",shape=box];
+  S11 -> S12[style=invis,weight=9000];
+  S13 [label="step 13",shape=box];
+  S12 -> S13[style=invis,weight=9000];
+  S14 [label="step 14",shape=box];
+  S13 -> S14[style=invis,weight=9000];
+  S15 [label="step 15",shape=box];
+  S14 -> S15[style=invis,weight=9000];
+  S16 [label="step 16",shape=box];
+  S15 -> S16[style=invis,weight=9000];
+  S17 [label="step 17",shape=box];
+  S16 -> S17[style=invis,weight=9000];
+  S18 [label="step 18",shape=box];
+  S17 -> S18[style=invis,weight=9000];
+  S19 [label="step 19",shape=box];
+  S18 -> S19[style=invis,weight=9000];
+  S20 [label="step 20",shape=box];
+  S19 -> S20[style=invis,weight=9000];
+  S21_S22 [label="steps [21,22]",shape=box];
+  S20 -> S21_S22[style=invis,weight=9000];
+  S23 [label="step 23",shape=box];
+  S21_S22 -> S23[style=invis,weight=9000];
+  S24 [label="successor",shape=box];
+  S23 -> S24[style=invis,weight=9000];
+}

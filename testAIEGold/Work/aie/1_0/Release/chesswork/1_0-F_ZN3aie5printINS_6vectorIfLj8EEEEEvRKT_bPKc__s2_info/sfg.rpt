@@ -1,0 +1,229 @@
+SFG: 1_0-F_ZN3aie5printINS_6vectorIfLj8EEEEEvRKT_bPKc__s2.sfg
+
+Offset  Macro node        Source ref                                                         Cycle Instr Words    Scheduling graphs + reports
+------  ----------------  -----------------------------------------------------------------  ----- ----- -----    ---------------------------
+        block m1          [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:292]
+000000  .  block m5                                                                             10    10    64    [m5.dot]
+        .  call m6        [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:294]
+000064  .  block m608                                                                           12    12    48    [m608.dot]
+        .  call m609      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000112  .  block m605                                                                            8     8    48    [m605.dot]
+        .  call m10       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000160  .  block m623                                                                           12    12    48    [m623.dot]
+        .  call m624      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000208  .  block m620                                                                            8     8    48    [m620.dot]
+        .  call m14       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000256  .  block m638                                                                           12    12    48    [m638.dot]
+        .  call m639      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000304  .  block m635                                                                            8     8    48    [m635.dot]
+        .  call m18       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000352  .  block m653                                                                           12    12    48    [m653.dot]
+        .  call m654      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000400  .  block m650                                                                            8     8    48    [m650.dot]
+        .  call m22       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000448  .  block m668                                                                           12    12    48    [m668.dot]
+        .  call m669      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000496  .  block m665                                                                            8     8    48    [m665.dot]
+        .  call m26       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000544  .  block m683                                                                           12    12    48    [m683.dot]
+        .  call m684      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000592  .  block m680                                                                            8     8    48    [m680.dot]
+        .  call m30       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000640  .  block m698                                                                           12    12    48    [m698.dot]
+        .  call m699      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000688  .  block m695                                                                            8     8    48    [m695.dot]
+        .  call m34       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000736  .  block m713                                                                           12    12    64    [m713.dot]
+        .  call m714      [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000800  .  block m710                                                                            8     8    48    [m710.dot]
+        .  call m38       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:132]
+000848  .  block m593                                                                           11    11    38    [m593.dot]
+        .  call m40       [/usr/xilinx/Vitis/2023.2/aietools/include/aie_api/utils.hpp:305]
+        .  block m43                                                                             0     0     0   
+
+Total cycles: 181, total instrs: 181, total words: 886
+
+
+Bundle schedule (instruction words shown before relocation)
+---------------
+000000  m5       41 82 00 03                                        b740  (MOV.s12 m0, #96)          
+000004           08 90 00 00 00 00 00 37                            b147  (PADDA [sp], m0)           
+000012           00 01                                              NOP
+000014           80 00 00 c8 ff dc 47 f7                            b736  (ST.SPIL lr, [sp, #-36])   
+000022           80 00 00 a0 20 00 07 f7                            b148  (JAL #0)                   
+000030           a2 95                                              b768  (MOV p1, p0)               
+000032           80 00 00 ef ff d4 47 f7                            b400  (ST.SPIL p7, [sp, #-44])   
+000040           ad df b0 40 20 00 07 f7                            b472  (ST.SPIL p6, [sp, #-40])    b765  (MOV.u20 cl0, #0)          
+000048           ab 1f f8 40 a0 00 07 f7                            b763  (MOV.u20 p0, #0)            b764  (ST.SPIL cl0, [sp, #-4])   
+000056           00 00 06 9b c0 00 00 77                            b769  (MOV p7, p1)               
+000064  m608     00 01                                              NOP
+000066           00 01                                              NOP
+000068           00 01                                              NOP
+000070           0a d1 c0 00 00 00 00 37                            b140  (VLDA wr2, [p7])           
+000078           00 01                                              NOP
+000080           00 01                                              NOP
+000082           80 00 00 a0 20 00 07 f7                            b143  (JAL #0)                   
+000090           00 01                                              .swstall "delay_slot"
+000092           00 01                                              .swstall "delay_slot"
+000094           00 01                                              .swstall "delay_slot"
+000096           00 00 19 04 30 00 00 77                            b141  (VEXT.32 r6, vrl2[0])      
+000104           80 00 00 f6 ff a0 47 f7                            b142  (ST.SPIL r6, [sp, #-96])   
+000112  m605     00 01                                              NOP
+000114           00 01                                              NOP
+000116           80 00 00 a0 20 00 07 f7                            b139  (JAL #0)                   
+000124           80 00 00 f1 ff fc 47 f7                            b420  (ST.SPIL r1, [sp, #-4])    
+000132           ae 1f f0 40 a0 00 07 f7                            b421  (ST.SPIL r0, [sp, #-8])     b742  (MOV.u20 p0, #0)           
+000140           00 01                                              .swstall "delay_slot"
+000142           00 01                                              .swstall "delay_slot"
+000144           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000160  m623     00 01                                              NOP
+000162           00 01                                              NOP
+000164           00 01                                              NOP
+000166           0a d1 c0 00 00 00 00 37                            b134  (VLDA wr2, [p7])           
+000174           00 01                                              NOP
+000176           00 01                                              NOP
+000178           80 00 00 a0 20 00 07 f7                            b137  (JAL #0)                   
+000186           00 01                                              .swstall "delay_slot"
+000188           00 01                                              .swstall "delay_slot"
+000190           00 01                                              .swstall "delay_slot"
+000192           00 00 19 14 30 00 00 77                            b135  (VEXT.32 r6, vrl2[1])      
+000200           80 00 00 f6 ff a4 47 f7                            b136  (ST.SPIL r6, [sp, #-92])   
+000208  m620     00 01                                              NOP
+000210           00 01                                              NOP
+000212           80 00 00 a0 20 00 07 f7                            b133  (JAL #0)                   
+000220           80 00 00 f1 ff fc 47 f7                            b463  (ST.SPIL r1, [sp, #-4])    
+000228           ae 1f f0 40 a0 00 07 f7                            b464  (ST.SPIL r0, [sp, #-8])     b1783 (MOV.u20 p0, #0)           
+000236           00 01                                              .swstall "delay_slot"
+000238           00 01                                              .swstall "delay_slot"
+000240           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000256  m638     00 01                                              NOP
+000258           00 01                                              NOP
+000260           00 01                                              NOP
+000262           0a d1 c0 00 00 00 00 37                            b129  (VLDA wr2, [p7])           
+000270           00 01                                              NOP
+000272           00 01                                              NOP
+000274           80 00 00 a0 20 00 07 f7                            b132  (JAL #0)                   
+000282           00 01                                              .swstall "delay_slot"
+000284           00 01                                              .swstall "delay_slot"
+000286           00 01                                              .swstall "delay_slot"
+000288           00 00 19 24 30 00 00 77                            b130  (VEXT.32 r6, vrl2[2])      
+000296           80 00 00 f6 ff a8 47 f7                            b131  (ST.SPIL r6, [sp, #-88])   
+000304  m635     00 01                                              NOP
+000306           00 01                                              NOP
+000308           80 00 00 a0 20 00 07 f7                            b128  (JAL #0)                   
+000316           80 00 00 f1 ff fc 47 f7                            b507  (ST.SPIL r1, [sp, #-4])    
+000324           ae 1f f0 40 a0 00 07 f7                            b508  (ST.SPIL r0, [sp, #-8])     b1782 (MOV.u20 p0, #0)           
+000332           00 01                                              .swstall "delay_slot"
+000334           00 01                                              .swstall "delay_slot"
+000336           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000352  m653     00 01                                              NOP
+000354           00 01                                              NOP
+000356           00 01                                              NOP
+000358           0a d1 c0 00 00 00 00 37                            b124  (VLDA wr2, [p7])           
+000366           00 01                                              NOP
+000368           00 01                                              NOP
+000370           80 00 00 a0 20 00 07 f7                            b127  (JAL #0)                   
+000378           00 01                                              .swstall "delay_slot"
+000380           00 01                                              .swstall "delay_slot"
+000382           00 01                                              .swstall "delay_slot"
+000384           00 00 19 34 30 00 00 77                            b125  (VEXT.32 r6, vrl2[3])      
+000392           80 00 00 f6 ff ac 47 f7                            b126  (ST.SPIL r6, [sp, #-84])   
+000400  m650     00 01                                              NOP
+000402           00 01                                              NOP
+000404           80 00 00 a0 20 00 07 f7                            b123  (JAL #0)                   
+000412           80 00 00 f1 ff fc 47 f7                            b544  (ST.SPIL r1, [sp, #-4])    
+000420           ae 1f f0 40 a0 00 07 f7                            b545  (ST.SPIL r0, [sp, #-8])     b1781 (MOV.u20 p0, #0)           
+000428           00 01                                              .swstall "delay_slot"
+000430           00 01                                              .swstall "delay_slot"
+000432           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000448  m668     00 01                                              NOP
+000450           00 01                                              NOP
+000452           00 01                                              NOP
+000454           0a d1 c0 00 00 00 00 37                            b119  (VLDA wr2, [p7])           
+000462           00 01                                              NOP
+000464           00 01                                              NOP
+000466           80 00 00 a0 20 00 07 f7                            b122  (JAL #0)                   
+000474           00 01                                              .swstall "delay_slot"
+000476           00 01                                              .swstall "delay_slot"
+000478           00 01                                              .swstall "delay_slot"
+000480           00 00 19 44 30 00 00 77                            b120  (VEXT.32 r6, vrh2[0])      
+000488           80 00 00 f6 ff b0 47 f7                            b121  (ST.SPIL r6, [sp, #-80])   
+000496  m665     00 01                                              NOP
+000498           00 01                                              NOP
+000500           80 00 00 a0 20 00 07 f7                            b118  (JAL #0)                   
+000508           80 00 00 f1 ff fc 47 f7                            b577  (ST.SPIL r1, [sp, #-4])    
+000516           ae 1f f0 40 a0 00 07 f7                            b578  (ST.SPIL r0, [sp, #-8])     b1780 (MOV.u20 p0, #0)           
+000524           00 01                                              .swstall "delay_slot"
+000526           00 01                                              .swstall "delay_slot"
+000528           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000544  m683     00 01                                              NOP
+000546           00 01                                              NOP
+000548           00 01                                              NOP
+000550           0a d1 c0 00 00 00 00 37                            b114  (VLDA wr2, [p7])           
+000558           00 01                                              NOP
+000560           00 01                                              NOP
+000562           80 00 00 a0 20 00 07 f7                            b117  (JAL #0)                   
+000570           00 01                                              .swstall "delay_slot"
+000572           00 01                                              .swstall "delay_slot"
+000574           00 01                                              .swstall "delay_slot"
+000576           00 00 19 54 30 00 00 77                            b115  (VEXT.32 r6, vrh2[1])      
+000584           80 00 00 f6 ff b4 47 f7                            b116  (ST.SPIL r6, [sp, #-76])   
+000592  m680     00 01                                              NOP
+000594           00 01                                              NOP
+000596           80 00 00 a0 20 00 07 f7                            b113  (JAL #0)                   
+000604           80 00 00 f1 ff fc 47 f7                            b606  (ST.SPIL r1, [sp, #-4])    
+000612           ae 1f f0 40 a0 00 07 f7                            b607  (ST.SPIL r0, [sp, #-8])     b1779 (MOV.u20 p0, #0)           
+000620           00 01                                              .swstall "delay_slot"
+000622           00 01                                              .swstall "delay_slot"
+000624           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000640  m698     00 01                                              NOP
+000642           00 01                                              NOP
+000644           00 01                                              NOP
+000646           0a d1 c0 00 00 00 00 37                            b109  (VLDA wr2, [p7])           
+000654           00 01                                              NOP
+000656           00 01                                              NOP
+000658           80 00 00 a0 20 00 07 f7                            b112  (JAL #0)                   
+000666           00 01                                              .swstall "delay_slot"
+000668           00 01                                              .swstall "delay_slot"
+000670           00 01                                              .swstall "delay_slot"
+000672           00 00 19 64 30 00 00 77                            b110  (VEXT.32 r6, vrh2[2])      
+000680           80 00 00 f6 ff b8 47 f7                            b111  (ST.SPIL r6, [sp, #-72])   
+000688  m695     00 01                                              NOP
+000690           00 01                                              NOP
+000692           80 00 00 a0 20 00 07 f7                            b108  (JAL #0)                   
+000700           80 00 00 f1 ff fc 47 f7                            b631  (ST.SPIL r1, [sp, #-4])    
+000708           ae 1f f0 40 a0 00 07 f7                            b632  (ST.SPIL r0, [sp, #-8])     b1784 (MOV.u20 p0, #0)           
+000716           00 01                                              .swstall "delay_slot"
+000718           00 01                                              .swstall "delay_slot"
+000720           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000736  m713     00 01                                              NOP
+000738           00 01                                              NOP
+000740           00 01                                              NOP
+000742           00 00 05 68 f0 00 00 0c 7b ff ae 3f                b104  (VLDB wr2, [p7])            b650  (LDA.SPIL p7, [sp, #-44])  
+000754           80 00 00 c7 bb fb 67 f7                            b717  (LDA.SPIL p6, [sp, #-40])  
+000762           00 01                                              NOP
+000764           80 00 00 a0 20 00 07 f7                            b107  (JAL #0)                   
+000772           00 01                                              .swstall "delay_slot"
+000774           00 01                                              .swstall "delay_slot"
+000776           00 00 00 03                                        .swstall "delay_slot"
+000780           00 00 19 74 30 00 00 77                            b105  (VEXT.32 r6, vrh2[3])      
+000788           00 00 00 00 10 00 00 0f 6f fb c4 3f                b106  (ST.SPIL r6, [sp, #-68])   
+000800  m710     00 01                                              NOP
+000802           00 01                                              NOP
+000804           80 00 00 a0 20 00 07 f7                            b103  (JAL #0)                   
+000812           80 00 00 f1 ff fc 47 f7                            b652  (ST.SPIL r1, [sp, #-4])    
+000820           ae 1f f0 40 a0 00 07 f7                            b653  (ST.SPIL r0, [sp, #-8])     b762  (MOV.u20 p0, #0)           
+000828           00 01                                              .swstall "delay_slot"
+000830           00 01                                              .swstall "delay_slot"
+000832           00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02    .swstall "delay_slot"
+000848  m593     00 01                                              NOP
+000850           00 01                                              NOP
+000852           00 01                                              NOP
+000854           58 fd f8 03                                        b737  (LDB lr, [sp, #-36])       
+000858           00 01                                              NOP
+000860           80 00 00 a0 00 00 07 f7                            b102  (J #0)                     
+000868           00 01                                              .swstall "delay_slot"
+000870           00 01                                              .swstall "delay_slot"
+000872           7e 82 00 03                                        b741  (MOV.s12 m0, #-96)         
+000876           08 90 20 15 b0 00 00 37                            b101  (PADDA [sp], m0)            b766  (MOV.s12 r6, #10)          
+000884           00 01                                              .swstall "delay_slot"

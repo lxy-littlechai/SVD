@@ -1,0 +1,17 @@
+Modulo scheduling backtracking report for m1991: #nodes = 12
+
+NO: s274 #0 s272 #1 s273 #2 s2312 #3 s271 #4 s268 #5 s270 #6 s2310 #7 s269 #8 s267 #9 s2313 #10 s2311 #11
+
+              2           2        2  2
+     2  2  2  3  2  2  2  3  2  2  3  3
+     7  7  7  1  7  6  7  1  6  6  1  1
+     4  2  3  2  1  8  0  0  9  7  3  1
+SW:  +  -  -  -  -  -  -  -  +  -  -  +
+
+Result #0 for II 4  (required budget ratio: 1):
+SL: 15  9 14  2  8  1  7  0  6  3  3  1 OK MAX COMPLETE (12)
+SD:  0  0  0  0  0  0  0  0  0  0  0  1
+BT:  0  0  0  0  0  0  0  0  0  0  0  0
+
+No iterative folding schedule available for comparison.
+

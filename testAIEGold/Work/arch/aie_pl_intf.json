@@ -1,0 +1,92 @@
+{
+  "partition": {
+    "startColumn": 0,
+    "numColumns": 50,
+    "aieshimPorts": {
+      "AIE_PL_X5Y0_AIE_PL_S_AXIS_1": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_1",
+            "column": 6,
+            "channel": 1
+          }
+        ],
+        "type": "stream",
+        "direction": "slave",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "data/1_1_sweep_inL.txt",
+        "annotation": [
+          "1_1_sweep_in_L_cas0_io0"
+        ],
+        "sdfioName": [
+          "i1_po0"
+        ]
+      },
+      "AIE_PL_X5Y0_AIE_PL_M_AXIS_1": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_1",
+            "column": 6,
+            "channel": 1
+          }
+        ],
+        "type": "stream",
+        "direction": "master",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "data/1_1_sweep_out_L_cas0_io0.txt",
+        "annotation": [
+          "1_1_sweep_out_L_cas0_io0"
+        ],
+        "sdfioName": [
+          "i2_pi0"
+        ]
+      },
+      "AIE_PL_X5Y0_AIE_PL_S_AXIS_4": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X5Y0_AIE_PL_S_AXIS_4",
+            "column": 6,
+            "channel": 4
+          }
+        ],
+        "type": "stream",
+        "direction": "slave",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "data/1_1_sweep_inR.txt",
+        "annotation": [
+          "1_1_sweep_in_R_cas0_io0"
+        ],
+        "sdfioName": [
+          "i3_po0"
+        ]
+      },
+      "AIE_PL_X5Y0_AIE_PL_M_AXIS_3": {
+        "PhysicalInstance": [
+          {
+            "name": "AIE_PL_X5Y0_AIE_PL_M_AXIS_3",
+            "column": 6,
+            "channel": 3
+          }
+        ],
+        "type": "stream",
+        "direction": "master",
+        "dataWidth": 32,
+        "parameterIndex": 0,
+        "registeredInterface": true,
+        "traceFile": "data/1_1_sweep_out_R_cas0_io0.txt",
+        "annotation": [
+          "1_1_sweep_out_R_cas0_io0"
+        ],
+        "sdfioName": [
+          "i4_pi0"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+digraph N {
+ b109[color=orange,fontcolor=black,style=filled,label="b109\nVLDA wr2, [p7]\ninp: P[7]"];  {rank=same; S3;  b109;}
+ b112[color=orange,fontcolor=black,style=filled,label="b112\nJAL #0\nout: LR[0]"];  {rank=same; S6;  b112;}
+ b110[color=orange,fontcolor=black,style=filled,label="b110\nVEXT.32 r6, vrh2[2]\nout: R[6]"];  {rank=same; S10;  b110;}
+ b111[color=orange,fontcolor=black,style=filled,label="b111\nST.SPIL r6, [sp, #-72]\ninp: SP[0]"];  {rank=same; S11;  b111;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S11;  end;}
+   b109 -> b110 [color=black,fontcolor=black,penwidth=3,label="len=7\nWR[2]",weight=1000];
+   b109 -> end [color=maroon,fontcolor=maroon,label="min len=6",weight=1000];
+   b110 -> b111 [color=black,fontcolor=black,penwidth=3,label="len=1\nR[6]",weight=1000];
+   b110 -> end [color=maroon,fontcolor=maroon,penwidth=3,label="min len=1",weight=1000];
+   start -> b109 [color=maroon,fontcolor=maroon,penwidth=3,label="min len=3",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1_S2 [label="steps [1,2]",shape=box];
+  S0 -> S1_S2[style=invis,weight=9000];
+  S3 [label="step 3",shape=box];
+  S1_S2 -> S3[style=invis,weight=9000];
+  S4_S5 [label="steps [4,5]",shape=box];
+  S3 -> S4_S5[style=invis,weight=9000];
+  S6 [label="step 6",shape=box];
+  S4_S5 -> S6[style=invis,weight=9000];
+  S7_S9 [label="steps [7,9]",shape=box];
+  S6 -> S7_S9[style=invis,weight=9000];
+  S10 [label="step 10",shape=box];
+  S7_S9 -> S10[style=invis,weight=9000];
+  S11 [label="step 11",shape=box];
+  S10 -> S11[style=invis,weight=9000];
+  S12 [label="successor",shape=box];
+  S11 -> S12[style=invis,weight=9000];
+}

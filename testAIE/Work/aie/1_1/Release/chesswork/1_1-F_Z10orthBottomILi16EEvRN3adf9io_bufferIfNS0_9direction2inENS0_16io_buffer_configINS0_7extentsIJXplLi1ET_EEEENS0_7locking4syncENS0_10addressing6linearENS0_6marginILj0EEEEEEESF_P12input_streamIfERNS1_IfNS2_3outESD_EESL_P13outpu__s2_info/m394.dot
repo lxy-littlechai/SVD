@@ -1,0 +1,14 @@
+digraph N {
+ b1181[color=orange,fontcolor=black,style=filled,label="b1181\nMOVT.s12 r12, #-1032\nout: R[12]"];  {rank=same; S1;  b1181;}
+ b1182[color=orange,fontcolor=black,style=filled,label="b1182\nMOV.u20 r12, #0"];  {rank=same; S0;  b1182;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S1;  end;}
+   b1182 -> b1181 [color=black,fontcolor=black,penwidth=3,label="len=1\nR[12]",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1 [label="step 1",shape=box];
+  S0 -> S1[style=invis,weight=9000];
+  S2 [label="successor",shape=box];
+  S1 -> S2[style=invis,weight=9000];
+}

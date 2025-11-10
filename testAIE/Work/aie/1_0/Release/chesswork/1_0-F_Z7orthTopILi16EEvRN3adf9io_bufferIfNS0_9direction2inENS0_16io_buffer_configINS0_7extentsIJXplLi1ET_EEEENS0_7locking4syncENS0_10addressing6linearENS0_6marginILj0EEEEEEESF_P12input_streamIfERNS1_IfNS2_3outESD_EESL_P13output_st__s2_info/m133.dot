@@ -1,0 +1,56 @@
+digraph N {
+ b68[color=orange,fontcolor=black,style=filled,label="b68\nLDA r12, [p7]\ninp: P[7]"];  {rank=same; S0;  b68;}
+ b71[color=orange,fontcolor=black,style=filled,label="b71\nLDA r13, [p0, cs0]\ninp: P[0]"];  {rank=same; S2;  b71;}
+ b74[color=orange,fontcolor=black,style=filled,label="b74\nRET lr\ninp: LR[0]"];  {rank=same; S6;  b74;}
+ b447[color=orange,fontcolor=black,style=filled,label="b447\nMOV.s12 cs0, #32"];  {rank=same; S0;  b447;}
+ b507[color=orange,fontcolor=black,style=filled,label="b507 F@H \nVFPMAC wd0, r5, wd0, ya, r8, cl0, wc0, #0, cl0, #0, cl1\ninp: WD[0] XA[0] CL[0] CL[0] R[8] CL[1] XC[0]"];  {rank=same; S0;  b507;}
+ b508[color=orange,fontcolor=black,style=filled,label="b508 F@H \nVFPMAC wd0, r6, wr2, ya, r8, cl0, wc0, #0, cl0, #0, cl1\ninp: WB[0] XA[0] CL[0] CL[0] R[8] CL[1] XC[0]"];  {rank=same; S1;  b508;}
+ b509[color=orange,fontcolor=black,style=filled,label="b509 F@H \nVST wd0, [p3], #32\ninp: P[3]"];  {rank=same; S6;  b509;}
+ b510[color=orange,fontcolor=black,style=filled,label="b510\nVST wd0, [p5], #32\ninp: P[5]"];  {rank=same; S9;  b510;}
+ b69[color=orange,fontcolor=black,style=filled,label="b69\nST r12, [p5]"];  {rank=same; S10;  b69;}
+ b72[color=orange,fontcolor=black,style=filled,label="b72\nPADDA [sp], m0\ninp: SP[0] SP[0]\nout: SP[0]"];  {rank=same; S10;  b72;}
+ b73[color=orange,fontcolor=black,style=filled,label="b73\nST r13, [p3]"];  {rank=same; S11;  b73;}
+ b448[color=orange,fontcolor=black,style=filled,label="b448\nMOV.s12 m0, #-128"];  {rank=same; S9;  b448;}
+ b412[color=orange,fontcolor=black,style=filled,label="b412\nMOV p7, ch0\ninp: CH[0]\nout: P[7]"];  {rank=same; S10;  b412;}
+ start [color=blue,fontcolor=white,style=filled,label="start"];  {rank=same; S0;  start;}
+ end [color=blue,fontcolor=white,style=filled,label="end"];  {rank=same; S11;  end;}
+   b68 -> b69 [color=black,fontcolor=black,label="len=8\nR[12]",weight=1000];
+   b68 -> b412 [color=maroon,fontcolor=maroon,label="len=0\nP[7]",weight=1000];
+   b68 -> end [color=maroon,fontcolor=maroon,label="min len=8",weight=1000];
+   b71 -> b73 [color=black,fontcolor=black,label="len=8\nR[13]",weight=1000];
+   b71 -> end [color=maroon,fontcolor=maroon,label="min len=8",weight=1000];
+   b447 -> b71 [color=black,fontcolor=black,penwidth=3,label="len=2\nCS[0]",weight=1000];
+   b447 -> end [color=maroon,fontcolor=maroon,label="min len=1",weight=1000];
+   b507 -> b509 [color=black,fontcolor=black,penwidth=3,label="len=6\nWD[0]",weight=1000];
+   b507 -> end [color=maroon,fontcolor=maroon,label="min len=5",weight=1000];
+   b508 -> b510 [color=black,fontcolor=black,label="len=6\nWD[0]",weight=1000];
+   b508 -> end [color=maroon,fontcolor=maroon,label="min len=5",weight=1000];
+   b509 -> b73 [color=black,fontcolor=black,label="len=1\nDMb",weight=1000];
+   b509 -> end [color=maroon,fontcolor=maroon,label="min len=1",weight=1000];
+   b510 -> b69 [color=black,fontcolor=black,penwidth=3,label="len=1\nDMb",weight=1000];
+   b510 -> end [color=maroon,fontcolor=maroon,label="min len=1",weight=1000];
+   b72 -> end [color=maroon,fontcolor=maroon,penwidth=3,label="min len=1",weight=1000];
+   b448 -> b72 [color=black,fontcolor=black,penwidth=3,label="len=1\nM[0]",weight=1000];
+   b412 -> end [color=maroon,fontcolor=maroon,penwidth=3,label="min len=1",weight=1000];
+  Sm1 [label="predecessor",shape=box];
+  S0 [label="step 0",shape=box];
+  Sm1 -> S0[style=invis,weight=9000];
+  S1 [label="step 1",shape=box];
+  S0 -> S1[style=invis,weight=9000];
+  S2 [label="step 2",shape=box];
+  S1 -> S2[style=invis,weight=9000];
+  S3_S5 [label="steps [3,5]",shape=box];
+  S2 -> S3_S5[style=invis,weight=9000];
+  S6 [label="step 6",shape=box];
+  S3_S5 -> S6[style=invis,weight=9000];
+  S7_S8 [label="steps [7,8]",shape=box];
+  S6 -> S7_S8[style=invis,weight=9000];
+  S9 [label="step 9",shape=box];
+  S7_S8 -> S9[style=invis,weight=9000];
+  S10 [label="step 10",shape=box];
+  S9 -> S10[style=invis,weight=9000];
+  S11 [label="step 11",shape=box];
+  S10 -> S11[style=invis,weight=9000];
+  S12 [label="successor",shape=box];
+  S11 -> S12[style=invis,weight=9000];
+}

@@ -1,0 +1,70 @@
+Mapping Analysis Report
+
+
+Acronym List
+    * CR(x,y)    - Core <column, row>
+    * MG(x,y):b  - MemoryGroup <column, row> : Bank
+    * MT(x,y):b  - MemoryTile <column, row> : Bank
+
+
+===============================================
+Block Mapping Report:
+===============================================
+
+Block:Function Name   CR(x,y)/IO(x)  Schedule  Utilization  Variable Name  Graph Name
+--------------------  -------------  --------  -----------  -------------  ----------------
+i0:orthogonalize<32>  CR(1,0)               0        1.000  orth[0][0][0]  topSweepGraph1_1
+i1:PLIO               IO(6)                                 in[0][0][0]    topSweepGraph1_1
+i2:PLIO               IO(6)                                 out[0][0][0]   topSweepGraph1_1
+i3:PLIO               IO(6)                                 in[0][0][1]    topSweepGraph1_1
+i4:PLIO               IO(6)                                 out[0][0][1]   topSweepGraph1_1
+
+
+===============================================
+Port Mapping Report:
+===============================================
+
+PortName  Dir  PrtType  BufType  Buffer Name  MG(x,y):b     Addr  Size  Variable Name         Graph Name
+--------  ---  -------  -------  -----------  ---------  -------  ----  --------------------  ----------------
+i0_po1    out  buffer   mem      buf3         MG(1,1):2  0x04000   144  orth[0][0][0].out[1]  topSweepGraph1_1
+i0_po1    out  buffer   mem      buf3d        MG(1,1):3  0x06000   144  orth[0][0][0].out[1]  topSweepGraph1_1
+i0_po0    out  buffer   mem      buf2         MG(1,1):0  0x01f60   144  orth[0][0][0].out[0]  topSweepGraph1_1
+i0_po0    out  buffer   mem      buf2d        MG(1,1):1  0x02000   144  orth[0][0][0].out[0]  topSweepGraph1_1
+i4_pi0    in   stream   mem      buf3         MG(1,1):2  0x04000   144  out[0][0][1].in[0]    topSweepGraph1_1
+i4_pi0    in   stream   mem      buf3d        MG(1,1):3  0x06000   144  out[0][0][1].in[0]    topSweepGraph1_1
+i1_po0    out  stream   mem      buf0         MG(0,0):0  0x00000   144  in[0][0][0].out[0]    topSweepGraph1_1
+i1_po0    out  stream   mem      buf0d        MG(0,0):1  0x02000   144  in[0][0][0].out[0]    topSweepGraph1_1
+i2_pi0    in   stream   mem      buf2         MG(1,1):0  0x01f60   144  out[0][0][0].in[0]    topSweepGraph1_1
+i2_pi0    in   stream   mem      buf2d        MG(1,1):1  0x02000   144  out[0][0][0].in[0]    topSweepGraph1_1
+i3_po0    out  stream   mem      buf1         MG(1,0):1  0x02000   144  in[0][0][1].out[0]    topSweepGraph1_1
+i3_po0    out  stream   mem      buf1d        MG(1,0):0  0x00000   144  in[0][0][1].out[0]    topSweepGraph1_1
+i0_pi0    in   buffer   mem      buf0         MG(0,0):0  0x00000   144  orth[0][0][0].in[0]   topSweepGraph1_1
+i0_pi0    in   buffer   mem      buf0d        MG(0,0):1  0x02000   144  orth[0][0][0].in[0]   topSweepGraph1_1
+i0_pi1    in   buffer   mem      buf1         MG(1,0):1  0x02000   144  orth[0][0][0].in[1]   topSweepGraph1_1
+i0_pi1    in   buffer   mem      buf1d        MG(1,0):0  0x00000   144  orth[0][0][0].in[1]   topSweepGraph1_1
+
+
+===============================================
+Memory Bank Report:
+===============================================
+
+MG(x,y):b  Buffer Name     Addr  Size  Accessing Block       CR(x,y)/IO(x)
+---------  -----------  -------  ----  --------------------  -------------
+MG(0,0):0  buf0         0x00000   144  i0:orthogonalize<32>  CR(1,0)
+MG(0,0):0  buf0         0x00000   144  i1                    IO(6)
+MG(0,0):1  buf0d        0x02000   144  i0:orthogonalize<32>  CR(1,0)
+MG(0,0):1  buf0d        0x02000   144  i1                    IO(6)
+MG(1,0):0  buf1d        0x00000   144  i0:orthogonalize<32>  CR(1,0)
+MG(1,0):0  buf1d        0x00000   144  i3                    IO(6)
+MG(1,0):1  buf1         0x02000   144  i0:orthogonalize<32>  CR(1,0)
+MG(1,0):1  buf1         0x02000   144  i3                    IO(6)
+MG(1,0):2  sysmem4      0x04000  1647  main                  CR(1,0)
+MG(1,1):0  buf2         0x01f60   144  i2                    IO(6)
+MG(1,1):0  buf2         0x01f60   144  i0:orthogonalize<32>  CR(1,0)
+MG(1,1):1  buf2d        0x02000   144  i2                    IO(6)
+MG(1,1):1  buf2d        0x02000   144  i0:orthogonalize<32>  CR(1,0)
+MG(1,1):2  buf3         0x04000   144  i0:orthogonalize<32>  CR(1,0)
+MG(1,1):2  buf3         0x04000   144  i4                    IO(6)
+MG(1,1):3  buf3d        0x06000   144  i4                    IO(6)
+MG(1,1):3  buf3d        0x06000   144  i0:orthogonalize<32>  CR(1,0)
+

@@ -1,0 +1,24 @@
+{
+    "plio_throughput": {
+        "port0": {
+            "port name": "1_1_sweep_in_L_cas0_io0",
+            "Type": "IN",
+            "Throughput": "3022.222222 MBps"
+        },
+        "port1": {
+            "port name": "1_1_sweep_in_R_cas0_io0",
+            "Type": "IN",
+            "Throughput": "3022.222222 MBps"
+        },
+        "port2": {
+            "port name": "1_1_sweep_out_L_cas0_io0",
+            "Type": "OUT",
+            "Throughput": "3560.209424 MBps"
+        },
+        "port3": {
+            "port name": "1_1_sweep_out_R_cas0_io0",
+            "Type": "OUT",
+            "Throughput": "3469.387755 MBps"
+        }
+    }
+}

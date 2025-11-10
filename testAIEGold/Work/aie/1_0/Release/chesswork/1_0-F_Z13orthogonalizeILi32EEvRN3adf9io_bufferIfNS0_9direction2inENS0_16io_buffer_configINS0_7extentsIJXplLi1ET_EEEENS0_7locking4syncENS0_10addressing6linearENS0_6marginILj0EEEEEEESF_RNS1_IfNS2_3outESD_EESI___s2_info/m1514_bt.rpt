@@ -1,0 +1,27 @@
+Modulo scheduling backtracking report for m1514: #nodes = 7
+
+NO: s384 #0 s1040 #1 s382 #2 s1049 #3 s380 #4 s383 #5 s381 #6
+
+        1     1         
+     3  0  3  0  3  3  3
+     8  4  8  4  8  8  8
+     4  0  2  9  0  3  1
+SW:  +  -  -  -  -  +  -
+
+Result #0 for II 3  (required budget ratio: 1):
+SL:  2  1  1  0 -4  0 -4 OK MAX COMPLETE (7)
+SD:  0  0  0  0  0  0  0
+BT:  0  0  0  0  0  0  0
+
+Result #1 for II 3  (required budget ratio: 1):
+SL:  2  1  1  0 -4  0 -4 OK MAX COMPLETE (7)
+SD:  0  0  0  0  0  0  0
+BT:  0  0  0  0  0  0  0
+
+Result #2 for II 3  (required budget ratio: 1):
+SL:  2  1  1  0 -4  0 -4 OK MAX COMPLETE (7)
+SD:  0  0  0  0  0  0  0
+BT:  0  0  0  0  0  0  0
+
+No iterative folding schedule available for comparison.
+

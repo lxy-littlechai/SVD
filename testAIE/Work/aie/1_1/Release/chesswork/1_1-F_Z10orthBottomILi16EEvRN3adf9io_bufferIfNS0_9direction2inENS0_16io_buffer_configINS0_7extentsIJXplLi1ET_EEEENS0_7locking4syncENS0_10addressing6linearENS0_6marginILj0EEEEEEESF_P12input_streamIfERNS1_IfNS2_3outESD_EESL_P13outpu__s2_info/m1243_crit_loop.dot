@@ -1,0 +1,29 @@
+digraph N {
+ b545[color=red,fontcolor=black,style=filled,label="b545\nVMOV wc1, wr0\ninp: WR0[0]"];  {rank=same; S2;  b545;}
+ b223[color=red,fontcolor=black,style=filled,label="b223\nVFPMAC wd0, r6, wd0, ya, r12, cl1, wc1, #0, cl1, #0, cl0\ninp: WD[0] WR0[0] CL[1] CL[1] R[12] CL[0]\nout: WD[0]"];  {rank=same; S3;  b223;}
+ b536[color=red,fontcolor=black,style=filled,label="b536\nVMOV wr0, wc0\ninp: WC[0]"];  {rank=same; S3;  b536;}
+ b225[color=red,fontcolor=black,style=filled,label="b225\nVFPMAC wd1, r5, wd1, ya, r12, cl1, wc0, #0, cl1, #0, cl0\ninp: WD[1] WC[0] CL[1] CL[1] R[12] CL[0]\nout: WD[1]"];  {rank=same; S4;  b225;}
+ b221[color=red,fontcolor=black,style=filled,label="b221\nVLDB wr0, [p6], #32\ninp: P[6]\nout: P[6] WR0[0]"];  {rank=same; S0;  b221;}
+ b545[color=red,fontcolor=black,style=filled,label="b545\nVMOV wc1, wr0\ninp: WR0[0]"];  {rank=same; S2;  b545;}
+   b545 -> b223 [color=black,fontcolor=black,penwidth=3,label="len=1\nWC[1]",weight=1000];
+   b223 -> b536 [color=maroon,fontcolor=maroon,penwidth=3,label="len=0\nWR0[0]",weight=1000];
+   b536 -> b225 [color=black,fontcolor=black,penwidth=3,label="len=1\nWR0[0]",weight=1000];
+   b221 -> b225 [color=maroon,fontcolor=maroon,label="len=-6\nWR0[0]",weight=1000,dir=back];
+   b545 -> b223 [color=black,fontcolor=black,penwidth=3,label="len=1\nWC[1]",weight=1000];
+   b545 -> b545 [color=maroon,fontcolor=maroon,style=dashed,label="len=1\nWC[1]"];
+   b223 -> b223 [color=black,fontcolor=black,style=dashed,label="len=2\nWD[0]"];
+   b545 -> b223 [color=maroon,fontcolor=maroon,style=dashed,dir=back,label="len=0\nWC[1]"];
+   b225 -> b225 [color=black,fontcolor=black,style=dashed,label="len=2\nWD[1]"];
+   b221 -> b223 [color=black,fontcolor=black,style=dashed,label="len=7\nWR0[0]"];
+   b221 -> b545 [color=black,fontcolor=black,style=dashed,label="len=7\nWR0[0]"];
+   b221 -> b536 [color=maroon,fontcolor=maroon,style=dashed,label="len=6\nWR0[0]"];
+   b221 -> b221 [color=black,fontcolor=black,style=dashed,label="len=1\nP[6]"];
+   b545 -> b545 [color=maroon,fontcolor=maroon,style=dashed,label="len=1\nWC[1]"];
+  S0 [label="step 0",shape=box];
+  S2 [label="step 2",shape=box];
+  S0 -> S2[style=invis,weight=9000];
+  S3 [label="step 3",shape=box];
+  S2 -> S3[style=invis,weight=9000];
+  S4 [label="step 4",shape=box];
+  S3 -> S4[style=invis,weight=9000];
+}

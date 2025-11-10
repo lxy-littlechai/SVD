@@ -1,0 +1,95 @@
+{
+  "NodeConstraints": {
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0]": {
+      "tile": {
+        "column": 1,
+        "row": 0,
+        "tile_type": "core"
+      },
+      "reserved_memory": {
+        "column": 1,
+        "row": 0,
+        "bankId": 2,
+        "offset": 0
+      }
+    },
+    "1_1_sweep_in_L_cas0_io0": {
+      "shim": {
+        "column": 6,
+        "channel": 1
+      }
+    },
+    "1_1_sweep_out_L_cas0_io0": {
+      "shim": {
+        "column": 6,
+        "channel": 1
+      }
+    },
+    "1_1_sweep_in_R_cas0_io0": {
+      "shim": {
+        "column": 6,
+        "channel": 4
+      }
+    },
+    "1_1_sweep_out_R_cas0_io0": {
+      "shim": {
+        "column": 6,
+        "channel": 3
+      }
+    }
+  },
+  "PortConstraints": {
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[0]": {
+      "buffers": [{
+          "column": 0,
+          "row": 0,
+          "bankId": 0,
+          "offset": 0
+        }, {
+          "column": 0,
+          "row": 0,
+          "bankId": 1,
+          "offset": 0
+        }]
+    },
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[1]": {
+      "buffers": [{
+          "column": 1,
+          "row": 0,
+          "bankId": 1,
+          "offset": 0
+        }, {
+          "column": 1,
+          "row": 0,
+          "bankId": 0,
+          "offset": 0
+        }]
+    },
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]": {
+      "buffers": [{
+          "column": 1,
+          "row": 1,
+          "bankId": 0,
+          "offset": 8032
+        }, {
+          "column": 1,
+          "row": 1,
+          "bankId": 1,
+          "offset": 0
+        }]
+    },
+    "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]": {
+      "buffers": [{
+          "column": 1,
+          "row": 1,
+          "bankId": 2,
+          "offset": 0
+        }, {
+          "column": 1,
+          "row": 1,
+          "bankId": 3,
+          "offset": 0
+        }]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+InterposerAnalysis Report 
+Port Name : i0_pi0(Variable Name : orth[0][0][0].in[0]) adaptor <stream,memory> : Lock Buff DMA 
+Port Name : i0_pi1(Variable Name : orth[0][0][0].in[1]) adaptor <stream,memory> : Lock Buff DMA 
+Port Name : i0_po0(Variable Name : orth[0][0][0].out[0]) adaptor <memory,stream> : Lock Buff DMA 
+Port Name : i0_po1(Variable Name : orth[0][0][0].out[1]) adaptor <memory,stream> : Lock Buff DMA 
+Port Name : i1_po0(Variable Name : in[0][0][0].out[0]) straightthru <stream> : Chnl 
+Port Name : i2_pi0(Variable Name : out[0][0][0].in[0]) straightthru <stream> : Chnl 
+Port Name : i3_po0(Variable Name : in[0][0][1].out[0]) straightthru <stream> : Chnl 
+Port Name : i4_pi0(Variable Name : out[0][0][1].in[0]) straightthru <stream> : Chnl 
+

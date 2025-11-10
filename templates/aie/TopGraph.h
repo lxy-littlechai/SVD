@@ -43,44 +43,50 @@ public:
 };
 
 
-template<int MatrixROW, int GraphSize, int IO_NUM, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION>
+template<int MatrixROW, int GraphSize, int IO_NUM, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
 class TopSweepGraph: public graph {
 private:
-    RingSweepGraph<MatrixROW, GraphSize, START_COL, START_ROW, DIRECTION> sweepGraph;
+    RingSweepGraph<MatrixROW, GraphSize, START_COL, START_ROW, DIRECTION, CascadeLevel> sweepGraph;
 public:
-    input_plio in[IO_NUM][2];
-    output_plio out[IO_NUM][2];
-    pktsplit<SUB_BLOCK_SIZE> sp[IO_NUM][2];
-    pktmerge<SUB_BLOCK_SIZE> mg[IO_NUM][2];
+    input_plio in[CascadeLevel][IO_NUM][2];
+    output_plio out[CascadeLevel][IO_NUM][2];
+    pktsplit<SUB_BLOCK_SIZE> sp[CascadeLevel][IO_NUM][2];
+    pktmerge<SUB_BLOCK_SIZE> mg[CascadeLevel][IO_NUM][2];
 
     TopSweepGraph(std::string graphID) {
     // PL name: graphID_sweep_in_j_k, graphID_sweep_out_j_k, j is the column index, k is the left or right index
-        for(int j = 0;j < IO_NUM;j ++) {
-            for(int k = 0;k < 2;k ++) {
-                std::string type = k == 0 ? "L" : "R";
-                std::string fileIn = "aie/data/" + graphID + "_sweep_in_" + type + "_" + std::to_string(j) + ".txt";
-                std::string fileOut = "aie/data/" + graphID + "_sweep_out_" + type + "_" + std::to_string(j) + ".txt";
-                std::string plIn = graphID + "_sweep_in_" + type + "_" + std::to_string(j);
-                std::string plout = graphID + "_sweep_out_" + type + "_" + std::to_string(j);
-                in[j][k] = input_plio::create(plIn, plio_128_bits, fileIn);
-                out[j][k] = output_plio::create(plout, plio_128_bits, fileOut);
-                sp[j][k] = pktsplit<SUB_BLOCK_SIZE>::create();
-                mg[j][k] = pktmerge<SUB_BLOCK_SIZE>::create();
+        for(int i = 0;i < CascadeLevel;i ++) {
+            for(int j = 0;j < IO_NUM;j ++) {
+                for(int k = 0;k < 2;k ++) {
+                    std::string type = k == 0 ? "L" : "R";
+                    std::string fileIn = "aie/data/" + graphID + "_sweep_in.txt";
+                    std::string fileOut = "aie/data/" + graphID + "_sweep_out_.txt";
+                    std::string plIn = graphID + "_sweep_in_" + type + "_cas" + std::to_string(i) + "_io" + std::to_string(j);
+                    std::string plout = graphID + "_sweep_out_" + type + "_cas" + std::to_string(i) + "_io" + std::to_string(j);
+                    in[i][j][k] = input_plio::create(plIn, plio_128_bits, fileIn);
+                    out[i][j][k] = output_plio::create(plout, plio_128_bits, fileOut);
+                    sp[i][j][k] = pktsplit<SUB_BLOCK_SIZE>::create();
+                    mg[i][j][k] = pktmerge<SUB_BLOCK_SIZE>::create();
+                }
             }
         }
 
-        for(int i = 0;i < 2;i ++) {
-            for(int j = 0;j < IO_NUM;j ++) {
-                connect<> (in[j][i].out[0], sp[j][i].in[0]);
-                connect<> (mg[j][i].out[0], out[j][i].in[0]);
+        for(int k = 0;k < CascadeLevel;k ++) {
+            for(int i = 0;i < 2;i ++) {
+                for(int j = 0;j < IO_NUM;j ++) {
+                    connect<> (in[k][j][i].out[0], sp[k][j][i].in[0]);
+                    connect<> (mg[k][j][i].out[0], out[k][j][i].in[0]);
+                }
             }
         }
 
-        for(int i = 0;i < 2;i ++) {
-            for(int j = 0;j < IO_NUM;j ++) {
-                for(int k = 0;k < SUB_BLOCK_SIZE;k ++) {
-                    connect<> (sp[j][i].out[k], sweepGraph.in[j*SUB_BLOCK_SIZE+k][i]);
-                    connect<> (sweepGraph.out[j*SUB_BLOCK_SIZE+k][i], mg[j][i].in[k]);
+        for(int k = 0;k < CascadeLevel;k ++) {
+            for(int i = 0;i < 2;i ++) {
+                for(int j = 0;j < IO_NUM;j ++) {
+                    for(int sz = 0;sz < SUB_BLOCK_SIZE;sz ++) {
+                        connect<> (sp[k][j][i].out[sz], sweepGraph.in[k][j*SUB_BLOCK_SIZE+sz][i]);
+                        connect<> (sweepGraph.out[k][j*SUB_BLOCK_SIZE+sz][i], mg[k][j][i].in[sz]);
+                    }
                 }
             }
         }

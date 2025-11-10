@@ -1,0 +1,8 @@
+Sender 1_1_sweep_in_L_cas0_io0 18
+Sender 1_1_sweep_in_L_cas1_io0 18
+Sender 1_1_sweep_in_R_cas0_io0 18
+Sender 1_1_sweep_in_R_cas1_io0 18
+Receiver 1_1_sweep_out_L_cas0_io0 17
+Receiver 1_1_sweep_out_L_cas1_io0 17
+Receiver 1_1_sweep_out_R_cas0_io0 17
+Receiver 1_1_sweep_out_R_cas1_io0 17

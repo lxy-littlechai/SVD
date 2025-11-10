@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="function.wdb" id="1">
+         <top_modules>
+            <top_module name="Active" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.001 us" />
+      <ZoomEndTime time="5.866 us" />
+      <Cursor1Time time="0.001 us" />
+   </zoom_setting>
+   <WVObjectSize size="4" />
+   <wvobject type="group" fp_name="Tile_0_0_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(0,0)</obj_property>
+      <obj_property name="Render_Data">/Tiles/0_0/0_0</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank </obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/0_0/0_0_s2mm_ch0_LOCK_0_BD_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(0,0)/DMA/s2mm.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#42f5f2 04=#00FFFF 05=#0000FF 06=blank 0f=#FF0000 12=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;04=s2mm dma enabled;05=s2mm dma transfer;06=s2mm dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(0,0)/DMA/s2mm.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="Detail_Data">Tile(0,0)/DMA/s2mm.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/0_0/0_0_s2mm_ch0_LOCK_1_BD_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(0,0)/DMA/s2mm.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#42f5f2 04=#00FFFF 05=#0000FF 06=blank 0f=#FF0000 12=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;04=s2mm dma enabled;05=s2mm dma transfer;06=s2mm dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(0,0)/DMA/s2mm.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="Detail_Data">Tile(0,0)/DMA/s2mm.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/0_0/0_0_lock_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(0,0)/Locks/lock(0,0).0</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(0,0)/Locks/lock(0,0).0</obj_property>
+      <obj_property name="Detail_Data">Tile(0,0)/Locks/lock(0,0).0</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/0_0/0_0_lock_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(0,0)/Locks/lock(0,0).1</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(0,0)/Locks/lock(0,0).1</obj_property>
+      <obj_property name="Detail_Data">Tile(0,0)/Locks/lock(0,0).1</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="Tile_1_0_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)</obj_property>
+      <obj_property name="Render_Data">/Tiles/1_0/1_0</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#767676 02=#0078D7 03=#90EE90 04=#2D7D9A 05=#87CEEB 06=#9ACD32 07=#BC8F8F 08=#D2B48C 09=#F0E68C 0a=#FFDEAD 0b=#FFF0F5 0c=#FFA07A 0d=#767676 0e=#0078D7 </obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=_main_init;02=_main;03=void aie::print&lt;aie::vector&lt;float, 8u&gt; &gt;(aie::vector&lt;float, 8u&gt; const&amp;, bool, char const*);04=void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0];05=_fini;06=clib_hosted_io(Hosted_clib_vars*);07=vfprintf;08=printf;09=fputc;0a=__cxa_finalize;0b=putchar;0c=f32_eq(unsigned int, unsigned int);0d=f32_to_f64(unsigned int);0e=softfloat_normSubnormalF32Sig(unsigned int);</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/_main_init">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/_main_init</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#767676 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=_main_init;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|_main_init</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|_main_init</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/_main">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/_main</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#0078D7 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=_main;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|_main</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|_main</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/void_aie__print_aie__vector_float__8u____aie__vector_float__8u__const___bool__char_const__">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/void aie::print&lt;aie::vector&lt;float, 8u&gt; &gt;(aie::vector&lt;float, 8u&gt; const&amp;, bool, char const*)</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#90EE90 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=void aie::print&lt;aie::vector&lt;float, 8u&gt; &gt;(aie::vector&lt;float, 8u&gt; const&amp;, bool, char const*);66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|void aie::print&lt;aie::vector&lt;float, 8u&gt; &gt;(aie::vector&lt;float, 8u&gt; const&amp;, bool, char const*)</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|void aie::print&lt;aie::vector&lt;float, 8u&gt; &gt;(aie::vector&lt;float, 8u&gt; const&amp;, bool, char const*)</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0__render">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0]</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#2D7D9A 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0];66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0]</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/in_0_">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0]/in[0]</obj_property>
+      <obj_property name="Description_Data">in[0]</obj_property>
+      <obj_property name="Detail_Data">/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/in_0__tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionValueTable">00000000=blank;</obj_property>
+      <obj_property name="EnumTransactionColorTable">00000000=blank</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/in_1_">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0]/in[1]</obj_property>
+      <obj_property name="Description_Data">in[1]</obj_property>
+      <obj_property name="Detail_Data">/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/in_1__tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionValueTable">00000000=blank;</obj_property>
+      <obj_property name="EnumTransactionColorTable">00000000=blank</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/out_0_">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0]/out[0]</obj_property>
+      <obj_property name="Description_Data">out[0]</obj_property>
+      <obj_property name="Detail_Data">/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/out_0__tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionValueTable">00000000=blank;</obj_property>
+      <obj_property name="EnumTransactionColorTable">00000000=blank</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/out_1_">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/void orthogonalize&lt;32&gt;(adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::in, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;, adf::io_buffer&lt;float, adf::direction::out, adf::io_buffer_config&lt;adf::extents&lt;(1)+(32)&gt;, adf::locking::sync, adf::addressing::linear, adf::margin&lt;0u&gt; &gt; &gt;&amp;).0.orth[0][0][0]/out[1]</obj_property>
+      <obj_property name="Description_Data">out[1]</obj_property>
+      <obj_property name="Detail_Data">/Active/1_0/void_orthogonalize_32__adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__in__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________adf__io_buffer_float__adf__direction__out__adf__io_buffer_config_adf__extents__1___32____adf__locking__sync__adf__addressing__linear__adf__margin_0u________0_orth_0__0__0_/out_1__tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionValueTable">00000000=blank;</obj_property>
+      <obj_property name="EnumTransactionColorTable">00000000=blank</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/_fini">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/_fini</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#87CEEB 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=_fini;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|_fini</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|_fini</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/clib_hosted_io_Hosted_clib_vars__">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/clib_hosted_io(Hosted_clib_vars*)</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#9ACD32 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=clib_hosted_io(Hosted_clib_vars*);66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|clib_hosted_io(Hosted_clib_vars*)</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|clib_hosted_io(Hosted_clib_vars*)</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/vfprintf">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/vfprintf</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#BC8F8F 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=vfprintf;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|vfprintf</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|vfprintf</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/printf">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/printf</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#D2B48C 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=printf;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|printf</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|printf</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/fputc">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/fputc</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#F0E68C 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=fputc;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|fputc</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|fputc</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/__cxa_finalize">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/__cxa_finalize</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#FFDEAD 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=__cxa_finalize;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|__cxa_finalize</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|__cxa_finalize</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/putchar">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/putchar</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#FFF0F5 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=putchar;66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|putchar</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|putchar</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/f32_eq_unsigned_int__unsigned_int_">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/f32_eq(unsigned int, unsigned int)</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#FFA07A 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=f32_eq(unsigned int, unsigned int);66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|f32_eq(unsigned int, unsigned int)</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|f32_eq(unsigned int, unsigned int)</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/f32_to_f64_unsigned_int_">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/f32_to_f64(unsigned int)</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#767676 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=f32_to_f64(unsigned int);66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|f32_to_f64(unsigned int)</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|f32_to_f64(unsigned int)</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Active/1_0/softfloat_normSubnormalF32Sig_unsigned_int_">
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Core/Functions/softfloat_normSubnormalF32Sig(unsigned int)</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#0078D7 66=#F94609 67=#FF0000 68=#A70000 69=#FF5252 6a=#E32914</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=inactive;01=softfloat_normSubnormalF32Sig(unsigned int);66=mem stall;67=lock stall;68=stream stall;69=debug stall;6a=acc stream stall;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Core(1,0)|softfloat_normSubnormalF32Sig(unsigned int)</obj_property>
+      <obj_property name="Detail_Data">Core(1,0)|softfloat_normSubnormalF32Sig(unsigned int)</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_0/1_0_core_lock_1_0_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/CoreCore Lock Requests/lock(1,0).0</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#FF0000 02=#00FF00 03=#DD0000 04=#0000FF 05=#FF0000 06=#FF0000</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=idle;01=read lock req;02=got read lock;03=write lock req;04=got write lock;05=lock acquired;06=lock released</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,0)/CoreCore Lock Requests/lock(1,0).0</obj_property>
+      <obj_property name="Detail_Data">Tile(1,0)/CoreCore Lock Requests/lock(1,0).0</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_0/1_0_core_lock_1_0_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/CoreCore Lock Requests/lock(1,0).1</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#FF0000 02=#00FF00 03=#DD0000 04=#0000FF 05=#FF0000 06=#FF0000</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=idle;01=read lock req;02=got read lock;03=write lock req;04=got write lock;05=lock acquired;06=lock released</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,0)/CoreCore Lock Requests/lock(1,0).1</obj_property>
+      <obj_property name="Detail_Data">Tile(1,0)/CoreCore Lock Requests/lock(1,0).1</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_0/1_0_s2mm_ch0_LOCK_0_BD_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/DMA/s2mm.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#42f5f2 04=#00FFFF 05=#0000FF 06=blank 0f=#FF0000 12=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;04=s2mm dma enabled;05=s2mm dma transfer;06=s2mm dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,0)/DMA/s2mm.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="Detail_Data">Tile(1,0)/DMA/s2mm.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_0/1_0_s2mm_ch0_LOCK_1_BD_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/DMA/s2mm.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#42f5f2 04=#00FFFF 05=#0000FF 06=blank 0f=#FF0000 12=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;04=s2mm dma enabled;05=s2mm dma transfer;06=s2mm dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,0)/DMA/s2mm.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="Detail_Data">Tile(1,0)/DMA/s2mm.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_0/1_0_lock_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Locks/lock(1,0).0</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,0)/Locks/lock(1,0).0</obj_property>
+      <obj_property name="Detail_Data">Tile(1,0)/Locks/lock(1,0).0</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_0/1_0_lock_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,0)/Locks/lock(1,0).1</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,0)/Locks/lock(1,0).1</obj_property>
+      <obj_property name="Detail_Data">Tile(1,0)/Locks/lock(1,0).1</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="Tile_1_1_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)</obj_property>
+      <obj_property name="Render_Data">/Tiles/1_1/1_1</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank </obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_mm2s_ch1_LOCK_2_BD_2">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/DMA/mm2s.Ch1.BD2.Lock2</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 02=#2D7D9A 04=#00FFFF 08=#00FF00 09=blank 0f=#FF0000 13=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;07=mm2s dma enabled;08=mm2s dma transfer;09=mm2s dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/DMA/mm2s.Ch1.BD2.Lock2</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/DMA/mm2s.Ch1.BD2.Lock2</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_mm2s_ch1_LOCK_3_BD_3">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/DMA/mm2s.Ch1.BD3.Lock3</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 02=#2D7D9A 04=#00FFFF 08=#00FF00 09=blank 0f=#FF0000 13=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;07=mm2s dma enabled;08=mm2s dma transfer;09=mm2s dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/DMA/mm2s.Ch1.BD3.Lock3</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/DMA/mm2s.Ch1.BD3.Lock3</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_mm2s_ch0_LOCK_0_BD_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/DMA/mm2s.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 02=#2D7D9A 04=#00FFFF 08=#00FF00 09=blank 0f=#FF0000 13=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;07=mm2s dma enabled;08=mm2s dma transfer;09=mm2s dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/DMA/mm2s.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/DMA/mm2s.Ch0.BD0.Lock0</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_mm2s_ch0_LOCK_1_BD_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/DMA/mm2s.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 02=#2D7D9A 04=#00FFFF 08=#00FF00 09=blank 0f=#FF0000 13=#42f5f2</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;07=mm2s dma enabled;08=mm2s dma transfer;09=mm2s dma idle;0f=DMA lock req;</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/DMA/mm2s.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/DMA/mm2s.Ch0.BD1.Lock1</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_lock_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/Locks/lock(1,1).0</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/Locks/lock(1,1).0</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/Locks/lock(1,1).0</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_lock_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/Locks/lock(1,1).1</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/Locks/lock(1,1).1</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/Locks/lock(1,1).1</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_lock_2">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/Locks/lock(1,1).2</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/Locks/lock(1,1).2</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/Locks/lock(1,1).2</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Tiles/1_1/1_1_lock_3">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(1,1)/Locks/lock(1,1).3</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank 01=#00FF00 02=#0000FF 03=#00FF00 04=blank</obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;01=read lock allocated;02=write lock allocated;03=semaphore lock allocated;04=semaphore lock released</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">Tile(1,1)/Locks/lock(1,1).3</obj_property>
+      <obj_property name="Detail_Data">Tile(1,1)/Locks/lock(1,1).3</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="Tile_6_200_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)</obj_property>
+      <obj_property name="Render_Data">/Tiles/6_200/6_200</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+      <obj_property name="EnumTransactionColorTable">00=blank </obj_property>
+      <obj_property name="EnumTransactionValueTable">00=blank;</obj_property>
+   </wvobject>
+   <obj_property name="Render_Data">/DataView/net1/row_1</obj_property>
+   <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+   <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+   <obj_property name="CustomSignalColor">#0000FF</obj_property>
+   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+   <obj_property name="Detail_Data">/DataView/net1/row_1_tooltip</obj_property>
+   <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject type="group" fp_name="/DataView/net1/row_0_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Inputs/net1/00:S_SHIM_SOUTH_ch4_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net1/row_0</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">00:S_SHIM_SOUTH_ch4_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net1/row_0_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="/DataView/net1/row_1_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Inputs/net1/01:M_SHIM_NORTH_ch5_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net1/row_1</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">01:M_SHIM_NORTH_ch5_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net1/row_1_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <obj_property name="Render_Data">/DataView/net0/row_1</obj_property>
+   <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+   <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+   <obj_property name="CustomSignalColor">#B0B0B0</obj_property>
+   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+   <obj_property name="Detail_Data">/DataView/net0/row_1_tooltip</obj_property>
+   <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject type="group" fp_name="/DataView/net0/row_0_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Inputs/net0/00:S_SHIM_SOUTH_ch1_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net0/row_0</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#B0B0B0</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">00:S_SHIM_SOUTH_ch1_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net0/row_0_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="/DataView/net0/row_1_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Inputs/net0/01:M_SHIM_NORTH_ch4_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net0/row_1</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#B0B0B0</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">01:M_SHIM_NORTH_ch4_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net0/row_1_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <obj_property name="Render_Data">/DataView/net3/row_0</obj_property>
+   <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+   <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+   <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+   <obj_property name="Detail_Data">/DataView/net3/row_0_tooltip</obj_property>
+   <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject type="group" fp_name="/DataView/net3/row_0_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Outputs/net3/14:S_SHIM_NORTH_ch3_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net3/row_0</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">14:S_SHIM_NORTH_ch3_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net3/row_0_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="/DataView/net3/row_1_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Outputs/net3/15:M_SHIM_SOUTH_ch3_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net3/row_1</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">15:M_SHIM_SOUTH_ch3_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net3/row_1_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <obj_property name="Render_Data">/DataView/net2/row_0</obj_property>
+   <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+   <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+   <obj_property name="CustomSignalColor">#00FF00</obj_property>
+   <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+   <obj_property name="Detail_Data">/DataView/net2/row_0_tooltip</obj_property>
+   <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject type="group" fp_name="/DataView/net2/row_0_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Outputs/net2/14:S_SHIM_NORTH_ch2_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net2/row_0</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">14:S_SHIM_NORTH_ch2_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net2/row_0_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="/DataView/net2/row_1_group">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="label">Tile(6,200)/Network/Outputs/net2/15:M_SHIM_SOUTH_ch1_C6</obj_property>
+      <obj_property name="Render_Data">/DataView/net2/row_1</obj_property>
+      <obj_property name="EnumTransactionColorTable">ff=blank 00=#B0B0B0 01=#0000FF 02=#00FF00 03=#00FFFF 04=#FF00FF 05=#FFFF00 06=#FF0000 07=#00B0B0 08=#B0B000 09=#B000B0 ee=#FF0000 ef=#808080 </obj_property>
+      <obj_property name="EnumTransactionValueTable">ff=blank;00=blank;01=blank;02=blank;03=blank;04=blank;05=blank;06=blank;07=blank;08=blank;09=blank;ee=stall;ef=header;</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Description_Data">15:M_SHIM_SOUTH_ch1_C6</obj_property>
+      <obj_property name="Detail_Data">/DataView/net2/row_1_tooltip</obj_property>
+      <obj_property name="unexpandable"></obj_property>
+   </wvobject>
+</wave_config>

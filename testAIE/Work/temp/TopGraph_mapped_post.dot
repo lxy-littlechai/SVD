@@ -1,0 +1,48 @@
+digraph G { 
+"i0:orthTop<16>\n CR(1,0)"[style=filled, fillcolor=aquamarine]; 
+"i0_pi0_DMA\nS2MM(0)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i0_pi1_DMA\nS2MM(1)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i0_po0_DMA\nMM2S(0)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i0_po1_DMA\nMM2S(1)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i1:orthBottom<16>\n CR(1,1)"[style=filled, fillcolor=coral]; 
+"i1_pi0_DMA\nS2MM(0)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i1_pi1_DMA\nS2MM(0)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i1_po0_DMA\nMM2S(0)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i1_po1_DMA\nMM2S(1)"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i2:PLIO(6)\ncol:6,ch:0"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i3:PLIO(6)\ncol:6,ch:0"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i4:PLIO(6)\ncol:6,ch:1"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i5:PLIO(6)\ncol:6,ch:1"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i6:PLIO(6)\ncol:6,ch:6"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i7:PLIO(6)\ncol:6,ch:5"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i8:PLIO(6)\ncol:6,ch:4"[shape=box, style=filled, fillcolor=lightgrey]; 
+"i9:PLIO(6)\ncol:6,ch:3"[shape=box, style=filled, fillcolor=lightgrey]; 
+"ps_i10:PS\nps_main"[shape=box, style=filled, fillcolor=snow]; 
+"i2:PLIO(6)\ncol:6,ch:0"->"i0_pi0_DMA\nS2MM(0)"[label=" Stream"];
+"i0_pi0_DMA\nS2MM(0)"->"i0:orthTop<16>\n CR(1,0)"[label="buf0\n[MG(0,0):3]"];
+"i0_pi0_DMA\nS2MM(0)"->"i0:orthTop<16>\n CR(1,0)"[label="buf0d\n[MG(0,0):1]"];
+"i4:PLIO(6)\ncol:6,ch:1"->"i0_pi1_DMA\nS2MM(1)"[label=" Stream"];
+"i0_pi1_DMA\nS2MM(1)"->"i0:orthTop<16>\n CR(1,0)"[label="buf1\n[MG(0,0):2]"];
+"i0_pi1_DMA\nS2MM(1)"->"i0:orthTop<16>\n CR(1,0)"[label="buf1d\n[MG(0,0):0]"];
+"i0:orthTop<16>\n CR(1,0)"->"i0_po0_DMA\nMM2S(0)"[label="buf2\n[MG(1,1):0]"];
+"i0:orthTop<16>\n CR(1,0)"->"i0_po0_DMA\nMM2S(0)"[label="buf2d\n[MG(1,1):1]"];
+"i0_po0_DMA\nMM2S(0)" -> "i3:PLIO(6)\ncol:6,ch:0"[label=" Stream"];
+"i0:orthTop<16>\n CR(1,0)"->"i0_po1_DMA\nMM2S(1)"[label="buf3\n[MG(1,1):2]"];
+"i0:orthTop<16>\n CR(1,0)"->"i0_po1_DMA\nMM2S(1)"[label="buf3d\n[MG(1,1):3]"];
+"i0_po1_DMA\nMM2S(1)" -> "i5:PLIO(6)\ncol:6,ch:1"[label=" Stream"];
+"i6:PLIO(6)\ncol:6,ch:6"->"i1_pi0_DMA\nS2MM(0)"[label=" Stream"];
+"i1_pi0_DMA\nS2MM(0)"->"i1:orthBottom<16>\n CR(1,1)"[label="buf4\n[MG(2,1):0]"];
+"i1_pi0_DMA\nS2MM(0)"->"i1:orthBottom<16>\n CR(1,1)"[label="buf4d\n[MG(2,1):1]"];
+"i8:PLIO(6)\ncol:6,ch:4"->"i1_pi1_DMA\nS2MM(0)"[label=" Stream"];
+"i1_pi1_DMA\nS2MM(0)"->"i1:orthBottom<16>\n CR(1,1)"[label="buf5\n[MG(1,0):1]"];
+"i1_pi1_DMA\nS2MM(0)"->"i1:orthBottom<16>\n CR(1,1)"[label="buf5d\n[MG(1,0):2]"];
+"i1:orthBottom<16>\n CR(1,1)"->"i1_po0_DMA\nMM2S(0)"[label="buf6\n[MG(1,2):0]"];
+"i1:orthBottom<16>\n CR(1,1)"->"i1_po0_DMA\nMM2S(0)"[label="buf6d\n[MG(1,2):1]"];
+"i1_po0_DMA\nMM2S(0)" -> "i7:PLIO(6)\ncol:6,ch:5"[label=" Stream"];
+"i1:orthBottom<16>\n CR(1,1)"->"i1_po1_DMA\nMM2S(1)"[label="buf7\n[MG(1,2):2]"];
+"i1:orthBottom<16>\n CR(1,1)"->"i1_po1_DMA\nMM2S(1)"[label="buf7d\n[MG(1,2):3]"];
+"i1_po1_DMA\nMM2S(1)" -> "i9:PLIO(6)\ncol:6,ch:3"[label=" Stream"];
+"i0:orthTop<16>\n CR(1,0)" -> "i1:orthBottom<16>\n CR(1,1)"[label=" Stream(ms0,ss0)"];
+"i1:orthBottom<16>\n CR(1,1)" -> "i0:orthTop<16>\n CR(1,0)"[label=" Stream(ms0,ss0)"];
+
+ }

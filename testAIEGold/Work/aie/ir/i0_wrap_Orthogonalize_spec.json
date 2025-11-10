@@ -1,0 +1,19 @@
+{
+    "KernelAnalysisSpec": {
+        "ModulePath": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/Work/aie/ir/i0_wrap_Orthogonalize.cpp",
+        "KernelSourcePath": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIEGold/aie/ProcessUnit/Orthogonalize.cpp",
+        "SpecFile": "i0_wrap_Orthogonalize_spec.json",
+        "ResultFile": "i0_wrap_Orthogonalize_results.json",
+        "UseCases": [
+            {
+                "Index": 0,
+                "KernelFunction": "orthogonalize<32>",
+                "InitializationFunction": "",
+                "KernelClassCtor": "",
+                "Instances": [
+                    "i0"
+                ]
+            }
+        ]
+    }
+}

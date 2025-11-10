@@ -1,0 +1,144 @@
+{
+    "PortsWithLock": [
+        {
+            "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
+            "VariableName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
+            "Ports": [
+                {
+                    "Port": "i0_pi0",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[0]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf0",
+                            "LockID": 0,
+                            "LockName": "LOCK_0_0_0_0"
+                        },
+                        {
+                            "BufferName": "buf0d",
+                            "LockID": 1,
+                            "LockName": "LOCK_0_0_1_8096"
+                        }
+                    ]
+                },
+                {
+                    "Port": "i0_pi1",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[1]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf1",
+                            "LockID": 2,
+                            "LockName": "LOCK_0_0_2_0"
+                        },
+                        {
+                            "BufferName": "buf1d",
+                            "LockID": 3,
+                            "LockName": "LOCK_0_0_3_8096"
+                        }
+                    ]
+                },
+                {
+                    "Port": "i0_po0",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf2",
+                            "LockID": 0,
+                            "LockName": "LOCK_1_1_0_8096"
+                        },
+                        {
+                            "BufferName": "buf2d",
+                            "LockID": 1,
+                            "LockName": "LOCK_1_1_1_0"
+                        }
+                    ]
+                },
+                {
+                    "Port": "i0_po1",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf3",
+                            "LockID": 2,
+                            "LockName": "LOCK_1_1_2_0"
+                        },
+                        {
+                            "BufferName": "buf3d",
+                            "LockID": 3,
+                            "LockName": "LOCK_1_1_3_0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
+            "VariableName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
+            "Ports": [
+                {
+                    "Port": "i1_pi0",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].in[0]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf4",
+                            "LockID": 0,
+                            "LockName": "LOCK_2_1_0_0"
+                        },
+                        {
+                            "BufferName": "buf4d",
+                            "LockID": 1,
+                            "LockName": "LOCK_2_1_1_0"
+                        }
+                    ]
+                },
+                {
+                    "Port": "i1_pi1",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].in[1]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf5",
+                            "LockID": 0,
+                            "LockName": "LOCK_1_0_0_0"
+                        },
+                        {
+                            "BufferName": "buf5d",
+                            "LockID": 1,
+                            "LockName": "LOCK_1_0_1_0"
+                        }
+                    ]
+                },
+                {
+                    "Port": "i1_po0",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].out[0]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf6",
+                            "LockID": 0,
+                            "LockName": "LOCK_1_2_0_96"
+                        },
+                        {
+                            "BufferName": "buf6d",
+                            "LockID": 1,
+                            "LockName": "LOCK_1_2_1_96"
+                        }
+                    ]
+                },
+                {
+                    "Port": "i1_po1",
+                    "PortName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].out[1]",
+                    "Locks": [
+                        {
+                            "BufferName": "buf7",
+                            "LockID": 2,
+                            "LockName": "LOCK_1_2_2_0"
+                        },
+                        {
+                            "BufferName": "buf7d",
+                            "LockID": 3,
+                            "LockName": "LOCK_1_2_3_0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

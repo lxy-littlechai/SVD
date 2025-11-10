@@ -1,0 +1,23 @@
+
+
+BUFFER,FROM_INSTANCE.PORT,TO_INSTANCE.PORT,SIZE,MEMORY_GROUP,BANK,OFFSET,DMA_NEEDED
+buf8,topSweepGraph1_1.sweepGraph.orth[0][0][0].po1,1_1_sweep_out_R_cas0_io0.pi0,144,"(1, 1)",3,0,-
+buf3,topSweepGraph1_1.sweepGraph.orth[0][0][0].po1,1_1_sweep_out_R_cas0_io0.pi0,144,"(1, 1)",2,0,-
+buf7,topSweepGraph1_1.sweepGraph.orth[0][0][0].po0,1_1_sweep_out_L_cas0_io0.pi0,144,"(1, 1)",1,0,-
+sysmem4,-,-,1647,"(1, 0)",2,0,-
+buf1,1_1_sweep_in_R_cas0_io0.po0,topSweepGraph1_1.sweepGraph.orth[0][0][0].pi1,144,"(1, 0)",1,0,-
+buf5,1_1_sweep_in_L_cas0_io0.po0,topSweepGraph1_1.sweepGraph.orth[0][0][0].pi0,144,"(0, 0)",1,0,-
+buf2,topSweepGraph1_1.sweepGraph.orth[0][0][0].po0,1_1_sweep_out_L_cas0_io0.pi0,144,"(1, 1)",0,8032,-
+buf6,1_1_sweep_in_R_cas0_io0.po0,topSweepGraph1_1.sweepGraph.orth[0][0][0].pi1,144,"(1, 0)",0,0,-
+buf0,1_1_sweep_in_L_cas0_io0.po0,topSweepGraph1_1.sweepGraph.orth[0][0][0].pi0,144,"(0, 0)",0,0,-
+
+
+PLIO,IN/OUT,TILE_COLUMN,CHANNEL
+1_1_sweep_out_L_cas0_io0,out,6,1
+1_1_sweep_out_R_cas0_io0,out,6,3
+1_1_sweep_in_L_cas0_io0,in,6,1
+1_1_sweep_in_R_cas0_io0,in,6,4
+
+
+CLUSTER,KERNELS,TILE
+PT0,"topSweepGraph1_1.sweepGraph.orth[0][0][0],","(1, 0)"
