@@ -39,6 +39,49 @@ class JacobiSVD:
         A[i], A[j] = tmp_ai, tmp_aj
         V[i], V[j] = tmp_vi, tmp_vj
         return conv
+    
+    def round_robin_pairs(self, num_blocks):
+        """
+        生成块级别的 round-robin 配对序列
+        固定最后一个元素，其他元素循环旋转
+        
+        例如 8 个块：
+        第1轮: (0,1), (2,3), (4,5), (6,7)
+        第2轮: (1,3), (0,5), (2,6), (4,7)
+        ...
+        
+        参数:
+            num_blocks: 块的数量（必须是偶数）
+        
+        返回:
+            列表的列表，每个子列表包含一轮的块对 (i, j)
+        """
+        if num_blocks % 2 != 0:
+            raise ValueError("Number of blocks must be even")
+
+        all_pairs = []
+        # 初始化：前 n-1 个元素 + 固定的最后一个元素
+        teams = list(range(num_blocks - 1)) + [num_blocks - 1]
+
+        for round_idx in range(num_blocks - 1):
+            
+            # 配对方式：从两端向中间配对
+            pairs = []
+            for i in range(0, num_blocks, 2):
+                pairs.append((teams[i], teams[i+1]))
+            
+            temp = teams.copy()
+            temp[0] = teams[1]
+            temp[num_blocks - 1] = teams[num_blocks - 1]
+            temp[num_blocks - 3] = teams[num_blocks - 2]
+            for i in range(0, num_blocks - 2, 2):
+                temp[i+2] = teams[i]
+            for i in range(3, num_blocks - 2, 2):
+                temp[i-2] = teams[i]
+            teams = temp
+            all_pairs.append(pairs)
+
+        return all_pairs
 
     def offset_ring_order(self, n):
         """生成 offset ring order 的配对序列"""
@@ -128,7 +171,7 @@ class JacobiSVD:
         # 进行 Jacobi 旋转
         conv = 0
         step = 0
-        all_pairs = self.offset_ring_order(total_size)
+        all_pairs = self.round_robin_pairs(total_size)
         for pairs in all_pairs:
             for (i, j) in pairs:
                 step += 1
@@ -138,12 +181,12 @@ class JacobiSVD:
                     def float_to_ieee754_hex(x):
                         # 使用大端转换, 使22->0x41b00000
                         return '0x' + struct.pack('>f', float(x)).hex()
-                    print(A[i], A[j])
+                    print(i, j, A[i], A[j])
                     # print([float_to_ieee754_hex(x) for x in A[i]],
                     #       [float_to_ieee754_hex(x) for x in A[j]])
                 tmpconv = self.orthogonalize(A, V, i, j)
                 conv = max(conv, tmpconv)
-                print(tmpconv)
+                print(i,j,tmpconv)
                 #if ifprint:
                     #print("-----------------------------------------------------------------")
                     #print(A[i], A[j])
