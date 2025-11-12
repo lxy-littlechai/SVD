@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Thu Nov  6 15:46:09 2025",
- "timestampMillis": "1762415169633",
+ "dateTimestamp": "Tue Nov 11 22:02:44 2025",
+ "timestampMillis": "1762869764963",
  "buildStep": {
-  "cmdId": "7353eee7-84a9-4e33-a6b1-521bac53a75c",
+  "cmdId": "54150498-8785-4096-b7c5-5fa24a8de92c",
   "name": "aiecompiler",
   "logFile": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/AIECompiler.log",
   "commandLine": "/usr/xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler --config /media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie_hw.cfg ",
@@ -34,10 +34,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Nov  6 15:46:09 2025",
- "timestampMillis": "1762415169634",
+ "dateTimestamp": "Tue Nov 11 22:02:44 2025",
+ "timestampMillis": "1762869764964",
  "status": {
-  "cmdId": "7353eee7-84a9-4e33-a6b1-521bac53a75c",
+  "cmdId": "54150498-8785-4096-b7c5-5fa24a8de92c",
   "state": "CS_RUNNING"
  }
 }
@@ -45,8 +45,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Thu Nov  6 15:46:09 2025",
- "timestampMillis": "1762415169634",
+ "dateTimestamp": "Tue Nov 11 22:02:44 2025",
+ "timestampMillis": "1762869764964",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -63,8 +63,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:09 2025",
- "timestampMillis": "1762415169635",
+ "dateTimestamp": "Tue Nov 11 22:02:44 2025",
+ "timestampMillis": "1762869764965",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work",
   "name": "",
@@ -77,8 +77,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:09 2025",
- "timestampMillis": "1762415169635",
+ "dateTimestamp": "Tue Nov 11 22:02:44 2025",
+ "timestampMillis": "1762869764965",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/guidance.html",
   "name": "",
@@ -91,8 +91,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:09 2025",
- "timestampMillis": "1762415169635",
+ "dateTimestamp": "Tue Nov 11 22:02:44 2025",
+ "timestampMillis": "1762869764965",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/guidance.pb3",
   "name": "",
@@ -105,10 +105,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Thu Nov  6 15:46:15 2025",
- "timestampMillis": "1762415175197",
+ "dateTimestamp": "Tue Nov 11 22:02:50 2025",
+ "timestampMillis": "1762869770635",
  "buildStep": {
-  "cmdId": "0d1d03e3-73e1-4cf7-9cab-b08cac356222",
+  "cmdId": "4a5587c2-dc21-44b7-8db7-6dcf889d9da7",
   "name": "aieir_be",
   "logFile": "",
   "commandLine": "/usr/xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aieir_be --time-passes=0 --disable-om-fifo-insertion=false --logcfg-file= --trace-plio-width=64 --aie2ipu-base-addr=1073741824 --pl-freq=200 --enable-light-cdo=false --show-loggers=false --fast-nonlinearfloats=false --broadcast-enable-core=true --high-performance=false --multi-layer-opt=0 --kernel-address-location=false --target=hw --swfifo-threshold=40 --single-mm2s-channel=false --workdir=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/./Work --multi-layer-enable-shared-channel-opt=true --exit-after=complete --event-trace-config= --test-iterations=-1 --stacksize=1024 --known-tripcount=false --enable-core-processor-bus=false --platform=/usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm --large-program-memory=false --event-trace-custom-config= --disable-dma-cmd-alignment=false --enable-ecc-scrubbing=true --float-accuracy=fast --output-archive=libadf.a --write-partitioned-file=true --print-timer-multi-layer-ctrl=false --schemafile=AIEGraphSchema.json --disable-multirate=false --multi-layer-controller-parallel=false --include=/usr/xilinx/Vitis/2023.2/aietools/include --include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/./aie --include=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/./ --verify-switchconfig=true --enable-peano-flow=false --partition-isolation=true --disable-multirate-analysis=false --fastmath=false --multi-layer-ctrl-pkt=false --cpp-std=-std=c++17 --max-layer-ctrl-param-size=256 --enable-mapper-hints-constraints=false --multi-layer-auto-phase=false --event-trace-advanced-mapping=0 --multi-layer-plc-constraints= --lock-fence-mode=1 --enable-reconfig=false --compute-heapsize=false --log-level=2 --aiesim-xrt-api=false --evaluate-fifo-depth=false --gen-graph-cleanup=false --use-canonical-net-names=false --event-trace-port=gmio --use-phy-shim=true --print-timer-multi-layer-core=false --xlopt=0 --graph-iterator-event=false --pre-compile-kernels=false --gen-elf-ctrl-pkts=false --trace-aiesim-option=0 --mapped-soln-udm= --optimize-pktids=false --no-init=false --adf-api-log-level=2 --num-trace-streams=16 --aie-heat-map=false --enable-partition=0:50 --multi-layer-enable-tct=false --fast-floats=true --quiet=false --enable-multi-layer=false --multi-layer-pipelining=false --llvmRelease=15 --exec-timed=0 --Xchess=main:backend.mist2.xargs=-ggraph --pl-auto-restart=false --routed-soln-udm= --large-kernel-program=false --read-mem-multi-layer=false --enable-profiling=false --runtime-opt=true --part= --disable-transform-merge-broadcast=false --multi-layer-ext-buf-file= --verbose=true --use-async-rtp-locks=true --repo-path= --genArchive=false --kernel-compile-replacement= --pl-axi-lite=false --event-trace-bounding-box= --multi-layer-shim-dma-bandwidth=0 --heapsize=1024 --logical-arch= --enable-reconfig-dma-autostart=false --nodot-graph=false --use-core-control-api=false --enable-txn-bin=false --debug-runtime-opt=false --disable-dma-autostart=false --include-mem-tile= --disable-transform-broadcast-split=true --json=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/./Work/temp/TopGraph.json --aiearch aie --frontend-warning=0 --frontend-critical-warning=0 --frontend-summary-name=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/./Work/TopGraph.aiecompile_summary --frontend-files-to-report=Guidance:/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/./Work/reports/guidance.html --sdf-graph=/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/TopGraph.cpp ",
@@ -240,10 +240,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Nov  6 15:46:15 2025",
- "timestampMillis": "1762415175198",
+ "dateTimestamp": "Tue Nov 11 22:02:50 2025",
+ "timestampMillis": "1762869770636",
  "status": {
-  "cmdId": "0d1d03e3-73e1-4cf7-9cab-b08cac356222",
+  "cmdId": "4a5587c2-dc21-44b7-8db7-6dcf889d9da7",
   "state": "CS_RUNNING"
  }
 }
@@ -251,8 +251,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:28 2025",
- "timestampMillis": "1762415188613",
+ "dateTimestamp": "Tue Nov 11 22:03:04 2025",
+ "timestampMillis": "1762869784876",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work",
   "name": "",
@@ -265,8 +265,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:28 2025",
- "timestampMillis": "1762415188684",
+ "dateTimestamp": "Tue Nov 11 22:03:04 2025",
+ "timestampMillis": "1762869784949",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/debug_config.json",
   "name": "",
@@ -279,8 +279,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Thu Nov  6 15:46:28 2025",
- "timestampMillis": "1762415188685",
+ "dateTimestamp": "Tue Nov 11 22:03:04 2025",
+ "timestampMillis": "1762869784950",
  "buildSummary": {
   "hardwarePlatform": "xcvc1902-vsva2197-2MP-e-S",
   "hardwareDsa": "VC1902",
@@ -315,8 +315,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:28 2025",
- "timestampMillis": "1762415188693",
+ "dateTimestamp": "Tue Nov 11 22:03:04 2025",
+ "timestampMillis": "1762869784959",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/TopGraph.json",
   "name": "",
@@ -329,8 +329,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:28 2025",
- "timestampMillis": "1762415188810",
+ "dateTimestamp": "Tue Nov 11 22:03:05 2025",
+ "timestampMillis": "1762869785081",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/TopGraph.png",
   "name": "",
@@ -343,8 +343,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:28 2025",
- "timestampMillis": "1762415188849",
+ "dateTimestamp": "Tue Nov 11 22:03:05 2025",
+ "timestampMillis": "1762869785121",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/TopGraph_partition.json",
   "name": "",
@@ -357,8 +357,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:29 2025",
- "timestampMillis": "1762415189968",
+ "dateTimestamp": "Tue Nov 11 22:03:06 2025",
+ "timestampMillis": "1762869786115",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/TopGraph_aie_constraints_for_placer.aiecst",
   "name": "",
@@ -371,8 +371,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191643",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787842",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/TopGraph_aie_mapped.aiecst",
   "name": "",
@@ -385,8 +385,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191644",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787843",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/TopGraph_mapped.json",
   "name": "",
@@ -399,8 +399,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191648",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787848",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/TopGraph_mapping_analysis_report.txt",
   "name": "",
@@ -413,8 +413,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191648",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787848",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/sync_buffer_address.json",
   "name": "",
@@ -427,8 +427,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191650",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787850",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/Interposer_analysis_report.txt",
   "name": "",
@@ -441,8 +441,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191650",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787851",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/lock_allocation_report.json",
   "name": "",
@@ -455,8 +455,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191651",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787851",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/Lock_report.txt",
   "name": "",
@@ -469,8 +469,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191652",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787852",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/Stream_report.txt",
   "name": "",
@@ -483,8 +483,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191653",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787853",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/DMA_report.txt",
   "name": "",
@@ -497,8 +497,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:31 2025",
- "timestampMillis": "1762415191653",
+ "dateTimestamp": "Tue Nov 11 22:03:07 2025",
+ "timestampMillis": "1762869787853",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/dma_lock_report.json",
   "name": "",
@@ -511,8 +511,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:39 2025",
- "timestampMillis": "1762415199533",
+ "dateTimestamp": "Tue Nov 11 22:03:16 2025",
+ "timestampMillis": "1762869796428",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/DMA_FIFO_info_report.json",
   "name": "",
@@ -525,8 +525,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200194",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797120",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/router_soln.png",
   "name": "",
@@ -539,8 +539,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200262",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797179",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/router_soln.json",
   "name": "",
@@ -553,8 +553,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200489",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797415",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/TopGraph_mapped_post.png",
   "name": "",
@@ -567,8 +567,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200502",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797426",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/PacketSwitching_report.json",
   "name": "",
@@ -581,8 +581,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200503",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797426",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/PacketSwitching_report.txt",
   "name": "",
@@ -595,8 +595,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200506",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797430",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/packet_switching_report.json",
   "name": "",
@@ -609,8 +609,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200516",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797444",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/TopGraph.xpe",
   "name": "",
@@ -623,8 +623,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200521",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797449",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/0_0/scripts/0_0.prx",
   "name": "",
@@ -637,8 +637,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200522",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797450",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/0_0/src/0_0.cc",
   "name": "",
@@ -651,8 +651,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200529",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797455",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_0/scripts/1_0.prx",
   "name": "",
@@ -665,8 +665,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200530",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797456",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_0/src/1_0.cc",
   "name": "",
@@ -679,8 +679,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200535",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797460",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_1/scripts/1_1.prx",
   "name": "",
@@ -693,8 +693,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200536",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797460",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_1/src/1_1.cc",
   "name": "",
@@ -707,8 +707,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200542",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797464",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_2/scripts/1_2.prx",
   "name": "",
@@ -721,8 +721,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200542",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797464",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_2/src/1_2.cc",
   "name": "",
@@ -735,8 +735,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200548",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797468",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_0/scripts/2_0.prx",
   "name": "",
@@ -749,8 +749,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200549",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797469",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_0/src/2_0.cc",
   "name": "",
@@ -763,8 +763,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200554",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797472",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_1/scripts/2_1.prx",
   "name": "",
@@ -777,8 +777,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200555",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797473",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_1/src/2_1.cc",
   "name": "",
@@ -791,8 +791,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200559",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797477",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_2/scripts/2_2.prx",
   "name": "",
@@ -805,8 +805,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200559",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797477",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_2/src/2_2.cc",
   "name": "",
@@ -819,8 +819,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200564",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797481",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/0_0/0_0.log",
   "name": "",
@@ -833,8 +833,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200564",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797482",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_0/1_0.log",
   "name": "",
@@ -847,8 +847,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200565",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797483",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_1/1_1.log",
   "name": "",
@@ -861,8 +861,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200566",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797483",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/1_2/1_2.log",
   "name": "",
@@ -875,8 +875,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200566",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797484",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_0/2_0.log",
   "name": "",
@@ -889,8 +889,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200567",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797485",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_1/2_1.log",
   "name": "",
@@ -903,8 +903,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:46:40 2025",
- "timestampMillis": "1762415200568",
+ "dateTimestamp": "Tue Nov 11 22:03:17 2025",
+ "timestampMillis": "1762869797485",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/aie/2_2/2_2.log",
   "name": "",
@@ -917,8 +917,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:47:01 2025",
- "timestampMillis": "1762415221151",
+ "dateTimestamp": "Tue Nov 11 22:03:40 2025",
+ "timestampMillis": "1762869820472",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/ps/c_rts/aie_control.cpp",
   "name": "",
@@ -931,8 +931,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:47:06 2025",
- "timestampMillis": "1762415226390",
+ "dateTimestamp": "Tue Nov 11 22:03:46 2025",
+ "timestampMillis": "1762869826132",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/ps/c_rts/aie_control_config.json",
   "name": "",
@@ -945,8 +945,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:47:06 2025",
- "timestampMillis": "1762415226393",
+ "dateTimestamp": "Tue Nov 11 22:03:46 2025",
+ "timestampMillis": "1762869826135",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/reports/compiler_report.json",
   "name": "",
@@ -959,8 +959,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu Nov  6 15:47:06 2025",
- "timestampMillis": "1762415226421",
+ "dateTimestamp": "Tue Nov 11 22:03:46 2025",
+ "timestampMillis": "1762869826166",
  "report": {
   "path": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/Work/temp/TopGraph_aie_constraints.aiecst",
   "name": "",
@@ -973,10 +973,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Nov  6 15:47:06 2025",
- "timestampMillis": "1762415226635",
+ "dateTimestamp": "Tue Nov 11 22:03:46 2025",
+ "timestampMillis": "1762869826369",
  "status": {
-  "cmdId": "0d1d03e3-73e1-4cf7-9cab-b08cac356222",
+  "cmdId": "4a5587c2-dc21-44b7-8db7-6dcf889d9da7",
   "state": "CS_PASSED"
  }
 }
@@ -984,10 +984,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu Nov  6 15:47:07 2025",
- "timestampMillis": "1762415227531",
+ "dateTimestamp": "Tue Nov 11 22:03:47 2025",
+ "timestampMillis": "1762869827308",
  "status": {
-  "cmdId": "7353eee7-84a9-4e33-a6b1-521bac53a75c",
+  "cmdId": "54150498-8785-4096-b7c5-5fa24a8de92c",
   "state": "CS_PASSED"
  }
 }

@@ -15,10 +15,11 @@ const int ELEM_NUM = W/32;
 const int DDR_ELEM_NUM = DDR_WIDTH/32;
 
 typedef ap_axiu<W, 0, 0, 0> axis_pkt;
-typedef hls::stream<ap_uint<1>, 4> axis_stream_sys;
+typedef hls::stream<ap_uint<1>, 4> axis_stream_sig;
 typedef hls::stream<float, 4> axis_stream_float;
-typedef hls::stream<ap_uint<128>, 2*SUB_BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_128;
-typedef hls::stream<ap_uint<128>, BLOCK_NUM*SUB_BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_deep_128;
+typedef hls::stream<int, 2*LEVEL1_BLOCK_PAIR_NUM> axis_stream_ordering;
+typedef hls::stream<ap_uint<128>, BLOCK_NUM*SUB_BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_128;
+typedef hls::stream<ap_uint<128>, 2*SUB_BLOCK_SIZE*ROW/ELEM_NUM> axis_stream_deep_128;
 typedef hls::stream<axis_pkt> axis_pkt_stream;
 
 const int START = 1;

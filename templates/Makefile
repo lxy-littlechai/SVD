@@ -158,7 +158,8 @@ $(XCLBIN):
 		--package.defer_aie_run \
 		--package.sd_file $(HOST) $(XSA) $(GRAPH_O) -o $(XCLBIN) \
 		--package.sd_dir ./data \
-		--package.sd_file run.sh
+		--package.sd_file run.sh \
+		--package.sd_file matrix.txt
 	@echo "COMPLETE: emulation package created."
 
 ###################################################################################################

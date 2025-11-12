@@ -286,12 +286,6 @@ void Receive(axis_stream_sig& syscontrol, axis_stream_float convSet_L[parallel_n
       
     }
 
-    //Norm Receive
-    // for(int level1 = 0; level1 < LEVEL1_BLOCK_PAIR_NUM;level1 ++) {
-    //   NormReceive(fifo_L[0][0], norm_rx0);
-    // }
-    
-
 }
 
 void Level1OrderingGenerator(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, axis_stream_ordering& ordering_R) {
@@ -439,15 +433,6 @@ void RoundRobin(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, a
     }
   }
 
-    // //AIE2DDR
-    // NormFIFO2DDR(U, S, receive_fifo_L[0][0]);
-  // #pragma HLS dataflow
-  // for(int i = 0;i < LEVEL1_BLOCK_PAIR_NUM;i ++) {
-  //   const int level1_block_L_index = ordering_L.read();
-  //   const int level1_block_R_index = ordering_R.read();
-  //   OrthDDR2FIFO(dataIn, level1_block_L_index, level1_block_R_index, send_fifo_L, send_fifo_R);
-  // }
-  // NormFIFO2DDR(U, S, receive_fifo_L[0][0]);
 }
 
 void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sig syscontrol[3], 
@@ -501,7 +486,7 @@ void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sig sysco
 }
 
 
-void Orthogonalize(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap_uint<32>* ConvArray,
+void Orthogonalize(ap_uint<DDR_WIDTH>* dataIn,  ap_uint<32>* ConvArray,
                 const int ITER, 
                 
                 axis_pkt_stream& sweep_tx1_L_0, axis_pkt_stream& sweep_tx1_R_0,
@@ -633,7 +618,12 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
 
     
 
-    Orthogonalize(dataIn, U, S, ConvArray, ITER, sweep_tx1_L_0, sweep_tx1_R_0, sweep_rx1_L_0, sweep_rx1_R_0, sweep_tx1_L_1, sweep_tx1_R_1, sweep_rx1_L_1, sweep_rx1_R_1);
+    Orthogonalize(dataIn, ConvArray, ITER
+      ,sweep_tx1_L_0, sweep_tx1_R_0, 
+      sweep_rx1_L_0, sweep_rx1_R_0
+      ,sweep_tx1_L_1, sweep_tx1_R_1, 
+      sweep_rx1_L_1, sweep_rx1_R_1
+    );
     Normalize(dataIn, U, S, norm_tx0, norm_rx0);
     
 }

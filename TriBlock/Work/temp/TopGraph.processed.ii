@@ -63552,7 +63552,7 @@ const int COL = 32; decltype(adf::frontend::instrument< decltype(COL) > (COL)) _
 const float EPS = 1e-6; decltype(adf::frontend::instrument< decltype(EPS) > (EPS)) __ci31__ = adf::frontend::instrument< decltype(EPS) > ( EPS, "EPS", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/../SystemConfig.h:3:1", nullptr, "");
 
 
-const int LEVEL1_BLOCK_SIZE = COL/4; decltype(adf::frontend::instrument< decltype(LEVEL1_BLOCK_SIZE) > (LEVEL1_BLOCK_SIZE)) __ci32__ = adf::frontend::instrument< decltype(LEVEL1_BLOCK_SIZE) > ( LEVEL1_BLOCK_SIZE, "LEVEL1_BLOCK_SIZE", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/../SystemConfig.h:6:1", nullptr, "");
+const int LEVEL1_BLOCK_SIZE = 16; decltype(adf::frontend::instrument< decltype(LEVEL1_BLOCK_SIZE) > (LEVEL1_BLOCK_SIZE)) __ci32__ = adf::frontend::instrument< decltype(LEVEL1_BLOCK_SIZE) > ( LEVEL1_BLOCK_SIZE, "LEVEL1_BLOCK_SIZE", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/../SystemConfig.h:6:1", nullptr, "");
 const int LEVEL1_BLOCK_NUM = COL/LEVEL1_BLOCK_SIZE; decltype(adf::frontend::instrument< decltype(LEVEL1_BLOCK_NUM) > (LEVEL1_BLOCK_NUM)) __ci33__ = adf::frontend::instrument< decltype(LEVEL1_BLOCK_NUM) > ( LEVEL1_BLOCK_NUM, "LEVEL1_BLOCK_NUM", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/../SystemConfig.h:7:1", nullptr, "");
 const int LEVEL1_BLOCK_PAIR_NUM = LEVEL1_BLOCK_NUM/2; decltype(adf::frontend::instrument< decltype(LEVEL1_BLOCK_PAIR_NUM) > (LEVEL1_BLOCK_PAIR_NUM)) __ci34__ = adf::frontend::instrument< decltype(LEVEL1_BLOCK_PAIR_NUM) > ( LEVEL1_BLOCK_PAIR_NUM, "LEVEL1_BLOCK_PAIR_NUM", "/media/4T/home/luanxinya/PaperWork/HeteroSVD/SVD/TriBlock/aie/../SystemConfig.h:8:1", nullptr, "");
 

@@ -3155,7 +3155,7 @@
             {
                 "tile": "aie",
                 "column": 1,
-                "row": 1,
+                "row": 2,
                 "offset": 160,
                 "size": 2080
             },
@@ -3168,9 +3168,9 @@
             },
             {
                 "tile": "aie",
-                "column": 0,
-                "row": 0,
-                "offset": 0,
+                "column": 1,
+                "row": 1,
+                "offset": 160,
                 "size": 2080
             },
             {
@@ -3178,13 +3178,6 @@
                 "column": 1,
                 "row": 0,
                 "offset": 8192,
-                "size": 2080
-            },
-            {
-                "tile": "aie",
-                "column": 1,
-                "row": 0,
-                "offset": 0,
                 "size": 2080
             },
             {
@@ -3197,8 +3190,15 @@
             {
                 "tile": "aie",
                 "column": 1,
-                "row": 2,
-                "offset": 160,
+                "row": 0,
+                "offset": 0,
+                "size": 2080
+            },
+            {
+                "tile": "aie",
+                "column": 0,
+                "row": 0,
+                "offset": 0,
                 "size": 2080
             }
         ]

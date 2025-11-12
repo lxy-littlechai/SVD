@@ -36,6 +36,7 @@ def generate(storePath, config):
             ("data/test", "U.txt"),
             ("data/test", "Sigma.txt"),
 
+
             ("aie/ProcessGraph", "RingGraph.hpp"), 
             ("aie/ProcessUnit", "Normalize.cpp"),
             ("aie/ProcessUnit", "Normalize.h"),
@@ -55,7 +56,8 @@ def generate(storePath, config):
             ("", "conn.cfg"),
             ("", "Makefile"),
             ("", "run.sh"),
-            ("", "SystemConfig.h")]
+            ("", "SystemConfig.h"),
+            ("", "matrix.txt")]
   for template in template_list:
     template_dir = os.getcwd() + "/templates/" + template[0]
     template_file = template[1]
@@ -72,6 +74,7 @@ if __name__ == '__main__':
   parser.add_argument("--BATCH", type=int)
   parser.add_argument("--ITER", type=int, default=1)
   parser.add_argument("--optimize", type=int, default=1)
+  parser.add_argument("--LEVEL1_BLOCK_SIZE", type=int)
   parser.add_argument("--BLOCK_SIZE", type=int)
   parser.add_argument("--PARALLEL_NUM", type=int)
   parser.add_argument("--IO_NUM", type=int)
@@ -85,6 +88,7 @@ if __name__ == '__main__':
     config = svd_model.getBestConfig()
   elif args.optimize == 0:
     base_config = SysConfig(args.COL, args.ROW, args.ITER, args.BATCH)
+    base_config.LEVEL1_BLOCK_SIZE = args.LEVEL1_BLOCK_SIZE
     base_config.BLOCK_SIZE = args.BLOCK_SIZE
     base_config.parallel_num = args.PARALLEL_NUM
     base_config.padding = args.COL - args.COL

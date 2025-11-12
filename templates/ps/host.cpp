@@ -61,8 +61,8 @@ int main(int argc, char** argv) {
 
     for(int k = 0;k < 1;k ++){
       int index = 0, matrix_id = 0;
-      std::string filename = to_string(k) + "test.txt";
-      generateMatrix<COL, ROW>(filename);
+      std::string filename = "matrix.txt";
+      // generateMatrix<COL, ROW>(filename);
       read<COL, ROW>(filename, data[k]);
       // for(int j = 0;j < COL;j ++) {
       //   for(int i = 0;i < ROW;i ++) {

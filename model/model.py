@@ -17,6 +17,7 @@ class SysConfig:
         self.padding = 0
         self.BATCH = BATCH
         self.ITER = ITER
+        self.LEVEL1_BLOCK_SIZE = 0
         self.BLOCK_SIZE = 0
         self.Frequency = 0
         self.aie_num = 0
@@ -46,7 +47,7 @@ class SysConfig:
 
         
     def keys(self):
-        return ('COL', 'ROW', 'padding', 'BATCH', 'BLOCK_SIZE', 'parallel_num', 'IO_NUM', 'task_num', 'orth_graph_list', 'norm_graph_list')
+        return ('COL', 'ROW', 'padding', 'BATCH', 'LEVEL1_BLOCK_SIZE', 'BLOCK_SIZE', 'parallel_num', 'IO_NUM', 'task_num', 'orth_graph_list', 'norm_graph_list')
 
     def __getitem__(self, item):
         return getattr(self, item)

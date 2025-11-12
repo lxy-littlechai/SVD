@@ -63550,7 +63550,7 @@ const int COL = 32;
 const float EPS = 1e-6;
 
 
-const int LEVEL1_BLOCK_SIZE = COL/4;
+const int LEVEL1_BLOCK_SIZE = 16;
 const int LEVEL1_BLOCK_NUM = COL/LEVEL1_BLOCK_SIZE;
 const int LEVEL1_BLOCK_PAIR_NUM = LEVEL1_BLOCK_NUM/2;
 

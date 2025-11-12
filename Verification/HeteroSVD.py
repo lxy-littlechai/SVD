@@ -73,7 +73,7 @@ class JacobiSVD:
             all_pairs.append(pairs)
         return all_pairs
 
-    def fit_block_pair(self, block1, block2, V1, V2):
+    def fit_block_pair(self, block1, block2, V1, V2, ifprint=False):
         """
         处理两个块的 Jacobi SVD
         
@@ -90,6 +90,7 @@ class JacobiSVD:
         block2 = np.array(block2, dtype=np.float64)
         V1 = np.array(V1, dtype=np.float64)
         V2 = np.array(V2, dtype=np.float64)
+
         
         n = block1.shape[0]
         size1 = block1.shape[1]
@@ -126,10 +127,28 @@ class JacobiSVD:
         
         # 进行 Jacobi 旋转
         conv = 0
+        step = 0
         all_pairs = self.offset_ring_order(total_size)
         for pairs in all_pairs:
             for (i, j) in pairs:
-                conv = max(conv, self.orthogonalize(A, V, i, j))
+                step += 1
+                if step == 1:
+                    # 以IEEE 754格式32位float输出A[i]和A[j]（以16进制字符串输出）
+                    import struct
+                    def float_to_ieee754_hex(x):
+                        # 使用大端转换, 使22->0x41b00000
+                        return '0x' + struct.pack('>f', float(x)).hex()
+                    print(A[i], A[j])
+                    # print([float_to_ieee754_hex(x) for x in A[i]],
+                    #       [float_to_ieee754_hex(x) for x in A[j]])
+                tmpconv = self.orthogonalize(A, V, i, j)
+                conv = max(conv, tmpconv)
+                print(tmpconv)
+                #if ifprint:
+                    #print("-----------------------------------------------------------------")
+                    #print(A[i], A[j])
+                    # print([float_to_ieee754_hex(x) for x in A[i]],
+                    #       [float_to_ieee754_hex(x) for x in A[j]])
         
         # 分离回两个块
         block1_new = np.zeros_like(block1)
@@ -248,6 +267,7 @@ class BlockJacobiSVD:
                 Vs.append(np.eye(self.block_size))
         
         # 迭代进行块对正交化
+        step = 0
         for it in range(self.iter):
             all_pairs = self.round_robin_pairs(num_blocks)
             max_conv = 0
@@ -255,8 +275,9 @@ class BlockJacobiSVD:
             for pairs in all_pairs:
                 for (i, j) in pairs:
                     # 对块对 (i, j) 进行正交化
+                    step = step + 1
                     blocks[i], blocks[j], Vs[i], Vs[j], conv = \
-                        self.jacobi_svd.fit_block_pair(blocks[i], blocks[j], Vs[i], Vs[j])
+                        self.jacobi_svd.fit_block_pair(blocks[i], blocks[j], Vs[i], Vs[j], ifprint=step == 1)
                     print(f"Block {i} and Block {j} convergence: {conv:.6f}")
                     max_conv = max(max_conv, conv)
             
@@ -288,10 +309,10 @@ if __name__ == "__main__":
     mat = np.zeros((col, row))  # 小一点调试方便
     for j in range(col):
         for i in range(row):
-            mat[j][i] = random.random()
-    mat = np.loadtxt("0test.txt")
-    # np.savetxt("matrix.txt", mat, fmt="%.4f")
-    svd = BlockJacobiSVD(block_size=1, iter=1)
+            mat[j][i] = random.randint(0, 50)
+    #np.savetxt("matrix.txt", mat, fmt="%.0f")
+    mat = np.loadtxt("matrix.txt")
+    svd = BlockJacobiSVD(block_size=16, iter=1)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)
