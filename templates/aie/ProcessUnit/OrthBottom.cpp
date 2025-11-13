@@ -53,14 +53,18 @@ void orthBottom(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
     float A_jj = reduce_add(acc_j.to_vector<float>());
     float A_ij = reduce_add(acc_ij.to_vector<float>());
 
-    aie::vector<float, 4> acc_res = {A_ii, A_jj, A_ij, 0};
+    aie::vector<float, 4> acc_res(A_ii, A_jj, A_ij, 0);
     aie::vector<float, 4> acc_vec = readincr_v<4>(in_acc);
     acc_res = aie::add(acc_res, acc_vec);
+
+    A_ii = acc_res[0];
+    A_jj = acc_res[1];
+    A_ij = acc_res[2];
 
     float conv;
     if(A_ii*A_jj == 0) conv = 0;
     else {
-        conv = aie::div(aie::abs(acc_res[2]), aie::sqrt(acc_res[0]*acc_res[1]));
+        conv = aie::div(aie::abs(A_ij), aie::sqrt(A_ii*A_jj));
     }
     
 

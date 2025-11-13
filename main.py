@@ -31,16 +31,18 @@ def generate(storePath, config):
   template_list = [
             ("data", "svd.py"), 
             ("data", "performance.py"), 
-            ("data/gold", "U.txt"),
-            ("data/gold", "Sigma.txt"),
-            ("data/test", "U.txt"),
-            ("data/test", "Sigma.txt"),
 
 
             ("aie/ProcessGraph", "RingGraph.hpp"), 
             ("aie/ProcessUnit", "Normalize.cpp"),
+            ("aie/ProcessUnit", "NormTop.cpp"),
+            ("aie/ProcessUnit", "NormMid.cpp"),
+            ("aie/ProcessUnit", "NormBottom.cpp"),
             ("aie/ProcessUnit", "Normalize.h"),
             ("aie/ProcessUnit", "Orthogonalize.cpp"),
+            ("aie/ProcessUnit", "OrthTop.cpp"),
+            ("aie/ProcessUnit", "OrthMid.cpp"),
+            ("aie/ProcessUnit", "OrthBottom.cpp"),
             ("aie/ProcessUnit", "Orthogonalize.h"),
             ("aie", "TopGraph.cpp"),
             ("aie", "TopGraph.h"),

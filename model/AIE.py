@@ -20,12 +20,14 @@ class SVD_AIE:
     VCK190_ROW = 8
     VCK190_PLIO_128 = 78
 
-    def __init__(self, col, row, direction, BLOCK_SIZE):
+    def __init__(self, col, row, direction, BLOCK_SIZE, IO_NUM, CascadeLevel):
         self.gragh_list = []
         self.col = col
         self.row = row
         self.direction = direction
         self.BLOCK_SIZE = BLOCK_SIZE
+        self.IO_NUM = IO_NUM
+        self.CascadeLevel = CascadeLevel
         self.usedAIE = np.zeros((self.VCK190_COL, self.VCK190_ROW), dtype=int)
         self.graph_num = 0
         self.task_num = 0
@@ -42,14 +44,18 @@ class SVD_AIE:
 
             # First Stage: try
             # try AIE
-            for j in range(2*self.BLOCK_SIZE-1):
-                valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
-                if not valid:
-                    break
-                self.placement(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
-                temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
-            if self.row != self.VCK190_ROW-1 and self.row != 0:
-                valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
+            for k in range(self.CascadeLevel):
+                for j in range(2*self.BLOCK_SIZE-1):
+                    valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
+                    if not valid:
+                        break
+                    self.placement(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
+                    temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
+
+                if self.row != self.VCK190_ROW-1 and self.row != 0:
+                    valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
+            
+
 
             # try PLIO sweep-2 + norm-1
             if self.plio_num + 3 > self.VCK190_PLIO_128:
@@ -63,15 +69,17 @@ class SVD_AIE:
 
             orthGraphInfo, normGraphInfo = self.getAIEPosition(task_id, graph_id)
             orth_graph_list.append(orthGraphInfo)
-            norm_graph_list.append(normGraphInfo)
+            if i == 0:
+                norm_graph_list.append(normGraphInfo)
 
             # Second Stage: placement
-            for i in range(2*self.BLOCK_SIZE-1):
-                self.placement(self.col, self.row, self.BLOCK_SIZE, self.usedAIE)
-                self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
-            if self.row != self.VCK190_ROW-1 and self.row != 0:
-                self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)  ## ignore memory AIE
-            
+            for k in range(self.CascadeLevel):
+                for i in range(2*self.BLOCK_SIZE-1):
+                    self.placement(self.col, self.row, self.BLOCK_SIZE, self.usedAIE)
+                    self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
+                if self.row != self.VCK190_ROW-1 and self.row != 0:
+                    self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)  ## ignore memory AIE
+            # wait to add IO NUM
             self.plio_num += 3
             self.graph_num += 1
 

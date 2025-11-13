@@ -27,6 +27,7 @@ class SysConfig:
         self.parallel_num = 0 # parallel_num means the parallel num in single graph
         self.IO_NUM = 0 # IO_NUM means the IO_NUM in single graph
         self.plio_num = 0
+        self.CascadeLevel = math.ceil(ROW/1024)
         self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
 
         self.uram = 0
@@ -47,7 +48,7 @@ class SysConfig:
 
         
     def keys(self):
-        return ('COL', 'ROW', 'padding', 'BATCH', 'LEVEL1_BLOCK_SIZE', 'BLOCK_SIZE', 'parallel_num', 'IO_NUM', 'task_num', 'orth_graph_list', 'norm_graph_list')
+        return ('COL', 'ROW', 'padding', 'BATCH', 'LEVEL1_BLOCK_SIZE', 'BLOCK_SIZE', 'parallel_num', 'IO_NUM', 'task_num', 'orth_graph_list', 'norm_graph_list', 'CascadeLevel')
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -58,6 +59,7 @@ class SVD_Model:
         self.ROW = ROW
         self.ITER = ITER
         self.BATCH = BATCH
+        self.CascadeLevel = math.ceil(self.ROW/1024)
 
         self.config_blocksize = []
         self.config_list = []
@@ -73,22 +75,22 @@ class SVD_Model:
                 while (col//block_size) % 2 != 0:
                     col += block_size
 
-            # enumerate different parallel_num
+            # enumerate different parallel_num and IO_NUM
             block_num = col//block_size
             block_pair_num = block_num//2
             for parallel_num in range(1, block_pair_num//2+1):
+                for IO_NUM in range(1, block_size):
+                    base_config = SysConfig(col, self.ROW, self.ITER, self.BATCH)
+                    base_config.BLOCK_SIZE = block_size
+                    base_config.parallel_num = parallel_num
+                    base_config.padding = col - self.COL
+                    base_config.IO_NUM = IO_NUM
 
-                base_config = SysConfig(col, self.ROW, self.ITER, self.BATCH)
-                base_config.BLOCK_SIZE = block_size
-                base_config.parallel_num = parallel_num
-                base_config.padding = col - self.COL
-                # print(base_config)
-                
-                config = self.resourceCheck(base_config)
-                if not config.valid:
-                    continue
-                self.config_list.append(config)
-                print(dict(config))
+                    config = self.resourceCheck(base_config)
+                    if not config.valid:
+                        continue
+                    self.config_list.append(config)
+                    print(dict(config))
 
     def config4Freq(self):
         #step 1. for freq & block_size, predict the config time then select the best config in the freq
@@ -177,7 +179,7 @@ class SVD_Model:
     def resourceCheck(self, config):
         # print(config)
         ## AIE Check
-        svd_aie = SVD_AIE(1, 0, 1, config.BLOCK_SIZE)
+        svd_aie = SVD_AIE(1, 0, 1, config.BLOCK_SIZE, config.IO_NUM, config.CascadeLevel)
         # aiePosition = svd_aie.getAIEPosition()
         ## PL Uram Check
         print("------", config.parallel_num)

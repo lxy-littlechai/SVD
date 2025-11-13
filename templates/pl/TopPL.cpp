@@ -146,7 +146,6 @@ void OrthDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   for(int i = 0;i < LEVEL1_BLOCK_SIZE;i ++) {
     {% for p in range(0, parallel_num) %}
       if({{2*p}} <= i%(2*parallel_num) && i%(2*parallel_num) <= {{2*p+1}}) {
-        if(i&1) {
           for(int j = 0;j < IO_NUM;j ++) {
             for(int k = 0;k < SUB_BLOCK_DATA_SIZE;k ++) {
               #pragma HLS PIPELINE II = 1
@@ -154,8 +153,6 @@ void OrthDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
               send_fifo_R[{{p}}][j].write(tmp); 
             }
           }
-        }
-        else {
           for(int j = 0;j < IO_NUM;j ++) {
             for(int k = 0;k < SUB_BLOCK_DATA_SIZE;k ++) {
               #pragma HLS PIPELINE II = 1
@@ -163,7 +160,6 @@ void OrthDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
               send_fifo_L[{{p}}][j].write(tmp); 
             }
           }
-        }
       }
     {% endfor %}
     
@@ -179,7 +175,6 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   for(int i = 0;i < LEVEL1_BLOCK_SIZE;i ++) {
     {% for p in range(0, parallel_num) %}
       if({{2*p}} <= i%(2*parallel_num) && i%(2*parallel_num) <= {{2*p+1}}) {
-        if(i&1) {
           for(int j = 0;j < IO_NUM;j ++) {
             for(int k = 0;k < SUB_BLOCK_DATA_SIZE;k ++) {
               #pragma HLS PIPELINE II = 1
@@ -188,8 +183,6 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
               
             }
           }
-        }
-        else {
           for(int j = 0;j < IO_NUM;j ++) {
             for(int k = 0;k < SUB_BLOCK_DATA_SIZE;k ++) {
               #pragma HLS PIPELINE II = 1
@@ -198,7 +191,6 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
               
             }
           }
-        }
       }
     {% endfor %}
     

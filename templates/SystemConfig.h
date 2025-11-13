@@ -16,3 +16,6 @@ const int parallel_num = {{parallel_num}};
 
 const int IO_NUM = {{IO_NUM}};
 const int SUB_BLOCK_SIZE = BLOCK_SIZE/IO_NUM;
+
+// AIE
+const int CascadeLevel = {{CascadeLevel}};

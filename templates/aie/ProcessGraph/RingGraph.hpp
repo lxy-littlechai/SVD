@@ -152,11 +152,12 @@ public:
           }
         }
 
-        if(CascadeLevel > 1) {  
+        if(CascadeLevel > 1) {
+          // connect acc
           for(int k = 0;k < CascadeLevel-1;k ++) {
             for(int i = 0;i < ROW;i ++) {
               for(int j = 0;j < COL;j ++) {
-                connect<> net(orth[k][j][i].out[2], orth[k+1][j][i].in[2]);
+                connect<> (orth[k][j][i].out[2], orth[k+1][j][i].in[2]);
               }
             }
           }

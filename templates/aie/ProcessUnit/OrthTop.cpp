@@ -53,8 +53,8 @@ void orthTop(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
     float A_jj = reduce_add(acc_j.to_vector<float>());
     float A_ij = reduce_add(acc_ij.to_vector<float>());
 
-    aie::vector<float, 4> acc_res = {A_ii, A_jj, A_ij, 0};
-    writeincr_v<4>(out_acc, acc_res);
+    aie::vector<float, 4> acc_res(A_ii, A_jj, A_ij, 0);
+    writeincr(out_acc, acc_res);
     
     
     
