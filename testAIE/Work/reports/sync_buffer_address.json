@@ -1,25 +1,14 @@
 {
     "SyncBufferAddress": [
         {
-            "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-            "Column": 1,
+            "QualifiedGraphName": "topNormGraph1_1.normGraph",
+            "Column": 0,
             "Row": 0,
-            "LocalAddress": "0x2a6e0",
+            "LocalAddress": "0x34000",
             "GlobalAddress": {
                 "Column": 0,
-                "Row": 0,
-                "Address": "0x26e0"
-            }
-        },
-        {
-            "QualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-            "Column": 1,
-            "Row": 1,
-            "LocalAddress": "0x20000",
-            "GlobalAddress": {
-                "Column": 1,
-                "Row": 0,
-                "Address": "0x0"
+                "Row": 1,
+                "Address": "0x4000"
             }
         }
     ]

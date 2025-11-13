@@ -30,29 +30,23 @@
         "graphs": {
             "graph0": {
                 "id": 0,
-                "name": "topSweepGraph1_1",
+                "name": "topNormGraph1_1",
                 "core_columns": [
-                    1,
-                    1
-                ],
-                "core_rows": [
-                    0,
-                    1
-                ],
-                "iteration_memory_columns": [
-                    0,
-                    1
-                ],
-                "iteration_memory_rows": [
-                    0,
                     0
                 ],
+                "core_rows": [
+                    0
+                ],
+                "iteration_memory_columns": [
+                    0
+                ],
+                "iteration_memory_rows": [
+                    1
+                ],
                 "iteration_memory_addresses": [
-                    9956,
-                    4
+                    16388
                 ],
                 "multirate_triggers": [
-                    false,
                     false
                 ],
                 "pl_kernel_instance_names": [],
@@ -62,20 +56,12 @@
         "TileMapping": {
             "AIEKernelToTileMapping": [
                 {
-                    "graph": "topSweepGraph1_1.sweepGraph",
+                    "graph": "topNormGraph1_1.normGraph",
                     "tile": "aie",
-                    "column": 1,
+                    "column": 0,
                     "row": 0,
                     "schedule": 0,
-                    "function": "orthTop<16>.orth[0][0][0]"
-                },
-                {
-                    "graph": "topSweepGraph1_1.sweepGraph",
-                    "tile": "aie",
-                    "column": 1,
-                    "row": 1,
-                    "schedule": 0,
-                    "function": "orthBottom<16>.orth[1][0][0]"
+                    "function": "normalize<32>.norm[0][0]"
                 }
             ],
             "SharedBufferToTileMapping": []
@@ -85,100 +71,38 @@
         "PLIOs": {
             "plio0": {
                 "id": 0,
-                "name": "topSweepGraph1_1.in[0][0][0]",
-                "logical_name": "1_1_sweep_in_L_cas0_io0",
+                "name": "topNormGraph1_1.in[0][0]",
+                "logical_name": "1_1_norm_in__cas0",
                 "shim_column": 6,
                 "slaveOrMaster": 0,
                 "stream_id": 0
             },
             "plio1": {
                 "id": 1,
-                "name": "topSweepGraph1_1.out[0][0][0]",
-                "logical_name": "1_1_sweep_out_L_cas0_io0",
+                "name": "topNormGraph1_1.out[0][0]",
+                "logical_name": "1_1_norm_out__cas0",
                 "shim_column": 6,
                 "slaveOrMaster": 1,
                 "stream_id": 0
-            },
-            "plio2": {
-                "id": 2,
-                "name": "topSweepGraph1_1.in[0][0][1]",
-                "logical_name": "1_1_sweep_in_R_cas0_io0",
-                "shim_column": 6,
-                "slaveOrMaster": 0,
-                "stream_id": 1
-            },
-            "plio3": {
-                "id": 3,
-                "name": "topSweepGraph1_1.out[0][0][1]",
-                "logical_name": "1_1_sweep_out_R_cas0_io0",
-                "shim_column": 6,
-                "slaveOrMaster": 1,
-                "stream_id": 1
-            },
-            "plio4": {
-                "id": 4,
-                "name": "topSweepGraph1_1.in[1][0][0]",
-                "logical_name": "1_1_sweep_in_L_cas1_io0",
-                "shim_column": 6,
-                "slaveOrMaster": 0,
-                "stream_id": 6
-            },
-            "plio5": {
-                "id": 5,
-                "name": "topSweepGraph1_1.out[1][0][0]",
-                "logical_name": "1_1_sweep_out_L_cas1_io0",
-                "shim_column": 6,
-                "slaveOrMaster": 1,
-                "stream_id": 5
-            },
-            "plio6": {
-                "id": 6,
-                "name": "topSweepGraph1_1.in[1][0][1]",
-                "logical_name": "1_1_sweep_in_R_cas1_io0",
-                "shim_column": 6,
-                "slaveOrMaster": 0,
-                "stream_id": 4
-            },
-            "plio7": {
-                "id": 7,
-                "name": "topSweepGraph1_1.out[1][0][1]",
-                "logical_name": "1_1_sweep_out_R_cas1_io0",
-                "shim_column": 6,
-                "slaveOrMaster": 1,
-                "stream_id": 3
             }
         },
         "EventGraphs": {
             "graph0": {
                 "id": 0,
-                "name": "topSweepGraph1_1",
+                "name": "topNormGraph1_1",
                 "core_columns": [
-                    1,
-                    1
+                    0
                 ],
                 "core_rows": [
-                    0,
-                    1
+                    0
                 ],
                 "dma_columns": [
                     0,
-                    0,
-                    1,
-                    2,
-                    1,
-                    1,
-                    1,
-                    1
+                    0
                 ],
                 "dma_rows": [
                     0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    2,
-                    2
+                    1
                 ]
             }
         },
@@ -191,36 +115,12 @@
             "GMIOs": {},
             "PLIOs": {
                 "plio0": {
-                    "logical_name": "1_1_sweep_in_L_cas0_io0",
-                    "data_width": 32
+                    "logical_name": "1_1_norm_in__cas0",
+                    "data_width": 128
                 },
                 "plio1": {
-                    "logical_name": "1_1_sweep_out_L_cas0_io0",
-                    "data_width": 32
-                },
-                "plio2": {
-                    "logical_name": "1_1_sweep_in_R_cas0_io0",
-                    "data_width": 32
-                },
-                "plio3": {
-                    "logical_name": "1_1_sweep_out_R_cas0_io0",
-                    "data_width": 32
-                },
-                "plio4": {
-                    "logical_name": "1_1_sweep_in_L_cas1_io0",
-                    "data_width": 32
-                },
-                "plio5": {
-                    "logical_name": "1_1_sweep_out_L_cas1_io0",
-                    "data_width": 32
-                },
-                "plio6": {
-                    "logical_name": "1_1_sweep_in_R_cas1_io0",
-                    "data_width": 32
-                },
-                "plio7": {
-                    "logical_name": "1_1_sweep_out_R_cas1_io0",
-                    "data_width": 32
+                    "logical_name": "1_1_norm_out__cas0",
+                    "data_width": 128
                 }
             }
         }

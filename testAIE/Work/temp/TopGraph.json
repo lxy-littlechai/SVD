@@ -4,9 +4,9 @@
     "blockTypes": {
         "b0": {
             "type": "function",
-            "function": "orthTop<16>",
-            "template": "template<int ROW> void orthTop(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in0, adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in1, input_stream<float> *in_params, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out0, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out1, output_stream<float> *out_acc)",
-            "srcFile": "aie/ProcessUnit/OrthTop.cpp",
+            "function": "normalize<32>",
+            "template": "template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out)",
+            "srcFile": "aie/ProcessUnit/Normalize.cpp",
             "ports": {
                 "pi0": {
                     "type": "mem",
@@ -15,234 +15,46 @@
                     "parameterIndex": 0,
                     "bufferPort": true,
                     "portName": "in[0]",
-                    "varName": "in0",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict",
+                    "varName": "in",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict",
                     "dimensions": [
-                        17
+                        33
                     ]
-                },
-                "pi1": {
-                    "type": "mem",
-                    "elementType": "float",
-                    "direction": "in",
-                    "parameterIndex": 1,
-                    "bufferPort": true,
-                    "portName": "in[1]",
-                    "varName": "in1",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict",
-                    "dimensions": [
-                        17
-                    ]
-                },
-                "pi2": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "parameterIndex": 2,
-                    "portName": "in[2]",
-                    "varName": "in_params",
-                    "cppDataType": "input_stream<float> *"
                 },
                 "po0": {
                     "type": "mem",
                     "elementType": "float",
                     "direction": "out",
-                    "parameterIndex": 3,
+                    "parameterIndex": 1,
                     "bufferPort": true,
                     "portName": "out[0]",
-                    "varName": "out0",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict",
+                    "varName": "out",
+                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict",
                     "dimensions": [
-                        17
+                        33
                     ]
-                },
-                "po1": {
-                    "type": "mem",
-                    "elementType": "float",
-                    "direction": "out",
-                    "parameterIndex": 4,
-                    "bufferPort": true,
-                    "portName": "out[1]",
-                    "varName": "out1",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict",
-                    "dimensions": [
-                        17
-                    ]
-                },
-                "po2": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "parameterIndex": 5,
-                    "portName": "out[2]",
-                    "varName": "out_acc",
-                    "cppDataType": "output_stream<float> *"
                 }
             }
         },
         "b1": {
-            "type": "function",
-            "function": "orthBottom<16>",
-            "template": "template<int ROW> void orthBottom(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in0, adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in1, input_stream<float> *in_acc, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out0, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out1, output_stream<float> *out_params)",
-            "srcFile": "aie/ProcessUnit/OrthBottom.cpp",
+            "type": "plio",
             "ports": {
-                "pi0": {
-                    "type": "mem",
-                    "elementType": "float",
-                    "direction": "in",
-                    "parameterIndex": 0,
-                    "bufferPort": true,
-                    "portName": "in[0]",
-                    "varName": "in0",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict",
-                    "dimensions": [
-                        17
-                    ]
-                },
-                "pi1": {
-                    "type": "mem",
-                    "elementType": "float",
-                    "direction": "in",
-                    "parameterIndex": 1,
-                    "bufferPort": true,
-                    "portName": "in[1]",
-                    "varName": "in1",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict",
-                    "dimensions": [
-                        17
-                    ]
-                },
-                "pi2": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "parameterIndex": 2,
-                    "portName": "in[2]",
-                    "varName": "in_acc",
-                    "cppDataType": "input_stream<float> *"
-                },
                 "po0": {
-                    "type": "mem",
-                    "elementType": "float",
-                    "direction": "out",
-                    "parameterIndex": 3,
-                    "bufferPort": true,
-                    "portName": "out[0]",
-                    "varName": "out0",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict",
-                    "dimensions": [
-                        17
-                    ]
-                },
-                "po1": {
-                    "type": "mem",
-                    "elementType": "float",
-                    "direction": "out",
-                    "parameterIndex": 4,
-                    "bufferPort": true,
-                    "portName": "out[1]",
-                    "varName": "out1",
-                    "cppDataType": "adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict",
-                    "dimensions": [
-                        17
-                    ]
-                },
-                "po2": {
                     "type": "stream",
                     "elementType": "float",
                     "direction": "out",
-                    "parameterIndex": 5,
-                    "portName": "out[2]",
-                    "varName": "out_params",
-                    "cppDataType": "output_stream<float> *"
+                    "portName": "in[0][0].out[0]"
                 }
             }
         },
         "b2": {
             "type": "plio",
             "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[0][0][0].out[0]"
-                }
-            }
-        },
-        "b3": {
-            "type": "plio",
-            "ports": {
                 "pi0": {
                     "type": "stream",
                     "elementType": "float",
                     "direction": "in",
-                    "portName": "out[0][0][0].in[0]"
-                }
-            }
-        },
-        "b4": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[0][0][1].out[0]"
-                }
-            }
-        },
-        "b5": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[0][0][1].in[0]"
-                }
-            }
-        },
-        "b6": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[1][0][0].out[0]"
-                }
-            }
-        },
-        "b7": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[1][0][0].in[0]"
-                }
-            }
-        },
-        "b8": {
-            "type": "plio",
-            "ports": {
-                "po0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "out",
-                    "portName": "in[1][0][1].out[0]"
-                }
-            }
-        },
-        "b9": {
-            "type": "plio",
-            "ports": {
-                "pi0": {
-                    "type": "stream",
-                    "elementType": "float",
-                    "direction": "in",
-                    "portName": "out[1][0][1].in[0]"
+                    "portName": "out[0][0].in[0]"
                 }
             }
         }
@@ -254,405 +66,104 @@
                 1,
                 0
             ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0]",
-            "runTime": 1.0,
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1, 1>",
+            "qualifiedGraphName": "topNormGraph1_1.normGraph",
+            "qualifiedName": "topNormGraph1_1.normGraph.norm[0][0]",
+            "runTime": 0.8999,
             "fabric": "me",
             "instanceId": 0,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:49:33"
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:264:22"
         },
         "i1": {
             "blockType": "b1",
             "graphIds": [
-                1,
                 0
             ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1.sweepGraph",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[1][0][0]",
-            "runTime": 1.0,
-            "fabric": "me",
-            "instanceId": 1,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:57:46"
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1, 1>",
+            "qualifiedGraphName": "topNormGraph1_1",
+            "qualifiedName": "topNormGraph1_1.in[0][0]",
+            "dataWidth": 128,
+            "dataFile": "data/1_1_norm_in_cas0.txt",
+            "logicalName": "1_1_norm_in__cas0",
+            "instanceId": 0,
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:12:5"
         },
         "i2": {
             "blockType": "b2",
             "graphIds": [
                 0
             ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.in[0][0][0]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_inL0.txt",
-            "logicalName": "1_1_sweep_in_L_cas0_io0",
-            "instanceId": 0,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:51:5"
-        },
-        "i3": {
-            "blockType": "b3",
-            "graphIds": [
-                0
-            ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.out[0][0][0]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_out_L_cas0_io0",
-            "logicalName": "1_1_sweep_out_L_cas0_io0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1, 1>",
+            "qualifiedGraphName": "topNormGraph1_1",
+            "qualifiedName": "topNormGraph1_1.out[0][0]",
+            "dataWidth": 128,
+            "dataFile": "data/1_1_norm_in_cas0.txt",
+            "logicalName": "1_1_norm_out__cas0",
             "instanceId": 1,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:52:5"
-        },
-        "i4": {
-            "blockType": "b4",
-            "graphIds": [
-                0
-            ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.in[0][0][1]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_inR0.txt",
-            "logicalName": "1_1_sweep_in_R_cas0_io0",
-            "instanceId": 2,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:51:5"
-        },
-        "i5": {
-            "blockType": "b5",
-            "graphIds": [
-                0
-            ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.out[0][0][1]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_out_R_cas0_io0",
-            "logicalName": "1_1_sweep_out_R_cas0_io0",
-            "instanceId": 3,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:52:5"
-        },
-        "i6": {
-            "blockType": "b6",
-            "graphIds": [
-                0
-            ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.in[1][0][0]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_inL1.txt",
-            "logicalName": "1_1_sweep_in_L_cas1_io0",
-            "instanceId": 4,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:51:5"
-        },
-        "i7": {
-            "blockType": "b7",
-            "graphIds": [
-                0
-            ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.out[1][0][0]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_out_L_cas1_io0",
-            "logicalName": "1_1_sweep_out_L_cas1_io0",
-            "instanceId": 5,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:52:5"
-        },
-        "i8": {
-            "blockType": "b8",
-            "graphIds": [
-                0
-            ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.in[1][0][1]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_inR1.txt",
-            "logicalName": "1_1_sweep_in_R_cas1_io0",
-            "instanceId": 6,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:51:5"
-        },
-        "i9": {
-            "blockType": "b9",
-            "graphIds": [
-                0
-            ],
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "qualifiedGraphName": "topSweepGraph1_1",
-            "qualifiedName": "topSweepGraph1_1.out[1][0][1]",
-            "dataWidth": 32,
-            "dataFile": "data/1_1_sweep_out_R_cas1_io0",
-            "logicalName": "1_1_sweep_out_R_cas1_io0",
-            "instanceId": 7,
-            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:52:5"
+            "loc": "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:13:5"
         }
     },
     "portInstances": {
         "i0_pi0": {
             "margin": 0,
             "port": "pi0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[0][0][0].in[0]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[0]",
-            "instanceId": 8,
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1, 1>",
+            "portName": "norm[0][0].in[0]",
+            "qualifiedName": "topNormGraph1_1.normGraph.norm[0][0].in[0]",
+            "instanceId": 2,
             "blockInstance": "i0",
-            "blockSize": 68,
+            "blockSize": 132,
             "dimensions": [
-                17
+                33
             ]
-        },
-        "i0_pi1": {
-            "margin": 0,
-            "port": "pi1",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[0][0][0].in[1]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[1]",
-            "instanceId": 9,
-            "blockInstance": "i0",
-            "blockSize": 68,
-            "dimensions": [
-                17
-            ]
-        },
-        "i0_pi2": {
-            "margin": 0,
-            "port": "pi2",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[0][0][0].in[2]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[2]",
-            "instanceId": 10,
-            "blockInstance": "i0"
         },
         "i0_po0": {
             "margin": 0,
             "port": "po0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[0][0][0].out[0]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]",
-            "instanceId": 11,
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1, 1>",
+            "portName": "norm[0][0].out[0]",
+            "qualifiedName": "topNormGraph1_1.normGraph.norm[0][0].out[0]",
+            "instanceId": 3,
             "blockInstance": "i0",
-            "blockSize": 68,
+            "blockSize": 132,
             "dimensions": [
-                17
+                33
             ]
-        },
-        "i0_po1": {
-            "margin": 0,
-            "port": "po1",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[0][0][0].out[1]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]",
-            "instanceId": 12,
-            "blockInstance": "i0",
-            "blockSize": 68,
-            "dimensions": [
-                17
-            ]
-        },
-        "i0_po2": {
-            "margin": 0,
-            "port": "po2",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[0][0][0].out[2]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[2]",
-            "instanceId": 13,
-            "blockInstance": "i0"
-        },
-        "i1_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[1][0][0].in[0]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].in[0]",
-            "instanceId": 14,
-            "blockInstance": "i1",
-            "blockSize": 68,
-            "dimensions": [
-                17
-            ]
-        },
-        "i1_pi1": {
-            "margin": 0,
-            "port": "pi1",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[1][0][0].in[1]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].in[1]",
-            "instanceId": 15,
-            "blockInstance": "i1",
-            "blockSize": 68,
-            "dimensions": [
-                17
-            ]
-        },
-        "i1_pi2": {
-            "margin": 0,
-            "port": "pi2",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[1][0][0].in[2]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].in[2]",
-            "instanceId": 16,
-            "blockInstance": "i1"
         },
         "i1_po0": {
             "margin": 0,
             "port": "po0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[1][0][0].out[0]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].out[0]",
-            "instanceId": 17,
-            "blockInstance": "i1",
-            "blockSize": 68,
-            "dimensions": [
-                17
-            ]
-        },
-        "i1_po1": {
-            "margin": 0,
-            "port": "po1",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[1][0][0].out[1]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].out[1]",
-            "instanceId": 18,
-            "blockInstance": "i1",
-            "blockSize": 68,
-            "dimensions": [
-                17
-            ]
-        },
-        "i1_po2": {
-            "margin": 0,
-            "port": "po2",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "orth[1][0][0].out[2]",
-            "qualifiedName": "topSweepGraph1_1.sweepGraph.orth[1][0][0].out[2]",
-            "instanceId": 19,
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1, 1>",
+            "portName": "in[0][0].out[0]",
+            "qualifiedName": "topNormGraph1_1.in[0][0].out[0]",
+            "qualifiedGraphPortAliasNames": [
+                "topNormGraph1_1.normGraph.in[0][0]"
+            ],
             "blockInstance": "i1"
         },
-        "i2_po0": {
+        "i2_pi0": {
             "margin": 0,
-            "port": "po0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "in[0][0][0].out[0]",
-            "qualifiedName": "topSweepGraph1_1.in[0][0][0].out[0]",
+            "port": "pi0",
+            "graphName": "topNormGraph1_1",
+            "graphType": "TopNormGraph<32, 1, 0, 0, 1, 1>",
+            "portName": "out[0][0].in[0]",
+            "qualifiedName": "topNormGraph1_1.out[0][0].in[0]",
             "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.in[0][0][0]"
+                "topNormGraph1_1.normGraph.out[0][0]"
             ],
             "blockInstance": "i2"
-        },
-        "i3_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "out[0][0][0].in[0]",
-            "qualifiedName": "topSweepGraph1_1.out[0][0][0].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.out[0][0][0]"
-            ],
-            "blockInstance": "i3"
-        },
-        "i4_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "in[0][0][1].out[0]",
-            "qualifiedName": "topSweepGraph1_1.in[0][0][1].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.in[0][0][1]"
-            ],
-            "blockInstance": "i4"
-        },
-        "i5_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "out[0][0][1].in[0]",
-            "qualifiedName": "topSweepGraph1_1.out[0][0][1].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.out[0][0][1]"
-            ],
-            "blockInstance": "i5"
-        },
-        "i6_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "in[1][0][0].out[0]",
-            "qualifiedName": "topSweepGraph1_1.in[1][0][0].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.in[1][0][0]"
-            ],
-            "blockInstance": "i6"
-        },
-        "i7_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "out[1][0][0].in[0]",
-            "qualifiedName": "topSweepGraph1_1.out[1][0][0].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.out[1][0][0]"
-            ],
-            "blockInstance": "i7"
-        },
-        "i8_po0": {
-            "margin": 0,
-            "port": "po0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "in[1][0][1].out[0]",
-            "qualifiedName": "topSweepGraph1_1.in[1][0][1].out[0]",
-            "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.in[1][0][1]"
-            ],
-            "blockInstance": "i8"
-        },
-        "i9_pi0": {
-            "margin": 0,
-            "port": "pi0",
-            "graphName": "topSweepGraph1_1",
-            "graphType": "TopSweepGraph<16, 1, 1, 1, 1, 0, 1, 2>",
-            "portName": "out[1][0][1].in[0]",
-            "qualifiedName": "topSweepGraph1_1.out[1][0][1].in[0]",
-            "qualifiedGraphPortAliasNames": [
-                "topSweepGraph1_1.sweepGraph.out[1][0][1]"
-            ],
-            "blockInstance": "i9"
         }
     },
     "nets": {
         "net0": {
-            "srcInstance": "i2",
-            "srcPort": "i2_po0",
+            "srcInstance": "i1",
+            "srcPort": "i1_po0",
             "dstInstance": "i0",
             "dstPort": "i0_pi0",
             "varNames": [
@@ -660,223 +171,46 @@
                 ""
             ],
             "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:89:25",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:127:13"
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:40:21",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:291:9"
             ]
         },
         "net1": {
-            "srcInstance": "i4",
-            "srcPort": "i4_po0",
-            "dstInstance": "i0",
-            "dstPort": "i0_pi1",
-            "varNames": [
-                "",
-                ""
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:89:25",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:128:13"
-            ]
-        },
-        "net2": {
             "srcInstance": "i0",
             "srcPort": "i0_po0",
-            "dstInstance": "i3",
-            "dstPort": "i3_pi0",
+            "dstInstance": "i2",
+            "dstPort": "i2_pi0",
             "varNames": [
                 "",
                 ""
             ],
             "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:149:14",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:90:25"
-            ]
-        },
-        "net3": {
-            "srcInstance": "i0",
-            "srcPort": "i0_po1",
-            "dstInstance": "i5",
-            "dstPort": "i5_pi0",
-            "varNames": [
-                "",
-                ""
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:146:14",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:90:25"
-            ]
-        },
-        "net4": {
-            "srcInstance": "i6",
-            "srcPort": "i6_po0",
-            "dstInstance": "i1",
-            "dstPort": "i1_pi0",
-            "varNames": [
-                "",
-                ""
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:89:25",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:127:13"
-            ]
-        },
-        "net5": {
-            "srcInstance": "i8",
-            "srcPort": "i8_po0",
-            "dstInstance": "i1",
-            "dstPort": "i1_pi1",
-            "varNames": [
-                "",
-                ""
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:89:25",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:128:13"
-            ]
-        },
-        "net6": {
-            "srcInstance": "i1",
-            "srcPort": "i1_po0",
-            "dstInstance": "i7",
-            "dstPort": "i7_pi0",
-            "varNames": [
-                "",
-                ""
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:149:14",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:90:25"
-            ]
-        },
-        "net7": {
-            "srcInstance": "i1",
-            "srcPort": "i1_po1",
-            "dstInstance": "i9",
-            "dstPort": "i9_pi0",
-            "varNames": [
-                "",
-                ""
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:146:14",
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:90:25"
-            ]
-        },
-        "net8": {
-            "srcInstance": "i0",
-            "srcPort": "i0_po2",
-            "dstInstance": "i1",
-            "dstPort": "i1_pi2",
-            "varNames": [
-                "net"
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:159:15"
-            ]
-        },
-        "net9": {
-            "srcInstance": "i1",
-            "srcPort": "i1_po2",
-            "dstInstance": "i0",
-            "dstPort": "i0_pi2",
-            "varNames": [
-                ""
-            ],
-            "locs": [
-                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:167:13"
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/ProcessGraph/RingGraph.hpp:292:9",
+                "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/aie/TopGraph.h:41:21"
             ]
         }
     },
     "debugInfo": {
         "i0": {
-            "varName": "orth[0][0][0]"
+            "varName": "norm[0][0]"
         },
         "i1": {
-            "varName": "orth[1][0][0]"
+            "varName": "in[0][0]"
         },
         "i2": {
-            "varName": "in[0][0][0]"
-        },
-        "i3": {
-            "varName": "out[0][0][0]"
-        },
-        "i4": {
-            "varName": "in[0][0][1]"
-        },
-        "i5": {
-            "varName": "out[0][0][1]"
-        },
-        "i6": {
-            "varName": "in[1][0][0]"
-        },
-        "i7": {
-            "varName": "out[1][0][0]"
-        },
-        "i8": {
-            "varName": "in[1][0][1]"
-        },
-        "i9": {
-            "varName": "out[1][0][1]"
+            "varName": "out[0][0]"
         },
         "i0_pi0": {
-            "varName": "orth[0][0][0].in[0]"
-        },
-        "i0_pi1": {
-            "varName": "orth[0][0][0].in[1]"
-        },
-        "i0_pi2": {
-            "varName": "orth[0][0][0].in[2]"
+            "varName": "norm[0][0].in[0]"
         },
         "i0_po0": {
-            "varName": "orth[0][0][0].out[0]"
-        },
-        "i0_po1": {
-            "varName": "orth[0][0][0].out[1]"
-        },
-        "i0_po2": {
-            "varName": "orth[0][0][0].out[2]"
-        },
-        "i1_pi0": {
-            "varName": "orth[1][0][0].in[0]"
-        },
-        "i1_pi1": {
-            "varName": "orth[1][0][0].in[1]"
-        },
-        "i1_pi2": {
-            "varName": "orth[1][0][0].in[2]"
+            "varName": "norm[0][0].out[0]"
         },
         "i1_po0": {
-            "varName": "orth[1][0][0].out[0]"
+            "varName": "in[0][0].out[0]"
         },
-        "i1_po1": {
-            "varName": "orth[1][0][0].out[1]"
-        },
-        "i1_po2": {
-            "varName": "orth[1][0][0].out[2]"
-        },
-        "i2_po0": {
-            "varName": "in[0][0][0].out[0]"
-        },
-        "i3_pi0": {
-            "varName": "out[0][0][0].in[0]"
-        },
-        "i4_po0": {
-            "varName": "in[0][0][1].out[0]"
-        },
-        "i5_pi0": {
-            "varName": "out[0][0][1].in[0]"
-        },
-        "i6_po0": {
-            "varName": "in[1][0][0].out[0]"
-        },
-        "i7_pi0": {
-            "varName": "out[1][0][0].in[0]"
-        },
-        "i8_po0": {
-            "varName": "in[1][0][1].out[0]"
-        },
-        "i9_pi0": {
-            "varName": "out[1][0][1].in[0]"
+        "i2_pi0": {
+            "varName": "out[0][0].in[0]"
         }
     },
     "graphFilesInfo": {

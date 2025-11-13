@@ -10,7 +10,7 @@
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {0, "topSweepGraph1_1", nullptr, nullptr, nullptr, {1, 1}, {0, 1}, {0, 1}, {0, 0}, {0x26e4, 0x4}, {0, 0}, {}, {}, {}, {},  }, 
+    {0, "topNormGraph1_1", nullptr, nullptr, nullptr, {0}, {0}, {0}, {1}, {0x4004}, {0}, {}, {}, {}, {},  }, 
   };
   const int NUM_GRAPH = 1;
 
@@ -18,16 +18,10 @@
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "topSweepGraph1_1.in[0][0][0]", "1_1_sweep_in_L_cas0_io0", 6, 0, 0},
-    {1, "topSweepGraph1_1.out[0][0][0]", "1_1_sweep_out_L_cas0_io0", 6, 1, 0},
-    {2, "topSweepGraph1_1.in[0][0][1]", "1_1_sweep_in_R_cas0_io0", 6, 0, 1},
-    {3, "topSweepGraph1_1.out[0][0][1]", "1_1_sweep_out_R_cas0_io0", 6, 1, 1},
-    {4, "topSweepGraph1_1.in[1][0][0]", "1_1_sweep_in_L_cas1_io0", 6, 0, 6},
-    {5, "topSweepGraph1_1.out[1][0][0]", "1_1_sweep_out_L_cas1_io0", 6, 1, 5},
-    {6, "topSweepGraph1_1.in[1][0][1]", "1_1_sweep_in_R_cas1_io0", 6, 0, 4},
-    {7, "topSweepGraph1_1.out[1][0][1]", "1_1_sweep_out_R_cas1_io0", 6, 1, 3},
+    {0, "topNormGraph1_1.in[0][0]", "1_1_norm_in__cas0", 6, 0, 0},
+    {1, "topNormGraph1_1.out[0][0]", "1_1_norm_out__cas0", 6, 1, 0},
   };
-  const int NUM_PLIO = 8;
+  const int NUM_PLIO = 2;
 
 
 /************************** ADF API initializer *****************************/
@@ -66,8 +60,6 @@
 #if !defined(__CDO__) && !defined(__AIECONTROLCODE__)
 
 // Kernel Stub Definition
-  template<int ROW> void orthBottom(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in0, adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in1, input_stream<float> *in_acc, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out0, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out1, output_stream<float> *out_params) { /* Stub */ } 
-  template<int ROW> void orthTop(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in0, adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in1, input_stream<float> *in_params, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out0, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out1, output_stream<float> *out_acc) { /* Stub */ } 
-  template void orthBottom<16>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,input_stream<float> *,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,output_stream<float> *); /* explicit template instantiation */ 
-  template void orthTop<16>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,input_stream<float> *,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,output_stream<float> *); /* explicit template instantiation */ 
+  template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out) { /* Stub */ } 
+  template void normalize<32>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict); /* explicit template instantiation */ 
 #endif

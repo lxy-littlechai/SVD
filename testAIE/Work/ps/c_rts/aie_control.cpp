@@ -240,60 +240,45 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(49, 0), XAIE_PL_MOD, XAIE_EVENT_SWITCH_B, 8, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_NORTH);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(0, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(0, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(0, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
+	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(0, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(1, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(1, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(1, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(1, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(1, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(1, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(2, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(2, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(2, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(2, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(2, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(2, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(3, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(3, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(3, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(3, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(3, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(3, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(4, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(4, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(4, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(4, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(4, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(4, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(5, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(5, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(5, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(5, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(5, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(5, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(6, 1), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(6, 1), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(6, 2), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
 	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(6, 2), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(6, 3), XAIE_CORE_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_SOUTH | XAIE_EVENT_BROADCAST_WEST | XAIE_EVENT_BROADCAST_EAST);
-	XAie_EventBroadcastBlockDir(&DevInst, XAie_TileLoc(6, 3), XAIE_MEM_MOD, XAIE_EVENT_SWITCH_A, 7, XAIE_EVENT_BROADCAST_ALL);
 	XAie_EventBroadcast(&DevInst, XAie_TileLoc(0, 0), XAIE_PL_MOD, 8, XAIE_EVENT_BROADCAST_A_8_PL);
 	return adf::return_code::ok;
   }
 
-  bool topSweepGraph1_1_load_elf(const std::string& work_path, std::vector<std::string>& elfInfoPath)
+  bool topNormGraph1_1_load_elf(const std::string& work_path, std::vector<std::string>& elfInfoPath)
   {
 	#ifdef __PS_INIT_AIE__
 
 	std::string work_dir = (work_path.empty() ?  "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/./Work" : work_path);
-	printf("Loading elfs of graph topSweepGraph1_1...\n");
-	if(XAie_LoadElf(&DevInst, XAie_TileLoc(1, 1), (work_dir + "/aie/1_0/Release/1_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
+	printf("Loading elfs of graph topNormGraph1_1...\n");
+	if(XAie_LoadElf(&DevInst, XAie_TileLoc(0, 1), (work_dir + "/aie/0_0/Release/0_0").c_str(), XAIE_ENABLE)!=XAIE_OK)
 	{
-		std::cerr << "ERROR: Failed to load elf for core(1,0)" << std::endl;
-		return false;
-	}
-	if(XAie_LoadElf(&DevInst, XAie_TileLoc(1, 2), (work_dir + "/aie/1_1/Release/1_1").c_str(), XAIE_ENABLE)!=XAIE_OK)
-	{
-		std::cerr << "ERROR: Failed to load elf for core(1,1)" << std::endl;
+		std::cerr << "ERROR: Failed to load elf for core(0,0)" << std::endl;
 		return false;
 	}
 	#endif
@@ -301,312 +286,105 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	return true;
   }
 
-  void topSweepGraph1_1_init(const std::string& work_path)
+  void topNormGraph1_1_init(const std::string& work_path)
   {
 
-	printf("Initializing graph topSweepGraph1_1...\n");
+	printf("Initializing graph topNormGraph1_1...\n");
     #ifdef __PS_INIT_AIE__
 
 	std::string work_dir = (work_path.empty() ?  "/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/./Work" : work_path);
-	// S_AIE_OUT_ch0_C1_R0 M_NORTH_ch5_C1_R0 net8
+	// S_EAST_ch3_C0_R0 M_S2MM_DMA_ch0_C0_R0 net0
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 1), CORE, 0, NORTH, 5);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(0, 1), EAST, 3, DMA, 0);
 
-	// S_AIE_OUT_ch0_C1_R1 M_SOUTH_ch3_C1_R1 net9
+	// S_EAST_ch3_C1_R0 M_WEST_ch3_C1_R0 net0
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 2), CORE, 0, SOUTH, 3);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 1), EAST, 3, WEST, 3);
 
-	// S_EAST_ch1_C1_R0 M_WEST_ch2_C1_R0 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 1), EAST, 1, WEST, 2);
-
-	// S_EAST_ch1_C2_R0 M_WEST_ch1_C2_R0 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 1), EAST, 1, WEST, 1);
-
-	// S_EAST_ch1_C3_R0 M_WEST_ch1_C3_R0 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 1), EAST, 1, WEST, 1);
-
-	// S_EAST_ch1_C4_R0 M_WEST_ch1_C4_R0 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 1), EAST, 1, WEST, 1);
-
-	// S_EAST_ch1_C5_R0 M_WEST_ch1_C5_R0 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 1), EAST, 1, WEST, 1);
-
-	// S_EAST_ch2_C0_R0 M_S2MM_DMA_ch0_C0_R0 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(0, 1), EAST, 2, DMA, 0);
-
-	// S_EAST_ch2_C1_R0 M_WEST_ch3_C1_R0 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 1), EAST, 2, WEST, 3);
-
-	// S_EAST_ch2_C2_R0 M_WEST_ch2_C2_R0 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 1), EAST, 2, WEST, 2);
-
-	// S_EAST_ch2_C3_R0 M_WEST_ch2_C3_R0 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 1), EAST, 2, WEST, 2);
-
-	// S_EAST_ch2_C4_R0 M_WEST_ch2_C4_R0 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 1), EAST, 2, WEST, 2);
-
-	// S_EAST_ch2_C5_R0 M_WEST_ch2_C5_R0 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 1), EAST, 2, WEST, 2);
-
-	// S_EAST_ch3_C0_R0 M_S2MM_DMA_ch1_C0_R0 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(0, 1), EAST, 3, DMA, 1);
-
-	// S_EAST_ch3_C1_R0 M_S2MM_DMA_ch0_C1_R0 net5
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 1), EAST, 3, DMA, 0);
-
-	// S_EAST_ch3_C2_R0 M_WEST_ch3_C2_R0 net5
+	// S_EAST_ch3_C2_R0 M_WEST_ch3_C2_R0 net0
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 1), EAST, 3, WEST, 3);
 
-	// S_EAST_ch3_C2_R1 M_S2MM_DMA_ch0_C2_R1 net4
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 2), EAST, 3, DMA, 0);
-
-	// S_EAST_ch3_C3_R0 M_WEST_ch3_C3_R0 net5
+	// S_EAST_ch3_C3_R0 M_WEST_ch3_C3_R0 net0
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 1), EAST, 3, WEST, 3);
 
-	// S_EAST_ch3_C3_R1 M_WEST_ch3_C3_R1 net4
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 2), EAST, 3, WEST, 3);
-
-	// S_EAST_ch3_C4_R0 M_WEST_ch3_C4_R0 net5
+	// S_EAST_ch3_C4_R0 M_WEST_ch3_C4_R0 net0
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 1), EAST, 3, WEST, 3);
 
-	// S_EAST_ch3_C4_R1 M_WEST_ch3_C4_R1 net4
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 2), EAST, 3, WEST, 3);
-
-	// S_EAST_ch3_C5_R0 M_WEST_ch3_C5_R0 net5
+	// S_EAST_ch3_C5_R0 M_WEST_ch3_C5_R0 net0
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 1), EAST, 3, WEST, 3);
 
-	// S_EAST_ch3_C5_R1 M_WEST_ch3_C5_R1 net4
+	// S_MM2S_DMA_ch0_C0_R1 M_EAST_ch3_C0_R1 net1
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 2), EAST, 3, WEST, 3);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(0, 2), DMA, 0, EAST, 3);
 
-	// S_MM2S_DMA_ch0_C1_R1 M_EAST_ch2_C1_R1 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 2), DMA, 0, EAST, 2);
-
-	// S_MM2S_DMA_ch0_C1_R2 M_EAST_ch2_C1_R2 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 3), DMA, 0, EAST, 2);
-
-	// S_MM2S_DMA_ch1_C1_R1 M_EAST_ch3_C1_R1 net3
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 2), DMA, 1, EAST, 3);
-
-	// S_MM2S_DMA_ch1_C1_R2 M_EAST_ch3_C1_R2 net7
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 3), DMA, 1, EAST, 3);
-
-	// S_NORTH_ch0_C6_R0 M_SOUTH_ch0_C6_R0 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), NORTH, 0, SOUTH, 0);
-
-	// S_NORTH_ch1_C6_R0 M_SOUTH_ch1_C6_R0 net3
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), NORTH, 1, SOUTH, 1);
-
-	// S_NORTH_ch2_C6_R0 M_SOUTH_ch2_C6_R0 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), NORTH, 2, SOUTH, 2);
-
-	// S_NORTH_ch2_C6_R1 M_SOUTH_ch2_C6_R1 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 2), NORTH, 2, SOUTH, 2);
-
-	// S_NORTH_ch3_C1_R0 M_AIE_IN_ch0_C1_R0 net9
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 1), NORTH, 3, CORE, 0);
-
-	// S_NORTH_ch3_C6_R0 M_SOUTH_ch3_C6_R0 net7
+	// S_NORTH_ch3_C6_R0 M_SOUTH_ch3_C6_R0 net1
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), NORTH, 3, SOUTH, 3);
 
-	// S_NORTH_ch3_C6_R1 M_SOUTH_ch3_C6_R1 net7
+	// S_SHIM_NORTH_ch3_C6 M_SHIM_SOUTH_ch0_C6 net1
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 2), NORTH, 3, SOUTH, 3);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), NORTH, 3, SOUTH, 0);
 
-	// S_SHIM_NORTH_ch0_C6 M_SHIM_SOUTH_ch0_C6 net2
+	// S_SHIM_SOUTH_ch0_C6 M_SHIM_NORTH_ch5_C6 net0
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), NORTH, 0, SOUTH, 0);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 0, NORTH, 5);
 
-	// S_SHIM_NORTH_ch1_C6 M_SHIM_SOUTH_ch1_C6 net3
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), NORTH, 1, SOUTH, 1);
-
-	// S_SHIM_NORTH_ch2_C6 M_SHIM_SOUTH_ch5_C6 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), NORTH, 2, SOUTH, 5);
-
-	// S_SHIM_NORTH_ch3_C6 M_SHIM_SOUTH_ch3_C6 net7
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), NORTH, 3, SOUTH, 3);
-
-	// S_SHIM_SOUTH_ch0_C6 M_SHIM_NORTH_ch2_C6 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 0, NORTH, 2);
-
-	// S_SHIM_SOUTH_ch1_C6 M_SHIM_NORTH_ch3_C6 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 1, NORTH, 3);
-
-	// S_SHIM_SOUTH_ch4_C6 M_SHIM_NORTH_ch5_C6 net5
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 4, NORTH, 5);
-
-	// S_SHIM_SOUTH_ch6_C6 M_SHIM_NORTH_ch4_C6 net4
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 0), SOUTH, 6, NORTH, 4);
-
-	// S_SOUTH_ch2_C6_R0 M_WEST_ch1_C6_R0 net0
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), SOUTH, 2, WEST, 1);
-
-	// S_SOUTH_ch3_C6_R0 M_WEST_ch2_C6_R0 net1
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), SOUTH, 3, WEST, 2);
-
-	// S_SOUTH_ch4_C6_R0 M_NORTH_ch5_C6_R0 net4
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), SOUTH, 4, NORTH, 5);
-
-	// S_SOUTH_ch5_C1_R1 M_AIE_IN_ch0_C1_R1 net8
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 2), SOUTH, 5, CORE, 0);
-
-	// S_SOUTH_ch5_C6_R0 M_WEST_ch3_C6_R0 net5
+	// S_SOUTH_ch5_C6_R0 M_WEST_ch3_C6_R0 net0
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 1), SOUTH, 5, WEST, 3);
 
-	// S_SOUTH_ch5_C6_R1 M_WEST_ch3_C6_R1 net4
+	// S_WEST_ch3_C1_R1 M_EAST_ch3_C1_R1 net1
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 2), SOUTH, 5, WEST, 3);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(1, 2), WEST, 3, EAST, 3);
 
-	// S_WEST_ch2_C2_R1 M_EAST_ch2_C2_R1 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 2), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C2_R2 M_EAST_ch2_C2_R2 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 3), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C3_R1 M_EAST_ch2_C3_R1 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 2), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C3_R2 M_EAST_ch2_C3_R2 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 3), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C4_R1 M_EAST_ch2_C4_R1 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 2), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C4_R2 M_EAST_ch2_C4_R2 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 3), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C5_R1 M_EAST_ch2_C5_R1 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 2), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C5_R2 M_EAST_ch2_C5_R2 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 3), WEST, 2, EAST, 2);
-
-	// S_WEST_ch2_C6_R1 M_SOUTH_ch0_C6_R1 net2
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 2), WEST, 2, SOUTH, 0);
-
-	// S_WEST_ch2_C6_R2 M_SOUTH_ch2_C6_R2 net6
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 3), WEST, 2, SOUTH, 2);
-
-	// S_WEST_ch3_C2_R1 M_EAST_ch3_C2_R1 net3
+	// S_WEST_ch3_C2_R1 M_EAST_ch3_C2_R1 net1
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 2), WEST, 3, EAST, 3);
 
-	// S_WEST_ch3_C2_R2 M_EAST_ch3_C2_R2 net7
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(2, 3), WEST, 3, EAST, 3);
-
-	// S_WEST_ch3_C3_R1 M_EAST_ch3_C3_R1 net3
+	// S_WEST_ch3_C3_R1 M_EAST_ch3_C3_R1 net1
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 2), WEST, 3, EAST, 3);
 
-	// S_WEST_ch3_C3_R2 M_EAST_ch3_C3_R2 net7
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(3, 3), WEST, 3, EAST, 3);
-
-	// S_WEST_ch3_C4_R1 M_EAST_ch3_C4_R1 net3
+	// S_WEST_ch3_C4_R1 M_EAST_ch3_C4_R1 net1
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 2), WEST, 3, EAST, 3);
 
-	// S_WEST_ch3_C4_R2 M_EAST_ch3_C4_R2 net7
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(4, 3), WEST, 3, EAST, 3);
-
-	// S_WEST_ch3_C5_R1 M_EAST_ch3_C5_R1 net3
+	// S_WEST_ch3_C5_R1 M_EAST_ch3_C5_R1 net1
 
 	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 2), WEST, 3, EAST, 3);
 
-	// S_WEST_ch3_C5_R2 M_EAST_ch3_C5_R2 net7
+	// S_WEST_ch3_C6_R1 M_SOUTH_ch3_C6_R1 net1
 
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(5, 3), WEST, 3, EAST, 3);
-
-	// S_WEST_ch3_C6_R1 M_SOUTH_ch1_C6_R1 net3
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 2), WEST, 3, SOUTH, 1);
-
-	// S_WEST_ch3_C6_R2 M_SOUTH_ch3_C6_R2 net7
-
-	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 3), WEST, 3, SOUTH, 3);
+	XAie_StrmConnCctEnable(&DevInst, XAie_TileLoc(6, 2), WEST, 3, SOUTH, 3);
 
 
-	printf("Resetting cores of graph topSweepGraph1_1...\n");
-	XAie_CoreReset(&DevInst, XAie_TileLoc(1, 1));
-	XAie_CoreUnreset(&DevInst, XAie_TileLoc(1, 1));
-	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(1, 1));
-	XAie_CoreReset(&DevInst, XAie_TileLoc(1, 2));
-	XAie_CoreUnreset(&DevInst, XAie_TileLoc(1, 2));
-	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(1, 2));
+	printf("Resetting cores of graph topNormGraph1_1...\n");
+	XAie_CoreReset(&DevInst, XAie_TileLoc(0, 1));
+	XAie_CoreUnreset(&DevInst, XAie_TileLoc(0, 1));
+	XAie_CoreConfigureDone(&DevInst, XAie_TileLoc(0, 1));
 
-	printf("Configuring DMAs of graph topSweepGraph1_1...\n");
+	printf("Configuring DMAs of graph topNormGraph1_1...\n");
 
-	//Setting buffer buf0 of topSweepGraph1_1.sweepGraph.orth[0][0][0].in[0]
+	//Setting buffer buf0 of topNormGraph1_1.normGraph.norm[0][0].in[0]
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 68);
+		XAie_DmaSetAddrLen(&DmaInst, 0x0, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
 		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 1), 0);
 	}
 
-	//Setting buffer buf0d of topSweepGraph1_1.sweepGraph.orth[0][0][0].in[0]
+	//Setting buffer buf0d of topNormGraph1_1.normGraph.norm[0][0].in[0]
 	{
 		XAie_DmaDesc DmaInst;
 		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x3fa0, 68);
+		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
@@ -616,197 +394,36 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(0, 1), 0, DMA_S2MM, 0);
 	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(0, 1), 0, DMA_S2MM);
 
-	//Setting buffer buf1 of topSweepGraph1_1.sweepGraph.orth[0][0][0].in[1]
+	//Setting buffer buf1 of topNormGraph1_1.normGraph.norm[0][0].out[0]
 	{
 		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 0), XAie_LockInit(2, 1));
-		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 1), 2);
-	}
-
-	//Setting buffer buf1d of topSweepGraph1_1.sweepGraph.orth[0][0][0].in[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x1fa0, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 0), XAie_LockInit(3, 1));
-		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 1), 3);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(0, 1), 1, DMA_S2MM, 2);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(0, 1), 1, DMA_S2MM);
-
-	//Setting buffer buf4 of topSweepGraph1_1.sweepGraph.orth[1][0][0].in[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x0, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
-		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(2, 2), 0);
-	}
-
-	//Setting buffer buf4d of topSweepGraph1_1.sweepGraph.orth[1][0][0].in[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(2, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
-		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(2, 2), 1);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(2, 2), 0, DMA_S2MM, 0);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(2, 2), 0, DMA_S2MM);
-
-	//Setting buffer buf5 of topSweepGraph1_1.sweepGraph.orth[1][0][0].in[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 0), XAie_LockInit(0, 1));
-		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 0);
-	}
-
-	//Setting buffer buf5d of topSweepGraph1_1.sweepGraph.orth[1][0][0].in[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 1));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 0), XAie_LockInit(1, 1));
-		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 1), 1);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 1), 0, DMA_S2MM, 0);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 1), 0, DMA_S2MM);
-
-	//Setting buffer buf2 of topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x1fa0, 68);
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 2));
+		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 1), XAie_LockInit(0, 0));
 		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 2), 0);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 2), 0);
 	}
 
-	//Setting buffer buf2d of topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]
+	//Setting buffer buf1d of topNormGraph1_1.normGraph.norm[0][0].out[0]
 	{
 		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2000, 68);
+		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(0, 2));
+		XAie_DmaSetAddrLen(&DmaInst, 0x0, 132);
 		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 1), XAie_LockInit(1, 0));
 		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
 		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 2), 1);
+		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(0, 2), 1);
 	}
 
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 2), 0, DMA_MM2S, 0);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 2), 0, DMA_MM2S);
+	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(0, 2), 0, DMA_MM2S, 0);
+	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(0, 2), 0, DMA_MM2S);
 
-	//Setting buffer buf3 of topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 1), XAie_LockInit(2, 0));
-		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 2), 2);
-	}
-
-	//Setting buffer buf3d of topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 2));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 1), XAie_LockInit(3, 0));
-		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 2), 3);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 2), 1, DMA_MM2S, 2);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 2), 1, DMA_MM2S);
-
-	//Setting buffer buf7 of topSweepGraph1_1.sweepGraph.orth[1][0][0].out[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x4000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(2, 1), XAie_LockInit(2, 0));
-		XAie_DmaSetNextBd(&DmaInst, 3, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 3), 2);
-	}
-
-	//Setting buffer buf7d of topSweepGraph1_1.sweepGraph.orth[1][0][0].out[1]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x6000, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(3, 1), XAie_LockInit(3, 0));
-		XAie_DmaSetNextBd(&DmaInst, 2, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 3), 3);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 3), 1, DMA_MM2S, 2);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 3), 1, DMA_MM2S);
-
-	//Setting buffer buf6 of topSweepGraph1_1.sweepGraph.orth[1][0][0].out[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x60, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(0, 1), XAie_LockInit(0, 0));
-		XAie_DmaSetNextBd(&DmaInst, 1, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 3), 0);
-	}
-
-	//Setting buffer buf6d of topSweepGraph1_1.sweepGraph.orth[1][0][0].out[0]
-	{
-		XAie_DmaDesc DmaInst;
-		XAie_DmaDescInit(&DevInst, &DmaInst, XAie_TileLoc(1, 3));
-		XAie_DmaSetAddrLen(&DmaInst, 0x2060, 68);
-		XAie_DmaSetLock(&DmaInst, XAie_LockInit(1, 1), XAie_LockInit(1, 0));
-		XAie_DmaSetNextBd(&DmaInst, 0, XAIE_ENABLE);
-		XAie_DmaEnableBd(&DmaInst);
-		XAie_DmaWriteBd(&DevInst, &DmaInst, XAie_TileLoc(1, 3), 1);
-	}
-
-	XAie_DmaChannelPushBdToQueue(&DevInst, XAie_TileLoc(1, 3), 0, DMA_MM2S, 0);
-	XAie_DmaChannelEnable(&DevInst, XAie_TileLoc(1, 3), 0, DMA_MM2S);
-
-	printf("Configuring PL-Interface for graph topSweepGraph1_1...\n");
+	printf("Configuring PL-Interface for graph topNormGraph1_1...\n");
 	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 0);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 0, PLIF_WIDTH_32);
-	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(6, 0), 0, PLIF_WIDTH_32);
-
 	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 1);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 1, PLIF_WIDTH_32);
-	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(6, 0), 1, PLIF_WIDTH_32);
-
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 6);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 6, PLIF_WIDTH_32);
-	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(6, 0), 5, PLIF_WIDTH_32);
-
-	XAie_PlIfBliBypassDisable(&DevInst, XAie_TileLoc(6, 0), 4);
-	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 4, PLIF_WIDTH_32);
-	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(6, 0), 3, PLIF_WIDTH_32);
+	XAie_PlToAieIntfEnable (&DevInst, XAie_TileLoc(6, 0), 0, PLIF_WIDTH_128);
+	XAie_AieToPlIntfEnable (&DevInst, XAie_TileLoc(6, 0), 0, PLIF_WIDTH_128);
 
 
     #endif
@@ -814,19 +431,17 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 	return;
   }
 
- void topSweepGraph1_1_core_debug_halt()
+ void topNormGraph1_1_core_debug_halt()
   {
-	printf("Putting core(s) of graph topSweepGraph1_1 on halt state for debugging...\n");
-	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(1, 1));
-	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(1, 2));
+	printf("Putting core(s) of graph topNormGraph1_1 on halt state for debugging...\n");
+	XAie_CoreDebugHalt(&DevInst, XAie_TileLoc(0, 1));
 	return;
   }
 
-  void topSweepGraph1_1_core_enable()
+  void topNormGraph1_1_core_enable()
   {
-	printf("Enabling core(s) of graph topSweepGraph1_1...\n");
-	XAie_CoreEnable(&DevInst, XAie_TileLoc(1,1 ));
-	XAie_CoreEnable(&DevInst, XAie_TileLoc(1,2 ));
+	printf("Enabling core(s) of graph topNormGraph1_1...\n");
+	XAie_CoreEnable(&DevInst, XAie_TileLoc(0,1 ));
 	return;
   }
 
@@ -850,8 +465,8 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   void enableClockGating()
   {
-    XAie_LocType locs[20] = {XAie_TileLoc(0, 1), XAie_TileLoc(1, 1), XAie_TileLoc(1, 2), XAie_TileLoc(1, 3), XAie_TileLoc(2, 1), XAie_TileLoc(2, 2), XAie_TileLoc(2, 3), XAie_TileLoc(3, 1), XAie_TileLoc(3, 2), XAie_TileLoc(3, 3), XAie_TileLoc(4, 1), XAie_TileLoc(4, 2), XAie_TileLoc(4, 3), XAie_TileLoc(5, 1), XAie_TileLoc(5, 2), XAie_TileLoc(5, 3), XAie_TileLoc(6, 1), XAie_TileLoc(6, 2), XAie_TileLoc(6, 3), XAie_TileLoc(6, 0), };
-    XAie_PmRequestTiles(&DevInst, locs, 20);
+    XAie_LocType locs[15] = {XAie_TileLoc(0, 1), XAie_TileLoc(0, 2), XAie_TileLoc(1, 1), XAie_TileLoc(1, 2), XAie_TileLoc(2, 1), XAie_TileLoc(2, 2), XAie_TileLoc(3, 1), XAie_TileLoc(3, 2), XAie_TileLoc(4, 1), XAie_TileLoc(4, 2), XAie_TileLoc(5, 1), XAie_TileLoc(5, 2), XAie_TileLoc(6, 1), XAie_TileLoc(6, 2), XAie_TileLoc(6, 0), };
+    XAie_PmRequestTiles(&DevInst, locs, 15);
 
     XAie_TurnEccOn(&DevInst);
   }
@@ -877,7 +492,7 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   adf::GraphConfig GraphConfigurations[] = {
   //{id, name, graphLoadElfFunc, graphInitFunc, graphDebugHalt, coreColumns, coreRows, iterMemColumns, iterMemRows, iterMemAddrs, triggered, plKernelInstanceNames, plAxiLiteModes, plDriverStartFuncs, plDriverCheckIPDoneFuncs}
-    {0, "topSweepGraph1_1", &topSweepGraph1_1_load_elf, &topSweepGraph1_1_init, &topSweepGraph1_1_core_debug_halt, {1, 1}, {0, 1}, {0, 1}, {0, 0}, {0x26e4, 0x4}, {0, 0}, {}, {}, {}, {},  }, 
+    {0, "topNormGraph1_1", &topNormGraph1_1_load_elf, &topNormGraph1_1_init, &topNormGraph1_1_core_debug_halt, {0}, {0}, {0}, {1}, {0x4004}, {0}, {}, {}, {}, {},  }, 
   };
   const int NUM_GRAPH = 1;
 
@@ -885,16 +500,10 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 
   adf::PLIOConfig PLIOConfigurations[] = {
   //{id, name, loginal_name, shim_column, slaveOrMaster, streamId}
-    {0, "topSweepGraph1_1.in[0][0][0]", "1_1_sweep_in_L_cas0_io0", 6, 0, 0},
-    {1, "topSweepGraph1_1.out[0][0][0]", "1_1_sweep_out_L_cas0_io0", 6, 1, 0},
-    {2, "topSweepGraph1_1.in[0][0][1]", "1_1_sweep_in_R_cas0_io0", 6, 0, 1},
-    {3, "topSweepGraph1_1.out[0][0][1]", "1_1_sweep_out_R_cas0_io0", 6, 1, 1},
-    {4, "topSweepGraph1_1.in[1][0][0]", "1_1_sweep_in_L_cas1_io0", 6, 0, 6},
-    {5, "topSweepGraph1_1.out[1][0][0]", "1_1_sweep_out_L_cas1_io0", 6, 1, 5},
-    {6, "topSweepGraph1_1.in[1][0][1]", "1_1_sweep_in_R_cas1_io0", 6, 0, 4},
-    {7, "topSweepGraph1_1.out[1][0][1]", "1_1_sweep_out_R_cas1_io0", 6, 1, 3},
+    {0, "topNormGraph1_1.in[0][0]", "1_1_norm_in__cas0", 6, 0, 0},
+    {1, "topNormGraph1_1.out[0][0]", "1_1_norm_out__cas0", 6, 1, 0},
   };
-  const int NUM_PLIO = 8;
+  const int NUM_PLIO = 2;
 
 
 /************************** AIE driver and ADF API initializer *****************************/
@@ -975,8 +584,6 @@ XAie_InstDeclare(DevInst, &ConfigPtr);   // Declare global device instance
 #if !defined(__CDO__) && !defined(__AIECONTROLCODE__)
 
 // Kernel Stub Definition
-  template<int ROW> void orthBottom(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in0, adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in1, input_stream<float> *in_acc, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out0, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out1, output_stream<float> *out_params) { /* Stub */ } 
-  template<int ROW> void orthTop(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in0, adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in1, input_stream<float> *in_params, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out0, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out1, output_stream<float> *out_acc) { /* Stub */ } 
-  template void orthBottom<16>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,input_stream<float> *,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,output_stream<float> *); /* explicit template instantiation */ 
-  template void orthTop<16>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<17>>> &__restrict,input_stream<float> *,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<17>>> &__restrict,output_stream<float> *); /* explicit template instantiation */ 
+  template<int ROW> void normalize(adf::input_buffer<float, adf::extents<1 + ROW>> &__restrict in, adf::output_buffer<float, adf::extents<1 + ROW>> &__restrict out) { /* Stub */ } 
+  template void normalize<32>(adf::io_buffer<float, adf::direction::in, adf::io_buffer_config<adf::extents<33>>> &__restrict,adf::io_buffer<float, adf::direction::out, adf::io_buffer_config<adf::extents<33>>> &__restrict); /* explicit template instantiation */ 
 #endif

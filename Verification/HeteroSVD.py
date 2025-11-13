@@ -69,11 +69,11 @@ class JacobiSVD:
         # 返回每一轮的配对序列
         all_pairs = []
         for sweep in range(n):
-            pairs = [(ring0[j, sweep+1], ring1[j, sweep+1]) for j in range(n//2)]
+            pairs = [(ring0[j, sweep], ring1[j, sweep]) for j in range(n//2)]
             all_pairs.append(pairs)
         return all_pairs
 
-    def fit_block_pair(self, block1, block2, V1, V2):
+    def fit_block_pair(self, block2, block1, V2, V1):
         """
         处理两个块的 Jacobi SVD
         
@@ -95,6 +95,7 @@ class JacobiSVD:
         size1 = block1.shape[1]
         size2 = block2.shape[1]
         total_size = size1 + size2
+        # print(f"size1: {size1}, size2: {size2}, total_size: {total_size}")
         
         # 按奇偶穿插组合两个块
         # block1 的列放在偶数索引位置，block2 的列放在奇数索引位置
@@ -129,7 +130,9 @@ class JacobiSVD:
         all_pairs = self.offset_ring_order(total_size)
         for pairs in all_pairs:
             for (i, j) in pairs:
-                conv = max(conv, self.orthogonalize(A, V, i, j))
+                tmp_conv = self.orthogonalize(A, V, i, j)
+                print(f"sub-block {i} and sub-block {j} convergence: {tmp_conv:.6f}")
+                conv = max(conv, tmp_conv)
         
         # 分离回两个块
         block1_new = np.zeros_like(block1)
@@ -228,7 +231,6 @@ class BlockJacobiSVD:
         # 如果块数是奇数，调整为偶数
         if num_blocks % 2 != 0:
             num_blocks += 1
-        
         # 初始化块和对应的 V 矩阵
         blocks = []
         Vs = []
@@ -237,7 +239,6 @@ class BlockJacobiSVD:
             start_idx = i * self.block_size
             end_idx = min((i + 1) * self.block_size, n_cols)
             actual_size = end_idx - start_idx
-            
             if actual_size > 0:
                 block = A[:, start_idx:end_idx]
                 blocks.append(block)
@@ -289,9 +290,10 @@ if __name__ == "__main__":
     for j in range(col):
         for i in range(row):
             mat[j][i] = random.random()
-    mat = np.loadtxt("0test.txt")
     # np.savetxt("matrix.txt", mat, fmt="%.4f")
-    svd = BlockJacobiSVD(block_size=1, iter=1)
+    mat = np.loadtxt("matrix.txt")
+    
+    svd = BlockJacobiSVD(block_size=col//2, iter=1)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)

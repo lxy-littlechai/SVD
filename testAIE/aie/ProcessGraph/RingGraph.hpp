@@ -152,25 +152,26 @@ public:
           }
         }
 
-        // connect acc
-        for(int k = 0;k < CascadeLevel-1;k ++) {
-          for(int i = 0;i < ROW;i ++) {
-            for(int j = 0;j < COL;j ++) {
-              connect<> net(orth[k][j][i].out[2], orth[k+1][j][i].in[2]);
+        if(CascadeLevel > 1) {  
+          for(int k = 0;k < CascadeLevel-1;k ++) {
+            for(int i = 0;i < ROW;i ++) {
+              for(int j = 0;j < COL;j ++) {
+                connect<> net(orth[k][j][i].out[2], orth[k+1][j][i].in[2]);
+              }
             }
           }
-        }
 
-        //connect params
-        for(int i = 0;i < ROW;i ++) {
-          for(int j = 0;j < COL;j ++) {
-            connect<> (orth[CascadeLevel-1][j][i].out[2], orth[0][j][i].in[2]);
-          }
-        }
-        for(int k = 1;k < CascadeLevel-1;k ++) {
+          //connect params
           for(int i = 0;i < ROW;i ++) {
             for(int j = 0;j < COL;j ++) {
-              connect<> (orth[CascadeLevel-1][j][i].out[2], orth[k][j][i].in[3]);
+              connect<> (orth[CascadeLevel-1][j][i].out[2], orth[0][j][i].in[2]);
+            }
+          }
+          for(int k = 1;k < CascadeLevel-1;k ++) {
+            for(int i = 0;i < ROW;i ++) {
+              for(int j = 0;j < COL;j ++) {
+                connect<> (orth[CascadeLevel-1][j][i].out[2], orth[k][j][i].in[3]);
+              }
             }
           }
         }
@@ -248,41 +249,85 @@ public:
 
 };
 
-template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION>
+template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
 class RingNormGraph: public graph {
 private:
-  kernel norm[GraphSize];
+  kernel norm[CascadeLevel][GraphSize];
 
 public:
-  input_port in[GraphSize];
-  output_port out[GraphSize];
+  input_port in[CascadeLevel][GraphSize];
+  output_port out[CascadeLevel][GraphSize];
 
   RingNormGraph() {
-    for(int i = 0;i < GraphSize; i ++) {
-      norm[i] = kernel::create(normalize<MatrixROW>);
-      adf::source(norm[i]) = "aie/ProcessUnit/Normalize.cpp";
-      runtime<ratio>(norm[i]) = 0.9;
+    if(CascadeLevel == 1) {
+      for(int i = 0;i < GraphSize; i ++) {
+        norm[0][i] = kernel::create(normalize<MatrixROW>);
+        adf::source(norm[0][i]) = "aie/ProcessUnit/Normalize.cpp";
+        runtime<ratio>(norm[0][i]) = 0.9;
+      }
+    }
+    else {
+      for(int i = 0;i < GraphSize; i ++) {
+        norm[0][i] = kernel::create(normTop<MatrixROW>);
+        adf::source(norm[0][i]) = "aie/ProcessUnit/NormTop.cpp";
+        runtime<ratio>(norm[0][i]) = 0.9;
+      }
+      for(int k = 1;k < CascadeLevel-1;k ++) {
+        for(int i = 0;i < GraphSize; i ++) {
+          norm[k][i] = kernel::create(normMid<MatrixROW>);
+          adf::source(norm[k][i]) = "aie/ProcessUnit/NormMid.cpp";
+          runtime<ratio>(norm[k][i]) = 0.9;
+        }
+      }
+      for(int i = 0;i < GraphSize; i ++) {
+        norm[CascadeLevel-1][i] = kernel::create(normBottom<MatrixROW>);
+        adf::source(norm[CascadeLevel-1][i]) = "aie/ProcessUnit/NormBottom.cpp";
+        runtime<ratio>(norm[CascadeLevel-1][i]) = 0.9;
+      }
     }
 
-    for(int i = 0;i < GraphSize;i ++) {
-      connect<> (in[i], norm[i].in[0]);
-      connect<> (norm[i].out[0], out[i]);
+    for(int k = 0;k < CascadeLevel;k ++) {
+      for(int i = 0;i < GraphSize;i ++) {
+        connect<> (in[k][i], norm[k][i].in[0]);
+        connect<> (norm[k][i].out[0], out[k][i]);
+      }
+    }
+    
+    if(CascadeLevel > 1) {
+      // connect param
+      for(int k = 0;k < CascadeLevel-1;k ++) {
+        for(int i = 0;i < GraphSize;i ++) {
+          connect<> (norm[CascadeLevel-1][i].out[1], norm[k][i].in[1]);
+        }
+      }
+
+      // connect acc
+      for(int k = 0;k < CascadeLevel-2;k ++) {
+        for(int i = 0;i < GraphSize;i ++) {
+          connect<> (norm[k][i].out[1], norm[k+1][i].in[2]);
+        }
+      }
+      for(int i = 0;i < GraphSize;i ++) {
+        connect<> (norm[0][i].out[1], norm[1][i].in[1]);
+      }
     }
 
     int row = START_ROW, col = START_COL, direction = DIRECTION;
-    for(int i = 0;i < GraphSize;i ++) {
-        location<kernel>(norm[i]) = tile(col, row);
-        row += direction;
-        if(row == VCK190_ROW && direction == 1) {
-            row = VCK190_ROW-1;
-            col += GraphSize+1;
-            direction *= -1;
-        }
-        else if(row == -1 && direction == -1) {
-            row = 0;
-            col += GraphSize+1;
-            direction *= -1;
-        }
+    for(int k = 0;k < CascadeLevel;k ++) {
+      for(int i = 0;i < GraphSize;i ++) {
+          location<kernel>(norm[k][i]) = tile(col, row);
+          row += direction;
+          if(row == VCK190_ROW && direction == 1) {
+              row = VCK190_ROW-1;
+              col += GraphSize+1;
+              direction *= -1;
+          }
+          else if(row == -1 && direction == -1) {
+              row = 0;
+              col += GraphSize+1;
+              direction *= -1;
+          }
+      }
     }
 
   }

@@ -1,182 +1,55 @@
 {
   "NodeConstraints": {
-    "topSweepGraph1_1.sweepGraph.orth[0][0][0]": {
+    "topNormGraph1_1.normGraph.norm[0][0]": {
       "tile": {
-        "column": 1,
+        "column": 0,
         "row": 0,
         "tile_type": "core"
       },
       "reserved_memory": {
         "column": 0,
-        "row": 0,
-        "bankId": 1,
-        "offset": 1760
-      }
-    },
-    "topSweepGraph1_1.sweepGraph.orth[1][0][0]": {
-      "tile": {
-        "column": 1,
         "row": 1,
-        "tile_type": "core"
-      },
-      "reserved_memory": {
-        "column": 1,
-        "row": 0,
-        "bankId": 0,
+        "bankId": 2,
         "offset": 0
       }
     },
-    "1_1_sweep_in_L_cas0_io0": {
+    "1_1_norm_in__cas0": {
       "shim": {
         "column": 6,
         "channel": 0
       }
     },
-    "1_1_sweep_out_L_cas0_io0": {
+    "1_1_norm_out__cas0": {
       "shim": {
         "column": 6,
         "channel": 0
-      }
-    },
-    "1_1_sweep_in_R_cas0_io0": {
-      "shim": {
-        "column": 6,
-        "channel": 1
-      }
-    },
-    "1_1_sweep_out_R_cas0_io0": {
-      "shim": {
-        "column": 6,
-        "channel": 1
-      }
-    },
-    "1_1_sweep_in_L_cas1_io0": {
-      "shim": {
-        "column": 6,
-        "channel": 6
-      }
-    },
-    "1_1_sweep_out_L_cas1_io0": {
-      "shim": {
-        "column": 6,
-        "channel": 5
-      }
-    },
-    "1_1_sweep_in_R_cas1_io0": {
-      "shim": {
-        "column": 6,
-        "channel": 4
-      }
-    },
-    "1_1_sweep_out_R_cas1_io0": {
-      "shim": {
-        "column": 6,
-        "channel": 3
       }
     }
   },
   "PortConstraints": {
-    "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[0]": {
+    "topNormGraph1_1.normGraph.norm[0][0].in[0]": {
       "buffers": [{
           "column": 0,
           "row": 0,
-          "bankId": 3,
-          "offset": 0
-        }, {
-          "column": 0,
-          "row": 0,
-          "bankId": 1,
-          "offset": 8096
-        }]
-    },
-    "topSweepGraph1_1.sweepGraph.orth[0][0][0].in[1]": {
-      "buffers": [{
-          "column": 0,
-          "row": 0,
-          "bankId": 2,
+          "bankId": 0,
           "offset": 0
         }, {
           "column": 0,
           "row": 0,
-          "bankId": 0,
-          "offset": 8096
-        }]
-    },
-    "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[0]": {
-      "buffers": [{
-          "column": 1,
-          "row": 1,
-          "bankId": 0,
-          "offset": 8096
-        }, {
-          "column": 1,
-          "row": 1,
           "bankId": 1,
           "offset": 0
         }]
     },
-    "topSweepGraph1_1.sweepGraph.orth[0][0][0].out[1]": {
+    "topNormGraph1_1.normGraph.norm[0][0].out[0]": {
       "buffers": [{
-          "column": 1,
+          "column": 0,
           "row": 1,
-          "bankId": 2,
+          "bankId": 1,
           "offset": 0
         }, {
-          "column": 1,
-          "row": 1,
-          "bankId": 3,
-          "offset": 0
-        }]
-    },
-    "topSweepGraph1_1.sweepGraph.orth[1][0][0].in[0]": {
-      "buffers": [{
-          "column": 2,
+          "column": 0,
           "row": 1,
           "bankId": 0,
-          "offset": 0
-        }, {
-          "column": 2,
-          "row": 1,
-          "bankId": 1,
-          "offset": 0
-        }]
-    },
-    "topSweepGraph1_1.sweepGraph.orth[1][0][0].in[1]": {
-      "buffers": [{
-          "column": 1,
-          "row": 0,
-          "bankId": 1,
-          "offset": 0
-        }, {
-          "column": 1,
-          "row": 0,
-          "bankId": 2,
-          "offset": 0
-        }]
-    },
-    "topSweepGraph1_1.sweepGraph.orth[1][0][0].out[0]": {
-      "buffers": [{
-          "column": 1,
-          "row": 2,
-          "bankId": 0,
-          "offset": 96
-        }, {
-          "column": 1,
-          "row": 2,
-          "bankId": 1,
-          "offset": 96
-        }]
-    },
-    "topSweepGraph1_1.sweepGraph.orth[1][0][0].out[1]": {
-      "buffers": [{
-          "column": 1,
-          "row": 2,
-          "bankId": 2,
-          "offset": 0
-        }, {
-          "column": 1,
-          "row": 2,
-          "bankId": 3,
           "offset": 0
         }]
     }

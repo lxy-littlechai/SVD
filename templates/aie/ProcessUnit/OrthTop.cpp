@@ -55,36 +55,16 @@ void orthTop(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
 
     aie::vector<float, 4> acc_res = {A_ii, A_jj, A_ij, 0};
     writeincr_v<4>(out_acc, acc_res);
-
-    // float conv;
-    // if(A_ii*A_jj == 0) conv = 0;
-    // else {
-    //     conv = aie::div(aie::abs(A_ij), aie::sqrt(A_ii*A_jj));
-    // }
     
+    
+    
+    chess_separator_scheduler();
 
-    ApIter = aie::begin_vector<w>(in0);
-    AqIter = aie::begin_vector<w>(in1);
-
-    //  if(conv == 0) {
-    //     for (int i = 0; i < ROW/w; i++) 
-    //     chess_prepare_for_pipelining
-    //     chess_loop_range(ROW/w,ROW/w)
-    //     {
-
-    //             *BpIter ++ = *ApIter ++;
-    //             *BqIter ++ = *AqIter ++;
-
-    //     }
-    // }
-    // else { 
     float c = readincr(in_params);
     float s = readincr(in_params);
 
-        // float tau = aie::div(A_ii-A_jj, aie::mul((float)2.0, A_ij));
-        // float t = aie::div(sign(tau), aie::add(aie::abs(tau), aie::sqrt(aie::mul(tau, tau) + 1)));
-        // float c= aie::div(1, aie::sqrt(t * t + 1));
-        // float s = aie::mul(t, c);
+    ApIter = aie::begin_vector<w>(in0);
+    AqIter = aie::begin_vector<w>(in1);
 
         aie::vector<float, w> vec_s = aie::broadcast<float, w>(s);
         

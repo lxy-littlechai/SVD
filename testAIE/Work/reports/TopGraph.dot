@@ -1,31 +1,10 @@
 digraph root {
-"PT0:i0[1.00]" [style=filled, fillcolor=aquamarine];
-"PT1:i1[1.00]" [style=filled, fillcolor=coral];
+"PT0:i0[0.90]" [style=filled, fillcolor=aquamarine];
+"i1" [shape=box style=filled, fillcolor=lightgrey];
 "i2" [shape=box style=filled, fillcolor=lightgrey];
-"i3" [shape=box style=filled, fillcolor=lightgrey];
-"i4" [shape=box style=filled, fillcolor=lightgrey];
-"i5" [shape=box style=filled, fillcolor=lightgrey];
-"i6" [shape=box style=filled, fillcolor=lightgrey];
-"i7" [shape=box style=filled, fillcolor=lightgrey];
-"i8" [shape=box style=filled, fillcolor=lightgrey];
-"i9" [shape=box style=filled, fillcolor=lightgrey];
-"ps_i10[0.00]";
-"i2" -> "PT0:i0[1.00]" [label="buf0[80]"];
-"i4" -> "PT0:i0[1.00]" [label="buf1[80]"];
-"PT0:i0[1.00]" -> "i3" [label="buf2[80]"];
-"PT0:i0[1.00]" -> "i5" [label="buf3[80]"];
-"i6" -> "PT1:i1[1.00]" [label="buf4[80]"];
-"i8" -> "PT1:i1[1.00]" [label="buf5[80]"];
-"PT1:i1[1.00]" -> "i7" [label="buf6[80]"];
-"PT1:i1[1.00]" -> "i9" [label="buf7[80]"];
-"PT0:i0[1.00]" -> "PT1:i1[1.00]" [label="stream"];
-"PT1:i1[1.00]" -> "PT0:i0[1.00]" [label="stream"];
-"i2" -> "PT0:i0[1.00]" [label="buf0d[80]"];
-"i4" -> "PT0:i0[1.00]" [label="buf1d[80]"];
-"PT0:i0[1.00]" -> "i3" [label="buf2d[80]"];
-"PT0:i0[1.00]" -> "i5" [label="buf3d[80]"];
-"i6" -> "PT1:i1[1.00]" [label="buf4d[80]"];
-"i8" -> "PT1:i1[1.00]" [label="buf5d[80]"];
-"PT1:i1[1.00]" -> "i7" [label="buf6d[80]"];
-"PT1:i1[1.00]" -> "i9" [label="buf7d[80]"];
+"ps_i3[0.00]";
+"i1" -> "PT0:i0[0.90]" [label="buf0[144]"];
+"PT0:i0[0.90]" -> "i2" [label="buf1[144]"];
+"i1" -> "PT0:i0[0.90]" [label="buf0d[144]"];
+"PT0:i0[0.90]" -> "i2" [label="buf1d[144]"];
 }

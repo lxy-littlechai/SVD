@@ -4,38 +4,43 @@
 #include <string>
 using namespace adf;
 
-template<int MatrixROW, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION>
+template<int MatrixROW, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
 class TopNormGraph: public graph {
 private:
-    RingNormGraph<MatrixROW, SUB_BLOCK_SIZE, START_COL, START_ROW, DIRECTION> normGraph;
+    RingNormGraph<MatrixROW, SUB_BLOCK_SIZE, START_COL, START_ROW, DIRECTION, CascadeLevel> normGraph;
 public:
-    input_plio in[1];
-    output_plio out[1];
-    pktsplit<SUB_BLOCK_SIZE> sp[1];
-    pktmerge<SUB_BLOCK_SIZE> mg[1];
+    input_plio in[CascadeLevel][1];
+    output_plio out[CascadeLevel][1];
+    pktsplit<SUB_BLOCK_SIZE> sp[CascadeLevel][1];
+    pktmerge<SUB_BLOCK_SIZE> mg[CascadeLevel][1];
 
     TopNormGraph(std::string graphID) {
-        for(int j = 0;j < 1;j ++) {
-            std::string fileIn = "aie/data/" + graphID + "_norm_in_" + std::to_string(j) + ".txt";
-            std::string fileOut = "aie/data/" + graphID + "_norm_out_" + std::to_string(j) +".txt";
-            std::string plIn = graphID + "_norm_in_" + std::to_string(j);
-            std::string plout = graphID + "_norm_out_" + std::to_string(j);
-            in[j] = input_plio::create(plIn, plio_128_bits, fileIn);
-            out[j] = output_plio::create(plout, plio_128_bits, fileOut);
-            sp[j] = pktsplit<SUB_BLOCK_SIZE>::create();
-            mg[j] = pktmerge<SUB_BLOCK_SIZE>::create();
+        for(int k = 0;k < CascadeLevel;k ++) {
+            for(int j = 0;j < 1;j ++) {
+                std::string fileIn = "data/" + graphID + "_norm_in"  + "_cas" + std::to_string(k) + ".txt";
+                std::string fileOut = "data/" + graphID + "_norm_in"  + "_cas" + std::to_string(k) +".txt";
+                std::string plIn = graphID + "_norm_in_"  + "_cas" + std::to_string(k);
+                std::string plout = graphID + "_norm_out_" + "_cas" + std::to_string(k);
+                in[k][j] = input_plio::create(plIn, plio_128_bits, fileIn);
+                out[k][j] = output_plio::create(plout, plio_128_bits, fileOut);
+                sp[k][j] = pktsplit<SUB_BLOCK_SIZE>::create();
+                mg[k][j] = pktmerge<SUB_BLOCK_SIZE>::create();
+            }
         }
         
-        for(int j = 0;j < 1;j ++) {
-            connect<> (in[j].out[0], sp[j].in[0]);
-            connect<> (mg[j].out[0], out[j].in[0]);
-        }
-        for(int i = 0;i < SUB_BLOCK_SIZE;i ++) {
+        for(int k = 0;k < CascadeLevel;k ++) {
             for(int j = 0;j < 1;j ++) {
-                connect<> (sp[j].out[i], normGraph.in[i]);
-                connect<> (normGraph.out[i], mg[j].in[i]);
+                connect<> (in[k][j].out[0], sp[k][j].in[0]);
+                connect<> (mg[k][j].out[0], out[k][j].in[0]);
             }
-            
+        }
+        for(int k = 0;k < CascadeLevel;k ++) {
+            for(int i = 0;i < SUB_BLOCK_SIZE;i ++) {
+                for(int j = 0;j < 1;j ++) {
+                    connect<> (sp[k][j].out[i], normGraph.in[k][i]);
+                    connect<> (normGraph.out[k][i], mg[k][j].in[i]);
+                }
+            }
         }
 
 

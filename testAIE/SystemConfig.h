@@ -1,4 +1,4 @@
-const int ROW = 16;
+const int ROW = 32;
 const int COL = 32;
 const int BLOCK_SIZE = 1;
 const int BLOCK_NUM = COL/BLOCK_SIZE;
