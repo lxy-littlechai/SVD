@@ -4,6 +4,7 @@ FPGA_test
 GPU_test
 Predict_test
 
+**/__pycache__
 **/.Xil
 **/_x
 **/*.xo_dir

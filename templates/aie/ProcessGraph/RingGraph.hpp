@@ -83,6 +83,17 @@ public:
                   direction *= -1;
               }
           }
+          row += direction;
+          if(row == VCK190_ROW-1 && direction == 1) {
+              row = VCK190_ROW-1;
+              col += COL+1;
+              direction *= -1;
+          }
+          else if(row == 0 && direction == -1) {
+              row = 0;
+              col += COL+1;
+              direction *= -1;
+          }
         }
 
         for(int i = 0;i < VCK190_ROW;i ++) {
@@ -112,7 +123,15 @@ public:
                   pow_row = 0;
                   direction *= -1;
               }
-
+          }
+          pow_row += direction;
+          if(pow_row == VCK190_ROW-1 && direction == 1) {
+              pow_row = VCK190_ROW-1;
+              direction *= -1;
+          }
+          else if(pow_row == 0 && direction == -1) {
+              pow_row = 0;
+              direction *= -1;
           }
         }
         
@@ -235,6 +254,15 @@ public:
             row = 0;
             direction *= -1;
         }
+      }
+      row += direction;
+      if(row == VCK190_ROW-1 && direction == 1) {
+          row = VCK190_ROW-1;
+          direction *= -1;
+      }
+      else if(row == 0 && direction == -1) {
+          row = 0;
+          direction *= -1;
       }
 
       for(int i = 0;i < ROW+1;i ++) {

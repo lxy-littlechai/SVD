@@ -58,7 +58,7 @@ void orthMid(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
     aie::vector<float, 4> acc_vec = readincr_v<4>(in_acc);
     acc_res = aie::add(acc_res, acc_vec);
     writeincr(out_acc, acc_res);
-
+    chess_separator_scheduler();
     // float conv;
     // if(A_ii*A_jj == 0) conv = 0;
     // else {
