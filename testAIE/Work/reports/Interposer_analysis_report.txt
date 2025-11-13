@@ -1,8 +1,0 @@
-InterposerAnalysis Report 
-Port Name : i0_pi0(Variable Name : norm[0][0].in[0]) adaptor <stream,memory> : Lock Buff DMA 
-Port Name : i0_po0(Variable Name : norm[0][0].out[0]) adaptor <memory,stream> : Lock Buff DMA 
-Port Name : i1_po0(Variable Name : in[0][0].out[0]) straightthru <stream> : Chnl 
-Downsizer, resize width: 128 
-Port Name : i2_pi0(Variable Name : out[0][0].in[0]) straightthru <stream> : Chnl 
-Upsizer, resize width: 128 
-

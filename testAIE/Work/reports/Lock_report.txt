@@ -1,9 +1,0 @@
-
-Lock Report
-portinst: i0_pi0 idx[0] datatype:buff<float> mem in bw_utlization = 1 (variable name:  norm[0][0].in[0]):
-  Lock 0 MG(0,0) bankId 0 offset 0x0 size 144 name buf0
-  Lock 1 MG(0,0) bankId 1 offset 0x0 size 144 name buf0d
-portinst: i0_po0 idx[1] datatype:buff<float> mem out bw_utlization = 1 (variable name:  norm[0][0].out[0]):
-  Lock 0 MG(0,1) bankId 1 offset 0x0 size 144 name buf1
-  Lock 1 MG(0,1) bankId 0 offset 0x0 size 144 name buf1d
-

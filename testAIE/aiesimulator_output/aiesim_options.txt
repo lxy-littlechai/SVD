@@ -1,3 +1,0 @@
-AIE_PKG_DIR=/media/4T/home/luanxinya/PaperWork/HeteroSVD/dev/SVD/testAIE/./Work
-AIE_PROFILE=All
-AIE_DUMP_VCD_PIPE=/tmp/vcd_fifo_2f8d6577-a146-4148-bb77-82e7e53974ec

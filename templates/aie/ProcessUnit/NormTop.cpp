@@ -3,13 +3,14 @@
 #include "Normalize.h"
 #include "aie/Config.h"
 #include "adf.h"
-#include "aie_api/aie.hpp"
-#include <aie_api/aie_adf.hpp>
 
 //in0 -> B; ou0 -> Sigma & U & V in order
 template<int ROW>
-void normalize(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in, 
-                adf::output_buffer<float, adf::extents<1+ROW>>& __restrict out) {
+void normTop(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in, 
+    input_stream<float>* in_param,
+    adf::output_buffer<float, adf::extents<1+ROW>>& __restrict out,
+    output_stream<float>* out_acc)
+{
     auto inIter = aie::begin_vector<w>(in);
     aie::vector<float, w> vec = *inIter ++;
     aie::accum<accfloat, w> acc = aie::zeros<accfloat, w>();
@@ -21,7 +22,13 @@ void normalize(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in,
         vec = *inIter ++;
     }
     float tmp = reduce_add(acc.to_vector<float>());
-    float sigma = aie::sqrt(tmp);
+    writeincr(out_acc, tmp);
+    printf("tmp: %f\n", tmp);
+
+    chess_separator_scheduler();
+
+    float sigma = readincr(in_param);
+    printf("sigma: %f\n", sigma);
 
     inIter = aie::begin_vector<w>(in);
     auto outIter = aie::begin_vector<w>(out);
