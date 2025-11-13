@@ -31,8 +31,6 @@ def generate(storePath, config):
   template_list = [
             ("data", "svd.py"), 
             ("data", "performance.py"), 
-            ("data/gold", "U.txt"),
-            ("data/gold", "Sigma.txt"),
 
 
             ("aie/ProcessGraph", "RingGraph.hpp"), 

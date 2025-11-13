@@ -63,7 +63,8 @@ class SVD_AIE:
 
             orthGraphInfo, normGraphInfo = self.getAIEPosition(task_id, graph_id)
             orth_graph_list.append(orthGraphInfo)
-            norm_graph_list.append(normGraphInfo)
+            if i == 0:
+                norm_graph_list.append(normGraphInfo)
 
             # Second Stage: placement
             for i in range(2*self.BLOCK_SIZE-1):
