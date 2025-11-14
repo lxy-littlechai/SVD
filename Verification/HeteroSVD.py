@@ -338,7 +338,7 @@ class BlockJacobiSVD:
 if __name__ == "__main__":
     sys.stdout = open("output.txt", "w")
     np.random.seed(0)
-    col, row = 16, 8
+    col, row = 32, 32
     mat = np.zeros((row, col))  # 小一点调试方便
     for i in range(row):
         for j in range(col):
@@ -346,7 +346,7 @@ if __name__ == "__main__":
     # np.savetxt("matrix.txt", mat, fmt="%.0f")
     mat = np.loadtxt("matrix.txt")
     print(mat)
-    svd = BlockJacobiSVD(block_size=8, iter=1)
+    svd = BlockJacobiSVD(block_size=16, iter=1)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)
