@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import sys
 
 class JacobiSVD:
     """
@@ -41,46 +42,31 @@ class JacobiSVD:
         return conv
     
     def round_robin_pairs(self, num_blocks):
-        """
-        生成块级别的 round-robin 配对序列
-        固定最后一个元素，其他元素循环旋转
+        L = []
+        R = []
+        for i in range(0, num_blocks, 2):
+            L.append(i)
+            R.append(i+1)
         
-        例如 8 个块：
-        第1轮: (0,1), (2,3), (4,5), (6,7)
-        第2轮: (1,3), (0,5), (2,6), (4,7)
-        ...
-        
-        参数:
-            num_blocks: 块的数量（必须是偶数）
-        
-        返回:
-            列表的列表，每个子列表包含一轮的块对 (i, j)
-        """
-        if num_blocks % 2 != 0:
-            raise ValueError("Number of blocks must be even")
-
         all_pairs = []
-        # 初始化：前 n-1 个元素 + 固定的最后一个元素
-        teams = list(range(num_blocks - 1)) + [num_blocks - 1]
-
-        for round_idx in range(num_blocks - 1):
-            
-            # 配对方式：从两端向中间配对
-            pairs = []
-            for i in range(0, num_blocks, 2):
-                pairs.append((teams[i], teams[i+1]))
-            
-            temp = teams.copy()
-            temp[0] = teams[1]
-            temp[num_blocks - 1] = teams[num_blocks - 1]
-            temp[num_blocks - 3] = teams[num_blocks - 2]
-            for i in range(0, num_blocks - 2, 2):
-                temp[i+2] = teams[i]
-            for i in range(3, num_blocks - 2, 2):
-                temp[i-2] = teams[i]
-            teams = temp
-            all_pairs.append(pairs)
-
+        for i in range(num_blocks-1):
+            L_val = L.pop(0)
+            R_val = R.pop(0)
+            all_pairs.append((L_val, R_val))
+            L.append(R_val)
+            L.append(L_val)
+            for j in range(num_blocks//2 - 2):
+                L_val = L.pop(0)
+                R_val = R.pop(0)
+                all_pairs.append((L_val, R_val))
+                L.append(L_val)
+                R.append(R_val)
+            L_val = L.pop(0)
+            R_val = R.pop(0)
+            all_pairs.append((L_val, R_val))
+            R.append(L_val)
+            R.append(R_val)
+        # print(all_pairs)
         return all_pairs
 
     def offset_ring_order(self, n):
@@ -172,26 +158,29 @@ class JacobiSVD:
         conv = 0
         step = 0
         all_pairs = self.round_robin_pairs(total_size)
-        for pairs in all_pairs:
-            for (i, j) in pairs:
-                step += 1
-                if step == 1:
-                    # 以IEEE 754格式32位float输出A[i]和A[j]（以16进制字符串输出）
-                    import struct
-                    def float_to_ieee754_hex(x):
-                        # 使用大端转换, 使22->0x41b00000
-                        return '0x' + struct.pack('>f', float(x)).hex()
-                    print(i, j, A[i], A[j])
-                    # print([float_to_ieee754_hex(x) for x in A[i]],
-                    #       [float_to_ieee754_hex(x) for x in A[j]])
-                tmpconv = self.orthogonalize(A, V, i, j)
-                conv = max(conv, tmpconv)
-                print(i,j,tmpconv)
-                #if ifprint:
-                    #print("-----------------------------------------------------------------")
-                    #print(A[i], A[j])
-                    # print([float_to_ieee754_hex(x) for x in A[i]],
-                    #       [float_to_ieee754_hex(x) for x in A[j]])
+        for (i, j) in all_pairs:
+            print("-----------------------------------------------------------------")
+            print(i, j)
+            print("send")
+            if ifprint:
+                # 以IEEE 754格式32位float输出A[i]和A[j]（以16进制字符串输出）
+                import struct
+                def float_to_ieee754_hex(x):
+                    # 使用大端转换, 使22->0x41b00000
+                    return '0x' + struct.pack('>f', float(x)).hex()
+                print( A[i], A[j])
+                print([float_to_ieee754_hex(x) for x in A[i]],
+                       [float_to_ieee754_hex(x) for x in A[j]])
+            tmpconv = self.orthogonalize(A, V, i, j)
+            conv = max(conv, tmpconv)
+            print("receive")
+            print(i,j,tmpconv)
+            if ifprint:
+                
+                
+                print(A[i], A[j])
+                print([float_to_ieee754_hex(x) for x in A[i]],
+                       [float_to_ieee754_hex(x) for x in A[j]])
         
         # 分离回两个块
         block1_new = np.zeros_like(block1)
@@ -278,9 +267,9 @@ class BlockJacobiSVD:
         matrix = np.array(matrix, dtype=np.float64)
         A = matrix.copy()
         
-        # 转置以保持行主存储（每一行是一个列向量）
-        if A.shape[0] < A.shape[1]:
-            A = A.T
+        # # 转置以保持行主存储（每一行是一个列向量）
+        # if A.shape[0] < A.shape[1]:
+        #     A = A.T
         
         n_rows, n_cols = A.shape
         
@@ -320,7 +309,7 @@ class BlockJacobiSVD:
                     # 对块对 (i, j) 进行正交化
                     step = step + 1
                     blocks[i], blocks[j], Vs[i], Vs[j], conv = \
-                        self.jacobi_svd.fit_block_pair(blocks[i], blocks[j], Vs[i], Vs[j], ifprint=step == 1)
+                        self.jacobi_svd.fit_block_pair(blocks[i], blocks[j], Vs[i], Vs[j], True)
                     print(f"Block {i} and Block {j} convergence: {conv:.6f}")
                     max_conv = max(max_conv, conv)
             
@@ -347,15 +336,17 @@ class BlockJacobiSVD:
 
 # 用法示例
 if __name__ == "__main__":
+    sys.stdout = open("output.txt", "w")
     np.random.seed(0)
-    col, row = 32, 32
-    mat = np.zeros((col, row))  # 小一点调试方便
-    for j in range(col):
-        for i in range(row):
-            mat[j][i] = random.randint(0, 50)
-    #np.savetxt("matrix.txt", mat, fmt="%.0f")
+    col, row = 16, 8
+    mat = np.zeros((row, col))  # 小一点调试方便
+    for i in range(row):
+        for j in range(col):
+            mat[i][j] = random.randint(0, 50)
+    # np.savetxt("matrix.txt", mat, fmt="%.0f")
     mat = np.loadtxt("matrix.txt")
-    svd = BlockJacobiSVD(block_size=16, iter=1)
+    print(mat)
+    svd = BlockJacobiSVD(block_size=8, iter=1)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)
