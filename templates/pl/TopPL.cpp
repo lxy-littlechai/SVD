@@ -145,7 +145,7 @@ void OrthDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
 
   for(int i = 0;i < LEVEL1_BLOCK_SIZE;i ++) {
     {% for p in range(0, parallel_num) %}
-      if({{2*p}} <= i%(2*parallel_num) && i%(2*parallel_num) <= {{2*p+1}}) {
+      if({{p}} <= i%(parallel_num) && i%(parallel_num) < {{p+1}}) {
           for(int j = 0;j < IO_NUM;j ++) {
             for(int k = 0;k < SUB_BLOCK_DATA_SIZE;k ++) {
               #pragma HLS PIPELINE II = 1
@@ -174,7 +174,7 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
 
   for(int i = 0;i < LEVEL1_BLOCK_SIZE;i ++) {
     {% for p in range(0, parallel_num) %}
-      if({{2*p}} <= i%(2*parallel_num) && i%(2*parallel_num) <= {{2*p+1}}) {
+      if({{p}} <= i%(parallel_num) && i%(parallel_num) < {{p+1}}) {
           for(int j = 0;j < IO_NUM;j ++) {
             for(int k = 0;k < SUB_BLOCK_DATA_SIZE;k ++) {
               #pragma HLS PIPELINE II = 1
@@ -352,52 +352,60 @@ void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM], TS src_fifo_R[parallel_nu
     }
   }
 
-{% for p in range(0, parallel_num) %}
+
   for(int j = 0;j < STAGE1_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
     for(int k = 0;k < IO_NUM;k ++) {
       #pragma HLS unroll
+      {% for p in range(0, parallel_num) %}
       ap_uint<W> tmp_L{{p}} = src_fifo_L[{{p}}][k].read();
       dst_fifo_L[{{(p+1)%parallel_num}}][k].write(tmp_L{{p}});
+      {% endfor %}
     }
   }
-{% endfor %}
 
-{% for p in range(1, parallel_num) %}
+
+
   for(int j = 0;j < STAGE1_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
     for(int k = 0;k < IO_NUM;k ++) {
       #pragma HLS unroll
+      {% for p in range(1, parallel_num) %}
       ap_uint<W> tmp_R{{p}} = src_fifo_R[{{p}}][k].read();
       dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k].write(tmp_R{{p}});
+      {% endfor %}
     }
   }
-{% endfor %}
+
   
   
-{% for p in range(0, parallel_num) %}
+
   for(int j = 0;j < STAGE2_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
     for(int k = 0;k < IO_NUM;k ++) {
       #pragma HLS unroll
+      {% for p in range(0, parallel_num) %}
       ap_uint<W> tmp_L{{p}} = src_fifo_L[{{p}}][k].read();
       dst_fifo_L[{{(p+1)%parallel_num}}][k].write(tmp_L{{p}});
       ap_uint<W> tmp_R{{p}} = src_fifo_R[{{p}}][k].read();
       dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k].write(tmp_R{{p}});
+      {% endfor %}
     }
   }
-{% endfor %}
 
-{% for p in range(0, parallel_num-1) %}
+
+
   for(int j = 0;j < STAGE3_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
     for(int k = 0;k < IO_NUM;k ++) {
       #pragma HLS unroll
+      {% for p in range(0, parallel_num-1) %}
       ap_uint<W> tmp_L{{p}} = src_fifo_L[{{p}}][k].read();
       dst_fifo_L[{{(p+1)%parallel_num}}][k].write(tmp_L{{p}});
+      {% endfor %}
     }
   }
-{% endfor %}
+
 
   for(int j = 0;j < STAGE3_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
@@ -408,16 +416,18 @@ void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM], TS src_fifo_R[parallel_nu
     }
   }
 
-  {% for p in range(0, parallel_num-1) %}
+ 
     for(int j = 0;j < STAGE3_SIZE;j ++) {
       #pragma HLS PIPELINE II = 1
       for(int k = 0;k < IO_NUM;k ++) {
         #pragma HLS unroll
+        {% for p in range(0, parallel_num-1) %}
         ap_uint<W> tmp_R{{p}} = src_fifo_R[{{p}}][k].read();
         dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k].write(tmp_R{{p}});
+        {% endfor %}
       }
     }
-  {% endfor %}
+
 
   for(int j = 0;j < STAGE3_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
