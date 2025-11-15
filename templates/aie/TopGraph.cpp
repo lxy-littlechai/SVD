@@ -9,7 +9,7 @@ TopSweepGraph<ROW, BLOCK_SIZE, IO_NUM, SUB_BLOCK_SIZE, {{graph['start_col']}}, {
 
 {% for graphs in norm_graph_list %}
 {% for graph in graphs %}
-TopNormGraph<ROW, BLOCK_SIZE, {{graph['start_col']}}, {{graph['start_row']}}, {{graph['start_direction']}}> topNormGraph{{graph['task_id']}}_{{graph['graph_id']}}("{{graph['task_id']}}_{{graph['graph_id']}}");
+TopNormGraph<ROW, SUB_BLOCK_SIZE, {{graph['start_col']}}, {{graph['start_row']}}, {{graph['start_direction']}}> topNormGraph{{graph['task_id']}}_{{graph['graph_id']}}("{{graph['task_id']}}_{{graph['graph_id']}}");
 {% endfor %}
 {% endfor %}
 

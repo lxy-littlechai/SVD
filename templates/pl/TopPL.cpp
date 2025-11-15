@@ -143,7 +143,7 @@ void OrthDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   const int block_L_offset = level1_block_L_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   const int block_R_offset = level1_block_R_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
 
-  for(int i = 0;i < LEVEL1_BLOCK_SIZE;i ++) {
+  for(int i = 0;i < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i ++) {
     {% for p in range(0, parallel_num) %}
       if({{p}} <= i%(parallel_num) && i%(parallel_num) < {{p+1}}) {
           for(int j = 0;j < IO_NUM;j ++) {
@@ -172,7 +172,7 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   const int block_L_offset = level1_block_L_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   const int block_R_offset = level1_block_R_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
 
-  for(int i = 0;i < LEVEL1_BLOCK_SIZE;i ++) {
+  for(int i = 0;i < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i ++) {
     {% for p in range(0, parallel_num) %}
       if({{p}} <= i%(parallel_num) && i%(parallel_num) < {{p+1}}) {
           for(int j = 0;j < IO_NUM;j ++) {
