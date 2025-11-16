@@ -355,7 +355,7 @@ if __name__ == "__main__":
             mat[j][i] = random.randint(0, 50)
     #np.savetxt("matrix.txt", mat, fmt="%.0f")
     mat = np.loadtxt("matrix.txt")
-    svd = BlockJacobiSVD(block_size=16, iter=1)
+    svd = BlockJacobiSVD(block_size=16, iter=15)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)

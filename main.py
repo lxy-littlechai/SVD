@@ -81,6 +81,7 @@ if __name__ == '__main__':
   parser.add_argument("--PARALLEL_NUM", type=int)
   parser.add_argument("--IO_NUM", type=int)
   parser.add_argument("--Frequency", type=float)
+  parser.add_argument("--CascadeLevel", type=int)
   #parser.add_argument("--MaxSweep", type=int, default=20)
   args = parser.parse_args()
   
@@ -95,6 +96,7 @@ if __name__ == '__main__':
     base_config.parallel_num = args.PARALLEL_NUM
     base_config.padding = args.COL - args.COL
     base_config.IO_NUM = args.IO_NUM
+    base_config.CascadeLevel = args.CascadeLevel
     config = svd_model.resourceCheck(base_config)
     config = svd_model.generateConfig(args.Frequency, config)
   

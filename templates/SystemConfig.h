@@ -19,3 +19,4 @@ const int SUB_BLOCK_SIZE = BLOCK_SIZE/IO_NUM;
 
 // AIE
 const int CascadeLevel = {{CascadeLevel}};
+const int AIEROW = {{ROW//CascadeLevel}};

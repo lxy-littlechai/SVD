@@ -52,8 +52,10 @@ class SVD_AIE:
                     self.placement(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
                     temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
 
-                if self.row != self.VCK190_ROW-1 and self.row != 0:
-                    valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
+                # if self.row != self.VCK190_ROW-1 and self.row != 0:
+                #     valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
+                temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
+
             
 
 
@@ -77,8 +79,9 @@ class SVD_AIE:
                 for i in range(2*self.BLOCK_SIZE-1):
                     self.placement(self.col, self.row, self.BLOCK_SIZE, self.usedAIE)
                     self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
-                if self.row != self.VCK190_ROW-1 and self.row != 0:
-                    self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)  ## ignore memory AIE
+                # if self.row != self.VCK190_ROW-1 and self.row != 0:
+                #     self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)  ## ignore memory AIE
+                self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
             # wait to add IO NUM
             self.plio_num += 3
             self.graph_num += 1

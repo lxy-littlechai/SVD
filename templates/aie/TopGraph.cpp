@@ -3,13 +3,13 @@
 
 {% for graphs in orth_graph_list %}
 {% for graph in graphs %}
-TopSweepGraph<ROW, BLOCK_SIZE, IO_NUM, SUB_BLOCK_SIZE, {{graph['start_col']}}, {{graph['start_row']}}, {{graph['start_direction']}}, CascadeLevel> topSweepGraph{{graph['task_id']}}_{{graph['graph_id']}}("{{graph['task_id']}}_{{graph['graph_id']}}");
+TopSweepGraph<ROW/CascadeLevel, BLOCK_SIZE, IO_NUM, SUB_BLOCK_SIZE, {{graph['start_col']}}, {{graph['start_row']}}, {{graph['start_direction']}}, CascadeLevel> topSweepGraph{{graph['task_id']}}_{{graph['graph_id']}}("{{graph['task_id']}}_{{graph['graph_id']}}");
 {% endfor %}
 {% endfor %}
 
 {% for graphs in norm_graph_list %}
 {% for graph in graphs %}
-TopNormGraph<ROW, BLOCK_SIZE, {{graph['start_col']}}, {{graph['start_row']}}, {{graph['start_direction']}}, CascadeLevel> topNormGraph{{graph['task_id']}}_{{graph['graph_id']}}("{{graph['task_id']}}_{{graph['graph_id']}}");
+TopNormGraph<ROW/CascadeLevel, SUB_BLOCK_SIZE, {{graph['start_col']}}, {{graph['start_row']}}, {{graph['start_direction']}}, CascadeLevel> topNormGraph{{graph['task_id']}}_{{graph['graph_id']}}("{{graph['task_id']}}_{{graph['graph_id']}}");
 {% endfor %}
 {% endfor %}
 
