@@ -68,8 +68,8 @@ public:
                     std::string fileOut = "data/" + graphID + "_sweep_out_" + type + "_cas" + std::to_string(i) + "_io" + std::to_string(j);
                     std::string plIn = graphID + "_sweep_in_" + type  + "_io" + std::to_string(j)+ "_cas" + std::to_string(i);
                     std::string plout = graphID + "_sweep_out_" + type  + "_io" + std::to_string(j) + "_cas" + std::to_string(i);
-                    in[i][j][k] = input_plio::create(plIn, plio_32_bits, fileIn);
-                    out[i][j][k] = output_plio::create(plout, plio_32_bits, fileOut);
+                    in[i][j][k] = input_plio::create(plIn, plio_128_bits, fileIn);
+                    out[i][j][k] = output_plio::create(plout, plio_128_bits, fileOut);
                     sp[i][j][k] = pktsplit<SUB_BLOCK_SIZE>::create();
                     mg[i][j][k] = pktmerge<SUB_BLOCK_SIZE>::create();
                 }

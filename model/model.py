@@ -12,22 +12,29 @@ VCK190_ROW = 8
 class SysConfig:
     def __init__(self, COL, ROW, ITER, BATCH):
         self.valid = False
+        # input task params
         self.COL = COL
         self.ROW = ROW
-        self.padding = 0
         self.BATCH = BATCH
         self.ITER = ITER
+        
+        # arch variable params
+        self.CascadeLevel = math.ceil(ROW/1024)
+        self.padding = 0
         self.LEVEL1_BLOCK_SIZE = 0
         self.BLOCK_SIZE = 0
-        self.Frequency = 0
-        self.aie_num = 0
         self.task_num = 0 # task_num means the task-level parallel num
-        self.orth_graph_list = [] #orthogonal graph list
-        self.norm_graph_list = [] #norm graph list
         self.parallel_num = 0 # parallel_num means the parallel num in single graph
         self.IO_NUM = 0 # IO_NUM means the IO_NUM in single graph
+
+        self.Frequency = 0
+        self.aie_num = 0
+        
+        # arch result
+        self.orth_graph_list = [] #orthogonal graph list
+        self.norm_graph_list = [] #norm graph list
         self.plio_num = 0
-        self.CascadeLevel = math.ceil(ROW/1024)
+
         self.usedAIE = np.zeros((VCK190_COL, VCK190_ROW), dtype=int)  # 0 - not used 1 - orth 2 - norm
 
         self.uram = 0
@@ -64,9 +71,16 @@ class SVD_Model:
         self.config_blocksize = []
         self.config_list = []
         self.best_config = SysConfig(COL, ROW, ITER, BATCH)
+    
+    def checkDivisible(self, num, divisor):
+        return num % divisor == 0
 
     def enumerateConfig(self):
-        # step 1. enumerate different block_size
+        
+        # # step 1. enumerrate level-1 block_size
+        # for level1_block_size in range(1, self.COL//2+1):
+
+         # step 1. enumerate different block_size
         for block_size in range(1, 14): # 14 is the maximum block_size
             col = self.COL
             # padding the matrix to the multiple of block_size
@@ -155,7 +169,7 @@ class SVD_Model:
         svd_pl = SVD_PL(self.COL, self.ROW, config.parallel_num)
         config.uram = svd_pl.getRAM(config.task_num)
         config.Frequency = freq
-        # config.estimated_time = self.predict(config)
+        config.estimated_time = self.predict(config)
         print("Current Config!")
         self.print(config)
         return dict(config)
@@ -244,7 +258,7 @@ class SVD_Model:
         norm_aie = 0.0003 * ROW + 0.1126
         norm_stage = BLOCK_NUM*Tx
 
-        DDR_Latency = Tx*BLOCK_NUM + 200
+        DDR_Latency = Tx*BLOCK_NUM #+ 200
         
         sys_predict_time = DDR_Latency + ITER*one_sweep + norm_stage
 
@@ -258,10 +272,10 @@ class SVD_Model:
         #        假设 orth_single_aie = a*ROW + b            
         #   = Tx_row*BLOCK_SIZE + orth_single_aie - BLOCK_SIZE*Tx_row
         #   = orth_single_aie
-        #print(f'round_wait: {round_wait}, one-round: {one_round}')
+        print(f'round_wait: {round_wait}, one-round: {one_round}, one_sweep: {one_sweep}')
         #print(f'orth_single_aie: {orth_single_aie}, Tx-block:  {BLOCK_SIZE*Tx_row}')
         #print(f'Tx-row: {Tx_row}, Tx:  {Tx} CTC_wait: {CTC_wait}')
-        #print(f'DDR_Latency: {DDR_Latency/1000000}, one_sweep: {one_sweep/1000000}, batch_predict_time: {batch_predict_time}')
+        print(f'DDR_Latency: {DDR_Latency/1000000}, sys_predict_time: {sys_predict_time/1000000}, batch_predict_time: {batch_predict_time}')
         return batch_predict_time
     
     
