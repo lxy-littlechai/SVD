@@ -2,6 +2,7 @@ import numpy as np
 import random
 import sys
 
+global received_step
 class JacobiSVD:
     """
     处理两个块的 Jacobi SVD
@@ -156,10 +157,12 @@ class JacobiSVD:
         
         # 进行 Jacobi 旋转
         conv = 0
-        step = 0
+        global received_step
         all_pairs = self.round_robin_pairs(total_size)
         for (i, j) in all_pairs:
             print("-----------------------------------------------------------------")
+            print("receive: ", received_step)
+            received_step += 1
             print(i, j)
             print("send")
             if ifprint:
@@ -300,10 +303,11 @@ class BlockJacobiSVD:
         
         # 迭代进行块对正交化
         step = 0
+        global received_step
         for it in range(self.iter):
             all_pairs = self.round_robin_pairs(num_blocks)
             max_conv = 0
-            
+            received_step = 0
             for pairs in all_pairs:
                 for (i, j) in pairs:
                     # 对块对 (i, j) 进行正交化
@@ -338,7 +342,7 @@ class BlockJacobiSVD:
 if __name__ == "__main__":
     sys.stdout = open("output.txt", "w")
     np.random.seed(0)
-    col, row = 128, 128
+    col, row = 32, 32
     mat = np.zeros((row, col))  # 小一点调试方便
     for i in range(row):
         for j in range(col):
@@ -346,7 +350,7 @@ if __name__ == "__main__":
     # np.savetxt("matrix.txt", mat, fmt="%.0f")
     mat = np.loadtxt("matrix.txt")
     print(mat)
-    svd = BlockJacobiSVD(block_size=64, iter=1)
+    svd = BlockJacobiSVD(block_size=8, iter=1)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)
