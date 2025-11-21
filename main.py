@@ -22,11 +22,45 @@ def gen4Template(storePath, template_dir, template_file, config):
   template = env.get_template(template_file)
   generate_file = template.render(config)
   write2File(storePath, template_file, generate_file)
+
+def genRoundRobinOrdering(block_num):
+  ordering_L = []
+  ordering_R = []
+  gen_L = []
+  gen_R = []
+  for i in range(0, block_num, 2):
+    gen_L.append(i)
+    gen_R.append(i+1)
+
+  for j in range(block_num-1):
+    j_ordering_L = []
+    j_ordering_R = []
+    tmp_L = gen_L.pop(0)
+    tmp_R = gen_R.pop(0)
+    j_ordering_L.append(tmp_L)
+    j_ordering_R.append(tmp_R)
+    gen_L.append(tmp_R)
+    gen_L.append(tmp_L)
+    for i in range(block_num//2-2):
+      tmp_L = gen_L.pop(0)
+      tmp_R = gen_R.pop(0)
+      j_ordering_L.append(tmp_L)
+      j_ordering_R.append(tmp_R)
+      gen_L.append(tmp_L)
+      gen_R.append(tmp_R)
+    tmp_L = gen_L.pop(0)
+    tmp_R = gen_R.pop(0)
+    j_ordering_L.append(tmp_L)
+    j_ordering_R.append(tmp_R)
+    gen_R.append(tmp_L)
+    gen_R.append(tmp_R)
+
+    ordering_L.append(j_ordering_L)
+    ordering_R.append(j_ordering_R)
+  return ordering_L, ordering_R
     
 # generate file
 def generate(storePath, config):
-
-  print(config)
 
   template_list = [
             ("data", "svd.py"), 
@@ -99,7 +133,11 @@ if __name__ == '__main__':
     base_config.CascadeLevel = args.CascadeLevel
     config = svd_model.resourceCheck(base_config)
     config = svd_model.generateConfig(args.Frequency, config)
-  
+  ordering_L, ordering_R = genRoundRobinOrdering(config['COL']//config['BLOCK_SIZE'])
+  config['ordering_L'] = ordering_L
+  config['ordering_R'] = ordering_R
+  # print(ordering_L)
+  # print(ordering_R)
 
   generate(args.PATH, config)
 

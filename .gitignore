@@ -21,3 +21,4 @@ Predict_test
 **/*.a
 **/toppl
 test*
+**/*.txt

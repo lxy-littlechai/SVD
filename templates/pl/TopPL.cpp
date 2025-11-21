@@ -176,19 +176,25 @@ void OrthDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   }
 }
 
+template<typename T>
 void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int level1_block_R_index, 
-  axis_stream_ordering& fifo2ddr_ordering_L, axis_stream_ordering& fifo2ddr_ordering_R,
-  axis_stream_128 receive_fifo_L[parallel_num][IO_NUM][CascadeLevel], axis_stream_128 receive_fifo_R[parallel_num][IO_NUM][CascadeLevel]) {
+  T receive_fifo_L[parallel_num][IO_NUM][CascadeLevel], T receive_fifo_R[parallel_num][IO_NUM][CascadeLevel]) {
 
   const int AIE_DATA_SIZE = AIEROW/DDR_ELEM_NUM;
   const int ROW_DATA_SIZE = ROW/DDR_ELEM_NUM;
   const int block_L_offset = level1_block_L_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   const int block_R_offset = level1_block_R_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   int cur_block_offset = 0;
+  const int ordering_L[BLOCK_PAIR_NUM] = {
+    {% for i in range(0, COL//BLOCK_SIZE//2) %} {{ordering_L[COL//BLOCK_SIZE-2][i]}},{% endfor %}
+  };
+  const int ordering_R[BLOCK_PAIR_NUM] = {
+    {% for i in range(0, COL//BLOCK_SIZE//2) %} {{ordering_R[COL//BLOCK_SIZE-2][i]}},{% endfor %}
+  };
 
   for(int i = 0;i < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i ++) { // num of sub-blocks with BLOCK_SIZE
-    int L_order = fifo2ddr_ordering_L.read();
-    int R_order = fifo2ddr_ordering_R.read();
+    int L_order = ordering_L[i];
+    int R_order = ordering_R[i];
     hls::print("L_order: %d\n", L_order);
     hls::print("R_order: %d\n", R_order);
     int L_idx = L_order/2;
@@ -371,62 +377,6 @@ void Level1OrderingGenerator(axis_stream_sig& syscontrol, axis_stream_ordering& 
 
 }
 
-void Level2OrderingGenerator(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, axis_stream_ordering& ordering_R) {
-  axis_stream_ordering gen_L, gen_R;
-  const int LEVEL1_STEP = LEVEL1_BLOCK_PAIR_NUM*(LEVEL1_BLOCK_NUM-1);
-
-  for(int i = 0;i < BLOCK_NUM;i += 2) {
-    gen_R.write(i+1);
-    gen_L.write(i);
-  }
-  int tmp_L, tmp_R;
-  if(BLOCK_PAIR_NUM == 1) {
-    tmp_L = gen_L.read();
-    tmp_R = gen_R.read();
-    gen_L.write(tmp_L);
-    gen_R.write(tmp_R);
-    tmp_L = gen_L.read();
-    tmp_R = gen_R.read();
-    gen_L.write(tmp_L);
-    gen_R.write(tmp_R);
-  }
-  else {
-    for(int j = 0;j < BLOCK_NUM-2;j ++) {
-      tmp_L = gen_L.read();
-      tmp_R = gen_R.read();
-      gen_L.write(tmp_R);
-      gen_L.write(tmp_L);
-
-      for(int i = 0;i < BLOCK_PAIR_NUM-2;i ++) {
-        tmp_L = gen_L.read();
-        tmp_R = gen_R.read();
-        gen_L.write(tmp_L);
-        gen_R.write(tmp_R);
-      }
-
-      tmp_L = gen_L.read();
-      tmp_R = gen_R.read();
-      gen_R.write(tmp_L);
-      gen_R.write(tmp_R);
-    }     
-  }
-  while(true) {
-    ap_uint<1> sig = syscontrol.read();
-    hls::print("sig: %d\n", sig);
-    if(sig == END) break;
-
-    for(int i = 0;i < LEVEL1_STEP;i ++) {
-      tmp_L = gen_L.read();
-      tmp_R = gen_R.read();
-      ordering_L.write(tmp_L);
-      ordering_R.write(tmp_R);
-      gen_L.write(tmp_L);
-      gen_R.write(tmp_R);
-    }
-  }
-
-}
-
 template<typename TS, typename TE>
 void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM][CascadeLevel], TS src_fifo_R[parallel_num][IO_NUM][CascadeLevel], TE dst_fifo_L[parallel_num][IO_NUM][CascadeLevel], TE dst_fifo_R[parallel_num][IO_NUM][CascadeLevel]) {
   #pragma HLS INLINE off
@@ -550,7 +500,6 @@ void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM][CascadeLevel], TS src_fifo
 
 
 void RoundRobin(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, axis_stream_ordering& ordering_R, 
-                axis_stream_ordering& fifo2ddr_ordering_L, axis_stream_ordering& fifo2ddr_ordering_R,
                 ap_uint<DDR_WIDTH>* dataIn, 
                 axis_stream_128 send_fifo_L[parallel_num][IO_NUM][CascadeLevel], axis_stream_128 send_fifo_R[parallel_num][IO_NUM][CascadeLevel], 
                 axis_stream_deep_128 receive_fifo_L[parallel_num][IO_NUM][CascadeLevel], axis_stream_deep_128 receive_fifo_R[parallel_num][IO_NUM][CascadeLevel]) {
@@ -584,7 +533,7 @@ void RoundRobin(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, a
 
       // FIFOExchange(receive_fifo_L, receive_fifo_R, tmp_fifo_L, tmp_fifo_R);
 
-      OrthFIFO2DDR(dataIn, level1_block_L_index, level1_block_R_index, fifo2ddr_ordering_L, fifo2ddr_ordering_R, receive_fifo_L, receive_fifo_R);
+      OrthFIFO2DDR(dataIn, level1_block_L_index, level1_block_R_index, receive_fifo_L, receive_fifo_R);
     }
   }
 }
@@ -593,7 +542,7 @@ void RoundRobin(axis_stream_sig& syscontrol, axis_stream_ordering& ordering_L, a
 void SystemControl(const int ITER, ap_uint<32>* ConvArray, axis_stream_sig syscontrol[5], 
   axis_stream_float convSet_L[parallel_num][IO_NUM], axis_stream_float convSet_R[parallel_num][IO_NUM]) {
 
-  const int FUNCNUM = 5;
+  const int FUNCNUM = 4;
   for(int i = 0;i < FUNCNUM;i ++) {
     syscontrol[i].write(START);
   }
@@ -654,16 +603,14 @@ void Orthogonalize(ap_uint<DDR_WIDTH>* dataIn,  ap_uint<32>* ConvArray,
                 ) {
 
   axis_stream_float convSet_L[parallel_num][IO_NUM], convSet_R[parallel_num][IO_NUM];
-  axis_stream_sig syscontrol[5];
+  axis_stream_sig syscontrol[4];
   axis_stream_ordering ordering_L, ordering_R;
-  axis_stream_ordering fifo2ddr_ordering_L, fifo2ddr_ordering_R;
   axis_stream_128 send_fifo_L[parallel_num][IO_NUM][CascadeLevel], send_fifo_R[parallel_num][IO_NUM][CascadeLevel]; // the first param is parrallel AIE graph
   axis_stream_deep_128 receive_fifo_L[parallel_num][IO_NUM][CascadeLevel], receive_fifo_R[parallel_num][IO_NUM][CascadeLevel];
   
   #pragma HLS dataflow
   SystemControl(ITER, ConvArray, syscontrol, convSet_L, convSet_R);
   Level1OrderingGenerator(syscontrol[0], ordering_L, ordering_R);
-  Level2OrderingGenerator(syscontrol[4], fifo2ddr_ordering_L, fifo2ddr_ordering_R);
   Send(syscontrol[1], 
                  send_fifo_L, send_fifo_R
 {% for i in range(1, parallel_num+1) %}
@@ -673,7 +620,7 @@ void Orthogonalize(ap_uint<DDR_WIDTH>* dataIn,  ap_uint<32>* ConvArray,
    {% endfor %}
   {% endfor %}
 {% endfor %});
-  RoundRobin(syscontrol[2],ordering_L, ordering_R, fifo2ddr_ordering_L, fifo2ddr_ordering_R,
+  RoundRobin(syscontrol[2],ordering_L, ordering_R,
                 dataIn, 
                send_fifo_L, send_fifo_R, receive_fifo_L, receive_fifo_R);
   Receive(syscontrol[3], convSet_L, convSet_R,

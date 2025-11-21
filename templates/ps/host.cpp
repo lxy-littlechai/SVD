@@ -63,12 +63,12 @@ int main(int argc, char** argv) {
       int index = 0, matrix_id = 0;
       std::string filename = "matrix.txt";
       // generateMatrix<COL, ROW>(filename);
-      // read<COL, ROW>(filename, data[k]);
-      for(int j = 0;j < COL;j ++) {
-        for(int i = 0;i < ROW;i ++) {
-            data[k][index ++] = getRand(-50, 50);
-        }
-      }
+      read<COL, ROW>(filename, data[k]);
+      // for(int j = 0;j < COL;j ++) {
+      //   for(int i = 0;i < ROW;i ++) {
+      //       data[k][index ++] = getRand(-50, 50);
+      //   }
+      // }
 
       for(int i = 0;i < 100;i ++) {
         CONV[k][i] = 0;
