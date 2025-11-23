@@ -237,13 +237,15 @@ class SVD_Model:
             Tx_row = 1.0/Frequency*(ROW*32/128 + 4 + 8)
 
         id = str(ROW) + "_" + str(BLOCK_SIZE)
-        if id not in single_aie:
+
+        if id not in total_aie:
             orth_single_aie = 1 # for test
             orth_total_aie = 2
         else:
+            print(id)
             orth_single_aie = single_aie[str(ROW)]
             orth_total_aie = total_aie[id]
-
+        
         CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row - ROW*32/128/1250, 0.0)
         
         Tx = Tx_row*BLOCK_SIZE + CTC_wait
@@ -258,7 +260,7 @@ class SVD_Model:
         norm_aie = 0.0003 * ROW + 0.1126
         norm_stage = BLOCK_NUM*Tx
 
-        DDR_Latency = Tx*BLOCK_NUM #+ 200
+        DDR_Latency = 2*Tx*BLOCK_NUM #+ 200
         
         sys_predict_time = DDR_Latency + ITER*one_sweep + norm_stage
 
@@ -274,7 +276,8 @@ class SVD_Model:
         #   = orth_single_aie
         print(f'round_wait: {round_wait}, one-round: {one_round}, one_sweep: {one_sweep}')
         #print(f'orth_single_aie: {orth_single_aie}, Tx-block:  {BLOCK_SIZE*Tx_row}')
-        #print(f'Tx-row: {Tx_row}, Tx:  {Tx} CTC_wait: {CTC_wait}')
+        print(f'Tx-row: {Tx_row}, Tx:  {Tx} CTC_wait: {CTC_wait}')
+        print(f'orth stage: {ITER*one_sweep}')
         print(f'DDR_Latency: {DDR_Latency/1000000}, sys_predict_time: {sys_predict_time/1000000}, batch_predict_time: {batch_predict_time}')
         return batch_predict_time
     

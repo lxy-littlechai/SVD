@@ -24,6 +24,10 @@ def gen4Template(storePath, template_dir, template_file, config):
   write2File(storePath, template_file, generate_file)
 
 def genRoundRobinOrdering(block_num):
+
+  if block_num == 2:
+    return [[0]],[[1]]
+
   ordering_L = []
   ordering_R = []
   gen_L = []
@@ -130,14 +134,21 @@ if __name__ == '__main__':
     base_config.parallel_num = args.PARALLEL_NUM
     base_config.padding = args.COL - args.COL
     base_config.IO_NUM = args.IO_NUM
+    base_config.Frequency = args.Frequency
     base_config.CascadeLevel = args.CascadeLevel
     config = svd_model.resourceCheck(base_config)
     config = svd_model.generateConfig(args.Frequency, config)
-  ordering_L, ordering_R = genRoundRobinOrdering(config['COL']//config['BLOCK_SIZE'])
-  config['ordering_L'] = ordering_L
-  config['ordering_R'] = ordering_R
-  # print(ordering_L)
-  # print(ordering_R)
+  
+  level1_ordering_L, level1_ordering_R = genRoundRobinOrdering(config['COL']//config['LEVEL1_BLOCK_SIZE'])
+  level2_ordering_L, level2_ordering_R = genRoundRobinOrdering(config['COL']//config['BLOCK_SIZE'])
+  config['level1_ordering_L'] = level1_ordering_L
+  config['level1_ordering_R'] = level1_ordering_R
+  config['level2_ordering_L'] = level2_ordering_L
+  config['level2_ordering_R'] = level2_ordering_R
+  # print(level1_ordering_L)
+  # print(level1_ordering_R)
+  # print(level2_ordering_L)
+  # print(level2_ordering_R)
 
   generate(args.PATH, config)
 
