@@ -246,9 +246,30 @@ class SVD_Model:
             orth_single_aie = single_aie[str(ROW)]
             orth_total_aie = total_aie[id]
         
-        CTC_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row - ROW*32/128/1250, 0.0)
+        block_num = BLOCK_NUM
+        pair_num = BLOCK_NUM//2
+        Tx = Tx_row*BLOCK_SIZE
+        AIE_wait = max(orth_single_aie - Tx - ROW*32/128/1250, 0.0) # AIE trans
+        algo = Tx + AIE_wait + Tx # sec Tx arise from HLS code pattern
+        data_wait = max(-(pair_num-1)*(AIE_wait + Tx) + orth_total_aie + Tx + algo, 0.0)
+
+        ddr = Tx*pair_num
+        blocks = pair_num*(Tx + AIE_wait) + algo + data_wait
+        iter = (block_num-1)*blocks + orth_total_aie + Tx
+        norm_stage = BLOCK_NUM*Tx*BLOCK_SIZE
+
+        task = ddr + ITER*iter + norm_stage
+        print(f'AIE_wait: {AIE_wait}, algo: {algo}, data_wait: {data_wait}')
+        print(f'blocks: {blocks}, iter: {iter}')
+        print(task)
         
-        Tx = Tx_row*BLOCK_SIZE + CTC_wait
+        print('-------------------------------------------------------------------')
+
+        AIE_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row - ROW*32/128/1250, 0.0)
+
+
+        
+        Tx = Tx_row*BLOCK_SIZE + AIE_wait
         Rx = Tx_row*BLOCK_SIZE
 
         round_wait = max(orth_total_aie - BLOCK_NUM/2*Tx, 0.0)
@@ -267,19 +288,13 @@ class SVD_Model:
         batch_predict_time = (BATCH//TASK_NUM*sys_predict_time + (BATCH > TASK_NUM)*sys_predict_time + (TASK_NUM-1)*50)/1000000
     
 
-        #Tx = Tx_row*BLOCK_SIZE + CTC_wait
-        #   = Tx_row*BLOCK_SIZE + max(orth_single_aie - BLOCK_SIZE*Tx_row, 0.0)
-        #   when orth_single_aie > BLOCK_SIZE*Tx_row
-        #        orth_single_aie*Frequency > BLOCK_SIZE*(ROW/4 + 4) 
-        #        假设 orth_single_aie = a*ROW + b            
-        #   = Tx_row*BLOCK_SIZE + orth_single_aie - BLOCK_SIZE*Tx_row
-        #   = orth_single_aie
-        print(f'round_wait: {round_wait}, one-round: {one_round}, one_sweep: {one_sweep}')
+        print(f'AIE_wait: {AIE_wait}, round_wait: {round_wait}')
+        print(f'one-round: {one_round}, one_sweep: {one_sweep}')
         #print(f'orth_single_aie: {orth_single_aie}, Tx-block:  {BLOCK_SIZE*Tx_row}')
-        print(f'Tx-row: {Tx_row}, Tx:  {Tx} CTC_wait: {CTC_wait}')
+        print(f'Tx-row: {Tx_row}, Tx:  {Tx} AIE_wait: {AIE_wait}')
         print(f'orth stage: {ITER*one_sweep}')
         print(f'DDR_Latency: {DDR_Latency/1000000}, sys_predict_time: {sys_predict_time/1000000}, batch_predict_time: {batch_predict_time}')
-        return batch_predict_time
+        return task/1000000
     
     
 

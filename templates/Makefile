@@ -36,10 +36,10 @@ HW_EMU_CMD := ./launch_hw_emu.sh -g
 #HW_EMU_CMD := ./launch_hw_emu.sh -add-env AIE_COMPILER_WORKDIR=../Work -aie-sim-options ../aiesimulator_output/aiesim_options.txt
 
 # Frequency Option
-AIE_FREQ = --freqhz=200000000
-KERNEL_FREQ = --freqhz=200000000
+AIE_FREQ = --freqhz={{ (Frequency * 1000000) | int }}
+KERNEL_FREQ = --freqhz={{ (Frequency * 1000000) | int }}
 {% for id in range(1, task_num+1) %}
-KERNEL_FREQ_{{id}} = --freqhz=200000000:TopPL_{{id}}.ap_clk
+KERNEL_FREQ_{{id}} = --freqhz={{ (Frequency * 1000000) | int }}:TopPL_{{id}}.ap_clk
 {% endfor %}
 
 # compile aie

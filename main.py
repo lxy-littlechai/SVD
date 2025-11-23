@@ -138,6 +138,7 @@ if __name__ == '__main__':
     base_config.CascadeLevel = args.CascadeLevel
     config = svd_model.resourceCheck(base_config)
     config = svd_model.generateConfig(args.Frequency, config)
+    config['Frequency'] = args.Frequency
   
   level1_ordering_L, level1_ordering_R = genRoundRobinOrdering(config['COL']//config['LEVEL1_BLOCK_SIZE'])
   level2_ordering_L, level2_ordering_R = genRoundRobinOrdering(config['COL']//config['BLOCK_SIZE'])

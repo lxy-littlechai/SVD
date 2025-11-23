@@ -30,23 +30,26 @@ def generateHeader(pktType, ID):
     
     return header & 0xFFFFFFFF  # Ensure 32-bit unsigned
 
-def generate_data(row, block_size, filename) -> int:
+def generate_data(row, block_size, iter, filename) -> int:
     random.seed(random.randint(0, 1000000))
-    data = []
+    
     with open(filename, 'w') as f:
-        print("asa")
-        for i in range(block_size):
-            header = generateHeader(0, i)
-            data.append(header)
-            for j in range(row):
-                data.append(random.randint(0, 50))
-            data.append(0)
-            for item in range(0, len(data)-2, 4):
-                f.write(f'{data[item]} {data[item+1]} {data[item+2]} {data[item+3]}\n')
-            f.write("TLAST\n")
-            f.write(f'{data[len(data)-2]} {data[len(data)-1]}\n')
+        f.truncate(0)
+        
+        for i in range(iter):
+            data = []
+            for j in range(block_size):
+                header = generateHeader(0, j)
+                data.append(header)
+                for k in range(row):
+                    data.append(random.randint(0, 50))
+                data.append(0)
+                for item in range(0, len(data)-2, 4):
+                    f.write(f'{data[item]} {data[item+1]} {data[item+2]} {data[item+3]}\n')
+                f.write("TLAST\n")
+                f.write(f'{data[len(data)-2]} {data[len(data)-1]}\n')
 
 if __name__ == "__main__":
-    generate_data(128, 1, "../AIEparam/128/data/1_1_sweep_inL0.txt")
-    generate_data(128, 1, "../AIEparam/128/data/1_1_sweep_inR0.txt")
-    generate_data(128, 1, "../AIEparam/128/data/1_1_norm_in0.txt")
+    generate_data(256, 1, 2, "../AIEparam/256/data/1_1_sweep_inL0.txt")
+    generate_data(256, 1, 2, "../AIEparam/256/data/1_1_sweep_inR0.txt")
+    generate_data(256, 1, 2, "../AIEparam/256/data/1_1_norm_in_cas0.txt")
