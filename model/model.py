@@ -229,13 +229,17 @@ class SVD_Model:
         ITER = self.ITER
         BLOCK_SIZE = config.BLOCK_SIZE
         TASK_NUM = config.task_num
+        BLK1 = config.LEVEL1_BLOCK_SIZE
+        BLK2 = BLOCK_SIZE
+        CascadeLevel = config.CascadeLevel
+        IO_NUM = config.IO_NUM
+        PARALLEL_NUM = config.parallel_num
 
         BLOCK_NUM = COL/BLOCK_SIZE
 
-        Tx_row = 1.0/Frequency*(ROW*32/128 + 4)
-        if Frequency >= 350:
-            Tx_row = 1.0/Frequency*(ROW*32/128 + 4 + 8)
-
+        Tx_row = 1.0/Frequency*(ROW*32/128 + 4) # us include hls_send
+        Rx_row = 1.0/Frequency*(ROW*32/128 + 4) # us
+        
         id = str(ROW) + "_" + str(BLOCK_SIZE)
 
         if id not in total_aie:
@@ -246,55 +250,87 @@ class SVD_Model:
             orth_single_aie = single_aie[str(ROW)]
             orth_total_aie = total_aie[id]
         
+        # ------------------------ BLK2 Level -----------------------------------------
         block_num = BLOCK_NUM
         pair_num = BLOCK_NUM//2
-        Tx = Tx_row*BLOCK_SIZE
-        AIE_wait = max(orth_single_aie - Tx - ROW*32/128/1250, 0.0) # AIE trans
-        algo = Tx + AIE_wait + Tx # sec Tx arise from HLS code pattern
+        Tx = Tx_row*BLOCK_SIZE/IO_NUM
+        Rx = Tx_row*BLOCK_SIZE/IO_NUM
+        AIE_wait = max(orth_single_aie - Tx, 0.0) # AIE trans
+        algo = Tx + AIE_wait + Tx # sec Tx arise from HLS code pattern (HLS latency)
         data_wait = max(-(pair_num-1)*(AIE_wait + Tx) + orth_total_aie + Tx + algo, 0.0)
 
-        ddr = Tx*pair_num
-        blocks = pair_num*(Tx + AIE_wait) + algo + data_wait
-        iter = (block_num-1)*blocks + orth_total_aie + Tx
-        norm_stage = BLOCK_NUM*Tx*BLOCK_SIZE
+        all_blocks = pair_num*(Tx + AIE_wait) + algo + data_wait
+        level1_sweep = (block_num-1 - 1)*all_blocks + orth_total_aie + Rx # -1 means ddr latency 单独计算
 
-        task = ddr + ITER*iter + norm_stage
+        # ddr hls delay
+        SUB_BLOCK_SIZE = BLK2/IO_NUM
+        delay_ddr_hls = (BLK1/BLK2)*IO_NUM*SUB_BLOCK_SIZE*CascadeLevel*(ROW/CascadeLevel/32) \
+                + (BLK1/BLK2)*IO_NUM*SUB_BLOCK_SIZE*CascadeLevel \
+                + (BLK1/BLK2)*IO_NUM*SUB_BLOCK_SIZE \
+                + (BLK1/BLK2)*IO_NUM \
+                + (BLK1/BLK2) # cycles
+        delay_ddr_hls = delay_ddr_hls/Frequency # us
+
+        # ddr hls discontinuous read
+        delay_ddr_read = 73*2*(BLK1/BLK2)/Frequency # us
+        delay_ddr_write = 30 *2*(BLK1/BLK2)/Frequency # us
+
+        t_ddr_read = Tx_row*COL  + delay_ddr_hls + delay_ddr_read + delay_ddr_write
+        t_ddr_write = Tx_row*COL*2  + delay_ddr_hls + delay_ddr_write
+        t_ddr = t_ddr_read + t_ddr_write
+        t_level2 = t_ddr + level1_sweep
+        print(f'all_blocks: {all_blocks}, level1_sweep: {level1_sweep}')
+        print(f't_level2: {t_level2}')
+
+        # ------------------------ BLK1 Level -----------------------------------------
+        level1_block_num = COL/BLK1
+        level1_block_pair_num = COL/BLK1/2
+        t_orth = level1_block_pair_num*(level1_block_num-1)*t_level2
+
+
+        
+        norm_stage = 2*BLOCK_NUM*Tx_row*BLOCK_SIZE
+
+        task = ITER*t_orth + norm_stage
+
+        print(f't_ddr_read: {t_ddr_read}, t_ddr_write: {t_ddr_write}, t_ddr: {t_ddr}')
         print(f'AIE_wait: {AIE_wait}, algo: {algo}, data_wait: {data_wait}')
-        print(f'blocks: {blocks}, iter: {iter}')
+        # print(f'blocks: {blocks}, iter: {iter}')
+        # print(f'ddr: {ddr}, norm_stage: {norm_stage}')
         print(task)
+        return task/1000000
+        # print('-------------------------------------------------------------------')
+
+        # AIE_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row - ROW*32/128/1250, 0.0)
+
+
         
-        print('-------------------------------------------------------------------')
+        # Tx = Tx_row*BLOCK_SIZE + AIE_wait
+        # Rx = Tx_row*BLOCK_SIZE
 
-        AIE_wait = max(orth_single_aie - BLOCK_SIZE*Tx_row - ROW*32/128/1250, 0.0)
+        # round_wait = max(orth_total_aie - BLOCK_NUM/2*Tx, 0.0)
+        # round_robin_wait = Tx+Tx#second Tx -> algorithm latency
 
-
+        # one_round = BLOCK_NUM/2*Tx + round_wait + round_robin_wait
+        # one_sweep = (BLOCK_NUM-1)*one_round + orth_total_aie + Tx
         
-        Tx = Tx_row*BLOCK_SIZE + AIE_wait
-        Rx = Tx_row*BLOCK_SIZE
+        # norm_aie = 0.0003 * ROW + 0.1126
+        # norm_stage = BLOCK_NUM*Tx
 
-        round_wait = max(orth_total_aie - BLOCK_NUM/2*Tx, 0.0)
-        round_robin_wait = Tx+Tx#second Tx -> algorithm latency
-
-        one_round = BLOCK_NUM/2*Tx + round_wait + round_robin_wait
-        one_sweep = (BLOCK_NUM-1)*one_round + orth_total_aie + Tx
+        # DDR_Latency = 2*Tx*BLOCK_NUM #+ 200
         
-        norm_aie = 0.0003 * ROW + 0.1126
-        norm_stage = BLOCK_NUM*Tx
+        # sys_predict_time = DDR_Latency + ITER*one_sweep + norm_stage
 
-        DDR_Latency = 2*Tx*BLOCK_NUM #+ 200
-        
-        sys_predict_time = DDR_Latency + ITER*one_sweep + norm_stage
-
-        batch_predict_time = (BATCH//TASK_NUM*sys_predict_time + (BATCH > TASK_NUM)*sys_predict_time + (TASK_NUM-1)*50)/1000000
+        # batch_predict_time = (BATCH//TASK_NUM*sys_predict_time + (BATCH > TASK_NUM)*sys_predict_time + (TASK_NUM-1)*50)/1000000
     
 
-        print(f'AIE_wait: {AIE_wait}, round_wait: {round_wait}')
-        print(f'one-round: {one_round}, one_sweep: {one_sweep}')
-        #print(f'orth_single_aie: {orth_single_aie}, Tx-block:  {BLOCK_SIZE*Tx_row}')
-        print(f'Tx-row: {Tx_row}, Tx:  {Tx} AIE_wait: {AIE_wait}')
-        print(f'orth stage: {ITER*one_sweep}')
-        print(f'DDR_Latency: {DDR_Latency/1000000}, sys_predict_time: {sys_predict_time/1000000}, batch_predict_time: {batch_predict_time}')
-        return task/1000000
+        # print(f'AIE_wait: {AIE_wait}, round_wait: {round_wait}')
+        # print(f'one-round: {one_round}, one_sweep: {one_sweep}')
+        # #print(f'orth_single_aie: {orth_single_aie}, Tx-block:  {BLOCK_SIZE*Tx_row}')
+        # print(f'Tx-row: {Tx_row}, Tx:  {Tx} AIE_wait: {AIE_wait}')
+        # print(f'orth stage: {ITER*one_sweep}')
+        # print(f'DDR_Latency: {DDR_Latency/1000000}, sys_predict_time: {sys_predict_time/1000000}, batch_predict_time: {batch_predict_time}')
+        # return task/1000000
     
     
 
