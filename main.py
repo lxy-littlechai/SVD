@@ -141,7 +141,7 @@ if __name__ == '__main__':
     config['Frequency'] = args.Frequency
   
   level1_ordering_L, level1_ordering_R = genRoundRobinOrdering(config['COL']//config['LEVEL1_BLOCK_SIZE'])
-  level2_ordering_L, level2_ordering_R = genRoundRobinOrdering(config['COL']//config['BLOCK_SIZE'])
+  level2_ordering_L, level2_ordering_R = genRoundRobinOrdering(2*config['LEVEL1_BLOCK_SIZE']//config['BLOCK_SIZE'])
   config['level1_ordering_L'] = level1_ordering_L
   config['level1_ordering_R'] = level1_ordering_R
   config['level2_ordering_L'] = level2_ordering_L

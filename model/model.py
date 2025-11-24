@@ -252,14 +252,14 @@ class SVD_Model:
         
         # ------------------------ BLK2 Level -----------------------------------------
         block_num = BLOCK_NUM
-        pair_num = BLOCK_NUM//2
+        pair_num = BLOCK_NUM/2/PARALLEL_NUM
         Tx = Tx_row*BLOCK_SIZE/IO_NUM
         Rx = Tx_row*BLOCK_SIZE/IO_NUM
         AIE_wait = max(orth_single_aie - Tx, 0.0) # AIE trans
         algo = Tx + AIE_wait + Tx # sec Tx arise from HLS code pattern (HLS latency)
         data_wait = max(-(pair_num-1)*(AIE_wait + Tx) + orth_total_aie + Tx + algo, 0.0)
 
-        all_blocks = pair_num*(Tx + AIE_wait) + algo + data_wait
+        all_blocks = (pair_num*(Tx + AIE_wait) + algo + data_wait)
         level1_sweep = (block_num-1 - 1)*all_blocks + orth_total_aie + Rx # -1 means ddr latency 单独计算
 
         # ddr hls delay

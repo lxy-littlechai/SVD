@@ -187,11 +187,11 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   const int block_L_offset = level1_block_L_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   const int block_R_offset = level1_block_R_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   int cur_block_offset = 0;
-  const int ordering_L[BLOCK_PAIR_NUM] = {
-    {% for i in range(0, COL//BLOCK_SIZE//2) %} {{level2_ordering_L[COL//BLOCK_SIZE-2][i]}},{% endfor %}
+  const int ordering_L[LEVEL1_BLOCK_SIZE/BLOCK_SIZE] = {
+    {% for i in range(0, 2*LEVEL1_BLOCK_SIZE//BLOCK_SIZE//2) %} {{level2_ordering_L[2*LEVEL1_BLOCK_SIZE//BLOCK_SIZE-2][i]}},{% endfor %}
   };
-  const int ordering_R[BLOCK_PAIR_NUM] = {
-    {% for i in range(0, COL//BLOCK_SIZE//2) %} {{level2_ordering_R[COL//BLOCK_SIZE-2][i]}},{% endfor %}
+  const int ordering_R[LEVEL1_BLOCK_SIZE/BLOCK_SIZE] = {
+    {% for i in range(0, 2*LEVEL1_BLOCK_SIZE//BLOCK_SIZE//2) %} {{level2_ordering_R[2*LEVEL1_BLOCK_SIZE//BLOCK_SIZE-2][i]}},{% endfor %}
   };
 
   for(int i = 0;i < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i ++) { // num of sub-blocks with BLOCK_SIZE
