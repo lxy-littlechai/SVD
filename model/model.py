@@ -197,7 +197,7 @@ class SVD_Model:
         # aiePosition = svd_aie.getAIEPosition()
         ## PL Uram Check
         print("------", config.parallel_num)
-        svd_pl = SVD_PL(config.COL, config.ROW, config.parallel_num)
+        svd_pl = SVD_PL(config.LEVEL1_BLOCK_SIZE, config.ROW, config.parallel_num)
 
         while svd_aie.getTaskNum() < self.BATCH:
             config.valid = True
@@ -227,20 +227,19 @@ class SVD_Model:
         BATCH = self.BATCH
         Frequency = config.Frequency
         ITER = self.ITER
-        BLOCK_SIZE = config.BLOCK_SIZE
         TASK_NUM = config.task_num
         BLK1 = config.LEVEL1_BLOCK_SIZE
-        BLK2 = BLOCK_SIZE
+        BLK2 = config.BLOCK_SIZE
         CascadeLevel = config.CascadeLevel
         IO_NUM = config.IO_NUM
         PARALLEL_NUM = config.parallel_num
 
-        BLOCK_NUM = COL/BLOCK_SIZE
+        BLOCK_NUM = 2*BLK1/BLK2
 
         Tx_row = 1.0/Frequency*(ROW*32/128 + 4) # us include hls_send
         Rx_row = 1.0/Frequency*(ROW*32/128 + 4) # us
         
-        id = str(ROW) + "_" + str(BLOCK_SIZE)
+        id = str(ROW) + "_" + str(BLK2)
 
         if id not in total_aie:
             orth_single_aie = 1 # for test
@@ -251,16 +250,20 @@ class SVD_Model:
             orth_total_aie = total_aie[id]
         
         # ------------------------ BLK2 Level -----------------------------------------
-        block_num = BLOCK_NUM
-        pair_num = BLOCK_NUM/2/PARALLEL_NUM
-        Tx = Tx_row*BLOCK_SIZE/IO_NUM
-        Rx = Tx_row*BLOCK_SIZE/IO_NUM
+        num_blk2 = BLOCK_NUM
+        num_blk2_pair = BLOCK_NUM/2/PARALLEL_NUM
+        Tx = Tx_row*BLK2/IO_NUM
+        Rx = Tx_row*BLK2/IO_NUM
         AIE_wait = max(orth_single_aie - Tx, 0.0) # AIE trans
-        algo = Tx + AIE_wait + Tx # sec Tx arise from HLS code pattern (HLS latency)
-        data_wait = max(-(pair_num-1)*(AIE_wait + Tx) + orth_total_aie + Tx + algo, 0.0)
+        if PARALLEL_NUM == 1:
+            algo = Tx + AIE_wait + Tx # arise from HLS code pattern
+        else:
+            algo = 2*Tx + AIE_wait + 3*Tx # arise from HLS code pattern
+        
+        data_wait = max(-(num_blk2_pair-1)*(AIE_wait + Tx) + orth_total_aie + Rx - AIE_wait, 0.0)
 
-        all_blocks = (pair_num*(Tx + AIE_wait) + algo + data_wait)
-        level1_sweep = (block_num-1 - 1)*all_blocks + orth_total_aie + Rx # -1 means ddr latency 单独计算
+        all_blocks = (num_blk2_pair*(Tx + AIE_wait) + algo + data_wait)
+        level1_sweep = (num_blk2-1 - 1)*all_blocks + orth_total_aie + Rx # -1 means ddr latency 单独计算
 
         # ddr hls delay
         SUB_BLOCK_SIZE = BLK2/IO_NUM
@@ -272,8 +275,8 @@ class SVD_Model:
         delay_ddr_hls = delay_ddr_hls/Frequency # us
 
         # ddr hls discontinuous read
-        delay_ddr_read = 73*2*(BLK1/BLK2)/Frequency # us
-        delay_ddr_write = 30 *2*(BLK1/BLK2)/Frequency # us
+        delay_ddr_read = 70*num_blk2/Frequency # us
+        delay_ddr_write = 30 *num_blk2/Frequency # us
 
         t_ddr_read = Tx_row*COL  + delay_ddr_hls + delay_ddr_read + delay_ddr_write
         t_ddr_write = Tx_row*COL*2  + delay_ddr_hls + delay_ddr_write
@@ -286,10 +289,11 @@ class SVD_Model:
         level1_block_num = COL/BLK1
         level1_block_pair_num = COL/BLK1/2
         t_orth = level1_block_pair_num*(level1_block_num-1)*t_level2
+        print(f't_orth: {t_orth}')
 
 
         
-        norm_stage = 2*BLOCK_NUM*Tx_row*BLOCK_SIZE
+        norm_stage = num_blk2*Tx_row*BLK2
 
         task = ITER*t_orth + norm_stage
 
