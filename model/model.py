@@ -231,6 +231,7 @@ class SVD_Model:
         BLK1 = config.LEVEL1_BLOCK_SIZE
         BLK2 = config.BLOCK_SIZE
         CascadeLevel = config.CascadeLevel
+        AIEROW = ROW//CascadeLevel
         IO_NUM = config.IO_NUM
         PARALLEL_NUM = config.parallel_num
 
@@ -239,14 +240,13 @@ class SVD_Model:
         Tx_row = 1.0/Frequency*(ROW*32/128 + 4) # us include hls_send
         Rx_row = 1.0/Frequency*(ROW*32/128 + 4) # us
         
-        id = str(ROW) + "_" + str(BLK2)
-
+        id = str(AIEROW) + "_" + str(BLK2)
         if id not in total_aie:
             orth_single_aie = 1 # for test
             orth_total_aie = 2
         else:
             print(id)
-            orth_single_aie = single_aie[str(ROW)]
+            orth_single_aie = single_aie[str(AIEROW)]
             orth_total_aie = total_aie[id]
         
         # ------------------------ BLK2 Level -----------------------------------------
