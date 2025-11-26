@@ -19,7 +19,7 @@ class SysConfig:
         self.ITER = ITER
         
         # arch variable params
-        self.CascadeLevel = math.ceil(ROW/1024)
+        self.CascadeLevel = 0
         self.padding = 0
         self.LEVEL1_BLOCK_SIZE = 0
         self.BLOCK_SIZE = 0
@@ -45,17 +45,17 @@ class SysConfig:
             """ print(self.Frequency, other.Frequency)
             print(self.estimated_time, other.estimated_time) """
             return 1
-        elif self.estimated_time == other.estimated_time:
-            if self.Frequency > other.Frequency:
-                return 1
-            else:
-                return -1
+        # elif self.estimated_time == other.estimated_time:
+        #     if self.Frequency > other.Frequency:
+        #         return 1
+        #     else:
+        #         return -1
         else:
             return -1
 
         
     def keys(self):
-        return ('COL', 'ROW', 'padding', 'BATCH', 'LEVEL1_BLOCK_SIZE', 'BLOCK_SIZE', 'parallel_num', 'IO_NUM', 'task_num', 'orth_graph_list', 'norm_graph_list', 'CascadeLevel')
+        return ('COL', 'ROW', 'padding', 'BATCH', 'Frequency', 'LEVEL1_BLOCK_SIZE', 'BLOCK_SIZE', 'parallel_num', 'IO_NUM', 'task_num', 'orth_graph_list', 'norm_graph_list', 'CascadeLevel')
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -66,7 +66,6 @@ class SVD_Model:
         self.ROW = ROW
         self.ITER = ITER
         self.BATCH = BATCH
-        self.CascadeLevel = math.ceil(self.ROW/1024)
 
         self.config_blocksize = []
         self.config_list = []
@@ -77,34 +76,41 @@ class SVD_Model:
 
     def enumerateConfig(self):
         
-        # # step 1. enumerrate level-1 block_size
-        # for level1_block_size in range(1, self.COL//2+1):
+        # # step 1. enumerrate level1 BLK1
+        for BLK1 in range(1, self.COL//2+1):
+            if self.COL % BLK1 != 0:
+                continue
+            for BLK2 in range(1, min(12, 2*BLK1//2+1)):
+                if (2*BLK1) % BLK2 != 0:
+                    continue
+                block_num = 2*BLK1//BLK2
+                block_pair_num = block_num//2
+                for parallel_num in range(1, block_pair_num+1):     
+                    if block_pair_num % parallel_num != 0:
+                        continue        
+                    for IO_NUM in range(1, min(BLK2+1, 3)):
+                        if BLK2 % IO_NUM != 0:
+                            continue
+                        for CascadeLevel in range(1, math.ceil(self.ROW/1024)+1):
+                            if CascadeLevel > 1 and BLK2 > 4:
+                                continue
+                            if self.ROW%CascadeLevel != 0:
+                                continue
+                            if self.ROW/CascadeLevel > 1024:
+                                continue
+                            base_config = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
+                            base_config.LEVEL1_BLOCK_SIZE = BLK1
+                            base_config.BLOCK_SIZE = BLK2
+                            base_config.parallel_num = parallel_num
+                            base_config.IO_NUM = IO_NUM
+                            base_config.CascadeLevel = CascadeLevel
 
-         # step 1. enumerate different block_size
-        for block_size in range(1, 14): # 14 is the maximum block_size
-            col = self.COL
-            # padding the matrix to the multiple of block_size
-            if self.COL % block_size != 0:
-                col = self.COL + block_size - self.COL % block_size
-                while (col//block_size) % 2 != 0:
-                    col += block_size
-
-            # enumerate different parallel_num and IO_NUM
-            block_num = col//block_size
-            block_pair_num = block_num//2
-            for parallel_num in range(1, block_pair_num//2+1):
-                for IO_NUM in range(1, block_size):
-                    base_config = SysConfig(col, self.ROW, self.ITER, self.BATCH)
-                    base_config.BLOCK_SIZE = block_size
-                    base_config.parallel_num = parallel_num
-                    base_config.padding = col - self.COL
-                    base_config.IO_NUM = IO_NUM
-
-                    config = self.resourceCheck(base_config)
-                    if not config.valid:
-                        continue
-                    self.config_list.append(config)
-                    print(dict(config))
+                            config = self.resourceCheck(base_config)
+                            if not config.valid:
+                                continue
+                            
+                            self.config_list.append(config)
+                            
 
     def config4Freq(self):
         #step 1. for freq & block_size, predict the config time then select the best config in the freq
@@ -114,7 +120,7 @@ class SVD_Model:
 
         best_config_list = []
         MIN_FREQ = 308
-        MAX_FREQ = 318
+        MAX_FREQ = 309
         FREQ_INTER = 10
         for freq in range(MIN_FREQ, MAX_FREQ, FREQ_INTER):
             #bestConfig4freq = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
@@ -129,24 +135,24 @@ class SVD_Model:
         for i in range(1, 14):
             config_dict[str(i)] = sorted(config_dict[str(i)]) 
 
-        #step 3. merge similar time, remain the lower freq
-        EPS = 1e-6
-        for j in config_dict:
-            #print(i)
-            tmp_config = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
-            if len(config_dict[j]) > 0:
-                tmp_config = copy.deepcopy(config_dict[j][0])
-            for i in range(0, len(config_dict[j])):
-                #self.print(config)
-                config = config_dict[j][i]
-                if abs(tmp_config.estimated_time - config.estimated_time) < EPS and tmp_config.Frequency >= config.Frequency:
-                    tmp_config = copy.deepcopy(config)
-                    #self.print(tmp_config)
-                    if i == len(config_dict[j])-1:
-                        self.config_list.append(config)
-                else:
-                    self.config_list.append(copy.deepcopy(config))
-                    tmp_config = copy.deepcopy(config)
+        # #step 3. merge similar time, remain the lower freq
+        # EPS = 1e-6
+        # for j in config_dict:
+        #     #print(i)
+        #     tmp_config = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
+        #     if len(config_dict[j]) > 0:
+        #         tmp_config = copy.deepcopy(config_dict[j][0])
+        #     for i in range(0, len(config_dict[j])):
+        #         #self.print(config)
+        #         config = config_dict[j][i]
+        #         if abs(tmp_config.estimated_time - config.estimated_time) < EPS and tmp_config.Frequency >= config.Frequency:
+        #             tmp_config = copy.deepcopy(config)
+        #             #self.print(tmp_config)
+        #             if i == len(config_dict[j])-1:
+        #                 self.config_list.append(config)
+        #         else:
+        #             self.config_list.append(copy.deepcopy(config))
+        #             tmp_config = copy.deepcopy(config)
         
         self.config_list = sorted(self.config_list)
         
@@ -159,14 +165,17 @@ class SVD_Model:
         #step 3. get the best config rank
         self.enumerateConfig()
         self.config4Freq()
-        for config in self.config_list:
+        for i in range(len(self.config_list)):
+            config = self.config_list[i]
+            print(f"Config {i}:")
             self.print(config)
+            print("----------------------------------")
         self.best_config = self.config_list[0]
         
 
 
     def generateConfig(self, freq, config):
-        svd_pl = SVD_PL(self.COL, self.ROW, config.parallel_num)
+        svd_pl = SVD_PL(self.COL, self.ROW//config.CascadeLevel)
         config.uram = svd_pl.getRAM(config.task_num)
         config.Frequency = freq
         config.estimated_time = self.predict(config)
@@ -183,7 +192,10 @@ class SVD_Model:
         print("----------------------------------")
         print(f"COL: {self.COL} ROW: {self.ROW} BATCH: {self.BATCH}")
         print(f"Freq: {config.Frequency}")
-        print(f"parallel_num: {config.parallel_num}")
+        print(f"Task_num: {config.task_num}")
+        print(f"BLK1: {config.LEVEL1_BLOCK_SIZE}, BLK2: {config.BLOCK_SIZE}")
+        print(f"CascadeLevel: {config.CascadeLevel}")
+        print(f"parallel_num: {config.parallel_num}, IO_NUM: {config.IO_NUM}")
         print(f"BLOCK_SIZE: {config.BLOCK_SIZE} aie_num: {config.aie_num} task_num: {config.task_num}")
         print(f"URAM: {config.uram}")
         print(f"estimated_time: {config.estimated_time}")
@@ -196,8 +208,7 @@ class SVD_Model:
         svd_aie = SVD_AIE(1, 0, 1, config.BLOCK_SIZE, config.IO_NUM, config.CascadeLevel)
         # aiePosition = svd_aie.getAIEPosition()
         ## PL Uram Check
-        print("------", config.parallel_num)
-        svd_pl = SVD_PL(config.LEVEL1_BLOCK_SIZE, config.ROW, config.parallel_num)
+        svd_pl = SVD_PL(config.LEVEL1_BLOCK_SIZE, config.ROW)
 
         while svd_aie.getTaskNum() < self.BATCH:
             config.valid = True
@@ -217,6 +228,9 @@ class SVD_Model:
         
         config.aie_num = svd_aie.getAIENum()
         config.task_num = svd_aie.getTaskNum()
+        if config.task_num == 0:
+            config.valid = False
+            return config
         config.uram = svd_pl.getRAM(config.task_num)
         config.Frequency = 320
         return config
@@ -245,7 +259,6 @@ class SVD_Model:
             orth_single_aie = 1 # for test
             orth_total_aie = 2
         else:
-            print(id)
             orth_single_aie = single_aie[str(AIEROW)]
             orth_total_aie = total_aie[id]
         
@@ -282,14 +295,14 @@ class SVD_Model:
         t_ddr_write = Tx_row*COL*2  + delay_ddr_hls + delay_ddr_write
         t_ddr = t_ddr_read + t_ddr_write
         t_level2 = t_ddr + level1_sweep
-        print(f'all_blocks: {all_blocks}, level1_sweep: {level1_sweep}')
-        print(f't_level2: {t_level2}')
+        # print(f'all_blocks: {all_blocks}, level1_sweep: {level1_sweep}')
+        # print(f't_level2: {t_level2}')
 
         # ------------------------ BLK1 Level -----------------------------------------
         level1_block_num = COL/BLK1
         level1_block_pair_num = COL/BLK1/2
         t_orth = level1_block_pair_num*(level1_block_num-1)*t_level2
-        print(f't_orth: {t_orth}')
+        # print(f't_orth: {t_orth}')
 
 
         
@@ -297,11 +310,11 @@ class SVD_Model:
 
         task = ITER*t_orth + norm_stage
 
-        print(f't_ddr_read: {t_ddr_read}, t_ddr_write: {t_ddr_write}, t_ddr: {t_ddr}')
-        print(f'AIE_wait: {AIE_wait}, algo: {algo}, data_wait: {data_wait}')
+        # print(f't_ddr_read: {t_ddr_read}, t_ddr_write: {t_ddr_write}, t_ddr: {t_ddr}')
+        # print(f'AIE_wait: {AIE_wait}, algo: {algo}, data_wait: {data_wait}')
         # print(f'blocks: {blocks}, iter: {iter}')
         # print(f'ddr: {ddr}, norm_stage: {norm_stage}')
-        print(task)
+        # print(task)
         return task/1000000
         # print('-------------------------------------------------------------------')
 

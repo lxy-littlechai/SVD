@@ -337,7 +337,7 @@ public:
         }
       }
       for(int i = 0;i < GraphSize;i ++) {
-        connect<> (norm[0][i].out[1], norm[1][i].in[1]);
+        connect<> (norm[CascadeLevel-2][i].out[1], norm[CascadeLevel-1][i].in[1]);
       }
     }
 
