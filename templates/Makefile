@@ -59,7 +59,7 @@ VPP_XO_FLAGS += -c --mode hls --platform $(BASE_PLATFORM)
 VPP_XO_FLAGS += $(KERNEL_FREQ)
 	
 VPP_LINK_FLAGS := -l -t $(TARGET) --platform $(BASE_PLATFORM) $(KERNEL_XO) $(GRAPH_O) --save-temps -g --config $(CONFIG_FILE) -o $(XSA)
-VPP_LINK_FLAGS += --vivado.impl.jobs 256
+VPP_LINK_FLAGS += --vivado.impl.jobs 512
 {% for id in range(1, task_num+1) %}
 VPP_LINK_FLAGS += $(KERNEL_FREQ_{{id}})
 {% endfor %}

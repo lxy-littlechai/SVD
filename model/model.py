@@ -88,6 +88,7 @@ class SVD_Model:
                 for parallel_num in range(1, block_pair_num+1):     
                     if block_pair_num % parallel_num != 0:
                         continue        
+                    
                     for IO_NUM in range(1, min(BLK2+1, 3)):
                         if BLK2 % IO_NUM != 0:
                             continue
@@ -104,6 +105,7 @@ class SVD_Model:
                             base_config.parallel_num = parallel_num
                             base_config.IO_NUM = IO_NUM
                             base_config.CascadeLevel = CascadeLevel
+                            
 
                             config = self.resourceCheck(base_config)
                             if not config.valid:
@@ -166,6 +168,8 @@ class SVD_Model:
         self.enumerateConfig()
         self.config4Freq()
         for i in range(len(self.config_list)):
+            if i > 10:
+                continue
             config = self.config_list[i]
             print(f"Config {i}:")
             self.print(config)
@@ -175,7 +179,7 @@ class SVD_Model:
 
 
     def generateConfig(self, freq, config):
-        svd_pl = SVD_PL(self.COL, self.ROW//config.CascadeLevel)
+        svd_pl = SVD_PL(config.LEVEL1_BLOCK_SIZE, self.ROW)
         config.uram = svd_pl.getRAM(config.task_num)
         config.Frequency = freq
         config.estimated_time = self.predict(config)
@@ -228,9 +232,8 @@ class SVD_Model:
         
         config.aie_num = svd_aie.getAIENum()
         config.task_num = svd_aie.getTaskNum()
-        if config.task_num == 0:
-            config.valid = False
-            return config
+        #     config.valid = False
+        #     return config
         config.uram = svd_pl.getRAM(config.task_num)
         config.Frequency = 320
         return config

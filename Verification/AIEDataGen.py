@@ -50,6 +50,6 @@ def generate_data(row, block_size, iter, filename) -> int:
                 f.write(f'{data[len(data)-2]} {data[len(data)-1]}\n')
 
 if __name__ == "__main__":
-    generate_data(256, 1, 2, "../AIEparam/256/data/1_1_sweep_inL0.txt")
-    generate_data(256, 1, 2, "../AIEparam/256/data/1_1_sweep_inR0.txt")
-    generate_data(256, 1, 2, "../AIEparam/256/data/1_1_norm_in_cas0.txt")
+    generate_data(16, 1, 2, "../test8/1_1_sweep_inL0.txt")
+    generate_data(16, 1, 2, "../test8/1_1_sweep_inR0.txt")
+    generate_data(16, 1, 2, "../test8/1_1_norm_in_cas0.txt")

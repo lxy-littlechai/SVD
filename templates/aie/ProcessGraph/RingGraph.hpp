@@ -10,10 +10,12 @@ const int VCK190_COL = 50;
 template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
 class RingSweepGraph: public adf::graph {
 private:
-    const int ROW = 2*GraphSize-1;
-    const int COL = GraphSize;
+    static const int ROW = 2*GraphSize-1;
+    static const int COL = GraphSize;
 
     kernel orth[CascadeLevel][GraphSize][2*GraphSize];// (col, row)
+    pktsplit<GraphSize> acc_sp[CascadeLevel-1][2*GraphSize], param_sp[2*GraphSize];
+    pktmerge<GraphSize> acc_mg[CascadeLevel-1][2*GraphSize], param_mg[2*GraphSize];
     
     int ring0[GraphSize][2*GraphSize], ring1[GraphSize][2*GraphSize];
     struct Order {
@@ -172,25 +174,50 @@ public:
         }
 
         if(CascadeLevel > 1) {
+
+          for(int c = 0; c < CascadeLevel-1;c ++) {
+            for(int i = 0;i < ROW;i ++) {
+              acc_sp[c][i] = pktsplit<COL>::create();
+              acc_mg[c][i] = pktmerge<COL>::create();
+            }
+          }
+          for(int i = 0;i < ROW;i ++) {
+            param_sp[i] = pktsplit<COL>::create();
+            param_mg[i] = pktmerge<COL>::create();
+          }
+
           // connect acc
           for(int k = 0;k < CascadeLevel-1;k ++) {
             for(int i = 0;i < ROW;i ++) {
               for(int j = 0;j < COL;j ++) {
-                connect<> (orth[k][j][i].out[2], orth[k+1][j][i].in[2]);
+                connect<> (orth[k][j][i].out[2], acc_mg[k][i].in[j]);
+                connect<> (acc_sp[k][i].out[j], orth[k+1][j][i].in[2]);
+                //connect<> (orth[k][j][i].out[2], orth[k+1][j][i].in[2]);
               }
+              connect<> (acc_mg[k][i].out[0], acc_sp[k][i].in[0]);
             }
           }
+          
 
           //connect params
           for(int i = 0;i < ROW;i ++) {
             for(int j = 0;j < COL;j ++) {
-              connect<> (orth[CascadeLevel-1][j][i].out[2], orth[0][j][i].in[2]);
+              connect<> (orth[CascadeLevel-1][j][i].out[2], param_mg[i].in[j]);
+              // connect<> (orth[CascadeLevel-1][j][i].out[2], orth[0][j][i].in[2]);
+            }
+            connect<> (param_mg[i].out[0], param_sp[i].in[0]);
+          }
+
+          for(int i = 0;i < ROW;i ++) {
+            for(int j = 0;j < COL;j ++) {
+              connect<> (param_sp[i].out[j], orth[0][j][i].in[2]);
             }
           }
           for(int k = 1;k < CascadeLevel-1;k ++) {
             for(int i = 0;i < ROW;i ++) {
               for(int j = 0;j < COL;j ++) {
-                connect<> (orth[CascadeLevel-1][j][i].out[2], orth[k][j][i].in[3]);
+                connect<> (param_sp[i].out[j], orth[k][j][i].in[3]);
+                // connect<> (orth[CascadeLevel-1][j][i].out[2], orth[k][j][i].in[3]);
               }
             }
           }

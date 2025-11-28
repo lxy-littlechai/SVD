@@ -298,20 +298,18 @@ void Receive(axis_stream_sig& syscontrol, axis_stream_float convSet_L[parallel_n
         hls::print("Receive i: %d\n", i);
         #pragma HLS dataflow
 {% for i in range(0, parallel_num) %}
-  {% for j in range(0, IO_NUM) %}
+{% for j in range(0, IO_NUM) %}
   {% for c in range(0, CascadeLevel) %}
         float conv{{i}}L{{j}}{{c}} = receive4AIE(fifo_L[{{i}}][{{j}}][{{c}}], sweep_rx{{i+1}}_L_io{{j}}_cas{{c}});
+  {% endfor %}
+        convSet_L[{{i}}][{{j}}].write(conv{{i}}L{{j}}{{CascadeLevel-1}});
+  {% for c in range(0, CascadeLevel) %}
         float conv{{i}}R{{j}}{{c}} = receive4AIE(fifo_R[{{i}}][{{j}}][{{c}}], sweep_rx{{i+1}}_R_io{{j}}_cas{{c}});
   {% endfor %}
+        convSet_R[{{i}}][{{j}}].write(conv{{i}}R{{j}}{{CascadeLevel-1}});
         hls::print("conv{{i}}L{{j}}{{CascadeLevel-1}}: %f\n", conv{{i}}L{{j}}{{CascadeLevel-1}});
         hls::print("conv{{i}}R{{j}}{{CascadeLevel-1}}: %f\n", conv{{i}}R{{j}}{{CascadeLevel-1}});
-  {% endfor %}
 {% endfor %}
-{% for i in range(0, parallel_num) %}
-  {% for j in range(0, IO_NUM) %}
-        convSet_L[{{i}}][{{j}}].write(conv{{i}}L{{j}}{{CascadeLevel-1}});
-        convSet_R[{{i}}][{{j}}].write(conv{{i}}R{{j}}{{CascadeLevel-1}});
-  {% endfor %}
 {% endfor %}
       }
       

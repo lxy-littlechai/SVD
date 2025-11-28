@@ -165,7 +165,7 @@ class JacobiSVD:
             received_step += 1
             print(i, j)
             print("send")
-            if ifprint:
+            if ifprint and received_step < 10:
                 # 以IEEE 754格式32位float输出A[i]和A[j]（以16进制字符串输出）
                 import struct
                 def float_to_ieee754_hex(x):
@@ -179,7 +179,7 @@ class JacobiSVD:
             conv = max(conv, tmpconv)
             print("receive")
             print(i,j,tmpconv)
-            if ifprint:
+            if ifprint and received_step < 10:
                 
                 
                 print(A[i], A[j])
@@ -314,7 +314,7 @@ class BlockJacobiSVD:
                     # 对块对 (i, j) 进行正交化
                     step = step + 1
                     blocks[i], blocks[j], Vs[i], Vs[j], conv = \
-                        self.jacobi_svd.fit_block_pair(blocks[i], blocks[j], Vs[i], Vs[j], True)
+                        self.jacobi_svd.fit_block_pair(blocks[i], blocks[j], Vs[i], Vs[j],True)
                     print(f"Block {i} and Block {j} convergence: {conv:.6f}")
                     max_conv = max(max_conv, conv)
             
@@ -348,10 +348,10 @@ if __name__ == "__main__":
     for i in range(row):
         for j in range(col):
             mat[i][j] = random.randint(0, 50)
-    # np.savetxt("matrix.txt", mat, fmt="%.0f")
+    np.savetxt("matrix.txt", mat, fmt="%.0f")
     mat = np.loadtxt("matrix.txt")
     print(mat)
-    svd = BlockJacobiSVD(block_size=8, iter=2)
+    svd = BlockJacobiSVD(block_size=8, iter=1)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)
