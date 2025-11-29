@@ -55,25 +55,25 @@ void orthMid(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
     float A_ij = reduce_add(acc_ij.to_vector<float>());
     
     aie::vector<float, 4> acc_res(A_ii, A_jj, A_ij, 0);
+    // aie::vector<float, 4> acc_vec = readincr_v<4>(in_acc);
     readincr(in_acc);
-    float acc_A_ii = readincr(in_acc);
-    float acc_A_jj = readincr(in_acc);
-    float acc_A_ij = readincr(in_acc);
-    aie::vector<float, 4> acc_vec(acc_A_ii, acc_A_jj, acc_A_ij, 0);
+    int32 acc_A_ii = readincr(in_acc);
+    float acc_A_ii_float = reinterpret_cast<float&>(acc_A_ii);
+    int32 acc_A_jj = readincr(in_acc);
+    float acc_A_jj_float = reinterpret_cast<float&>(acc_A_jj);
+    int32 acc_A_ij = readincr(in_acc);
+    float acc_A_ij_float = reinterpret_cast<float&>(acc_A_ij);
+    aie::vector<float, 4> acc_vec(acc_A_ii_float, acc_A_jj_float, acc_A_ij_float, 0);
     acc_res = aie::add(acc_res, acc_vec);
-
     A_ii = acc_res[0];
     A_jj = acc_res[1];
     A_ij = acc_res[2];
-
-
     uint32 ID = getPacketid(out_acc, 0);
     writeHeader(out_acc, 0, ID);
     writeincr(out_acc, A_ii, 0);
     writeincr(out_acc, A_jj, 0);
     writeincr(out_acc, A_ij, 1);
 
-    
     chess_separator_scheduler();
     // float conv;
     // if(A_ii*A_jj == 0) conv = 0;
@@ -85,31 +85,17 @@ void orthMid(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
     ApIter = aie::begin_vector<w>(in0);
     AqIter = aie::begin_vector<w>(in1);
 
-    //  if(conv == 0) {
-    //     for (int i = 0; i < ROW/w; i++) 
-    //     chess_prepare_for_pipelining
-    //     chess_loop_range(ROW/w,ROW/w)
-    //     {
-
-    //             *BpIter ++ = *ApIter ++;
-    //             *BqIter ++ = *AqIter ++;
-
-    //     }
-    // }
-    // else { 
     readincr(in_params);
-    float c = readincr(in_params);
-    float s = readincr(in_params);
+    int32 c = readincr(in_params);
+    float c_float = reinterpret_cast<float&>(c);
+    int32 s = readincr(in_params);
+    float s_float = reinterpret_cast<float&>(s);
 
-        // float tau = aie::div(A_ii-A_jj, aie::mul((float)2.0, A_ij));
-        // float t = aie::div(sign(tau), aie::add(aie::abs(tau), aie::sqrt(aie::mul(tau, tau) + 1)));
-        // float c= aie::div(1, aie::sqrt(t * t + 1));
-        // float s = aie::mul(t, c);
 
-        aie::vector<float, w> vec_s = aie::broadcast<float, w>(s);
+        aie::vector<float, w> vec_s = aie::broadcast<float, w>(s_float);
         
         vec1 = *ApIter ++;
-        aie::vector<float, w> vec_c = aie::broadcast<float, w>(c);
+        aie::vector<float, w> vec_c = aie::broadcast<float, w>(c_float);
         
         aie::accum<accfloat, w> acc0_0 = aie::zeros<accfloat, w>();
         aie::accum<accfloat, w> acc0_1 = aie::zeros<accfloat, w>();
@@ -194,25 +180,9 @@ void orthMid(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
 //     ApIter = aie::begin_vector<w>(in0);
 //     AqIter = aie::begin_vector<w>(in1);
 
-//     //  if(conv == 0) {
-//     //     for (int i = 0; i < ROW/w; i++) 
-//     //     chess_prepare_for_pipelining
-//     //     chess_loop_range(ROW/w,ROW/w)
-//     //     {
-
-//     //             *BpIter ++ = *ApIter ++;
-//     //             *BqIter ++ = *AqIter ++;
-
-//     //     }
-//     // }
-//     // else { 
 //     float c = readincr(in_params);
 //     float s = readincr(in_params);
 
-//         // float tau = aie::div(A_ii-A_jj, aie::mul((float)2.0, A_ij));
-//         // float t = aie::div(sign(tau), aie::add(aie::abs(tau), aie::sqrt(aie::mul(tau, tau) + 1)));
-//         // float c= aie::div(1, aie::sqrt(t * t + 1));
-//         // float s = aie::mul(t, c);
 
 //         aie::vector<float, w> vec_s = aie::broadcast<float, w>(s);
         

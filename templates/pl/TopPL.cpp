@@ -634,7 +634,7 @@ void NormFIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, T norm_receive_fifo[Cas
         #pragma HLS PIPELINE II = 1
         U[i*ROW_DATA_SIZE + c*AIE_DATA_SIZE + j] = norm_receive_fifo[c].read();
       }
-      sigma = norm_receive_fifo[CascadeLevel-1].read();
+      sigma = norm_receive_fifo[c].read();
       S[i] = sigma(31, 0);
     }
     

@@ -57,12 +57,15 @@ void orthBottom(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
     aie::vector<float, 4> acc_res(A_ii, A_jj, A_ij, 0);
     // aie::vector<float, 4> acc_vec = readincr_v<4>(in_acc);
     readincr(in_acc);
-    float acc_A_ii = readincr(in_acc);
-    float acc_A_jj = readincr(in_acc);
-    float acc_A_ij = readincr(in_acc);
-    aie::vector<float, 4> acc_vec(acc_A_ii, acc_A_jj, acc_A_ij, 0);
+    int32 acc_A_ii = readincr(in_acc);
+    float acc_A_ii_float = reinterpret_cast<float&>(acc_A_ii);
+    int32 acc_A_jj = readincr(in_acc);
+    float acc_A_jj_float = reinterpret_cast<float&>(acc_A_jj);
+    int32 acc_A_ij = readincr(in_acc);
+    float acc_A_ij_float = reinterpret_cast<float&>(acc_A_ij);
+    aie::vector<float, 4> acc_vec(acc_A_ii_float, acc_A_jj_float, acc_A_ij_float, 0);
     acc_res = aie::add(acc_res, acc_vec);
-
+    // printf("Bottom acc_A_ii: %f, acc_A_jj: %f, acc_A_ij: %f\n", acc_A_ii_float, acc_A_jj_float, acc_A_ij_float);
     A_ii = acc_res[0];
     A_jj = acc_res[1];
     A_ij = acc_res[2];
@@ -86,7 +89,8 @@ void orthBottom(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
         writeHeader(out_params, 0, ID);
         writeincr(out_params, c, 0);
         writeincr(out_params, s, 1);
-
+        // printf("Bottom ID: %d\n", ID);
+        // printf("Bottom c: %f, s: %f\n", c, s);
         aie::vector<float, w> vec_s = aie::broadcast<float, w>(s);
         
         vec1 = *ApIter ++;

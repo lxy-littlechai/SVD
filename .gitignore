@@ -2,6 +2,7 @@ test
 model_test
 FPGA_test
 FPGATest
+FPGAiter
 GPU_test
 Predict_test
 PerfModel

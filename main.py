@@ -87,6 +87,7 @@ def generate(storePath, config):
             ("aie", "Config.h"),
 
             ("pl", "TopPL.cpp"),
+            ("pl", "TopPL_iter.cpp"),
             ("pl", "TopPL.cfg"),
             ("pl", "config.h"),
 

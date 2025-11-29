@@ -146,34 +146,33 @@ void OrthDDR2FIFO(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
   const int block_L_offset = level1_block_L_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
   const int block_R_offset = level1_block_R_index*LEVEL1_BLOCK_SIZE*ROW/DDR_ELEM_NUM;
 
-  for(int i = 0;i < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i ++) {
-    {% for p in range(0, parallel_num) %}
-      if({{p}} <= i%(parallel_num) && i%(parallel_num) < {{p+1}}) {
-          for(int j = 0;j < IO_NUM;j ++) {
-            for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
-              for(int c = 0;c < CascadeLevel;c ++) {
-                for(int k = 0;k < AIE_DATA_SIZE;k ++) {
-                #pragma HLS PIPELINE II = 1
-                ap_uint<128> tmp = dataIn[block_R_offset + i*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k];
-                send_fifo_R[{{p}}][j][c].write(tmp);
-                }
-              }
-            }
-          }
-          for(int j = 0;j < IO_NUM;j ++) {
-            for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
-              for(int c = 0;c < CascadeLevel;c ++) {
-                for(int k = 0;k < AIE_DATA_SIZE;k ++) {
-                #pragma HLS PIPELINE II = 1
-                ap_uint<128> tmp = dataIn[block_L_offset + i*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k];
-                send_fifo_L[{{p}}][j][c].write(tmp);
-                }
-              }
-            }
-          }
-      }
-    {% endfor %}
+  for(int i_base = 0;i_base < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i_base += parallel_num) {
     
+    for(int p = 0;p < parallel_num;p ++) {
+      int i = i_base + p;
+      for(int j = 0;j < IO_NUM;j ++) {
+        for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
+          for(int c = 0;c < CascadeLevel;c ++) {
+            for(int k = 0;k < AIE_DATA_SIZE;k ++) {
+              #pragma HLS PIPELINE II = 1
+              ap_uint<128> tmp = dataIn[block_R_offset + i*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k];
+              send_fifo_R[p][j][c].write(tmp);
+            }
+          }
+        }
+      }
+      for(int j = 0;j < IO_NUM;j ++) {
+        for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
+          for(int c = 0;c < CascadeLevel;c ++) {
+            for(int k = 0;k < AIE_DATA_SIZE;k ++) {
+              #pragma HLS PIPELINE II = 1
+              ap_uint<128> tmp = dataIn[block_L_offset + i*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k];
+              send_fifo_L[p][j][c].write(tmp);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -299,20 +298,18 @@ void Receive(axis_stream_sig& syscontrol, axis_stream_float convSet_L[parallel_n
         hls::print("Receive i: %d\n", i);
         #pragma HLS dataflow
 {% for i in range(0, parallel_num) %}
-  {% for j in range(0, IO_NUM) %}
+{% for j in range(0, IO_NUM) %}
   {% for c in range(0, CascadeLevel) %}
         float conv{{i}}L{{j}}{{c}} = receive4AIE(fifo_L[{{i}}][{{j}}][{{c}}], sweep_rx{{i+1}}_L_io{{j}}_cas{{c}});
+  {% endfor %}
+        convSet_L[{{i}}][{{j}}].write(conv{{i}}L{{j}}{{CascadeLevel-1}});
+  {% for c in range(0, CascadeLevel) %}
         float conv{{i}}R{{j}}{{c}} = receive4AIE(fifo_R[{{i}}][{{j}}][{{c}}], sweep_rx{{i+1}}_R_io{{j}}_cas{{c}});
   {% endfor %}
+        convSet_R[{{i}}][{{j}}].write(conv{{i}}R{{j}}{{CascadeLevel-1}});
         hls::print("conv{{i}}L{{j}}{{CascadeLevel-1}}: %f\n", conv{{i}}L{{j}}{{CascadeLevel-1}});
         hls::print("conv{{i}}R{{j}}{{CascadeLevel-1}}: %f\n", conv{{i}}R{{j}}{{CascadeLevel-1}});
-  {% endfor %}
 {% endfor %}
-{% for i in range(0, parallel_num) %}
-  {% for j in range(0, IO_NUM) %}
-        convSet_L[{{i}}][{{j}}].write(conv{{i}}L{{j}}{{CascadeLevel-1}});
-        convSet_R[{{i}}][{{j}}].write(conv{{i}}R{{j}}{{CascadeLevel-1}});
-  {% endfor %}
 {% endfor %}
       }
       
@@ -637,7 +634,7 @@ void NormFIFO2DDR(ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, T norm_receive_fifo[Cas
         #pragma HLS PIPELINE II = 1
         U[i*ROW_DATA_SIZE + c*AIE_DATA_SIZE + j] = norm_receive_fifo[c].read();
       }
-      sigma = norm_receive_fifo[CascadeLevel-1].read();
+      sigma = norm_receive_fifo[c].read();
       S[i] = sigma(31, 0);
     }
     

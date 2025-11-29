@@ -59,22 +59,27 @@ void orthTop(adf::input_buffer<float, adf::extents<1+ROW>>& __restrict in0,
     writeincr(out_acc, A_ii, 0);
     writeincr(out_acc, A_jj, 0);
     writeincr(out_acc, A_ij, 1);
+    // printf("Top ID: %d\n", ID);
+    // printf("Top A_ii: %f, A_jj: %f, A_ij: %f\n", A_ii, A_jj, A_ij);
     
     
     
     chess_separator_scheduler();
 
     readincr(in_params); // read Header and discard
-    float c = readincr(in_params);
-    float s = readincr(in_params);
+    int32 c = readincr(in_params);
+    float c_float = reinterpret_cast<float&>(c);
+    int32 s = readincr(in_params);
+    float s_float = reinterpret_cast<float&>(s);
+    // printf("Top c: %f, s: %f\n", c_float, s_float);
 
     ApIter = aie::begin_vector<w>(in0);
     AqIter = aie::begin_vector<w>(in1);
 
-        aie::vector<float, w> vec_s = aie::broadcast<float, w>(s);
+        aie::vector<float, w> vec_s = aie::broadcast<float, w>(s_float);
         
         vec1 = *ApIter ++;
-        aie::vector<float, w> vec_c = aie::broadcast<float, w>(c);
+        aie::vector<float, w> vec_c = aie::broadcast<float, w>(c_float);
         
         aie::accum<accfloat, w> acc0_0 = aie::zeros<accfloat, w>();
         aie::accum<accfloat, w> acc0_1 = aie::zeros<accfloat, w>();
