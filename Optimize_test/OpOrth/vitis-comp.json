@@ -1,9 +1,0 @@
-{
-  "name": "NativeGraph",
-  "type": "HLS",
-  "configuration": {
-    "componentType": "HLS",
-    "configFiles": ["pl\/TopPL.cfg"],
-    "work_dir": "toppl"
-  }
-}

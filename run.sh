@@ -1,3 +1,14 @@
 clear
-python3 main.py --PATH="./test1024" --COL=1024 --ROW=1024 --BATCH=1 --ITER=1 --optimize=1 --LEVEL1_BLOCK_SIZE=128 --BLOCK_SIZE=4 --PARALLEL_NUM=4 --CascadeLevel=1 --IO_NUM=4 --Frequency=150.0
-# PerfModel/208M/256/128-4-4-4
+python3 main.py --PATH="./test" \
+--COL=256 \
+--ROW=256 \
+--BATCH=100 \
+--ITER=1 \
+--optimize=1 \
+--task_num=1 \
+--LEVEL1_BLOCK_SIZE=64 \
+--BLOCK_SIZE=4 \
+--PARALLEL_NUM=1 \
+--IO_NUM=1 \
+--CascadeLevel=1 \
+--Frequency=208

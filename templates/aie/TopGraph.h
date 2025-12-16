@@ -4,10 +4,10 @@
 #include <string>
 using namespace adf;
 
-template<int MatrixROW, int SUB_BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
+template<int MatrixROW, int SUB_BLOCK_SIZE, int BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
 class TopNormGraph: public graph {
 private:
-    RingNormGraph<MatrixROW, SUB_BLOCK_SIZE, START_COL, START_ROW, DIRECTION, CascadeLevel> normGraph;
+    RingNormGraph<MatrixROW, SUB_BLOCK_SIZE, BLOCK_SIZE, START_COL, START_ROW, DIRECTION, CascadeLevel> normGraph;
 public:
     input_plio in[CascadeLevel][1];
     output_plio out[CascadeLevel][1];
@@ -17,8 +17,8 @@ public:
     TopNormGraph(std::string graphID) {
         for(int k = 0;k < CascadeLevel;k ++) {
             for(int j = 0;j < 1;j ++) {
-                std::string fileIn = "data/" + graphID + "_norm_in"  + "_cas" + std::to_string(k) + ".txt";
-                std::string fileOut = "data/" + graphID + "_norm_in"  + "_cas" + std::to_string(k) +".txt";
+                std::string fileIn = "data/" + graphID + "_norm_in"  + "_cas" + std::to_string(k) + ".csv";
+                std::string fileOut = "data/" + graphID + "_norm_in"  + "_cas" + std::to_string(k) +".csv";
                 std::string plIn = graphID + "_norm_in"  + "_cas" + std::to_string(k);
                 std::string plout = graphID + "_norm_out" + "_cas" + std::to_string(k);
                 in[k][j] = input_plio::create(plIn, plio_128_bits, fileIn);
@@ -64,7 +64,7 @@ public:
             for(int j = 0;j < IO_NUM;j ++) {
                 for(int k = 0;k < 2;k ++) {
                     std::string type = k == 0 ? "L" : "R";
-                    std::string fileIn = "data/" + graphID + "_sweep_in" + type + std::to_string(i) + ".txt";
+                    std::string fileIn = "data/" + graphID + "_sweep_in" + type + std::to_string(i) + ".csv";
                     std::string fileOut = "data/" + graphID + "_sweep_out_" + type + "_cas" + std::to_string(i) + "_io" + std::to_string(j);
                     std::string plIn = graphID + "_sweep_in_" + type  + "_io" + std::to_string(j)+ "_cas" + std::to_string(i);
                     std::string plout = graphID + "_sweep_out_" + type  + "_io" + std::to_string(j) + "_cas" + std::to_string(i);

@@ -305,7 +305,7 @@ public:
 
 };
 
-template<int MatrixROW, int GraphSize, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
+template<int MatrixROW, int GraphSize, int BLOCK_SIZE, int START_COL, int START_ROW, int DIRECTION, int CascadeLevel>
 class RingNormGraph: public graph {
 private:
   kernel norm[CascadeLevel][GraphSize];
@@ -375,12 +375,12 @@ public:
           row += direction;
           if(row == VCK190_ROW && direction == 1) {
               row = VCK190_ROW-1;
-              col += GraphSize+1;
+              col += BLOCK_SIZE+1;
               direction *= -1;
           }
           else if(row == -1 && direction == -1) {
               row = 0;
-              col += GraphSize+1;
+              col += BLOCK_SIZE+1;
               direction *= -1;
           }
       }

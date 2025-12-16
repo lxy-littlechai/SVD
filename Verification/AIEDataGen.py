@@ -49,7 +49,20 @@ def generate_data(row, block_size, iter, filename) -> int:
                 f.write("TLAST\n")
                 f.write(f'{data[len(data)-2]} {data[len(data)-1]}\n')
 
+def generate_aie_param_data(row, iter, filename) -> int:
+    with open(filename, 'w') as f:
+        f.truncate(0)
+        f.write('CMD,D,D,D,D,TLAST,TKEEP\n')
+        f.write('STALL:1000,,,,,,\n')
+        for i in range(iter):
+            for j in range(row//4):
+                f.write(f'DATA,{random.randint(0, 50)},{random.randint(0, 50)},{random.randint(0, 50)},{random.randint(0, 50)},0,-1\n')
+        f.write('DATA,0,0,0,0,0,-1\n')
+
 if __name__ == "__main__":
-    generate_data(16, 1, 2, "../test8/1_1_sweep_inL0.txt")
-    generate_data(16, 1, 2, "../test8/1_1_sweep_inR0.txt")
-    generate_data(16, 1, 2, "../test8/1_1_norm_in_cas0.txt")
+    dir = "512-4"
+    row = 512
+    iter = 2
+    generate_aie_param_data(row, iter, "../AIEparam/"+dir+"/data/1_1_sweep_inL0.csv")
+    generate_aie_param_data(row, iter, "../AIEparam/"+dir+"/data/1_1_sweep_inR0.csv")
+    generate_aie_param_data(row, iter, "../AIEparam/"+dir+"/data/1_1_norm_in_cas0.csv")

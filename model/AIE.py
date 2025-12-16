@@ -1,15 +1,16 @@
 import numpy as np
 
 class GraphInfo:
-  def __init__(self, task_id, graph_id, start_col, start_row, start_direction):
+  def __init__(self, task_id, graph_id, parallel_id, start_col, start_row, start_direction):
     self.task_id = task_id
     self.graph_id = graph_id
+    self.parallel_id = parallel_id
     self.start_col = start_col
     self.start_row = start_row
     self.start_direction = start_direction
 
   def keys(self):
-    return ('task_id','graph_id', 'start_col','start_row','start_direction')
+    return ('task_id','graph_id', 'parallel_id', 'start_col','start_row','start_direction')
 
   def __getitem__(self, item):
     return getattr(self, item)
@@ -33,7 +34,7 @@ class SVD_AIE:
         self.task_num = 0
         self.plio_num = 0
 
-    def tryAIEPlacement(self, parallel_num):
+    def tryAIEPlacement(self, parallel_num, io_num):
         tempAIE = self.usedAIE.copy()
 
         valid = True
@@ -52,15 +53,12 @@ class SVD_AIE:
                     self.placement(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
                     temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
 
-                # if self.row != self.VCK190_ROW-1 and self.row != 0:
-                #     valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
-                temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
-
-            
-
+                if self.row != self.VCK190_ROW-1 and self.row != 0:
+                    valid = self.check(temp_col, temp_row, self.BLOCK_SIZE, tempAIE)
+                # temp_col, temp_row, temp_dir = self.next(temp_col, temp_row, temp_dir)
 
             # try PLIO sweep-2 + norm-1
-            if self.plio_num + 3 > self.VCK190_PLIO_128:
+            if self.plio_num + 2*io_num*self.CascadeLevel+2*self.CascadeLevel > self.VCK190_PLIO_128:
                 return False, [], []
 
             if not valid:
@@ -68,8 +66,9 @@ class SVD_AIE:
 
             task_id = self.task_num+1
             graph_id = self.graph_num+1
+            parallel_id = i+1
 
-            orthGraphInfo, normGraphInfo = self.getAIEPosition(task_id, graph_id)
+            orthGraphInfo, normGraphInfo = self.getAIEPosition(task_id, graph_id, parallel_id)
             orth_graph_list.append(orthGraphInfo)
             if i == 0:
                 norm_graph_list.append(normGraphInfo)
@@ -79,11 +78,11 @@ class SVD_AIE:
                 for i in range(2*self.BLOCK_SIZE-1):
                     self.placement(self.col, self.row, self.BLOCK_SIZE, self.usedAIE)
                     self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
-                # if self.row != self.VCK190_ROW-1 and self.row != 0:
-                #     self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)  ## ignore memory AIE
-                self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
+                if self.row != self.VCK190_ROW-1 and self.row != 0:
+                    self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)  ## ignore memory AIE
+                # self.col, self.row, self.direction = self.next(self.col, self.row, self.direction)
             # wait to add IO NUM
-            self.plio_num += 3
+            self.plio_num += 2*io_num*self.CascadeLevel+2*self.CascadeLevel
             self.graph_num += 1
 
         if valid:
@@ -93,9 +92,9 @@ class SVD_AIE:
             return False, [], []
 
     # return the orthogonal graph and norm graph info
-    def getAIEPosition(self, task_id, graph_id):
-      orthGraphInfo = GraphInfo(task_id, graph_id, self.col, self.row, self.direction)
-      normGraphInfo = GraphInfo(task_id, graph_id, self.col-1, self.row, self.direction)
+    def getAIEPosition(self, task_id, graph_id, parallel_id):
+      orthGraphInfo = GraphInfo(task_id, graph_id, parallel_id, self.col, self.row, self.direction)
+      normGraphInfo = GraphInfo(task_id, graph_id, parallel_id, self.col-1, self.row, self.direction)
       return dict(orthGraphInfo), dict(normGraphInfo)
 
     def getGraphNum(self):

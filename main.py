@@ -121,6 +121,7 @@ if __name__ == '__main__':
   parser.add_argument("--IO_NUM", type=int)
   parser.add_argument("--Frequency", type=float)
   parser.add_argument("--CascadeLevel", type=int)
+  parser.add_argument("--task_num", type=int)
   #parser.add_argument("--MaxSweep", type=int, default=20)
   args = parser.parse_args()
   
@@ -137,8 +138,9 @@ if __name__ == '__main__':
     base_config.IO_NUM = args.IO_NUM
     base_config.Frequency = args.Frequency
     base_config.CascadeLevel = args.CascadeLevel
+    base_config.task_num = args.task_num
     config = svd_model.resourceCheck(base_config)
-    config = svd_model.generateConfig(args.Frequency, config)
+    config = svd_model.generateConfig(args.Frequency, base_config)
     config['Frequency'] = args.Frequency
   
   level1_ordering_L, level1_ordering_R = genRoundRobinOrdering(config['COL']//config['LEVEL1_BLOCK_SIZE'])

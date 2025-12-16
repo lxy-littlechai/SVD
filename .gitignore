@@ -4,9 +4,13 @@ FPGA_test
 FPGATest
 FPGAiter
 GPU_test
+GPU_test_new
 Predict_test
 PerfModel
+PerfNew
 AIEparam
+Optimize_test
+DSE
 
 **/__pycache__
 **/.Xil

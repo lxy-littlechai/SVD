@@ -35,12 +35,12 @@ int main(int argc, char** argv) {
     if(argc == 4) sscanf (argv[3], "%d", &BATCH);
     
     xrt::kernel kernel[{{task_num}}];
-    xrt::bo input_buffer[{{task_num}}];
+    // xrt::bo input_buffer[{{task_num}}];
     xrt::bo output_buffer_U[{{task_num}}];
     xrt::bo output_buffer_S[{{task_num}}];
     xrt::bo output_buffer_CONV[{{task_num}}];
 
-    float* data[{{task_num}}];
+    // float* data[{{task_num}}];
     float* U[{{task_num}}];
     float* S[{{task_num}}];
     float* CONV[{{task_num}}];
@@ -48,37 +48,39 @@ int main(int argc, char** argv) {
     for(int i = 0;i < {{task_num}};i ++) {
       string kernel_name = "TopPL:{TopPL_" + to_string(i+1) + "}";
       kernel[i] = xrt::kernel(device, xclbin_uuid, kernel_name.c_str());
-      input_buffer[i] = xrt::bo(device, DATA_SIZE_BYTE, kernel[i].group_id(0));
+      // input_buffer[i] = xrt::bo(device, DATA_SIZE_BYTE, kernel[i].group_id(0));
       output_buffer_U[i] = xrt::bo(device, U_SIZE_BYTE, kernel[i].group_id(1));
       output_buffer_S[i] = xrt::bo(device, S_SIZE_BYTE, kernel[i].group_id(2));
       output_buffer_CONV[i] = xrt::bo(device, CONV_SIZE_BYTE, kernel[i].group_id(3));
 
-      data[i] = input_buffer[i].map<float*>();
+      // data[i] = input_buffer[i].map<float*>();
       U[i] = output_buffer_U[i].map<float*>();
       S[i] = output_buffer_S[i].map<float*>();
       CONV[i] = output_buffer_CONV[i].map<float*>();
     }
 
-    for(int k = 0;k < 1;k ++){
-      int index = 0, matrix_id = 0;
-      std::string filename = "matrix.txt";
-      // generateMatrix<COL, ROW>(filename);
-      // read<COL, ROW>(filename, data[k]);
+    std::vector<xrt::bo> input_buffer;
+    input_buffer.reserve(BATCH);
+    for(int i = 0;i < BATCH;i ++) {
+      int kernel_id = i % {{task_num}};
+      xrt::bo tmp_bo = xrt::bo(device, DATA_SIZE_BYTE, kernel[kernel_id].group_id(0));
+      float* tmp_data = tmp_bo.map<float*>();
+      int index = 0;
       for(int j = 0;j < COL;j ++) {
         for(int i = 0;i < ROW;i ++) {
-            data[k][index ++] = getRand(-50, 50);
+            tmp_data[index ++] = getRand(-50, 50);
         }
       }
+      tmp_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
+      input_buffer.emplace_back(tmp_bo);
+    }
 
+    for(int k = 0;k < 1;k ++){
       for(int i = 0;i < 100;i ++) {
         CONV[k][i] = 0;
       }
     }
     
-    for(int k = 0;k < {{task_num}};k ++) {
-      input_buffer[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
-      output_buffer_CONV[k].sync(XCL_BO_SYNC_BO_TO_DEVICE);
-    }
     
 
     std::vector<xrt::graph> topSweepGraph;
@@ -118,18 +120,23 @@ int main(int argc, char** argv) {
     xrt::run run[{{task_num}}];
     for(int i = 0;i < BATCH/{{task_num}};i ++) {
       for(int k = 0;k < {{task_num}};k ++) {
-        run[k] = kernel[k](input_buffer[k], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
+        int global_id = i * {{task_num}} + k;
+        run[k] = kernel[k](input_buffer[global_id], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
       }
       for(int k = 0;k < {{task_num}};k ++) {
         run[k].wait();
       }
     }
-    for(int k = 0;k < BATCH%{{task_num}};k ++) {
-      run[k] = kernel[k](input_buffer[k], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
+
+    int done_cnt = (BATCH/{{task_num}})*{{task_num}};
+    int remain = BATCH%{{task_num}};
+    for(int k = 0;k < remain;k ++) {
+      int global_id = done_cnt + k;
+      run[k] = kernel[k](input_buffer[global_id], output_buffer_U[k], output_buffer_S[k], output_buffer_CONV[k], ITER);
     }
-    for(int k = 0;k < BATCH%{{task_num}};k ++) {
-        run[k].wait();
-      }
+    for(int k = 0;k < remain;k ++) {
+      run[k].wait();
+    }
     
 
   

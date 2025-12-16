@@ -193,42 +193,38 @@ void OrthFIFO2DDR(ap_uint<DDR_WIDTH>* dataIn, int level1_block_L_index, int leve
     {% for i in range(0, 2*LEVEL1_BLOCK_SIZE//BLOCK_SIZE//2) %} {{level2_ordering_R[2*LEVEL1_BLOCK_SIZE//BLOCK_SIZE-2][i]}},{% endfor %}
   };
 
-  for(int i = 0;i < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i ++) { // num of sub-blocks with BLOCK_SIZE
-    int L_order = ordering_L[i];
-    int R_order = ordering_R[i];
-    hls::print("L_order: %d\n", L_order);
-    hls::print("R_order: %d\n", R_order);
-    int L_idx = L_order/2;
-    int R_idx = R_order/2;
-    {% for p in range(0, parallel_num) %}
-      if({{p}} <= i%(parallel_num) && i%(parallel_num) < {{p+1}}) {
-        cur_block_offset = (R_order&1) ? block_R_offset : block_L_offset;
-        for(int j = 0;j < IO_NUM;j ++) {
-          for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
-            for(int c = 0;c < CascadeLevel;c ++) {
-              for(int k = 0;k < AIE_DATA_SIZE;k ++) {
-                #pragma HLS PIPELINE II = 1
-                ap_uint<128> tmp = receive_fifo_R[{{p}}][j][c].read();
-                dataIn[cur_block_offset + R_idx*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k] = tmp;
-              }
-            }
-          }
-        }
-        cur_block_offset = (L_order&1) ? block_R_offset : block_L_offset;
-        for(int j = 0;j < IO_NUM;j ++) {
-          for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
-            for(int c = 0;c < CascadeLevel;c ++) {
-              for(int k = 0;k < AIE_DATA_SIZE;k ++) {
-                #pragma HLS PIPELINE II = 1
-                ap_uint<128> tmp = receive_fifo_L[{{p}}][j][c].read();
-                dataIn[cur_block_offset + L_idx*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k] = tmp;
-              }
+  for(int i = 0;i < LEVEL1_BLOCK_SIZE/IO_NUM/SUB_BLOCK_SIZE;i += parallel_num) { // num of sub-blocks with BLOCK_SIZE
+    for(int p = 0;p < parallel_num;p ++) {
+      int i_base = i + p;
+      int L_order = ordering_L[i_base];
+      int R_order = ordering_R[i_base];
+      int L_idx = L_order/2;
+      int R_idx = R_order/2;
+      cur_block_offset = (R_order&1) ? block_R_offset : block_L_offset;
+      for(int j = 0;j < IO_NUM;j ++) {
+        for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
+          for(int c = 0;c < CascadeLevel;c ++) {
+            for(int k = 0;k < AIE_DATA_SIZE;k ++) {
+              #pragma HLS PIPELINE II = 1
+              ap_uint<128> tmp = receive_fifo_R[p][j][c].read();
+              dataIn[cur_block_offset + R_idx*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k] = tmp;
             }
           }
         }
       }
-    {% endfor %}
-    
+      cur_block_offset = (L_order&1) ? block_R_offset : block_L_offset;
+      for(int j = 0;j < IO_NUM;j ++) {
+        for(int subblock = 0; subblock < SUB_BLOCK_SIZE; subblock ++) {
+          for(int c = 0;c < CascadeLevel;c ++) {
+            for(int k = 0;k < AIE_DATA_SIZE;k ++) {
+              #pragma HLS PIPELINE II = 1
+              ap_uint<128> tmp = receive_fifo_L[p][j][c].read();
+              dataIn[cur_block_offset + L_idx*IO_NUM*SUB_BLOCK_SIZE*ROW_DATA_SIZE + j*SUB_BLOCK_SIZE*ROW_DATA_SIZE + subblock*ROW_DATA_SIZE + c*AIE_DATA_SIZE + k] = tmp;
+            }
+          }
+        }
+      }
+    } 
   }
 }
 
@@ -319,12 +315,8 @@ void Receive(axis_stream_sig& syscontrol, axis_stream_float convSet_L[parallel_n
 }
 
 template<typename TS, typename TE>
-void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM][CascadeLevel], TS src_fifo_R[parallel_num][IO_NUM][CascadeLevel], TE dst_fifo_L[parallel_num][IO_NUM][CascadeLevel], TE dst_fifo_R[parallel_num][IO_NUM][CascadeLevel],
-                  int k, int c) {
+void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM][CascadeLevel], TS src_fifo_R[parallel_num][IO_NUM][CascadeLevel], TE dst_fifo_L[parallel_num][IO_NUM][CascadeLevel], TE dst_fifo_R[parallel_num][IO_NUM][CascadeLevel]) {
   #pragma HLS INLINE off
-
-  #pragma HLS FUNCTION_INSTANTIATE variable=k
-  #pragma HLS FUNCTION_INSTANTIATE variable=c
 
   const int STAGE1_SIZE = SUB_BLOCK_SIZE*AIEROW/ELEM_NUM;
   const int STAGE2_SIZE = (BLOCK_PAIR_NUM-2*parallel_num)/parallel_num*SUB_BLOCK_SIZE*AIEROW/ELEM_NUM;
@@ -332,25 +324,42 @@ void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM][CascadeLevel], TS src_fifo
   
   for(int j = 0;j < STAGE1_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
-    ap_uint<W> tmp_R = src_fifo_R[0][k][c].read();
-    dst_fifo_L[0][k][c].write(tmp_R);
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      {% for c in range(0, CascadeLevel) %}
+      ap_uint<W> tmp_R{{c}} = src_fifo_R[0][k][{{c}}].read();
+      dst_fifo_L[0][k][{{c}}].write(tmp_R{{c}});
+      {% endfor %}
+    }
   }
 
+  {% if parallel_num > 0 %}
   for(int j = 0;j < STAGE1_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
-    {% for p in range(0, parallel_num) %}
-    ap_uint<W> tmp_L{{p}} = src_fifo_L[{{p}}][k][c].read();
-    dst_fifo_L[{{(p+1)%parallel_num}}][k][c].write(tmp_L{{p}});
-    {% endfor %}
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      {% for p in range(0, parallel_num) %}
+      {% for c in range(0, CascadeLevel) %}
+      ap_uint<W> tmp_L{{p}}{{c}} = src_fifo_L[{{p}}][k][{{c}}].read();
+      dst_fifo_L[{{(p+1)%parallel_num}}][k][{{c}}].write(tmp_L{{p}}{{c}});
+      {% endfor %}
+      {% endfor %}
+    }
   }
+  {% endif %}
 
 {% if parallel_num > 1 %}
   for(int j = 0;j < STAGE1_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
-    {% for p in range(1, parallel_num) %}
-    ap_uint<W> tmp_R{{p}} = src_fifo_R[{{p}}][k][c].read();
-    dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k][c].write(tmp_R{{p}});
-    {% endfor %}
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      {% for p in range(1, parallel_num) %}
+      {% for c in range(0, CascadeLevel) %}
+      ap_uint<W> tmp_R{{p}}{{c}} = src_fifo_R[{{p}}][k][{{c}}].read();
+      dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k][{{c}}].write(tmp_R{{p}}{{c}});
+      {% endfor %}
+      {% endfor %}
+    }
   }
 {% endif %}
 
@@ -359,45 +368,70 @@ void FIFOExchange(TS src_fifo_L[parallel_num][IO_NUM][CascadeLevel], TS src_fifo
 
   for(int j = 0;j < STAGE2_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
       {% for p in range(0, parallel_num) %}
-      ap_uint<W> tmp_L{{p}} = src_fifo_L[{{p}}][k][c].read();
-      dst_fifo_L[{{(p+1)%parallel_num}}][k][c].write(tmp_L{{p}});
-      ap_uint<W> tmp_R{{p}} = src_fifo_R[{{p}}][k][c].read();
-      dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k][c].write(tmp_R{{p}});
-    {% endfor %}
+      {% for c in range(0, CascadeLevel) %}
+      ap_uint<W> tmp_L{{p}}{{c}} = src_fifo_L[{{p}}][k][{{c}}].read();
+      dst_fifo_L[{{(p+1)%parallel_num}}][k][{{c}}].write(tmp_L{{p}}{{c}});
+      ap_uint<W> tmp_R{{p}}{{c}} = src_fifo_R[{{p}}][k][{{c}}].read();
+      dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k][{{c}}].write(tmp_R{{p}}{{c}});
+      {% endfor %}
+      {% endfor %}
+    }
   }
 
 
 {% if parallel_num > 1 %}
   for(int j = 0;j < STAGE3_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
       {% for p in range(0, parallel_num-1) %}
-      ap_uint<W> tmp_L{{p}} = src_fifo_L[{{p}}][k][c].read();
-      dst_fifo_L[{{(p+1)%parallel_num}}][k][c].write(tmp_L{{p}});
+      {% for c in range(0, CascadeLevel) %}
+      ap_uint<W> tmp_L{{p}}{{c}} = src_fifo_L[{{p}}][k][{{c}}].read();
+      dst_fifo_L[{{(p+1)%parallel_num}}][k][{{c}}].write(tmp_L{{p}}{{c}});
       {% endfor %}
+      {% endfor %}
+    }
   }
 {% endif %}
 
   for(int j = 0;j < STAGE3_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
-    ap_uint<W> tmp_L{{parallel_num-1}} = src_fifo_L[{{parallel_num-1}}][k][c].read();
-    dst_fifo_R[{{((parallel_num-2+parallel_num)%parallel_num)}}][k][c].write(tmp_L{{parallel_num-1}});
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      {% for c in range(0, CascadeLevel) %}
+      ap_uint<W> tmp_L{{parallel_num-1}}{{c}} = src_fifo_L[{{parallel_num-1}}][k][{{c}}].read();
+      dst_fifo_R[{{((parallel_num-2+parallel_num)%parallel_num)}}][k][{{c}}].write(tmp_L{{parallel_num-1}}{{c}});
+      {% endfor %}
+    }
   }
 
  
     for(int j = 0;j < STAGE3_SIZE;j ++) {
       #pragma HLS PIPELINE II = 1
-      {% for p in range(0, parallel_num-1) %}
-      ap_uint<W> tmp_R{{p}} = src_fifo_R[{{p}}][k][c].read();
-      dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k][c].write(tmp_R{{p}});
-      {% endfor %}
+      for(int k = 0;k < IO_NUM;k ++) {
+        #pragma HLS unroll
+        {% for p in range(0, parallel_num-1) %}
+        {% for c in range(0, CascadeLevel) %}
+        ap_uint<W> tmp_R{{p}}{{c}} = src_fifo_R[{{p}}][k][{{c}}].read();
+        dst_fifo_R[{{(p-1+parallel_num)%parallel_num}}][k][{{c}}].write(tmp_R{{p}}{{c}});
+        {% endfor %}
+        {% endfor %}
+      }
     }
 
 
   for(int j = 0;j < STAGE3_SIZE;j ++) {
     #pragma HLS PIPELINE II = 1
-    ap_uint<W> tmp_R{{parallel_num-1}} = src_fifo_R[{{parallel_num-1}}][k][c].read();
-    dst_fifo_R[{{parallel_num-1}}][k][c].write(tmp_R{{parallel_num-1}});
+    for(int k = 0;k < IO_NUM;k ++) {
+      #pragma HLS unroll
+      {% for c in range(0, CascadeLevel) %}
+      ap_uint<W> tmp_R{{parallel_num-1}}{{c}} = src_fifo_R[{{parallel_num-1}}][k][{{c}}].read();
+      dst_fifo_R[{{parallel_num-1}}][k][{{c}}].write(tmp_R{{parallel_num-1}}{{c}});
+      {% endfor %}
+    }
   }
 }
 
@@ -436,12 +470,7 @@ void RoundRobin(axis_stream_sig& syscontrol,
       for(int i = 0;i < LEVEL2_STEP;i ++) {
         hls::print("stage1 start: %d\n", i);
 
-        for(int k = 0; k < IO_NUM; k++) {
-          #pragma HLS UNROLL
-          {% for c in range(0, CascadeLevel) %}
-            FIFOExchange(receive_fifo_L, receive_fifo_R, send_fifo_L, send_fifo_R, k, {{c}});
-          {% endfor %}
-        }
+        FIFOExchange(receive_fifo_L, receive_fifo_R, send_fifo_L, send_fifo_R);
 
         hls::print("stage1 end: %d\n", i);
       }
@@ -678,14 +707,14 @@ void TopPL(ap_uint<DDR_WIDTH>* dataIn, ap_uint<DDR_WIDTH>* U, ap_uint<32>* S, ap
 {% endfor %}
 
     Orthogonalize(dataIn, ConvArray, ITER 
-      {% for c in range(0, CascadeLevel) %}
       {% for i in range(1, parallel_num+1) %}
-      {% for j in range(0, IO_NUM) %}
-      ,sweep_tx{{i}}_L_io{{j}}_cas{{c}}, sweep_tx{{i}}_R_io{{j}}_cas{{c}},
-      sweep_rx{{i}}_L_io{{j}}_cas{{c}}, sweep_rx{{i}}_R_io{{j}}_cas{{c}}
-      {% endfor %}
-      {% endfor %}
-      {% endfor %}
+  {% for j in range(0, IO_NUM) %}
+  {% for c in range(0, CascadeLevel) %}
+                , sweep_tx{{i}}_L_io{{j}}_cas{{c}}, sweep_tx{{i}}_R_io{{j}}_cas{{c}},
+                sweep_rx{{i}}_L_io{{j}}_cas{{c}}, sweep_rx{{i}}_R_io{{j}}_cas{{c}}
+  {% endfor %}
+  {% endfor %}
+{% endfor %}
     );
     Normalize(dataIn, U, S 
       {% for c in range(0, CascadeLevel) %}

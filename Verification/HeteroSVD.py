@@ -1,7 +1,7 @@
 import numpy as np
 import random
 import sys
-
+import os
 global received_step
 class JacobiSVD:
     """
@@ -313,12 +313,13 @@ class BlockJacobiSVD:
                 for (i, j) in pairs:
                     # 对块对 (i, j) 进行正交化
                     step = step + 1
+                    print(f'----------------step: {step}----------------')
                     blocks[i], blocks[j], Vs[i], Vs[j], conv = \
                         self.jacobi_svd.fit_block_pair(blocks[i], blocks[j], Vs[i], Vs[j],True)
                     print(f"Block {i} and Block {j} convergence: {conv:.6f}")
                     max_conv = max(max_conv, conv)
             
-            print(f"Iteration {it+1}/{self.iter}, max convergence: {max_conv:.6f}")
+            # sys.__stdout__.write(f"Iteration {it+1}/{self.iter}, max convergence: {max_conv:.6f}")
         
         # 合并所有块
         A_final = np.hstack([blocks[i][:, :min(self.block_size, n_cols - i*self.block_size)] 
@@ -342,16 +343,17 @@ class BlockJacobiSVD:
 # 用法示例
 if __name__ == "__main__":
     sys.stdout = open("output.txt", "w")
+    # sys.stdout = open(os.devnull, 'w')
     np.random.seed(0)
-    col, row = 32, 32
+    col, row = 64, 64
     mat = np.zeros((row, col))  # 小一点调试方便
     for i in range(row):
         for j in range(col):
             mat[i][j] = random.randint(0, 50)
-    #np.savetxt("matrix.txt", mat, fmt="%.0f")
+    # np.savetxt("matrix.txt", mat, fmt="%.0f")
     mat = np.loadtxt("matrix.txt")
     print(mat)
-    svd = BlockJacobiSVD(block_size=16, iter=1)
+    svd = BlockJacobiSVD(block_size=32, iter=1)
     U, sigma, V = svd.fit(mat)
 
     gold_svd = np.linalg.svd(mat, full_matrices=False)
