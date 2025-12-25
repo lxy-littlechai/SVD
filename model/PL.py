@@ -18,7 +18,7 @@ class SVD_PL:
     aie_row = config.ROW//config.CascadeLevel
     elem_num = 4
     data_width = 128
-    fifo_depth = (block_num / parallel_num) * sub_block_size * (aie_row / elem_num)
+    fifo_depth = (block_num/2 / parallel_num) * sub_block_size * (aie_row / elem_num)
     width_usage = math.ceil(data_width / self.URAM_WIDTH_CAPACITY)
     depth_usage = math.ceil(fifo_depth / self.URAM_DEPTH_CAPACITY)
     uram_per_fifo = width_usage * depth_usage
@@ -37,7 +37,7 @@ class SVD_PL:
     aie_row = config.ROW//config.CascadeLevel
     elem_num = 4
     data_width = 128
-    fifo_depth = (block_num / parallel_num) * sub_block_size * (aie_row / elem_num)
+    fifo_depth = (block_num/2 / parallel_num) * sub_block_size * (aie_row / elem_num)
     width_usage = math.ceil(data_width / self.URAM_WIDTH_CAPACITY)
     depth_usage = math.ceil(fifo_depth / self.URAM_DEPTH_CAPACITY)
     uram_per_fifo = width_usage * depth_usage

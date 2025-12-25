@@ -120,7 +120,7 @@ class SVD_Model:
             config_dict[str(i)] = []
 
         best_config_list = []
-        FREQ_LISTS = [360, 300, 260]
+        FREQ_LISTS = [156.25]
         config_list_with_freq = []
         for freq in FREQ_LISTS:
             #bestConfig4freq = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
@@ -219,6 +219,7 @@ class SVD_Model:
         print(f"BLOCK_SIZE: {config.BLOCK_SIZE} aie_num: {config.aie_num} task_num: {config.task_num}")
         print(f"URAM: {config.uram}")
         print(f"estimated_time: {config.estimated_time}")
+        print(f"throughput: {self.BATCH/config.estimated_time}")
         print("----------------------------------")
 
     # this api find the configuration with maximum task-level parallelism

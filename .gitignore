@@ -5,6 +5,7 @@ FPGATest
 FPGAiter
 GPU_test
 GPU_test_new
+FPGA_test_new
 Predict_test
 PerfModel
 PerfNew

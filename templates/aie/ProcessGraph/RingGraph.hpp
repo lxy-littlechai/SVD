@@ -13,13 +13,18 @@ private:
     static const int ROW = 2*GraphSize-1;
     static const int COL = GraphSize;
 
-    kernel orth[CascadeLevel][GraphSize][2*GraphSize];// (col, row)
+    kernel orth[CascadeLevel][GraphSize][2*GraphSize];// (cas, col, row)
+
+    // connect things
     pktsplit<GraphSize> acc_sp[CascadeLevel-1][2*GraphSize], param_sp[2*GraphSize];
     pktmerge<GraphSize> acc_mg[CascadeLevel-1][2*GraphSize], param_mg[2*GraphSize];
+    bool visited_acc[CascadeLevel][GraphSize][2*GraphSize];
+    bool visited_param[CascadeLevel][GraphSize][2*GraphSize];
     
     int ring0[GraphSize][2*GraphSize], ring1[GraphSize][2*GraphSize];
     struct Order {
       int col, port;
+      int pair_id; // in norm ring, the pair id
     }ring[CascadeLevel][2*GraphSize][2*GraphSize];  //the j'th matrix col in i row at ring[j][i] row;
 
     int bankID[VCK190_COL][VCK190_ROW];
@@ -64,6 +69,7 @@ public:
         }
 
         int row = START_ROW, col = START_COL, direction = DIRECTION;
+        int skip = 0;
 
         for(int k = 0;k < CascadeLevel;k ++) {
           for(int i = 0;i < ROW;i ++) {
@@ -73,28 +79,10 @@ public:
                   orthInfo[k][j][i].col = base_col+j;
                   orthInfo[k][j][i].row = row;
               }
-              row += direction;
-              if(row == VCK190_ROW-1 && direction == 1) {
-                  row = VCK190_ROW-1;
-                  col += COL+1;
-                  direction *= -1;
-              }
-              else if(row == 0 && direction == -1) {
-                  row = 0;
-                  col += COL+1;
-                  direction *= -1;
-              }
+              moveToNextRow(row, col, direction, skip);
           }
-          row += direction;
-          if(row == VCK190_ROW-1 && direction == 1) {
-              row = VCK190_ROW-1;
-              col += COL+1;
-              direction *= -1;
-          }
-          else if(row == 0 && direction == -1) {
-              row = 0;
-              col += COL+1;
-              direction *= -1;
+          if(skip == 0) {
+            moveToNextRow(row, col, direction, skip);
           }
         }
 
@@ -106,6 +94,7 @@ public:
 
         int pow_row = START_ROW;
         col = START_COL, direction = DIRECTION;
+        skip = 0;
         for(int k = 0;k < CascadeLevel;k ++) {
           for(int i = 0;i < ROW;i ++) {
               for(int j = 0;j < COL;j ++) {
@@ -116,24 +105,10 @@ public:
                   location<buffer>(orth[k][j][i].out[1]) = {bank(col, row, getBankID(k, j, i, col, row, 1, 0)),
                                                          bank(col, row, getBankID(k, j, i, col, row, 1, 1))};
               }
-              pow_row += direction;
-              if(pow_row == VCK190_ROW-1 && direction == 1) {
-                  pow_row = VCK190_ROW-1;
-                  direction *= -1;
-              }
-              else if(pow_row == 0 && direction == -1) {
-                  pow_row = 0;
-                  direction *= -1;
-              }
+              moveToNextRow(pow_row, col, direction, skip);
           }
-          pow_row += direction;
-          if(pow_row == VCK190_ROW-1 && direction == 1) {
-              pow_row = VCK190_ROW-1;
-              direction *= -1;
-          }
-          else if(pow_row == 0 && direction == -1) {
-              pow_row = 0;
-              direction *= -1;
+          if(skip == 0) {
+            moveToNextRow(pow_row, col, direction, skip);
           }
         }
         
@@ -175,6 +150,15 @@ public:
 
         if(CascadeLevel > 1) {
 
+          for(int k = 0;k < CascadeLevel;k ++) {
+            for(int i = 0;i < ROW;i ++) {
+              for(int j = 0;j < COL;j ++) {
+                visited_acc[k][j][i] = false;
+                visited_param[k][j][i] = false;
+              }
+            }
+          }
+
           for(int c = 0; c < CascadeLevel-1;c ++) {
             for(int i = 0;i < ROW;i ++) {
               acc_sp[c][i] = pktsplit<COL>::create();
@@ -189,10 +173,15 @@ public:
           // connect acc
           for(int k = 0;k < CascadeLevel-1;k ++) {
             for(int i = 0;i < ROW;i ++) {
-              for(int j = 0;j < COL;j ++) {
-                connect<> (orth[k][j][i].out[2], acc_mg[k][i].in[j]);
-                connect<> (acc_sp[k][i].out[j], orth[k+1][j][i].in[2]);
-                //connect<> (orth[k][j][i].out[2], orth[k+1][j][i].in[2]);
+              for(int j = 0;j < 2*COL;j ++) {
+                int out_col = ring[k][j][i].col;
+                int in_col = ring[k+1][j][i].col;
+                int pair_id = ring[k][j][i].pair_id;
+                if(!visited_acc[k][pair_id][i]) {
+                  connect<> (orth[k][out_col][i].out[2], acc_mg[k][i].in[pair_id]);
+                  connect<> (acc_sp[k][i].out[pair_id], orth[k+1][in_col][i].in[2]);
+                  visited_acc[k][pair_id][i] = true;
+                }
               }
               connect<> (acc_mg[k][i].out[0], acc_sp[k][i].in[0]);
             }
@@ -201,22 +190,36 @@ public:
 
           //connect params
           for(int i = 0;i < ROW;i ++) {
-            for(int j = 0;j < COL;j ++) {
-              connect<> (orth[CascadeLevel-1][j][i].out[2], param_mg[i].in[j]);
-              // connect<> (orth[CascadeLevel-1][j][i].out[2], orth[0][j][i].in[2]);
+            for(int j = 0;j < 2*COL;j ++) {
+              int out_col = ring[CascadeLevel-1][j][i].col;
+              int pair_id = ring[CascadeLevel-1][j][i].pair_id;
+              if(!visited_param[CascadeLevel-1][pair_id][i]) {
+                connect<> (orth[CascadeLevel-1][out_col][i].out[2], param_mg[i].in[pair_id]);
+                visited_param[CascadeLevel-1][pair_id][i] = true;
+              }
             }
             connect<> (param_mg[i].out[0], param_sp[i].in[0]);
           }
 
           for(int i = 0;i < ROW;i ++) {
-            for(int j = 0;j < COL;j ++) {
-              connect<> (param_sp[i].out[j], orth[0][j][i].in[2]);
+            for(int j = 0;j < 2*COL;j ++) {
+              int in_col = ring[0][j][i].col;
+              int pair_id = ring[0][j][i].pair_id;
+              if(!visited_param[0][pair_id][i]) {
+                connect<> (param_sp[i].out[pair_id], orth[0][in_col][i].in[2]);
+                visited_param[0][pair_id][i] = true;
+              }
             }
           }
           for(int k = 1;k < CascadeLevel-1;k ++) {
             for(int i = 0;i < ROW;i ++) {
-              for(int j = 0;j < COL;j ++) {
-                connect<> (param_sp[i].out[j], orth[k][j][i].in[3]);
+              for(int j = 0;j < 2*COL;j ++) {
+                int in_col = ring[k][j][i].col;
+                int pair_id = ring[k][j][i].pair_id;
+                if(!visited_param[k][pair_id][i]) {
+                  connect<> (param_sp[i].out[pair_id], orth[k][in_col][i].in[3]);
+                  visited_param[k][pair_id][i] = true;
+                }
                 // connect<> (orth[CascadeLevel-1][j][i].out[2], orth[k][j][i].in[3]);
               }
             }
@@ -228,6 +231,25 @@ public:
 
         
 
+    }
+
+    void moveToNextRow(int &row, int &col, int &direction, int &skip) {
+      row += direction;
+      if(row == VCK190_ROW-1 && direction == 1) {
+          row = VCK190_ROW-1;
+          col += COL+1;
+          direction *= -1;
+          skip = 1;
+      }
+      else if(row == 0 && direction == -1) {
+          row = 0;
+          col += COL+1;
+          direction *= -1;
+          skip = 1;
+      }
+      else {
+        skip = 0;
+      }
     }
 
     int getBankID(int cascade_level, int orth_col, int orth_row, int bank_col, int bank_row, int out_port, int ping_pong) {
@@ -256,8 +278,16 @@ public:
         std::swap(ring0[ptr][i], ring1[ptr][i]);
         if(i&1) ptr --;
       }
+      for(int i = 0;i < ROW+1;i ++) {
+        for(int j = 0;j < COL;j ++) {
+          ring[cascade_level][ring0[j][i]][i].pair_id = j;
+          ring[cascade_level][ring1[j][i]][i].pair_id = j;
+        }
+      }
       //give offset
       int row = cur_row, direction = cur_direction, offset = 0;
+      int col = 0;
+      int skip = 0;
       for(int i = 0;i < ROW;i ++) {
         if(row&1) {
           offset = (offset-1+COL)%COL;
@@ -272,24 +302,10 @@ public:
           ring1[j][i+1] = tmp1[j];
         }
 
-        row += direction;
-        if(row == VCK190_ROW-1 && direction == 1) {
-            row = VCK190_ROW-1;
-            direction *= -1;
-        }
-        else if(row == 0 && direction == -1) {
-            row = 0;
-            direction *= -1;
-        }
+        moveToNextRow(row, col, direction, skip);
       }
-      row += direction;
-      if(row == VCK190_ROW-1 && direction == 1) {
-          row = VCK190_ROW-1;
-          direction *= -1;
-      }
-      else if(row == 0 && direction == -1) {
-          row = 0;
-          direction *= -1;
+      if(skip == 0) {
+        moveToNextRow(row, col, direction, skip);
       }
 
       for(int i = 0;i < ROW+1;i ++) {

@@ -19,7 +19,7 @@ typedef hls::stream<ap_uint<1>, 4> axis_stream_sig;
 typedef hls::stream<float, 4> axis_stream_float;
 typedef hls::stream<int, 2*LEVEL1_BLOCK_PAIR_NUM> axis_stream_ordering;
 typedef hls::stream<ap_uint<128>, 2*SUB_BLOCK_SIZE*AIEROW/ELEM_NUM> axis_stream_128;
-typedef hls::stream<ap_uint<128>, BLOCK_NUM/parallel_num*SUB_BLOCK_SIZE*AIEROW/ELEM_NUM> axis_stream_deep_128;
+typedef hls::stream<ap_uint<128>, BLOCK_NUM/2/parallel_num*SUB_BLOCK_SIZE*AIEROW/ELEM_NUM> axis_stream_deep_128;
 typedef hls::stream<axis_pkt> axis_pkt_stream;
 
 const int START = 1;
