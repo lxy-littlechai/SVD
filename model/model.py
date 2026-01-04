@@ -39,6 +39,9 @@ class SysConfig:
 
         self.uram = 0
         self.estimated_time = 0.0
+
+    def copy(self):
+        return copy.deepcopy(self)
         
     def __lt__(self, other): 
         if self.estimated_time < other.estimated_time:
@@ -97,7 +100,7 @@ class SVD_Model:
                                 continue
                             if self.ROW%CascadeLevel != 0:
                                 continue
-                            if self.ROW/CascadeLevel > 1024:
+                            if self.ROW/CascadeLevel > 1400 or (self.ROW/CascadeLevel)%4 != 0:
                                 continue
                             base_config = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
                             base_config.LEVEL1_BLOCK_SIZE = BLK1
@@ -107,10 +110,11 @@ class SVD_Model:
                             base_config.CascadeLevel = CascadeLevel
                             
 
-                            config = self.resourceCheck(base_config)
-                            if not config.valid:
+                            valid_configs = self.resourceCheck(base_config)
+                            if len(valid_configs) == 0:
                                 continue
-                            self.config_list.append(config)
+                            for config in valid_configs:
+                                self.config_list.append(config)
                             
 
     def config4Freq(self):
@@ -121,6 +125,21 @@ class SVD_Model:
 
         best_config_list = []
         FREQ_LISTS = [156.25]
+
+        match self.COL:
+            case 128:
+                FREQ_LISTS = [312.5]
+            case 256:
+                FREQ_LISTS = [360]
+            case 512:
+                FREQ_LISTS = [300]
+            case 1024:
+                FREQ_LISTS = [200]
+            case 2048:
+                FREQ_LISTS = [156.25]
+            case 4096:
+                FREQ_LISTS = [156.25]
+
         config_list_with_freq = []
         for freq in FREQ_LISTS:
             #bestConfig4freq = SysConfig(self.COL, self.ROW, self.ITER, self.BATCH)
@@ -230,6 +249,8 @@ class SVD_Model:
         ## PL Uram Check
         svd_pl = SVD_PL(config.LEVEL1_BLOCK_SIZE, config.ROW)
 
+        valid_configs = []
+
         while svd_aie.getTaskNum() < self.BATCH:
             config.valid = True
 
@@ -238,29 +259,19 @@ class SVD_Model:
             # AIE resource check
             # this api should return the success or failure and the graph list [{row, col, direction}, ...]
             aie_valid, orth_graph_list, norm_graph_list = svd_aie.tryAIEPlacement(config.parallel_num, config.IO_NUM)
-            
             if aie_valid and pl_valid:
                 config.orth_graph_list.append(orth_graph_list)
                 config.norm_graph_list.append(norm_graph_list)
+                config.aie_num = svd_aie.getAIENum()
+                config.task_num = svd_aie.getTaskNum()
+                config.uram = svd_pl.getRAM(config, config.task_num)
+                valid_configs.append(config.copy())
             else:
-                # config.valid = False
                 break
         
-        config.aie_num = svd_aie.getAIENum()
-        config.task_num = svd_aie.getTaskNum()
-        if svd_pl.checkRAM(config, config.task_num) == False:
-            config.valid = False
-            print(f'config.valid: {svd_pl.getRAM(config, config.task_num)}')
-            return config
-        if config.task_num == 0:
-            config.valid = False
-            return config
-        #     config.valid = False
-        #     return config
-        config.uram = svd_pl.getRAM(config, config.task_num)
-        return config
+        return valid_configs
 
-    def predict(self, config, ifprint=True):
+    def predict(self, config, ifprint=False):
         
         Frequency = config.Frequency
         if config.ITER:
@@ -276,7 +287,7 @@ class SVD_Model:
         TASK_NUM = config.task_num
         BLK1 = config.LEVEL1_BLOCK_SIZE
         BLK2 = config.BLOCK_SIZE
-        CascadeLevel = math.ceil(ROW/1024)
+        CascadeLevel = config.CascadeLevel
         AIEROW = ROW//CascadeLevel
 
         IO_NUM = config.IO_NUM

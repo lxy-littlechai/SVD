@@ -1,9 +1,9 @@
 clear
-python3 main.py --PATH="./test" \
---COL=4096 \
---ROW=4096 \
---BATCH=1 \
---ITER=14 \
+python3 main.py --PATH="./Batch/256/256-10" \
+--COL=256 \
+--ROW=256 \
+--BATCH=10 \
+--ITER=6 \
 --optimize=1 \
 --task_num=1 \
 --LEVEL1_BLOCK_SIZE=1024 \
