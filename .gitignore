@@ -6,7 +6,6 @@ FPGAiter
 GPU_test
 Batch
 GPU_test_new
-FPGA_test_new
 Predict_test
 PerfModel
 PerfNew
@@ -16,6 +15,7 @@ DSE
 
 **/__pycache__
 **/.Xil
+**/.ipcache
 **/_x
 **/*.xo_dir
 **/*.xsa_dir
