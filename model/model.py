@@ -92,7 +92,7 @@ class SVD_Model:
                     if block_pair_num % parallel_num != 0:
                         continue        
                     
-                    for IO_NUM in range(1, BLK2+1):
+                    for IO_NUM in [1, BLK2]: # keep good convergence
                         if BLK2 % IO_NUM != 0:
                             continue
                         for CascadeLevel in range(1, math.ceil(self.ROW/1024)+1):
@@ -128,11 +128,11 @@ class SVD_Model:
 
         match self.COL:
             case 128:
-                FREQ_LISTS = [312.5]
+                FREQ_LISTS = [312.5, 260]
             case 256:
-                FREQ_LISTS = [360]
+                FREQ_LISTS = [360, 312.5]
             case 512:
-                FREQ_LISTS = [300]
+                FREQ_LISTS = [350, 300, 260]
             case 1024:
                 FREQ_LISTS = [200]
             case 2048:
@@ -196,7 +196,7 @@ class SVD_Model:
             print(f"Config {i}:")
             self.print(config)
             print("----------------------------------")
-        self.best_config = self.config_list[0]
+        self.best_config = self.config_list[1]
         
 
 
