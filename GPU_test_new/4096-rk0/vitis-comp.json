@@ -1,0 +1,9 @@
+{
+  "name": "4096-rk0",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": ["pl\/TopPL.cfg"],
+    "work_dir": "toppl"
+  }
+}

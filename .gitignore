@@ -5,7 +5,6 @@ FPGATest
 FPGAiter
 GPU_test
 Batch
-GPU_test_new
 Predict_test
 PerfModel
 PerfNew
